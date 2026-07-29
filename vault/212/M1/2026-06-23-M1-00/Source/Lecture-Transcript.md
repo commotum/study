@@ -1,1339 +1,1342 @@
-Hey there.
+# Physics 212: Course Framework and Introduction to Rotational Kinematics
 
-Welcome to Physics 212.
+Welcome back to Physics 212.
 
-Hi, everybody. Welcome back.
+## Course Questions and Logistics
 
-Well, let's see. Since we're only on day
+Because we are only on the second day of the term, we will begin by clarifying several aspects of how the course operates.
 
-two, I thought it would take just a couple of
+### Laboratory TA Meetings
 
-minutes at the start of class to discuss.
+Regular laboratory meetings with teaching assistants will generally begin during the second week of the term. Because laboratory groups and meeting schedules are still being organized, students automatically receive the associated meeting credit during the first week.
 
-If you have any questions about how the class, how
+A group that has already arranged a meeting may contact its TA and ask to meet during the first week, but doing so is not required.
 
-the course works, any of the stuff we went over yesterday,
+### Office Hours and Questions
 
-you've thought about it, you've looked at it,
+An office hour is held immediately after each lecture. Additional meetings may be arranged by appointment.
 
-you have some questions um i think what i'm going to do
+Questions about the course may also be sent by email. If something appears incorrect or inconsistent in Canvas, notify the instructor so that it can be reviewed and corrected.
 
-is let's see we have 25 people here probably have a
+### Course Announcements and Notifications
 
-couple more coming in right at the start of class
+Important course information will frequently be distributed through Canvas announcements. Check the notification settings for this course and make sure that announcements are enabled.
 
-i'm going to open breakout rooms i'd like you to go in
+Canvas allows notification preferences to be configured either for the entire account or separately for each course. At a minimum, enable announcement notifications for Physics 212 so that you receive information about assignments, quizzes, schedule changes, and corrections.
 
-there turn on your mic turn on your camera talk to
+### Participation Scores in Canvas
 
-people um just take a second to get to know each other
+Students attending a live Zoom lecture receive participation credit by responding to the Poll Everywhere questions used during class.
 
-and then if there's anything about the way the course
+Students completing the lecture asynchronously submit the corresponding asynchronous participation assignment instead. Until that assignment is graded, Canvas may temporarily display a zero in the participation column. That zero lowers the calculated Canvas grade even though the asynchronous work may already have been submitted.
 
-works that you want to discuss with your peers in
+After the asynchronous submissions are graded, the temporary zero is removed or replaced with the appropriate score.
 
-there talk about that for i'll just give you a couple
+Asynchronous participation assignments generally remain available for $48$ hours, followed by an additional grace period. A late submission does not lose a point until it is a full day late, and the score does not fall below $50\%$ solely because of lateness.
 
-of minutes two three minutes there and then we'll
+Because the course drops three participation scores, missing a single participation activity will not necessarily affect the final grade.
 
-come back and see if you have any questions for me so
+Participation activities collectively account for only $5\%$ of the course grade. Early in the term, the Canvas grade may appear unusually high or low because it is being calculated from a very small number of assignments. Continue checking the gradebook for accuracy, but do not treat the first few calculated percentages as reliable indicators of your eventual course performance.
 
-let's see i'm gonna make breakout rooms like probably
+### Assignment Due Dates
 
-three of them i'll go ahead and create them randomly
+The PDF syllabus posted in the Course Information module contains the authoritative course schedule.
 
-and open breakout rooms please do go into the breakout
+The page labeled “Syllabus” in the Canvas navigation menu is generated from the Canvas calendar. It may display tentative dates for unpublished assignments that have not yet been updated. Until those entries are finalized, follow the dates in the posted PDF syllabus.
 
-rooms and talk to your newly made friends inside
+If an assignment date still appears inconsistent after the course has been underway for a while, contact the instructor for clarification.
 
-there okay everybody's back and i asked you to think
+# Course Roadmap
 
-about if they have any questions about how the course
+Physics 212 covers several topics that may initially appear separate but are connected through common physical and mathematical principles.
 
-runs and discuss that with each other i'd like to
+We will begin with **rotational motion**.
 
-know if there are any questions you have from me or
+First, we will develop rotational kinematics by comparing it directly with translational kinematics. Rotational motion is not an entirely new form of mechanics; it is translational motion expressed using variables that are more convenient for circular and rotational systems.
 
-comments or any concerns you have and um yeah so either
+We will then move from kinematics to dynamics.
 
-either um just open mic and ask me or put it in the
+In translational mechanics, Newton’s second law is
 
-chat or put something in the chat like a topic that you
+$$
+\sum \vec{F}=m\vec{a}.
+$$
 
-want would like to take just a minute to discuss
+For rotation about a fixed axis, the analogous relationship is
 
-something like that uh yeah just to clarify catherine i sent
+$$
+\sum \tau=I\alpha,
+$$
 
-an email to uh kevin one of the tas this morning it
+where $I$ is the moment of inertia and $\alpha$ is the angular acceleration.
 
-seems like we're not having uh the ta sessions this
+The momentum relationships also have rotational analogues. In translational motion,
 
-week but next week they'll start um yeah so we we usually
+$$
+\sum \vec{F}_{\mathrm{ext}}
+=
+\frac{d\vec{p}}{dt}.
+$$
 
-give credit for going to the ta sessions and so this
+In rotational motion,
 
-week um you just automatically get that credit because
+$$
+\sum \vec{\tau}_{\mathrm{ext}}
+=
+\frac{d\vec{L}}{dt},
+$$
 
-usually it takes a little bit of time to get the
+where $\vec{L}$ is angular momentum.
 
-meetings together and sometimes like it's already tuesday
+We will study:
 
-maybe you or or maybe you don't get your groups
+- Rotational kinematics
+- Torque and rotational dynamics
+- Rotational kinetic energy
+- Angular momentum
+- Conservation of angular momentum
+- Oscillations
+- Mechanical and electromagnetic waves
+- Wave optics
+- Geometrical, or ray, optics
 
-together until thursday but you set a meeting time for
+Oscillations are closely related mathematically to rotational motion. Even when nothing appears to be rotating, sinusoidal oscillations can be understood through the projection of circular motion onto an axis.
 
-wednesday so yeah we cut some people we cut everybody some
+# How to Approach Physics Problems
 
-slack for meetings on the first week we don't really
+A physics course should not be treated simply as an applied mathematics course.
 
-get together with the ta's till the second week unless
+The mathematics is usually the final stage of a solution. Before performing algebra or calculus, we must first understand the physical system.
 
-you want to if you have a meeting set up and it's um
+A productive problem-solving sequence is:
 
-and you can meet with your ta just let them know could
+1. Identify the system.
+2. Determine the physical assumptions.
+3. Construct useful visual representations.
+4. Write the relevant general physical principles.
+5. Specialize those principles to the particular system.
+6. Solve the resulting equations symbolically.
+7. Substitute numerical values and evaluate the result.
+8. Check the units and physical meaning of the answer.
 
-we please meet this week that would be fine as well
+## Identifying the System
 
-okay any other questions anything
+The **system** is the object or collection of objects being analyzed.
 
-in the chat any topics you want to put in the chat i'll
+Before writing equations, determine exactly what is included in the system and what interactions occur between the system and its surroundings.
 
-just give you another little bit of time to do that
+## Making Assumptions
 
-okay seems like everybody's fine about this for now
+Every physical model contains assumptions.
 
-if you do have any questions that come up in your
+For example, when calculating the flight of a golf ball, we might assume:
 
-mind please just drop me an email and ask me i'm happy
+- The ball can be treated as a point particle.
+- Air resistance is negligible.
+- Earth’s gravitational acceleration is uniform.
+- Earth’s curvature can be ignored over the distance traveled.
 
-to do that or stick around after class i always have
+Including every microscopic physical interaction would make most problems impossible to solve exactly. The purpose of an assumption is to simplify the model while retaining the behavior most relevant to the question.
 
-a office hour after class for the hour after class
+The important skill is not merely making assumptions, but understanding how each assumption affects the equations and the accuracy of the model.
 
-or by appointment if you can't make that time i would
+## Constructing Visual Representations
 
-like to point out that um i sent out an announcement
+Useful representations may include:
 
-yesterday and here let me just go to announcements
+- Physical diagrams
+- Coordinate systems
+- Free-body diagrams
+- Motion diagrams
+- Graphs
+- Energy bar charts
+- Vector diagrams
 
-so i can talk about this for a second so the first
+These are not decorations added after the solution. They are tools used to construct the equations.
 
-day lecture and participation i discussed where to
+## Beginning with General Equations
 
-find the lecture video and participation points and
+Start with a general physical principle before substituting values.
 
-how that works if you come to the zoom session and
+For example, begin with
 
-you do participation using poll everywhere you're good
+$$
+v(t)=v_0+\int_{t_0}^{t}a(t')\,dt'
+$$
 
-it will show your score for participation points in
+rather than immediately inserting numerical values.
 
-the canvas grade book after I sync it after class.
+Then determine how the general relationship simplifies for the particular system.
 
-If you're watching the video and doing the asynchronous
+## Focusing on the Setup
 
-participation and you didn't submit that during the
+Students often spend most of their study time repeating algebra. For many students, however, algebra is not the primary source of difficulty.
 
-Zoom lecture, then you'll see a zero in that column.
+The more important skill is learning how to begin:
 
-And when we go through and grade those assignments,
+- What is the system?
+- What should the diagram contain?
+- Which physical principle applies?
+- Which assumptions are appropriate?
+- How should the general equation be specialized?
 
-those asynchronous corresponding assignments then that
+Practicing only the calculation is similar to practicing lifting with poor technique. A light object may be manageable even with an incorrect method, but the weaknesses become serious when the problem becomes more complicated.
 
-um zero will be canceled out it will show up as as um
+Use correct structure even for simple problems. That structure will remain useful when the mathematics and physics become more demanding.
 
-as not as no score like unsubmitted so yeah i i so after
+## Equation Sheets
 
-i posted this announcement i got uh three or four
+You will prepare your own handwritten equation sheets for quizzes.
 
-emails from people asking me about that same question
+An equation sheet may include:
 
-and this this is typically happens is uh people don't
+- Equations
+- Diagrams
+- Definitions
+- Sign conventions
+- Notes to yourself
+- Reminders about problem-solving procedures
 
-have announcements turned on for their course so sometimes
+The goal is not to memorize a large collection of formulas. The goal is to understand the general principles well enough to identify which relationship applies and how it must be adapted to the system.
 
-i'm not sure what it defaults to now but usually
+## Levels of Learning
 
-it defaults to your announcements are turned on but
+Physics requires more than remembering information.
 
-maybe now it's defaulting to they're turned off what you
+A useful progression is:
 
-want to do is go into your account and you'll see
+1. Remembering
+2. Understanding
+3. Applying
+4. Analyzing
+5. Evaluating
+6. Creating or combining ideas into a new solution
 
-notifications and you can click on notifications and see
+The metacognitive question is:
 
-how it has settings for the account or it also lists
+> Why am I doing what I am doing?
 
-your courses here and you can choose course by course
+A strong understanding of physics allows you to recognize that a new problem may be structurally similar to one you have seen before, even if the physical objects or wording are different.
 
-what you want your notifications to be and I suggest
+# Review of Translational Kinematics
 
-that you go down to this course and set the notifications
+In translational motion, the fundamental variables are:
 
-to where you're getting notifications for the for
+- Position $x$
+- Velocity $v$
+- Acceleration $a$
 
-this for this class otherwise you won't get if you get
+Velocity is the time derivative of position:
 
-notifications and what it's going to do is email you
+$$
+v(t)=\frac{dx}{dt}.
+$$
 
-when I make an announcement and let you know or you
+Acceleration is the time derivative of velocity:
 
-can set the notifications just to be announcements or
+$$
+a(t)=\frac{dv}{dt}
+=
+\frac{d^2x}{dt^2}.
+$$
 
-just to be when new assignments are posted or something
+If vector notation is omitted, the equation may refer to a one-dimensional component or to a magnitude, depending on the context.
 
-like that you can choose per course what you want in
+The derivative relationships can be reversed using integration.
 
-your announcements and I think a lot of times people
+Velocity may be obtained from acceleration:
 
-turn off announcements all together for their whole
+$$
+v(t)
+=
+v(t_0)
++
+\int_{t_0}^{t}a(t')\,dt'.
+$$
 
-account because you get spammed by all this stuff from
+Position may be obtained from velocity:
 
-all of your courses and from the school and all that
+$$
+x(t)
+=
+x(t_0)
++
+\int_{t_0}^{t}v(t')\,dt'.
+$$
 
-and I get that I get spammed a lot too but yeah just go
+These equations are general. They remain valid whether or not acceleration is constant.
 
-into the course and turn on announcements notifications
+# Angular Position and Arc Length
 
-for announcements at least for this course and
+Consider a point moving along a circular path of radius $r$.
 
-somebody's asking me if they show as zeros until you go
+Let:
 
-through manually does that mean our canvas grade will
+- $\theta$ be the angular position
+- $s$ be the arc length traveled
 
-be lower than our actual until you go through yes yes
+The relationship between arc length and angular displacement is
 
-if it shows us a zero it's calculating that zero as your
+$$
+\boxed{
+s=r\theta
+}.
+$$
 
-canvas grade so this can be really frustrating for
+This equation assumes that $\theta$ is measured in radians.
 
-people to see that their canvas grade shows us really
+One radian is the angle that subtends an arc whose length is equal to the radius of the circle.
 
-low and i've submitted my assignment i will go through
+A complete revolution corresponds to
 
-this afternoon anybody who submitted the asynchronous
+$$
+\boxed{
+1\ \mathrm{rev}
+=
+360^\circ
+=
+2\pi\ \mathrm{rad}
+}.
+$$
 
-assignment for yesterday's zoom meeting i will go
+Half a revolution corresponds to $\pi$ radians.
 
-through and grade those so that it brings your canvas
+# Rotational Kinematics
 
-grade up to date but as we go through the term that won't
+The rotational analogues of position, velocity, and acceleration are:
 
-happen immediately because you have 48 hours after
+- Angular position $\theta$
+- Angular velocity $\omega$
+- Angular acceleration $\alpha$
 
-the assignment is posted to be able to submit it before
+Angular velocity is the time derivative of angular position:
 
-it is due and then we actually give you that next day
+$$
+\boxed{
+\omega(t)
+=
+\frac{d\theta}{dt}
+}.
+$$
 
-as well so until it's a full day late we don't take
+Angular acceleration is the time derivative of angular velocity:
 
-off a point for being late it never goes below 50 percent
+$$
+\boxed{
+\alpha(t)
+=
+\frac{d\omega}{dt}
+=
+\frac{d^2\theta}{dt^2}
+}.
+$$
 
-for late for asynchronous participation assignments
+The integral relationships are
 
-so it doesn't make sense to go in like many times to
+$$
+\boxed{
+\omega(t)
+=
+\omega(t_0)
++
+\int_{t_0}^{t}\alpha(t')\,dt'
+}
+$$
 
-grade that same assignment we'll typically wait a
+and
 
-couple of days until most people have posted an answer
+$$
+\boxed{
+\theta(t)
+=
+\theta(t_0)
++
+\int_{t_0}^{t}\omega(t')\,dt'
+}.
+$$
 
-in there posted their assignment so yeah um at the very
+These relationships have exactly the same mathematical structure as their translational counterparts:
 
-start what happens is you have so few scores that one
+$$
+x
+\longleftrightarrow
+\theta,
+$$
 
-little score here let's let's just take a second to
+$$
+v
+\longleftrightarrow
+\omega,
+$$
 
-re-look at this i know i want to get to the physics as
+and
 
-well but let's go to the syllabus and check this out
+$$
+a
+\longleftrightarrow
+\alpha.
+$$
 
-if i go down to here what you're seeing is that the
+# Relating Linear and Angular Motion
 
-formative assessment all of the participation points
+Starting with
 
-counts for five percent of your grade and so even if
+$$
+s=r\theta,
+$$
 
-you miss one participation assignment first of all I
+take the time derivative:
 
-drop three of those toward the end of the term so
+$$
+\frac{ds}{dt}
+=
+r\frac{d\theta}{dt}
+$$
 
-missing one isn't going to hurt your grade at all but
+for a constant radius.
 
-say you have one missed participation assignment and
+Because
 
-that's the only thing showing up in your grade book
+$$
+v_t=\frac{ds}{dt}
+$$
 
-your grade looks terrible right now but it's not an
+and
 
-indication of how well you're doing in the course so
+$$
+\omega=\frac{d\theta}{dt},
+$$
 
-at the very start of the term do check the canvas grade
+the tangential speed is
 
-book so you know where you stand but recognize that
+$$
+\boxed{
+v_t=r\omega
+}.
+$$
 
-your standing is not a very good an accurate description
+Taking another time derivative gives
 
-of how well you're doing in the course and it's
+$$
+\frac{dv_t}{dt}
+=
+r\frac{d\omega}{dt}.
+$$
 
-very skewed because of the like small data set is
+Therefore, the tangential acceleration is
 
-the issue going on here not enough data points to
+$$
+\boxed{
+a_t=r\alpha
+}.
+$$
 
-actually calculate a grade well okay any other questions
+These relationships apply when the radius is constant.
 
-i have a quick question yes uh i noticed that some
+It is important to distinguish the quantities:
 
-of the um So due dates in like the Canvas syllabus
+- $\omega$ is angular velocity.
+- $\alpha$ is angular acceleration.
+- $v_t$ is tangential velocity.
+- $a_t$ is tangential acceleration.
 
-and on the written syllabus are slightly different.
+Angular acceleration and tangential acceleration are related, but they are not the same quantity and do not have the same units.
 
-I was just wondering if the date for
+# Units of Angular Quantities
 
-quiz one, if that is going to be like the
+Ordinary linear velocity may be measured in units such as
 
-date for the proctored Zoom quiz day.
+$$
+\mathrm{m/s},
+$$
 
-Okay, good question. So the dates in the Canvas, if
+$$
+\mathrm{cm/s},
+$$
 
-you're saying the Canvas syllabus, if you click on
+or
 
-this link on the left pane here, then what it does is
+$$
+\mathrm{mi/h}.
+$$
 
-it's not really a syllabus. It brings up a course,
+Angular velocity may be measured in
 
-a calendar for the course, and it will show you due
+$$
+\mathrm{rad/s},
+$$
 
-dates for assignments that aren't even published yet.
+$$
+\mathrm{deg/s},
+$$
 
-So a lot of these assignments are unpublished, and
+or
 
-those due dates haven't been updated yet. The due
+$$
+\mathrm{rev/s}.
+$$
 
-dates that are in the syllabus that I posted in the
+Angular acceleration is commonly measured in
 
-course information module are correct. So you can go by
+$$
+\mathrm{rad/s^2}.
+$$
 
-these. And what happens here is between the end of
+Radians are dimensionless in the formal SI dimensional system, but retaining “rad” in the written units is often helpful because it identifies the quantity as angular.
 
-spring term when we had to jam to get all grades in
+# Constant-Acceleration Kinematics
 
-and the beginning of summer term, we had a week and
+When linear acceleration is constant, the translational kinematic equations are
 
-multiple classes to get ready. So I didn't get
+$$
+\boxed{
+x_f
+=
+x_0
++
+v_0\Delta t
++
+\frac{1}{2}a(\Delta t)^2
+},
+$$
 
-everything done for the whole fabric of the class for the
+$$
+\boxed{
+v_f
+=
+v_0+a\Delta t
+},
+$$
 
-term. But I'll be working on that pretty soon, and
+and
 
-I'll try to make sure that at least the quizzes and
+$$
+\boxed{
+v_f^2
+=
+v_0^2
++
+2a(x_f-x_0)
+}.
+$$
 
-homeworks are set up to have the correct due dates so
+The third equation does not contain additional physical information. It is obtained by eliminating time between the first two equations.
 
-they show up correctly in the calendar. But, yeah,
+When angular acceleration is constant, the corresponding rotational equations are
 
-cut me a little slack on that, and
+$$
+\boxed{
+\theta_f
+=
+\theta_0
++
+\omega_0\Delta t
++
+\frac{1}{2}\alpha(\Delta t)^2
+},
+$$
 
-I'll have it done as soon as I can.
+$$
+\boxed{
+\omega_f
+=
+\omega_0
++
+\alpha\Delta t
+},
+$$
 
-So just go off the PDF?
+and
 
-Go off the PDF, and if you're seeing something after,
+$$
+\boxed{
+\omega_f^2
+=
+\omega_0^2
++
+2\alpha(\theta_f-\theta_0)
+}.
+$$
 
-say, a week or two, a week's time in, and it looks
+The structures are directly analogous:
 
-incorrect, just shoot me an email and say, look I'm seeing
+| Translational quantity | Rotational quantity |
+|---|---|
+| $x$ | $\theta$ |
+| $v$ | $\omega$ |
+| $a$ | $\alpha$ |
 
-a due date that looks wrong in here and you know let
+These constant-acceleration equations may be used only when the corresponding acceleration is constant.
 
-me know and so I can ease your fears and correct it so
+# Sign Conventions
 
-that it looks correct for you okay thank you you're
+Before assigning signs to velocity or acceleration, choose a positive direction.
 
-welcome and in general if you see anything awry in the
+For one-dimensional translational motion, suppose the positive $x$-direction points to the right.
 
-course at all just let me know you know I'm really good
+Then:
 
-and flexible about fixing things and correcting things
+- Motion to the right has $v>0$.
+- Motion to the left has $v<0$.
 
-there are quite a lot of moving parts in a course like
+The sign of acceleration depends on both the direction of motion and whether the object is speeding up or slowing down.
 
-this so yeah there's likely going to be some little
+| Velocity | Behavior | Acceleration |
+|---|---|---|
+| $v>0$ | Speeding up | $a>0$ |
+| $v>0$ | Slowing down | $a<0$ |
+| $v<0$ | Speeding up | $a<0$ |
+| $v<0$ | Slowing down | $a>0$ |
 
-thing here and there that isn't quite fixed quite yet.
+Acceleration has the same sign as velocity when the object is speeding up and the opposite sign when it is slowing down.
 
-All right any other questions?
+The same logic applies to angular motion after a positive angular direction has been defined. We will later describe angular directions more precisely using the right-hand rule.
 
-All right well let's get into doing the physics then.
+# Vector Components
 
-So I want to go here and this is if you go into the
+Acceleration is a vector.
 
-course information module and look at course info general
+In two-dimensional Cartesian coordinates, it may be written as
 
-information it will give you the link to this physics
+$$
+\boxed{
+\vec{a}
+=
+a_x\hat{x}
++
+a_y\hat{y}
+}.
+$$
 
-212 page and from here you can go in and look at the
+Its magnitude is
 
-materials for the course. This course just a really
+$$
+\boxed{
+a
+=
+\sqrt{a_x^2+a_y^2}
+}.
+$$
 
-quick introduction what we cover is a quite a few things
+The same vector may be resolved using a coordinate system adapted to circular motion.
 
-that seem to be loosely connected but actually do
+Let:
 
-have some segue into each other so the first thing we'll
+- $\hat{r}$ be the radial unit vector
+- $\hat{t}$ be the tangential unit vector
 
-be talking about is rotational kinematics rotational
+Then
 
-motion and so i will start we'll start today by
+$$
+\boxed{
+\vec{a}
+=
+a_r\hat{r}
++
+a_t\hat{t}
+}.
+$$
 
-drawing a comparison between translational motion and
+Because the radial and tangential directions are perpendicular,
 
-rotational motion really rotational motion is just
+$$
+\boxed{
+a
+=
+\sqrt{a_r^2+a_t^2}
+}.
+$$
 
-translational motion rewritten into a more convenient form.
+In this course, we will often choose the positive radial direction to point inward, toward the center of the circular path.
 
-And then from there, we'll start to go from a kinematics
+The radial–tangential coordinate system rotates with the moving particle:
 
-standpoint into doing a force approach. In physics
+- The radial axis remains aligned with the radius.
+- The tangential axis remains tangent to the path.
 
-211, you did net force equals mass times acceleration.
+This makes it especially convenient for circular-motion problems.
 
-Here we'll do net torque equals moment of inertia times
+## Distinguishing Three Types of Acceleration
 
-angular acceleration. So there's a direct correlation,
+Three acceleration quantities appear in rotational problems:
 
-not only for kinematics, but for a force approach.
+### Radial Acceleration
 
-and in 211 you used momentum as well so net force equals
+$a_r$ is a linear acceleration directed along the radius. In circular motion, it is associated with the changing direction of the velocity.
 
-change in momentum with respect to time and that torque
+Its units are
 
-equals change in angular momentum with respect to
+$$
+\mathrm{m/s^2}.
+$$
 
-time we'll also be doing an energy approach here i haven't
+### Tangential Acceleration
 
-um i haven't written that out in here but um also
+$a_t$ is a linear acceleration directed tangent to the circular path. It describes the change in the object’s speed.
 
-conservation of momentum conservation of angular momentum
+Its units are
 
-and we'll do be doing conservation of energy using
+$$
+\mathrm{m/s^2}.
+$$
 
-potential and kinetic energy using the rotational things
+### Angular Acceleration
 
-the second part we'll start to deal with oscillations
+$\alpha$ describes the rate at which angular velocity changes:
 
-and waves and so oscillations are related mathematically
+$$
+\alpha=\frac{d\omega}{dt}.
+$$
 
-to rotational things even if you don't see something
+Its units are
 
-turning around we'll you'll be seeing something that
+$$
+\mathrm{rad/s^2}.
+$$
 
-relates to a sine function so we will talk about
+Tangential and angular acceleration are related by
 
-oscillations and then waves and then we'll talk about wave
+$$
+a_t=r\alpha,
+$$
 
-optics and also linear optics ray optics for every
+but they are distinct physical quantities.
 
-problem that we do one of the large misconceptions that
+# Worked Example: A Disk with Time-Dependent Angular Velocity
 
-people have about a physics class is that a physics class
+Consider a disk whose angular velocity is
 
-is an applied math course and so you look at something
+$$
+\omega(t)=a-bt^2,
+$$
 
-okay here's a question and jump right into doing
+where
 
-the math to find the answer and in physics the math is
+$$
+a=18\ \mathrm{s^{-1}}
+$$
 
-kind of the last step that you do you look at the physical
+and
 
-situation you or the system we often use the word
+$$
+b=0.50\ \mathrm{s^{-3}}.
+$$
 
-system to talk about the physical situation you decide
+Equivalently, when the angular velocity is explicitly interpreted in radians per second, the units may be written as
 
-what assumptions you're making the assumptions are
+$$
+a=18\ \mathrm{rad/s}
+$$
 
-physical qualities of the objects in the system that make
+and
 
-the math more make the analysis more tractable so if
+$$
+b=0.50\ \mathrm{rad/s^3}.
+$$
 
-you're trying to talk about something like I'm hitting
+Here, $a$ and $b$ are constant coefficients. The symbol $a$ in this equation is not linear acceleration.
 
-a golf ball and how far does it fly through the air If
+We want to determine:
 
-you're adding in all the physics, all the microphysics,
+1. The time at which the disk reverses its direction of rotation
+2. The angular displacement before the reversal
 
-any kind of a problem you try to do, if you add in
+## Determining Whether Angular Acceleration Is Constant
 
-all, air quote, all the physics, it's going to be pretty
+Differentiate the angular-velocity function:
 
-much impossible to get exactly the right answer. But
+$$
+\alpha(t)
+=
+\frac{d\omega}{dt}.
+$$
 
-we can get pretty good if we make certain assumptions.
+Therefore,
 
-And so knowing what assumptions to make for
+$$
+\alpha(t)
+=
+\frac{d}{dt}
+\left(
+a-bt^2
+\right),
+$$
 
-what system and what the effect the assumptions
+so
 
-have on the equations that you write,
+$$
+\boxed{
+\alpha(t)=-2bt
+}.
+$$
 
-that is huge in physics. Then visual representations,
+The angular acceleration depends on time. It is therefore not constant.
 
-we're talking diagrams, we're talking graphs and
+Consequently, the constant-angular-acceleration equations
 
-such. And then after you've done all that, you take
+$$
+\omega_f=\omega_0+\alpha\Delta t
+$$
 
-that information, take the general equations, write
+and
 
-down the general equations, and then specify those
+$$
+\theta_f
+=
+\theta_0
++
+\omega_0\Delta t
++
+\frac{1}{2}\alpha(\Delta t)^2
+$$
 
-for this physical system and assumptions that you've
+cannot be used for this motion.
 
-made and oftentimes use the visual representation to
+Instead, we must work directly with the given function.
 
-create the equations and then go through the math
+## Time at Which the Disk Reverses Direction
 
-and solve the equations. So doing the math is the very
+A reversal occurs when the angular velocity passes through zero.
 
-last part. A lot of times what people tell me is,
+At the instant of reversal,
 
-look, I really get what's going on. But when
+$$
+\boxed{
+\omega=0
+}.
+$$
 
-I go in to take a test, I don't do very well
+Set the angular-velocity function equal to zero:
 
-at all. I'll get into the test and I don't
+$$
+0=a-bt^2.
+$$
 
-know where to start. And it seems like it goes
+Rearranging,
 
-by really fast and I don't have enough time.
+$$
+bt^2=a.
+$$
 
-That knowing where to start, that's what you want to
+Therefore,
 
-work on. Now, trying to memorize a bunch of equations,
+$$
+t^2=\frac{a}{b}.
+$$
 
-you're going to write your own equation sheet. On that
+Taking the positive root because we are interested in a time after $t=0$,
 
-equation sheet, you can draw diagrams. You can label
+$$
+\boxed{
+t_{\mathrm{rev}}
+=
+\sqrt{\frac{a}{b}}
+}.
+$$
 
-things. you can write notes to self up to one full page
+Substituting the values,
 
-that's a lot of room in your own handwriting to write
+$$
+t_{\mathrm{rev}}
+=
+\sqrt{
+\frac{
+18\ \mathrm{s^{-1}}
+}{
+0.50\ \mathrm{s^{-3}}
+}
+}.
+$$
 
-down stuff for yourself so don't think about things
+The units inside the square root are
 
-in terms of memorizing things think about things in terms
+$$
+\frac{\mathrm{s^{-1}}}{\mathrm{s^{-3}}}
+=
+\mathrm{s^2}.
+$$
 
-of what's this what's happening with the system what
+Therefore,
 
-are the general equations how do i specify those for
+$$
+t_{\mathrm{rev}}
+=
+\sqrt{
+36\ \mathrm{s^2}
+}.
+$$
 
-this system and then finally work through the math at
+Thus,
 
-the bottom when you're studying for a physics test quiz
+$$
+\boxed{
+t_{\mathrm{rev}}=6.0\ \mathrm{s}
+}.
+$$
 
-or test a lot of people what they do is they'll look
+At $t=6.0\ \mathrm{s}$, the disk momentarily stops. For later times, $\omega(t)$ becomes negative, indicating rotation in the opposite direction.
 
-at something look at the setup and then spend their
+The crucial physical translation is:
 
-time working through the math and working through the
+> “The disk reverses direction” means that its angular velocity passes through zero.
 
-math i would say for 98 of people that isn't the place
+# Angular Displacement Before the Reversal
 
-where you need to practice you trust yourself to be able
+Angular velocity is the time derivative of angular position:
 
-to if i look at this system of equations oh i can see
+$$
+\omega(t)=\frac{d\theta}{dt}.
+$$
 
-i'm going to do some substitution trust yourself to
+Therefore,
 
-work through the math work on setting things up if you
+$$
+d\theta=\omega(t)\,dt.
+$$
 
-do that it's like learning how to lift correctly you
+The angular displacement from $t=0$ to the reversal time is
 
-if you're lifting boxes lifting little light boxes you
+$$
+\Delta\theta
+=
+\int_0^{t_{\mathrm{rev}}}
+\omega(t)\,dt.
+$$
 
-can get away with bending over and picking them up
+Substitute
 
-incorrectly but as you get into heavier and heavier material
+$$
+\omega(t)=a-bt^2:
+$$
 
-learning to lift is going to save your back and help
+$$
+\Delta\theta
+=
+\int_0^{t_{\mathrm{rev}}}
+\left(
+a-bt^2
+\right)
+dt.
+$$
 
-you and and keep away the pain and so that's what
+Integrating,
 
-you want to do with physics as well learn to lift correctly
+$$
+\Delta\theta
+=
+\left[
+at-\frac{b}{3}t^3
+\right]_0^{t_{\mathrm{rev}}}.
+$$
 
-even on the very easiest simplest problems when you
+Therefore,
 
-start into something do it correctly from the ground
+$$
+\boxed{
+\Delta\theta
+=
+at_{\mathrm{rev}}
+-
+\frac{b}{3}t_{\mathrm{rev}}^3
+}.
+$$
 
-up and build those structural skills that you need to
+Using
 
-be able to understand things bloom's taxonomy is what
+$$
+t_{\mathrm{rev}}=\sqrt{\frac{a}{b}},
+$$
 
-we call this um way of thinking about learning the the
+the symbolic result may be written as
 
-earliest learning that we probably well i don't know
+$$
+\Delta\theta
+=
+a\sqrt{\frac{a}{b}}
+-
+\frac{b}{3}
+\left(
+\sqrt{\frac{a}{b}}
+\right)^3.
+$$
 
-maybe that's not exactly true maybe even when we're
+Because
 
-very young we do a lot of this stuff but but the way that
+$$
+bt_{\mathrm{rev}}^2=a,
+$$
 
-this is set up is just you're being told something
+we also have
 
-and then you say it back that's just remembering
+$$
+bt_{\mathrm{rev}}^3
+=
+at_{\mathrm{rev}}.
+$$
 
-understanding applying analyzing evaluating and then combining
+The displacement therefore simplifies to
 
-the parts to make a new whole that's where we go in
+$$
+\boxed{
+\Delta\theta
+=
+\frac{2}{3}
+a
+\sqrt{\frac{a}{b}}
+}.
+$$
 
-physics this metacognitive part about why am i doing
+Substituting the numerical values directly,
 
-what i'm doing and if i can understand how to do this
+$$
+\Delta\theta
+=
+(18\ \mathrm{rad/s})(6.0\ \mathrm{s})
+-
+\frac{
+0.50\ \mathrm{rad/s^3}
+}{3}
+(6.0\ \mathrm{s})^3.
+$$
 
-situation can i do a different situation that is similar
+The first term is
 
-in some ways and figure out how to do analysis on that
+$$
+108\ \mathrm{rad},
+$$
 
-that's what physics is about okay and i'm gonna go
+and the second term is
 
-then so you can take some time to read through this and
+$$
+36\ \mathrm{rad}.
+$$
 
-I'm going to go back into here and go into circular
+Therefore,
 
-motion which is what we're talking about today and for
+$$
+\boxed{
+\Delta\theta=72\ \mathrm{rad}
+}.
+$$
 
-circular motion let's start by reviewing translational
+The disk rotates through $72$ radians before momentarily stopping and reversing direction.
 
-and then we'll be talking about
+# General Strategy for Motion Defined by a Function
 
-how that relates to rotational
+When velocity or angular velocity is given explicitly as a function of time, use the following approach.
 
-motion okay
+## 1. Translate the Physical Event into a Mathematical Condition
 
-so translational motion this should all be
+Examples include:
 
-right at the tip of your tongue The velocity is
+- A translational object reverses direction when $v=0$.
+- A rotating object reverses direction when $\omega=0$.
+- A position reaches an extremum when its velocity is zero.
+- A velocity reaches an extremum when its acceleration is zero.
 
-the change of position with respect to time. I
+For the disk,
 
-could write this as a vector. I should write
+$$
+\text{reversal}
+\quad\Longrightarrow\quad
+\omega(t)=0.
+$$
 
-it as a vector. But if I leave off the vector
+## 2. Determine Whether the Acceleration Is Constant
 
-symbol, I'm just talking about the magnitude.
+Differentiate the velocity function.
 
-The acceleration as a function of time is
+For the disk,
 
-the change of velocity or derivative of
+$$
+\alpha(t)=-2bt,
+$$
 
-velocity with respect to time. I can do this
+which is not constant.
 
-as derivatives. I can go from velocity.
+Therefore, constant-angular-acceleration equations do not apply.
 
-I can go from position, take the time derivative
+## 3. Use the Given Function Directly
 
-to get to velocity. I can take the time
+To find a particular time, solve the function for the required condition.
 
-derivative of velocity to get to acceleration.
+To find displacement, integrate velocity:
 
-If I want velocity, I can take the integral
+$$
+\Delta\theta
+=
+\int\omega(t)\,dt.
+$$
 
-of the acceleration as a function of time dt.
+To find acceleration, differentiate velocity:
 
-If I want the position as a function of time, I can
+$$
+\alpha(t)
+=
+\frac{d\omega}{dt}.
+$$
 
-take the integral of velocity as a function of time dt.
+## 4. Solve Symbolically First
 
-And then if I'm talking about
+Keep $a$, $b$, and $t$ as symbols until the requested quantity has been isolated.
 
-motion that involves a circle,
+The reversal time is
 
-i can define the radius of the circle now the
+$$
+t_{\mathrm{rev}}
+=
+\sqrt{\frac{a}{b}},
+$$
 
-radius of the circle is really if i just take
+and the angular displacement is
 
-um if i take the radius of the circle and i bend
+$$
+\Delta\theta
+=
+\frac{2}{3}
+a
+\sqrt{\frac{a}{b}}.
+$$
 
-that around that make that a bendy piece of wire and
+## 5. Check the Units
 
-bend that around here so that's one radius bent around
+For the reversal time,
 
-that is one radian and so the 3.14 Four radians
+$$
+\left[
+\frac{a}{b}
+\right]
+=
+\frac{\mathrm{s^{-1}}}{\mathrm{s^{-3}}}
+=
+\mathrm{s^2}.
+$$
 
-is halfway around the circle, and that's pi. I'm
+Taking the square root produces seconds.
 
-going to call this angle theta and this arc length s.
+For angular displacement,
 
-Okay, and so from your geometry,
+$$
+[a][t]
+=
+\mathrm{rad/s}\cdot\mathrm{s}
+=
+\mathrm{rad}.
+$$
 
-you learned that s equals r theta.
+## 6. Substitute Numerical Values Last
 
-Take the time derivative of that.
+After the symbolic result has been established and checked, insert the numerical values.
 
-Velocity equals r omega. L a, oops,
+# Summary
 
-tangential acceleration. So tangential
+Physics problem solving begins with understanding the system, assumptions, and physical principles. The algebra should come after the physical setup.
 
-acceleration is how fast, how the speed of
+For translational motion,
 
-something moving around the circle changes.
+$$
+v(t)=\frac{dx}{dt}
+$$
 
-So tangential acceleration equals r alpha. And here
+and
 
-we're defining omega as the change in angle with respect
+$$
+a(t)=\frac{dv}{dt}.
+$$
 
-to time. We're defining alpha as the change of
+For rotational motion,
 
-omega with respect to time. And we can go the other way
+$$
+\boxed{
+\omega(t)=\frac{d\theta}{dt}
+}
+$$
 
-too. So if I take the time derivative of the angle,
+and
 
-I get omega. If I take the time derivative of omega,
+$$
+\boxed{
+\alpha(t)=\frac{d\omega}{dt}
+}.
+$$
 
-I get alpha, the angular acceleration, omega of t.
+Arc length and angular displacement are related by
 
-And really, you could just look at this over here
+$$
+\boxed{
+s=r\theta
+}.
+$$
 
-and substitute in omega for v, and it takes exactly
+For a fixed radius,
 
-the same form. So omega of t is going to be the
+$$
+\boxed{
+v_t=r\omega
+}
+$$
 
-integral of alpha t dt and theta of t equals the
+and
 
-integral. and I could write t0 to t final here,
+$$
+\boxed{
+a_t=r\alpha
+}.
+$$
 
-omega t dt.
+The constant-angular-acceleration equations are
 
-So units here, when we talk about omega,
+$$
+\boxed{
+\theta_f
+=
+\theta_0
++
+\omega_0\Delta t
++
+\frac{1}{2}\alpha(\Delta t)^2
+},
+$$
 
-for example, when we talk about
+$$
+\boxed{
+\omega_f
+=
+\omega_0
++
+\alpha\Delta t
+},
+$$
 
-velocity, what are the units of velocity?
+and
 
-Oh, I see I have a couple of questions
+$$
+\boxed{
+\omega_f^2
+=
+\omega_0^2
++
+2\alpha(\theta_f-\theta_0)
+}.
+$$
 
-in the chat. Let me check that.
+These equations apply only when $\alpha$ is constant.
 
-What does omega mean again?
+Acceleration may be resolved into Cartesian components,
 
-Omega is angular velocity.
+$$
+\vec{a}
+=
+a_x\hat{x}
++
+a_y\hat{y},
+$$
 
-thank you and alpha is angular acceleration
+or radial and tangential components,
 
-thank you very much for asking me that think it's yes
+$$
+\vec{a}
+=
+a_r\hat{r}
++
+a_t\hat{t}.
+$$
 
-thank you and thank you for answering each other in
+The corresponding magnitudes are
 
-here as well thank you for asking me that part of the
+$$
+a
+=
+\sqrt{a_x^2+a_y^2}
+$$
 
-thing that you're doing right now is learning the language
+and
 
-of physics and part of the thing that i'm doing is
+$$
+a
+=
+\sqrt{a_r^2+a_t^2}.
+$$
 
-teaching you the language of physics. And I just said,
+For the disk with
 
-okay, omega is angular velocity. And if that just
+$$
+\omega(t)=a-bt^2,
+$$
 
-slipped by and a little bit too quickly, slow me down,
+the angular acceleration is
 
-get me to write it down for you. It's my job to recognize
+$$
+\boxed{
+\alpha(t)=-2bt
+},
+$$
 
-you need to see that or hear it maybe once or twice
+so it is not constant.
 
-before you're getting what those words are and what
+The disk reverses direction when
 
-those symbols are. Very good. Okay. And so for units,
+$$
+\omega=0.
+$$
 
-so for velocity, what are the units of velocity um meters
+Therefore,
 
-per second but you could also do it in miles per
+$$
+\boxed{
+t_{\mathrm{rev}}
+=
+\sqrt{\frac{a}{b}}
+}.
+$$
 
-hour or centimeters per second or or knots or you know
+For
 
-a lot of different ways to write velocity omega has
+$$
+a=18\ \mathrm{s^{-1}}
+$$
 
-units of radians per second but it also can be written
+and
 
-in degrees per second or revolutions per second so the
+$$
+b=0.50\ \mathrm{s^{-3}},
+$$
 
-unit of one over seconds a lot of times we call this
+the reversal time is
 
-radian as being a like a um a unitless quantity. And so
+$$
+\boxed{
+t_{\mathrm{rev}}=6.0\ \mathrm{s}
+}.
+$$
 
-I don't want to spend a lot of time talking about
+The angular displacement before reversal is
 
-that. You can look into my web pages in the textbook and
+$$
+\boxed{
+\Delta\theta
+=
+\int_0^{t_{\mathrm{rev}}}
+\omega(t)\,dt
+}
+$$
 
-such about that. But yeah, the units of omega are one
+or
 
-over seconds or radians per second or degrees per second
+$$
+\boxed{
+\Delta\theta
+=
+at_{\mathrm{rev}}
+-
+\frac{b}{3}t_{\mathrm{rev}}^3
+}.
+$$
 
-or revolutions per second. So one revolution equals
+For the given values,
 
-360 degrees equals 2 pi radians, and circumference
-
-equals 2 pi radians, 2 pi r, so you can define pi as a
-
-circumference over 2 r as pi. That's the definition of
-
-pi. That's what gives us that 3.1415 whatever stuff.
-
-All right, now this is all very general for a constant,
-
-and by that I mean for a constant acceleration.
-
-We can write kinematic equations. We have x final
-
-equals x zero plus v zero t plus one-half a t squared.
-
-We have v final equals v zero plus a t. We have
-
-v final squared equals v 0 squared plus 2a delta x.
-
-And similarly for constant angular acceleration, we can
-
-write down theta final equals theta 0 plus omega 0 t
-
-plus 1 half alpha t squared. Omega final equals omega
-
-zero plus alpha t, omega final squared equals omega
-
-zero squared plus two alpha delta theta. So direct
-
-correlation between rotational motion and translational
-
-motion. Also when we're talking about the sign, the directions
-
-we define, positive x we define, that gives us a
-
-definition for positive velocity so we define a direction
-
-as being positive say to the right then positive
-
-velocity is if something is moving to the right and then
-
-plus or minus acceleration is defined like speeding
-
-up to the right is positive slowing down to the left is
-
-positive that kind of stuff that will come into play
-
-as well for angular and rotational motion and we'll come
-
-back and talk about this a little bit more. I want
-
-to spend a little bit more time talking about the
-
-directionality because it's not quite as straightforward and
-
-we have to start using the right-hand rule and such.
-
-Any questions about this so far?
-
-Okay, well let's go on a little bit then.
-
-I'm going to talk about vector notation. So
-
-some vector, like an acceleration vector, I can
-
-write it as AXX hat plus AYY hat. You can use
-
-I, J, and K notation. I'm just going to do this
-
-in 2D, but this could translate into 3D as well.
-
-And so let's see, I'm going to draw a very small
-
-diagram here in X and Y, and I put some A vector here,
-
-and I can resolve it into components. There's my ax
-
-and there's my ay, and I have a y hat and an x hat
-
-unit vectors in the x and y direction. I can also
-
-write that the acceleration magnitude is going to be
-
-square root of ax squared plus ay squared. This should
-
-all be old hat with you, or I don't know if old
-
-hat that makes any sense nowadays, if people even say
-
-that. Now, for the same system, I can write a circle.
-
-I can give it the radius and the tangential
-
-direction. I can write a unit vector in the tangential
-
-direction and a unit vector in the radial direction.
-
-And usually what we say is that the radial, I should
-
-have written it the other way around, but the radial
-
-direction is positive pointing inward for acceleration.
-
-We'll go back into talking about the directionality a
-
-little bit later. But very similar, I can write a
-
-coordinate system with a tangential vector and a radial
-
-vector instead of an x and a y, radial and tangential
-
-instead of x and y. I can draw the same acceleration vector
-
-with an a tangential and a radial components to it.
-
-The nice thing about this is I can rotate, well you
-
-can really rotate either one of these coordinate systems,
-
-but this is built to work with circles well so that
-
-I rotate the coordinate system and the radial vector
-
-always is along the radius of the circle. And so I can
-
-write that the acceleration is a r r hat plus a t t hat
-
-and that a equals root a r squared plus a t squared,
-
-and here I have AR is defined as radial acceleration.
-
-AT is defined as tangential acceleration, and
-
-up here we used alpha as angular acceleration.
-
-Now notice angular acceleration is not the
-
-same as radial or tangential. Angular
-
-acceleration is how fast is omega changing?
-
-Okay, and so this is just in a nutshell all the
-
-things that we're going to be covering in the next
-
-little while here, translating from translational
-
-depiction of motion of a particle or a system to rotational
-
-motion. Do you have any questions about this?
-
-Okay,
-
-then I will ask you a question. We're going
-
-to go into Poll Everywhere. I'm going to
-
-put this Poll Everywhere link in the chat.
-
-Let's see, where's the chat?
-
-This should go out to everyone.
-
-There's the link to Poll Everywhere.
-
-And I will activate this question. I've
-
-given you an angular velocity, that's omega.
-
-I've given you omega as a function of t.
-
-Notice that a and b have units of 1 over seconds and
-
-1 over seconds cubed, so think about that. For this one,
-
-it doesn't really matter as much whether you're
-
-talking about radians per second or rotations or degrees
-
-per second, but just be conscious that when I'm writing
-
-this, I'm giving omega. I'm determining what units
-
-I'm using for omega here. So starting from t, 0 equals
-
-0 seconds. At what time does the disk reverse direction
-
-in seconds? And so when I say in seconds, what I'm
-
-saying is to put in the number. Don't write in the letter.
-
-Just write in the number. It doesn't really matter
-
-here, but if you're doing this in Canvas, you need to
-
-just put in the number. If you put in the letter, it
-
-won't count it as being correct, even if you put in the
-
-right number. So I'm going to go ahead and activate.
-
-If this is your first time using Poll Everywhere,
-
-it's going to ask you to register. That just
-
-takes like 20 seconds at most. So yeah, register
-
-your first time going to Poll Everywhere and
-
-go ahead and enter your answers in for this.
-
-Breakout rooms, if you want to go in
-
-there and ask, you know, talk to people
-
-about how to do this, that's fine.
-
-Breakout rooms are open.
-
-Okay, everybody's back. Most people have an answer
-
-in. Please put in an answer if you still need
-
-to do that. I'll give you three more seconds.
-
-Three,
-
-two,
-
-one.
-
-All right. Thank you. Stopping delivery.
-
-Good.
-
-Okay, so let's see how to deal with this. What I like
-
-to do is start with what I know. I know that omega
-
-of t is defined as a minus b t squared. I know that
-
-a is 18 times, and the units are 1 over seconds, or
-
-seconds to the minus 1, b is 0.50 seconds to the
-
-minus 3, or I could write it as radians per second or
-
-radians per second cubed, but here I'm And I assume
-
-that this is seconds because I wrote it as seconds.
-
-And so I want t when omega equals 0. So I
-
-have this disk that's spinning. First thing
-
-to notice is that this is not constant
-
-acceleration, not constant angular acceleration.
-
-If I take the time derivative of omega with respect
-
-to t, I don't come up with a constant. I come up with
-
-something that depends on time. So I cannot use
-
-kinematic equations on this for constant acceleration.
-
-So what I'm going to do is just set omega
-
-of t equal to 0. So 0 equals a minus
-
-b t squared. That gives me, let's see,
-
-bt squared equals a, t squared equals a over b, or
-
-t equals root a over b. So that would be 18 times
-
-seconds to the minus 1 over 0.50 seconds to the minus
-
-3. take the square root of that or it comes out to be
-
-6.0 seconds okay so seconds this comes out to be
-
-um second squared the seconds the minus one over seconds
-
-the minus three is second squared and second
-
-squared of second squared gives us seconds and then 18
-
-over 5 gives us um 36 and then square root of 36 is
-
-6 so 6.0 seconds all right any questions about this
-
-Let's just take a second to look at the
-
-responses to see what people told me. Two,
-
-six.
-
-Okay, good.
-
-And I might not let you put
-
-in 6.0. I'm not really sure.
-
-Software's funny about zero sometimes.
-
-Nope, somebody put in 6.0. That's good.
-
-Okay, it looks like a lot of people. I'm not going
-
-to wait and go through all of these, but it looks like
-
-people were pretty good about getting this answer.
-
-I for sure overthought it. But okay, so yeah, that's
-
-what this is about, taking this statement and
-
-translating it into math, and this allows us to work
-
-through it pretty simply. So the most important thing
-
-here is this right here, want t when omega equals
-
-zero. When it reverses direction, you know that that
-
-omega is going to zero. And if we're talking about
-
-what is the physics going on here, it's going to be
-
-mostly about this statement here. Yeah, so how do
-
-I, oops, I messed up my paper. How do I come up with
-
-specifying the equation for this
-
-question at hand? Let's do another one.
-
-Well, that was a lot of fun. Let's go to the fun for
-
-me. I hope it was fun for you as well. Same system,
-
-through what angle in radians, so you're going to have to
-
-convert this to radians from 1 over seconds, or from
-
-revolutions. Through what angle in radians does
-
-the disk turn between t equals 0 seconds and the
-
-time at which it reverses direction of rotation?
-
-And that time we just figured out in the last
-
-question. So I'll go ahead and activate this.
-
-I'll give you a minute to work on your own and then
-
-I'll open breakout rooms again. And if you end
-
-up in a breakout room with only like one other person
-
-or something and there are other full ones, just
-
-stay a second and I'll move both of you down into
-
-a room where you have more people to talk with.
-
-Catherine, I had a question. Would you say
-
-LEPA that Paul used for 211 would be a
-
-good resource for this class or would you
-
-just recommend using the online textbook?
-
-You're required to use a textbook.
-
-LEPA is a good secondary source resource but
-
-it's not in my opinion it's not rigorous enough
-
-understand i i i've put in some work on that
-
-as well so i kind of know that um material and
-
-yeah i'd say it needs needs more time before
-
-it's rigorous enough to have it as a required
-
-text yes ma'am thank you thanks for asking all
-
-right i see everybody's back most people have an answer
-
-but a few people still don't so what what I want
-
-you to remember is that when you're in the zoom meeting
-
-you get participation points whether or not you
-
-get the answer correct so even if you put in an incorrect
-
-answer you're going to get full points for this
-
-if you're watching the video and if you're doing this
-
-asynchronously you have a little bit more of an
-
-advantage because you can watch us work through it and
-
-such so you're held to putting in a correct answer and
-
-watch also sometimes in the um asynchronous assignment
-
-there can be different values and such so make
-
-sure that you do the calculation for yourself but yeah
-
-you have to have the correct answer there but here
-
-you just put in an answer you will get points whether
-
-your answer is correct or not it's very important
-
-to actually put in the time and work through and do
-
-the work think through how to do it. But yeah, you get
-
-participation credit for putting in an answer. So I
-
-still see there are a handful of people that haven't
-
-put in an answer, but we're running out of time. So
-
-I'm going to give you three more seconds to put in
-
-an answer and then deactivate the question. So three,
-
-two, one.
-
-All right. Thank you very much. Stopping delivery.
-
-Okay, so now we want delta theta when
-
-this object reverses direction, so
-
-that's when t equals root a over b.
-
-So omega equals delta theta, d theta by dt,
-
-and so what I can do here, so it's called separation
-
-of variables, I can basically multiply both
-
-sides by dt, So omega dt equals d theta, that
-
-begs to be integrated. Omega is a function of time.
-
-I should have written that as omega of t equals
-
-d theta by dt. So integrate both sides. So I'm
-
-going to substitute in my expression for omega.
-
-So from t equals 0 to t, and my expression
-
-for omega is a minus b t squared dt equals
-
-integral d theta from theta 0 to theta final.
-
-And so when I take the integral of a polynomial, I
-
-raise the power by 1 and divide by that number. So this
-
-is going to be a t minus b over 3t cubed from t
-
-equals 0 to t equals theta. That just goes from power of
-
-0 to power of 1, theta from theta 0 to theta final.
-
-So a t minus b over 3t cubed equals theta final minus
-
-theta 0, which is delta theta, which is what we want.
-
-So if I write that out, I'd have A times T, which
-
-is root A over B. Notice I'm not putting in any
-
-numbers yet. Minus B over 3, I mean besides the 3,
-
-times root A over B quantity
-
-cubed equals delta theta.
-
-And now I can go in and plug in
-
-the values that I know. So 18,
-
-I can put this into terms of radians per second.
-
-So let's see.
-
-Radians per second.
-
-I should have been a little
-
-bit more careful with this.
-
-18, did I say radians per second? No, I said 1 over
-
-seconds, 18 times seconds to the minus 1 times 6.0 seconds,
-
-which is t minus 0.50 over 3 times 6.0 seconds
-
-cubed equals, and this is over seconds this should be
-
-seconds to the minus 3 I'm running out of space seconds
-
-to the minus 3 gives us 72 times let's see if I'm good
-
-I want to put this to being in terms of radians. If I
-
-wrote this in terms of, I'm running out of time and
-
-I'm two minutes over. So if this was in terms of radians
-
-per second, I'll put this in terms of radians per
-
-second because I don't have time to do the conversion.
-
-Just to show you how to go about doing it.
-
-Radians per second cubed. That would
-
-be 72 radians. Theta equals 72 radians.
-
-If this is just in 1 over seconds,
-
-then I'll have to convert from seconds
-
-into, or revolutions into radians.
-
-Okay, and so that's what, 18 times 6 minus 0.5
-
-times 6 cubed is going to give us 72 radians.
-
-All right,
-
-I think what I will do is switch up the units on
-
-that for people in the asynchronous version so
-
-that I don't confuse everybody on the first day.
-
-all right thank you very much for coming i see
-
-we're a little bit over time so i'm going to go
-
-ahead and end class here i will start my office
-
-hour right now so if you have any questions for me
-
-just stick around and and talk to me there if not
-
-i will see you good folks tomorrow bye for now
-
-thank you for coming see you next time
+$$
+\boxed{
+\Delta\theta=72\ \mathrm{rad}
+}.
+$$

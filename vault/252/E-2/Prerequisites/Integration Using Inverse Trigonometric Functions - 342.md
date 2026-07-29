@@ -1,0 +1,384 @@
+# Integration Using Inverse Trigonometric Functions
+
+<!--
+lesson-id: 342
+topic-code: MF3.8.1.8
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Integrating Using Arcsine](#integrating-using-arcsine)
+- [Integrating Using Arctangent](#integrating-using-arctangent)
+- [Integrating Using Arcsecant](#integrating-using-arcsecant)
+- [Integrating Using Inverse Trigonometric Functions and Some Manipulations](#integrating-using-inverse-trigonometric-functions-and-some-manipulations)
+
+## Prerequisites
+
+- [Differentiating Inverse Reciprocal Trigonometric Functions](<../../../MA/Mathematical-Foundations/MF3/8. Differentiation/8.1. Differentiating Implicit and Inverse Functions/Lessons/8.1.7. Differentiating Inverse Reciprocal Trigonometric Functions.md>)
+- [Dividing Polynomials by Manipulating Rational Expressions](<../../../MA/Mathematical-Foundations/MF2/2. Polynomials/2.3. Dividing Polynomials/Lessons/2.3.4. Dividing Polynomials by Manipulating Rational Expressions.md>)
+- [The Sum Rule for Indefinite Integrals](<../../../MA/Mathematical-Foundations/MF2/12. Introduction to Calculus/12.4. Indefinite Integrals/Lessons/12.4.3. The Sum Rule for Indefinite Integrals.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+Recall the following derivatives of the inverse trigonometric functions:
+
+$$
+\begin{aligned}
+\frac{d}{dx}(\arcsin x) &= \frac{1}{\sqrt{1 - x^{2}}} \\
+\frac{d}{dx}(\arctan x) &= \frac{1}{1 + x^{2}} \\
+\frac{d}{dx}(arcsecx) &= \frac{1}{\mid x \mid \sqrt{x^{2} - 1}}
+\end{aligned}
+$$
+
+Since integration is the opposite of differentiation, we arrive at the following results:
+
+$$
+\begin{aligned}
+\int\frac{1}{\sqrt{1 - x^{2}}}dx &= \arcsin (x) + C \\
+\int\frac{1}{1 + x^{2}}dx &= \arctan (x) + C \\
+\int\frac{1}{\mid x \mid \sqrt{x^{2} - 1}}dx &= arcsec(x) + C
+\end{aligned}
+$$
+
+---
+
+<a id="integrating-using-arcsine"></a>
+## Integrating Using Arcsine
+
+**Example:** Calculate the indefinite integral $\displaystyle \int \frac{3}{\sqrt{1-x^2}}\textrm{d}x$.
+
+**Explanation**
+
+Recall that
+
+$$
+\int \frac{1}{\sqrt{1-x^2}}\textrm{d}x = \arcsin (x) + C
+$$
+
+Therefore, we have
+
+$$
+\begin{aligned}
+\int\frac{3}{\sqrt{1 - x^{2}}}dx &= 3\int\frac{1}{\sqrt{1 - x^{2}}}dx \\
+&= 3\arcsin (x) + C
+\end{aligned}
+$$
+
+---
+
+**Question 1:**
+
+```quiz
+type: radio
+id: ma-19090
+content: |-
+  What is $\displaystyle \int\frac{-5}{\sqrt{1 - x^{2}}}dx$?
+options:
+- id: a
+  content: |-
+    $5\arcsin x + C$
+- id: b
+  content: |-
+    $-5\arccos x + C$
+- id: c
+  content: |-
+    $-5\arcsin x + C$
+  correct: true
+- id: d
+  content: |-
+    $5\arctan x + C$
+- id: e
+  content: |-
+    $-\arcsin (5x) + C$
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: ma-2493
+content: |-
+  What is $\displaystyle \int\frac{9}{\sqrt{1 - y^{2}}}dy$?
+options:
+- id: a
+  content: |-
+    $9arccscy + C$
+- id: b
+  content: |-
+    $9\arcsin y + C$
+  correct: true
+- id: c
+  content: |-
+    $-9\arcsin y + C$
+- id: d
+  content: |-
+    $9arccoty + C$
+- id: e
+  content: |-
+    $9\arccos y + C$
+```
+
+---
+
+<a id="integrating-using-arctangent"></a>
+## Integrating Using Arctangent
+
+**Example:** Calculate $\displaystyle \int \frac{2}{1+x^2}\textrm{d}x$.
+
+**Explanation**
+
+Recall that
+
+$$
+\int \frac{1}{1+x^2}\textrm{d}x = \arctan{x} + C
+$$
+
+Therefore, we have
+
+$$
+\begin{aligned}
+\int\frac{2}{1 + x^{2}}dx &= 2\int\frac{1}{1 + x^{2}}dx \\
+&= 2\arctan x + C
+\end{aligned}
+$$
+
+---
+
+**Question 3:**
+
+```quiz
+type: radio
+id: ma-2497
+content: |-
+  What is $\displaystyle \int\frac{3}{x^{2} + 1}dx$?
+options:
+- id: a
+  content: |-
+    $\arctan 3x + C$
+- id: b
+  content: |-
+    $\arcsin 3x + C$
+- id: c
+  content: |-
+    $3\arctan x + C$
+  correct: true
+- id: d
+  content: |-
+    $-3\arctan x + C$
+- id: e
+  content: |-
+    $3\arcsin x + C$
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: ma-2498
+content: |-
+  What is $\displaystyle \int\frac{4}{x^{2} + 1}dx$?
+options:
+- id: a
+  content: |-
+    $4arccscx + C$
+- id: b
+  content: |-
+    $4\arctan x + C$
+  correct: true
+- id: c
+  content: |-
+    $4arcsecx + C$
+- id: d
+  content: |-
+    $4arccotx + C$
+- id: e
+  content: |-
+    $4\arcsin x + C$
+```
+
+---
+
+<a id="integrating-using-arcsecant"></a>
+## Integrating Using Arcsecant
+
+**Example:** If $f'(x) = \dfrac{5}{\mid x \mid \sqrt{x^2 - 1}} - 2x$, then $f(x)=$
+
+**Explanation**
+
+Recall that
+
+$$
+\int \dfrac{1}{\mid x \mid \sqrt{x^2 - 1}} \, \textrm dx = \textrm{arcsec} \, x
+$$
+
+Then we have
+
+$$
+\begin{aligned}
+f(x) &= \intf^{′}(x)dx \\
+&= \int(\frac{5}{\mid x\begin{vmatrix}\sqrt{x^{2} - 1}} - 2x)dx \\ = \int\frac{5}{\mid x \mid \sqrt{x^{2} - 1}}dx - \int2xdx \\ = 5\int\frac{1}{\mid x\end{vmatrix}\sqrt{x^{2} - 1}}dx - 2\intxdx \\
+&= 5arcsec(x) - 2 \cdot \frac{x^{2}}{2} + C \\
+&= 5arcsec(x) - x^{2} + C
+\end{aligned}
+$$
+
+---
+
+**Question 5:**
+
+```quiz
+type: radio
+id: ma-49077
+content: |-
+  What is $\displaystyle \int(\frac{3}{\mid x \mid \sqrt{x^{2} - 1}} + 12)dx$?
+options:
+- id: a
+  content: |-
+    $3arcsecx + 6x^{2} + C$
+- id: b
+  content: |-
+    $3\arcsin x + 12x + C$
+- id: c
+  content: |-
+    $3\arctan x + 12x + C$
+- id: d
+  content: |-
+    $3arcsecx + 12x + C$
+  correct: true
+- id: e
+  content: |-
+    $3\arcsin x + 6x^{2} + C$
+```
+
+---
+
+**Question 6:**
+
+```quiz
+type: radio
+id: ma-19100
+content: |-
+  What is $\displaystyle \int\frac{11}{\mid x \mid \sqrt{x^{2} - 1}}dx$?
+options:
+- id: a
+  content: |-
+    $\arcsecx + C$
+- id: b
+  content: |-
+    $11\arccscx + C$
+- id: c
+  content: |-
+    $11\arcsecx + C$
+  correct: true
+- id: d
+  content: |-
+    $\arcsec(11x) + C$
+- id: e
+  content: |-
+    $\arccsc(11x) + C$
+```
+
+---
+
+<a id="integrating-using-inverse-trigonometric-functions-and-some-manipulations"></a>
+## Integrating Using Inverse Trigonometric Functions and Some Manipulations
+
+**Example:** Evaluate the integral $\displaystyle \int \dfrac {x^2+2}{x^2 + 1}\, \textrm{d}x$.
+
+**Explanation**
+
+This integral doesn't look like one of the basic ones. However, we can manipulate the numerator a bit to make it look more like the denominator, which reveals a more familiar expression:
+
+$$
+\begin{aligned}
+\frac{x^{2} + 2}{x^{2} + 1} &= \frac{x^{2} + 1 + 1}{x^{2} + 1} \\
+&= \frac{x^{2} + 1}{x^{2} + 1} + \frac{1}{x^{2} + 1} \\
+&= 1 + \frac{1}{x^{2} + 1}
+\end{aligned}
+$$
+
+Remembering that
+
+$$
+\int \dfrac{1}{x^2+1} \textrm dx = \arctan(x)
+$$
+
+we can now calculate the integral and get
+
+$$
+\begin{aligned}
+\int\frac{x^{2} + 2}{x^{2} + 1}dx &= \int(1 + \frac{1}{x^{2} + 1})dx \\
+&= \int1dx + \int\frac{1}{x^{2} + 1}dx \\
+&= x + \arctan (x) + C
+\end{aligned}
+$$
+
+---
+
+**Question 7:**
+
+```quiz
+type: radio
+id: ma-19102
+content: |-
+  What is $\displaystyle \int\frac{3x^{2}}{x^{2} + 1}dx$?
+options:
+- id: a
+  content: |-
+    $-3x - 3\arctan x + C$
+- id: b
+  content: |-
+    $3x - 3\arctan x + C$
+  correct: true
+- id: c
+  content: |-
+    $3arctanx + C$
+- id: d
+  content: |-
+    $3x + 3\arcsin x + C$
+- id: e
+  content: |-
+    $3arccosx + C$
+```
+
+---
+
+**Question 8:**
+
+```quiz
+type: radio
+id: ma-49149
+content: |-
+  What is $\displaystyle \int\frac{x^{2} - 4}{x^{2} + 1}dx$?
+options:
+- id: a
+  content: |-
+    $x - 3\arctan x + C$
+- id: b
+  content: |-
+    $x + 3\arctan x + C$
+- id: c
+  content: |-
+    $5x + \arctan x + C$
+- id: d
+  content: |-
+    $3x - \arctan x + C$
+- id: e
+  content: |-
+    $x - 5\arctan x + C$
+  correct: true
+```
+
+```update-progress
+```
+
+[[252/Home|Home]]
+[[252/0. Table of Contents/TOC|Table of Contents]]

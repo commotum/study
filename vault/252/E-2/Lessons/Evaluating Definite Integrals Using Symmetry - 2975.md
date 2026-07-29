@@ -1,0 +1,467 @@
+# Evaluating Definite Integrals Using Symmetry
+
+<!--
+lesson-id: 2975
+topic-code: MF3.9.3.3
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Integrals of Even Functions](#integrals-of-even-functions)
+- [Trigonometric Functions](#trigonometric-functions)
+- [Simplifying Definite Integrals of Even Functions](#simplifying-definite-integrals-of-even-functions)
+- [Integrals of Odd Functions](#integrals-of-odd-functions)
+- [Identifying Integrals That Evaluate to Zero](#identifying-integrals-that-evaluate-to-zero)
+- [Simplifying Definite Integrals of Odd Functions](#simplifying-definite-integrals-of-odd-functions)
+
+## Prerequisites
+
+- [Properties of Definite Integrals Involving the Limits of Integration](<../../../MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.2. Definite Integrals/Lessons/9.2.5. Properties of Definite Integrals Involving the Limits of Integration.md>)
+- [The Area Bounded by a Curve and the X-Axis](<../../../MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.3. The Area Under a Curve/Lessons/9.3.1. The Area Bounded by a Curve and the X-Axis.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+Recall that $f(x)$ is an **even function** if
+
+$$
+f(-x) = f(x)
+$$
+
+The graph of an even function is always symmetric about the $y$-axis.
+
+![](<../Source/Evaluating Definite Integrals Using Symmetry - 2975/Images/62876bfb7051e069076a858b87da0f43.png>)
+
+Also recall that $g(x)$ is an **odd function** if
+
+$$
+g(-x) = -g(x)
+$$
+
+The graph of an odd function always has rotational symmetry of order $2$ about the origin. In other words, if we rotate the graph $180^\circ$ about the origin, the resulting graph looks the same.
+
+![](<../Source/Evaluating Definite Integrals Using Symmetry - 2975/Images/b224f670a11fef72c4312785b7530be4.png>)
+
+---
+
+<a id="integrals-of-even-functions"></a>
+## Integrals of Even Functions
+
+Let's consider our even function $f(x)$ once more.
+
+![](<../Source/Evaluating Definite Integrals Using Symmetry - 2975/Images/240d86909090a7a6a32b301766952cfa.png>)
+
+When we have a definite integral of an even function, we can often use symmetry to simplify it.
+
+From the picture above, we have that
+
+$$
+\int_{-a}^0 f(x) \, \textrm dx = \int_{0}^a f(x) \, \textrm dx = A
+$$
+
+Therefore,
+
+$$
+\begin{aligned}
+∫_{-a}^{a}f(x)dx &= A + A \\
+&= 2A \\
+&= 2∫_{0}^{a}f(x)dx
+\end{aligned}
+$$
+
+To summarize, if $f(x)$ is even, then
+
+$$
+\int_{-a}^a f(x) \, \textrm dx = 2\int_{0}^a f(x) \, \textrm dx
+$$
+
+This rule is helpful because definite integrals where one of the integration limits is zero are often easier to evaluate.
+
+---
+
+<a id="trigonometric-functions"></a>
+## Trigonometric Functions
+
+Throughout this lesson, it's worth remembering that the basic trigonometric functions can be classified as even or odd.
+
+- $\cos x$ is an even function:
+$\cos(-x) = \cos x$
+This function is symmetric about the $y$-axis.
+
+![](<../Source/Evaluating Definite Integrals Using Symmetry - 2975/Images/2ac173366c86de65c4992408fae10f5a.png>)
+
+- $\sin x$ is an odd function:
+$\sin(-x) = -\sin x$
+This function has rotational symmetry of order $2$ about the origin.
+
+![](<../Source/Evaluating Definite Integrals Using Symmetry - 2975/Images/e69604136ce2de58a8509a2de711721c.png>)
+
+- $\tan x$ is an odd function:
+$\tan(-x) = -\tan x$
+This function has rotational symmetry of order $2$ about the origin.
+
+![](<../Source/Evaluating Definite Integrals Using Symmetry - 2975/Images/79b8293e13131ee488c09354194b9d06.png>)
+
+---
+
+<a id="simplifying-definite-integrals-of-even-functions"></a>
+## Simplifying Definite Integrals of Even Functions
+
+**Example:** Simplify the integral $\displaystyle \int_{-2}^2 x \sin{x} \, \textrm dx$ using symmetry.
+
+**Explanation**
+
+Recall the following:
+
+- a function $f(x)$ is *even* if $f(-x) = f(x)$
+- a function $f(x)$ is *odd* if $f(-x) = -f(x)$
+
+Moreover, for any even function $f(x)$, the graph of $y=f(x)$ is symmetric across the $y$-axis, so we have
+
+$$
+\int_{-a}^a f(x) \, \textrm dx = 2\int_{0}^a f(x) \, \textrm dx
+$$
+
+Notice that
+
+$$
+f(x) = x \sin{x}
+$$
+
+is an even function. Indeed, we have
+
+$$
+\begin{aligned}
+f(-x) &= (-x)\sin (-x) \\
+&=-x(-\sin x) \\
+&= x\sin x \\
+&= f(x)
+\end{aligned}
+$$
+
+So, because
+
+$$
+f(x) = x \sin{x}
+$$
+
+is an even function, we have
+
+$$
+\int_{-2}^2 x \sin{x} \, \textrm dx = 2 \int_{0}^2 x \sin{x} \, \textrm dx
+$$
+
+---
+
+**Question 1:**
+
+```quiz
+type: radio
+id: ma-88207
+content: |-
+  Simplify the integral $∫_{-7}^{7}3x^{6}dx$ using symmetry.
+options:
+- id: a
+  content: |-
+    $2∫_{0}^{7}3x^{6}dx$
+  correct: true
+- id: b
+  content: |-
+    $0$
+- id: c
+  content: |-
+    $2∫_{-7}^{7}3x^{6}dx$
+- id: d
+  content: |-
+    $-2∫_{0}^{7}3x^{6}dx$
+- id: e
+  content: |-
+    $∫_{0}^{7}3x^{6}dx$
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: ma-88206
+content: |-
+  What is $∫_{-3}^{3}x^{2}\cos (5x)dx$?
+options:
+- id: a
+  content: |-
+    $∫_{0}^{3}x^{2}\cos (5x)dx$
+- id: b
+  content: |-
+    $- ∫_{0}^{3}x^{2}\cos (5x)dx$
+- id: c
+  content: |-
+    $0$
+- id: d
+  content: |-
+    $\frac{1}{2}∫_{0}^{3}x^{2}\cos (5x)dx$
+- id: e
+  content: |-
+    $2∫_{0}^{3}x^{2}\cos (5x)dx$
+  correct: true
+```
+
+---
+
+<a id="integrals-of-odd-functions"></a>
+## Integrals of Odd Functions
+
+Let's consider the odd function $f(x)$ shown below.
+
+![](<../Source/Evaluating Definite Integrals Using Symmetry - 2975/Images/a299dc1f11088a3de4f0f84f009a4fb5.png>)
+
+From the diagram, we see that
+
+$$
+\int_{-a}^a f(x) \, \textrm dx = 0
+$$
+
+because the positive and negative areas cancel each other out.
+
+Furthermore, by the adjacent intervals rule, we can write
+
+$$
+\int_{-a}^0 f(x) \, \textrm dx + \int_{0}^a f(x) \, \textrm dx = 0
+$$
+
+which means that
+
+$$
+\int_{-a}^0 f(x) \, \textrm dx =-\int_{0}^a f(x) \, \textrm dx
+$$
+
+---
+
+<a id="identifying-integrals-that-evaluate-to-zero"></a>
+## Identifying Integrals That Evaluate to Zero
+
+**Example:** Which of the following integrals evaluate to zero due to symmetry?
+
+1. $\displaystyle \int_{-3}^3 4x^3 \, \textrm dx$
+2. $\displaystyle \int_{-2}^2 (e^x+e^{-x}) \, \textrm dx$
+3. $\displaystyle \int_{-\pi}^{2\pi} \sin(2x) \, \textrm dx$
+
+**Explanation**
+
+Recall the following:
+
+- a function $f(x)$ is *even* if $f(-x) = f(x)$
+- a function $f(x)$ is *odd* if $f(-x) = -f(x)$
+
+Moreover, for any odd function $f(x)$, the graph of $y=f(x)$ has rotational symmetry of order $2$ about the origin, so we have
+
+$$
+\int_{-a}^a f(x) \, \textrm dx = 0
+$$
+
+So, to determine which integrals evaluate to $0$ due to symmetry, we have to determine which integrands are odd functions.
+
+- The function $f(x) = 4x^3$ is an odd function:
+$f(-x)|= 4(-x)^{3}; =-4x^{3}; =-f(x)✓$
+Therefore, by symmetry, we can conclude that
+$\int_{-3}^3 4x^3 \, \textrm dx = 0$.
+
+- The function $g(x) = e^x+e^{-x}$ is *not* an odd function:
+$g(-x)|= e^{(-x)} + e^{- (-x)}; = e^{-x} + e^{x}; = e^{x} + e^{-x}; \ne - g(x)\cdot$
+
+- The function $h(x) = \sin(2x)$ is an odd function, but integral III is not of the form $\displaystyle \int_{-a}^a h(x)\,\textrm d x$ since the upper and lower limits are not opposites. So, we cannot use symmetry to simplify the integral.
+
+Therefore, the correct answer is "I only."
+
+---
+
+**Question 3**
+
+```quiz
+type: radio
+id: ma-88209
+content: |-
+  Which of the following integrals evaluate to zero due to symmetry?
+  
+  1. $∫_{-2}^{2}3x^{2}dx$
+  2. $∫_{-3}^{6}5x^{3}dx$
+  3. $∫_{-9}^{9}2x^{5}dx$
+options:
+- id: a
+  content: |-
+    III only
+  correct: true
+- id: b
+  content: |-
+    I only
+- id: c
+  content: |-
+    II only
+- id: d
+  content: |-
+    I and III only
+- id: e
+  content: |-
+    II and III only
+```
+
+---
+
+**Question 4**
+
+```quiz
+type: radio
+id: ma-88686
+content: |-
+  Which of the following integrals evaluates to zero due to symmetry?
+  
+  1. $∫_{-2}^{2}\sin^{2} xdx$
+  2. $∫_{-3}^{3}\tan (2x)dx$
+  3. $∫_{-2}^{4}4\tan xdx$
+options:
+- id: a
+  content: |-
+    I and III only
+- id: b
+  content: |-
+    I and II only
+- id: c
+  content: |-
+    III only
+- id: d
+  content: |-
+    II and III only
+- id: e
+  content: |-
+    II only
+- id: f
+  correct: true
+  content: |-
+    None of the listed improper integrals converges to zero.
+```
+
+---
+
+<a id="simplifying-definite-integrals-of-odd-functions"></a>
+## Simplifying Definite Integrals of Odd Functions
+
+**Example:** Given that $\displaystyle \int_{0}^{1} x\cos x \, \textrm dx = A$, what is the value of $\displaystyle \int_{-1}^0 x\cos x \, \textrm dx$?
+
+**Explanation**
+
+Recall the following:
+
+- a function $f(x)$ is *even* if $f(-x) = f(x)$
+- a function $f(x)$ is *odd* if $f(-x) = -f(x)$
+
+Moreover, for any odd function $f(x)$, the graph of $y=f(x)$ has rotational symmetry of order $2$ about the origin, so we have
+
+$$
+\int_{-a}^a f(x) \, \textrm dx = 0
+$$
+
+Notice that
+
+$$
+f(x) = x\cos x
+$$
+
+is an odd function. Indeed, we have
+
+$$
+\begin{aligned}
+f(-x) &= (-x)\cos (-x) \\
+&=-x\cos x \\
+&= - (x\cos x) \\
+&=-f(x)
+\end{aligned}
+$$
+
+So, because
+
+$$
+f(x) = x\cos x
+$$
+
+is an odd function, we have
+
+$$
+\int_{-1}^{1} x\cos x \, \textrm dx = 0
+$$
+
+Finally, using the adjacent intervals rule for integration, we obtain
+
+$$
+\begin{aligned}
+∫_{-1}^{1}x\cos xdx &= 0 \\
+∫_{-1}^{0}x\cos xdx + ∫_{0}^{1}x\cos xdx &= 0 \\
+∫_{-1}^{0}x\cos xdx + A &= 0 \\
+∫_{-1}^{0}x\cos xdx &= -A
+\end{aligned}
+$$
+
+---
+
+**Question 5:**
+
+```quiz
+type: radio
+id: ma-155949
+content: |-
+  Simplify the integral $∫_{-6}^{6}x^{5}dx$ using symmetry.
+options:
+- id: a
+  content: |-
+    $∫_{0}^{6}x^{5}dx$
+- id: b
+  content: |-
+    $- ∫_{0}^{6}x^{5}dx$
+- id: c
+  content: |-
+    $-2∫_{0}^{6}x^{5}dx$
+- id: d
+  content: |-
+    $2∫_{0}^{6}x^{5}dx$
+- id: e
+  content: |-
+    $0$
+  correct: true
+```
+
+---
+
+**Question 6:**
+
+```quiz
+type: radio
+id: ma-155950
+content: |-
+  Given that $∫_{-1}^{0}x^{4}\tan xdx = A$, what is the value of $∫_{0}^{1}x^{4}\tan xdx$?
+options:
+- id: a
+  content: |-
+    $-A$
+  correct: true
+- id: b
+  content: |-
+    $0$
+- id: c
+  content: |-
+    $\frac{1}{2}A$
+- id: d
+  content: |-
+    $A$
+- id: e
+  content: |-
+    $-\frac{1}{2}A$
+```
+
+```update-progress
+```
+
+[[252/Home|Home]]
+[[252/0. Table of Contents/TOC|Table of Contents]]

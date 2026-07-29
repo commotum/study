@@ -1,1105 +1,956 @@
-Hey there.
+# Physics 212: Circular Motion, Ferris Wheels, and Static Friction
 
-Welcome to Physics 212.
+Welcome back to Physics 212.
 
-Hey everybody, welcome back.
+## Course Announcements
 
-Well, let's see Mondays of
+We are beginning the second week of the summer term. We are currently working through Chapter 8 and should finish it by Tuesday or Wednesday before beginning Chapter 12.
 
-week 2 for this summer term.
+Homework 1 has already closed. Homework 2, covering Chapter 8, is due July 3.
 
-I want to take a couple of minutes just to touch base
+## Proctorio Practice Quiz
 
-on where we are in the course and what's coming up.
+Students who plan to take every quiz during a live Zoom session do not need to complete the Proctorio practice quiz.
 
-So if we look at, I'm going to open the syllabus here.
+Students who may use Proctorio must:
 
-And scroll down to the calendar. Here we are
+1. Read the Proctorio setup and troubleshooting information in the Course Information module.
+2. Install and configure Proctorio on the device they will use.
+3. Complete the Proctorio practice quiz before Quiz 1.
 
-week two, the 29th is today. We're working on
+The practice quiz is intended to verify that the software works correctly before an actual graded assessment.
 
-chapter eight. Should be finishing that up either
+## Quiz 1 Note Sheet
 
-Tuesday or Wednesday and starting chapter 12.
+Every student must submit a handwritten note sheet for Quiz 1.
 
-We have proctorial practice quiz
+The note sheet must:
 
-today. Homework one was already due.
+- Be between one-half page and one full page
+- Be written entirely by hand on physical paper
+- Include relevant equations, diagrams, and other course material
+- Be submitted to Gradescope
+- Be photographed or scanned with a photo ID placed on top of it
 
-Homework two on chapter eight
+Credit for Quiz 1 cannot be awarded until the required note sheet has been submitted.
 
-is due on the 3rd of July.
+The listed due date for the note sheet corresponds to the first opening of the quiz. However, the note sheet will be accepted as long as it is submitted before you begin your quiz.
 
-Now, let's see a couple of things to talk about
+One of the upcoming pre-lecture assignments will also require a Gradescope upload so that everyone has an opportunity to practice the upload process before taking the quiz.
 
-here. this Proctorio practice quiz. If you are
+## Quiz 1 Format
 
-planning to take the quiz and all quizzes in the
+Quiz 1 contains two required parts. Both parts must be completed.
 
-Zoom sessions, in one of the Zoom sessions, either
+### Part A
 
-at this time at 11 a.m. or at 6 p.m., you don't
+Part A contains:
 
-need to do the Proctorio practice quiz. If you're
+- Three multiple-choice questions
+- One short written-response question
 
-going to be using Proctorio, you definitely do.
+### Part B
 
-Let's go into course modules and see down here in
+Part B contains:
 
-course information where it has Proctorio set up and
+- One longer written-response question
 
-troubleshooting if you're going to take a quiz using
+Each part allows:
 
-proctorio you need to read this page first and then take
+- $20$ minutes to complete the questions
+- $5$ additional minutes to upload handwritten work
 
-the proctorio practice quiz so it will be about setting
+The two parts may be completed in either order when using the asynchronous version.
 
-up proctorio in general you just upload proctorio
+### Asynchronous Proctorio Version
 
-to your computer your device and then um you go here
+The asynchronous version will be available from Saturday at 5:00 p.m. until Monday at 5:00 p.m.
 
-let me go into the modules here module one we have
+Students will complete the Canvas quiz and then upload their handwritten work to the corresponding Gradescope assignment.
 
-required activities i believe it will be on this page
+The asynchronous quiz uses banks of equivalent questions, so students may receive different versions. The questions will be designed to have the same general level of difficulty.
 
-okay there's the homework there's the pre-lecture
+### Live Zoom Versions
 
-questions and the asynchronous participation questions
+Live Zoom-proctored sessions will be available Monday at:
 
-here's information about quiz one so quiz one notes that
+- 11:00 a.m.
+- 6:00 p.m.
 
-is required you're required to submit a half to a
+For the 11:00 a.m. session:
 
-full page of notes you can put equations diagrams etc
+- Part A will run from 11:00 to 11:25 a.m.
+- A five-minute break will follow.
+- Part B will run from 11:30 to 11:55 a.m.
 
-this needs to be in your own handwriting on a piece
+For the 6:00 p.m. session:
 
-of paper place your photo id on top of your notes and
+- Part A will run from 6:00 to 6:25 p.m.
+- A five-minute break will follow.
+- Part B will run from 6:30 to 6:55 p.m.
 
-scan upload to grade scope and to get to that assignment
+Students using Zoom proctoring must be present in the meeting and remain visible on a functioning webcam throughout the quiz.
 
-you can click on this quiz one notes link it will
+## Practice Quiz
 
-take you to the assignment in canvas which will take
+A practice quiz will be posted before Quiz 1 is administered.
 
-you to grade scope and there you'll upload your
+It will use the same general format as the graded quiz:
 
-assignment your quiz one notes to grade scope By the way,
+- Three multiple-choice questions
+- One short written-response problem
+- One longer written-response problem
 
-one of these pre-lecture questions, I think it's, oh,
+The practice quiz will be provided as a document rather than as a Canvas quiz. A separate document containing worked solutions will also be posted.
 
-I'll have to open the next module because I think
+## Quiz 1X Extra Credit
 
-it's M2-1 pre, will include an upload to Gradescope.
+The optional Quiz 1X assignment will open after Quiz 1 has been graded.
 
-That's just to make sure that everybody's had a little
+For Quiz 1X, select the complete Quiz 1 question on which you lost the most points. The assignment will contain four parts.
 
-practice uploading work to Gradescope before you're
+### Part A: Analyze Your Original Reasoning
 
-actually in the quiz. So, yeah, you need to, you're
+Explain why you produced your original answer.
 
-required to submit your own note sheet. You don't get
+The explanation should focus on the physics concepts and reasoning that were present in your mind when you made each decision. It should not focus on external factors such as stress or time constraints.
 
-credit for the quiz if you don't submit a note sheet.
+### Part B: Explain the Correct Reasoning
 
-Now, the due date I put for the note sheet will be on
+Explain what you should have done differently and why.
 
-the first opening of the quiz. So quiz one will open
+Identify the relevant physical principles and how they should have guided your solution.
 
-in proctorio asynchronously on Saturday, Saturday 5
+### Part C: Provide a Corrected Solution
 
-p.m., quiz 1a and quiz 1b. And the ASY work, those
+Give a complete correct solution.
 
-assignments are for uploading your work to Gradescope.
+For written-response questions, this should include:
 
-So Quiz 1A and Quiz 1B will be open 5 p.m. Saturday.
+- A symbolic derivation
+- Explicit unit analysis
+- Covariational reasoning about how the result depends on the variables
 
-The due date for Quiz 1 notes is just at that
+### Part D: Discuss the Problem
 
-time. So really, if you submit your Quiz 1 notes
+Discuss the selected problem with an instructor, teaching assistant, laboratory TA, or another physics staff member.
 
-before you start your quiz, that's fine. It won't
+The assignment will not open until the quiz scores have been released. An announcement will be posted when it becomes available.
 
-be marked late. It will be accepted just fine.
+## Dropped Scores
 
-I can't make the Quiz 1 notes due date to fit everybody
+The course includes several dropped scores to provide flexibility.
 
-because people are taking the quiz at different
+The lowest Quiz Part A score and the lowest Quiz Part B score will be dropped independently. The course also drops:
 
-times. So I just said it at the first opening of the
+- Three pre-lecture-question scores
+- Three participation-question scores
+- One homework score
 
-quiz. But yeah, as long as you submit your notes
+Laboratory assignments are not dropped.
 
-before you take your quiz, you'll be just fine there.
+# Review of Circular Motion
 
-So if you're taking the quiz asynchronously,
+We have been studying circular-motion kinematics and the relationship between rotational and translational quantities.
 
-you'll go to Quiz 1A ASY. You can do that
+## Uniform and Nonuniform Circular Motion
 
-anytime from Saturday 5 p.m. to Monday 5 p.m.
+In **uniform circular motion**, an object travels around a circle at constant speed.
 
-And then Quiz 1A will have three multiple choice
+Its velocity is not constant because the direction of the velocity continually changes. The object therefore accelerates even though the magnitude of its velocity remains constant.
 
-questions on it and a short written question.
+In **nonuniform circular motion**, the object travels around a circle while its speed also changes.
 
-You'll write out your work for your short written
+The acceleration may be separated into radial and tangential components:
 
-question. This needs to be in your own handwriting.
+$$
+\vec{a}=a_r\hat{r}+a_t\hat{t}.
+$$
 
-Take a photo of that, upload that to Gradescope.
+The radial component points toward the center of the circle and changes the direction of the velocity.
 
-Then you take quiz 1B. Actually, you can take
+The tangential component points along or opposite the direction of motion and changes the object’s speed.
 
-these in either order. Doesn't matter if you're
+## Translational and Rotational Relationships
 
-doing this asynchronously. You take quiz 1B ASY.
+For a point moving through an angular displacement $\theta$ at a radius $r$, the arc length is
 
-That will be a longer written question. You will have
+$$
+s=r\theta.
+$$
 
-20 minutes, either for part A or part B. They will be
+Taking the time derivative gives the tangential speed:
 
-open in Canvas for 20 minutes. Then you'll have five
+$$
+v=\frac{ds}{dt}.
+$$
 
-minutes to upload your work to Gradescope. If you
+Because
 
-haven't uploaded your work to Gradescope within five
+$$
+\omega=\frac{d\theta}{dt},
+$$
 
-minutes, you won't get credit for that written question.
+we obtain
 
-So, yeah, Quiz 1B will open at 5 p
+$$
+\boxed{
+v=\omega r
+}.
+$$
 
-.m. on Saturday, close 5 p.m. Monday.
+Taking another time derivative gives the tangential acceleration:
 
-Quiz 1B ASY Work will open
+$$
+a_t=\frac{dv}{dt}.
+$$
 
-and close at those same times.
+For a constant radius,
 
-Now, one thing to notice, you do need to do A and B.
+$$
+\boxed{
+a_t=\alpha r
+},
+$$
 
-It's not a one or the other one. You need to do both
+where
 
-parts of the quiz A and B. you can opt to join a live zoom
+$$
+\alpha=\frac{d\omega}{dt}.
+$$
 
-session and take the quiz there so if you come to
+The radial acceleration is
 
-class just like you are today in zoom on next monday at
+$$
+\boxed{
+a_r=\frac{v^2}{r}
+}.
+$$
 
-11 a.m quiz 1a will open at 11 a.m in and it will open
+Using $v=\omega r$, this may also be written as
 
-in grade scope but you must be present in the zoom
+$$
+\boxed{
+a_r=\omega^2r
+}.
+$$
 
-session and proctored via zoom to get for the quiz so
+The radial acceleration always points toward the center of the circular path.
 
-you'll open quiz 1a in grade scope and then it will stay
+## Period and Speed
 
-open for 20 minutes plus five minutes to upload your
+The distance traveled during one complete revolution is the circumference:
 
-work it'll have the same format as the asynchronous quiz
+$$
+\Delta s=2\pi r.
+$$
 
-so three multiple choice questions and a short written
+If the period is $T$, then the speed is
 
-question and not the same questions that are in quiz
+$$
+\boxed{
+v=\frac{2\pi r}{T}
+}.
+$$
 
-1a asy in fact quiz 1a asy will have a bank of questions
+Equivalently,
 
-for each question so not everybody that takes the
+$$
+\boxed{
+T=\frac{2\pi r}{v}
+}.
+$$
 
-quiz asynchronously will have the same version of the
+## Constant Angular-Acceleration Equations
 
-quiz but the questions are the same level of difficulty
+When angular acceleration is constant, the rotational kinematic equations are analogous to the ordinary constant-acceleration equations:
 
-so yeah quiz 1a will open at 11 a.m close at 11 25
+$$
+\omega_f=\omega_i+\alpha\Delta t,
+$$
 
-that's 20 minutes plus five minutes for upload then we'll
+$$
+\theta_f
+=
+\theta_i
++
+\omega_i\Delta t
++
+\frac{1}{2}\alpha(\Delta t)^2,
+$$
 
-take five minute break then quiz 1b will open it at
+and
 
-11 30 and close at 11 55 in grade scope and the same
+$$
+\omega_f^2
+=
+\omega_i^2
++
+2\alpha(\theta_f-\theta_i).
+$$
 
-thing with 6 p.m similar timings only at 6 p.m instead of
+# Worked Example 1: Speed of a Ferris-Wheel Rider
 
-11 a.m so part a opens at 6 p.m closes at 6 25 part
+Consider a Ferris wheel with radius
 
-b opens at 6 30 closes at 6 55 in grade scope and again
+$$
+r=42\ \mathrm{m}
+$$
 
-you need to take both parts of the quiz and be present
+rotating at a constant angular speed
 
-and have your webcam turned on you need to be visible
+$$
+\omega=0.16\ \mathrm{rad/s}.
+$$
 
-in your webcam the whole time during taking the quiz
+We want to determine the speed of a person riding on the rim.
 
-okay and then quiz one x assignment extra credit
+The relationship between tangential speed and angular speed is
 
-assignment will open when the quizzes are graded and the
+$$
+v=\omega r.
+$$
 
-scores are open to you any questions about the quiz
+Substituting the given values,
 
-yeah i have a question is there any like um practice
+$$
+v
+=
+(0.16\ \mathrm{rad/s})
+(42\ \mathrm{m}).
+$$
 
-problems posted anywhere or anything to like kind
+Because radians are dimensionless,
 
-of get a feel for how the like wording of the questions
+$$
+v=6.72\ \mathrm{m/s}.
+$$
 
-is going to be and all that stuff absolutely
+Using two significant figures,
 
-good question if we go to the previous page that is
+$$
+\boxed{
+v=6.7\ \mathrm{m/s}
+}.
+$$
 
-the learning materials page i will post a practice
+Although the rider’s speed is constant, the rider is accelerating because the direction of the velocity changes continually.
 
-quiz one right here so take the practice quiz below
+# Normal Force at the Top and Bottom of a Ferris Wheel
 
-and it i don't have it posted right now because i
+Now consider a rider of mass $m$ seated on the Ferris wheel.
 
-haven't finalized the quiz but when i do i will post
+The two forces acting on the rider are:
 
-the practice problems in here for the quiz and it'll
+- The gravitational force $mg$, directed downward
+- The normal force from the seat, directed away from the seat
 
-be the same format it'll have three multiple choice
+The rider’s acceleration must point toward the center of the Ferris wheel.
 
-a short written and a longer written question also
+At the top, the center of the wheel is below the rider. At the bottom, the center is above the rider.
 
-be posting an announcement with all this detail
+Consequently, the normal force is larger at the bottom than it is at the top:
 
-basically the same thing that i told you okay thank
+$$
+\boxed{
+N_{\mathrm{bottom}}>N_{\mathrm{top}}
+}.
+$$
 
-you and then also will that practice quiz also have
+The normal force is what the rider experiences as apparent weight.
 
-a bank of questions so you could like retake it a
+A similar effect occurs while driving over a hill or through a dip:
 
-whole bunch or is it just going to be like one set of
+- At the top of a hill, the seat pushes on you less strongly, so you feel lighter.
+- At the bottom of a dip, the seat pushes on you more strongly, so you feel heavier.
 
-questions just one set of questions okay thank you
+There is no actual upward force lifting you out of the seat at the top of the hill. Instead, your body tends to continue along its instantaneous tangent while the road or seat curves downward beneath you.
 
-it's just a document so you just it's not like
+## Free-Body Diagram at the Bottom
 
-you're taking it on canvas it will open it won't
+At the bottom of the Ferris wheel:
 
-open in canvas it'll it's just a document
+- The inward radial direction is upward.
+- The normal force points upward.
+- Gravity points downward.
 
-where you can see the questions and then a second
+Choose the inward direction as positive.
 
-pdf that shows you the solutions i've written now
+Newton’s second law in the radial direction is
 
-i see there was a question in the chat will there be
+$$
+\sum F_r=ma_r.
+$$
 
-announcement when the extra credit opens up yes absolutely
+Therefore,
 
-and we'll talk about it in class so just to give
+$$
+N_{\mathrm{bottom}}-mg
+=
+m\frac{v^2}{r}.
+$$
 
-you a little bit of a heads up about the the extra credit
+Solving for the normal force,
 
-quiz 1x will start with a question saying first of
+$$
+N_{\mathrm{bottom}}
+=
+mg+m\frac{v^2}{r}.
+$$
 
-all you choose the question where you lost the most
+Using
 
-points in the quiz so the multiple choice questions are
+$$
+v=\omega r,
+$$
 
-for six points for five points and the written questions
+we have
 
-are for 20 points and 40 points depending on whether
+$$
+\frac{v^2}{r}
+=
+\frac{\omega^2r^2}{r}
+=
+\omega^2r.
+$$
 
-it's part a and part or part b so you choose the
+Thus,
 
-question the whole question where you lost the most points
+$$
+\boxed{
+N_{\mathrm{bottom}}
+=
+m(g+\omega^2r)
+}.
+$$
 
-and then the first question that you'll be asked to
+For a rider with mass
 
-answer on the in on the extra credit assignment is
+$$
+m=68\ \mathrm{kg},
+$$
 
-why did you do what you did and now this is not about
+the normal force is
 
-stress or time constraint or any external stuff this is
+$$
+N_{\mathrm{bottom}}
+=
+(68\ \mathrm{kg})
+\left[
+9.81\ \mathrm{m/s^2}
++
+(0.16\ \mathrm{rad/s})^2
+(42\ \mathrm{m})
+\right].
+$$
 
-about the physics and the logic what was your thinking
+Evaluating,
 
-what what are what was the what were the physics
+$$
+N_{\mathrm{bottom}}
+\approx
+7.4\times10^2\ \mathrm{N}.
+$$
 
-concepts you were using that were present in your mind
+Therefore,
 
-when you wrote down what you did. You made a conscious
+$$
+\boxed{
+N_{\mathrm{bottom}}\approx740\ \mathrm{N}
+}.
+$$
 
-decision to write down something on your piece of paper.
+This is greater than the rider’s ordinary weight because the seat must both support the rider against gravity and provide the net upward radial force.
 
-Why did you do what you did? Part B will be, why
+## Free-Body Diagram at the Top
 
-should you have done what you should have done? Part C
+At the top of the Ferris wheel:
 
-will be to give the correct solution and some analysis.
+- The inward radial direction is downward.
+- Gravity points downward.
+- The normal force points upward.
 
-So
+Again choose the inward direction as positive.
 
-covariational reasoning and explicit unit analysis.
+The radial force equation is
 
-And then part D will be actually meeting with somebody,
+$$
+mg-N_{\mathrm{top}}
+=
+m\frac{v^2}{r}.
+$$
 
-me in my office hour or somebody in the wormhole or
+Solving for the normal force,
 
-your lab TA. A lot of times people do this after their
+$$
+N_{\mathrm{top}}
+=
+mg-m\frac{v^2}{r}.
+$$
 
-lab ta meeting if you have time and they're amenable
+Using $v=\omega r$,
 
-to it and typically they are so yeah pardee will be
+$$
+\boxed{
+N_{\mathrm{top}}
+=
+m(g-\omega^2r)
+}.
+$$
 
-meeting with somebody going over the question and discussing
+Substituting the values,
 
-it with them and i will post a an announcement
+$$
+N_{\mathrm{top}}
+=
+(68\ \mathrm{kg})
+\left[
+9.81\ \mathrm{m/s^2}
+-
+(0.16\ \mathrm{rad/s})^2
+(42\ \mathrm{m})
+\right].
+$$
 
-letting you know when quiz 1x opens other questions okay
+This gives approximately
 
-i think that's pretty clear and this is the same
+$$
+\boxed{
+N_{\mathrm{top}}\approx590\ \mathrm{N}
+}.
+$$
 
-system we'll be using for the rest of the quizzes during
+At the top, gravity already supplies part of the required inward force. The seat therefore does not need to push as strongly on the rider.
 
-the term. Also, I mentioned this the first day,
+## Comparing the Two Positions
 
-I do drop one of the quizzes. I drop a part A and a
+The results are
 
-part B separately. So over the course of the term,
+$$
+N_{\mathrm{bottom}}
+=
+m(g+\omega^2r)
+$$
 
-there are three quizzes. One of those quizzes, your
+and
 
-lowest score, or if you had something, say you're sick
+$$
+N_{\mathrm{top}}
+=
+m(g-\omega^2r).
+$$
 
-or something happened and you weren't able to take
+Therefore,
 
-the quiz, that'll be the quiz that you drop. So
+$$
+\boxed{
+N_{\mathrm{bottom}}>mg>N_{\mathrm{top}}
+}.
+$$
 
-flexibility is built into this course to cover things like
+The rider feels heavier at the bottom and lighter at the top.
 
-that. It's a large course, and it helps with not
+If the Ferris wheel were moving nonuniformly, a tangential acceleration would also be present. The total acceleration would no longer point directly toward the center, although the radial component would still point inward.
 
-dealing with all of these things individually. So, yeah,
+# Symbolic Solutions and Significant Figures
 
-I drop a quiz, Part A and Part B, separately. And as
+In written physics problems, solve symbolically before inserting numbers.
 
-an aside, I also drop three pre-lecture questions,
+For example, the bottom normal force should first be written as
 
-three participation questions, and one of the homework.
+$$
+N_{\mathrm{bottom}}
+=
+m(g+\omega^2r).
+$$
 
-We do not drop a lab, but the other things we do.
+Only after obtaining this symbolic expression should the numerical values be substituted.
 
-Okay, let's then go to our web page here. and I just
+A symbolic solution:
 
-want to take just a moment to recap what we talked
+- Shows the physical reasoning clearly
+- Makes algebraic errors easier to identify
+- Allows unit checking
+- Reveals how the result changes when a variable changes
+- Remains useful even when no numerical values are supplied
 
-about already. We talked about circular motion. We
+Final numerical answers should generally use the same number of significant figures as the least precise given value. Keeping one additional digit during intermediate calculations is appropriate, but reporting excessive precision can produce an answer outside an automated system’s accepted range.
 
-talked about kinematics in circular motion, how it
+# Coin on a Rotating Turntable
 
-relates to translational motion. We haven't really talked
+Consider a coin of mass $m$ resting on a horizontal turntable.
 
-much about non-uniform circular motion, but we did
+The coin is located a distance $r$ from the rotation axis, and the turntable rotates with angular speed $\omega$.
 
-describe the tangential and radial acceleration. So
+The coefficient of static friction between the coin and turntable is $\mu_s$. We want to determine the greatest angular speed for which the coin does not slip.
 
-uniform circular motion is something moving in a
+## Forces on the Coin
 
-circle at constant speed. Now, so constant speed doesn't
+The forces acting on the coin are:
 
-mean constant velocity because the directionality
+- Gravity $mg$, downward
+- The normal force $N$, upward
+- Static friction $f_s$, horizontally inward toward the center of the turntable
 
-is changing. Non-uniform circular motion is going in
+Static friction supplies the radial force required for circular motion.
 
-a circle, but is not moving at constant speed. And
+There is no separate force called the centripetal force. The phrase **centripetal force** refers to the net inward force, which in this case is the static-friction force.
 
-then we did some derivations. We looked at the relationship
+## Vertical Force Balance
 
-between the rotational and the translational
+The coin has no vertical acceleration, so
 
-variables. They relate via arc length, time derivative
+$$
+\sum F_y=0.
+$$
 
-of arc length, and tangential second time derivative
+Therefore,
 
-of arc length, basically. We derive this formula
+$$
+N-mg=0,
+$$
 
-here, the radial acceleration, so always pointing inward
+which gives
 
-for circular motion, equals v squared over r, and
+$$
+\boxed{
+N=mg
+}.
+$$
 
-because v is omega r, we could write that in terms
+## Radial Force Equation
 
-of omega instead of v, so we can write angular, or not
+The inward radial acceleration is
 
-angular, but radial acceleration as omega squared
+$$
+a_r=\frac{v^2}{r}.
+$$
 
-r. The velocity of something, assuming that it's moving
+Because
 
-at constant speed is 2 pi r over the period t. In
+$$
+v=\omega r,
+$$
 
-fact, that's how we define the period is 2 pi r over
+we may also write
 
-the velocity. Velocity is ds by dt or r d theta dt.
+$$
+a_r=\omega^2r.
+$$
 
-Acceleration is a vector. We can resolve it into
+Static friction is the only radial force, so
 
-radial or tangential components just like we can resolve
+$$
+f_s=m\omega^2r.
+$$
 
-it into x and y components. The point of doing
+This equation gives the actual static-friction force required at any angular speed below the slipping threshold.
 
-this in radial and tangential components in circular
+Static friction is not automatically equal to $\mu_sN$. In general,
 
-motion is that you can rotate the axis you really
+$$
+f_s\leq\mu_sN.
+$$
 
-can with x of y as well but this just makes it really
+The equality applies only when the coin is just about to slip.
 
-simple to do and then we define the um if we have
+## Maximum Angular Speed
 
-constant angular acceleration then we can define
+At the threshold of slipping,
 
-kinematic equations just analogous to the kinematic
+$$
+f_s=f_{s,\max}=\mu_sN.
+$$
 
-equations that we use for constant acceleration
+Using $N=mg$,
 
-so omega final equals omega zero plus alpha t
+$$
+f_{s,\max}=\mu_smg.
+$$
 
-theta final equals theta zero plus omega zero t
+Set this equal to the required radial force:
 
-plus a half alpha t squared. And this really here,
+$$
+m\omega_{\max}^2r
+=
+\mu_smg.
+$$
 
-this is where we're showing that the direction of
+The mass cancels:
 
-radial acceleration always points inward and
+$$
+\omega_{\max}^2r
+=
+\mu_sg.
+$$
 
-deriving the magnitude of the radial acceleration.
+Solving for the angular speed,
 
-We talked about the direction of omega and alpha.
+$$
+\boxed{
+\omega_{\max}
+=
+\sqrt{\frac{\mu_sg}{r}}
+}.
+$$
 
-Okay, so
+For the coefficient given in the activity,
 
-what we want to do now is continue working on some
+$$
+\mu_s=0.24,
+$$
 
-problems. So here we have a ferris wheel Ferris wheel,
+the result may be written as
 
-I'm going to draw like this, okay, and here's my
+$$
+\omega_{\max}
+=
+\sqrt{\frac{(0.24)g}{r}}.
+$$
 
-radius r, I'm going to have some object at the constant
+The coin’s mass does not affect the maximum angular speed.
 
-speed, let's see, I'm going to say we know omega,
+## Covariational Reasoning
 
-and we know the radius r constant angular velocity
+The symbolic result is
 
-I've given you omega and I've given you the radius r and
+$$
+\omega_{\max}
+=
+\sqrt{\frac{\mu_sg}{r}}.
+$$
 
-I want the velocity of the particle so a particle
+This immediately reveals several physical relationships.
 
-on the rim is moving I know omega and r so I want you
+### Effect of the Friction Coefficient
 
-to calculate the speed of a particle on the rim of the
+If $\mu_s$ increases, the turntable can rotate more rapidly before the coin slips:
 
-wheel in meters per second so when I say in meters
+$$
+\mu_s\uparrow
+\quad\Longrightarrow\quad
+\omega_{\max}\uparrow.
+$$
 
-per second you don't write the units into your answer
+A larger coefficient of static friction allows a greater inward force.
 
-you just write the number, but I'm giving you the
+### Effect of Radius
 
-units to use for the number that you're going to write.
+If the coin is moved farther from the center, the maximum angular speed decreases:
 
-I'll go ahead and activate.
+$$
+r\uparrow
+\quad\Longrightarrow\quad
+\omega_{\max}\downarrow.
+$$
 
-Okay,
+At a larger radius, the required radial acceleration
 
-most people have an answer in. Please put one
+$$
+a_r=\omega^2r
+$$
 
-in if you still need to do that. Three, two,
+is greater for the same angular speed.
 
-one.
+### Effect of Gravity
 
-All right, thank you stopping delivery.
+If $g$ increases, the normal force increases, which increases the maximum available static friction:
 
-okay let's take a look at your responses 6.72 keeping
+$$
+g\uparrow
+\quad\Longrightarrow\quad
+\omega_{\max}\uparrow.
+$$
 
-three sig figs that's okay we were given two sig figs
+# General Strategy for Circular-Motion Force Problems
 
-so you can keep one at most one extra 26 6.72 oh it
+## 1. Draw the Physical Situation
 
-would be meters per second squared we're looking for
+Identify:
 
-the speed and also um don't need to write the units in
+- The circular path
+- The center of the circle
+- The radius
+- The direction of motion
+- The point being analyzed
 
-here if you did that in canvas, it would have marked
+## 2. Draw a Free-Body Diagram
 
-it incorrect. But I'm seeing a lot of people get 6.72.
+Include only actual physical forces acting on the selected object.
 
-Let's go back here. So really, we are given omega,
+Possible forces include:
 
-we're given r, we want velocity, or the speed, v equals
+- Gravity
+- Normal force
+- Tension
+- Friction
 
-omega r, so that would be 0.16 radians times 42
+Do not add a separate centripetal-force vector.
 
-meters, and so that equals 6 .7 meters meters per second.
+## 3. Choose the Radial Direction
 
-Radians, oh, per second. And radians you can
+It is usually convenient to choose the inward radial direction as positive.
 
-think of as this unitless thing, so I'm going
+The radial acceleration can then be written as the positive magnitude
 
-to drop it here. Meters per second is the
+$$
+a_r=\frac{v^2}{r}=\omega^2r.
+$$
 
-units I want for my velocity, so 6.7 or 6.72.
+## 4. Apply Newton’s Second Law
 
-All right, good. Any questions about this?
+Write a separate equation for each relevant direction.
 
-Excellent. Okay, well, let's do
+For example,
 
-another question on the same system.
+$$
+\sum F_r=m\frac{v^2}{r}
+$$
 
-all right let's say a person is riding on the ferris
+and
 
-wheel and so this is a person sitting on a seat i'm
+$$
+\sum F_y=ma_y.
+$$
 
-not not going to draw in the seat assume the person
+## 5. Use Friction Conditions Carefully
 
-is a particle and they're on a seat in the ferris
+For static friction,
 
-wheel and you might want to start by drawing free body
+$$
+f_s\leq\mu_sN.
+$$
 
-diagrams of this person compare the normal force on
+Use
 
-the rider from the seat at the top and at the bottom
+$$
+f_s=\mu_sN
+$$
 
-i will go ahead and activate this question for you.
+only when the object is at the threshold of slipping.
 
-Okay, most people have an answer in. Please
+## 6. Solve Symbolically
 
-put one in now if you still need to do that.
+Isolate the requested variable before inserting numerical values.
 
-I will give you three more seconds. Three,
+## 7. Check the Result
 
-two,
+Verify:
 
-one.
+- Units
+- Signs
+- Significant figures
+- Limiting behavior
+- Physical reasonableness
 
-All right, thank you, stopping delivery.
+# Summary
 
-Let's see what you said.
+Uniform circular motion occurs when an object moves around a circle at constant speed. The direction of its velocity changes, so it has an inward radial acceleration.
 
-All right, most people, 77% of you said that
+The relationships among tangential and rotational quantities are
 
-the normal force at the bottom is greater than
+$$
+\boxed{
+v=\omega r
+}
+$$
 
-the normal force at the top. That is correct.
+and
 
-Very good so another way to think about this let's
+$$
+\boxed{
+a_t=\alpha r
+}.
+$$
 
-think about if you're driving along in a car
+The radial acceleration is
 
-and you're going over a hill or through a dip right
+$$
+\boxed{
+a_r=\frac{v^2}{r}=\omega^2r
+}.
+$$
 
-think about what it feels like if you're going over a
+For a Ferris wheel with angular speed $\omega$ and radius $r$, the rider’s speed is
 
-hill and especially if you're going really fast so
+$$
+\boxed{
+v=\omega r
+}.
+$$
 
-the faster you're going the more pronounced the effect
+For the values used in the lecture,
 
-is going to be but if you go over a hill you're
+$$
+\boxed{
+v=6.7\ \mathrm{m/s}
+}.
+$$
 
-almost lifted up out of your seat as you're going over.
+At the bottom of the Ferris wheel,
 
-Now, we're going to call that a fictitious force
+$$
+\boxed{
+N_{\mathrm{bottom}}
+=
+m(g+\omega^2r)
+}.
+$$
 
-because there's not actually anything pulling you upward.
+For the rider in the example,
 
-What it is, is as you're going over the hill, your
+$$
+\boxed{
+N_{\mathrm{bottom}}\approx740\ \mathrm{N}
+}.
+$$
 
-body wants to keep moving in a straight line at a
+At the top,
 
-constant speed unless acted on by another force. So
+$$
+\boxed{
+N_{\mathrm{top}}
+=
+m(g-\omega^2r)
+}.
+$$
 
-you're trying to keep going upward and at least tangential
+For the same rider,
 
-to the hill and the hill sort of drops out from
+$$
+\boxed{
+N_{\mathrm{top}}\approx590\ \mathrm{N}
+}.
+$$
 
-under you and similarly so when you're going down
+Thus,
 
-through a hill you feel like you're pushed down into
+$$
+\boxed{
+N_{\mathrm{bottom}}>N_{\mathrm{top}}
+}.
+$$
 
-your seat so that feeling of being pushed down into your
+For a coin on a horizontal rotating turntable, static friction supplies the radial force:
 
-seat actually what you're feeling is the seat pushing
+$$
+f_s=m\omega^2r.
+$$
 
-back against you you feel the normal force you
+At the threshold of slipping,
 
-feel the seat pushing back against you harder than it
+$$
+\mu_smg=m\omega_{\max}^2r.
+$$
 
-would be if you're just driving along a level ground
+Therefore,
 
-so yeah we have that um the nb is greater than
+$$
+\boxed{
+\omega_{\max}
+=
+\sqrt{\frac{\mu_sg}{r}}
+}.
+$$
 
-nt so normal force at the bottom is greater than
-
-the normal force at the top what i'd like you to
-
-do now is to draw free body diagrams of this
-
-particle person sitting on the seat at the top and
-
-at the bottom of the ferris wheel just take a
-
-minute to draw those on your piece of paper and
-
-then yeah when you're done just give me a thumbs up.
-
-Another couple, two, three.
-
-Okay, good. Starting to see people done or put
-
-it in the chat. That would be fine as well.
-
-Okay, so I'm starting to see
-
-quite a few people finished.
-
-Let's go ahead and work on this together. So I'm
-
-going to do one at the top and one at the bottom.
-
-So when we do a free body diagram, if we're
-
-assuming a particle, we draw it as a dot. We don't
-
-draw a figure here because we're not considering
-
-the spatial extent, so we draw it as a dot.
-
-And I'm going to have mg for both of these.
-
-You can write this as f sub g if you like.
-
-Notation I'm fine with. mg is the same. So your mass
-
-didn't change from the top to the bottom, and the
-
-gravitational force, we're assuming that this is a small
-
-enough Ferris wheel that the change in height did not
-
-appreciably change this gravitational acceleration, 9
-
-.81 meters per second squared. Now, remember the thing
-
-about circular motion is that if I'm moving at uniform
-
-speed, then the acceleration vector, the radial
-
-acceleration, needs to be pointing toward the center of
-
-the circle. So for the center of the circle, pointing
-
-from the one coming downward from the top, so you're
-
-sitting on the top, gravitational force is pointing
-
-downward, that means my normal force had better be smaller
-
-than the gravitational force. For the one on the
-
-bottom, I'd better have a normal force that is larger
-
-than the gravitational force. I need both of those
-
-conditions to be met to keep the total radial acceleration
-
-to be less, well, pointing toward the center of the
-
-circle. Now, if it was not uniform circular motion,
-
-if there was some speeding up or slowing down around
-
-this circle, then I would also have a tangential
-
-acceleration. The total acceleration would no longer be
-
-pointing toward the center of the circle, but the radial
-
-acceleration would be. So what I like to do when I'm
-
-doing an analysis here using the force vectors, I like
-
-to keep the acceleration positive. So I'm going to put
-
-plus y in the downward direction for this top diagram
-
-and plus y in the upward direction for the bottom
-
-diagram. And I can put another axis in here if I want.
-
-Okay,
-
-so now those are the free-body diagrams that
-
-pertain to this system at the top and at the bottom.
-
-And what I'd like you to do is find the magnitude
-
-of the normal force. I've given you the mass of
-
-the person, the radius of the Ferris wheel, and the
-
-angular velocity. I'd like you to find the
-
-magnitude of the normal force on the person from their
-
-seat when they're at the bottom of the wheel and
-
-put your answer in Newton's. I will go ahead and
-
-activate this. And I'll give you a couple of minutes
-
-to work on this and then open breakout rooms.
-
-Everybody's back. Please put in an answer
-
-if you still need to do that. Three,
-
-two,
-
-one.
-
-All right. Thank you, Stopping Delivery.
-
-okay so what we're going to do is take our force
-
-equation from our free body diagram this one's
-
-for the top this one's for the bottom so we'll
-
-take it from this bottom diagram we have plus
-
-y in the upward direction so um want normal
-
-force at the bottom so normal force at the bottom
-
-and we still know omega r. Oh, and I'll
-
-put the mass of the person in here as well.
-
-Normal force at the bottom, so I'm
-
-going to do a force approach, sum of force
-
-in the radial direction equals mar.
-
-That equals mv squared over r. And for this diagram
-
-here, I have that the normal force is in the positive
-
-direction, So that equals normal force minus mg.
-
-Now I just need to solve for this normal
-
-force. So that would be the normal force equals
-
-mg plus mv squared over r. Now I have that.
-
-I can also write that as, let's see, we have v.
-
-I'll write this down here.
-
-v equals omega r, so normal force equals mg plus m
-
-omega squared r. That puts it into the given variables.
-
-And notice this is a completely symbolic solution in
-
-terms of given variables. You'll be asked to do this on
-
-the quiz. If you started by putting numbers in, then
-
-you shorted yourself from being able to work symbolically.
-
-you want to practice doing this symbolically, you
-
-could very well be given problems in the quiz that
-
-don't have numbers in them at all. So normal forecast
-
-equals mg plus m omega squared r. Putting in these values,
-
-I could factor the mass out, so 68 kilograms times
-
-9.81 meters per second squared plus 0.16 radians per
-
-second quantity squared times the radius 42 meters and
-
-that gives us the normal force equals 740 newtons.
-
-Keeping two sig figs, let's see what your responses were.
-
-739.5 might take you out of the realm of the accepted
-
-domain so yeah if you keep the typically i set up
-
-the accepted answers to allow one more sig fig at most
-
-and sometimes if you put in an extra extra sig fig
-
-then that will mark your answer incorrect if you're
-
-putting it into canvas so yeah you want to make sure
-
-that you're only keeping one extra sig fig at most
-
-okay otherwise we're liking this now let's do
-
-the next question that is um find the magnitude
-
-of the normal force at the when they're at
-
-the top i will go ahead and activate this All
-
-right, everybody's back. Please put in an
-
-answer if you still need to do that. Three,
-
-two,
-
-one.
-
-Thank you, stopping delivery.
-
-Okay, so we want the normal force at the
-
-top. We're going to do something very
-
-similar to what we just did at the bottom.
-
-So sum of forces equals ma sub
-
-r equals mv squared over r.
-
-Now this time, I set my positive direction being
-
-downward. That's because I wanted to keep my
-
-acceleration magnitude, my acceleration positive.
-
-So I can just carry the sign in the equations.
-
-So mv squared over r, that should be an equal sign.
-
-So give me like a minus sign.
-
-So that should equal mg minus the normal force.
-
-If I solve that for the normal force, I get the
-
-normal force equals mg minus mv squared over r. I
-
-could write that as the normal force equals m times
-
-g minus. I could write this in terms of omega,
-
-so omega squared r, and plugging in values for
-
-that, I get 590 newtons, which is less than the normal
-
-force at the top, as I expected it should be.
-
-okay any questions about this
-
-all right and somebody asked a question in the
-
-chat um about the sig figs and what i would say
-
-so here let me read the question it was um if we
-
-put in the wrong amount of sig figs on an exam
-
-will it count as our answer being wrong? Oh, on
-
-an exam. So that's different than in the Canvas.
-
-Like in a pre-lecture question,
-
-it could count it as being wrong.
-
-Idea here is if you're given some domain for
-
-your answer and if you give too much accuracy,
-
-sometimes your answer will still fall in the
-
-accepted domain. Sometimes it will fall outside.
-
-So you do wanna make sure that you keep your sig
-
-figs to the same as the given variables or at most
-
-one extra on an exam then those are hand graded so
-
-you would probably lose a very small amount this
-
-would be on a written question so not very much at all
-
-but yeah if you give the wrong number of figures
-
-especially too little or too many you could lose a
-
-point on a question, but not very much. Mostly it's
-
-going to be on this symbolic solution, and then
-
-plugging the values in will be only worth a couple of
-
-points anyway. Or, well, I don't know about exactly
-
-how much, but much less than the symbolic solution.
-
-Other questions?
-
-Yeah, see something in the chat?
-
-Oh, you're welcome.
-
-Okay, let's do one more question. We have a few
-
-more minutes. So this is a coin on a turntable,
-
-and it has maximum static friction. So here's my
-
-system looking like this, and it's rotating at
-
-some omega, and I have a coin at some radius r.
-
-Coin has a mass m. It has maximum static
-
-friction between the coin and the surface.
-
-Oh, oh, oh, oh, this should have
-
-been maximum static friction.
-
-No,
-
-mu s is 0.24. That should have been
-
-a max static friction coefficient.
-
-okay so yeah that's a typo in the question statement
-
-that should be the coefficient of maximum static
-
-friction and remember when you learned about friction
-
-in 2.11 you found that the friction force could
-
-be written as mu k normal for kinetic friction f
-
-equals mu s normal for maximum static friction that's
-
-only for the maximum static friction case but
-
-that's the case we're talking about here, maximum
-
-static friction. And I'm asking you to find omega in
-
-radians per second, just such that the coin just
-
-starts to slip. I will go ahead and activate this,
-
-and I'd like you to start with a free body diagram
-
-on this as well. So we know mu s, we know r and m.
-
-I want omega.
-
-Okay, so we only have a couple of minutes
-
-left, and most people have an answer in.
-
-Please put one in if you still need to do
-
-that. I will give you three more seconds.
-
-Three, two,
-
-one.
-
-All right, thank you. Stopping delivery.
-
-Okay, so free body diagram.
-
-I'm assuming that this is a particle, so I'm going to
-
-draw it as a point. I'm going to start with the
-
-gravitational force mg, normal force pointing upward, and
-
-then the, I'll put plus y in the upward direction,
-
-radial direction pointing, radial vector, coordinate
-
-vector pointing in toward the center of the circle, and
-
-the friction force pointing also toward the center of
-
-the circle. That's what's keeping it moving in a circle.
-
-So I can write out sum of forces in the y direction
-
-equals m a y equals 0 equals normal force minus m g.
-
-Therefore, the normal force equals m g.
-
-Sum of forces in the radial direction equals m a
-
-sub r equals m v squared over r. And that just equals
-
-the friction force f. Now, that's always going
-
-to be true. If it's moving really slowly, the friction
-
-force is always going to be the only force in
-
-the radial direction. When the velocity, when the
-
-angular speed omega gets large enough that the coin
-
-starts to slip, then I can write the friction force
-
-equals mu s times the normal force. Then I can
-
-write it as a maximum static friction force. So I
-
-have mv squared over r equals mu s times the normal
-
-force. So mv squared over r equals mu s times mg.
-
-Mass cancels out. v squared over r equals mu
-
-s g. I can write for, I have that velocity
-
-equals r omega or omega r. So I have, let's see,
-
-omega squared r equals mu s g. So omega equals mu
-
-s g over r, taking the square root and plugging
-
-in those values. And notice what we can say is that
-
-as the coefficient of static friction goes up,
-
-I can spin this faster, right? The stickiness
-
-between the two materials, as that goes up, I can spin
-
-it faster. So mu s increases, omega increases.
-
-The gravitational pull, as gravity gets stronger, it's
-
-pulled in more strongly into the disk as well, the
-
-turntable. And also as the radius goes up, omega goes
-
-down. So if I put this farther away, then I would
-
-have to spin this more slowly before the coin starts
-
-to slip okay i see we're out of time so i will go ahead
-
-and end here and if you have any more questions for
-
-me you want to talk i will stick around and start
-
-my office hour right now if not i will see you tomorrow
-
-bye for now thank you for coming see you next time
+A larger coefficient of static friction permits a greater angular speed, while placing the coin farther from the rotation axis lowers the angular speed at which slipping begins.

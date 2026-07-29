@@ -1,0 +1,115 @@
+## Prerequisites
+
+- [The Double-Angle Formula for Sine - 271](<Prerequisites/The Double-Angle Formula for Sine - 271.md>)
+- [The Double-Angle Formula for Cosine - 831](<Prerequisites/The Double-Angle Formula for Cosine - 831.md>)
+- [Calculating Definite Integrals Using Substitution - 1159](<Prerequisites/Calculating Definite Integrals Using Substitution - 1159.md>)
+- [Integration Using the Pythagorean Identities - 1037](<Prerequisites/Integration Using the Pythagorean Identities - 1037.md>)
+
+## Lessons
+
+- [Integrating Trigonometric Functions Using Substitution - 478](<Lessons/Integrating Trigonometric Functions Using Substitution - 478.md>)
+- [Integration Using the Double-Angle Formulas - 1038](<Lessons/Integration Using the Double-Angle Formulas - 1038.md>)
+- [Integrating an Odd Power of Sine](<Lessons/Problem-1.md>)
+- [Integrating $\cos^3(12x)$ by Saving One Cosine](<Lessons/Problem-2.md>)
+- [Integrating Sine and Cosine Powers When Cosine Is Odd](<Lessons/Problem-3.md>)
+- [Definite Integrals with an Odd Power of Cosine](<Lessons/Problem-4.md>)
+- [Integrating $\sin^2(4x)\cos^2(4x)$ With Double Angles](<Lessons/Problem-6.md>)
+
+---
+## Problem 1
+
+Evaluate the integral.
+
+$$
+\int \sin^3(3x)\,dx
+$$
+
+Give an exact symbolic answer. Use $C$ for the arbitrary constant and absorb constants into $C$ when possible.
+
+---
+## Problem 2
+
+Evaluate the integral.
+
+$$
+\int \cos^3(12x)\,dx
+$$
+
+Give an exact symbolic answer. Use $C$ for the arbitrary constant and absorb constants into $C$ when possible.
+
+---
+## Problem 3
+
+Evaluate the integral.
+
+$$
+\int \sin^4(18x)\cos^3(18x)\,dx
+$$
+
+Give an exact symbolic answer. Use $C$ for the arbitrary constant and absorb constants into $C$ when possible.
+
+---
+## Problem 4
+
+Evaluate the definite integral.
+
+$$
+\int_0^\pi \sin^2\left(\frac{x}{2}\right)\cos^5\left(\frac{x}{2}\right)\,dx
+$$
+
+Give an exact symbolic answer.
+
+---
+## Problem 5
+
+Evaluate the integral.
+
+$$
+\int \left(\sin(2\pi x)\right)^2\,dx
+$$
+
+Give an exact symbolic answer. Use $C$ for the arbitrary constant and absorb constants into $C$ when possible.
+
+---
+## Problem 6
+
+Evaluate the integral.
+
+$$
+\int \sin^2(4x)\cos^2(4x)\,dx
+$$
+
+Give an exact symbolic answer. Use $C$ for the arbitrary constant and absorb constants into $C$ when possible.
+
+---
+## Problem 7
+
+Evaluate the integral.
+
+$$
+\int \tan^{1/2}(13x)\sec^2(13x)\,dx
+$$
+
+Give an exact symbolic answer. Use $C$ for the arbitrary constant and absorb constants into $C$ when possible.
+
+---
+## Problem 8
+
+Evaluate the integral.
+
+$$
+\int \tan(8x)\sec^5(8x)\,dx
+$$
+
+Give an exact symbolic answer. Use $C$ for the arbitrary constant and absorb constants into $C$ when possible.
+
+---
+## Problem 9
+
+Evaluate the integral.
+
+$$
+\int \csc^2(x)\cot^9(x)\,dx
+$$
+
+Give an exact symbolic answer. Use $C$ for the arbitrary constant and absorb constants into $C$ when possible.

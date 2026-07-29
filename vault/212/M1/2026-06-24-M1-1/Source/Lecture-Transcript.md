@@ -1,1223 +1,1086 @@
-Hey there. Welcome to Physics 212.
+# Physics 212: Rotational Kinematics, Angular Acceleration, and the Right-Hand Rule
 
-Hi, everybody. Welcome back.
+Welcome back to Physics 212.
 
-Well, I want to start by reviewing a little bit
+## Announcements and Course Resources
 
-of what we did yesterday. We're just a couple
+The Lab 1 group-formation discussion is due tomorrow. Make sure that you have:
 
-of days into this term, barely getting started.
+- Posted an introduction in the course discussion
+- Contacted potential laboratory partners
+- Joined or formed a laboratory group
+- Identified a time when your group can meet with a teaching assistant
 
-We have been talking about circular motion.
+If other students have not responded to your messages, continue contacting potential group members and complete as much of the group-selection process as possible before the deadline.
 
-First thing we did was we related circular motion
+You also have access to the Physics 211 course webpages through the Course Information module. These pages contain material used in Physics 211 and may be useful for reviewing translational kinematics. Physics 211 tutorial videos are also available in the module.
 
-to translational motion. and in translational motion
+## Review of Translational Kinematics
 
-we can define position we define velocity as a
+In translational motion, position, velocity, and acceleration are related through differentiation.
 
-time derivative of position acceleration is a time
+Velocity is the time derivative of position:
 
-derivative of velocity in rotational motion our air
+$$
+v(t)=\frac{dx}{dt}.
+$$
 
-quote position is the angle and we can relate the
+Acceleration is the time derivative of velocity:
 
-two translational and rotational as the arc length
+$$
+a(t)=\frac{dv}{dt}
+=
+\frac{d^2x}{dt^2}.
+$$
 
-equals r theta. So omega is the angular velocity.
+These relationships can be reversed through integration:
 
-And we can also think of that as an angular frequency,
+$$
+v(t)
+=
+v_0
++
+\int_{t_0}^{t}a(t')\,dt',
+$$
 
-depending on what kind of units we want to use.
+and
 
-And alpha is our angular acceleration. So
+$$
+x(t)
+=
+x_0
++
+\int_{t_0}^{t}v(t')\,dt'.
+$$
 
-how fast omega changes is d omega by dt. And
+If the acceleration is constant, these integrals produce the familiar translational kinematic equations:
 
-that is alpha. We can go the other way using
+$$
+x_f
+=
+x_0
++
+v_0\Delta t
++
+\frac{1}{2}a(\Delta t)^2,
+$$
 
-integrals for constant acceleration what we can do is
+$$
+v_f=v_0+a\Delta t,
+$$
 
-we can use these integrals to say for constant if I
+and
 
-put a constant into acceleration into the velocity
+$$
+v_f^2
+=
+v_0^2
++
+2a(x_f-x_0).
+$$
 
-function I can define a velocity from acceleration I can
+The third equation does not contain new information. It is obtained by eliminating time from the first two equations.
 
-define a position function as a function of time from
+## Rotational Kinematics
 
-that velocity function so these should look really
+The rotational equivalents of position, velocity, and acceleration are:
 
-familiar to you x final equals x zero plus v zero t plus
+- Angular position $\theta$
+- Angular velocity $\omega$
+- Angular acceleration $\alpha$
 
-a half a t squared v final equals v zero plus a t and
+Arc length and angular displacement are related by
 
-then if i eliminate time between these two equations
+$$
+s=r\theta,
+$$
 
-i have this third equation no new information here
+where $r$ is the distance from the rotation axis.
 
-but just written as a combination without a time a
+Angular velocity is the time derivative of angular position:
 
-component and a v final squared equals v zero squared plus
+$$
+\boxed{
+\omega=\frac{d\theta}{dt}
+}.
+$$
+
+Angular acceleration is the time derivative of angular velocity:
+
+$$
+\boxed{
+\alpha=\frac{d\omega}{dt}
+=
+\frac{d^2\theta}{dt^2}
+}.
+$$
+
+For a point at a fixed distance $r$ from the rotation axis, differentiating $s=r\theta$ gives
+
+$$
+v_t=r\omega,
+$$
+
+where $v_t$ is the tangential speed.
+
+Differentiating again gives
+
+$$
+a_t=r\alpha,
+$$
+
+where $a_t$ is the tangential acceleration.
+
+The integral relationships are
+
+$$
+\omega(t)
+=
+\omega_0
++
+\int_{t_0}^{t}\alpha(t')\,dt',
+$$
+
+and
+
+$$
+\theta(t)
+=
+\theta_0
++
+\int_{t_0}^{t}\omega(t')\,dt'.
+$$
+
+For constant angular acceleration, the rotational kinematic equations are
+
+$$
+\boxed{
+\theta_f
+=
+\theta_0
++
+\omega_0\Delta t
++
+\frac{1}{2}\alpha(\Delta t)^2
+},
+$$
+
+$$
+\boxed{
+\omega_f
+=
+\omega_0
++
+\alpha\Delta t
+},
+$$
 
-two a delta x and by the way let me give you a little
+and
 
-bit of a heads up here so if you First of all, you
+$$
+\boxed{
+\omega_f^2
+=
+\omega_0^2
++
+2\alpha(\theta_f-\theta_0)
+}.
+$$
 
-can access the course pages by going into the course
+These have exactly the same mathematical form as the translational kinematic equations:
 
-information module and clicking on course information.
+$$
+x\longleftrightarrow\theta,
+$$
 
-And if I open this general page, General
+$$
+v\longleftrightarrow\omega,
+$$
 
-Physics with Calculus, and I click on courses,
+and
 
-you can actually go into the Physics 211 material
+$$
+a\longleftrightarrow\alpha.
+$$
 
-and see everything in here that we use to
+## Acceleration Components in Circular Motion
 
-teach 211. So you can use this as a resource.
+Acceleration is a vector and may be resolved into perpendicular components.
 
-I've also made the tutorial videos for 2011
+In Cartesian coordinates,
 
-available to you in the course information module.
+$$
+\vec{a}
+=
+a_x\hat{x}
++
+a_y\hat{y},
+$$
 
-So, yeah, you have access to 2011
+with magnitude
 
-material, not the Canvas courses, but
+$$
+a
+=
+\sqrt{a_x^2+a_y^2}.
+$$
 
-you do have access to the web pages.
+For circular motion, it is often more convenient to use radial and tangential coordinates:
 
-And then for constant acceleration, we derive these
+$$
+\boxed{
+\vec{a}
+=
+a_r\hat{r}
++
+a_t\hat{t}
+}.
+$$
 
-equations that are called kinematic equations. and we
+The magnitude is then
 
-can do a very similar thing for angular for rotational
+$$
+\boxed{
+a
+=
+\sqrt{a_r^2+a_t^2}
+}.
+$$
 
-motion or angular motion theta final equals theta
+The two components have different physical meanings:
 
-zero plus omega zero t plus a half alpha t squared omega
+- The radial acceleration $a_r$ changes the direction of the velocity.
+- The tangential acceleration $a_t$ changes the magnitude of the velocity.
 
-final equals omega zero plus alpha t omega final
+Both $a_r$ and $a_t$ have units of linear acceleration:
 
-squared equals omega zero squared plus two alpha delta
+$$
+[a_r]=[a_t]=\mathrm{m/s^2}.
+$$
 
-theta and then we talked about the vector nature of
+Angular acceleration has different units:
 
-acceleration for for example and we can break it down
+$$
+[\alpha]=\mathrm{rad/s^2}.
+$$
 
-into components could have a z component and so the
+For circular-motion problems, it is often convenient to choose the positive radial direction inward, toward the center of the circle.
 
-magnitude is going to be ax squared plus ay squared take
+# Worked Example: A Disk Slowing to Rest
 
-the square root of that i could also resolve it into
+Consider a disk with initial angular speed
 
-components along an r and t axis where r is along
+$$
+\omega_0=12\ \mathrm{rad/s}.
+$$
 
-the radius of the circle and t is tangential to the
+The disk comes to rest after
 
-circle and i can write the magnitude of acceleration as
+$$
+\Delta t=26\ \mathrm{s}
+$$
 
-ar squared plus at squared and then take the square
+while undergoing constant angular acceleration.
 
-root of that and here we've defined ar as radial
+We want to determine the magnitude and direction of the angular acceleration.
 
-acceleration at as tangential acceleration and alpha as
+## Known Quantities
 
-angular acceleration so remember angular acceleration is
+The known quantities are
 
-how fast omega is changing tangential acceleration is
+$$
+\omega_0=12\ \mathrm{rad/s},
+$$
 
-how fast the velocity is changing this tangential
+$$
+\omega_f=0,
+$$
 
-velocity so that's a has different units than alpha and
+and
 
-a radial is if we're talking about circular motion
+$$
+\Delta t=26\ \mathrm{s}.
+$$
 
-then the particle won't be moving inward or outward
+The angular acceleration is constant:
 
-along the radius, but the directionality of the velocity
+$$
+\alpha=\text{constant}.
+$$
 
-is changing. So a radial always points along the
+## Interpreting the Kinematic Graphs
 
-radius. And typically what we do is we choose positive
+Before performing the calculation, consider the graphs of $\alpha$, $\omega$, and $\theta$ as functions of time.
 
-inward toward the center of the circle. So that's just
+### Angular Acceleration
 
-kind of a very quick recap of where we started yesterday.
+If the disk’s initial direction of rotation is defined as positive, then a disk that is slowing down has negative angular acceleration.
 
-Do I have any questions about this? any questions
+Because the angular acceleration is constant, the graph of $\alpha$ versus time is a horizontal line below zero.
 
-from you about this or other stuff we discussed oh
+### Angular Velocity
 
-i just remembered there's also another thing that i
+The angular velocity begins at $\omega_0$ and decreases linearly to zero.
 
-wanted to talk about right at the start of class today
+The slope of an angular-velocity graph is the angular acceleration:
 
-have a oh i see a question in the chat um i'm confused
+$$
+\frac{d\omega}{dt}=\alpha.
+$$
 
-with poll every with everywhere poll i don't find
+Because $\alpha$ is constant and negative, $\omega(t)$ is a straight line with negative slope.
 
-anything there uh you won't find anything there until
+### Angular Position
 
-i open the poll and make it um available to everybody
+The slope of the angular-position graph is the angular velocity:
 
-So, yeah, I'll put the Poll Everywhere link in the
+$$
+\frac{d\theta}{dt}=\omega.
+$$
 
-chat. And then when I've opened, when I've activated
+The disk continues rotating in the positive direction until it stops, so $\theta(t)$ continues increasing.
 
-a question, then you'll be able to find it. And if it's
+However, its slope becomes progressively smaller because $\omega$ decreases. The $\theta$ graph is therefore increasing and concave downward. Its slope reaches zero at the instant the disk stops.
 
-your first time of using Poll Everywhere, you'll
+Graphically:
 
-need to register. And that should only take you a few
+- $\alpha(t)$ is constant and negative.
+- $\omega(t)$ decreases linearly from $12\ \mathrm{rad/s}$ to zero.
+- $\theta(t)$ increases with a decreasing slope.
 
-seconds. The other thing I wanted to mention on a kind
+## Calculating the Angular Acceleration
 
-of a course-wide note is that the discussion assignment
+Use the constant-angular-acceleration equation
 
-for the labs for the first week is due tomorrow.
+$$
+\omega_f
+=
+\omega_0
++
+\alpha\Delta t.
+$$
 
-and that has to do with finding a group and settling
+Substituting the known values,
 
-on a time that you can get together finding a time
+$$
+0
+=
+12\ \mathrm{rad/s}
++
+\alpha(26\ \mathrm{s}).
+$$
 
-that your group can get together with a ta had a couple
+Solving for $\alpha$,
 
-of emails from people having a little issue doing
+$$
+\alpha
+=
+-\frac{12\ \mathrm{rad/s}}{26\ \mathrm{s}}.
+$$
 
-that because one of the reasons is they're contacting
+Therefore,
 
-people and nobody's getting back to them or they
+$$
+\boxed{
+\alpha=-0.46\ \mathrm{rad/s^2}
+}.
+$$
 
-haven't posted in the discussion so um if we go back
+The negative sign indicates that the angular acceleration points opposite the chosen positive direction of rotation.
 
-here to let's see modules let's go into modules and
+The magnitude is
 
-if i go into this first module we go into lab one
+$$
+\boxed{
+|\alpha|=0.46\ \mathrm{rad/s^2}
+}.
+$$
 
-instructions into lab one instructions course introductions
+# Signs of Velocity and Acceleration
 
-you need to post in course introductions if you
+The sign of acceleration depends on both the direction of motion and whether the object is speeding up or slowing down.
 
-haven't already done so so we can see there are
+For one-dimensional translational motion:
 
-like almost 200 posts in here but apparently quite a
+| Velocity | Motion | Acceleration |
+|---|---|---|
+| $v>0$ | Speeding up | $a>0$ |
+| $v>0$ | Slowing down | $a<0$ |
+| $v<0$ | Speeding up | $a<0$ |
+| $v<0$ | Slowing down | $a>0$ |
 
-few people well you have to post and then reply to
+Acceleration has the same sign as velocity when an object is speeding up. It has the opposite sign when the object is slowing down.
 
-people as well and so if you haven't posted in here yet
+The same reasoning applies to rotational motion:
 
-you need to do that today very soon you need to do
+| Angular velocity | Motion | Angular acceleration |
+|---|---|---|
+| $\omega>0$ | Speeding up | $\alpha>0$ |
+| $\omega>0$ | Slowing down | $\alpha<0$ |
+| $\omega<0$ | Speeding up | $\alpha<0$ |
+| $\omega<0$ | Slowing down | $\alpha>0$ |
 
-that by today because you need to be able to complete
+The signs are meaningful only after a positive angular direction has been defined.
 
-your module one your lab one discussion by today so
+# Angular Velocity as a Vector
 
-just a note please do that as well okay so sorry
+Describing a rotation as clockwise or counterclockwise is incomplete unless the observer’s viewpoint is specified.
 
-for that a little bit of an aside any other questions
+A disk that appears to rotate counterclockwise from above appears to rotate clockwise when viewed from below. The physical rotation has not changed; only the observer’s viewpoint has changed.
 
-okay so I'm not getting any questions
+To describe rotation unambiguously, angular velocity is treated as a vector directed along the rotation axis.
 
-about this foundational material
+For circular motion, the tangential velocity is related to angular velocity and position by
 
-let's go into poll everywhere then and I will
+$$
+\boxed{
+\vec{v}
+=
+\vec{\omega}\times\vec{r}
+}.
+$$
 
-ask you a question about it I'm going to so it
+Here:
 
-says when poll is active at here's my link poll
+- $\vec{r}$ points from the rotation axis to the particle.
+- $\vec{v}$ is tangent to the circular path.
+- $\vec{\omega}$ points along the rotation axis.
+- The three vectors are mutually perpendicular for planar circular motion.
 
-everywhere pollev.com and my name I'm going to
+The magnitude of the cross product is
 
-copy that and put it into the chat for everybody.
+$$
+v
+=
+\omega r\sin\beta,
+$$
 
-There is that.
+where $\beta$ is the angle between $\vec{\omega}$ and $\vec{r}$.
 
-And I am asking you a question here. I say a
+For planar circular motion,
 
-disk is spinning at 12 radians per second comes
+$$
+\beta=90^\circ,
+$$
 
-to a stop in 26 seconds with constant acceleration.
+so
 
-What is the magnitude of the acceleration?
+$$
+\sin\beta=1.
+$$
 
-So I'll go ahead and answer this. And I
+Therefore,
 
-would say, please do assign variables to
+$$
+\boxed{
+v=\omega r
+}.
+$$
 
-these values and do this symbolically.
+The vector $\vec{\omega}$ does not point in the direction that the particle travels. The particle travels tangentially in the plane of rotation. The angular-velocity vector instead identifies:
 
-Don't just start putting numbers in
+- The rotation axis
+- The sense of rotation about that axis
 
-from the start. They will activate.
+# The Right-Hand Rule
 
-Okay, everybody's back. Please put in an
+The direction of a cross product is determined using the right-hand rule.
 
-answer if you still need to do that.
+For a right-handed Cartesian coordinate system,
 
-I'll give you three more seconds. Three,
+$$
+\boxed{
+\hat{x}\times\hat{y}=\hat{z}
+}.
+$$
 
-two,
+One way to apply the rule is:
 
-one.
+1. Point the fingers of your right hand along the first vector.
+2. Curl them toward the second vector.
+3. Your thumb points in the direction of the cross product.
 
-All right, thank you, stopping delivery.
+For
 
-Okay, so let's see.
+$$
+\vec{v}
+=
+\vec{\omega}\times\vec{r},
+$$
 
-I'm going to start a new page here.
+the first vector is $\vec{\omega}$ and the second is $\vec{r}$. The resulting direction is the tangential velocity $\vec{v}$.
 
-So I like to start with what we know.
+For a rotating disk, a second version of the rule is often convenient:
 
-So here are unknowns.
+1. Curl the fingers of your right hand in the direction of rotation.
+2. Your thumb points in the direction of $\vec{\omega}$.
 
-We know the disk is spinning at 12 radians
+If a disk rotates counterclockwise as viewed from above the page, the right-hand rule gives
 
-per second, so we know omega is zero.
+$$
+\vec{\omega}
+\text{ directed out of the page}.
+$$
 
-We know it comes to stop in 26
+If it rotates clockwise as viewed from above, then
 
-seconds, so we know delta T.
+$$
+\vec{\omega}
+\text{ is directed into the page}.
+$$
 
-We know that the magnitude has constant
+The standard symbols are:
 
-acceleration, so alpha equals constant.
+- $\odot$ for a vector pointing out of the page
+- $\otimes$ for a vector pointing into the page
 
-Now, I'm going to start with some plots, like
+## Right-Handed Coordinate System
 
-you would if you were doing kinematics anywhere.
+Suppose the positive $x$- and $y$-axes lie in the plane of the page.
 
-So time on the horizontal axis, vertical axis will
+The direction of the positive $z$-axis is defined by
 
-be alpha, omega, and theta. and if you didn't do
+$$
+\hat{x}\times\hat{y}=\hat{z}.
+$$
 
-start with plots I'd like you to take just a
+Using the right-hand rule, this places the positive $z$-axis out of the page.
 
-minute to draw out the plots and make sure that you're
+If the $z$-axis were instead directed into the page while $x$ and $y$ remained unchanged, the coordinate system would be left-handed.
 
-understanding how to do that I'm going to give
+Physics conventionally uses right-handed coordinate systems.
 
-you just a minute to do that go ahead and draw
+# Direction of the Disk’s Angular Acceleration
 
-them on your paper or whatever device you're using
+Return to the disk that begins with
 
-okay and yeah I recognize that going from a graph to
+$$
+\omega_0=12\ \mathrm{rad/s}
+$$
 
-the equations is very useful and important in physics
+and slows to rest.
 
-and so So yeah, you could see something like a question
+Suppose the disk is initially rotating counterclockwise as viewed from above. Define that direction as positive.
 
-about where you have to draw plots or recognize
+The right-hand rule then gives
 
-correct plots for kinematics, for rotational kinematics
+$$
+\vec{\omega}_0
+\text{ directed out of the page}.
+$$
 
-in the quiz or in the final exam. So please make sure
+Because the disk is slowing down, the angular acceleration points opposite the angular velocity:
 
-you understand how to do this. So first of all, I know
+$$
+\vec{\alpha}
+\text{ directed into the page}.
+$$
 
-this thing is slowing down. So I'm, well, we can
+Thus,
 
-make some choices about acceleration. We'll talk about
+$$
+\boxed{
+\vec{\alpha}
+\text{ points into the page}
+}.
+$$
 
-directionality of acceleration in a second. but i'm
+Equivalently, if out of the page is the positive $z$-direction,
 
-going to say that means that i will put my acceleration
+$$
+\boxed{
+\alpha<0
+}.
+$$
 
-as a negative value there's my acceleration and it's
+If the same counterclockwise rotation were speeding up instead, $\vec{\alpha}$ would point out of the page.
 
-at some negative value and it's constant so straight
+The important sequence is:
 
-lines no zero slope straight line now if it starts
+1. Define the positive angular direction.
+2. Use the right-hand rule to determine the corresponding vector direction.
+3. Decide whether $\alpha$ points with or against $\omega$ based on whether the rotation is speeding up or slowing down.
 
-with some omega zero um first of all we can define now
+# Worked Example: Total Revolutions Before the Disk Stops
 
-you can you can vary the signs and everything on this
+We now want to determine how many revolutions the disk completes while slowing from
 
-and like i said we'll talk about this in a second but
+$$
+\omega_0=12\ \mathrm{rad/s}
+$$
 
-if I'm assuming that it's moving in whatever direction
+to rest over
 
-it's moving at the start is a positive direction
+$$
+\Delta t=26\ \mathrm{s}.
+$$
 
-then I would call omega zero to be positive and it's
+The angular-acceleration magnitude is
 
-slowing down it has a negative constant slope so it comes
+$$
+|\alpha|
+=
+\frac{\omega_0}{\Delta t}.
+$$
 
-down and comes to a stop and there's my t I didn't
+Because the acceleration points opposite the rotation,
 
-quite hit it did I let's try that again there's my t
+$$
+\alpha=-|\alpha|.
+$$
 
-final that I'm going to mark between all three graphs
+Use the rotational kinematic equation
 
-and I don't know what happens after that if it turns
+$$
+\omega_f^2
+=
+\omega_0^2
++
+2\alpha\Delta\theta.
+$$
 
-around or what but I know it stops at t final and here's
+The final angular velocity is zero:
 
-t zero on the at the origin and then my theta what
+$$
+0
+=
+\omega_0^2
+-
+2|\alpha|\Delta\theta.
+$$
 
-I understand is that well let's say theta zero equals
+Therefore,
 
-zero now you're also from what's been given here you're
+$$
+2|\alpha|\Delta\theta
+=
+\omega_0^2.
+$$
 
-free to choose that what we're asking about is the
+Solving for the angular displacement,
 
-magnitude of the acceleration but my theta if it has
+$$
+\Delta\theta
+=
+\frac{\omega_0^2}{2|\alpha|}.
+$$
 
-positive slope. So the slope of theta is the value
+Using
 
-of omega, so it has a positive slope that increases
+$$
+|\alpha|
+=
+\frac{\omega_0}{\Delta t},
+$$
 
-to a zero slope at t final, so it should look
+we obtain
 
-like that. And there's my theta zero, my theta final
+$$
+\Delta\theta
+=
+\frac{
+\omega_0^2
+}{
+2\left(\frac{\omega_0}{\Delta t}\right)
+}.
+$$
 
-would be there, theta zero. So my kinematic plot
+One factor of $\omega_0$ cancels:
 
-should look like that. Any questions about that?
+$$
+\boxed{
+\Delta\theta
+=
+\frac{\omega_0\Delta t}{2}
+}.
+$$
 
-Okay, so now let's look at our general
+Substituting the values,
 
-equations. We have theta final equals theta 0 plus
+$$
+\Delta\theta
+=
+\frac{
+(12\ \mathrm{rad/s})(26\ \mathrm{s})
+}{
+2
+}.
+$$
 
-omega 0 t plus 1 half alpha t squared. We
+Therefore,
 
-have omega final equals omega 0 plus alpha t.
+$$
+\boxed{
+\Delta\theta=156\ \mathrm{rad}
+}.
+$$
 
-We have omega final squared equals
+To convert from radians to revolutions, use
 
-omega 0 squared plus 2 alpha delta
+$$
+1\ \mathrm{rev}=2\pi\ \mathrm{rad}.
+$$
 
-theta. Those are our general equations.
+The number of revolutions is
 
-What I want to do is choose one of these equations
+$$
+N
+=
+\Delta\theta
+\left(
+\frac{
+1\ \mathrm{rev}
+}{
+2\pi\ \mathrm{rad}
+}
+\right).
+$$
 
-that allows me to figure out what this
+Thus,
 
-alpha is. Now remember, these are only true for
+$$
+N
+=
+\frac{
+156
+}{
+2\pi
+}.
+$$
 
-constant acceleration, constant angular
+Equivalently,
 
-acceleration. But in this case, I have constant angular
+$$
+N
+=
+\frac{
+\omega_0\Delta t
+}{
+4\pi
+}.
+$$
 
-acceleration so I can use these equations.
+Substituting directly,
 
-I know what delta t is, I know omega zero, I
+$$
+N
+=
+\frac{
+(12\ \mathrm{rad/s})(26\ \mathrm{s})
+}{
+4\pi\ \mathrm{rad/rev}
+}.
+$$
 
-know omega final equals zero, that's actually
+This gives
 
-a given. And so I know omega zero, omega final,
+$$
+N\approx24.8\ \mathrm{rev}.
+$$
 
-delta t, I want alpha. This looks like a very
+To two significant figures,
 
-good equation to use. I'm going to use that.
+$$
+\boxed{
+N=25\ \mathrm{revolutions}
+}.
+$$
 
-Omega final equals omega zero plus alpha t. I'm going
+## Graphical Check Using Average Angular Velocity
 
-to specify that equation for our system. So I
+Because the angular acceleration is constant, the average angular velocity is
 
-have zero equals omega zero. And then because it's
+$$
+\omega_{\mathrm{avg}}
+=
+\frac{\omega_0+\omega_f}{2}.
+$$
 
-slowing down and I've defined alpha as a negative value,
+Therefore,
 
-that would be minus alpha t. So if I'm solving
+$$
+\omega_{\mathrm{avg}}
+=
+\frac{
+12\ \mathrm{rad/s}
++
+0
+}{
+2
+}
+=
+6.0\ \mathrm{rad/s}.
+$$
 
-this for alpha, I'm going to have omega 0 equals alpha
+The angular displacement is
 
-t. Omega 0 over t, or delta t if you like, equals
+$$
+\Delta\theta
+=
+\omega_{\mathrm{avg}}\Delta t.
+$$
 
-alpha. So that equals 12 radians per second over
+Thus,
 
-26 seconds, which gives me 0.46 radians per second.
+$$
+\Delta\theta
+=
+(6.0\ \mathrm{rad/s})(26\ \mathrm{s})
+=
+156\ \mathrm{rad},
+$$
 
-squared. Sorry, my radians per second squared. All
+which agrees with the kinematic derivation.
 
-right. And so I was given two sig figs for my values in
+Geometrically, this is also the area beneath the angular-velocity-versus-time graph. That graph forms a triangle with base $26\ \mathrm{s}$ and height $12\ \mathrm{rad/s}$:
 
-my problem statement. So I'm keeping two sig figs. You
+$$
+\Delta\theta
+=
+\frac{1}{2}
+(26\ \mathrm{s})
+(12\ \mathrm{rad/s})
+=
+156\ \mathrm{rad}.
+$$
 
-could keep up to one more. So that would be 0.461 if
+# General Strategy for Rotational-Kinematics Problems
 
-you wanted to do that. Okay. Any questions about this?
+## 1. Define the Positive Angular Direction
 
-All right. Then the next thing we want to talk about
+Choose whether positive rotation corresponds to clockwise or counterclockwise motion from a stated viewpoint.
 
-is actually the direction of the angular acceleration.
+Use the right-hand rule to associate that rotation with a vector direction along the rotation axis.
 
-I'm going to actually pull up a plain
+## 2. Identify the Known Quantities
 
-sheet of paper and we'll come back to
+List quantities such as
 
-this one and use it again in a sec.
+$$
+\theta_0,
+\qquad
+\theta_f,
+\qquad
+\omega_0,
+\qquad
+\omega_f,
+\qquad
+\alpha,
+\qquad
+\Delta t.
+$$
 
-So Now, if you remember in 2.11 where
+Do not substitute numbers immediately.
 
-you talked about translational motion,
+## 3. Sketch the Kinematic Graphs
 
-we have that you choose plus x. That gives
+Draw qualitative graphs of
 
-you plus v. plus, so let's say you have
+$$
+\alpha(t),
+\qquad
+\omega(t),
+\qquad
+\theta(t).
+$$
 
-an x and a, oops, let me put this as time,
+Check that:
 
-time and position, you choose a plus x. So let's say
+- The slope of $\omega(t)$ agrees with $\alpha(t)$.
+- The slope of $\theta(t)$ agrees with $\omega(t)$.
+- The concavity of $\theta(t)$ agrees with the sign of $\alpha$.
 
-you choose plus x to be in the right direction. Then
+## 4. Select an Equation Containing the Known and Unknown Quantities
 
-if something's moving in the right direction, in
+For constant angular acceleration, choose among
 
-the same direction as you chose for positive x, that's
+$$
+\theta_f
+=
+\theta_0
++
+\omega_0\Delta t
++
+\frac{1}{2}\alpha(\Delta t)^2,
+$$
 
-a positive velocity. And then once you've chosen
+$$
+\omega_f
+=
+\omega_0
++
+\alpha\Delta t,
+$$
 
-plus velocity by choosing plus x, then acceleration
+and
 
-can be a little bit more complicated. For plus velocity
+$$
+\omega_f^2
+=
+\omega_0^2
++
+2\alpha(\theta_f-\theta_0).
+$$
 
-or minus velocity, I can choose my acceleration.
+## 5. Solve Symbolically
 
-And what we did, if you remember in 2.11,
+Isolate the requested variable before inserting numerical values.
 
-if something has positive velocity and it's
+A symbolic solution makes it easier to:
 
-speeding up, then it has positive acceleration.
+- Track signs
+- Check dimensions
+- Identify cancellations
+- Interpret how the result depends on each variable
+- Detect algebraic errors
 
-If it has negative velocity and speeding
+## 6. Check the Direction and Magnitude Separately
 
-up, let's see, I'm going to do it like this.
+A vector quantity may have a negative component even though its magnitude is positive.
 
-Positive velocity and, or negative
+For the slowing disk,
 
-velocity and slowing down.
+$$
+\alpha=-0.46\ \mathrm{rad/s^2},
+$$
 
-There are different ways to do this plot. So positive
+while
 
-velocity speeding up or negative velocity slowing
+$$
+|\alpha|=0.46\ \mathrm{rad/s^2}.
+$$
 
-down, those both give you positive acceleration.
+## 7. Convert Angular Units Carefully
 
-Positive velocity slowing down.
+Use
 
-or negative velocity speeding up gives you negative
+$$
+1\ \mathrm{rev}=2\pi\ \mathrm{rad}
+$$
 
-acceleration. So that's for translational motion.
+when converting between radians and revolutions.
 
-Now, in rotational motion, we have to be a little bit
+# Summary
 
-more careful about this. We can talk about something,
+Translational and rotational kinematics have parallel mathematical structures:
 
-let's say we have something spinning and it's moving
+$$
+x\longleftrightarrow\theta,
+$$
 
-like this. I have my omega zero going out like this,
+$$
+v\longleftrightarrow\omega,
+$$
 
-and I could say that this was spinning in the
+and
 
-counterclockwise direction, but that depends on the observer.
+$$
+a\longleftrightarrow\alpha.
+$$
 
-So if I have something, for example, here's something
+Angular velocity and angular acceleration are
 
-I have that you can tell which the directionality
+$$
+\boxed{
+\omega=\frac{d\theta}{dt}
+}
+$$
 
-of it, and it's spinning in the counterclockwise
+and
 
-direction. If you lifted it up and looked at it from
+$$
+\boxed{
+\alpha=\frac{d\omega}{dt}
+}.
+$$
 
-below, try this with something you have, your pencil
+For constant angular acceleration,
 
-or something, it would be spinning in the opposite
+$$
+\boxed{
+\theta_f
+=
+\theta_0
++
+\omega_0\Delta t
++
+\frac{1}{2}\alpha(\Delta t)^2
+},
+$$
 
-direction. Now I can't really do that on my doc cam,
+$$
+\boxed{
+\omega_f
+=
+\omega_0
++
+\alpha\Delta t
+},
+$$
 
-but what I can do is I can turn it over, but keep
+and
 
-it spinning the same way. So I'm spinning in the
+$$
+\boxed{
+\omega_f^2
+=
+\omega_0^2
++
+2\alpha(\theta_f-\theta_0)
+}.
+$$
 
-counterclockwise direction, and I'm turning it over as
+For planar circular motion,
 
-if I could do this by moving the observer as well,
+$$
+\boxed{
+\vec{v}
+=
+\vec{\omega}\times\vec{r}
+}.
+$$
 
-but I'm keeping it spinning in the same direction.
+When $\vec{\omega}$ and $\vec{r}$ are perpendicular,
 
-And notice now it's spinning in the clockwise
+$$
+\boxed{
+v=\omega r
+}.
+$$
 
-direction. So clockwise and counter clockwise aren't
+Angular velocity points along the rotation axis, with its direction determined by the right-hand rule.
 
-very good ways to define motion because they depend
+For the disk that slows from $12\ \mathrm{rad/s}$ to rest in $26\ \mathrm{s}$,
 
-on the observer. You really would need to say
+$$
+\boxed{
+\alpha=-0.46\ \mathrm{rad/s^2}
+}.
+$$
 
-clockwise as seen from above or whatever that means
+Its angular-acceleration magnitude is
 
-for this. So what we want to do is define, let's say
+$$
+\boxed{
+|\alpha|=0.46\ \mathrm{rad/s^2}
+}.
+$$
 
-I'm going to take a circular motion and I'm going
+If the disk initially rotates counterclockwise as viewed from above, then $\vec{\omega}$ points out of the page. Because the disk is slowing down, $\vec{\alpha}$ points into the page.
 
-to define the axis out of the page and a radial.
+The disk turns through
 
-I'm going to put a radius here. There's my radius
+$$
+\boxed{
+\Delta\theta=156\ \mathrm{rad}
+}
+$$
 
-and velocity is always tangential to the circle.
+before stopping, corresponding to
 
-So let me draw that little tighter in. So there's
+$$
+\boxed{
+N\approx25\ \mathrm{revolutions}
+}.
+$$
 
-my velocity vector, there's my radial vector, and
-
-omega we will define as perpendicular to velocity
-
-and the radius. So v is tangent to the circle,
-
-and r vector is perpendicular to v, and omega is a
-
-vector, has magnitude and direction. So we want to
-
-describe omega, v, and r in a three-dimensional
-
-common basis. So what we do is we define the of
-
-directionality of omega with respect to V and R. And
-
-actually, what we saw before was we put omega equals,
-
-or I mean, sorry, V equals omega R or R omega.
-
-And here we're going to say this much more
-
-carefully. V vector equals omega vector crossed with
-
-R vector. So this is a cross product. The right
-
--hand rule gives us the directionality of omega.
-
-So v equals omega r. Here we can write v equals
-
-omega magnitude or magnitude times sine theta.
-
-I'll call it beta here. I don't want to confuse
-
-it with the theta that we've defined otherwise.
-
-and this goes to sine 90, so that goes to
-
-1, so that gives us our v equals omega r. So
-
-what I'm trying to say here in a long-winded way
-
-is that if we define the direction of theta,
-
-we're going to put theta, in fact, well,
-
-we can draw it like that. We're going to
-
-define theta with respect to r and with
-
-respect to some point here, maybe like this.
-
-We'll define theta, and then once
-
-we've defined positive theta,
-
-that defines positive omega, and
-
-that also gives us alpha. So alpha
-
-we have plus omega, minus omega,
-
-and alpha, speeding up, slowing,
-
-and then that would be positive, slowing,
-
-speeding up.
-
-That gives us negative. So if something, let's say we
-
-can depict it like this, here's my omega and it is
-
-if it's if we've defined omega zero then we've defined
-
-the directionality of theta that means theta is
-
-defined like this so positive theta is positive omega if
-
-it's going in this positive direction and omega is
-
-positive and it's speeding up then we have positive
-
-alpha if it's moving in the positive direction and slowing
-
-down then we have a negative alpha. So we have to
-
-think a bit more carefully about the cases to define
-
-alpha as being positive or negative using the right
-
--hand rule. So this assumes right-hand rule using the
-
-I would write it like this. Here's
-
-my z vector. Here's my x and y.
-
-So once I've defined
-
-x and y, and these are all perpendicular to each other,
-
-z could have gone up out of the page or down into
-
-the page. So defining a right-hand rule, a right-hand
-
-coordinate system, means I've defined z up out of the
-
-page. So right-hand rule gives z out of the page. And
-
-if I turn it around, that stays as the right-hand rule,
-
-as a right-handed coordinate system, no matter which
-
-way I rotate the coordinate system. If I put z into
-
-the page, then that would be a left-handed coordinate
-
-system. And we just made a choice and defined our
-
-stuff typically using a right -handed coordinate system.
-
-Okay, so any questions about any of this?
-
-All right, then I will ask you a
-
-question. I'll go to the next question.
-
-Then let's say it's initially spitting
-
-in the direction shown in the diagram.
-
-What is the direction of the angular acceleration of
-
-the disk, into the page or out of the page? Remember,
-
-it has to be perpendicular to velocity and radius,
-
-so it's going to be either into the page or
-
-out of the page or zero, and it's not zero
-
-because omega is changing i will activate okay
-
-most people have an answer in please put in an answer
-
-if you still need to do that three two one all
-
-right thank you stopping delivery okay let's see what
-
-you said um into the page is correct so yeah not
-
-we're almost post half and half on this so it's clear
-
-that people need this is probably new to you and
-
-a lot of you know conceptual stuff to take on but
-
-yeah into the page is correct so it here's my system
-
-and we have defined it as being
-
-omega is positive going in the same direction as theta
-
-and we define that here because omega zero is spinning
-
-in the from this view it's spinning in the
-
-counterclockwise direction so if it was speeding up by the
-
-right hand rule then alpha would be positive but since
-
-it's slowing down then omega is going in the positive
-
-direction but slowing down that means we have
-
-negative acceleration the translational equivalent would
-
-be if the person is moving in the positive direction
-
-but slowing down then they would have negative
-
-acceleration in one dimension so yeah we can say that alpha
-
-is into the page or negative here instead of out of
-
-the page would be positive same as defined by positive
-
-omega and positive r so into the page would be
-
-because it's slowing down okay any questions about this
-
-all right then let's go oh yes question um is it
-
-called the right-hand rule because there's some
-
-kind of like shortcut for understanding it or
-
-why is it called the right-hand rule i guess oh
-
-okay so let me turn my volume up i wasn't hearing
-
-you why is it called a right-hand rule yeah okay
-
-so let me just ask you then i was assuming okay
-
-so um how many people here just put in the chat
-
-do you have you already learned about the right
-
--hand rule or not just put um yes or no if you have
-
-you learned about the right-hand rule in like
-
-physics 211 or other classes or not the right-hand
-
-rule we can spend some time on this if we need to
-
-I'm just we can spend some time on it
-
-I'm just trying to figure out how much
-
-okay let me take a look at the chat no no yes
-
-yes yes yes no yes yes briefly no no no okay so
-
-yes read about it on the web page okay so I'm
-
-looking at like about a third of you have not
-
-heard about the right hand rule before let's
-
-spend some time talking about it so I did not
-
-plan to do this until getting into rotation,
-
-but we can talk about it now. I think it's
-
-where do we do this in torque,
-
-I thought.
-
-I'm just looking for an image that I use here for the
-
-right hand. Oh, maybe I'm looking in the wrong place.
-
-Okay, let's go back to planar motion.
-
-Applications, fictitious forces. Okay,
-
-never mind. We'll just do it here.
-
-Okay, so
-
-I'll start with just Cartesian
-
-coordinates x, y, and z.
-
-So these are all perpendicular to each other,
-
-and I could draw the negatives if I want to.
-
-And so a right-hand rule means that there are different
-
-ways to do this, and if you've already learned
-
-about right-hand rules, you may have learned a
-
-different way of figuring out the right-hand rule. But
-
-one way of doing it is like this. If I point my index
-
-finger in the direction of the first vector, so x
-
-hat crossed with y hat equals z hat. So if X is in
-
-this direction or Y is in that direction, I point my
-
-index finger in the direction of the X. I point my
-
-other fingers in the direction of Y. The direction
-
-of Z point is by my thumb. So X hat crossed. This is
-
-a cross product. X hat crossed with Y hat equals Z
-
-hat. This defines a right -handed coordinate system.
-
-Okay, so if I put X and Y into the plane here, into
-
-the XY plane, and I put Z in the other direction, then
-
-if I rotated my hand, then I would be also rotating
-
-X and Y. I would have to use my left hand, which
-
-is a little bit hard for me to do, to be able to define
-
-z in a downward direction. So x and y define a
-
-plane, z can go up or down. And if I define it such that
-
-I can do this with my right hand, basically it's
-
-just that, I can do this with my right hand, then I've
-
-defined it a right-handed coordinate system. Now
-
-you might have learned that like vector, okay so vector
-
-x hat goes in this direction and maybe the palm of
-
-my hand is the second vector and straight up is the
-
-is the third vector so the right hand rule could be
-
-defined in different ways people have different ways
-
-of setting up their hand or their second finger or
-
-their palm of their hand but really what you're trying
-
-to do is with your right hand recognize that your
-
-thumb is going to go one way but not the other way.
-
-Okay ask me some questions about this
-
-if this is not clear to you what I mean
-
-by a right-handed coordinate system.
-
-Okay so yeah right-handed coordinate system means
-
-that. Okay yeah I have a question in the chat.
-
-How does this help us find the answer to the Poll
-
-Everywhere question? Okay good question. So in
-
-the Poll Everywhere question I said that if we have
-
-this system such that looking at it from above,
-
-I have the rotation is in the
-
-counterclockwise direction.
-
-And if we define that as being our omega
-
-zero and we define that as being positive,
-
-we defined omega as positive and once we've
-
-defined theta as positive. So we can define
-
-theta as positive either going clockwise,
-
-counterclockwise, or clockwise.
-
-We define theta as positive going counterclockwise.
-
-That defines omega zero as
-
-positive going counterclockwise.
-
-And since positive is to the right on my page here,
-
-and positive omega is upward on the page the way I have
-
-it drawn, then positive is out of the page, not into
-
-the page. okay so that defines my positive direction
-
-of omega so i i've drawn omega as going counter
-
-clockwise the direction of omega is out of the page right
-
-so the direction i'm going to write it like this omega
-
-zero equals omega zero vector equals omega zero z
-
-hat it defines omega as being out of the page. So omega
-
-zero is shown as being counterclockwise here. The
-
-direction of omega is in the z-hat direction. So that
-
-defines the direction of positive and negative
-
-acceleration. So if omega is defined as being positive out
-
-of the page, then if the object is speeding up, then
-
-alpha is positive. If the object is out of the page but
-
-slowing down, then alpha is negative. If it was
-
-turning in the opposite direction and slowing down, alpha
-
-would be positive. If it was turning in the opposite
-
-direction and speeding up, alpha would be negative.
-
-Does that help?
-
-More questions about this if you need to.
-
-So let's see. I think I have
-
-oh here okay so here i've and we haven't talked about
-
-radial acceleration the magnitude of it yet we'll
-
-do that tomorrow but yeah what we can do is basically
-
-i've said the same thing here is define the
-
-direction of v r and omega and then that defines the
-
-acceleration i should add a little bit more on this to
-
-acceleration if the angular speed is decreasing the
-
-angular acceleration has the opposite direction I
-
-really could put a table on here to make that a little
-
-bit clearer okay any more questions about this I
-
-guess I'm just confused about one thing so if like if
-
-sorry the symbol for omega is the angular velocity?
-
-Yes. So if it like, you know, rotates about the plane
-
-that is like about the z-axis on the xy plane, then why
-
-does it point up or down, you know, along the z-axis
-
-instead of in the direction of rotation? Okay, so good
-
-question. The velocity is tangential to the circle
-
-and what i want to have is that omega is a vector it has
-
-to be if the relationship between omega and v and r
-
-defines a three-dimensional coordinate system that's
-
-the part that's missing like why can't we just say that
-
-omega is the same direction as velocity it's because
-
-omega is a vector and it it creates a basis it creates
-
-a three-dimensional basis to describe the velocity
-
-and omega and the radial vector r. So the way that we
-
-define velocity is by taking the cross product of omega
-
-and r. And omega and r, r vector is perpendicular to
-
-the z-axis and the velocity vector is in the plane.
-
-Okay, so omega needs to be perpendicular to both v and
-
-r does that make sense yeah i guess you can kind of
-
-understand that as like the axis that it's that it's
-
-rotating around but with the directionality one way or
-
-the other based that's acceleration or deceleration
-
-yes you can define omega as the axis that it's rotating
-
-around i like that that's pretty and and yes clear
-
-yes it's in the well it's in the direction of the that
-
-the object is rotating around it's actually can if
-
-you go farther into physics you can define omega in
-
-systems that don't exactly have rotation or circular
-
-motions so omega is angular velocity and i'm just saying
-
-that there are other cases where that wouldn't be
-
-exactly true but that's a way to talk about it if you're
-
-specifying circular motion yes great thank you
-
-you're welcome thank you for asking other questions all
-
-right and i'm commending you all on the questions that
-
-you're asking very good questions this is deep stuff
-
-and i'm glad that you're thinking about it deeply
-
-and trying to understand what it means and and not just
-
-how to well how to get the answer that we're looking
-
-for but also how to get there yeah what it what is
-
-the basis for understanding the systems and it really
-
-is that we're defining a three-dimensional basis here
-
-okay let's go to another hole everywhere question
-
-then same system how many revolutions does it
-
-make as it stops how many revolutions so this
-
-isn't radians this is revolutions so i'm going to
-
-go ahead and activate and please again do this
-
-um symbolically as you work through it i will put
-
-up my other page where we started this please
-
-put in one now if you still need two three
-
-three two one all right thank you stopping delivery
-
-and um i see a couple of people have put notes to me
-
-in the chat that they were having issues with getting
-
-poll everywhere to work and if you have any kind
-
-of an issue getting your answer to show up in poll
-
-everywhere the thing to do is to send me a message in
-
-the chat and also email me after class to remind me
-
-about it so that I can give you credit. If you were
-
-in class and you send me an email or send me a
-
-message in the chat while the poll everywhere is open or
-
-just after, then I will give you credit for it. But
-
-you have to tell me in the chat and also email me.
-
-Okay, so let's do this. So we
-
-want the total revolutions.
-
-I'm going to look back at my general equations.
-
-Theta final equals theta zero plus omega zero t
-
-plus a half alpha t squared. Omega final equals
-
-omega zero plus alpha t. Omega final squared equals
-
-omega zero squared plus two alpha delta theta.
-
-We figured out what delta t or what
-
-alpha was for given omega zero and omega final and
-
-delta t. We figured out what alpha is in terms of given
-
-variables, omega over t is alpha. And so I want
-
-total revolutions. I'm going to choose something that
-
-has delta theta in it, this first equation or the last
-
-equation. Actually, the last equation would be
-
-probably the simplest way to go. So I will put omega final
-
-squared equals omega zero squared. And since alpha
-
-is negative, I like to keep alpha itself as being a
-
-positive value and then I'll put the negative sign in
-
-the equation just to avoid any kind of confusion.
-
-So minus alpha delta theta. I'm going to solve this
-
-for delta theta. I'm going to set omega 0 equal to 0.
-
-So 0 equals omega 0 squared minus alpha delta theta.
-
-That makes omega 0 squared equal to alpha
-
-delta theta, and I want delta theta, oh, there's
-
-a 2 in there. I dropped the 2, didn't I?
-
-Minus, there's a 2,
-
-minus 2 alpha. There's a 2 in there,
-
-minus 2. So omega 0 squared equals 2 alpha delta
-
-theta. So omega 0 squared over 2 alpha equals delta
-
-theta. And I want to write this in terms of given
-
-variables. Alpha was something we found along the way
-
-that was omega 0 over t. So omega 0 squared over
-
-2, omega 0 over delta T. I'll just write that as T.
-
-So that equals, let's see, omega 0 T over, yep,
-
-cancels that, over 2. That gives me my delta theta,
-
-which would equal, well okay, if I do it like
-
-this, that gives me delta theta in terms of
-
-radians. I want to convert to number of revolutions,
-
-so I have 1 revolution equals 2 pi radians. So
-
-I'm going to multiply by 1, which is basically
-
-omega 0 t over 2 times 1, which is 1 revolution over
-
-2 pi radians equals delta equals revolutions.
-
-Or n revolutions. So, omega 0, 12 radians per second
-
-over 2 times 4, so just 4 pi, times delta t, which
-
-is 26 seconds, equals 25 revolutions to 2 sig figs.
-
-okay oh very good i see we're out of time so i'm
-
-going to go ahead and end here i typically have office
-
-hour right after class so you feel free to stick
-
-around if you want to talk to me and if you can't
-
-do that but you still want to talk to me shoot me an
-
-email we can schedule a time to get together if need
-
-be i will be back tomorrow and i hope you are as
-
-well in one modality or another Thank you very much
-
-for coming or watching the video, and bye for now.
-
-Thank you for coming. See you next time.

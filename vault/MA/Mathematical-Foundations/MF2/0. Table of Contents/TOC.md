@@ -387,7 +387,7 @@
 		- [ ] [[12. Introduction to Calculus/12.4. Indefinite Integrals/Lessons/12.4.2. The Constant Multiple Rule for Indefinite Integrals|12.4.2. The Constant Multiple Rule for Indefinite Integrals]]
 		- [ ] [[12. Introduction to Calculus/12.4. Indefinite Integrals/Lessons/12.4.3. The Sum Rule for Indefinite Integrals|12.4.3. The Sum Rule for Indefinite Integrals]]
 		- [ ] [[12. Introduction to Calculus/12.4. Indefinite Integrals/Lessons/12.4.4. Integrating the Reciprocal Function|12.4.4. Integrating the Reciprocal Function]]
-		- [ ] [[12. Introduction to Calculus/12.4. Indefinite Integrals/Lessons/12.4.5. Integrating Exponential Functions|12.4.5. Integrating Exponential Functions]]
+		- [x] [[12. Introduction to Calculus/12.4. Indefinite Integrals/Lessons/12.4.5. Integrating Exponential Functions|12.4.5. Integrating Exponential Functions]]
 		- [ ] [[12. Introduction to Calculus/12.4. Indefinite Integrals/Lessons/12.4.6. Integrating Trigonometric Functions|12.4.6. Integrating Trigonometric Functions]]
 - [ ] 13. Statistics
 	- [ ] 13.1. Analyzing Data

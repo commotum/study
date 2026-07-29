@@ -1,859 +1,1009 @@
-Hey there.
+# Physics 212: Binary Stars and Three-Body Gravitational Orbits
 
-Welcome to Physics 212.
+Welcome back to Physics 212.
 
-Hi everybody. Welcome back.
+## Announcements
 
-Well, okay. Let's see.
+Quiz 1X is currently open and is due Friday at 6:00 p.m. Complete it early enough to leave time to upload your written work to Gradescope.
 
-No new announcements for today. I'll just
+Part D of Quiz 1X requires you to work with an instructor, a teaching assistant, or a physics staff member in the Wormhole. If the regularly scheduled assistance times do not work for you, consult the TA schedules in the Course Information module and email one of the listed TAs to arrange another time.
 
-touch on things we've already talked about.
+Quiz 2 will open Saturday and close Monday. The Zoom versions of Quiz 2 will be administered on Monday.
 
-Quiz 1x is open right now and will be due.
+Check your Quiz 1 score to ensure that you have received credit. A handwritten note sheet with your photo ID visible must be submitted before Quiz 1 credit can be awarded. You should also be preparing your note sheet for Quiz 2.
 
-Let's see. Something seems a little bit odd. Can
+## Review of Gravitation
 
-somebody let me know if you can hear me okay?
+In the previous lecture, we began studying gravitating and orbiting systems.
 
-Give me a thumbs up if you hear me okay.
+Any two massive objects exert equal-magnitude, opposite-direction gravitational forces on one another. The magnitude of the force between two point masses is
 
-All right, thank you. Not sure
+$$
+F_g
+=
+G\frac{m_1m_2}{r_{12}^2},
+$$
 
-what's going on with my headset.
+where:
 
-How strange.
+- $G$ is the universal gravitational constant,
+- $m_1$ and $m_2$ are the two masses, and
+- $r_{12}$ is the distance between them.
 
-Okay, thank you.
+The force is attractive and points along the line connecting the two masses.
 
-Yeah, let's see. Yeah, Quiz 1X is open right
+If the radial unit vector points outward, the gravitational force may be written as
 
-now. It's due Friday, 6 p.m., so make sure that
+$$
+\vec{F}_g
+=
+-G\frac{m_1m_2}{r_{12}^2}\hat{r}.
+$$
 
-you do that a little bit ahead of time so that
+The negative sign indicates that gravity points inward, opposite the outward radial direction.
 
-you have time to upload your work to Gradescope.
+## Gravitational Potential Energy
 
-and we've gone over the details of this
+Force and potential energy are related by
 
-a number of times but just to reiterate
+$$
+F_r=-\frac{dU}{dr}.
+$$
 
-part d is to actually work with somebody me or one
+For gravity,
 
-of the tas or somebody in the wormhole one of the
+$$
+F_r
+=
+-G\frac{m_1m_2}{r^2}.
+$$
 
-physics people in the department and if you are not
+Therefore,
 
-available during the regular times when people are available
+$$
+-\frac{dU}{dr}
+=
+-G\frac{m_1m_2}{r^2},
+$$
 
-just check the course information module and look
+so
 
-at the ta schedules and email one of those people
+$$
+\frac{dU}{dr}
+=
+G\frac{m_1m_2}{r^2}.
+$$
 
-to set up a time that you can make let's see what else
+Integrating gives
 
-quiz two is coming up we'll be opening saturday
+$$
+U(r)
+=
+-\frac{Gm_1m_2}{r}+C.
+$$
 
-and closing on monday and monday we'll have the zoom
+We conventionally choose the potential energy to be zero when the masses are infinitely far apart:
 
-versions of quiz two let's see there was something else
+$$
+U(\infty)=0.
+$$
 
-oh yeah there's a couple of people so make sure
+This makes $C=0$, giving
 
-that you check your quiz one scores there's a couple
+$$
+\boxed{
+U(r)
+=
+-\frac{Gm_1m_2}{r}
+}.
+$$
 
-of people have been emailing and not getting answers
+The negative potential energy indicates that a gravitational system is bound relative to infinitely separated masses.
 
-from who haven't turned in their quiz one notes yet
+## Review of Kepler’s Laws
 
-your note sheet with photo id on it is required
+Kepler’s laws describe the motion of planets and other gravitationally bound systems.
 
-handwritten note sheet for the quiz so yeah if you haven't
+### Kepler’s First Law
 
-got that turned in please do that immediately so you
+A planet follows an elliptical orbit, with the Sun located at one focus of the ellipse.
 
-can get credit for the quiz and should be working
+A circular orbit is a special case of an ellipse.
 
-on your note sheet for quiz two okay any questions i
+### Kepler’s Second Law
 
-am not hearing any if you have anything that comes
+A line connecting a planet to the Sun sweeps out equal areas during equal intervals of time.
 
-to mind just stick around and talk to me in my
+This reflects conservation of angular momentum.
 
-office hour i stick around after class for that
+### Kepler’s Third Law
 
-we started working on gravity yesterday in gravitating
+The square of the orbital period is proportional to the cube of the orbit’s semimajor axis:
 
-systems orbiting systems and we will follow up on that
+$$
+T^2\propto a^3.
+$$
 
-today i just want to touch base on some of the things
+For a circular orbit, the semimajor axis is simply the orbital radius:
 
-we talked about yesterday gravitating systems have
+$$
+T^2\propto r^3.
+$$
 
-equal and opposite forces between massive particles
+Today, we will apply these ideas to systems in which more than one object moves appreciably. In these systems, all of the objects orbit a common center of mass.
 
-gravitational force falls off as r squared for individual
+# Binary Star Systems
 
-particles or masses of particles we talked about we
+Consider two stars with masses $M$ and $m$, separated by a distance $d$.
 
-derive the gravitational potential energy so just stemming
+Neither star remains stationary. Instead, both stars orbit their common center of mass.
 
-from this the force equals the negative del of the
+The center of mass lies closer to the more massive star. The two stars remain on opposite sides of the center of mass and complete each orbit in the same amount of time.
 
-potential gives us and then substituting in our force
+They therefore have:
 
-function gives us the gravitational potential energy of
+- The same orbital period
+- The same angular velocity
+- Different orbital radii
+- Different linear speeds
 
-minus g m1 m2 over r and the gravity the force due to
+## Center of Mass of a Binary System
 
-gravity's g m1 m2 over r12 squared and this is in the
+Suppose the larger star has mass
 
-radial direction and if you write it as a vector you
+$$
+M=5.0\times10^{30}\ \mathrm{kg},
+$$
 
-typically include a minus sign to indicate that this is
+and the smaller star has mass
 
-an attractive force and in the r hat direction and then
+$$
+m=2.5\times10^{30}\ \mathrm{kg}.
+$$
 
-we talked about kepler's laws planet orbits are
+The larger star therefore has twice the mass of the smaller star:
 
-ellipses with the sun at one focus of the ellipse we talked
+$$
+M=2m.
+$$
 
-about the lines joining a planet to the sun sweeps
+Let the distance between the stars be
 
-out equal areas in equal times and also the square of
+$$
+d=3.0\times10^{12}\ \mathrm{m}.
+$$
 
-the period is proportional to the cube of the semi-major
+Choose the larger star as the origin:
 
-axis or the radius if you're assuming circular orbit
+$$
+x_M=0,
+$$
 
-so t squared is proportional to r cubed and we
+and place the smaller star at
 
-figured out what the constant of proportionality would
+$$
+x_m=d.
+$$
 
-be for a simple system now we're going to be
+The center-of-mass position is
 
-working with some systems today that are not quite
+$$
+x_{\mathrm{cm}}
+=
+\frac{Mx_M+mx_m}{M+m}.
+$$
 
-that simple enough to be able to use kepler's laws
+Substituting the positions,
 
-to be able to like for for example the period, the
+$$
+x_{\mathrm{cm}}
+=
+\frac{M(0)+m(d)}{M+m}.
+$$
 
-relationship between the period and the radius of
+Since $M=2m$,
 
-the orbit will be a little bit more complicated.
+$$
+x_{\mathrm{cm}}
+=
+\frac{md}{2m+m}.
+$$
 
-So let's get started working on that. I'd like to
+Therefore,
 
-start by working on a binary system. So a binary system
+$$
+\boxed{
+x_{\mathrm{cm}}=\frac{d}{3}
+}.
+$$
 
-of stars. If we have, I'm going to draw this one
+The center of mass is one-third of the distance from the larger star toward the smaller star.
 
-as larger, so one massive star and a smaller mass star,
+The larger star’s orbital radius is therefore
 
-mass little m, and we could have whatever ratio
+$$
+\boxed{
+r_M=\frac{d}{3}
+},
+$$
 
-for these two, but they'll be at some distance apart.
+while the smaller star’s orbital radius is
 
-And the first thing we want to recognize is the
+$$
+r_m=d-r_M.
+$$
 
-center of mass of the system. So these two stars
+Thus,
 
-will both be orbiting their common center of mass.
+$$
+\boxed{
+r_m=\frac{2d}{3}
+}.
+$$
 
-And for a stable system, you will have both of the
+These radii also satisfy
 
-stars with the same period, not the same radius of
+$$
+Mr_M=mr_m.
+$$
 
-orbit. So you'd expect to find the center of mass
+Because $M=2m$, the smaller star must orbit at twice the radius of the larger star.
 
-closer to the more massive star, and the position of
+## Orbital Period of the Binary System
 
-the center of mass would depend on the relative
+We can find the period by analyzing either star. We will use the larger star.
 
-masses. But yeah, the position of the center of mass,
+The gravitational force supplies the centripetal force:
 
-you'd expect it to find it closer to the more
+$$
+F_g=F_c.
+$$
 
-massive star, each star orbiting that common center of
+The gravitational force between the stars is
 
-mass and staying on the opposite side of the center
+$$
+F_g
+=
+G\frac{Mm}{d^2}.
+$$
 
-of mass so that we're conserving angular momentum
+The centripetal force on the larger star is
 
-in the system. There shouldn't be external torque
+$$
+F_c
+=
+M\frac{v_M^2}{r_M}.
+$$
 
-on the system if we're only considering two stars.
+Setting these equal,
 
-So let's go to Poll Everywhere. I will put
+$$
+G\frac{Mm}{d^2}
+=
+M\frac{v_M^2}{r_M}.
+$$
 
-the Poll Everywhere link in the chat for you.
+Canceling $M$ gives
 
-There.
+$$
+G\frac{m}{d^2}
+=
+\frac{v_M^2}{r_M}.
+$$
 
-Okay. And here we have a binary system with two
+Using
 
-stars. One has mass 2.5 times 10 to the 30 kilograms.
+$$
+r_M=\frac{d}{3},
+$$
 
-The other one has 5 .0 times 10 to the 30
+we obtain
 
-kilograms. So we know my more massive star is two times
+$$
+G\frac{m}{d^2}
+=
+\frac{v_M^2}{d/3}.
+$$
 
-the mass of the smaller star. And you're given
+Solving for the speed,
 
-those values and also the distance between them.
+$$
+v_M^2
+=
+\frac{Gm}{3d}.
+$$
 
-and so we want to find the x center of
+Therefore,
 
-mass in terms of the distance between them.
+$$
+\boxed{
+v_M=\sqrt{\frac{Gm}{3d}}
+}.
+$$
 
-I will go ahead and activate this and
+The larger star travels around a circle of radius $d/3$, so its speed is also
 
-give you a couple of minutes to work on it
+$$
+v_M
+=
+\frac{2\pi r_M}{T}.
+$$
 
-yourself and then open breakout rooms.
+Substituting $r_M=d/3$,
 
-Right everybody's back please do put in an
+$$
+v_M
+=
+\frac{2\pi d}{3T}.
+$$
 
-answer if you still need to do that. 3, 2, 1.
+Squaring both sides gives
 
-All right. Thank you, stopping delivery.
+$$
+v_M^2
+=
+\frac{4\pi^2d^2}{9T^2}.
+$$
 
-Okay. So let's see. I'm just going to take a second
+Equating the two expressions for $v_M^2$,
 
-and look to see what some of your responses were.
+$$
+\frac{4\pi^2d^2}{9T^2}
+=
+\frac{Gm}{3d}.
+$$
 
-So 4 would be not physical. It would be larger. You
+Solving for $T^2$ gives
 
-would expect some value less than 1 in between the two.
+$$
+T^2
+=
+\frac{4\pi^2d^3}{3Gm}.
+$$
 
-So I'm seeing quite a few people putting in 0
+Therefore,
 
-.33. Somebody just said halfway in between 0.22.
+$$
+\boxed{
+T
+=
+2\pi\sqrt{\frac{d^3}{3Gm}}
+}.
+$$
 
-Okay, 1 third. Okay, see quite a few people putting
+Because
 
-in 1 third. Let's take a look at how to do this. So
+$$
+M+m=3m,
+$$
 
-in fact, let's keep this a little bit more general.
+this can also be written as
 
-I'll call this R because it could be rotating in any
+$$
+\boxed{
+T
+=
+2\pi\sqrt{\frac{d^3}{G(M+m)}}
+}.
+$$
 
-direction. So I'll find the, doesn't matter, R or X.
+This is the two-body form of Kepler’s third law.
 
-So R, the position of the center of mass is
+Substituting the numerical values,
 
-defined as sum on I of M I R I over sum on I of M
+$$
+T
+=
+2\pi
+\sqrt{
+\frac{
+\left(3.0\times10^{12}\ \mathrm{m}\right)^3
+}{
+3
+\left(6.67\times10^{-11}\ \mathrm{N\,m^2/kg^2}\right)
+\left(2.5\times10^{30}\ \mathrm{kg}\right)
+}
+}.
+$$
 
-I. And this says using the larger mass star as
+This gives approximately
 
-the origin. So there's our origin here. We're
+$$
+T\approx1.46\times10^9\ \mathrm{s}.
+$$
 
-finding it from that origin. I should call this r.
+Converting to years,
 
-And this could be the tangential axis.
+$$
+\boxed{
+T\approx46\ \mathrm{years}
+}.
+$$
 
-So that would be star mass capital M times 0 plus
+Both stars have this same period, even though their orbital radii and linear speeds are different.
 
-little m times d, so that's d away from the
+# Three Equal Masses in an Equilateral Triangle
 
-origin over capital M plus little m and so that
+Now consider three identical objects, each with mass $m$, positioned at the corners of an equilateral triangle.
 
-would be m d over 2m plus m, so 3m is d over 3,
+Let the distance between each pair of masses be $L$.
 
-so 1 third so r sub r c m over d equals 1 third.
+The masses are not physically connected. They are held in the triangular arrangement by their mutual gravitational attraction and orbit their common center of mass.
 
-Okay, any questions about this?
+Because the masses and geometry are symmetric, the center of mass is at the geometric center of the triangle.
 
-Okay, that's a good place to start. A good solid start
+Each mass follows a circular path around that point.
 
-now. Next question you could ask about this system.
+## Distance from Each Mass to the Center
 
-What's the orbital period of the system?
+The altitude of an equilateral triangle is
 
-So the orbital period of the system, you could say
+$$
+h=\frac{\sqrt{3}}{2}L.
+$$
 
-the orbital period of either star because it has to
+The centroid lies two-thirds of the way from a vertex along a median. Therefore, the orbital radius of each mass is
 
-be the same for both stars if they're staying on
+$$
+R=\frac{2}{3}h.
+$$
 
-opposite sides of the center of mass I use the more massive
+Substituting the altitude,
 
-star in my calculation so you might want to do
+$$
+R
+=
+\frac{2}{3}
+\left(
+\frac{\sqrt{3}}{2}L
+\right).
+$$
 
-that but yeah really just like we've been doing you
+Thus,
 
-want to use a force approach so if this is my massive
+$$
+R=\frac{\sqrt{3}}{3}L,
+$$
 
-star there's the radial axis tangential axis there's
+or equivalently,
 
-my mass and I have just a gravitational force from
+$$
+\boxed{
+R=\frac{L}{\sqrt{3}}
+}.
+$$
 
-this. That's the only force happening. So net force
+## Net Gravitational Force on One Mass
 
-equals mv squared over r and you know what the
+Choose the mass at the top vertex.
 
-gravitational force must be and find a period from that.
+Each of the other two masses exerts a gravitational force of magnitude
 
-Okay, I'll go ahead and activate.
+$$
+F_g
+=
+G\frac{m^2}{L^2}.
+$$
 
-Yeah, assuming circular orbits.
+The two forces are symmetric.
 
-Right, everybody's back. Please put in an answer
+Their tangential components cancel, while their inward radial components add. Each force makes an angle of $30^\circ$ with the inward radial direction.
 
-if you still need to do that. Three, two, one.
+The net force is therefore
 
-all right thank you stopping delivery
+$$
+F_{\mathrm{net}}
+=
+2F_g\cos(30^\circ).
+$$
 
-let's take a look at what some of your responses were
+Substituting the gravitational force,
 
-one
+$$
+F_{\mathrm{net}}
+=
+2
+\left(
+G\frac{m^2}{L^2}
+\right)
+\cos(30^\circ).
+$$
 
-46.2
+Because
 
-eight
+$$
+\cos(30^\circ)=\frac{\sqrt{3}}{2},
+$$
 
-46
+we obtain
 
-46 okay i'm seeing some people agreeing on 46 14
+$$
+F_{\mathrm{net}}
+=
+2
+\left(
+G\frac{m^2}{L^2}
+\right)
+\left(
+\frac{\sqrt{3}}{2}
+\right).
+$$
 
-.6, 146, 146, 46.3. All right, so let's see. We know
+Therefore,
 
-what the position of the center of mass is and what
+$$
+\boxed{
+F_{\mathrm{net}}
+=
+\sqrt{3}\frac{Gm^2}{L^2}
+}.
+$$
 
-we're trying to do is figure out the rotation
+The force points directly toward the center of the triangle.
 
-period for this either star. Like I said, I'll work
+Using the numerical values supplied in the activity gives approximately
 
-with this more massive star, but you could do either
+$$
+\boxed{
+F_{\mathrm{net}}
+\approx2.2\times10^{26}\ \mathrm{N}
+}.
+$$
 
-one and you should come up with the same thing.
+Because
 
-So let's see, we want the period T. I'll start with
+$$
+1\ \mathrm{YN}=10^{24}\ \mathrm{N},
+$$
 
-sum of forces in the R direction equals capital M V
+this is equivalent to approximately
 
-squared over R. And this R is the same as the center
+$$
+\boxed{
+F_{\mathrm{net}}\approx220\ \mathrm{YN}
+}.
+$$
 
-of mass. So the R is the radius, the orbital radius.
+## Orbital Speed of Each Mass
 
-And then that equals G times the mass of one
+The net gravitational force supplies the centripetal force:
 
-star times the mass of the other star divided
+$$
+F_{\mathrm{net}}
+=
+\frac{mv^2}{R}.
+$$
 
-by the distance between them squared, and
+Using the net force found above,
 
-that distance isn't r, that distance is d.
+$$
+\sqrt{3}\frac{Gm^2}{L^2}
+=
+\frac{mv^2}{R}.
+$$
 
-Okay, oh, d squared.
+The orbital radius is
 
-Okay, so let's see. We have that the mass
+$$
+R=\frac{L}{\sqrt{3}}.
+$$
 
-cancels out, and we can write this r as
+Substituting,
 
-d over 3, so v squared divided by d over 3
+$$
+\sqrt{3}\frac{Gm^2}{L^2}
+=
+\frac{mv^2}{L/\sqrt{3}}.
+$$
 
-equals g times little m times d squared.
+The right side may be written as
 
-Now this 3 is going to cancel.
+$$
+\frac{mv^2}{L/\sqrt{3}}
+=
+\frac{\sqrt{3}mv^2}{L}.
+$$
 
-I could write this as,
+Therefore,
 
-well,
+$$
+\sqrt{3}\frac{Gm^2}{L^2}
+=
+\sqrt{3}\frac{mv^2}{L}.
+$$
 
-but the 3 is going to come upstairs and then if
+Canceling $\sqrt{3}$ and one factor of $m$ gives
 
-I divide through by that 3 and this d will cancel,
+$$
+\frac{Gm}{L^2}
+=
+\frac{v^2}{L}.
+$$
 
-I get v squared equals gm over 3d. So I know I
+Multiplying by $L$,
 
-did a couple of things there, but really, basically,
+$$
+v^2=\frac{Gm}{L}.
+$$
 
-I just divided through by one-third on both
+Thus,
 
-sides and then canceled the d in the denominator.
+$$
+\boxed{
+v=\sqrt{\frac{Gm}{L}}
+}.
+$$
 
-And then if I find the velocity, that's going
+Using the numerical values supplied in the activity gives
 
-to be the square root of the side, only I'm not
+$$
+\boxed{
+v\approx9.7\times10^3\ \mathrm{m/s}
+}.
+$$
 
-in terms of given variables yet. And, well,
+Each mass moves at approximately $9.7\ \mathrm{km/s}$ around the common center of mass.
 
-this is the velocity. What I want is the period.
+# Total Energy of the Three-Mass System
 
-So the velocity equals 2 pi times r over the
+The total mechanical energy is
 
-period. and this r is our center of mass r so v equals
+$$
+E_{\mathrm{total}}
+=
+K_{\mathrm{total}}
++
+U_{\mathrm{total}}.
+$$
 
-2 pi times d over 3 divided by the period that
+We must include the kinetic energy of all three masses and the gravitational potential energy of every unique pair.
 
-means the period equals 2 pi d over oh oops let
+## Total Kinetic Energy
 
-me keep this in terms of the velocity and then
+Each mass has kinetic energy
 
-substitute in. Velocity equals 2 phi d over 3 t.
+$$
+K=\frac{1}{2}mv^2.
+$$
 
-So 4 pi squared d squared over 9 t squared.
+Since there are three masses,
 
-I just squared the velocity equals g m
+$$
+K_{\mathrm{total}}
+=
+3\left(\frac{1}{2}mv^2\right).
+$$
 
-over 3 d. And then just solving this for t,
+Therefore,
 
-I get t equals,
+$$
+K_{\mathrm{total}}
+=
+\frac{3}{2}mv^2.
+$$
 
-well, let's do t squared first. So t squared equals
+We found that
 
-4 pi squared. I'm just bringing the t squared upstairs
+$$
+v^2=\frac{Gm}{L}.
+$$
 
-here, so d cubed. If I multiply through this d
+Substituting,
 
-through both sides, so 4 pi squared d cubed, and then
+$$
+K_{\mathrm{total}}
+=
+\frac{3}{2}m
+\left(
+\frac{Gm}{L}
+\right).
+$$
 
-this, let's see, 3 is going to cancel out with one of
+Thus,
 
-these 3, so divide it by 3 g m. I know I did that kind
+$$
+\boxed{
+K_{\mathrm{total}}
+=
+\frac{3Gm^2}{2L}
+}.
+$$
 
-of quickly, but I'm running out of room on my paper.
+## Total Gravitational Potential Energy
 
-So really, I'm just solving this for t. Bring t
+There are three unique pairs of masses:
 
-upstairs onto the right side, and then flip the other
+1. Mass 1 and mass 2
+2. Mass 1 and mass 3
+3. Mass 2 and mass 3
 
-side and bring it over and cancel the 3. So 3 g m comes
+Each pair is separated by $L$, so each pair contributes
 
-into the bottom, 4 pi squared d cubed, and then if
+$$
+U_{\mathrm{pair}}
+=
+-\frac{Gm^2}{L}.
+$$
 
-I take the square root of that, I'm going to have t.
+The total potential energy is therefore
 
-So I'm just going to plug in these values.
+$$
+U_{\mathrm{total}}
+=
+3
+\left(
+-\frac{Gm^2}{L}
+\right).
+$$
 
-So let's see, I could bring the 4 pi
+Thus,
 
-out front. So 2 pi times square root.
+$$
+\boxed{
+U_{\mathrm{total}}
+=
+-\frac{3Gm^2}{L}
+}.
+$$
 
-My square root is going to go over this stuff. d
+Each pair is counted only once. Counting both $U_{12}$ and $U_{21}$ would count the same interaction twice.
 
-is 3.0 times 10 to the 12 meters, and that quantity
+## Total Mechanical Energy
 
-is cubed and then divided by 3 times 6.67 times
+Combining the kinetic and potential energies,
 
-10 to the minus 11 Newton meters, Newton meters
+$$
+E_{\mathrm{total}}
+=
+\frac{3Gm^2}{2L}
+-
+\frac{3Gm^2}{L}.
+$$
 
-squared over a kilogram squared, and then times the
+Writing both terms with a common denominator,
 
-mass, little m, which is 2.5
+$$
+E_{\mathrm{total}}
+=
+\frac{3Gm^2}{2L}
+-
+\frac{6Gm^2}{2L}.
+$$
 
-times 10 to the 30 kilograms.
+Therefore,
 
-That comes over here, and then I need to
+$$
+\boxed{
+E_{\mathrm{total}}
+=
+-\frac{3Gm^2}{2L}
+}.
+$$
 
-do the conversion. I don't have room right
+Using the numerical values supplied in the activity gives approximately
 
-here, so I'm just going to say multiplied
+$$
+\boxed{
+E_{\mathrm{total}}
+\approx-3.5\times10^{38}\ \mathrm{J}
+}.
+$$
 
-by, so this should come out to be seconds,
+The negative total energy indicates that the system is gravitationally bound.
 
-and so I'm going to multiply by 1 minute divided
+The kinetic energy is positive:
 
-by 60 seconds. That cancels seconds times one
+$$
+K_{\mathrm{total}}
+=
+\frac{3Gm^2}{2L},
+$$
 
-hour divided by 60 minutes and then times one
+but the magnitude of the negative potential energy is larger:
 
-day divided by 24 hours and then times one year
+$$
+\left|U_{\mathrm{total}}\right|
+=
+\frac{3Gm^2}{L}
+=
+2K_{\mathrm{total}}.
+$$
 
-divided by 365 days and that gives me 46 years
+Consequently,
 
-which I see quite a few people got, so very good.
+$$
+E_{\mathrm{total}}
+=
+-K_{\mathrm{total}}.
+$$
 
-Any questions about how to get through this?
+An amount of energy equal to
 
-So this here is my completely symbolic
+$$
+\left|E_{\mathrm{total}}\right|
+=
+\frac{3Gm^2}{2L}
+$$
 
-solution. You want to make sure it's in terms
+would have to be supplied to separate the masses infinitely far from one another with zero final kinetic energy. This magnitude is the system’s binding energy.
 
-of given variables, so I have nothing but
+# General Strategy for Multi-Body Orbital Problems
 
-the distance and the mass in my solution.
+When solving a gravitational orbital problem involving several moving objects, use the following approach.
 
-And then the very last thing I do is put in values.
+## 1. Locate the Center of Mass
 
-okay questions
+For discrete masses,
 
-all right well let's work with another problem
+$$
+\vec{R}_{\mathrm{cm}}
+=
+\frac{
+\sum_i m_i\vec{r}_i
+}{
+\sum_i m_i
+}.
+$$
 
-here let's do a little different system i'm gonna
+The objects orbit this common center of mass when no external force acts on the system.
 
-go to responses just for a second to show oh i
+## 2. Determine Each Orbital Radius
 
-don't have the diagram in here well that's okay
+The orbital radius of an object is its distance from the center of mass, not necessarily its distance from another object.
 
-it's easy enough to draw the diagram so here
+In the binary system, the gravitational-force separation was $d$, while the larger star’s orbital radius was $d/3$. These distances must not be confused.
 
-three objects of mass m are the corners of an
+## 3. Draw a Free-Body Diagram
 
-equilateral triangle a distance L apart.
+Include every gravitational force acting on the selected object.
 
-So I have these three objects of mass m
+Use symmetry to determine which force components cancel and which add.
 
-and they're all orbiting a common center of
+## 4. Find the Net Radial Force
 
-mass. They're some distance L apart. I'll just
+For circular motion,
 
-draw in the distance L. They're not tied to each
+$$
+F_{\mathrm{net},r}
+=
+\frac{mv^2}{R}.
+$$
 
-other by anything. They're just gravitationally
+The radial coordinate points toward the center of the circular orbit.
 
-bound, so they're going around the circle.
+## 5. Relate Speed and Period
 
-And the common center of mass is going
+For uniform circular motion,
 
-to be at the center of the circle.
+$$
+v=\frac{2\pi R}{T}.
+$$
 
-So let's see, in a stable circular orbit about the
+This allows the orbital period to be found after the speed or centripetal-force equation has been determined.
 
-center of the system, I know the mass m, the distance
+## 6. Count Energy Terms Carefully
 
-l, and I'm asking you to find the force on each one.
+The total kinetic energy includes one term for each moving object:
 
-And this force is going to be very big because
+$$
+K_{\mathrm{total}}
+=
+\sum_i\frac{1}{2}m_iv_i^2.
+$$
 
-large masses and large distances, so it's in terms of
+The total gravitational potential energy includes one term for each unique pair:
 
-yada newtons yeah you don't do that very often yada
+$$
+U_{\mathrm{total}}
+=
+-\sum_{i<j}
+\frac{Gm_im_j}{r_{ij}}.
+$$
 
-is 10 to the 24 so i would suggest choosing one of
+The condition $i<j$ ensures that each pair is counted only once.
 
-these and i choose the top one just because it's a
+# Summary
 
-little easier to work with the symmetry of the top one
+The gravitational force and potential energy between two point masses are
 
-but choose whichever one and find the force on one
+$$
+F_g
+=
+G\frac{m_1m_2}{r^2}
+$$
 
-of these and then we'll do some more work with this
+and
 
-system after we do that i will go ahead and activate
+$$
+U
+=
+-\frac{Gm_1m_2}{r}.
+$$
 
-give you a couple of minutes to work on
+In a binary system, both objects orbit their common center of mass. For two stars of masses $M$ and $m$ separated by $d$,
 
-your own and then open breakout rooms okay
+$$
+r_M=\frac{m}{M+m}d
+$$
 
-everybody's back
+and
 
-please do put in an answer if you still need to
+$$
+r_m=\frac{M}{M+m}d.
+$$
 
-do that three two one all right thank you stopping
+The orbital period is
 
-delivery okay so we're trying to find the
+$$
+\boxed{
+T
+=
+2\pi\sqrt{\frac{d^3}{G(M+m)}}
+}.
+$$
 
-force on one of these objects and so i'm going to
+For the binary system studied in this lecture,
 
-start with a free body diagram. I'll choose the
+$$
+\boxed{
+T\approx46\ \mathrm{years}
+}.
+$$
 
-one on the top, like I said, and put the radial,
+For three equal masses located at the corners of an equilateral triangle of side length $L$, the orbital radius of each mass is
 
-the plus r direction toward the center of the
+$$
+\boxed{
+R=\frac{L}{\sqrt{3}}
+}.
+$$
 
-circle, and then tangential direction like that.
+The net force on each mass is
 
-Now I have a gravitational force from each
+$$
+\boxed{
+F_{\mathrm{net}}
+=
+\sqrt{3}\frac{Gm^2}{L^2}
+}.
+$$
 
-of these other objects coming like that,
+The orbital speed is
 
-and I know this angle actually in a sense I was given
+$$
+\boxed{
+v=\sqrt{\frac{Gm}{L}}
+}.
+$$
 
-the angle theta because I know this is an equilateral
+The total kinetic energy is
 
-triangle so I know that's a 30 degree angle and
+$$
+\boxed{
+K_{\mathrm{total}}
+=
+\frac{3Gm^2}{2L}
+},
+$$
 
-this is a gravitational force on from each of these
+the total potential energy is
 
-so what I'm going to do is add up this cosine component
+$$
+\boxed{
+U_{\mathrm{total}}
+=
+-\frac{3Gm^2}{L}
+},
+$$
 
-of the angle this cosine theta component along
+and the total mechanical energy is
 
-the r axis and there will be two of those so some of
+$$
+\boxed{
+E_{\mathrm{total}}
+=
+-\frac{3Gm^2}{2L}
+}.
+$$
 
-forces in the r direction equals mv squared over r.
-
-I don't really need that. I just want the net force.
-
-And that would be 2 times g m.
-
-Let's just use a lowercase m.
-
-2 times g m m over l squared. So these l, these
-
-are all distance l apart. So that's the
-
-distance I use for the gravitational force. and
-
-then times cosine theta. And this cosine theta,
-
-you can put it in as root 3 over 2 or calculate
-
-cosine theta. When I calculate this value,
-
-I get that the net force equals 2.24 times 10 to
-
-the 26 newtons, and that would be 224, 220 yada
-
-newtons. I'll put this I'll just keep two sigpigs
-
-2.2 times 10 to the 26 Newtons
-
-which is 220 Yotta Newtons
-
-questions about this
-
-and just as an aside a Yotta Newton is the energy
-
-it would take to raise the temperature of
-
-all the water on the earth by a degree so that's
-
-quite a bit of energy, it feels like it to me
-
-Um, let's do another question with
-
-this problem, with this system, I mean.
-
-Ah, find the speed of each one of these. So these are
-
-all orbiting the center of mass, and we've found
-
-the forces on them, force on each, the net force on
-
-each. So yeah, just find the speed. And again, I would
-
-use a force approach. I will go ahead and activate.
-
-So it should be pretty
-
-straightforward to find the speed.
-
-Cut rooms are open.
-
-Everybody's back. Please put in an answer
-
-if you still need to do that. 3, 2,
-
-1.
-
-All right, thank you. Stopping delivery.
-
-Okay, so we really just want to find the
-
-speed. So if mv squared over r equals
-
-2gm squared over l squared cosine theta.
-
-Now, I've got this relationship
-
-between r and l to sort out.
-
-And one of the easier ways to do this is to write
-
-cosine in terms of the triangle, the sides of the triangle.
-
-So let's see, I'm going to do, here's my triangle
-
-and here's R coming in here like that, coming in at
-
-a right angle. This side would be L over 2. This side
-
-is R and here's theta. So cosine theta is the adjacent
-
-over the hypotenuse, so l over 2 divided by r. So
-
-cosine theta equals l over 2r. I'm just going to substitute
-
-that in instead of working with the value of
-
-theta this time. So mv squared over r equals 2gm squared
-
-over l squared l over 2r. And this makes it easier
-
-to handle this relationship between l and r just using
-
-this cosine function because I see that r cancels on
-
-both sides of the equation. L cancels with one of the
-
-l terms in the l squared in the denominator. Later,
-
-one of the mass terms cancels, so I get
-
-v squared equals 2gm over, oh, 2 cancels
-
-as well, even that cancels, so gm over l,
-
-so yeah, I just have v equals root gm over l, so that,
-
-just kind of put that trick in your back pocket
-
-thing. Sometimes, okay, sometimes it's easier to work
-
-with cosine symbolically and then put it back into the
-
-equation that way. So v equals root gm over L, and
-
-calculating that out, I get 9,700 meters per second.
-
-Any questions about this?
-
-Okay, then, let's do one more.
-
-On this, find that, well, let's not just
-
-do the potential energy. this is the oh I
-
-wanted to do the total energy where's that
-
-find the total energy of the system yes okay so same
-
-system same masses yes find the total energy in joules
-
-in 10 to the 36 joules and remember what we talked
-
-about at the start let me might not be familiar with
-
-this form for the gravitational potential so u equals
-
-minus gm1m2 over r12 so when you think about the potential
-
-energy of the system then you have to add up the
-
-potential energy of all of the pairs so the kinetic
-
-energy so the total energy is going to be the kinetic
-
-of one plus kinetic of the second plus kinetic of the
-
-third, and then plus the potential of one, if I call
-
-this one, one, two, and three, plus the potential one,
-
-two, plus potential one, three, plus potential two,
-
-three. So think of it as doing work to add all of these
-
-in together. So the first one I get for free, if I
-
-bring mass one in, second one, if I bring that in from
-
-infinity and the third one i bring that in in from
-
-infinity so each of these pairs contributes to the
-
-potential energy okay i will go ahead and activate okay
-
-everybody's back
-
-i'll give you three more seconds to enter
-
-an answer if you still need to do that three
-
-two one all right thank you stopping delivery
-
-all right so we want the total energy of the system
-
-that is the total kinetic energy plus the total
-
-potential energy the kinetic energy is going
-
-to be one half mv squared for each of them so
-
-energy equals three times one half mv squared and
-
-then plus three times the potential energy which is
-
-negative gm squared over the distance between,
-
-which would be L. So negative gm squared over L.
-
-Now this mv squared, I see that in terms, I want this
-
-all in terms of given variables, so I'm going to
-
-use my, well actually v squared is gm over L, so I can
-
-just use that form. So energy equals 3 halves times
-
-the mass times gm over L. So I'll just write that out
-
-as m squared then, since we have the mass term here
-
-and then the mass term inside the velocity. If I
-
-square that velocity, the velocity squared is gm over
-
-L. So gm squared over l times 3, 1 half, 3 halves gm
-
-squared over l is the total kinetic energy. And then
-
-the potential energy added on would be minus 3 gm
-
-squared over l. So that's an interesting result to me.
-
-It turns out to be a negative value. So 3 halves
-
-of something minus 3 is going to leave a negative
-
-3 halves. So minus 3 halves gm squared over L.
-
-And if I calculate out that value, I get 3.47, 3.5
-
-times 10 to the 38 joules. So 350, 10 to the 36 joules,
-
-undecillion joules. Now this, interesting that
-
-it comes out to be a negative value. And what that is
-
-really saying is that the potential energy term is
-
-larger than the kinetic energy term. And you know,
-
-that really makes sense if you think about it. What
-
-it's saying is that the binding energy holding these
-
-objects together is larger than the energy stored
-
-up in their motion, which it would have to be if
-
-they're staying in orbit around their common center of
-
-mass. So you want to see a total energy that's negative
-
-because the potential energy is going to be
-
-negative. So the potential energy goes as 1 over L, and
-
-it's going to go to zero at infinity. So the more
-
-energy bound up into bringing these objects together
-
-is going to make them more strongly bound. So yeah,
-
-the total energy minus 3 halves gm squared over L.
-
-All right, looks like we're at the end of the time
-
-we have for today. This is Thursday. We don't have
-
-any class on friday so please enjoy a very nice
-
-long weekend and like i said um quiz two will be
-
-opening on saturday for the proctorio version and
-
-monday we will be having the zoom versions of quiz
-
-two thank you very much and i will start my office
-
-hour right now so stick around if you'd like to
-
-if not i will see you good folks on monday
-
-thank you for coming see you next time
-
-Thank you.
+The negative total energy confirms that the three masses form a gravitationally bound system.

@@ -1,1060 +1,1204 @@
+# Physics 212: Rolling Motion and Conservation of Angular Momentum
 
-Hey there.
+Welcome back to Physics 212.
 
-Welcome to Physics 212.
+## Announcements
 
-Hi, everybody. Welcome back.
+Quiz 1 scores have been posted, and the optional Quiz 1X assignment is now available.
 
-Well, let's see. Quiz 1 scores
+For Quiz 1X, select only the problem on which you lost the most points. The assignment has four parts:
 
-are posted. Quiz 1x is live.
+1. Explain the reasoning that led to your original answer.
+2. Explain what physical concepts or methods you should have used instead.
+3. Provide a complete corrected solution. For written-response questions, include explicit unit analysis and covariational reasoning.
+4. Discuss the problem with an instructor, teaching assistant, or another physics staff member.
 
-And remember that for Part D, well, Quiz X has four
+You may complete Part D during office hours, at the end of a lab session if time permits, or in the Wormhole. Students who cannot attend during the regular daytime schedule may consult the TA schedules in the Course Information module and contact a TA to arrange another time.
 
-parts to it. Part A, well, first of all, let me recap.
+Quiz 1X is optional and is due Friday at 6:00 p.m. Late submissions will not be accepted, so leave enough time to upload your written work to Gradescope.
 
-First of all, you figure out which problem you lost
+Quiz 2 will open at 5:00 p.m. Saturday and close at 5:00 p.m. Monday for the Proctorio version. Zoom sessions will be offered Monday at 11:00 a.m. and 6:00 p.m. You should be preparing your handwritten note sheet for Quiz 2.
 
-the most points on and address only that problem.
+## Introduction
 
-the second thing is you discuss why you did what you
+Today, we will study two related topics:
 
-did you lost some points on it why did you do what
+- Rolling motion
+- Conservation of angular momentum
 
-you did that's that metacognitive part and we're
+We will begin by connecting the translational motion of a rolling object’s center of mass to the object’s rotational motion. We will then introduce angular momentum and apply its conservation to several rotational collision problems.
 
-talking about physics concepts here and then the third
+# Rolling Without Slipping
 
-part so sorry part b is going to be why should you
+Consider a wheel of radius $R$ rolling along a level surface without slipping.
 
-have done what you should have done part c is giving
+A particular point on the rim traces a path called a **cycloid**. Each time that point returns to contact with the ground, the wheel has completed one full revolution.
 
-the correct solution and if it's a written question
+During one complete revolution, the center of mass travels a distance equal to the wheel’s circumference:
 
-then doing a little bit more analysis, doing the explicit
+$$
+\Delta x=2\pi R.
+$$
 
-unit analysis and also covariational reasoning.
+The time required for one complete revolution is the rotational period:
 
-Part D is working with somebody coming to my office
+$$
+T=\frac{2\pi}{\omega},
+$$
 
-hour if you want to come there or talk to your TA
+where $\omega$ is the angular velocity.
 
-at the end of your lab hour if you have extra time
+The speed of the center of mass is therefore
 
-or go to the wormhole or if you are on a different
+$$
+v_{\mathrm{cm}}
+=
+\frac{\Delta x}{T}.
+$$
 
-schedule and you can't make the daytime schedule of
+Substituting the expressions for $\Delta x$ and $T$ gives
 
-the wormhole, then you can check the availability
+$$
+v_{\mathrm{cm}}
+=
+\frac{2\pi R}{2\pi/\omega}.
+$$
 
-of the TAs in the TA information page, in the course
+The factors of $2\pi$ cancel, leaving
 
-information page, and email one of the TAs about
+$$
+\boxed{
+v_{\mathrm{cm}}=\omega R
+}.
+$$
 
-meeting you after hours. So anyway, lots of ways to
+This is the rolling-without-slipping condition.
 
-get help on discussing your problem with someone.
+It can also be understood geometrically. As the wheel rotates through an angle $\theta$, the center of mass moves through a distance
 
-That assignment is optional, so don't have to do it
+$$
+x_{\mathrm{cm}}=R\theta.
+$$
 
-at all if you don't want to and it is due 6 p.m on
+Taking the time derivative gives
 
-Friday not accepted late so make sure you have time
+$$
+v_{\mathrm{cm}}
+=
+R\frac{d\theta}{dt}.
+$$
 
-to upload your work and into grade scope for that
+Because
 
-if you want to do that quiz two will be coming up
+$$
+\omega=\frac{d\theta}{dt},
+$$
 
-quiz two it will be opening 5 p.m saturday closing
+we again obtain
 
-5 p.m on monday for the proctorial version and on
+$$
+v_{\mathrm{cm}}=\omega R.
+$$
 
-monday we'll have zoom and at 11 a.m and 6 p.m so it
+This relationship is valid instantaneously even if the wheel’s angular velocity changes with time.
 
-should be working on your note sheet for quiz two.
+## Linear and Angular Acceleration
 
-Okay, today we'll be talking about rolling
+Taking another time derivative gives the acceleration of the center of mass:
 
-and then conservation of angular momentum.
+$$
+a_{\mathrm{cm}}
+=
+\frac{dv_{\mathrm{cm}}}{dt}.
+$$
 
-And so just to start off talking about rolling, let's
+Using
 
-talk about some object rolling along on the level,
+$$
+v_{\mathrm{cm}}=\omega R
+$$
 
-some wheel like this. And if we trace out the path of a
+and assuming the radius is constant,
 
-point on the rim it's going to trace out a cycloid path
+$$
+a_{\mathrm{cm}}
+=
+R\frac{d\omega}{dt}.
+$$
 
-like that it will come up come down etc it will go
+Angular acceleration is defined as
 
-along like that and I'm assuming the wheel is spinning
+$$
+\alpha=\frac{d\omega}{dt}.
+$$
 
-like that in the clockwise direction so this distance
+Therefore,
 
-delta x between times when the between positions when
+$$
+\boxed{
+a_{\mathrm{cm}}=\alpha R
+}.
+$$
 
-the point touches the ground at these two positions.
+The two central rolling relationships are thus
 
-We'll call that delta x. And also that is all the way
+$$
+\boxed{
+v_{\mathrm{cm}}=\omega R
+}
+$$
 
-around the circle, so the circumference of the circle.
+and
 
-So delta x equals 2 pi r as well. So you might think
+$$
+\boxed{
+a_{\mathrm{cm}}=\alpha R
+}.
+$$
 
-about unrolling a piece of tape or something like
+These equations apply when the object rolls without slipping.
 
-that, ribbon, so that really that cycloid traces out the
+The speed $\omega R$ can also be interpreted as the speed of a point on the rim relative to the wheel’s center. In the ground frame, the velocity of a particular rim point changes continuously as the wheel rotates.
 
-length of the stuff that you would be unrolling. Or
+# Worked Example: Hollow Sphere Rolling Down an Incline
 
-really it's just a way to think about relating the
+Consider a hollow sphere with:
 
-rotational motion of a rolling object with the translational
+- Mass $m$
+- Radius $R$
+- Incline angle $\theta$
+- Distance traveled along the incline $d$
 
-motion of its center of mass. So for a wheel, if
+The sphere begins at rest and rolls without slipping to the bottom of the incline. We want to determine the final speed of its center of mass.
 
-this is a uniform wheel, then the center of mass is at
+We will assume that air resistance and dissipative rolling resistance are negligible, so mechanical energy is conserved.
 
-the center of it, of course. So the velocity of the
+## Vertical Displacement
 
-center of mass is going to be this delta x over time,
+The sphere travels a distance $d$ along an incline angled at $\theta$ above the horizontal.
 
-and the period is t, so 2 pi r over the period t.
+The corresponding vertical drop is
 
-Period, we remember, is 1 over the frequency and
+$$
+h=d\sin\theta.
+$$
 
-frequency, or we can write it in terms of 2 pi over omega.
+## Conservation of Energy
 
-So this is the frequency in radians per second,
+Choose the bottom of the incline as the zero of gravitational potential energy.
 
-or just 1 over seconds for frequency in hertz.
+Initially, the sphere is at rest, so its energy is entirely gravitational potential energy:
 
-So we can write the velocity of the center of mass is
+$$
+E_i=mgh.
+$$
 
-2 pi r over 2 pi over omega, which gives us velocity
+At the bottom, its kinetic energy contains two parts:
 
-of the center of mass equals omega r. Two pi's cancel,
+1. Translational kinetic energy of the center of mass
+2. Rotational kinetic energy about the center of mass
 
-omega comes upstairs, omega r. Now you've seen this
+Therefore,
 
-before. This is the velocity of a point on the rim
+$$
+E_f
+=
+\frac{1}{2}mv^2
++
+\frac{1}{2}I\omega^2.
+$$
 
-in the wheel frame.
+Conservation of mechanical energy gives
 
-So this is an interesting relationship, I think. So
+$$
+mgh
+=
+\frac{1}{2}mv^2
++
+\frac{1}{2}I\omega^2.
+$$
 
-the velocity of the center of mass, how fast this wheel
+Using
 
-is rolling around is the same as if I was in the
+$$
+h=d\sin\theta,
+$$
 
-wheel watching a point on the rim roll around. Now you
+we obtain
 
-notice that this velocity of the point on the wheel
+$$
+mgd\sin\theta
+=
+\frac{1}{2}mv^2
++
+\frac{1}{2}I\omega^2.
+$$
 
-isn't going to be constant in time if we're talking
+## Moment of Inertia of a Hollow Sphere
 
-about how it translates through space. But yeah, the
+For a thin hollow sphere, or spherical shell, the moment of inertia about its center is
 
-velocity of the center of mass equals omega r, and that's
+$$
+I=\frac{2}{3}mR^2.
+$$
 
-assuming that omega is constant. Well, we could
+Because the sphere rolls without slipping,
 
-even think of it as being something that is changing,
+$$
+v=\omega R,
+$$
 
-but at that moment in time we could measure it as
+so
 
-omega. Now we could take a derivative of this, so d by
+$$
+\omega=\frac{v}{R}.
+$$
 
-dt, time derivative of the velocity of the center of
+Substituting both relationships into the energy equation gives
 
-mass equals d by dt of omega r. And so d by dt of the
+$$
+mgd\sin\theta
+=
+\frac{1}{2}mv^2
++
+\frac{1}{2}
+\left(
+\frac{2}{3}mR^2
+\right)
+\left(
+\frac{v}{R}
+\right)^2.
+$$
 
-velocity of the center of mass is just the acceleration
+Simplifying the rotational term,
 
-of the center of mass. d by dt of omega is alpha,
+$$
+\frac{1}{2}
+\left(
+\frac{2}{3}mR^2
+\right)
+\left(
+\frac{v^2}{R^2}
+\right)
+=
+\frac{1}{3}mv^2.
+$$
 
-assuming r is constant then we have the acceleration
+Therefore,
 
-of the center of mass equals alpha r where alpha is
+$$
+mgd\sin\theta
+=
+\frac{1}{2}mv^2
++
+\frac{1}{3}mv^2.
+$$
 
-the angular acceleration this is for a rolling object
+Combining the terms,
 
-okay, any questions about this?
+$$
+mgd\sin\theta
+=
+\frac{5}{6}mv^2.
+$$
 
-okay then, I have a question for you let's go
+The mass cancels:
 
-to Poll Everywhere I will put the pull
+$$
+gd\sin\theta
+=
+\frac{5}{6}v^2.
+$$
 
-everywhere link in the chat for you right there.
+Solving for $v^2$,
 
-Okay, pull everywhere link is posted.
+$$
+v^2
+=
+\frac{6}{5}gd\sin\theta.
+$$
 
-And here we have, let's see,
+Therefore, the final speed of the center of mass is
 
-hollow sphere of mass m radius r starts
+$$
+\boxed{
+v
+=
+\sqrt{
+\frac{6}{5}gd\sin\theta
+}
+}.
+$$
 
-and rest rolls down a ramp of angle theta.
+Using the numerical values supplied in the activity gives
 
-How fast is the center of mass moving?
+$$
+\boxed{
+v\approx2.5\ \mathrm{m/s}
+}.
+$$
 
-I want you to take a second and just draw that out.
+Notice that both the mass and radius cancel. For an ideal hollow sphere rolling from rest through a specified vertical drop, the final speed does not depend on either its mass or its radius.
 
-Just take the words, translate that into an
+The derivation is important. Rather than beginning with a memorized formula for a rolling sphere, we should be able to obtain the result from:
 
-image, and label everything that you can on the
+- Conservation of energy
+- The appropriate moment of inertia
+- The rolling constraint $v=\omega R$
 
-image. That's the first place to get started.
+# Angular Momentum
 
-When you have that done, write down your knowns,
+Angular momentum is the rotational analogue of linear momentum.
 
-known variables, and what it is you're trying to find.
+## Linear Momentum
 
-Okay, so let's see.
+Linear momentum is defined as
 
-my diagram would look something like
+$$
+\vec{p}=m\vec{v}.
+$$
 
-this, have some ramp with angle theta,
+Newton’s second law can be written as
 
-have a wheel at the top of it, or well not a
+$$
+\sum\vec{F}_{\mathrm{ext}}
+=
+\frac{d\vec{p}}{dt}.
+$$
 
-wheel, a hollow sphere with radius r, mass m,
+If the net external force on a system is zero, then
 
-and I know the distance that it rolls along whoops,
+$$
+\frac{d\vec{p}}{dt}=0,
+$$
 
-that's not a very straight line is it distance
+and the system’s linear momentum is conserved:
 
-it rolls along the ramp I'll try to do better
+$$
+\vec{p}_i=\vec{p}_f.
+$$
 
-is distance d
+## Angular Momentum of a Particle
 
-that's a right angle okay so we know
+The angular momentum of a particle about a chosen origin is
 
-So, mass, radius,
+$$
+\boxed{
+\vec{L}
+=
+\vec{r}\times\vec{p}
+}.
+$$
 
-theta, and d, we want the velocity of
+Using $\vec{p}=m\vec{v}$,
 
-the center of mass, okay, at the bottom.
+$$
+\vec{L}
+=
+\vec{r}\times m\vec{v}.
+$$
 
-All right,
+Because mass is a scalar,
 
-good enough. I will go ahead and activate.
+$$
+\vec{L}
+=
+m\left(\vec{r}\times\vec{v}\right).
+$$
 
-I'll give you a minute to work on your
+The magnitude is
 
-own and then open breakout rooms. Okay,
+$$
+L=mrv\sin\phi,
+$$
 
-everybody's back. Please do put in an
+where $\phi$ is the angle between $\vec{r}$ and $\vec{v}$.
 
-answer if you still need to do that. Three,
+If the position and velocity vectors are perpendicular,
 
-two, one.
+$$
+\phi=90^\circ
+$$
 
-All right, thank you.
+and
 
-Stopping delivery.
+$$
+\sin\phi=1.
+$$
 
-All right, so different ways you could do
+The angular-momentum magnitude then becomes
 
-this. I'm going to use an energy approach,
+$$
+\boxed{
+L=mrv
+}.
+$$
 
-so I'm going to say that energy is
+The direction of $\vec{L}$ is determined by the right-hand rule.
 
-conserved, I'm neglecting any air resistance,
+## Angular Momentum of a Rigid Body
 
-etc so let's see i'm going to start u0 plus k0
+For a rigid body rotating about a fixed axis, the angular momentum about that axis is
 
-equals u final plus k final plus delta e thermal
+$$
+\boxed{
+L=I\omega
+},
+$$
 
-i'll let that go to zero now that's actually
+where:
 
-need to consider that a little bit if this is
+- $I$ is the moment of inertia about the rotation axis
+- $\omega$ is the angular velocity
 
-rolling there'd be a little bit of rolling friction.
+The moment of inertia plays the same role in rotational motion that mass plays in translational motion.
 
-So I'm saying the rolling friction is small
+## Torque and Angular Momentum
 
-compared to the non -potential and kinetic energy.
+The rotational form of Newton’s second law is
 
-So I'm neglecting that, but you could include
+$$
+\boxed{
+\sum\vec{\tau}_{\mathrm{ext}}
+=
+\frac{d\vec{L}}{dt}
+}.
+$$
 
-it if you needed to. So U0 is going to be MGH.
+If the net external torque about the chosen axis is zero,
 
-Initial kinetic energy is zero equals final potential,
+$$
+\sum\vec{\tau}_{\mathrm{ext}}=0,
+$$
 
-which is zero plus the final kinetic energy
+then
 
-has two parts. It has one half mv final squared, so
+$$
+\frac{d\vec{L}}{dt}=0.
+$$
 
-the translational kinetic energy, plus one half i
+Angular momentum is therefore conserved:
 
-omega final squared, the rotational kinetic energy.
+$$
+\boxed{
+\vec{L}_i=\vec{L}_f
+}.
+$$
 
-And notice this is kind of indicative of what we
+For rotation about a single fixed axis, this is commonly written as
 
-were just talking about. This is the motion of the
+$$
+\boxed{
+I_i\omega_i=I_f\omega_f
+}.
+$$
 
-center of mass in the translational kinetic energy,
+It is important to calculate torque and angular momentum about the same chosen axis.
 
-and this is the rotational energy. Those are two
+# Worked Example: Rain Falling into Rotating Cups
 
-partitioned into two separate things. So I omega
+Consider two identical cups rotating about a central vertical axis.
 
-squared is actually what you think of the rotational
+Initially:
 
-energy in the frame of the rotating thing itself.
+- Each cup has mass $m$.
+- The cups are separated by a total distance $d$.
+- Each cup is therefore a distance $d/2$ from the rotation axis.
+- The system rotates with angular velocity $\omega_0$.
 
-So let's see. MGH. Well, I don't know H, but I do
+Rain falls into the cups. The collected water has the same mass as each original cup, so the final mass at each end is $2m$.
 
-know D. Let's find what H would be. There's my triangle.
+Assume that the incoming rain has negligible angular momentum about the vertical rotation axis and that the net external torque about that axis is zero.
 
-There's theta and D. H would be there. So I have
+## Conceptual Prediction
 
-the opposite and the hypotenuse. So sine theta is
+The added water increases the system’s moment of inertia.
 
-opposite over hypotenuse. So H sine theta equals H over
+Because angular momentum is conserved,
 
-D. And what I have here is D. So I'm going to write,
+$$
+L=I\omega=\text{constant}.
+$$
 
-oh, sorry, I want to substitute for H. So I'm
+If $I$ increases, $\omega$ must decrease. We therefore expect the system to rotate more slowly after the rain is collected.
 
-going to write H equals D sine theta. I can
+## Initial Moment of Inertia
 
-use that. my moment of inertia I'm going to need
+Treating each cup as a point mass at radius $d/2$,
 
-to know that moment of inertia for a hollow
+$$
+I_0
+=
+m\left(\frac{d}{2}\right)^2
++
+m\left(\frac{d}{2}\right)^2.
+$$
 
-hollow sphere where would you find the moment of
+Therefore,
 
-inertia well if you don't have it on your note sheet
+$$
+I_0
+=
+2m\left(\frac{d^2}{4}\right).
+$$
 
-you should go back to um let's see did we have it in
+Thus,
 
-here first page yes our moments of inertia hollow
+$$
+\boxed{
+I_0=\frac{1}{2}md^2
+}.
+$$
 
-sphere spherical shell that's two set of three two-thirds
+## Final Moment of Inertia
 
-mr squared so two thirds mr squared if you didn't
+After the rain is collected, each end has mass $2m$:
 
-know that it's a good thing to have that kind of a
+$$
+I_f
+=
+2m\left(\frac{d}{2}\right)^2
++
+2m\left(\frac{d}{2}\right)^2.
+$$
 
-thing on your note sheet and also i know that velocity
+Therefore,
 
-is or i could write it as i'll write it as omega
+$$
+I_f
+=
+4m\left(\frac{d^2}{4}\right),
+$$
 
-Well, velocity equals omega
+so
 
-r, or omega equals v over r.
+$$
+\boxed{
+I_f=md^2
+}.
+$$
 
-So with those substitutions,
+The moment of inertia has doubled:
 
-my mgh becomes mgd sine theta,
+$$
+I_f=2I_0.
+$$
 
-zeros drop, equals one -half mv final squared
+## Final Angular Velocity
 
-plus one-half. My I is two-thirds MR squared
+Angular momentum is conserved:
 
-times omega final, so omega is V over R, so V
+$$
+I_0\omega_0=I_f\omega_f.
+$$
 
-over R quantity squared. Now I see that my mass
+Substituting the moments of inertia,
 
-drops everywhere, so I have G D sine theta
+$$
+\left(
+\frac{1}{2}md^2
+\right)
+\omega_0
+=
+\left(
+md^2
+\right)
+\omega_f.
+$$
 
-equals one-half MV final squared plus one-third.
+The factors $m$ and $d^2$ cancel:
 
-Oops, dropped the mass.
+$$
+\frac{1}{2}\omega_0=\omega_f.
+$$
 
-1 half v final squared plus 1 third r squared v squared
+Therefore,
 
-over r squared, so the r cancels there, so g d
+$$
+\boxed{
+\omega_f=\frac{\omega_0}{2}
+}.
+$$
 
-sine theta, let's put this into 6 equals 3, 6 v final
+If the initial angular velocity is
 
-squared plus 2, 6 v final squared, that's a v final,
+$$
+\omega_0=4.2\ \mathrm{rad/s},
+$$
 
-So gd sine theta equals 5, 6b final squared,
+then
 
-6 fifths gd sine theta.
+$$
+\boxed{
+\omega_f=2.1\ \mathrm{rad/s}
+}.
+$$
 
-Take the square root of that.
+Doubling the moment of inertia reduces the angular velocity by a factor of two.
 
-Gives me my final velocity.
+# Mechanical Energy in the Rotating-Cup System
 
-Okay, and then just plug in values after that. This
+Although angular momentum is conserved, mechanical energy is not conserved during the collection of the rain.
 
-is completely symbolic in terms of given variables. So
+The rain sticks to the cups in a completely inelastic process. Some of the initial rotational kinetic energy is converted into thermal energy and internal motion as the water collides with and settles inside the cups.
 
-notice I was given m, r, theta, and d. r didn't use
+The rotational kinetic energy is
 
-m didn't use but d and theta are in here g is always
+$$
+K_{\mathrm{rot}}
+=
+\frac{1}{2}I\omega^2.
+$$
 
-given if we assume we're close to the surface of the
+Because the potential energy does not change,
 
-earth completely symbolic solution in terms of given
+$$
+\Delta E_{\mathrm{th}}
+=
+K_0-K_f.
+$$
 
-variables last thing you would do is plug the values in
+## Initial Rotational Kinetic Energy
 
-here and i'm going to assume you could do that and
+Using
 
-get 2.5 meters per second okay i see i have question
+$$
+I_0=\frac{1}{2}md^2,
+$$
 
-in the chat let's see would using the equation for
+the initial kinetic energy is
 
-velocity of a center of mass of a rolling object at the
+$$
+K_0
+=
+\frac{1}{2}
+\left(
+\frac{1}{2}md^2
+\right)
+\omega_0^2.
+$$
 
-bottom of the slope from the textbook be applicable
+Therefore,
 
-here? No, you do need to be able to derive it from
+$$
+K_0
+=
+\frac{1}{4}md^2\omega_0^2.
+$$
 
-principles at least this far. So yeah, if you just came
+## Final Rotational Kinetic Energy
 
-in and said, oh, I know that's just root six-fifths gd
+Using
 
-sine theta, and that's my answer, that wouldn't get
+$$
+I_f=md^2
+$$
 
-you points if you were showing something like that on
+and
 
-the quiz. No, you do need to show how you got there.
+$$
+\omega_f=\frac{\omega_0}{2},
+$$
 
-Other questions?
+the final kinetic energy is
 
-Okay,
+$$
+K_f
+=
+\frac{1}{2}
+\left(
+md^2
+\right)
+\left(
+\frac{\omega_0}{2}
+\right)^2.
+$$
 
-so let's see. Let's go to the next. I
+Therefore,
 
-was wondering if really, yes, I could
+$$
+K_f
+=
+\frac{1}{2}md^2
+\left(
+\frac{\omega_0^2}{4}
+\right),
+$$
 
-see the last the last problem we did.
+so
 
-What about the last problem we did?
+$$
+K_f
+=
+\frac{1}{8}md^2\omega_0^2.
+$$
 
-It should be here.
+## Thermal Energy Produced
 
-the the notes from the first this is the notes
+The mechanical energy converted into thermal and internal energy is
 
-from the first problem the only thing we did before
+$$
+\Delta E_{\mathrm{th}}
+=
+K_0-K_f.
+$$
 
-that was sort of some setup okay i the where
+Substituting,
 
-we left off last class i came in like five ten
+$$
+\Delta E_{\mathrm{th}}
+=
+\frac{1}{4}md^2\omega_0^2
+-
+\frac{1}{8}md^2\omega_0^2.
+$$
 
-minutes late okay so talk to me about that after
+Therefore,
 
-class maybe if you came in late and you're talking
+$$
+\boxed{
+\Delta E_{\mathrm{th}}
+=
+\frac{1}{8}md^2\omega_0^2
+}.
+$$
 
-about what we did yesterday. Is that right?
+Using the numerical values from the activity gives
 
-Sure. All right. Yeah.
+$$
+\boxed{
+\Delta E_{\mathrm{th}}
+=
+0.47\ \mathrm{J}
+}.
+$$
 
-Okay. Yeah. So let's go there after class. Just
+This example demonstrates an important distinction:
 
-stick around a few minutes and I'd be happy
+- Angular momentum is conserved because the net external torque is zero.
+- Mechanical energy is not conserved because the process is inelastic.
+- Total energy is still conserved; the missing mechanical energy appears as thermal and internal energy.
 
-to bring you up to speed on yesterday's work.
+# Worked Example: Bullet Embedding in a Rotating Cylinder
 
-So, yeah, we want to move into
+Consider a uniform solid cylinder viewed from above.
 
-talking about angular momentum now.
+The cylinder has:
 
-And let's do that. Let's derive what we're
+- Mass $M$
+- Radius $R$
+- An initially stationary, frictionless central spindle
 
-going to talk about as far as angular
+A bullet has:
 
-momentum. So when we talk about momentum, and
+- Mass $m$
+- Initial speed $v$
 
-this is translational momentum and angular.
+The bullet travels tangent to the cylinder’s rim and embeds in it. We want to determine the final angular velocity of the combined system.
 
-So translational momentum, first we started with the
+Because the collision occurs over a short time and the spindle force acts through the rotation axis, the external torque about the spindle is negligible. Angular momentum about the spindle is therefore conserved.
 
-sum of forces equals mA, and then we can write a as
+The collision is completely inelastic, so mechanical energy is not conserved.
 
-change in, or we can write sum of forces equals dp dt,
+## Initial Angular Momentum
 
-where p, let's see, I want to write it like this,
+The cylinder is initially at rest, so its initial angular momentum is zero.
 
-p is momentum is defined as mv.
+The bullet’s initial angular momentum about the spindle is
 
-Okay, we're going to do the analogous
+$$
+\vec{L}_i
+=
+\vec{R}\times m\vec{v}.
+$$
 
-rotational momentum, So angular momentum
+The bullet’s velocity is perpendicular to the radial vector at impact, so
 
-starts with sum of torques equals I alpha.
+$$
+L_i=mRv.
+$$
 
-So torque instead of forces,
+Thus,
 
-moment of inertia is the mass term, alpha is angular
+$$
+\boxed{
+L_i=mRv
+}.
+$$
 
-acceleration, whereas A equals acceleration. So this
+Although the bullet is not initially rotating about its own center, it has angular momentum about the cylinder’s spindle because its line of motion does not pass through the spindle.
 
-kind of harkens back to our very first day. And then
+## Final Moment of Inertia
 
-we can write sum of torque equals DL by DT. So
+After the collision, the cylinder and embedded bullet rotate together.
 
-analogous to linear momentum or translational momentum, we
+The moment of inertia of a uniform solid cylinder about its central axis is
 
-can write angular momentum where L is defined as R
+$$
+I_{\mathrm{cyl}}
+=
+\frac{1}{2}MR^2.
+$$
 
-crossed with the momentum P. So L equals R cross MV.
+The embedded bullet can be treated as a point mass at radius $R$:
 
-And because M is a scalar, that could come out of
+$$
+I_{\mathrm{bullet}}
+=
+mR^2.
+$$
 
-the equation or the definition L equals MR cross V.
+The total final moment of inertia is therefore
 
-okay and so when we did momentum we talked about
+$$
+I_f
+=
+\frac{1}{2}MR^2
++
+mR^2.
+$$
 
-something like conservation of momentum and that
+Thus,
 
-was for if the external forces if the net force
+$$
+\boxed{
+I_f
+=
+\frac{1}{2}MR^2+mR^2
+}.
+$$
 
-equals zero then p final equals p zero and I can do
+## Conservation of Angular Momentum
 
-that as a vector equation that's really a collection
+The final angular momentum is
 
-of three different equations in X, Y, and Z.
+$$
+L_f=I_f\omega_f.
+$$
 
-For net torque equals zero, then I have L
+Conservation of angular momentum gives
 
-final equals L zero. I have angular momentum
+$$
+L_i=L_f.
+$$
 
-conserved. So if the net torque on the system is zero,
+Therefore,
 
-then L final equals L zero. Now I can do a little
+$$
+mRv
+=
+\left(
+\frac{1}{2}MR^2+mR^2
+\right)
+\omega_f.
+$$
 
-bit more here. So this is just defining angular momentum
+Solving for $\omega_f$,
 
-as r cross p or m r cross v. And if angular momentum
+$$
+\omega_f
+=
+\frac{
+mRv
+}{
+\frac{1}{2}MR^2+mR^2
+}.
+$$
 
-is conserved, then I can work with angular momentum
+Factoring $R^2$ from the denominator,
 
-conservation problems like I did momentum conservation
+$$
+\omega_f
+=
+\frac{
+mRv
+}{
+R^2\left(\frac{M}{2}+m\right)
+}.
+$$
 
-problems in 211. Another thing we can do is start
+Canceling one factor of $R$ gives
 
-back with sum of torque equals I alpha. Let's just work
+$$
+\boxed{
+\omega_f
+=
+\frac{
+mv
+}{
+R\left(\frac{M}{2}+m\right)
+}
+}.
+$$
 
-in one dimension here. So net torque equals I alpha.
+An equivalent form is
 
-Now, if net torque equals dl by dt, then I can set dl
+$$
+\boxed{
+\omega_f
+=
+\frac{2mv}{R(M+2m)}
+}.
+$$
 
-dt equal to I alpha. And this just begs to be
+Using the numerical values supplied in the activity gives
 
-separated, the variables to be separated. So dL equals I
+$$
+\boxed{
+\omega_f
+=
+0.95\ \mathrm{rad/s}
+}.
+$$
 
-alpha dt. I can integrate both sides from 0 to L, L0
+The spindle may exert a substantial external force during the collision, so the total linear momentum of the bullet–cylinder system is not necessarily conserved. However, because that force acts through the spindle, it produces no torque about the spindle. Angular momentum about that axis is conserved.
 
-to L final maybe, and then T0 to T final. So this just
+# General Strategy for Angular-Momentum Problems
 
-comes out to be L from L final minus L0, so L final
+## 1. Choose the System and Rotation Axis
 
-minus L0 equals I, assuming constant I, integral t0
+State which objects are included in the system and identify the point or axis about which angular momentum will be calculated.
 
-to t final alpha dt, which is just omega. So L final
+The torque and angular momentum must be calculated about the same axis.
 
-minus L zero equals I omega final minus omega zero,
+## 2. Determine Whether External Torque Is Zero
 
-right? That's the definition of omega. So L equals
+Use
 
-I omega. That's another way to write L. So I can
+$$
+\sum\vec{\tau}_{\mathrm{ext}}
+=
+\frac{d\vec{L}}{dt}.
+$$
 
-write L as R cross P or MVR. If R and V are
+If the net external torque about the selected axis is zero or negligible during the interaction, then
 
-perpendicular to each other, I can just write it as
+$$
+\vec{L}_i=\vec{L}_f.
+$$
 
-MVR and drop the sine theta part. or l as i omega.
+A force acting directly through the chosen axis produces no torque about that axis.
 
-Okay, so that's just sort of a very quick introduction
+## 3. Calculate the Initial Angular Momentum
 
-to angular momentum. Then we want to go and
+For a moving particle,
 
-apply it. So any questions about this first off?
+$$
+\vec{L}
+=
+\vec{r}\times m\vec{v}.
+$$
 
-Okay, so angular momentum probably is new to most of
+Its magnitude is
 
-you. I think what we should do is work with A couple
+$$
+L=mrv\sin\phi.
+$$
 
-of problems where we are conserving angular momentum.
+For a rotating rigid body,
 
-Let's do that. I will go to here.
+$$
+L=I\omega.
+$$
 
-Okay, here's my diagram.
+The total angular momentum is the vector sum of the angular momenta of all components.
 
-I have, and I'm going to, just because these are all
+## 4. Calculate the Final Moment of Inertia
 
-very new to you, I'm just going to bring these
+If objects stick together, include the moment of inertia of every component about the chosen rotation axis:
 
-equations over. L equals R cross P and L equals I omega.
+$$
+I_f=\sum_i I_i.
+$$
 
-Now, I have this system of two cups, and they
+Use the parallel-axis theorem when necessary:
 
-both have mass m, and they're a distance d apart,
+$$
+I=I_{\mathrm{cm}}+Md^2.
+$$
 
-and they're rotating at omega 0. That's the t0, and
+## 5. Apply Conservation of Angular Momentum
 
-then a t final. What's happened is I have filled some
+Set
 
-mass into the cups. I guess it rained right and so I
+$$
+L_i=L_f
+$$
 
-got some mass into the cups and now they're both 2m 2m
+and solve for the unknown angular velocity or other requested quantity.
 
-so as much mass goes into the cups as the cups initially
+## 6. Analyze Energy Separately
 
-weighed and I have some omega final and still
+Do not assume that conservation of angular momentum implies conservation of mechanical energy.
 
-distance d apart now let me ask you about this for a second
+In an inelastic collision,
 
-just to think conceptually about this Would you
+$$
+K_i\neq K_f.
+$$
 
-expect Omega Final to be faster or slower, bigger or
+The mechanical energy difference is converted into thermal energy, deformation, sound, or other internal forms:
 
-smaller than Omega Zero? You think the cups will be rotating
+$$
+\Delta E_{\mathrm{internal}}
+=
+K_i-K_f.
+$$
 
-faster or slower than they were at the beginning?
+# Summary
 
-Just put that in the chat. Just talk to me about it.
+For an object rolling without slipping,
 
-Faster or slower?
+$$
+\boxed{
+v_{\mathrm{cm}}=\omega R
+}
+$$
 
-Okay, good. I have a lot of people putting in
+and
 
-slower, slower, slower. Good. So you're right on top
+$$
+\boxed{
+a_{\mathrm{cm}}=\alpha R
+}.
+$$
 
-of this. You're thinking, yes, it's going to slow
+For a hollow sphere rolling from rest through a vertical drop $h=d\sin\theta$,
 
-down. So let's think about if you have a merry
+$$
+mgh
+=
+\frac{1}{2}mv^2
++
+\frac{1}{2}I\omega^2,
+$$
 
--go-round going around and you're standing by it
+with
 
-and you step onto it and you don't have any velocity
+$$
+I=\frac{2}{3}mR^2
+$$
 
-pushing it either way, you're stepping onto
+and
 
-it, you're going to slow it down. So yeah, this is
+$$
+\omega=\frac{v}{R}.
+$$
 
-going to slow down because the mass gets bigger.
+The final speed is
 
-So the moment of inertia, remember the
+$$
+\boxed{
+v
+=
+\sqrt{
+\frac{6}{5}gd\sin\theta
+}
+}.
+$$
 
-initial moment of inertia formula we
+Linear momentum is
 
-have is mi, sum on I of M-I-R-I squared.
+$$
+\boxed{
+\vec{p}=m\vec{v}
+},
+$$
 
-This is about the center pivot point.
+while angular momentum is
 
-So what you want to do is think about
+$$
+\boxed{
+\vec{L}
+=
+\vec{r}\times\vec{p}
+}.
+$$
 
-first of all, is there any torque in this system?
+For a particle whose velocity is perpendicular to its position vector,
 
-No, because first of all, because we have these
+$$
+\boxed{
+L=mrv
+}.
+$$
 
-sides are balanced, so it's not being torqued
+For a rigid body rotating about a fixed axis,
 
-sideways. There's nothing pushing it to move
+$$
+\boxed{
+L=I\omega
+}.
+$$
 
-around. I just have rain falling into these cups.
+Torque changes angular momentum according to
 
-So I have L0 equals L final and L equals R cross
+$$
+\boxed{
+\sum\vec{\tau}_{\mathrm{ext}}
+=
+\frac{d\vec{L}}{dt}
+}.
+$$
 
-P or I omega. Think about which one would be more
+If the net external torque is zero,
 
-useful here. And let's see, I think I just have
+$$
+\boxed{
+\vec{L}_i=\vec{L}_f
+}.
+$$
 
-more answers in the chat. Yes, thank you. And let's
+For the rotating-cup system,
 
-go to instructions and I will activate this for
+$$
+I_0=\frac{1}{2}md^2,
+$$
 
-you and again i'll give you a couple of minutes
+$$
+I_f=md^2,
+$$
 
-to work on your own and then open breakout rooms
+and
 
-okay everybody's back please put in an answer
+$$
+\boxed{
+\omega_f=\frac{\omega_0}{2}
+}.
+$$
 
-if you still need to do that three two one
+The mechanical energy converted into thermal and internal energy is
 
-oops went a little bit quick if i if i hit that a little
+$$
+\boxed{
+\Delta E_{\mathrm{th}}
+=
+\frac{1}{8}md^2\omega_0^2
+}.
+$$
 
-bit quick for you then just put your answer in the
+For a bullet of mass $m$ and speed $v$ embedding tangentially in the rim of a solid cylinder of mass $M$ and radius $R$,
 
-chat for me but i think everybody was pretty much in
+$$
+\boxed{
+\omega_f
+=
+\frac{
+mRv
+}{
+\frac{1}{2}MR^2+mR^2
+}
+}
+$$
 
-okay yeah i see i did cut off somebody there so
+or equivalently,
 
-yeah and i see a couple of people here sorry about
+$$
+\boxed{
+\omega_f
+=
+\frac{2mv}{R(M+2m)}
+}.
+$$
 
-that and then just email me after class like oops
-
-but yeah if you were still solving for this and you
-
-didn't quite get your answer i i meant to anyway
-
-i cut you off a little bit quick and i didn't mean
-
-to but if i activate it now it'll start a whole
-
-new thing so i can't do that so yeah shoot me an
-
-email after class and i'll give you points for that
-
-okay so l zero equals l final angular momentum l
-
-angular momentum l is conserved so l zero equals
-
-l final and l equals i omega that would be
-
-useful here because we're working in terms of
-
-omega so i zero omega zero equals i final, omega,
-
-final. So I need to know my, I know omega 0.
-
-I need, let's see, what are my knowns I know?
-
-M and omega 0 want omega
-
-final. And oh, I also know D.
-
-Okay, so my initial moment of inertia is going
-
-to be I zero equals, so I just sum the position,
-
-and this is from the rotation axis and the
-
-masses, so that would be m times d over 2 quantity
-
-squared is d over 2 away from the rotation
-
-axis, plus m times d over 2 quantity squared.
-
-So that would be I zero equals
-
-1 fourth
-
-md squared plus 1 fourth md squared.
-
-So i 0 equals 1 half md squared.
-
-And i final is the same except for these masses go
-
-to 2m, 2m, 2m. So i final equals 2m times 1 half
-
-2 times 1 half md squared, so just md squared. So
-
-yeah, I could write it out just md squared plus, or
-
-2md over 2 squared, so that comes out to be md
-
-squared. So if I write out my i0 omega 0 equals i
-
-final omega final, I have 1 half md squared omega 0
-
-equals md squared omega -final, my m's cancel, my
-
-d's cancel, so I have one -half omega-0 equals omega
-
--final. So if omega-0 was 4.2 radians per second,
-
-omega-final is going to be 2.1 radians per second.
-
-Okay,
-
-yeah I don't need to show your work, just
-
-let me know in your in your email that i that
-
-you answered in the chat for question two
-
-so now any questions about this what we did
-
-was conserve momentum angular momentum here
-
-now angular momentum was conserved because there wasn't
-
-any torque involved but something slowed this down
-
-and so that robbed energy from the system somehow and
-
-what that mechanism of not robbed energy. Energy is
-
-conserved, but mechanical energy. So some mechanical
-
-energy went into some thermal energy. So U0 plus K0
-
-equals U final plus K final plus delta E thermal. There's
-
-some delta E thermal going on when the rain hit the
-
-cup and it slowed the system down. There was some
-
-friction involved with that water sloshing up and hitting
-
-up against the sides and such. So my next question
-
-is going to be find delta E thermal, find delta E thermal.
-
-And I'll tell you, first of all, the U0 new final,
-
-U0 equals U final, it doesn't change potential energy.
-
-So you want to work with the initial and final
-
-kinetic energy. Okay, I will go ahead and move to this
-
-question. So find mechanical energy in joules lost and
-
-we're saying this is a completely inelastic collision
-
-that just means the water sticks to the cups doesn't
-
-bounce off and go away so completely inelastic collision
-
-that means um that um mechanical energy is lost to
-
-this thermal energy i will go ahead and activate all
-
-right everybody's back please do put it
-
-in answer if you still need to do that
-
-I will give you three seconds to do that.
-
-Three, two,
-
-one.
-
-All right, thank you, stopping delivery.
-
-Okay, so we want to find the delta E
-
-thermal, so we have the initial potential
-
-equals the final potential. I'm going to have
-
-K0 plus K final equals delta E thermal.
-
-So K0, maybe I'll just write it out like
-
-that. K0 minus K final equals delta E thermal.
-
-K0 is going to be 1 half I0 omega 0 squared. There's
-
-only rotational kinetic energy. And so minus one
-
--half I final omega final squared, that's how much
-
-energy we lost to friction. So equals delta E thermal.
-
-So my I zero is one -half MD squared. So 1
-
-half times 1 half md squared omega 0 squared
-
-minus 1 half i final was md squared and
-
-omega final was, I'll write it like this,
-
-1 half omega 0 and that quantity
-
-squared, that equals delta E thermal.
-
-So one-half, one-half md squared omega zero would be
-
-one-fourth md squared omega zero squared, sorry,
-
-omega zero squared minus one-half, one-half here is
-
-squared, so that becomes one -fourth. So minus one-eighth
-
-md squared omega zero squared, that equals delta
-
-E thermal. And so one -fourth minus one-eighth just
-
-gives us one-eighth, one -eighth, md, that's an eight,
-
-md squared omega zero squared
-
-equals delta e, thermal.
-
-And then plugging in the values, I get 0.47 joules.
-
-Okay,
-
-any questions about this?
-
-Questions?
-
-All right, well, let's move on to
-
-a different kind of a system then.
-
-So, here I'm going, let's see, I think I
-
-have an image in here for you. Yes, I do.
-
-I certainly do.
-
-So, this is a top-down view.
-
-And what we've got here, let me turn my
-
-page over and make it a little bit cleaner.
-
-Top-down view.
-
-We have a uniform solid cylinder looking down on it.
-
-And this cylinder has radius r,
-
-mass capital M.
-
-And we have a bullet coming flying in. This
-
-bullet has mass little m and initial velocity v.
-
-And what happens is it comes in
-
-and embeds into this cylinder.
-
-Now, for this system, let's see, a bullet of mass
-
-m moving at speed v embeds in the rim of a solid
-
-uniform cylinder of mass m radius r initially
-
-at rest on a spindle find the angular speed the
-
-final angular speed of the system and then i've
-
-given you so we know the masses little m big m r and
-
-the initial speed of the of the bullet we want
-
-omega final.
-
-Okay, we want omega final, and I would say the
-
-way to approach this is, first of all, to think,
-
-is there any torque happening on the system?
-
-Well, certainly not in the initial stage and not in
-
-the final stage, so I have L0 equals L final. I have
-
-angular momentum conserved. This is a collision. Like
-
-if we had two carts and they stuck together and then
-
-they moved off at some speed, that would be conserving
-
-momentum. We're conserving angular momentum in this
-
-system. The thing to think about here is L equals I
-
-omega, and L equals R cross P, where P equals M, V.
-
-Okay, so I omega equals L, and we can
-
-also write R cross P. So this bullet has
-
-some angular momentum. It's not rotating.
-
-It's just moving.
-
-When it embeds, it's at position R, and then it
-
-increases the rotation. Well, it has to increase it
-
-because this cylinder was sitting still at the beginning.
-
-So you think of the bullet as having some initial,
-
-the system of having angular momentum, initial
-
-angular momentum, because of the motion of the bullet,
-
-and then final angular momentum because the bullet
-
-is now embedded in this cylinder and it's rotating.
-
-All right, I will go ahead and activate.
-
-Okay, well, we're at 11 .48, so we're getting a
-
-little short on time in class, so I'm going to
-
-go ahead and ask you to put an answer in. Even if
-
-you're not finished with your calculation, just
-
-put an answer in to get participation credit.
-
-I will give you three more seconds to do that. three,
-
-two, one. All right, thank you, stopping delivery.
-
-I had about two-thirds of you had entered an answer.
-
-All right, so we want the final
-
-angular velocity, angular speed.
-
-So our initial angular momentum is just going to be
-
-that of the bullet, so that is going to be m r v so
-
-r cross p m r v since r and p are perpendicular to
-
-each other m r v is our initial angular momentum so p
-
-let's see i could write it out like this l equals r
-
-crossed MV L equals MRV for R perpendicular to V.
-
-Okay, so MRV, that's our initial angular momentum.
-
-Our final angular momentum equals I final omega final.
-
-So I final is going to be the angular momentum
-
-of the cylinder, one half capital MR squared plus MR
-
-squared. So remember what we're doing when we add
-
-up the angular or the moments of inertia, it's just
-
-we're adding the little MR squareds for each of
-
-the little mass parts. So I have the final, the angular
-
-momentum of the cylinder plus the angular momentum
-
-of the bullet embedded in the edge. So my I final
-
-is one half capital MR squared plus little MR
-
-squared. So MRV equals, let's see, I omega final. So,
-
-oh, let's just do it like this. MRV over I equals
-
-omega final. So MRV over one half capital MR
-
-squared plus little MR squared equals omega
-
-final. And then just plug in the values to get the
-
-value. I got 0.95 radians per second for that.
-
-Okay, I see we're just out of time.
-
-So if you have any questions for me about this,
-
-just stick around after class. I will start my
-
-office hours right now. And if you would rather
-
-shoot me an email, that would be fine as well.
-
-I will see you good folks tomorrow.
-
-Bye for now.
-
-Thank you for coming.
-
-See you next time.
+Angular momentum can remain conserved during an inelastic collision even when mechanical energy is converted into thermal energy, deformation, and other internal forms.

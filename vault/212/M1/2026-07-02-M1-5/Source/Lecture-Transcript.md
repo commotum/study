@@ -1,967 +1,926 @@
-Hey there.
+# Physics 212: Nonuniform Circular Motion and Tangential Projectile Motion
 
-Welcome to Physics 212.
+Welcome back to Physics 212.
 
-Hi, everybody. Welcome back.
+## Announcements
 
-Well, let's see.
+There is no class on Friday. Quiz 1 will be administered on Monday, and the entire Monday class period will be devoted to the quiz.
 
-Thursday today, so no class tomorrow. We will have
+### Quiz Format
 
-class on Monday. In fact, class on Monday will be quiz
+Quiz 1 contains two required parts.
 
-one. If you want to do quiz one in the Zoom session
+Part A contains:
 
-being proctored via Zoom, you'll come right here.
+- Three multiple-choice questions
+- One short written-response question
 
-Make sure you have a webcam that's working and keep it
+Part B contains one longer written-response problem.
 
-turned on the whole time. I do ask people to keep
+The quiz covers the material from Chapters 4 and 8, including rotational kinematics and forces in circular motion. A detailed coverage announcement and a practice quiz will be posted before the quiz.
 
-the mics turned off so that it's quiet for everybody.
+Each part allows approximately:
 
-And if you want to use proctoring via Zoom, but
+- $20$ minutes to complete the questions
+- $5$ additional minutes to upload written work
 
-you can't make it at 11 o 'clock, then you can come
+There will be a short break between Parts A and B. The two parts may be completed in either order, and the proctoring methods may be mixed if necessary, although most students use the same method for both parts.
 
-at 6 p.m. I will post a Zoom link for the 6 p.m.
+### Zoom Proctoring
 
-meeting in Canvas in the course information module in
+Zoom-proctored sessions will be available Monday at 11:00 a.m. and 6:00 p.m.
 
-the Zoom page. I haven't posted it yet, just to avoid
+Students using Zoom proctoring must:
 
-confusion. But yeah, there will be one posted there.
+- Have a functioning webcam
+- Keep the webcam on throughout the quiz
+- Keep the microphone muted unless communicating with the instructor
+- Upload written work during the designated upload periods
 
-Proctorio version will open
+### Proctorio
 
-Saturday 5 p.m., close Monday 5 p.m.
+The Proctorio version will open Saturday at 5:00 p.m. and close Monday at 5:00 p.m.
 
-And let's see what else. You are required to
+The Canvas portions of Quiz 1A and Quiz 1B will close at 4:55 p.m. The corresponding Gradescope work assignments will remain open until 5:00 p.m., providing five additional minutes for uploading written work.
 
-upload a note sheet that needs at least half a
+Complete the Proctorio practice quiz before Quiz 1 to confirm that the software is working correctly.
 
-page up to one full page. It needs to be in your
+While using Proctorio:
 
-own handwriting on a piece of paper. Lay your
+- Do not open additional browser tabs.
+- Do not use keyboard shortcuts to leave the quiz.
+- Use a handheld calculator or the calculator built into Proctorio.
+- Do not use an online calculator such as Desmos.
+- Looking down at the authorized physical note sheet is permitted, even if Proctorio flags it as looking away from the screen.
 
-photo ID on top of it when you get it ready.
+### Required Note Sheet
 
-Take a scan of it or take a picture of
+A handwritten note sheet must be submitted to the Quiz 1 Notes assignment in Gradescope.
 
-it. Make a scan out of that. uploaded to
+The note sheet must:
 
-Gradescope to quiz one notes assignment.
+- Be between one-half page and one full page
+- Be written entirely by hand on paper
+- Be submitted with a photo ID visible on top of it
 
-If you have school ID, you can use that. If you
+An Oregon State University ID or another valid photo ID may be used. Sensitive information, such as an address, may be covered before the image is taken.
 
-don't have school ID, you can use any other
+For ordinary handwritten assignments, writing with a stylus on a tablet is acceptable. The quiz note sheet, however, must be written on physical paper.
 
-valid photo ID, like a driver's license or a
+The deadline for uploading the M2-1 assignment to Gradescope has been extended until 10:00 p.m. tonight.
 
-visa, and feel free to cover up sensitive information
+# Review of Translational and Rotational Kinematics
 
-like your address or something like that.
+Before studying nonuniform circular motion, we will briefly review the relationships among position, velocity, and acceleration.
 
-And let's see, what else?
+## Translational Motion
 
-I've talked to you about the form of the quiz will
+Velocity is the time derivative of position:
 
-be two parts, part A and part B. you do need to
+$$
+v(t)=\frac{dx}{dt}.
+$$
 
-take both parts. You can mix and match if you need
+Acceleration is the time derivative of velocity:
 
-to, but typically people stay with one modality.
+$$
+a(t)=\frac{dv}{dt}
+=
+\frac{d^2x}{dt^2}.
+$$
 
-For part A, there will be three multiple choice questions
+These relationships may be reversed using integration:
 
-and a short written question. For part B, there's
+$$
+v(t)
+=
+v_0
++
+\int_{t_0}^{t}a(t')\,dt',
+$$
 
-a longer written question. Any questions about this?
+and
+
+$$
+x(t)
+=
+x_0
++
+\int_{t_0}^{t}v(t')\,dt'.
+$$
+
+When acceleration is constant, the familiar kinematic equations are
+
+$$
+v_f=v_i+a\Delta t,
+$$
+
+$$
+x_f
+=
+x_i
++
+v_i\Delta t
++
+\frac{1}{2}a(\Delta t)^2,
+$$
+
+and
+
+$$
+v_f^2
+=
+v_i^2
++
+2a(x_f-x_i).
+$$
+
+## Rotational Motion
+
+The angular equivalents of position, velocity, and acceleration are $\theta$, $\omega$, and $\alpha$.
+
+Angular velocity is
+
+$$
+\omega(t)=\frac{d\theta}{dt},
+$$
+
+and angular acceleration is
+
+$$
+\alpha(t)
+=
+\frac{d\omega}{dt}
+=
+\frac{d^2\theta}{dt^2}.
+$$
+
+The integral relationships are
+
+$$
+\omega(t)
+=
+\omega_0
++
+\int_{t_0}^{t}\alpha(t')\,dt',
+$$
+
+and
+
+$$
+\theta(t)
+=
+\theta_0
++
+\int_{t_0}^{t}\omega(t')\,dt'.
+$$
+
+For constant angular acceleration,
+
+$$
+\omega_f
+=
+\omega_i+\alpha\Delta t,
+$$
+
+$$
+\theta_f
+=
+\theta_i
++
+\omega_i\Delta t
++
+\frac{1}{2}\alpha(\Delta t)^2,
+$$
+
+and
+
+$$
+\omega_f^2
+=
+\omega_i^2
++
+2\alpha(\theta_f-\theta_i).
+$$
+
+The translational and rotational variables correspond as follows:
+
+$$
+x\longleftrightarrow\theta,
+$$
 
-Is this quiz going to include rotational
+$$
+v\longleftrightarrow\omega,
+$$
 
-kinematics and the circular forces?
+and
 
-Yes, yes, so the material that we've covered in
+$$
+a\longleftrightarrow\alpha.
+$$
 
-Chapters 4 and 8, yes. And I will be posting an
+# Radial and Tangential Acceleration
 
-announcement that details what the material covered is.
+Acceleration is a vector. It can be resolved into ordinary Cartesian components,
 
-For the Zoom session on Monday when you're
+$$
+\vec{a}
+=
+a_x\hat{x}
++
+a_y\hat{y},
+$$
 
-proctoring it, will the entire class period
+or into radial and tangential components:
 
-just be dedicated to taking the quiz or
+$$
+\boxed{
+\vec{a}
+=
+a_r\hat{r}
++
+a_t\hat{t}
+}.
+$$
 
-will it be going over course content at all?
+The radial and tangential directions are perpendicular to one another and rotate with the moving particle.
 
-No, it will just be the quiz. part a will take um 25
+In this lecture, the positive radial direction is chosen to point inward, toward the center of the circular path.
 
-minutes so 20 minutes plus five minutes to upload
+For motion along a circle of fixed radius $r$, the radial acceleration is
 
-your scan then a break and then 20 minutes more and
+$$
+\boxed{
+a_r=\frac{v^2}{r}
+}
+$$
 
-five minutes more so takes up the whole hour pretty
+or equivalently,
 
-much 55 minutes of it thank you good question other
+$$
+a_r=\omega^2r.
+$$
 
-questions see something in the chat are there any
+The tangential acceleration describes the rate at which the speed changes:
 
-practice quizzes available in canvas and not yet but
+$$
+\boxed{
+a_t=\frac{dv}{dt}
+}.
+$$
 
-there will be one posted by tomorrow tomorrow i will
+It is related to angular acceleration by
 
-post an announcement and a practice quiz how will
+$$
+\boxed{
+a_t=\alpha r
+}.
+$$
 
-proctoring work well there's two different ways to proctor
+Both $a_r$ and $a_t$ have units of acceleration, such as $\mathrm{m/s^2}$. Angular acceleration has units of $\mathrm{rad/s^2}$.
 
-you can use proctorio or you can come at 11 o
+Because the two components are perpendicular, the magnitude of the total acceleration is
 
-'clock in the morning or 6 p .m at night and if you come
+$$
+\boxed{
+a
+=
+\sqrt{a_r^2+a_t^2}
+}.
+$$
 
-during the zoom session i will be here everybody will
+# Uniform and Nonuniform Circular Motion
 
-be here like you are today only with your cameras
+In **uniform circular motion**, the particle moves at constant speed.
 
-all turned on if you're proctoring using proctorio
+Its velocity is not constant because the direction of the velocity continually changes. The particle therefore has radial acceleration even though its speed is constant:
 
-then you need to take the proctorio practice quiz
+$$
+a_r=\frac{v^2}{r},
+$$
 
-first to make sure that you have proctor proctorio set
+$$
+a_t=0.
+$$
 
-up correctly and that um that takes a video of you
+The total acceleration points directly toward the center of the circle.
 
-and and has some controls on your computer you can't
+In **nonuniform circular motion**, the particle’s speed changes. The particle then has both radial and tangential acceleration:
 
-tab open you can't open a new tab you can't switch
+$$
+a_r\neq0,
+$$
 
-you yeah you basically if you're using proctorio just
+$$
+a_t\neq0.
+$$
 
-go in click on things take the quiz write out your
+The radial component changes the direction of the velocity, while the tangential component changes its magnitude.
 
-work and then after the quiz closes in canvas upload
+# Direction of the Net Force
 
-your work to grade scope let's see another question
+Newton’s second law is
 
-if we're doing it on proctorial how will we switch
+$$
+\vec{F}_{\mathrm{net}}=m\vec{a}.
+$$
 
-to upload to grade scope you don't exactly switch
+Because mass is a positive scalar, the net-force vector points in the same direction as the acceleration vector.
 
-so you will here let me go into modules and into
+Consider a particle moving clockwise around a circle and speeding up.
 
-circular motion required activities and here are the
+Its radial acceleration points toward the center of the circle. Its tangential acceleration points along the clockwise direction of motion because the particle is speeding up.
 
-links for the quiz so quiz one notes if you're taking
+The total acceleration is the vector sum
 
-using proctorio you'll do this asynchronous version
+$$
+\vec{a}
+=
+\vec{a}_r+\vec{a}_t.
+$$
 
-you'll click on quiz 1a asy that will open the
+The resulting acceleration points partly inward and partly forward along the path.
 
-quiz in canvas and you'll click the answers for the
+If the same clockwise-moving particle were slowing down, the tangential acceleration would point opposite its velocity. The resultant acceleration would still point inward, but it would be tilted backward relative to the direction of motion.
 
-three multiple choice questions it will give you a
+This distinction is important:
 
-written question you write your stuff you write out
+- Radial acceleration determines the curvature of the path.
+- Tangential acceleration determines whether the particle speeds up or slows down.
 
-your work on the page and then you click on this quiz
+# Ball Moving in a Vertical Circle
 
-1a asy work to upload your work that will take you
+Consider a ball of mass $m$ attached to a string of length $L$.
 
-into grade scope and an upload for your work there
+At the instant under consideration, the inward radial direction lies along the string and makes an angle $\theta$ with the downward vertical. The ball is moving upward along the tangent to the circle and is slowing down.
 
-okay claire other questions um yeah there's no like
+Let:
 
-calculators allowed is there oh yeah you can use
+- $F_T$ be the tension in the string
+- $m$ be the ball’s mass
+- $L$ be the string length
+- $\theta$ be the angle shown in the problem
+- $+\hat{r}$ point inward toward the center
+- $+\hat{t}$ point in the direction of gravity’s tangential component
 
-whatever calculator you want if you're using proctorio do
+The forces on the ball are:
 
-not go on to a an online calculator like desmos or
+- The tension $F_T$, directed inward along the string
+- The gravitational force $mg$, directed vertically downward
 
-um any online calculator you want to have a handheld
+The gravitational force can be resolved into radial and tangential components:
 
-calculator and whatever calculator you're comfortable
+$$
+F_{g,r}=mg\cos\theta,
+$$
 
-with is fine so yeah do not switch tabs to go into
+and
 
-like desmos if you're using proctorio but other than
+$$
+F_{g,t}=mg\sin\theta.
+$$
 
-that actually proctorio will have a scientific calculator
+When resolving a force into components, the sides of the component triangle must be parallel to the selected coordinate axes. The correct sine or cosine follows from that geometry.
 
-included in the proctorio software but i recommend
+## Radial Acceleration
 
-you use whatever calculator you're used to using
+Both the tension and the radial component of gravity point inward. Therefore,
 
-all righty and proctorio won't flag us for like
+$$
+\sum F_r=ma_r.
+$$
 
-looking at the physical note sheet we have right
+Substituting the radial forces gives
 
-Oh, it will, but I don't care. It will tell
+$$
+F_T+mg\cos\theta=ma_r.
+$$
 
-me, oh, they looked away from the screen.
+Solving for the radial acceleration,
 
-And, okay, fine, I expected you to. So, you
+$$
+\boxed{
+a_r
+=
+\frac{F_T}{m}
++
+g\cos\theta
+}.
+$$
 
-know, it will put it in its metadata or in its
+Using the values supplied in the problem gives
 
-data. But I'm not going to care about that.
+$$
+a_r=11.7\ \mathrm{m/s^2}.
+$$
 
-All right. Well, thank you.
+To two significant figures,
 
-If there's another person in the room and you're looking,
+$$
+\boxed{
+a_r\approx12\ \mathrm{m/s^2}
+}.
+$$
 
-there's stuff. There's stuff that I would care about,
+## Tangential Acceleration
 
-but not looking at your note sheet and such. Yeah.
+The tension points entirely in the radial direction, so it has no tangential component.
 
-Yeah. Just go ahead and take the quiz. If
+The only tangential force is the tangential component of gravity:
 
-you're using Proctorio, don't hit any hotkeys.
+$$
+\sum F_t=ma_t.
+$$
 
-If you're using Proctorio, just click on the buttons
+Therefore,
 
-to choose the multiple choice and write your
+$$
+mg\sin\theta=ma_t.
+$$
 
-answers out and then let it end at the end of the
+The mass cancels, giving
 
-20 minutes. And then you have five minutes to click
+$$
+\boxed{
+a_t=g\sin\theta
+}.
+$$
 
-on this other assignment and upload your work.
+Using the given angle,
 
-You can do quiz 1A and then quiz 1B if you want, or
+$$
+\boxed{
+a_t=2.4\ \mathrm{m/s^2}
+}.
+$$
 
-you can do B first if you want. That doesn't matter.
+The positive tangential direction was chosen to point along gravity’s tangential component. Because the ball’s velocity points in the opposite direction, the tangential acceleration opposes the velocity. The ball is therefore slowing down.
 
-quiz 1a and quiz 1b asy will close at 4 55 and the asy
+## Total Acceleration
 
-work assignments will close at 5 p.m on monday to give
+The radial and tangential accelerations are perpendicular, so the total magnitude is
 
-you that five extra minutes to upload work other
+$$
+a
+=
+\sqrt{a_r^2+a_t^2}.
+$$
 
-questions i had a quick non quiz question um if everybody's
+Substituting the component expressions,
 
-done with quiz questions um so for uh for assignments
+$$
+a
+=
+\sqrt{
+\left(
+\frac{F_T}{m}
++
+g\cos\theta
+\right)^2
++
+\left(
+g\sin\theta
+\right)^2
+}.
+$$
 
-that are not quizzes like um the pre-lecture 2-1
+Thus,
 
-that uh required us to upload like a handwritten work
+$$
+\boxed{
+a
+=
+\sqrt{
+\left(
+\frac{F_T}{m}
++
+g\cos\theta
+\right)^2
++
+g^2\sin^2\theta
+}
+}.
+$$
 
-yeah it's specified in the in the um grade scope
+Using the numerical values gives
 
-submission like on paper but is it okay if we submit like
+$$
+a=11.9\ \mathrm{m/s^2}.
+$$
 
-handwritten like stylus with ipad like document or do
+To two significant figures,
 
-you want it on paper for the note sheet it should be
+$$
+\boxed{
+a\approx12\ \mathrm{m/s^2}
+}.
+$$
 
-on paper but for other assignments stylus is okay i
+The total acceleration is slightly larger than the radial acceleration alone because it also includes the tangential component.
 
-would say that it just needs to be in your own handwriting
+# Speed of the Ball
 
-if you're what i don't want to see is computer
+For circular motion,
 
-generated work that is some kind of font that you've
+$$
+a_r=\frac{v^2}{r}.
+$$
 
-typed stuff in the work just needs to be in your own
+The radius of the ball’s path is the string length:
 
-handwriting so if you're using a stylus that's okay thank
+$$
+r=L.
+$$
 
-you you're welcome thanks for asking that also on
+Therefore,
 
-the m2-1 assignment that required you to upload work to
+$$
+a_r=\frac{v^2}{L}.
+$$
 
-grade scope i recognize that well a couple of people
+Substituting the radial-acceleration expression,
 
-emailed me even though I posted an announcement letting
+$$
+\frac{v^2}{L}
+=
+\frac{F_T}{m}
++
+g\cos\theta.
+$$
 
-people know yesterday that it would allow it would
+Multiplying by $L$ gives
 
-entail an upload to grade scope to give yourself time
+$$
+v^2
+=
+L
+\left(
+\frac{F_T}{m}
++
+g\cos\theta
+\right).
+$$
 
-for that a couple of people didn't quite make the
+Therefore,
 
-deadline so I extended in grade scope I put a late due
+$$
+\boxed{
+v^2
+=
+\frac{F_TL}{m}
++
+gL\cos\theta
+}
+$$
 
-date of 10 p.m tonight instead of just 10 p.m this
+and
 
-morning there's no answer posted immediately for this
+$$
+\boxed{
+v
+=
+\sqrt{
+\frac{F_TL}{m}
++
+gL\cos\theta
+}
+}.
+$$
 
-question so yeah if you didn't get your m2-1 assignment
+This is the ball’s instantaneous speed immediately before the string is cut.
 
-uploaded to grade scope this morning then go ahead and
+# Cutting the String
 
-and submit it by 10 p.m tonight and it will be accepted
+Suppose the string is cut at the instant described above.
 
-just fine okay other questions all right looks like
+Immediately after the cut:
 
-we're ready to go then i want to go here for a second
+- The tension force disappears.
+- The ball’s position does not change instantaneously.
+- The ball’s velocity does not change instantaneously.
+- The ball continues with the velocity it had at the moment of release.
+- That velocity is tangent to the circular path.
 
-now this is just the notes that i wrote on the very
+After the cut, the ball becomes a projectile acted on only by gravity.
 
-first day and i want to touch base with this what we
+Because the tangent makes an angle $\theta$ above the horizontal, the initial velocity components are
 
-did was we we reviewed things that have to do with
+$$
+v_{0x}=v_0\cos\theta
+$$
 
-translational motion the definition of velocity and
+and
 
-acceleration as the time derivative of position and
+$$
+v_{0y}=v_0\sin\theta.
+$$
 
-velocity and then taking velocity as the integral of
+We want to determine the ball’s maximum height above its release point.
 
-acceleration with respect to time and position as the
+## Maximum-Height Calculation
 
-integral of velocity with respect to time for constant
+The vertical kinematic equation that does not contain time is
 
-acceleration I wrote down the kinematic equations. Same
+$$
+v_y^2
+=
+v_{0y}^2
++
+2a_y\Delta y.
+$$
 
-thing for rotational material, only now instead of v
+At the maximum height,
 
-and a, we're using omega and alpha. Alpha and omega
+$$
+v_y=0.
+$$
 
-are the change in angle with respect to time. We went
+The vertical acceleration is
 
-through and looked at the general case for if we just
+$$
+a_y=-g.
+$$
 
-have functions of time. If we have constant angular
+The initial vertical velocity is
 
-acceleration, then we can write these kinematic equations
+$$
+v_{0y}=v_0\sin\theta.
+$$
 
-for rotational variables, theta, omega, and alpha.
+Substituting,
 
-We touched base on the fact that acceleration
+$$
+0
+=
+v_0^2\sin^2\theta
+-
+2g\Delta y_{\max}.
+$$
 
-is a vector and we typically can resolve
+Therefore,
 
-it into components along an xy axis. We
+$$
+2g\Delta y_{\max}
+=
+v_0^2\sin^2\theta.
+$$
 
-could also resolve it into components along a
+Solving for the maximum vertical displacement,
 
-rt axis, radial and tangential. Those are perpendicular
+$$
+\boxed{
+\Delta y_{\max}
+=
+\frac{
+v_0^2\sin^2\theta
+}{
+2g
+}
+}.
+$$
 
-from each other and rotate with the system. I
+From the circular-motion analysis,
 
-typically like to have r pointing toward the center of
+$$
+v_0^2
+=
+\frac{F_TL}{m}
++
+gL\cos\theta.
+$$
 
-the circle to keep the acceleration the radial acceleration
+Substituting this into the projectile-motion result gives
 
-constant to find the magnitude of a vector you
+$$
+\boxed{
+\Delta y_{\max}
+=
+\frac{
+\left(
+\frac{F_TL}{m}
++
+gL\cos\theta
+\right)
+\sin^2\theta
+}{
+2g
+}
+}.
+$$
 
-take the square root of the squares of the sum of the
+This expression is entirely in terms of the given quantities $F_T$, $L$, $m$, $\theta$, and $g$.
 
-squares of its components that's whether you're in
+Using the numerical values supplied in the problem gives
 
-two or three dimensions and that is true for say an
+$$
+\boxed{
+\Delta y_{\max}=0.031\ \mathrm{m}
+}.
+$$
 
-acceleration vector whether you're working in x y
+The ball rises approximately $3.1\ \mathrm{cm}$ above its release point.
 
-coordinates or r t coordinates and then i took a minute to
+# General Strategy for Nonuniform Circular-Motion Problems
 
-define radial acceleration that is an acceleration
+## 1. Draw the Physical Situation
 
-in meters per second squared tangential acceleration
+Translate the written problem into a labeled diagram. Include the radius, angles, velocity direction, and relevant positions.
 
-while standard units are meters per second squared
+## 2. Draw a Free-Body Diagram
 
-tangential acceleration as well meters per second squared
+Include only forces acting directly on the selected particle.
 
-angular acceleration is radians per second squared
+For the ball-on-a-string problem, the forces are tension and gravity.
 
-and it's how fast omega is changing so radial and
+## 3. Choose Radial and Tangential Axes
 
-tangential are in are well i say units of meters per
+The radial axis should be aligned with the radius of the circle. Choosing inward as positive makes the radial acceleration
 
-second squared but whatever distance per time squared,
+$$
+a_r=\frac{v^2}{r}
+$$
 
-and angular acceleration is angle, the
+positive.
 
-second time derivative of the angle.
+The tangential axis must be perpendicular to the radial axis.
 
-Okay, so now what I want to do, most of the
+## 4. Resolve Forces Along the Selected Axes
 
-problems we've done, well, we did some problems
+Construct component triangles whose sides are parallel to the radial and tangential axes.
 
-that had some, say, some omega as a function
+Do not use an angle merely because it is labeled in the original diagram. Use the angle between the force and the relevant axis.
 
-of time or alpha as a function of time early
+## 5. Apply Newton’s Second Law Separately
 
-on, But then we went to doing kinematic problems
+Write
 
-where we had a constant alpha. Or I mean,
+$$
+\sum F_r=ma_r
+$$
 
-yeah, where we had constant alpha. And now what we
+and
 
-want to do is some non-uniform circular motion problem.
+$$
+\sum F_t=ma_t.
+$$
 
-So uniform circular motion, that's a system that
+The radial equation describes the curvature of the path. The tangential equation describes the change in speed.
 
-has a constant speed. So velocity is not constant.
+## 6. Combine Perpendicular Components
 
-The directionality of velocity changes, but constant
+Use
 
-speed is the uniform circular motion. non-uniform
+$$
+a=\sqrt{a_r^2+a_t^2}
+$$
 
-circular motion means something moving around a
+to find the magnitude of the total acceleration.
 
-circle, but with a speed that is changing. And I'm
+## 7. Solve Symbolically First
 
-not going to dwell on circular orbits here. We're
+Keep the calculation in variables until the requested quantity has been isolated.
 
-going to come back and cover that material when we
+A symbolic result makes it easier to:
 
-do chapter 13 in just like a week or so. So don't
+- Check units
+- Identify cancellations
+- Analyze signs
+- Interpret how variables affect the result
+- Detect algebraic errors
 
-worry about circular orbits, but all the rest of
+## 8. Substitute Numerical Values Last
 
-the information that we covered on circular motion.
+Insert numerical values only after obtaining a complete symbolic expression.
 
-So let's go into here. I have, well, I'm
+# Summary
 
-just going to give you this problem, let
+Translational and rotational quantities are related by
 
-you read it, and i will activate it and let
+$$
+v=\frac{dx}{dt},
+$$
 
-me put the link in the chat for you okay
+$$
+a=\frac{dv}{dt},
+$$
 
-most people have an answer um if you still
+$$
+\omega=\frac{d\theta}{dt},
+$$
 
-need to put an answer in please do that now
+and
 
-i'll give you three more seconds three two
+$$
+\alpha=\frac{d\omega}{dt}.
+$$
 
-one all right thank you stopping delivery
+For circular motion with inward defined as positive,
 
-okay and i see there were a couple of people having
+$$
+\boxed{
+a_r=\frac{v^2}{r}
+}
+$$
 
-issues with poll everywhere so they messaged me
+and
 
-in the chat, which is the correct thing to do, and
+$$
+\boxed{
+a_t=\frac{dv}{dt}=\alpha r
+}.
+$$
 
-then follow up with an email if you weren't able
+The total acceleration magnitude is
 
-to put in your answer. But somebody, at least one
+$$
+\boxed{
+a=\sqrt{a_r^2+a_t^2}
+}.
+$$
 
-of you, was able to go ahead and put in your answer.
+In uniform circular motion,
 
-So let's talk about what the answer should be. So
+$$
+a_t=0,
+$$
 
-I have a system that is moving in a circle, particle
+so acceleration points directly toward the center.
 
-moving in a circle, arrow depicting magnitude
+In nonuniform circular motion, both radial and tangential acceleration may be present.
 
-and direction of net force. Arrow gives net force.
+For the ball-on-a-string system,
 
-And then we know the sum of forces
+$$
+\boxed{
+a_r
+=
+\frac{F_T}{m}
++
+g\cos\theta
+},
+$$
 
-is a vector equals ma. So the
+$$
+\boxed{
+a_t=g\sin\theta
+},
+$$
 
-mass will scale the vector, but it won't
+and
 
-change the directionality of the vector.
+$$
+\boxed{
+a
+=
+\sqrt{
+\left(
+\frac{F_T}{m}
++
+g\cos\theta
+\right)^2
++
+g^2\sin^2\theta
+}
+}.
+$$
 
-And which direction, which diagram represents a
+The ball’s instantaneous speed is determined by
 
-particle moving in the clockwise direction, speeding
+$$
+\boxed{
+v^2
+=
+\frac{F_TL}{m}
++
+gL\cos\theta
+}.
+$$
 
-up. So we have clockwise motion and speeding up.
+When the string is cut, the ball leaves the circular path tangent to the circle and becomes a projectile.
 
-Okay, so clockwise means particles moving around in
+Its maximum height above the release point is
 
-the clockwise direction. If it is moving in a circle,
+$$
+\boxed{
+\Delta y_{\max}
+=
+\frac{
+\left(
+\frac{F_TL}{m}
++
+gL\cos\theta
+\right)
+\sin^2\theta
+}{
+2g
+}
+}.
+$$
 
-then it has some radial acceleration. Okay, so
+For the values used in the problem,
 
-really we're looking for the acceleration vector. It
-
-would be scaled by the mass, but really the acceleration
-
-vector gives us all the information we need
-
-for this. So we have a radial component of acceleration.
-
-And if it's moving clockwise and speeding up,
-
-it also has a tangential component of acceleration.
-
-So the acceleration vector equals a
-
-r r hat plus a y y or a t t hat so
-
-i add these two vectors and when i do that i put tip
-
-to tail i'm going to have the resultant vector the
-
-acceleration vector pointing no longer pointing
-
-toward the center if it was moving at constant speed
-
-then this acceleration tangential acceleration would
-
-be zero and i would just have the vector pointing
-
-toward the central center but But since it's speeding
-
-up in the clockwise direction, I have to include
-
-the tangential acceleration that puts an acceleration
-
-that is pointing toward the center, but off a
-
-little bit to the left. And that would be choice D.
-
-Let's see what you put as your responses.
-
-Oh, very good. Half of you, over half of
-
-you got this correct, but quite a few other
-
-people didn't understand which one to
-
-choose. And let's see, 14% if you chose C.
-
-Okay, that C would be true if it was moving
-
-counterclockwise, speeding up, or if it was
-
-moving clockwise, slowing down. But I need the,
-
-if it's speeding up, then it would have a tangential
-
-direction, a positive tangential acceleration pointing
-
-the way that I drew here, and that would give D.
-
-Any questions about this?
-
-So make sure you understand the concepts here.
-
-I would say good ways to study for the quiz would
-
-be to look at the multiple choice questions we did
-
-in class and also look at the written questions we
-
-did in class. I typically like to make a quiz based
-
-similar to what we did in class, only sort of one
-
-step removed, if you know what I mean.
-
-So, yeah, studying the concepts of what
-
-we did in class is very important here.
-
-Any questions?
-
-Okay, let's go to another problem then.
-
-So I have, let's start with a new diagram,
-
-a ball of mass M on string of length
-
-L. So here's my system looking like this.
-
-center of the circle I have a ball of mass m I'm
-
-assuming it is a particle now if this wasn't treated
-
-as a particle there would be some rotation of the
-
-ball as it moved around we'd have to be a lot more
-
-careful about it but we're not considering that right
-
-now we're just assuming it's a particle I have some
-
-angle theta length of the string is l so we know
-
-l, the tension in the string t, the
-
-mass of the particle, and theta, and what
-
-we want is the radial acceleration,
-
-a sub r.
-
-Okay.
-
-And that would be in units of meters per
-
-second squared, so just enter the number when
-
-you get it i'm going to go ahead and activate
-
-and i'll give you a minute or two to work on
-
-this yourself and then open breakout rooms okay
-
-everybody's back most people have an answer in please
-
-put in an answer if you still need to do that i'll
-
-give you three more seconds to put in your answer
-
-remember if you're live in the zoom session you get
-
-participation credit whether your answer is correct or not
-
-if you're um doing this asynchronously you do need
-
-to get the correct answer to get points three two one
-
-all right thank you stopping delivery
-
-okay so i know the length of the string the
-
-tension in the string the mass of the object and
-
-theta, the angle, and I want the radial acceleration,
-
-I'm going to start with a free body diagram
-
-because acceleration is related to force,
-
-so I would use a force approach here.
-
-I'm going to have a vector for the, well, for mg,
-
-pointing downward. I'm close to the surface of the
-
-earth, and then I have a vector for the tension,
-
-And I don't really know the relative strength,
-
-the lengths of those vectors, to be honest, but I'm
-
-just going to take a stab at it here and put my
-
-tension vector in. I do know the direction of it.
-
-So I want my radial axis to point inward toward the
-
-circle. So there's my plus r axis. in pointing in
-
-along the string i need a perpendicular axis that would
-
-be the tangential axis now i i could put right now
-
-i could choose to put the positive along in the upper
-
-part here or in the lower part of that axis if i
-
-have this gravitational force and the tension pulling
-
-on the object along the radius, then what I know
-
-here is that this object is going to be slowing down.
-
-And so what I'm going to do, and you could do this
-
-the opposite way if you want, I'm going to put the
-
-positive tangential axis pointing downward to the
-
-left here, and also finding my angle theta on my diagram.
-
-So this is my free body diagram. I'm going to do
-
-sum of forces in the r direction equals mar, and
-
-that would equal the tension is positive, and then
-
-plus in the r direction, the cosine component of mg,
-
-so plus mg cosine theta. So if I want just a sub r, a
-
-sub r equals t tension over m plus g cosine theta.
-
-And plugging in those values, I get 11.7
-
-meters per second squared or 12 meters per
-
-second squared using two sig figs because I've
-
-given two sig figs in a problem statement.
-
-Questions about this?
-
-Okay, then let's do the next one.
-
-Now what's the
-
-tangential acceleration magnitude.
-
-I will go ahead and activate.
-
-Okay, everybody's back.
-
-Please put in an answer if you
-
-still need to do that. Three,
-
-two,
-
-one. All right, thank you, stopping delivery.
-
-Okay, so this time I asked for the tangential
-
-acceleration. We're going to do something similar to what
-
-we did for the radial acceleration. So sum of forces
-
-in the tangential direction equals ma tangential.
-
-In the tangential direction, I'm going to resolve the
-
-forces onto the tangential axis. The tension vector
-
-is perpendicular, so there's no addition to the
-
-forces from that. So I just have the gravitational force,
-
-the sine component of the gravitational force, so
-
-tangential acceleration just equals m g sine theta,
-
-and so that goes to a tangential equals g sine theta,
-
-and that gives me 2.4 meters per second squared.
-
-Any questions about that?
-
-Okay, let's take a minute to find the total
-
-acceleration magnitude I will activate that okay
-
-most people have an answer in please do put in an
-
-answer if you still need to do that I'll give
-
-you three more seconds three two one all right
-
-thank you I'm stopping delivery come on a couple
-
-more people all right thank you Stopping delivery.
-
-Okay,
-
-so the total acceleration is going to be a
-
-vector magnitude is ar squared plus at squared.
-
-Take the square root of that. So that
-
-would be t over m plus g cosine theta quantity
-
-squared plus g squared sine squared theta.
-
-Take the square root of that. That's my total acceleration
-
-magnitude. And when I do that, oh, by the way,
-
-this is completely symbolically solved. you should
-
-have showing on your paper the complete symbolic solution
-
-not just plugging in values but if i do plug in
-
-values for this i get 11.9 or 12 meters per second squared
-
-so yeah to three sig figs it shows a little bit
-
-higher magnitude than just the radial acceleration only
-
-so yeah 11.9 meters per second squared is the magnitude
-
-of the total acceleration question is about this
-
-Could you brighten the page just a little bit?
-
-Could I what?
-
-Could you like put a light on?
-
-I have light on the page, but I can try to... Well,
-
-what happens is if I increase the light on the
-
-page, typically it just... Oh, that does help a little
-
-bit. Okay, sorry about that. Yes, my light was
-
-rather dim. Thank you for asking. Yes, that helps.
-
-Other questions? Question in the chat.
-
-Can you show the triangle
-
-you used to know it was sine?
-
-Okay, so my triangle is this,
-
-mg,
-
-and then here's theta.
-
-This is, it doesn't look like an Mg.
-
-There's theta, there's the perpendicular.
-
-So what I need is a component that tracks the
-
-perpendicular. This would be Mg sine theta on
-
-this side, and Mg cosine theta on this side.
-
-Okay?
-
-Yeah, so on this diagram, what I'm doing is I'm
-
-resolving the vector onto this tangential component,
-
-so I want this opposite side of the triangle.
-
-Oh, I get it. So sometimes what people do is
-
-they try to make the right angle over here, and
-
-that angle, that isn't resolving onto any
-
-component, any axis. So, yeah, make sure that when
-
-you're resolving this onto an axis, that your
-
-side of the triangle is parallel to the axis.
-
-Third question?
-
-Okay, well, I'm going to skip the next one that would
-
-be just finding the velocity magnitude, magnitude,
-
-which you can use ar equals v squared over r, and
-
-in this case r is the length l, and I'm going to
-
-go to this question. Now assume I'm swinging the
-
-ball just like this, and then I cut the string. What's
-
-going to happen is, well, the velocity vector is
-
-always tangential to the circle. If I cut the string,
-
-then the ball would take off at a velocity that
-
-has an x and y component. And if it does that, find
-
-the ball's maximum height above the release point.
-
-Okay, I will go ahead and activate this question.
-
-Okay, everybody's back. Please put in
-
-an answer if you still need to do that.
-
-I will give you three more seconds to
-
-do that if you need to. Three, two,
-
-one.
-
-All right, thank you, stopping delivery.
-
-All right, so let's see. We want to find delta y
-
-max, and that's the delta y. How high does it go
-
-above this initial point. So something like this, if
-
-it's launching with some v0 vector, then it's going
-
-to go up and come back down, just parabolic
-
-motion. So y final equals y0 plus v0 yt plus 1 half a
-
-yt squared. v final equals v zero plus a, v zero,
-
-y plus a, yt, and y, v, y final squared equals
-
-v y zero squared plus two a y delta y. I'm
-
-going to choose this equation because I don't
-
-want to hassle with the time. I can eliminate time
-
-between these first two equations and get
-
-this third equation, so I will start with that.
-
-My Vy final is 0, so 0 equals V0 sine theta,
-
-V0 squared sine squared theta minus 2G
-
-delta Y. That's specifying for this
-
-system, so Vy0 would be V0 sine theta,
-
-And I find, I can find my V0 if A sub R
-
-equals V squared over L, then V0 squared
-
-over L equals T over M plus G cosine theta.
-
-So V0 squared equals T over M L plus G,
-
-oops, T, I did that wrong, T L over M.
-
-plus G L cosine theta.
-
-So I can solve this for my
-
-delta Y. Let me do that first.
-
-2 G delta Y equals V zero squared sine squared theta.
-
-So delta Y equals V zero squared sine squared theta
-
-over 2 G. That would equal T L over M plus G L cosine
-
-theta. That's already been squared and then
-
-multiplied by sine squared theta and then divide by 2 G.
-
-That should give me my delta Y. And when I did
-
-the calculation for this, I got 0.031 meters.
-
-But yeah, this is your completely symbolic
-
-solution. Notice it's in terms of given
-
-variables. I know L, T, M, and theta. This
-
-is all in terms of T, L, M, and theta.
-
-And little g is always a given if I'm close
-
-to the surface of the Earth. So this is
-
-completely symbolic in terms of given variables.
-
-okay well thank you very much for coming and i
-
-will stick around for my office hour right now if
-
-you have any more questions for me or want to chat
-
-please do stick around if you can't do that or if
-
-you're watching the video later and you have a
-
-question for me just shoot me an email i would be
-
-happy to converse with you thank you very much for
-
-coming and i will see you good folks next week
-
-thank you for coming see you next time Thank you.
+$$
+\boxed{
+\Delta y_{\max}=0.031\ \mathrm{m}
+}.
+$$

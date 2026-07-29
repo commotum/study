@@ -1,0 +1,442 @@
+# Applying the Integration By Parts Twice
+
+<!--
+lesson-id: 416
+topic-code: CA2.1.5.3
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Computing the Integral of an Exponential Expression Using Integration by Parts Twice](#computing-the-integral-of-an-exponential-expression-using-integration-by-parts-twice)
+- [Computing the Integral of a Trigonometric Expression Using Integration by Parts Twice](#computing-the-integral-of-a-trigonometric-expression-using-integration-by-parts-twice)
+- [Computing the Integral of a Logarithmic Expression Using Integration by Parts Twice](#computing-the-integral-of-a-logarithmic-expression-using-integration-by-parts-twice)
+
+## Prerequisites
+
+- [Using Integration by Parts to Calculate Integrals With Logarithms](<../../../../MA/Mathematical-Foundations/MF3/10. Integration Techniques/10.4. Integration by Parts/Lessons/10.4.2. Using Integration by Parts to Calculate Integrals With Logarithms.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+We know that we can use the method of integration by parts to evaluate $\displaystyle \int xe^{4x} \textrm{d}x$. Now, suppose that we want to calculate $\displaystyle \int x^2e^{4x} \textrm{d}x$. Can we use integration by parts in this case?
+
+Let's try. We define $u$ and $v$ as follows:
+
+$$
+\begin{bmatrix}u = x^{2} & ⟹\frac{du}{dx} = 2x, \\ \frac{dv}{dx} = e^{4x} & ⟹v = \inte^{4x}dx = \frac{1}{4}e^{4x}\end{bmatrix}
+$$
+
+So the formula for integration by parts leads to
+
+$$
+\begin{aligned}
+\intx^{2}e^{4x}dx &= \intu\frac{dv}{dx}dx \\
+&= uv - \intv\frac{du}{dx}dx \\
+&= x^{2}(\frac{1}{4}e^{4x}) - \int(\frac{1}{4}e^{4x})2xdx \\
+&= \frac{1}{4}x^{2}e^{4x} - \frac{1}{2}\intxe^{4x}dx
+\end{aligned}
+$$
+
+We still don't have an answer, but the problem is reduced to the calculation of a simpler integral $\displaystyle \int xe^{4x} \textrm{d}x$. To compute this integral, we just need to apply the integration by parts formula again. For this second integral, we take
+
+$$
+\begin{bmatrix}u = x & ⟹\frac{du}{dx} = 1, \\ \frac{dv}{dx} = e^{4x} & ⟹v = \inte^{4x}dx = \frac{1}{4}e^{4x}\end{bmatrix}
+$$
+
+Now, integration by parts gives
+
+$$
+\begin{aligned}
+\intxe^{4x}dx &= \intu\frac{dv}{dx}dx \\
+&= uv - \intv\frac{du}{dx}dx \\
+&= x(\frac{1}{4}e^{4x}) - \int(\frac{1}{4}e^{4x}) \cdot 1dx \\
+&= \frac{1}{4}xe^{4x} - \frac{1}{4}(\frac{1}{4}e^{4x}) + C_{1} \\
+&= \frac{1}{4}xe^{4x} - \frac{1}{16}e^{4x} + C_{1}
+\end{aligned}
+$$
+
+where $C_1$ is a constant of integration.
+So we have
+
+$$
+\begin{aligned}
+\intx^{2}e^{4x}dx &= \frac{1}{4}x^{2}e^{4x} - \frac{1}{2}\intxe^{4x}dx \\
+&= \frac{1}{4}x^{2}e^{4x} - \frac{1}{2}(\frac{1}{4}xe^{4x} - \frac{1}{16}e^{4x} + C_{1}) \\
+&= \frac{1}{4}x^{2}e^{4x} - \frac{1}{8}xe^{4x} + \frac{1}{32}e^{4x} - \frac{C_{1}}{2} \\
+&= \frac{1}{32}e^{4x}(8x^{2} - 4x + 1) + C
+\end{aligned}
+$$
+
+where
+
+$$
+C = -\dfrac{C_1}{2}
+$$
+
+---
+
+<a id="computing-the-integral-of-an-exponential-expression-using-integration-by-parts-twice"></a>
+## Computing the Integral of an Exponential Expression Using Integration by Parts Twice
+
+**Example:** Calculate $\displaystyle \int x^2e^{2x}\, \textrm{d}x$.
+
+**Explanation**
+
+We need to use integration by parts.
+
+In this case, we define
+
+$$
+\begin{bmatrix}u = x^{2} & ⟹\frac{du}{dx} = 2x \\ \frac{dv}{dx} = e^{2x} & ⟹v = \int\frac{dv}{dx}dx = \inte^{2x}dx = \frac{e^{2x}}{2}\end{bmatrix}
+$$
+
+Using the formula of integration by parts, we get
+
+$$
+\begin{aligned}
+\intx^{2}e^{2x}dx &= \intu\frac{dv}{dx}dx \\
+&= uv - \intv\frac{du}{dx}dx \\
+&= (x^{2})(\frac{e^{2x}}{2}) - \int(\frac{e^{2x}}{2})(2x)dx \\
+&= \frac{x^{2}e^{2x}}{2} - \intxe^{2x}dx
+\end{aligned}
+$$
+
+We use integration by parts once again to evaluate $\displaystyle\int xe^{2x}\,\textrm{d}x$. We take
+
+$$
+\begin{bmatrix}u = x & ⟹\frac{du}{dx} = 1 \\ \frac{dv}{dx} = e^{2x} & ⟹v = \int\frac{dv}{dx}dx = \inte^{2x}dx = \frac{e^{2x}}{2}\end{bmatrix}
+$$
+
+In this case, the formula for integration by parts gives
+
+$$
+\begin{aligned}
+\intxe^{2x}dx &= \intu\frac{dv}{dx}dx \\
+&= uv - \intv\frac{du}{dx}dx \\
+&= x(\frac{e^{2x}}{2}) - \int(\frac{e^{2x}}{2})(1)dx \\
+&= \frac{xe^{2x}}{2} - \frac{1}{2}\inte^{2x}dx \\
+&= \frac{xe^{2x}}{2} - \frac{e^{2x}}{4} + D
+\end{aligned}
+$$
+
+where $D$ is an integral constant.
+
+So we have
+
+$$
+\begin{aligned}
+\intx^{2}e^{2x}dx &= \frac{x^{2}e^{2x}}{2} - (\frac{xe^{2x}}{2} - \frac{e^{2x}}{4} + D) \\
+&= \frac{x^{2}e^{2x}}{2} - \frac{xe^{2x}}{2} + \frac{e^{2x}}{4} + C \\
+&= \frac{e^{2x}}{4}(2x^{2} - 2x + 1) + C
+\end{aligned}
+$$
+
+where $C =-D$.
+
+---
+
+**Question 1:**
+
+```quiz
+type: radio
+id: ma-12707
+content: |-
+  Calculate $\displaystyle \int3t^{2}e^{t}dt$.
+options:
+- id: a
+  content: |-
+    $3te^{t}(t - 2) + C$
+- id: b
+  content: |-
+    $e^{t}(t^{2} + 3t - 6) + C$
+- id: c
+  content: |-
+    $3e^{t}(t^{2} - 2t + 2) + C$
+  correct: true
+- id: d
+  content: |-
+    $3e^{t}(t^{2} - 2) + C$
+- id: e
+  content: |-
+    $e^{t}(t^{2} - 6t - 1) + C$
+```
+
+---
+
+**Question 2:**
+
+```quiz
+type: radio
+id: ma-12700
+content: |-
+  Calculate $\displaystyle \int(3x^{2} + 5)e^{x}dx$.
+options:
+- id: a
+  content: |-
+    $e^{x}(x^{2} + 2x - 11) + C$
+- id: b
+  content: |-
+    $e^{x}(3x^{2} - 6x + 11) + C$
+  correct: true
+- id: c
+  content: |-
+    $e^{x}(3x^{2} + 6x - 1) + C$
+- id: d
+  content: |-
+    $e^{x}(3x^{2} - 2x + 7) + C$
+- id: e
+  content: |-
+    $e^{x}(6x^{2} - 3x + 1) + C$
+```
+
+---
+
+<a id="computing-the-integral-of-a-trigonometric-expression-using-integration-by-parts-twice"></a>
+## Computing the Integral of a Trigonometric Expression Using Integration by Parts Twice
+
+**Example:** Evaluate the integral $\displaystyle \int x^2\cos(3x) \textrm{d}x$.
+
+**Explanation**
+
+In this case, we define
+
+$$
+\begin{bmatrix}u = x^{2} & ⟹\frac{du}{dx} = 2x, \\ \frac{dv}{dx} = \cos (3x) & ⟹v = \int\cos (3x)dx = \frac{1}{3}\sin (3x)\end{bmatrix}
+$$
+
+Using the formula for integration by parts, we get
+
+$$
+\begin{aligned}
+\intx^{2}\cos (3x)dx &= \intu\frac{dv}{dx}dx \\
+&= uv - \intv\frac{du}{dx}dx \\
+&= (x^{2})(\frac{1}{3}\sin (3x)) - \int(\frac{1}{3}\sin (3x))2xdx \\
+&= \frac{1}{3}x^{2}\sin (3x) - \frac{2}{3}\intx\sin (3x)dx
+\end{aligned}
+$$
+
+Again, we use integration by parts to evaluate $\displaystyle \int x\sin(3x) \textrm{d}x$. We take
+
+$$
+\begin{bmatrix}u = x & ⟹\frac{du}{dx} = 1, \\ \frac{dv}{dx} = \sin (3x) & ⟹v = \int\sin (3x)dx =-\frac{1}{3}\cos (3x)\end{bmatrix}
+$$
+
+In this case, the formula for integration by parts gives
+
+$$
+\begin{aligned}
+\intx\sin (3x)dx &= \intu\frac{dv}{dx}dx \\
+&= uv - \intv\frac{du}{dx}dx \\
+&= x(-\frac{1}{3}\cos (3x)) - \int(-\frac{1}{3}\cos (3x)) \cdot 1dx \\
+&=-\frac{1}{3}x\cos (3x) + \frac{1}{3}\int\cos (3x)dx \\
+&=-\frac{1}{3}x\cos (3x) + \frac{1}{3}(\frac{1}{3}\sin (3x)) + C_{1} \\
+&=-\frac{1}{3}x\cos (3x) + \frac{1}{9}\sin (3x) + C_{1}
+\end{aligned}
+$$
+
+where $C_1$ is a constant of integration.
+So we have
+
+$$
+\begin{aligned}
+\intx^{2}\cos (3x)dx &= \frac{1}{3}x^{2}\sin (3x) - \frac{2}{3}\intx\sin (3x)dx \\
+&= \frac{1}{3}x^{2}\sin (3x) - \frac{2}{3}(-\frac{1}{3}x\cos (3x) + \frac{1}{9}\sin (3x) + C_{1}) \\
+&= \frac{1}{3}x^{2}\sin (3x) + \frac{2}{9}x\cos (3x) - \frac{2}{27}\sin (3x) - \frac{2C_{1}}{3} \\
+&= \frac{1}{27}((9x^{2} - 2)\sin (3x) + 6x\cos (3x)) + C
+\end{aligned}
+$$
+
+where
+
+$$
+C = -\dfrac{2C_1}{3}
+$$
+
+---
+
+**Question 3:**
+
+```quiz
+type: radio
+id: ma-49931
+content: |-
+  What is $\displaystyle \int2x^{2}\sin (2x)dx$?
+options:
+- id: a
+  content: |-
+    $-x^{2}\cos (2x) - 2\intx\cos (2x)dx$
+- id: b
+  content: |-
+    $x^{2}\cos (2x) + \intx\cos (2x)dx$
+- id: c
+  content: |-
+    $-x^{2}\cos (2x) + \intx\sin (2x)dx$
+- id: d
+  content: |-
+    $x^{2}\cos (2x) - 2\intx\sin (2x)dx$
+- id: e
+  content: |-
+    $-x^{2}\cos (2x) + 2\intx\cos (2x)dx$
+  correct: true
+```
+
+---
+
+**Question 4:**
+
+```quiz
+type: radio
+id: ma-14736
+content: |-
+  Calculate the integral $\displaystyle \int(6x^{2} + 2)\sin xdx$.
+options:
+- id: a
+  content: |-
+    $2((5 - 3x^{2})\cos x + 6x\sin x) + C$
+  correct: true
+- id: b
+  content: |-
+    $2((1 - 2x^{2})\cos x + x\sin x) + C$
+- id: c
+  content: |-
+    $(x^{2} - 6)\cos x - 6x\sin x + C$
+- id: d
+  content: |-
+    $(x^{2} + 2)\cos x - 2x\sin x + C$
+- id: e
+  content: |-
+    $2((3x^{2} + 7)\cos x + 6x\sin x) + C$
+```
+
+---
+
+<a id="computing-the-integral-of-a-logarithmic-expression-using-integration-by-parts-twice"></a>
+## Computing the Integral of a Logarithmic Expression Using Integration by Parts Twice
+
+**Example:** Evaluate the integral $\displaystyle \int_1^e 32x^3(\ln x)^2 \textrm{d}x$.
+
+**Explanation**
+
+We'll work out the indefinite integral first, and then proceed to work out the definite integral.
+
+In this case, we define
+
+$$
+\begin{bmatrix}u = (\ln x)^{2} & ⟹\frac{du}{dx} = \frac{2\ln x}{x}, \\ \frac{dv}{dx} = 32x^{3} & ⟹v = \int32x^{3}dx = 8x^{4}\end{bmatrix}
+$$
+
+Using the formula of integration by parts, we get
+
+$$
+\begin{aligned}
+\int32x^{3}(\ln x)^{2}dx &= \intu\frac{dv}{dx}dx \\
+&= uv - \intv\frac{du}{dx}dx \\
+&= (\ln x)^{2}(8x^{4}) - \int(8x^{4})(\frac{2\ln x}{x})dx \\
+&= 8x^{4}(\ln x)^{2} - 16\intx^{3}\ln (x)dx
+\end{aligned}
+$$
+
+We use integration by parts once again to evaluate $\displaystyle\int {x^3\ln(x)} \textrm{d}x$. We take
+
+$$
+\begin{bmatrix}u = \ln (x) & ⟹\frac{du}{dx} = \frac{1}{x}, \\ \frac{dv}{dx} = x^{3} & ⟹v = \intx^{3}dx = \frac{x^{4}}{4}\end{bmatrix}
+$$
+
+In this case, the formula for integration by parts gives
+
+$$
+\begin{aligned}
+\intx^{3}\ln (x)dx &= \intu\frac{dv}{dx}dx \\
+&= uv - \intv\frac{du}{dx}dx \\
+&= \ln (x)(\frac{x^{4}}{4}) - \int(\frac{x^{4}}{4})(\frac{1}{x})dx \\
+&= (x^{4}\ln (x))/(4) - \frac{1}{4}\intx^{3}dx \\
+&= (x^{4}\ln (x))/(4) - \frac{x^{4}}{16} + C_{1}
+\end{aligned}
+$$
+
+where $C_1$ is an integral constant. So, we get that the indefinite integral is
+
+$$
+\begin{aligned}
+\int32x^{3}(\ln x)^{2}dx &= 8x^{4}(\ln x)^{2} - 16\intx^{3}\ln (x)dx \\
+&= 8x^{4}(\ln x)^{2} - 16((x^{4}\ln (x))/(4) - \frac{x^{4}}{16} + C_{1}) \\
+&= 8x^{4}(\ln x)^{2} - 4x^{4}\ln (x) + x^{4} - 16C_{1} \\
+&= x^{4}(8(\ln x)^{2} - 4\ln (x) + 1) + C
+\end{aligned}
+$$
+
+where $C = -4C_1$. Finally then, we can work out the definite integral:
+
+$$
+\begin{aligned}
+\int_{1}^{e}32x^{3}\ln (x)dx &= \left.x^{4}(8(\ln x)^{2} - 4\ln (x) + 1)\right|_{1}^{e} \\
+&= [(e)^{4}(8(\ln (e))^{2} - 4\ln (e) + 1)] - [(1)^{4}(8(\ln (1))^{2} - 4\ln (1) + 1)] \\
+&= [e^{4}(8 - 4 + 1)] - 1 \\
+&= 5e^{4} - 1
+\end{aligned}
+$$
+
+---
+
+**Question 5:**
+
+```quiz
+type: radio
+id: ma-3400
+content: |-
+  What is $\displaystyle \int\frac{\ln^{2} x}{x^{3}}dx$?
+options:
+- id: a
+  content: |-
+    $\frac{1}{4x^{2}}(2\ln^{2} (x) - 2x\ln (x) - 1) + C$
+- id: b
+  content: |-
+    $-\frac{1}{4x^{2}}(2\ln^{2} (x) + 2\ln (x) + 1) + C$
+  correct: true
+- id: c
+  content: |-
+    $(\ln (x))/(4x^{2})(4\ln (x) + 2x - 1) + C$
+- id: d
+  content: |-
+    $-\frac{1}{2x^{2}}(2\ln (x) + 2x + 1) + C$
+- id: e
+  content: |-
+    $\frac{1}{2x^{2}}(\ln (x) + \ln (x) + 2) + C$
+```
+
+---
+
+**Question 6:**
+
+```quiz
+type: radio
+id: ma-12706
+content: |-
+  What is $\intx^{2}(\ln x)^{2}dx$?
+options:
+- id: a
+  content: |-
+    $\frac{x^{3}}{9}(18(\ln x)^{2} + 3\ln (x) + 1) + C$
+- id: b
+  content: |-
+    $\frac{x^{2}}{27}(18(\ln x)^{2} - 3\ln (x) - 1) + C$
+- id: c
+  content: |-
+    $\frac{x^{3}}{27}(9(\ln x)^{2} - 6\ln (x) + 2) + C$
+  correct: true
+- id: d
+  content: |-
+    $\frac{x^{2}}{9}(9(\ln x)^{2} - 6\ln (x) - 2) + C$
+- id: e
+  content: |-
+    $\frac{x^{3}}{27}(9(\ln x)^{2} - 2\ln (x) - 3) + C$
+```
+
+```update-progress
+```
+
+[[252/Home|Home]]
+[[252/0. Table of Contents/TOC|Table of Contents]]

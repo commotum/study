@@ -1,1157 +1,1159 @@
-Hey there.
+# Physics 212: Static Equilibrium and Rotational Dynamics
 
-Welcome to Physics 212.
+Welcome back to Physics 212.
 
-Hi, everybody. Welcome back.
+## Announcements
 
-Well, let's see. Monday morning. Today we have,
+Quiz 1 grading is nearly complete, and the scores will be posted this afternoon.
 
-oh, quiz one is graded. And while it's almost
+If you completed the asynchronous version of Quiz 1, you may see separate Gradescope work assignments for Quiz 1A and Quiz 1B listed in Canvas. Those entries are provided so that you can view your submitted work and grading details, but they do not contribute separately to your course grade. The score entered in the primary Canvas quiz assignment is the score used in the grade calculation.
 
-graded, I will have grades posted by this afternoon.
+If you completed the Zoom version of the quiz, your Gradescope score will be transferred into Canvas.
 
-When I do that, you want to check your score. First
+To see how an individual question was graded, open the assignment in Gradescope and select the question name in the upper-right corner. This will display the grading rubric and show how points were awarded.
 
-thing to notice is that if you took the asynchronous
+If you believe a question was graded incorrectly, submit a regrade request through Gradescope. Regrade requests will remain available for 15 days. Be specific in your request and refer directly to the relevant physics concepts.
 
-version of the quiz you'll see uh quiz 1a asy
+The optional Quiz 1X assignment will open when the Quiz 1 scores are posted. For Quiz 1X, select only the question on which you lost the most points.
 
-work and quiz 1b asy work posted in columns in well
+The assignment has four parts:
 
-they're not in column for you but posted in canvas
+1. Explain the reasoning that led to your original answer.
+2. Explain what you should have done differently and identify the relevant physics concepts.
+3. Provide a complete corrected solution, including explicit unit analysis and covariational reasoning.
+4. Discuss the problem with an instructor, teaching assistant, or another physics staff member.
 
-and what we've done is we've taken the score
+Part 4 may be completed during office hours, after a lab session if time permits, or in the Wormhole. If the regular daytime hours do not fit your schedule, consult the TA schedules in the Course Information module and contact a TA to arrange another meeting time.
 
-from that work and and input it into the canvas
+Quiz 1X is due Friday at 6:00 p.m. Late submissions will not be accepted, so leave enough time to upload your written work to Gradescope.
 
-assignment so it the score in your canvas assignment
+Quiz 2 will open for the Proctorio version at 5:00 p.m. Saturday and close at 5:00 p.m. Monday. The Zoom versions will be administered Monday at 11:00 a.m. and 6:00 p.m.
 
-is what goes into calculating your grades.
+You should be preparing your handwritten note sheet for Quiz 2. All material on the note sheet must be handwritten.
 
-The grade scope work assignments are posted in Canvas,
+## Review of Rotational Mechanics
 
-but those columns don't carry any weight in
+We began this unit by discussing center of mass. For a system of discrete particles, the center-of-mass position is
 
-calculating your grades. So don't worry if it looks like
+$$
+\vec{r}_{\mathrm{cm}}
+=
+\frac{\sum_i m_i\vec{r}_i}{\sum_i m_i}.
+$$
 
-you're getting double counted for that. You're
+We then introduced rotational kinetic energy:
 
-really not. Only the Canvas score is going to count.
+$$
+K_{\mathrm{rot}}
+=
+\frac{1}{2}I\omega^2,
+$$
 
-And if you took the Zoom version of the quiz, then
+where $I$ is the moment of inertia about the chosen rotation axis and $\omega$ is the angular velocity.
 
-your grade scope of score is ported right into
+For a collection of point masses,
 
-Canvas, and that's what counts so let's see what
+$$
+I=\sum_i m_ir_i^2.
+$$
 
-else you want to look at your score in in canvas
+For a continuous object,
 
-if you want to see how you were graded why you were
+$$
+I=\int r^2\,dm.
+$$
 
-graded the way that you were then go into grade
+The standard moments of inertia for common objects are important enough to include on your Quiz 2 note sheet.
 
-scope and in the upper right you click on the question
+We also introduced the parallel-axis theorem:
 
-name like question one or question five or whatever
+$$
+I_p
+=
+I_{\mathrm{cm}}+Md^2,
+$$
 
-the question name is and it will open the rubric
+where:
 
-points that were used to grade your assignment.
+- $I_p$ is the moment of inertia about the desired pivot,
+- $I_{\mathrm{cm}}$ is the moment of inertia about a parallel axis through the center of mass,
+- $M$ is the object’s mass, and
+- $d$ is the distance between the two axes.
 
-Let's see.
+Finally, we began studying torque.
 
-Oh,
+Torque is defined by the cross product
 
-so yeah, look at how your quiz was graded. If you
+$$
+\vec{\tau}
+=
+\vec{r}\times\vec{F}.
+$$
 
-don't agree with the way that it was graded, then what
+Its magnitude is
 
-you want to do is submit a regrade request via Gradescope.
+$$
+\tau
+=
+rF\sin\phi,
+$$
 
-That will be open for 15 days. You can do that.
+where $\phi$ is the angle between the position vector $\vec{r}$ and the force vector $\vec{F}$.
 
-If you do that, be as specific as possible.
+The rotational form of Newton’s second law is
 
-cite the physics concepts involved.
+$$
+\sum\vec{\tau}
+=
+I\vec{\alpha}.
+$$
 
-When I post the scores and this afternoon for
+For a system in static equilibrium,
 
-quiz 1 I will also open quiz 1x. So quiz 1x
+$$
+\sum\vec{F}=0
+$$
 
-is extra credit assignment based on quiz 1.
+and
 
-Here you choose the question where you lost
+$$
+\sum\vec{\tau}=0.
+$$
 
-the most points and address only that question.
+## Extended Free-Body Diagrams
 
-We've discussed this before so I'm going to go over
+An ordinary point-particle free-body diagram shows all forces acting on an object, but it does not show where those forces act.
 
-this briefly. You talk about why you did what you did.
+An **extended free-body diagram** includes:
 
-You missed some points on this question so why did you
+- The shape and orientation of the object
+- The point of application of each force
+- The selected pivot
+- The distance from the pivot to each force
+- The angle between each force and its position vector
 
-do what you did part b is what should you have done and
+This information is necessary for calculating torque.
 
-why the concepts underlying these things not about any
+It is also important to distinguish the gravitational force on an object from the contact force that the object exerts on something else.
 
-external factors and then part c will be give the
+For example, suppose a mouse stands on a horizontal rod. The gravitational force $mg$ acts on the mouse. The mouse then exerts a downward normal force on the rod. The force appearing on the rod’s free-body diagram is that normal force, not the gravitational force acting directly on the mouse.
 
-correct solution and do some analysis so do some limiting
+The two may have the same magnitude when the mouse has no vertical acceleration, but they act on different objects.
 
-cases not limiting cases covariational reasoning and
+# Static Equilibrium and Tipping
 
-explicit unit analysis and then part d will be to actually
+A rigid object remains in static equilibrium when both its net force and its net torque are zero:
 
-meet with a person to talk over this either me in
+$$
+\sum\vec{F}=0
+$$
 
-my office hour or your TA some a lot of times they will
+and
 
-there's time after your lab meeting for the week or
+$$
+\sum\vec{\tau}=0.
+$$
 
-meet with somebody in the wormhole we talked about that
+When an object is just about to tip, one of its contact forces becomes zero. The remaining contact point becomes the effective pivot.
 
-the first day how to get into the wormhole look at the
+Immediately before tipping begins, the object is still in static equilibrium, so
 
-course information module there if you are not available
+$$
+\alpha=0
+$$
 
-during the day in the normal time so what you want
+and
 
-to do there is Go into the course information module
+$$
+\sum\tau=0.
+$$
 
-and look at the TA schedules, the availability of the
+# Worked Example 1: Box on a Supported Plank
 
-TAs, and email them and find a time that they can get
+Consider a uniform plank with:
 
-together with you that is outside the normal hours. Some
+- Length $L$
+- Mass $M$
+- A left support at $L/5$ from the left end
+- A right support, labeled $B$, at $2L/3$ from the left end
 
-of them are available in the evening hours and such.
+A box of mass $m$ is placed a distance $x$ to the right of support $B$.
 
-Okay, any questions about this?
+We want to determine the value of $x$ for which the plank is just about to tip clockwise around support $B$.
 
-Okay, well, Quiz 2 is coming up. Quiz 2 will be opening
+## Tipping Condition
 
-on Saturday. Quiz 1X will close 6 p.m. Friday, not
+As the box is moved to the right, the normal force from the left support decreases.
 
-accepted late, so make sure you get it in on time.
+At the tipping threshold,
 
-Quiz 2 will open 5 p .m. on Saturday for the
+$$
+N_A=0.
+$$
 
-Proctorio version, close 5 p.m. Monday for the
+Support $B$ becomes the pivot.
 
-Proctorio version, very similar to what we had for
+The normal force from support $B$ does not contribute to the torque equation because its line of action passes directly through the pivot.
 
-Proctorio and Zoom versions. Monday will be the
+## Free-Body Diagram of the Box
 
-Zoom versions at 11 a.m. and 6 p.m. for Quiz 2.
+The forces on the box are:
 
-You should be working on your Quiz 2 notes now.
+- The gravitational force $mg$ downward
+- The normal force from the plank, $N_{P\rightarrow b}$, upward
 
-so with that in mind let's go ahead and work on some
+Because the box has no vertical acceleration,
 
-problems here we've been talking about here let me
+$$
+\sum F_y=0.
+$$
 
-just kind of click back to what we have been doing for
+Therefore,
 
-this chapter we first started by finding center of mass
+$$
+N_{P\rightarrow b}-mg=0,
+$$
 
-and discussing what center of mass is we found
+so
 
-rotational energy and in finding the rotational kinetic
+$$
+N_{P\rightarrow b}=mg.
+$$
 
-energy we just we defined it in terms of the moment of
+By Newton’s third law, the box exerts an equal-magnitude downward force on the plank:
 
-inertia i so we defined the moment of inertia I. We
+$$
+N_{b\rightarrow P}=mg.
+$$
 
-have found some typical moments of inertia. And these
+This downward normal force is the force that should appear on the plank’s free-body diagram.
 
-eight would be good to include in your quiz
+## Forces on the Plank
 
-two notes. Please make sure that everything in
+At the tipping threshold, the forces on the plank are:
 
-your note sheet is handwritten. You're not
+- The plank’s weight $Mg$, acting at its center
+- The downward normal force $mg$ from the box
+- The upward normal force $N_B$ from support $B$
+- No force from support $A$, because $N_A=0$
 
-allowed to just copy things and paste into there.
+The vertical-force equation is
 
-And then let's see. Oh, we also talked about parallel
+$$
+N_B-Mg-mg=0.
+$$
 
-axis theorem. Then we started to talk about torque
+Therefore,
 
-the torque is r cross f and when we do torque systems
+$$
+N_B=(M+m)g.
+$$
 
-that involve torque then we need to draw an extended
+This result is not required to find $x$, but it confirms the vertical-force balance.
 
-free body diagram and actually let's go into that next
+## Lever Arms About Support B
 
-page for this extended free body diagram we discussed
+The plank’s center of mass is at
 
-this quite a bit already as well but for an extended
+$$
+\frac{L}{2}
+$$
 
-free body diagrams say of this meter stick or whatever
+from the left end.
 
-it is this rod that a cat is holding the mice are
+Support $B$ is at
 
-standing on if you look at all the things that are
+$$
+\frac{2L}{3}
+$$
 
-touching this so you think of forces as being contact and
+from the left end.
 
-non-contact force for the gravitational force that
+The distance between the plank’s center of mass and support $B$ is therefore
 
-is we will treat it as a point mass if this has if this
+$$
+\frac{2L}{3}-\frac{L}{2}.
+$$
 
-is indeed a uniform rod then we could treat the point
+Using a common denominator,
 
-the gravitational force is acting on a point mass
+$$
+\frac{2L}{3}-\frac{L}{2}
+=
+\frac{4L}{6}-\frac{3L}{6}
+=
+\frac{L}{6}.
+$$
 
-in the center. We have normal forces here, the normal
+Thus, the plank’s weight acts a distance $L/6$ to the left of the pivot.
 
-force. So there's a mouse standing on the left end,
+The box acts a distance $x$ to the right of the pivot.
 
-close to the left end. And notice the normal force is
+## Torque Balance
 
-pointing downward. So the normal force from the mouse.
+Choose clockwise torque to be positive.
 
-And notice that isn't a gravitational force of the
+The box produces a clockwise torque:
 
-mouse. If we did a free body diagram of this mouse,
+$$
+\tau_{\mathrm{box}}=mgx.
+$$
 
-we'd find that mg is a gravitational force on the mouse
+The plank’s weight produces a counterclockwise torque:
 
-and however many balls it's holding. But the normal
+$$
+\tau_{\mathrm{plank}}
+=
+-Mg\left(\frac{L}{6}\right).
+$$
 
-force is what goes into the free body diagram for this
+At the tipping threshold,
 
-rod, not a gravitational force from the mouse. Also
+$$
+\sum\tau_B=0.
+$$
 
-normal forces from the two cat paws and a normal force
+Therefore,
 
-pointing down from the mouse on the right. And then
+$$
+mgx
+-
+Mg\left(\frac{L}{6}\right)
+=
+0.
+$$
 
-we could write sum of forces and sum of torque. And
+Rearranging,
 
-we have already done some of these sum of torque problems.
+$$
+mgx
+=
+Mg\frac{L}{6}.
+$$
 
-So let's go ahead and do another one, a little
+Canceling $g$,
 
-bit similar to that example. I'm to go here to show
+$$
+mx
+=
+M\frac{L}{6}.
+$$
 
-this diagram and I'll draw it bigger it isn't very big
+Solving for $x$ gives
 
-at least on my screen so here we have a uniform plank
+$$
+\boxed{
+x=\frac{M}{m}\frac{L}{6}
+}.
+$$
 
-length L so I'm going to draw that out and its length
+For
 
-is L and it's resting on two fulcra at one-third and
+$$
+M=2.4\ \mathrm{kg},
+$$
 
-two-thirds, so I fulcrum A and fulcrum B like this.
+$$
+m=1.6\ \mathrm{kg},
+$$
 
-So let's see.
+and
 
-Oh sorry, that's L over 5.
+$$
+L=1.4\ \mathrm{m},
+$$
 
-Okay, so L over 5. I drew it a little bit far
+we obtain
 
-over, but whatever, and then this one is 2 L
+$$
+x
+=
+\frac{2.4\ \mathrm{kg}}{1.6\ \mathrm{kg}}
+\frac{1.4\ \mathrm{m}}{6}.
+$$
 
-over 3, two-thirds of the way over. This board
+The mass units cancel:
 
-has a mass M, and there's a box sitting on
+$$
+x
+=
+1.5
+\left(
+\frac{1.4\ \mathrm{m}}{6}
+\right).
+$$
 
-here, and we're going to treat the box as a
+Therefore,
 
-point mass, so I'm going to draw it as a point.
+$$
+\boxed{
+x=0.35\ \mathrm{m}
+}.
+$$
 
-This system is going to be rotating, so we're not
+The result is physically reasonable. The box must be placed to the right of support $B$, but it remains on the plank because the available distance from $B$ to the right end is
 
-going to consider the shape of the box when we're
+$$
+L-\frac{2L}{3}
+=
+\frac{L}{3}.
+$$
 
-letting it rotate. The box is a distance X from
+For $L=1.4\ \mathrm{m}$,
 
-the rightmost fulcrum. So, and it has a mass m.
+$$
+\frac{L}{3}
+\approx0.47\ \mathrm{m},
+$$
 
-All right, so the known quantities are the
+which is greater than the required distance of $0.35\ \mathrm{m}$.
 
-mass of the plank, the mass of the box, the
+The symbolic result also has sensible covariational behavior:
 
-length of the plank, and that's it. And we are
+- Increasing the plank mass $M$ requires the box to be placed farther from the pivot.
+- Increasing the box mass $m$ allows the box to be placed closer to the pivot.
+- Increasing the plank length $L$ increases the required distance proportionally.
 
-to find, and the positions of the fulcrum and
+# Worked Example 2: Ladder Against a Frictionless Wall
 
-we want to find the position x
+Consider a uniform ladder with:
 
-from this fulcrum to the right now
+- Length $L$
+- Mass $m$
+- An angle $\theta$ above the floor
+- A frictionless wall
+- Static friction between the ladder and the floor
 
-this oh let's see i have a question in the chat
+The ladder is at the threshold of slipping. We want to determine the required coefficient of static friction $\mu_s$.
 
-oh i haven't sent the poll everywhere link yet but
+At the threshold of slipping, the static-friction force has its maximum possible magnitude:
 
-thanks for the reminder i'll send it in a minute when i
+$$
+f_s=\mu_sN_F,
+$$
 
-activate this so we want to find x in meters where
+where $N_F$ is the normal force from the floor.
 
-the box would be placed to just barely tip the plank.
+This equality applies only because the ladder is just about to slip. In general, static friction may be less than $\mu_sN_F$.
 
-And think about what that means. If the box is placed
+## Forces on the Ladder
 
-very far out here, that plank will tip easily. If it's
+The forces are:
 
-placed too close to this right fulcrum or anywhere
+- The gravitational force $mg$, acting downward at the center of the ladder
+- The normal force $N_F$ from the floor, acting upward at the bottom
+- The static-friction force $f_s$ from the floor, acting horizontally
+- The normal force $N_W$ from the wall, acting horizontally at the top
 
-that is not to the right of fulcrum B, then
+Because the wall is frictionless, it exerts no vertical force.
 
-this plank won't tip. So it's placed to the right
+## Translational Equilibrium
 
-of fulcrum B, and it's just barely at the
+In the vertical direction,
 
-point where the whole plank will start to tip.
+$$
+\sum F_y=0.
+$$
 
-When that happens, this normal force from fulcrum
+Therefore,
 
-A will go to zero. So you can let that be zero.
+$$
+N_F-mg=0,
+$$
 
-Now, when you're doing something that is rotating,
+so
 
-you want to choose a rotation point. I would choose
+$$
+\boxed{
+N_F=mg
+}.
+$$
 
-the rotation point, the pivot point right here.
+In the horizontal direction,
 
-So the whole thing is going to pivot on this fulcrum
+$$
+\sum F_x=0.
+$$
 
-B. And what you want to do is you want to start with
+The wall’s normal force and the floor’s friction force must have equal magnitudes:
 
-a free body diagram for the mass M. a free body diagram
+$$
+N_W-f_s=0.
+$$
 
-for the larger mass of the plank and then an
+Thus,
 
-extended free body diagram of the plank. So for the extended
+$$
+N_W=f_s.
+$$
 
-free body diagram, you want to put all of the
+At the threshold of slipping,
 
-forces and consider those as torques. So you need to put
+$$
+f_s=\mu_sN_F.
+$$
 
-the forces and the angles, all the angles are right
+Using $N_F=mg$,
 
-angles in this one. We'll have one where there are
+$$
+f_s=\mu_smg.
+$$
 
-some other angles involved, but you want to put the
+Therefore,
 
-forces and their position away from the rotation axis.
+$$
+\boxed{
+N_W=\mu_smg
+}.
+$$
 
-So if I have chosen the rotation axis at point B,
+## Torque About the Bottom of the Ladder
 
-include that in your diagram, include that information.
+Choose the bottom of the ladder as the pivot.
 
-Okay, so yeah, start by drawing the free body diagrams
+This choice eliminates both floor forces from the torque equation because they act through the pivot.
 
-and the extended free body diagram of the plank and
+The wall’s normal force acts at the top of the ladder. Its perpendicular moment arm is
 
-then use summation of forces, summation of torque, and
+$$
+L\sin\theta.
+$$
 
-what we're finding is the position x where the box
+The wall force therefore produces a torque of magnitude
 
-would be placed to just barely start the plank tipping.
+$$
+\tau_W=N_WL\sin\theta.
+$$
 
-I will go ahead and go back to instructions and I
+The gravitational force acts at the ladder’s center, a distance $L/2$ from the bottom. Its perpendicular moment arm is
 
-will put the pull everywhere link in the chat and
+$$
+\frac{L}{2}\cos\theta.
+$$
 
-activate the question. I'll give you a couple of minutes
+The gravitational torque therefore has magnitude
 
-to work on this and then open breakout rooms. Okay,
+$$
+\tau_g
+=
+mg\frac{L}{2}\cos\theta.
+$$
 
-everybody's back.
+The two torques act in opposite rotational directions. Static equilibrium requires
 
-So most people have an answer in. Please put
+$$
+N_WL\sin\theta
+-
+mg\frac{L}{2}\cos\theta
+=
+0.
+$$
 
-one in now if you still need to do that. Three,
+Therefore,
 
-two,
+$$
+N_WL\sin\theta
+=
+mg\frac{L}{2}\cos\theta.
+$$
 
-one.
+Canceling $L$,
 
-All right, thank you. Stopping delivery.
+$$
+N_W\sin\theta
+=
+\frac{mg}{2}\cos\theta.
+$$
 
-Okay,
+Solving for $N_W$,
 
-so start with the free body diagrams. I'm going to
+$$
+N_W
+=
+\frac{mg}{2}
+\frac{\cos\theta}{\sin\theta}.
+$$
 
-start with a free body diagram of this little mass m.
+Thus,
 
-and my little mass m has a gravitational force mg
+$$
+N_W
+=
+\frac{mg}{2}\cot\theta.
+$$
 
-and a normal force, I'll call that the normal force
+We also found that
 
-from capital M on little m and I'll put the plus
+$$
+N_W=\mu_smg.
+$$
 
-y direction upward. Doesn't really matter here,
+Equating the expressions,
 
-the directionality. So for my Planck, I will put mg
+$$
+\mu_smg
+=
+\frac{mg}{2}\cot\theta.
+$$
 
-pointing downward and the normal force from
+Canceling $mg$ gives
 
-the little mass m pointing downward as rel.
+$$
+\boxed{
+\mu_s
+=
+\frac{1}{2}\cot\theta
+}.
+$$
 
-So that should be normal force from little m on capital
+An equivalent expression is
 
-M. And notice I don't enter that as a gravitational
+$$
+\boxed{
+\mu_s
+=
+\frac{1}{2\tan\theta}
+}.
+$$
 
-force. That isn't a gravitational force pulling down
+Using the angle specified in the problem gives
 
-on the plank. That's a normal force from the box sitting
+$$
+\boxed{
+\mu_s=0.34
+}.
+$$
 
-on it. And also I have the normal force from B on
+The result does not depend on the ladder’s mass or length because both quantities cancel.
 
-here And the normal force from A, like we said, normal
+The limiting behavior is physically reasonable:
 
-A goes to zero. So you can include that if you want.
+- As $\theta$ approaches $90^\circ$, the ladder becomes nearly vertical and the required friction approaches zero.
+- As $\theta$ approaches $0^\circ$, the ladder becomes nearly horizontal and the required coefficient of friction grows very large.
 
-If you want to include it as really
+The central step in this problem is constructing the extended free-body diagram correctly. Once the forces, application points, distances, and angles are identified, the torque equation follows directly.
 
-small and then indicate it goes to zero or
+# Rotational Dynamics with a Massive Pulley
 
-not include it, it's fine either way.
+The previous examples involved static equilibrium, so both the linear acceleration and angular acceleration were zero.
 
-Now I want to do the extended free body diagram
+We will now consider a system that accelerates.
 
-of my Planck. And what I want to do, one thing I
+Suppose two masses, $m_1$ and $m_2$, are connected by a light cord passing over a massive pulley.
 
-want to do is keep the vectors consistent between
+Let:
 
-the diagrams. So my mass of the plank, since
+- $m_1<m_2$
+- $M_p$ be the mass of the pulley
+- $R$ be the radius of the pulley
+- $T_1$ be the tension on the $m_1$ side
+- $T_2$ be the tension on the $m_2$ side
 
-this is a uniform plank, I will put that at the
+Because $m_2>m_1$, mass $m_2$ accelerates downward, mass $m_1$ accelerates upward, and the pulley accelerates clockwise.
 
-center, and that should have the same length as I
+Assume:
 
-have here in my point free body diagram, so mg.
+- The cord does not slip on the pulley
+- The cord has negligible mass
+- The pulley is a uniform solid disk
+- The axle is frictionless
 
-And if I take the distances
+Because the pulley has rotational inertia, the two tensions are not equal.
 
-from the left, I'll let that be.
+The tension difference supplies the net torque that angularly accelerates the pulley:
 
-Well, let's see. Let's take the
+$$
+T_2>T_1.
+$$
 
-distances from the pivot point, actually.
+If the tensions were equal, the net torque on the pulley would be zero.
 
-Let's do that. So this pivot point on
+## Free-Body Diagram of Mass $m_1$
 
-the right, this B pivot point, is one-third
+Choose upward as positive for $m_1$.
 
-of the way to the end of this plank.
+The forces are:
 
-And so one-third of the way to the end, that
+- $T_1$ upward
+- $m_1g$ downward
 
-puts it L over 6. If here's my pivot point, and
+Newton’s second law gives
 
-that's the pivot point B, I'm going to have a
+$$
+T_1-m_1g=m_1a.
+$$
 
-normal force from pivot point B pointing upward.
+Solving for $T_1$,
 
-Let's see, my block is some distance x. I don't
+$$
+\boxed{
+T_1=m_1g+m_1a
+}
+$$
 
-know how far away that is, but some distance x.
+or
 
-That will have a normal force pushing
+$$
+\boxed{
+T_1=m_1(g+a)
+}.
+$$
 
-downward, so I have some normal
+Because $m_1$ accelerates upward,
 
-force up from little m on capital M.
+$$
+T_1>m_1g.
+$$
 
-I have a normal force from B pushing up, So that
+## Free-Body Diagram of Mass $m_2$
 
-should equal the two of those, normal from B.
+Choose downward as positive for $m_2$.
 
-And if this is my pivot point at
+The forces are:
 
-B, then x is the distance from B.
+- $m_2g$ downward
+- $T_2$ upward
 
-L over 6, let me move this label,
+Newton’s second law gives
 
-mg.
+$$
+m_2g-T_2=m_2a.
+$$
 
-L over 6 is the distance between the pivot
+Solving for $T_2$,
 
-point at B and the center of the plank.
+$$
+\boxed{
+T_2=m_2g-m_2a
+}
+$$
 
-Okay, again, that's because this plank, the pivot
+or
 
-point is at a distance L over 6 from the end of the plank.
+$$
+\boxed{
+T_2=m_2(g-a)
+}.
+$$
 
-And so 2 sixths and then 1 sixths over is the MG.
+Because $m_2$ accelerates downward,
 
-And then if you wanted to include NA, very
+$$
+T_2<m_2g.
+$$
 
-small, that's toward the end like L over 5.
+## Torque on the Pulley
 
-This one's going to go to zero.
+Choose clockwise torque to be positive.
 
-So I could include the distance to this, but I'm
+The pulley’s weight and the axle force both act through the center of the pulley, so neither produces torque about the pulley’s axis.
 
-not going to worry about it because I know it
+The two cord tensions produce opposite torques:
 
-goes to zero. So I have the normal force at the
+$$
+\sum\tau
+=
+T_2R-T_1R.
+$$
 
-pivot point B, mg at L over 6 to the left, and
+The rotational equation of motion is
 
-the normal force from the block of mass little m
+$$
+T_2R-T_1R=I_p\alpha.
+$$
 
-to the right, a distance x from the pivot point.
+For a uniform solid-disk pulley,
 
-Okay, any questions about this?
+$$
+I_p=\frac{1}{2}M_pR^2.
+$$
 
-So make sure you understand how to do the free
+Because the cord does not slip,
 
-body diagrams and especially the extended
+$$
+a=\alpha R.
+$$
 
-free body diagrams because we'll be taking our
+Therefore,
 
-equations from this. So for the block of
+$$
+\alpha=\frac{a}{R}.
+$$
 
-mass little m, I'm going to do that one first.
+Substituting into the torque equation,
 
-sum of forces in the y direction equals zero
+$$
+T_2R-T_1R
+=
+\left(
+\frac{1}{2}M_pR^2
+\right)
+\left(
+\frac{a}{R}
+\right).
+$$
 
-equals normal force of from capital m on
+Simplifying,
 
-little m minus mg that tells me the normal force
+$$
+(T_2-T_1)R
+=
+\frac{1}{2}M_pRa.
+$$
 
-from capital m on little m equals mg for my
+Canceling $R$ gives
 
-free body diagram point free body diagram
+$$
+\boxed{
+T_2-T_1
+=
+\frac{1}{2}M_pa
+}.
+$$
 
-of the plank i'm going to have sum of forces
+## Solving for the Acceleration
 
-in the y direction equals 0, equals N
+Substitute the expressions for the two tensions:
 
-A in the upward direction, that goes to 0.
+$$
+m_2(g-a)-m_1(g+a)
+=
+\frac{1}{2}M_pa.
+$$
 
-Let's see, plus N B going up, up, and
+Expanding,
 
-then minus capital M G minus normal force
+$$
+m_2g-m_2a-m_1g-m_1a
+=
+\frac{1}{2}M_pa.
+$$
 
-from little m on capital M. And notice by Newton's
+Group the gravitational terms:
 
-laws, well, this is really the magnitude, the
+$$
+(m_2-m_1)g
+-
+(m_1+m_2)a
+=
+\frac{1}{2}M_pa.
+$$
 
-magnitudes of these normal forces are the same, and the
+Move all acceleration terms to the same side:
 
-directionality is given in the free body diagram.
+$$
+(m_2-m_1)g
+=
+m_1a+m_2a+\frac{1}{2}M_pa.
+$$
 
-And then the sum of torque, let
+Factor out $a$:
 
-me scoot that down a little bit.
+$$
+(m_2-m_1)g
+=
+a
+\left(
+m_1+m_2+\frac{1}{2}M_p
+\right).
+$$
 
-Sum of torque equals I alpha, which equals zero
+Therefore,
 
-here. We're saying just as the object starts to
+$$
+\boxed{
+a
+=
+\frac{
+(m_2-m_1)g
+}{
+m_1+m_2+\frac{1}{2}M_p
+}
+}.
+$$
 
-tip so we don't include the the acceleration the
+Using the numerical values supplied in the problem gives
 
-angular acceleration here so the net torque
+$$
+\boxed{
+a=2.5\ \mathrm{m/s^2}
+}.
+$$
 
-about the pivot point and now what i want to do is
+## General Form
 
-determine which direction i am calling positive
+For a pulley with an arbitrary moment of inertia $I_p$, the torque equation gives
 
-let's see if i i'm going to let
+$$
+T_2-T_1
+=
+\frac{I_p}{R^2}a.
+$$
 
-clockwise
+The acceleration is therefore
 
-be positive in this case.
+$$
+\boxed{
+a
+=
+\frac{
+(m_2-m_1)g
+}{
+m_1+m_2+\frac{I_p}{R^2}
+}
+}.
+$$
 
-So I have a normal force from the little mass on
+For a uniform solid disk,
 
-big mass. That's going to be positive. Getting
+$$
+\frac{I_p}{R^2}
+=
+\frac{
+\frac{1}{2}M_pR^2
+}{
+R^2
+}
+=
+\frac{1}{2}M_p,
+$$
 
-ahead of myself, just a little bit. Normal force
+which recovers the previous result.
 
-from little m on big m, and that's a distance x. So
+## Physical Interpretation
 
-torque has the force times the distance and then
+The pulley’s rotational inertia reduces the acceleration of the system.
 
-times the sine of the angle between them. The
+For a massless pulley,
 
-sine of the angle between them here, the angle
+$$
+I_p=0,
+$$
 
-between them is 90 degrees, so sine theta goes to 1.
+so the acceleration becomes
 
-And that would rotate in the positive direction we've
+$$
+a
+=
+\frac{
+(m_2-m_1)g
+}{
+m_1+m_2
+}.
+$$
 
-defined as being clockwise. The gravitational force
+This is the standard result for an ideal Atwood machine.
 
-then would be pulling the other way, rotating the other
+For a massive pulley, some of the gravitational potential energy released by the descending mass must become rotational kinetic energy of the pulley. The linear acceleration is therefore smaller than it would be with a massless pulley.
 
-way, so that would be minus mg, and then the position
+The symbolic result passes several useful checks:
 
-L over 6, and then the sine of the angle is also 1,
+- If $m_1=m_2$, then $a=0$.
+- Increasing $m_2-m_1$ increases the acceleration.
+- Increasing the pulley mass decreases the acceleration.
+- If $M_p\rightarrow0$, the massless-pulley result is recovered.
+- The acceleration remains less than $g$.
+- The denominator has units of mass, so the result has units of acceleration.
 
-sine theta equals 1, and I can exclude the normal force
+# General Strategy for Torque Problems
 
-on B because I put my pivot point on B. So this is
+## 1. Identify the System
 
-all I have. Also, I know now I can write in that the
+Decide which object or collection of objects is being analyzed.
 
-normal force from little m on capital M equals little
+A force should appear on a free-body diagram only if it acts directly on the chosen system.
 
-m g. So I have little m g equals capital M g L over 6.
+## 2. Draw a Point-Particle Free-Body Diagram
 
-Oh, sorry, m g x equals capital M g L over 6. The g
+Use this diagram to write the translational equations:
 
-cancels out. I've solved this for x. I get x equals
+$$
+\sum F_x=ma_x
+$$
 
-capital M over little m, g cancels L over 6, which would
+and
 
-be 2.4 kilograms over 1.6 kilograms times L was 1.6,
+$$
+\sum F_y=ma_y.
+$$
 
-or 1.4 meters over 6, which equals 0.35
+## 3. Draw an Extended Free-Body Diagram
 
-meters. Notice my kilograms cancel, giving
+Show:
 
-me units of meters and let's see does this
+- The shape of the object
+- Every force
+- The point where each force acts
+- The pivot
+- Every relevant distance and angle
 
-make sense physical sense um if my total
+## 4. Choose the Pivot Strategically
 
-so well first of all it's not longer it's not off the
+A force whose line of action passes through the pivot produces zero torque about that pivot.
 
-end of the plank so l over six would be one over run
+Choosing the pivot at an unknown support force can eliminate that force from the torque equation.
 
-one l over six so it's yeah it's not off the end of
+## 5. Choose a Rotational Sign Convention
 
-the plank so it looks like about the right position
+State whether clockwise or counterclockwise torque is positive.
 
-as far as the relative magnitude of it. It's not in
+Then apply the sign convention consistently.
 
-the middle of the plank, it's not to the left of B,
+## 6. Write the Torque Equation
 
-it's to the right of B. We've defined it as being to
+Use
 
-the right of B, and it's a little bit over L over 6.
+$$
+\sum\tau=I\alpha.
+$$
 
-Okay, so questions about this.
+For static equilibrium,
 
-Let's see what kind of responses
+$$
+\alpha=0,
+$$
 
-we got. 0.5, 0.77, 0.35,
+so
 
-good,
+$$
+\sum\tau=0.
+$$
 
-0.35,
+## 7. Apply the Appropriate Constraint
 
-0.77, looks like there might be a factor of 2,
+Examples include:
 
-not sure what that issue was,
+- At impending tipping, one support force becomes zero.
+- At impending slipping, $f_s=\mu_sN$.
+- For rolling or a non-slipping cord, $a=\alpha R$.
+- For a massless ideal cord, connected objects have the same acceleration magnitude.
 
-0.35. Okay, I'm not going to go all the way down
+## 8. Solve Symbolically Before Substituting Numbers
 
-through them. Not familiar with how to solve this type
+A symbolic result makes it easier to:
 
-of problem so it's good that you're here today working
+- Check dimensions
+- Identify cancellations
+- Analyze how variables affect the result
+- Test limiting cases
+- Detect algebraic mistakes
 
-on it if you're not familiar with solving this kind
+# Summary
 
-of a problem then should look back at what we did on
+Torque is
 
-thursday and how to do extended free body diagrams
+$$
+\boxed{
+\vec{\tau}
+=
+\vec{r}\times\vec{F}
+}
+$$
 
-and how to find the sum of torques and such so yeah
+with magnitude
 
-i'll try doing that and just i would say in general if
+$$
+\boxed{
+\tau=rF\sin\phi
+}.
+$$
 
-you didn't know how to approach the problem then
+Rotational dynamics is governed by
 
-watch watch us work through it together and then go back
+$$
+\boxed{
+\sum\tau=I\alpha
+}.
+$$
 
-in later and do it again on your own make sure you
+For static equilibrium,
 
-understand how to set up something like this from
+$$
+\boxed{
+\sum\vec{F}=0
+}
+$$
 
-scratch very good okay let's go to the next question
+and
 
-i'm going to look show the responses just for a minute
+$$
+\boxed{
+\sum\tau=0
+}.
+$$
 
-to show this So this is another problem in statics.
+For the tipping plank, the left support force becomes zero and support $B$ becomes the pivot. The required box position is
 
-We have ladder leaning up against the
+$$
+\boxed{
+x=\frac{M}{m}\frac{L}{6}
+}.
+$$
 
-wall, there's the floor, here's the wall,
+For the values used in the problem,
 
-there's the ladder leaning up against the wall.
+$$
+\boxed{
+x=0.35\ \mathrm{m}
+}.
+$$
 
-we have to find this angle theta against the floor
+For a uniform ladder against a frictionless wall at the threshold of slipping,
 
-we have no friction against the wall here we have
+$$
+\boxed{
+\mu_s
+=
+\frac{1}{2}\cot\theta
+=
+\frac{1}{2\tan\theta}
+}.
+$$
 
-friction a maximum static friction here at the
+For the angle supplied in the problem,
 
-floor we have that the length of the ladder is l
+$$
+\boxed{
+\mu_s=0.34
+}.
+$$
 
-it's a uniform ladder so it's not
+For two masses connected over a uniform solid-disk pulley,
 
-tapering in it has some center of mass
+$$
+T_1=m_1(g+a),
+$$
 
-it's at the very center it has mass m
+$$
+T_2=m_2(g-a),
+$$
 
-okay so we know
+and
 
-the mass length of the ladder the angle theta and we
+$$
+T_2-T_1=\frac{1}{2}M_pa.
+$$
 
-want mu s we're assuming that the friction it has
+The acceleration is
 
-maximum static friction So it's at the angle where it's
+$$
+\boxed{
+a
+=
+\frac{
+(m_2-m_1)g
+}{
+m_1+m_2+\frac{1}{2}M_p
+}
+}.
+$$
 
-just not going to slide, barely not going to slide.
+For the numerical values supplied in the problem,
 
-Okay, I will go back to instructions here.
+$$
+\boxed{
+a=2.5\ \mathrm{m/s^2}
+}.
+$$
 
-Activate.
-
-Okay, and oh, we're finding mu S.
-
-All right, everybody's back. Please put
-
-in an answer if you still need to do that.
-
-Three,
-
-two, one.
-
-All right, thank you, stopping delivery.
-
-Okay, so again, we're going to start with a free
-
-body diagram, a point-free body diagram of the ladder,
-
-and then an extended free body diagram of the ladder.
-
-The point-free body diagram, there's my mass m.
-
-Let's see, I have mg pointing downward, gravitational
-
-force. Now this is a uniform ladder, so I can just put
-
-a single point at the center of mass of the ladder.
-
-now pointing upward I'm going to have a
-
-normal force from the floor so I'll call that
-
-the normal force from the floor on the ladder then
-
-from the wall here there's no friction against the
-
-wall but there is a normal force from the wall so
-
-the normal force from the wall on the ladder and
-
-then there's a friction force pointing to the left
-
-Let me move this m so I can put my label there.
-
-The friction force to the left.
-
-No, I've drawn these forces
-
-as being equal and opposite.
-
-Let's put a plus y upward and a plus x axis to the
-
-right. And I don't exactly know the relative size of, say,
-
-the normal force from the wall on the letter to the
-
-normal force from the floor on the letter, but I do know
-
-that the opposite forces will be equal in magnitude.
-
-Now, let's draw an extended free body
-
-diagram. I'm going to do it like this.
-
-And my center of mass here, M, is where my mg goes.
-
-I'm going to choose my pivot
-
-point at the bottom here.
-
-So I'll take my lengths from the pivot point,
-
-but let me go ahead and draw the forces in first and
-
-then put the lengths. So my, oh, I want that to be
-
-agreeing with my point free body diagram. So that should
-
-be a little bit longer, about like that. Now I need
-
-the normal force from the wall coming across here.
-
-from the wall onto the ladder. I need the friction
-
-force coming across to the left and I need the normal
-
-force from the floor on the ladder pointing upward.
-
-Normal force from the floor on the ladder. Now
-
-let's identify the angles. There's the angle theta
-
-and here's the angle theta. I'm going to define this
-
-angle as angle phi here and phi here, where phi
-
-equals 90 degrees minus theta. And that's because
-
-of the triangle, right? If I drew the triangle,
-
-the right triangle, then the right angle would take
-
-up 90 degrees, and so 90 degrees minus theta
-
-gives me phi. Now as far as the distances, my pivot
-
-point is going to be right here, so both of these
-
-forces are not going to be involved in my torque
-
-equation. I'm going to, let's see, this
-
-is a little tricky how to put this
-
-in here, I'll put lines out like this.
-
-So I have this distance is L over
-
-2 and the distance to the end
-
-is L.
-
-Okay, so now from these free body diagrams, I'm going
-
-to take my equation. So I'll start with this point
-
-free body diagram. Sum of forces in the y direction
-
-equals 0 equals the normal force from the floor
-
-on the ladder minus mg. That tells me nfl equals mg.
-
-Sum of forces in the x direction also equals zero.
-
-That gives me the normal force from the
-
-wall on the ladder minus the friction
-
-force. Now the friction force equals,
-
-because it's a maximum static friction force, the
-
-friction force equals muF times the normal force. And we
-
-have to be a little careful which normal force we're
-
-talking about. We're not talking about the normal force
-
-of the wall on the ladder. We're talking about the
-
-normal force pushing up from the floor onto the ladder.
-
-So NFL, so the friction force equals mu S times mg.
-
-That gives us normal force from the
-
-wall on the ladder equals mu S mg. g.
-
-Okay, then we need the sum of torque equals zero about
-
-our pivot point, and remember torque equals r cross
-
-f or r f sine of the angle. So let's define plus
-
-clockwise, so rotating this way. These distances are going
-
-to be zero, so these two terms drop out. I would
-
-have the normal force from the wall times sine theta
-
-times the distance L in the positive direction, so NWL
-
-times length times sine theta, and then in the negative
-
-direction, I'd have minus mg L over 2 sine of phi.
-
-Okay, so now let's see. I can substitute in my muis
-
-mg for my normal force from the wall, so So mu
-
-s m g l sine theta, that's supposed to be a sine,
-
-equals m g l over 2 sine phi.
-
-So let's see, sine of 90 degrees minus theta
-
-equals cosine theta. So I can write this
-
-in as a cosine theta times cosine theta.
-
-Now I just need to solve this for mu s. I see MgL
-
-cancels out. So mu s sine theta equals 1 half
-
-cosine theta. Mu s equals 1 over 2 cosine theta over
-
-sine theta. You could write that as 1 half
-
-cotangent theta or 1 over 2 tangent theta either way.
-
-And plugging in the values for that, I get 0.34.
-
-Okay, any questions about this?
-
-Questions?
-
-So notice kind of the heart of this problem
-
-comes from this extended free-body diagram.
-
-Taking from the extended free-body diagram the
-
-forces, the distances, and the sign of the angle
-
-between the force and the position vector.
-
-And so getting this equation, that was 90% of
-
-the conceptual basis for this problem. Getting
-
-the extended free body diagram correct and labeled
-
-all the way through and then taking from that
-
-extended free body diagram into my torque
-
-equation, and writing my torque equation from it.
-
-And I did need to use my point-free body
-
-diagrams a little bit, not all that much, but just
-
-in getting my normal forces and my friction
-
-force defined in terms of the normal force.
-
-All right.
-
-Questions about this?
-
-Okay. Well, let's do another one then.
-
-This one is moving.
-
-so to set this up we have a pulley
-
-radius r this pulley is a massive pulley it has m1
-
-and m2
-
-i'll put the mass of the pulley inside the pulley
-
-radius r, and I have here that
-
-m1 is less than m2, so if I know
-
-all of the masses, I want the acceleration.
-
-no m1 m2 m pulley and r want the acceleration
-
-of the system all right i'm going to call
-
-this tension on here t1 and the tension to
-
-m2 as t2 and let's talk a little bit about
-
-Let me get you started off on this,
-
-on how to draw the free body diagrams.
-
-Oh, actually, maybe I'll give you just a minute to go
-
-ahead and draw the extended free body diagram and then
-
-the free body diagrams for the both masses M1 and M2.
-
-Start with that. Draw the free body
-
-diagrams extended for the pulley.
-
-Okay,
-
-let's come together to do this. So the pulley is
-
-going to have some M pulley G and some normal force
-
-pushing up on this pivot point. But those are not
-
-going to be included in our torque equation because
-
-we'll be pivoting about the center of the pulley.
-
-Now, think about what's going to happen here.
-
-M2 is larger than M1. The pulley is massive, so it's
-
-going to affect the acceleration. but the whole system
-
-is still going to be accelerating in a clockwise
-
-direction for the pulley. So I have some acceleration
-
-to the right here. What that means is that the tension
-
-2, and it's at a distance r away from the center,
-
-had better be bigger than tension 1.
-
-Okay, tension 2 is larger than tension 1.
-
-That's what rotates this massive pulley.
-
-Okay, so I have T2 and T1 here. For my free body
-
-diagrams for the point masses then, I'm going to
-
-have T1 pointing upward and M1g pointing downward.
-
-And notice T1 had better be larger than M1g
-
-to be able to accelerate that mass upward.
-
-And then T2 will be pulling upward.
-
-That went a little bit crooked. T2. T2 is bigger than
-
-T1, and M2G had better be larger than T2 to accelerate
-
-everything to the right. So I'm going to put my plus
-
-y-axis coming downward on this M2 free-body diagram.
-
-Okay, so go ahead and use those free body diagrams to
-
-write out your equations and solve for acceleration.
-
-Let's see, don't really have time to open
-
-breakout rooms, so I'm going to skip that.
-
-And I will go back to instructions and activate.
-
-Okay,
-
-I see about half of you have an answer in, and
-
-we're also getting to the end of the class period.
-
-So I'm going to ask you to go ahead and put an answer
-
-in just to get participation credit. I know I'm
-
-cutting about half of you a little bit short, so
-
-please do go ahead and put an answer in. I'll
-
-give you three more seconds to do that. Three, two,
-
-one.
-
-All right, thank you, stopping delivery.
-
-Okay, so I'm going to take from my point, three-body
-
-diagrams, the equations of acceleration. So M1, I
-
-will have sum of forces in the y direction equals M1A.
-
-So M1, and that would be T1 minus M1G.
-
-And then for M2, I have sum of forces in the
-
-y direction equals M2A equals M2G minus T2.
-
-and then for my torque equation, sum of
-
-torque about my pivot point. My pivot point is
-
-at the center here and I'm going to let
-
-plus clockwise be the direction of rotation.
-
-So equals I alpha and then that just equals T2R
-
-minus T1R. So these are right angles. So sine
-
-theta goes to one and the distance away from the
-
-pivot point is r in both of these cases. So
-
-let's see, what else do I know? I know my moment
-
-of inertia, i equals 1 half m pulley r squared,
-
-and I know that the relationship between alpha and a,
-
-a equals alpha r, so alpha equals a over r. I can do
-
-that substitution. My process is going to be solving
-
-the first equation for t1, the second equation for t2,
-
-and then doing substitution into my torque equation.
-
-So solving this first equation for t1, I get
-
-t1 equals m1g plus m1a. The second equation gives
-
-me t2 equals m2g minus m2a. I alpha is going
-
-to be one-half mass of the pulley R squared.
-
-So that's the I, and then times alpha
-
-would be A over R equals T2R minus T1R.
-
-I'm going to cancel R through here. So R squared
-
-over R gives me R on the left side, cancel the
-
-R's over here. So 1 half mass of the pulley times
-
-A equals T2 minus T1. 1 half MPA equals T2, which
-
-is M2G minus M2A minus T1, which is M1G minus
-
-M1A. And now all I have to do is get A by itself.
-
-So 1 half mass of the pulley times A plus M1A plus
-
-M2A equals M2G minus M1G. So a equals g times m2
-
-minus m1 over this 1 half m pulley plus m1 plus m2.
-
-And then just plug in the values. When I do that for
-
-these values, I get 2.5 meters per second squared.
-
-And I see we're out of time, so I'm going to go ahead
-
-and end here, and we'll pick this up tomorrow. If
-
-you have any questions for me, you can stick around
-
-and ask me in my office hours or shoot me an email.
-
-If not, I will see you good folks tomorrow.
-
-Bye for now.
-
-Thank you for coming.
-
-See you next time.
+The central skill in all of these problems is constructing a correct extended free-body diagram. Once the forces, application points, lever arms, and rotational directions are identified, the equations of force and torque follow systematically.

@@ -450,17 +450,19 @@ def int_or_max(value: str) -> int:
         return 10**9
 
 
-def topic_number_key(value: str) -> tuple[int | str, ...]:
-    pieces: list[int | str] = []
+def topic_number_key(value: str) -> tuple[tuple[int, int | str], ...]:
+    pieces: list[tuple[int, int | str]] = []
     for part in value.split("."):
         if part.isdigit():
-            pieces.append(int(part))
+            pieces.append((0, int(part)))
         else:
-            pieces.append(part)
+            pieces.append((1, part.casefold()))
     return tuple(pieces)
 
 
-def sort_key(row: dict[str, str]) -> tuple[int, str, tuple[int | str, ...], str]:
+def sort_key(
+    row: dict[str, str],
+) -> tuple[int, str, tuple[tuple[int, int | str], ...], str]:
     return (
         int_or_max(row.get("layer", "")),
         row.get("course", ""),
@@ -1340,7 +1342,15 @@ def strip_md(value: str) -> str:
     return value[:-3] if value.endswith(".md") else value
 
 
-def course_lesson_entry_key(entry: dict[str, str]) -> tuple[tuple[int, ...], tuple[int, ...], int, tuple[int, ...], str]:
+def course_lesson_entry_key(
+    entry: dict[str, str],
+) -> tuple[
+    tuple[tuple[int, int | str], ...],
+    tuple[tuple[int, int | str], ...],
+    int,
+    tuple[tuple[int, int | str], ...],
+    str,
+]:
     return (
         topic_number_key(entry["module"].removeprefix("M-")),
         topic_number_key(entry["assignment"].split("-", 1)[-1]),

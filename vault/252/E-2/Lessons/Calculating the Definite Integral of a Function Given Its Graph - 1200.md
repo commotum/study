@@ -1,0 +1,324 @@
+# Calculating the Definite Integral of a Function Given Its Graph
+
+<!--
+lesson-id: 1200
+topic-code: MF3.9.3.5
+-->
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Calculating the Definite Integral of a Piecewise Linear Function From Its Graph](#calculating-the-definite-integral-of-a-piecewise-linear-function-from-its-graph)
+- [Calculating the Definite Integral of a Piecewise Nonlinear Function From Its Graph](#calculating-the-definite-integral-of-a-piecewise-nonlinear-function-from-its-graph)
+
+## Prerequisites
+
+- [Properties of Definite Integrals Involving the Limits of Integration](<../../../MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.2. Definite Integrals/Lessons/9.2.5. Properties of Definite Integrals Involving the Limits of Integration.md>)
+- [The Area Bounded by a Curve and the X-Axis](<../../../MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.3. The Area Under a Curve/Lessons/9.3.1. The Area Bounded by a Curve and the X-Axis.md>)
+- [Areas of Trapezoids](<../../../MA/Mathematical-Foundations/MF1/13. Polygons/13.3. Area and Perimeter/Lessons/13.3.3. Areas of Trapezoids.md>)
+- [Areas of Circles](<../../../MA/Mathematical-Foundations/MF1/12. Geometry Fundamentals/12.4. Circles/Lessons/12.4.4. Areas of Circles.md>)
+
+---
+
+<a id="introduction"></a>
+## Introduction
+
+Suppose we are given the graph of the function $y=f(x)$ defined on the interval $[-2,2]$ as shown below. How can we calculate the integral $\displaystyle \int_{-2}^{2} f(x)\: \textrm{d}x$?
+
+![](<../Source/Calculating the Definite Integral of a Function Given Its Graph - 1200/Images/11e34fd87d7c70132a2719d0983e1f84.png>)
+
+First, we notice that the graph consists of two parts: the line segment for $x \in [-2,0]$ and the line segment for $x \in [0,2]$. Therefore, using the additive property of the definite integral, we can write the integral as follows:
+
+$$
+\int_{-2}^{2} f(x)\: \textrm{d}x = \underbrace{\int_{-2}^{0} f(x)\: \textrm{d}x}_{A_1} + \underbrace{\int_{0}^{2} f(x)\: \textrm{d}x}_{A_2}
+$$
+
+Now, we use the fact that the area of the region between the graph and the $x$-axis can be represented using definite integrals. We divide the region between our curve and the $x$-axis as follows:
+
+![](<../Source/Calculating the Definite Integral of a Function Given Its Graph - 1200/Images/4e667270304346790dc6d0a5fe41544c.png>)
+
+The first integral represents the signed area between the curve and the $x$-axis, where $x \in [-2,0]$. The corresponding region is a trapezoid, so we find the area using the formula
+
+$$
+\begin{aligned}
+A_{1} &= \frac{1}{2}(a + b)h \\
+&= \frac{1}{2}(1 + 2) \cdot 2 \\
+&= 3
+\end{aligned}
+$$
+
+The second integral represents the signed area between the curve and the $x$-axis, where $x \in [0,2]$. The corresponding region is a right triangle, so we find the area using the formula
+
+$$
+\begin{aligned}
+A_{2} &= \frac{1}{2}ab \\
+&= \frac{1}{2} \cdot 2 \cdot 2 \\
+&= 2
+\end{aligned}
+$$
+
+So, we obtain
+
+$$
+\begin{aligned}
+∫_{-2}^{2}f(x)dx &= A_{1} + A_{2} \\
+&= 3 + 2 \\
+&= 5
+\end{aligned}
+$$
+
+---
+
+<a id="calculating-the-definite-integral-of-a-piecewise-linear-function-from-its-graph"></a>
+## Calculating the Definite Integral of a Piecewise Linear Function From Its Graph
+
+**Example:** Consider the graph of the function $y=f(x)$, shown below. It consists of three line segments. Find the value of
+$\displaystyle \int_{0}^{4} f(x)\: \textrm{d}x$.
+
+![](<../Source/Calculating the Definite Integral of a Function Given Its Graph - 1200/Images/9945bb9e16c42b2c41ed53b402e96364.png>)
+
+**Explanation**
+
+The graph consists of $3$ parts: the line segment for $x \in [0,2]$, the line segment for $x \in [2,3]$, and the line segment for $x \in [3,4]$. Therefore, we can write the integral as follows:
+
+$$
+\int_{0}^{4} f(x)\: \textrm{d}x = \underbrace{\int_{0}^{2} f(x)\: \textrm{d}x}_{A_1} + \underbrace{\int_{2}^{3} f(x)\: \textrm{d}x}_{A_2} + \underbrace{\int_{3}^{4} f(x)\: \textrm{d}x}_{-A_3}
+$$
+
+The $1$st integral represents the signed area between the curve and the $x$-axis, where $x \in [0,2]$. The corresponding region is a trapezoid, so we find the area using the formula
+
+$$
+\begin{aligned}
+A_{1} &= \frac{1}{2}(a + b)h \\
+&= \frac{1}{2}(2 + 3) \cdot 2 \\
+&= 5
+\end{aligned}
+$$
+
+The $2$nd integral represents the signed area between the curve and the $x$-axis, where $x \in [2,3]$. The corresponding region is a right triangle, so we find the area using the formula
+
+$$
+\begin{aligned}
+A_{2} &= \frac{1}{2}bh \\
+&= \frac{1}{2} \cdot 1 \cdot 3 \\
+&= \frac{3}{2}
+\end{aligned}
+$$
+
+The $3$rd integral represents the signed area between the curve and the $x$-axis, where $x \in [3,4]$. The corresponding region is also a right triangle, so we find the area using the formula
+
+$$
+\begin{aligned}
+A_{3} &= \frac{1}{2}bh \\
+&= \frac{1}{2} \cdot 1 \cdot 1 \\
+&= \frac{1}{2}
+\end{aligned}
+$$
+
+Since the region lies below the $x$-axis, we have
+
+$$
+\int_{3}^{4} f(x)\: \textrm{d}x = -A_3 = -\dfrac{1}{2}
+$$
+
+Therefore, we obtain
+
+$$
+\begin{aligned}
+∫_{0}^{4}f(x)dx &= A_{1} + A_{2} - A_{3} \\
+&= 5 + \frac{3}{2} - \frac{1}{2} \\
+&= 6
+\end{aligned}
+$$
+
+---
+
+**Question 1**
+
+```quiz
+type: radio
+id: ma-14783
+content: |-
+  ![](<../Source/Calculating the Definite Integral of a Function Given Its Graph - 1200/Images/q-14783.png>)
+  
+  Consider the graph of the function $y = f(x)$, shown above. It consists of five line segments. Find the value of
+  $∫_{-2}^{4}f(x)dx$.
+options:
+- id: a
+  content: |-
+    $\frac{5}{2}$
+- id: b
+  content: |-
+    $-\frac{1}{2}$
+- id: c
+  content: |-
+    $\frac{3}{2}$
+- id: d
+  correct: true
+  content: |-
+    $1$
+- id: e
+  content: |-
+    $\frac{1}{2}$
+```
+
+---
+
+**Question 2**
+
+```quiz
+type: radio
+id: ma-75314
+content: |-
+  ![](<../Source/Calculating the Definite Integral of a Function Given Its Graph - 1200/Images/q-75314.png>)
+  
+  Consider the graph of a function $y = f(x)$, shown above. It consists of two line segments. Find the value of $∫_{-3}^{4}f(x)dx$.
+options:
+- id: a
+  content: |-
+    $18$
+- id: b
+  content: |-
+    $4$
+- id: c
+  content: |-
+    $\frac{15}{2}$
+- id: d
+  correct: true
+  content: |-
+    $\frac{23}{2}$
+- id: e
+  content: |-
+    $\frac{21}{4}$
+```
+
+---
+
+<a id="calculating-the-definite-integral-of-a-piecewise-nonlinear-function-from-its-graph"></a>
+## Calculating the Definite Integral of a Piecewise Nonlinear Function From Its Graph
+
+**Example:** Consider the graph of the function $y=f(x)$, shown below. It consists of one line segment, an arc of a quarter-circle centered at $(-3,0)$ with radius $1$, and an arc of a quarter-circle centered at $(0,0)$ with radius $2$. Find the value of
+$\displaystyle \int_{-3}^{2} f(x)\: \textrm{d}x$.
+
+![](<../Source/Calculating the Definite Integral of a Function Given Its Graph - 1200/Images/534b5191e3f9f6465bd3917abb9ec5f0.png>)
+
+**Explanation**
+
+The graph consists of $3$ parts: the arc of a quarter-circle for $x \in [-3,-2]$, the line segment for $x \in [-2,0]$, and the arc of a quarter-circle for $x \in [0,2]$. Therefore, we can write the integral as follows:
+
+$$
+\int_{-3}^{2} f(x)\: \textrm{d}x = \underbrace{\int_{-3}^{-2} f(x)\: \textrm{d}x}_{-A_1} + \underbrace{\int_{-2}^{0} f(x)\: \textrm{d}x}_{A_2} + \underbrace{\int_{0}^{2} f(x)\: \textrm{d}x}_{A_3}
+$$
+
+The $1$st integral represents the signed area between the curve and the $x$-axis, where $x \in [-3,-2]$. The corresponding region is a quarter-circle, so we find the area using the formula
+
+$$
+\begin{aligned}
+A_{1} &= \frac{1}{4}πr^{2} \\
+&= \frac{1}{4}π \cdot 1^{2} \\
+&= \frac{π}{4}
+\end{aligned}
+$$
+
+Since the region lies below the $x$-axis, we have
+
+$$
+\int_{-3}^{-2} f(x)\: \textrm{d}x = -A_1 = -\dfrac{\pi}{4}
+$$
+
+The $2$nd integral represents the signed area between the curve and the $x$-axis, where $x \in [-2,0]$. The corresponding region is a right triangle, so we find the area using the formula
+
+$$
+\begin{aligned}
+A_{2} &= \frac{1}{2}bh \\
+&= \frac{1}{2} \cdot 2 \cdot 2 \\
+&= 2
+\end{aligned}
+$$
+
+The $3$rd integral represents the signed area between the curve and the $x$-axis, where $x \in [0,2]$. The corresponding region is a quarter-circle, so we find the area using the formula
+
+$$
+\begin{aligned}
+A_{3} &= \frac{1}{4}πr^{2} \\
+&= \frac{1}{4}π \cdot 2^{2} \\
+&= π
+\end{aligned}
+$$
+
+Therefore, we obtain
+
+$$
+\begin{aligned}
+∫_{-3}^{4}f(x)dx &= -A_{1} + A_{2} + A_{3} \\
+&=-\frac{π}{4} + 2 + π \\
+&= 2 + \frac{3π}{4}
+\end{aligned}
+$$
+
+---
+
+**Question 3**
+
+```quiz
+type: radio
+id: ma-17996
+content: |-
+  ![](<../Source/Calculating the Definite Integral of a Function Given Its Graph - 1200/Images/q-17996.png>)
+  
+  Consider the graph of the function $f(x)$, shown above. It consists of an arc of a quarter-circle centered at $(-1, 0)$ with radius $1$, an arc of a quarter-circle centered at $(0, 1)$ with radius $1$, and an arc of a quarter-circle centered at $(0, 0)$ with radius $2$. Find the value of $∫_{-2}^{2}f(x)dx$.
+options:
+- id: a
+  content: |-
+    $1 - \frac{3π}{4}$
+- id: b
+  content: |-
+    $-1 + \frac{7π}{2}$
+- id: c
+  content: |-
+    $3 + \frac{5π}{2}$
+- id: d
+  content: |-
+    $1 - \frac{π}{2}$
+- id: e
+  correct: true
+  content: |-
+    $1 + \frac{3π}{2}$
+```
+
+---
+
+**Question 4**
+
+```quiz
+type: radio
+id: ma-51422
+content: |-
+  ![](<../Source/Calculating the Definite Integral of a Function Given Its Graph - 1200/Images/q-51422.png>)
+  
+  Consider the graph of the function $y = f(x)$, shown above. It consists of a line segment and an arc of a semi-circle centered at $(-1, 3)$ with radius $1$. Find the value of
+  $∫_{-4}^{0}f(x)dx$.
+options:
+- id: a
+  content: |-
+    $11 - 2π$
+- id: b
+  correct: true
+  content: |-
+    $9 - \frac{π}{2}$
+- id: c
+  content: |-
+    $1 - \frac{π}{2}$
+- id: d
+  content: |-
+    $7 - 4π$
+- id: e
+  content: |-
+    $8 - π$
+```
+
+```update-progress
+```
+
+[[252/Home|Home]]
+[[252/0. Table of Contents/TOC|Table of Contents]]

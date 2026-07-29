@@ -1,1088 +1,1115 @@
+# Physics 212: Center of Mass, Torque Balance, and Mass Density
 
-Hey there.
+Welcome back to Physics 212.
 
-Welcome to Physics 212.
+## Announcements
 
-Hi everybody. Welcome back.
+Quiz 1 is complete, and grading is now underway. Quiz scores are generally returned within one week.
 
-Well, okay. Take a breath. Quiz 1 is over and
+Make sure that you submitted your handwritten Quiz 1 note sheet to Gradescope with your photo ID visible. You will not receive credit for the quiz until the note sheet and photo ID have been submitted.
 
-we will start working on Quiz 2 material today.
+Although the listed due date for the note sheet corresponds to the time when the quiz opened, the note sheet will not be marked late as long as it was submitted before you began the quiz.
 
-Make sure that you had posted your Quiz 1 note sheet.
+Today, we are beginning the material for Quiz 2, which focuses on rigid-body rotational motion. This is a good time to begin preparing your Quiz 2 note sheet.
 
-If you didn't post a Quiz 1 note sheet or if you
+The Quiz 2 note sheet must:
 
-posted a Quiz 1 note sheet to Gradescope and you didn't
+- Be between one-half page and one full page
+- Be entirely handwritten
+- Contain no photocopied or printed material
+- Be submitted with your photo ID visible
 
-have your photo ID on it, you need to replace it or
+You will be allowed to use your Quiz 1 note sheet while taking Quiz 2, so you do not need to copy all of the Quiz 1 material onto the new sheet. The Quiz 2 note sheet should focus on the new rotational-motion material.
 
-submit it. as soon as possible you won't get credit for
+Once the Quiz 1 scores are posted, the optional Quiz 1X extra-credit assignment will open. For this assignment, you will select the Quiz 1 problem on which you lost the most points. You will then:
 
-the quiz otherwise so make sure you have that done
+1. Explain the reasoning that led to your original answer.
+2. Explain what you should have done differently and identify the relevant physics concepts.
+3. Provide a complete corrected solution.
+4. Discuss the problem with an instructor or teaching assistant.
 
-if you already did it that's perfectly fine as and
+The purpose of the assignment is to analyze the physics reasoning behind your original work. The emphasis should be on why you made particular decisions, rather than on external factors such as time pressure.
 
-remember it isn't marked late as long as you posted it
+Parts A through C are worth up to eight points, capped by the number of points you lost on the selected problem. Part D is worth four additional points, so the assignment can restore up to twelve points.
 
-um submitted it to can or to grade scope before you
+# Introduction to the Center of Mass
 
-started your quiz so i know i've mentioned this before
+Consider a teeter-totter with a small person sitting on one side and a much larger person sitting on the other.
 
-but i've been having a few emails people asking me
+To balance the system, the larger person must sit closer to the fulcrum. The smaller person can sit farther away.
 
-about it and yes i put the due date as the time when
+This illustrates an important point: a balanced system does not necessarily have equal amounts of mass on both sides of the pivot. Instead, the torques on the two sides must balance.
 
-the quiz first opens, but as long as you post your note
+Torque is defined by
 
-sheet before you start your quiz, that's fine. It
+$$
+\boxed{
+\vec{\tau}=\vec{r}\times\vec{F}
+}
+$$
 
-won't be marked late. We are starting to work on quiz
+where:
 
-two material now, so this is a great time to start to
+- $\vec{r}$ is the position vector from the pivot to the point where the force is applied
+- $\vec{F}$ is the applied force
+- $\vec{\tau}$ is the resulting torque
 
-work on your quiz two note sheet. All of your quizzes
+The magnitude of the torque is
 
-will have a note sheet involved, and your final exam
+$$
+\boxed{
+\tau=rF\sin\theta
+}
+$$
 
-will have a note sheet involved. For quiz two, you
+where $\theta$ is the angle between $\vec{r}$ and $\vec{F}$.
 
-need to make a no cheat, same requirements, half a page
+For a horizontal teeter-totter, the gravitational forces are perpendicular to the position vectors. Therefore,
 
-to a full page, not more than that, not less than
+$$
+\sin\theta=\sin 90^\circ=1,
+$$
 
-that, written in your own handwriting. I don't accept
+and the torque magnitude produced by a mass $m$ at distance $r$ is
 
-photocopies of anything or any printed material has to
+$$
+\tau=rmg.
+$$
 
-be handwritten in your own handwriting. Needs to have
+If two masses balance on opposite sides of the fulcrum, their torques have equal magnitudes and opposite directions:
 
-photo ID on top of it when you scan and submit it.
+$$
+m_1gr_1=m_2gr_2.
+$$
 
-and also when you take quiz two you'll be able to
+The gravitational acceleration cancels:
 
-refer to your quiz one note sheet so you don't need to
+$$
+\boxed{
+m_1r_1=m_2r_2
+}.
+$$
 
-re-include things that were on your quiz one note
+A larger mass must therefore be placed at a smaller distance from the pivot.
 
-sheet you do need to have material on quiz two material
+## Physical Meaning of the Center of Mass
 
-which we will be working on today so rigid rotational
+The **center of mass** is a mass-weighted average position.
 
-motion oh one other thing before we move on it
+It is not necessarily a point with equal mass on either side.
 
-will take us a week typically a week to get quizzes
+In a uniform gravitational field, an object supported directly beneath its center of mass experiences no net gravitational torque about the support point. It can therefore balance at that location.
+
+The center of mass is also important for freely moving objects. If an extended rigid object is thrown through the air and experiences negligible external torque, the object’s translational motion can be described by the motion of its center of mass, while the object rotates about its center of mass.
+
+For example, a hammer thrown through the air may flip end over end, but its center of mass follows the ordinary projectile trajectory.
+
+# Mathematical Definition of Center of Mass
+
+For a collection of discrete particles, the center-of-mass position is
+
+$$
+\boxed{
+\vec{r}_{\mathrm{cm}}
+=
+\frac{
+\sum_i m_i\vec{r}_i
+}{
+\sum_i m_i
+}
+}.
+$$
+
+In one dimension,
+
+$$
+\boxed{
+x_{\mathrm{cm}}
+=
+\frac{
+\sum_i m_ix_i
+}{
+\sum_i m_i
+}
+}.
+$$
+
+For two masses, this becomes
+
+$$
+x_{\mathrm{cm}}
+=
+\frac{
+m_1x_1+m_2x_2
+}{
+m_1+m_2
+}.
+$$
+
+For a continuous mass distribution, the summation becomes an integral:
+
+$$
+\boxed{
+\vec{r}_{\mathrm{cm}}
+=
+\frac{1}{M}
+\int_{\text{object}}
+\vec{r}\,dm
+}
+$$
+
+or, in one dimension,
+
+$$
+\boxed{
+x_{\mathrm{cm}}
+=
+\frac{1}{M}
+\int_{\text{object}}
+x\,dm
+}.
+$$
+
+If the integral is written in terms of accumulated mass, the limits may be expressed as
+
+$$
+x_{\mathrm{cm}}
+=
+\frac{1}{M}
+\int_0^M x\,dm.
+$$
+
+The center of mass is a position, so it has units of length, such as meters or centimeters.
+
+The position must always be measured relative to a chosen coordinate origin.
+
+# Worked Example 1: Two Point Masses
+
+Consider two point masses separated by a distance $L$.
+
+Let
+
+$$
+m_1=3m_2.
+$$
+
+Choose the position of $m_1$ as the origin:
+
+$$
+x_1=0.
+$$
+
+The second mass is located at
+
+$$
+x_2=L.
+$$
+
+The center of mass is
+
+$$
+x_{\mathrm{cm}}
+=
+\frac{
+m_1x_1+m_2x_2
+}{
+m_1+m_2
+}.
+$$
+
+Substituting the positions,
+
+$$
+x_{\mathrm{cm}}
+=
+\frac{
+m_1(0)+m_2L
+}{
+m_1+m_2
+}.
+$$
 
-graded and back to you so that's in process right now
+Using $m_1=3m_2$,
 
-when the quiz is posted once quiz scores are posted
+$$
+x_{\mathrm{cm}}
+=
+\frac{
+m_2L
+}{
+3m_2+m_2
+}.
+$$
+
+Therefore,
+
+$$
+x_{\mathrm{cm}}
+=
+\frac{
+m_2L
+}{
+4m_2
+}.
+$$
+
+The mass cancels:
 
-in canvas then quiz 1x assignment will open that's
+$$
+\boxed{
+x_{\mathrm{cm}}=\frac{L}{4}
+}.
+$$
 
-an extra credit assignment based on quiz 1 where you
+For
 
-choose the problem where you lost the most points
+$$
+L=0.88\ \mathrm{m},
+$$
 
-you discuss why you did what you did and what you
+the center of mass is
 
-should have done and why and give the correct solution
+$$
+x_{\mathrm{cm}}
+=
+\frac{0.88\ \mathrm{m}}{4}.
+$$
 
-and then meet with someone about it myself or a TA.
+Thus,
 
-I know you can't really see your problems yet that you
+$$
+\boxed{
+x_{\mathrm{cm}}=0.22\ \mathrm{m}
+}.
+$$
 
-did. Most of you will have notes and such to be able
+The center of mass lies closer to $m_1$, as expected, because $m_1$ is the larger mass.
 
-to refer to. Can't open that until the quizzes are
+## Solving the Same Problem with Torque
 
-graded but I just wanted to mention it right now because
+We can obtain the same result by requiring the torques about the center of mass to balance.
 
-it's fresh in your mind what you did and that's
+Let $x$ be the distance from $m_1$ to the center of mass. The distance from $m_2$ to the center of mass is then
 
-the hardest part of this. The most challenging part is
+$$
+L-x.
+$$
 
-to understand why you did what you did. Not about time
+The torque magnitudes are
 
-constraint, not about anything else other than physics
+$$
+\tau_1=m_1gx
+$$
 
-concepts. You made a conscious decision to write
+and
 
-down what you did and if you made some mistake mistakes
+$$
+\tau_2=m_2g(L-x).
+$$
 
-along the way what were your reasons what were the
+At equilibrium,
 
-physics concepts what were your thinking if this is
+$$
+m_1gx=m_2g(L-x).
+$$
 
-that metacognitive part why did you do what you did
+Canceling $g$ gives
 
-okay question in the chat how many points can you
+$$
+m_1x=m_2(L-x).
+$$
 
-potentially make up on the extra credit let's see there's
+Expanding the right side,
 
-eight points on parts a through c so and on the meeting
+$$
+m_1x=m_2L-m_2x.
+$$
 
-of a person and that's capped by the number of points
+Collecting the terms containing $x$,
 
-that you lost in the quiz so up to eight there plus
+$$
+(m_1+m_2)x=m_2L.
+$$
 
-four points for meeting with somebody to discuss
+Therefore,
 
-that quiz problem so up to 12 points back on the quiz.
+$$
+x
+=
+\frac{
+m_2L
+}{
+m_1+m_2
+}.
+$$
 
-Other questions?
+Using $m_1=3m_2$ again gives
 
-Okay let's get started on today's material.
+$$
+\boxed{
+x=\frac{L}{4}
+}.
+$$
 
-I in the park. Oh, that's supposed to be a
+This is identical to the result obtained from the center-of-mass equation.
 
-straight, a parallel line to the ground. Let me try
+# Torque as a Rotational Effect
 
-that again because it was a little bit wobbly.
+A force tends to produce translational acceleration. Torque describes the tendency of a force to produce rotation about a chosen point or axis.
 
-So parallel to the ground.
+Both the force and its point of application matter.
 
-That's a little bit better. There's the ground line and
+Applying the same force farther from a hinge generally produces a greater torque. Applying a force directly through the hinge produces no torque about that hinge because the lever arm is zero.
 
-this is commonly known as a teeter-totter. Okay,
+For the two-mass system:
 
-you're in the park. You're going to the teeter-totter. Oh,
+- The weight of $m_1$ tends to rotate the system in one direction.
+- The weight of $m_2$ tends to rotate the system in the opposite direction.
+- If the torques are equal in magnitude, the net torque is zero.
 
-I see I have a question in the chat. What's your
+The rotational-equilibrium condition is
 
-question extra credit quiz will open when quiz one is
+$$
+\boxed{
+\sum\vec{\tau}=0
+}.
+$$
 
-posted so you can't do it now okay so you're in the park
+# Worked Example 2: Arrangement of Identical Blocks
 
-and you're here's the teeter -totter as it balances it's
+Consider a system containing ten identical blocks. Each block has uniform density and mass $m$.
 
-at the center of mass so that's the first thing to
+Rather than treating every block separately, we can group the blocks into three subassemblies:
 
-think of is a system balances in stable equilibrium at
+- Six blocks whose combined center of mass is at $x=1.5\ \mathrm{cm}$
+- Two blocks whose combined center of mass is at $x=4.0\ \mathrm{cm}$
+- Two blocks whose combined center of mass is at $x=5.5\ \mathrm{cm}$
 
-its center of mass so this teeter-totter let's see you
+Each group can be replaced by a point mass located at that group’s own center of mass.
 
-have a small child on the other side say your nephew.
+The total center of mass is
 
-Okay, this nephew is looking a lot more
+$$
+x_{\mathrm{cm}}
+=
+\frac{
+(6m)(1.5\ \mathrm{cm})
++
+(2m)(4.0\ \mathrm{cm})
++
+(2m)(5.5\ \mathrm{cm})
+}{
+6m+2m+2m
+}.
+$$
 
-like a frog than a human, so I'm just going
+The total mass is
 
-to go ahead and make it a frog nephew.
+$$
+6m+2m+2m=10m.
+$$
 
-Here's a frog on the side of the teeter-totter, and
+The numerator is
 
-you come in you're a larger person and where do
+$$
+9m\ \mathrm{cm}
++
+8m\ \mathrm{cm}
++
+11m\ \mathrm{cm}
+=
+28m\ \mathrm{cm}.
+$$
 
-you sit do you sit closer to the center at the middle
+Therefore,
 
-of your half or out at the end of the teeter
+$$
+x_{\mathrm{cm}}
+=
+\frac{
+28m\ \mathrm{cm}
+}{
+10m
+}.
+$$
 
--totter if you want to balance your little frog person
+The block mass cancels:
 
-and you're a large frog person where do you sit
+$$
+\boxed{
+x_{\mathrm{cm}}=2.8\ \mathrm{cm}
+}.
+$$
 
-at point a b or c just put your answer in the chat
+The result lies to the left of the geometric center of the full arrangement because more of the system’s mass is concentrated toward the left.
 
-maybe not exactly just the area
+This example demonstrates that a complicated system can often be simplified by replacing each uniform subassembly with a point mass located at its own center of mass.
 
-where would you sit a b or c yeah
+# Worked Example 3: Two Attached Cubes
 
-i have about half of you have an answer in the chat so
+Consider two solid cubes made from material with uniform volume mass density $\rho$.
 
-i'm going to go ahead and look and see what you've put
+The larger cube has side length $2L$, and the smaller cube has side length $L$. The smaller cube is attached to the right side of the larger cube.
 
-i'm seeing lots of b's a and a little bit of c here
+Choose the origin at the left face of the larger cube.
 
-a to b okay a and a b with a little smattering of c going
+We want to determine the center of mass of the combined object.
 
-on okay you are a very big frog so i'm going to write
+## Predicting the Result
 
-you in here at c just to look at that answer first.
+The center of the larger cube is at
 
-Here's your frog, large frog
+$$
+x=L.
+$$
 
-person. Is this going to balance?
+The smaller cube lies to the right of the larger cube, so the combined center of mass must lie to the right of $x=L$.
 
-No. This is going to tip your way. In fact, you don't
+However, the larger cube contains substantially more mass, so the center of mass should remain closer to the larger cube than to the center of the smaller cube.
 
-want to sit down very fast because your little frog
+We therefore expect
 
-person is going to go up really fast. You want to
+$$
+L<x_{\mathrm{cm}}<2L.
+$$
 
-sit closer to the fulcrum than they are because you
+## Positions of the Individual Centers of Mass
 
-have more mass okay so if you're a larger frog person
+The larger cube extends from $x=0$ to $x=2L$, so its center is
 
-not clear depending on how massive you are you
+$$
+\boxed{
+x_1=L
+}.
+$$
 
-might be around b let's say you're about like this you
+The smaller cube begins at $x=2L$ and extends another distance $L$. Its center is therefore
 
-might be there the larger the more massive you are
+$$
+x_2
+=
+2L+\frac{L}{2}.
+$$
 
-the closer to the center you are going to sit so
+Thus,
 
-yeah the what is equal on both sides is the torque.
+$$
+\boxed{
+x_2=\frac{5L}{2}
+}.
+$$
 
-So the system balances at what
+## Masses of the Cubes
 
-we call the center of mass.
+Volume mass density is defined by
 
-Now let me ask you, think about this a little
+$$
+\rho=\frac{m}{V}.
+$$
 
-bit, the center of mass. Is the mass the
+Therefore,
 
-same on both sides? If we find the center of
+$$
+m=\rho V.
+$$
 
-mass and we say the system is balanced. We
+The volume of the larger cube is
 
-have a small frog here, a large frog here.
+$$
+V_1=(2L)^3=8L^3.
+$$
 
-Is the mass the same on both sides of the fulcrum?
+Its mass is
 
-Thumbs up or thumbs down or yes or no in the chat.
+$$
+\boxed{
+m_1=8\rho L^3
+}.
+$$
 
-Is the mass the same on both sides of the fulcrum?
+The volume of the smaller cube is
 
-We're saying the system balances its center of mass.
+$$
+V_2=L^3.
+$$
 
-This large frog is going to sit where it balances so
+Its mass is
 
-the center of mass is where it balances. Okay so in the
+$$
+\boxed{
+m_2=\rho L^3
+}.
+$$
 
-chat we're saying no no no no no very good yes so
+The larger cube therefore has eight times the mass of the smaller cube.
 
-the center of mass the system balances at the center of
+## Center-of-Mass Calculation
 
-mass the mass is not the same on the side the torque
+The combined center of mass is
 
-is the same on both sides
+$$
+x_{\mathrm{cm}}
+=
+\frac{
+m_1x_1+m_2x_2
+}{
+m_1+m_2
+}.
+$$
 
-so torque is r crossed with f so the position crossed
+Substituting the masses and positions,
 
-with the force the force here is going to be mg.
+$$
+x_{\mathrm{cm}}
+=
+\frac{
+(8\rho L^3)(L)
++
+(\rho L^3)\left(\frac{5L}{2}\right)
+}{
+8\rho L^3+\rho L^3
+}.
+$$
 
-So what I'm saying is the weight of the mass or the
+Simplifying the numerator,
 
-weight isn't the same on both sides. What's the same on
+$$
+x_{\mathrm{cm}}
+=
+\frac{
+8\rho L^4
++
+\frac{5}{2}\rho L^4
+}{
+9\rho L^3
+}.
+$$
 
-both sides is the torque. So the torque, this r cross
+Factor out $\rho L^3$:
 
-f, this mg of the frog times the distance from the fulcrum
+$$
+x_{\mathrm{cm}}
+=
+\frac{
+\rho L^3
+\left(
+8L+\frac{5L}{2}
+\right)
+}{
+9\rho L^3
+}.
+$$
 
-equals the mg of the larger frog times the distance
+The common factors cancel:
 
-to the fulcrum from that side. That's the torque. The
+$$
+x_{\mathrm{cm}}
+=
+\frac{
+8L+\frac{5L}{2}
+}{
+9
+}.
+$$
 
-torque is the same on a system balancing its center
+Writing $8L$ as $16L/2$,
 
-of mass and also what we can define as the center of
+$$
+x_{\mathrm{cm}}
+=
+\frac{
+\frac{16L}{2}+\frac{5L}{2}
+}{
+9
+}.
+$$
 
-mass you take something and throw it say you're throwing
+Therefore,
 
-a hammer and it's flipping end over end it's going to
+$$
+x_{\mathrm{cm}}
+=
+\frac{
+21L/2
+}{
+9
+}.
+$$
 
-be rotating about its center of mass so an object in
+Thus,
 
-free rotation will rotate about its center of mass let
+$$
+\boxed{
+x_{\mathrm{cm}}=\frac{7L}{6}
+}.
+$$
 
-me see in the chat i think i just had somebody answering
+Using the numerical length supplied in the activity gives
 
-again okay so yes so system balances at its center
+$$
+\boxed{
+x_{\mathrm{cm}}=0.875\ \mathrm{m}
+\approx0.88\ \mathrm{m}
+}.
+$$
 
-of mass, it rotates freely about its center of mass as
+The result satisfies the prediction
 
-well, and the center of mass is where the torque equals
+$$
+L<x_{\mathrm{cm}}<2L.
+$$
 
-on both sides. I can also define the center of mass.
+The common density $\rho$ cancels because both cubes are made from the same material. Their relative contributions are determined by their relative volumes.
 
-Let's do that mathematically.
+# Continuous Mass Distributions
 
-So we'll say the center of mass, I'll call it x
+The previous examples involved separate objects whose masses could be added using a finite summation.
 
-here if we are doing this in one dimension and we
+For an object whose mass varies continuously with position, we divide the object into infinitesimal mass elements $dm$ and use integration.
 
-call that dimension x, center of mass. I'm just going
+For a thin rod extending along the $x$-axis, the **linear mass density** is defined as
 
-to use cm because I don't want to write com every
+$$
+\boxed{
+\lambda(x)=\frac{dm}{dx}
+}.
+$$
 
-time. X center of mass equals the sum on i of
+The units of linear mass density are
 
-mass i, ri, over the sum on i of mass i. So these
+$$
+[\lambda]
+=
+\frac{\mathrm{kg}}{\mathrm{m}}.
+$$
 
-sums are going to be like m1, x1 plus m2, x2 plus,
+Solving for the mass element gives
 
-etc., and then over m1 plus m2 plus however
+$$
+\boxed{
+dm=\lambda(x)\,dx
+}.
+$$
 
-many masses you have. And I can write that as
+This relationship allows us to convert an integral over mass into an integral over position.
 
-well as an integral. So if I have sort of masses
+For example,
 
-that I can add as units, I can write it out
+$$
+M=\int dm
+$$
 
-as a summation or I can write it as the integral
+can be rewritten as
 
-of 1 over the total mass m from 0 to m x dm
+$$
+M=\int\lambda(x)\,dx.
+$$
 
-where x is a position and dm is a mass increment.
+Similarly, the center-of-mass equation
 
-Okay so we'll work with both of these
+$$
+x_{\mathrm{cm}}
+=
+\frac{1}{M}
+\int x\,dm
+$$
 
-definitions the kind of the incremental summation
+can be written as
 
-way of finding center of mass and the
+$$
+\boxed{
+x_{\mathrm{cm}}
+=
+\frac{1}{M}
+\int x\lambda(x)\,dx
+}.
+$$
 
-doing the integral to find the center of
+The integration limits must describe the physical length of the object.
 
-mass okay any questions about this so far
+# Worked Example 4: Rod with Linearly Increasing Density
 
-all right then i hope i do have a question what are
+Consider a rod of total mass $M$ and length $L$ extending from
 
-the bounds of the integral from zero to mass zero to m.
+$$
+x=0
+$$
 
-Okay.
+to
 
-Let's go to this question.
+$$
+x=L.
+$$
 
-I am going to, for some reason it's
+Its linear mass density is
 
-showing responses from before. I'm
+$$
+\lambda(x)=Cx,
+$$
 
-going to clear those and activate. Here
+where $C$ is an unknown constant.
 
-I have this image.
+Because $\lambda$ increases with $x$, the rod is least dense near $x=0$ and most dense near $x=L$.
 
-So,
+A graph of $\lambda$ versus $x$ is a straight line with slope $C$.
 
-let's see.
+We want to determine $C$ in terms of the rod’s total mass and length.
 
-You'll be able to see the image.
+## Total Mass of the Rod
 
-I'm going to draw it on my page.
+The total mass is
 
-Okay, find the center of mass of the blocks
+$$
+M=\int_0^M dm.
+$$
 
-with respect to the position of m1. So, this
+Using
 
-integral of the, well, this doesn't need to be an
+$$
+dm=\lambda(x)\,dx,
+$$
 
-integral, but the center of mass has to be, is
+we convert the integral from mass to position:
 
-a position, so it needs a reference position.
+$$
+M
+=
+\int_0^L\lambda(x)\,dx.
+$$
 
-Okay, so x center of mass equals sum on i, m,
+Substituting
 
-i, r, i over sum on i of m, i. and here's our
+$$
+\lambda(x)=Cx,
+$$
 
-system we have. I'm going to put these masses as
+gives
 
-point masses, m1 and m2, and this fulcrum there.
+$$
+M
+=
+\int_0^L Cx\,dx.
+$$
 
-Let's see, did I put it?
+Because $C$ is constant,
 
-No.
+$$
+M
+=
+C\int_0^L x\,dx.
+$$
 
-So we know
+Evaluating the integral,
 
-the length of the rod and the relative masses.
+$$
+M
+=
+C
+\left[
+\frac{x^2}{2}
+\right]_0^L.
+$$
 
-Everybody's back.
+Therefore,
 
-Please put in an answer if you
+$$
+M
+=
+C
+\left(
+\frac{L^2}{2}-0
+\right).
+$$
 
-still need to do that. Three, two,
+Thus,
 
-one.
+$$
+M=\frac{CL^2}{2}.
+$$
 
-All right, thank you. stopping delivery.
+Solving for $C$,
 
-Okay, so here's our general equation,
+$$
+2M=CL^2,
+$$
 
-the center of mass equation. We know
+so
 
-m1 equals 3m2, and we know the
+$$
+\boxed{
+C=\frac{2M}{L^2}
+}.
+$$
 
-length l. I'll put the l here.
+## Unit Check
 
-this is L, and what I want is x center of mass from
+Since
 
-position of m1. So I'm going to let this be the
+$$
+\lambda(x)=Cx,
+$$
 
-origin, and I know if this system is in balance, it's
+the units of $C$ must satisfy
 
-balancing about this point, so there's my x center of
+$$
+[C][x]=[\lambda].
+$$
 
-mass. So I want the x center of mass. Okay, so I'm
+Therefore,
 
-going to use this formula first, and then I'll show
+$$
+[C]
+=
+\frac{
+[\lambda]
+}{
+[x]
+}.
+$$
 
-you a way to find this using Torx. So X center of
+Substituting the units,
 
-mass equals some on MIRI. So RI is from the origin here.
+$$
+[C]
+=
+\frac{
+\mathrm{kg/m}
+}{
+\mathrm{m}
+}.
+$$
 
-So we have M1 times 0 plus M2 times L over M1 plus
+Thus,
 
-M2. and I can write that as X center of mass equals
+$$
+\boxed{
+[C]=\mathrm{kg/m^2}
+}.
+$$
 
-M1 is 3 times M2, but this term goes to 0 anyway.
+Using the numerical mass and length supplied in the activity gives approximately
 
-So M2L over 3M2 plus M2. So that
+$$
+\boxed{
+C=0.40\ \mathrm{kg/m^2}
+}.
+$$
 
-comes out to be, now M2 is canceled.
+This value completely specifies how the rod’s mass density changes with position.
 
-This is 3M2 plus M2, so that's 4M2. so
+In the next lecture, this density function can be substituted into
 
-m2 l over 4 m2 so that's l over 4 and if
+$$
+x_{\mathrm{cm}}
+=
+\frac{1}{M}
+\int_0^L x\lambda(x)\,dx
+$$
 
-my l is 0.88 meters that should go to
+to determine the center of mass of the nonuniform rod.
 
-0.88 meters divided by 4 which is 0.22 meters.
+# General Strategy for Center-of-Mass Problems
 
-Okay any questions about this?
+## 1. Choose a Coordinate Origin
 
-So like we said earlier we can also do a net
+Every center-of-mass position must be measured relative to a reference point.
 
-torque or an equalization of torques about the
+Choose an origin that makes the individual positions simple.
 
-center. We can have torque 1 magnitude equals torque
+## 2. Predict the Approximate Location
 
-2 magnitude, and so that would be m1 g x. So
+Before calculating, determine where the center of mass should lie physically.
 
-I'm calling that x the center of mass, so m1 to
+The center of mass should be shifted toward the region containing more mass.
 
-the position. So remember torque is r cross f.
+## 3. Identify Each Mass and Position
 
-So the force is m1, and since these are magnitudes
+For discrete objects, list each mass $m_i$ and the coordinate $x_i$ of its own center of mass.
 
-and these are r and f are 90 degrees, I can
+Then use
 
-write this as RF sine of 90 as the magnitude of
+$$
+x_{\mathrm{cm}}
+=
+\frac{
+\sum_i m_ix_i
+}{
+\sum_i m_i
+}.
+$$
 
-torque. So M1GX equals M2G, and then the distance
+## 4. Group Convenient Subsystems
 
-from M2 to the center of mass is L minus X.
+A uniform group of objects may be replaced by a point mass located at that group’s center of mass.
 
-So if I get, I'm trying to solve this for
+This can simplify a large summation substantially.
 
-X, so I'm going to say M1, oh, G cancels
+## 5. Convert Density into Mass
 
-out, m1 x plus m2 x equals m2 l so i have
+For a continuous one-dimensional object,
 
-let's see m1 plus m2 times x equals m2 l so x equals
+$$
+dm=\lambda(x)\,dx.
+$$
 
-m2 l over m1 plus m2 which is the same as what
+For a volume with uniform density,
 
-I had over here. So it goes to L over 4. I'm very
+$$
+m=\rho V.
+$$
 
-happy with that. So yeah, you can do this either
+## 6. Integrate Over the Physical Object
 
-with torques going, the torque being equal on both
+For a continuous distribution,
 
-sides of the center of mass, or using the center
+$$
+x_{\mathrm{cm}}
+=
+\frac{1}{M}
+\int x\,dm.
+$$
 
-of mass definition to calculate the center of mass.
+After substituting for $dm$, use limits corresponding to the object’s actual dimensions.
 
-Let's take a moment to talk about what a torque
+## 7. Check Units and Physical Reasonableness
 
-is. So R crossed with a force. If I just have this
+The center of mass must have units of length.
 
-board sitting here let's say it's a hinge
+The calculated position should also lie in a physically reasonable location relative to the mass distribution.
 
-and I'm pushing on it with a force then
+# Summary
 
-and the force is a distance r from the hinge
+The center of mass is a mass-weighted average position.
 
-then what I'm going to do is torque that
+For a system of discrete particles,
 
-object against the hinge so a force gives acceleration
+$$
+\boxed{
+\vec{r}_{\mathrm{cm}}
+=
+\frac{
+\sum_i m_i\vec{r}_i
+}{
+\sum_i m_i
+}
+}.
+$$
 
-if I push something with a force and I accelerate
+In one dimension,
 
-the object. If I push something with a torque, then
+$$
+\boxed{
+x_{\mathrm{cm}}
+=
+\frac{
+\sum_i m_ix_i
+}{
+\sum_i m_i
+}
+}.
+$$
 
-it matters where it is with respect to the rotation
+For a continuous object,
 
-point, and it also rotates the object in general. So
+$$
+\boxed{
+x_{\mathrm{cm}}
+=
+\frac{1}{M}
+\int x\,dm
+}.
+$$
 
-not in every single... Oops, I messed up my piece of
+Torque is
 
-paper. Sorry about that. But yeah, think of torque as
+$$
+\boxed{
+\vec{\tau}=\vec{r}\times\vec{F}
+}
+$$
 
-being something that rotates an object. So the force
+with magnitude
 
-and the position matter in the torque. torque equals
+$$
+\boxed{
+\tau=rF\sin\theta
+}.
+$$
 
-R cross F. And here I would have that this object M1
+For rotational equilibrium,
 
-would be torquing in the counterclockwise direction.
+$$
+\boxed{
+\sum\vec{\tau}=0
+}.
+$$
 
-M2 would be torquing in the clockwise direction. They
+For two masses on opposite sides of a fulcrum,
 
-would tend to want to rotate the system. If they're
+$$
+\boxed{
+m_1r_1=m_2r_2
+}.
+$$
 
-equal and opposite torques, then the system stays in
+For two point masses separated by $L$, with $m_1=3m_2$ and the origin at $m_1$,
 
-balance. And we would call that stable equilibrium.
+$$
+\boxed{
+x_{\mathrm{cm}}=\frac{L}{4}
+}.
+$$
 
-Okay, any questions about this?
+For the ten-block arrangement considered in the lecture,
 
-Okay, let's go to another question.
+$$
+\boxed{
+x_{\mathrm{cm}}=2.8\ \mathrm{cm}
+}.
+$$
 
-I'm going to go look at this for a
+For a cube of side $2L$ attached to a cube of side $L$, with both cubes having the same density,
 
-second because it has my diagram.
+$$
+\boxed{
+x_{\mathrm{cm}}=\frac{7L}{6}
+}.
+$$
 
-So here I have a system of blocks.
+Linear mass density is
 
-These blocks are identical with uniform density.
+$$
+\boxed{
+\lambda(x)=\frac{dm}{dx}
+}
+$$
 
-Each has a mass m and I want you to find the
+and therefore
 
-center of mass of the system with respect to the
+$$
+\boxed{
+dm=\lambda(x)\,dx
+}.
+$$
 
-origin. so the origin is here on the left side of
+For a rod whose density varies according to
 
-the system of blocks where is the center of mass
+$$
+\lambda(x)=Cx,
+$$
 
-i have a question in the chat what axis is
+the total mass is
 
-torque don't understand what that means
+$$
+M=\frac{CL^2}{2},
+$$
 
-torque is r cross f so r defines where the axis
+so
 
-is but torque doesn't have an axis itself
+$$
+\boxed{
+C=\frac{2M}{L^2}
+}.
+$$
 
-yeah not quite sure what you're getting
-
-at can you rephrase your question Okay,
-
-well, think about it, maybe, and think about how
-
-you could ask it in a little different way then.
-
-Okay, anyway, I will go ahead and
-
-activate this question for everyone.
-
-Another way to think of it is if I have this system
-
-and I want to put a fulcrum somewhere, where
-
-do I put the fulcrum to balance it? but for this,
-
-I would treat each of these blocks as a point mass
-
-and just find the center of mass of the system.
-
-Okay,
-
-cat dancing on the keyboard issues. I
-
-see most people have an answer in. Please
-
-do put one in if you still need to do
-
-that. I will give you three more seconds.
-
-Three,
-
-two, one.
-
-Thank you, stopping delivery.
-
-Okay, so we're looking for the x center of
-
-mass from the origin. Here is our center of mass
-
-equation. I'm going to use that to find the
-
-center of mass, and I'm just going to substitute
-
-in the values from the diagram here. Now,
-
-I know I haven't drawn it perfectly, but we're
-
-assuming all these blocks are uniform density and
-
-that they're identical to each other, so identical
-
-in size. And what that means is I could either
-
-look at each one of these blocks as a point mass
-
-and then if I want to find the x center of mass I
-
-just add up all the point masses in their positions
-
-from the origin. I could also find a y center
-
-of mass if I wanted to do it in the y direction.
-
-There is a little bit simpler way to do that and
-
-that's to think of this first block of six
-
-blocks as being a single point mass with its center
-
-of mass here And if we're assuming these are
-
-point masses, that gives the center of mass of
-
-this block of 6 right here at 1.5 centimeters.
-
-This blocks between 3 and 4 as being here, center
-
-of mass here, and 5 and 6 being a center of
-
-mass here. So I could write x center of mass
-
-equals, let's see, 6m, if I assume the mass is
-
-m, so 6 times the mass m times the position of
-
-that center of mass, which is 1.5 centimeters,
-
-plus this group of 2 has a mass of 2m, 2m times 4
-
-centimeters plus 2m. These two stacked on the end at
-
-5.5 centimeters. And then over the total mass, I
-
-just count these. They're 6, 7, 8, 9, 10 over 10 m.
-
-Okay, so that's a way to do this. And you could have
-
-done it using every single point mass. You could
-
-have done it using integration. That would have taken
-
-longer. And we're assuming these half center of mass
-
-at their individual points. So we're not really
-
-considering the shape of them. We don't need to consider
-
-the shape of them because they're uniform density.
-
-Okay, so let's see.
-
-We want to do x center of mass equals then 6 times
-
-1 1⁄2 would be 9, and then we can divide through by
-
-m. So 9 centimeters plus 8 centimeters plus 11
-
-centimeters divided by 10. That would be 28 over 10
-
-centimeters or 2.8 centimeters from the left side. So 2
-
-.8 centimeters. There's my X center of mass right
-
-here. And that, you know, if you're going to kind of
-
-eyeball it and think, where would this thing balance?
-
-Well, it would be balancing further to the left than
-
-the center at. Like if this goes over to 6, it
-
-would be further to the left than 3. But yeah, that's
-
-how I could find the center of mass of this system.
-
-Any questions here?
-
-All right, then, let's move on.
-
-Don't have any questions here. Let us
-
-go to the, oh I do have a question.
-
-What's the units for center of mass? Well
-
-it's a position so the units are in this case
-
-are centimeters but units of length. Yes
-
-center of mass has units of length. Good
-
-question. Thank you very much. Other questions.
-
-Yes think of the the center of mass as being a
-
-position. That's a little bit odd, too. You think of
-
-the center of mass. Wouldn't it have units of mass?
-
-And it doesn't even have to do with the mass. It's
-
-the same on each side. That's just maybe not a very
-
-good thing to call it, is it, the center of mass?
-
-Okay, but we're stuck with that.
-
-Let's go to the next question.
-
-Okay, here I have a system that has two
-
-blocks used together, cemented blocks, and
-
-I'm going to draw just from the side view.
-
-We have a large block that has length 2L,
-
-and a small block attached to the middle of it and
-
-that has length L. So what we're going to want to
-
-do is think about the center of mass of the system.
-
-The density of these blocks is density rho, so
-
-constant mass density rho. So blocks have constant
-
-volume density rho, so rho equals mass per volume.
-
-Okay, and so mass equals rho times volume. Okay,
-
-so where do you expect to find the center of mass
-
-with respect to the origin, if I define the
-
-origin as being the left edge of this large block?
-
-Where would you expect to find the center of mass?
-
-I will activate.
-
-Okay,
-
-most people have an answer in. Please put one
-
-in now if you still need to do that. Three, two,
-
-one.
-
-All right, thank you, stopping delivery.
-
-Okay, what say you?
-
-all right most people are saying between L and 2L
-
-that is correct so yeah if I had this thing balancing
-
-where would I expect to put the fulcrum I wouldn't
-
-expect to put it here and halfway across this big
-
-block that would obviously tip to the right right
-
-that would have more torque on the right side I wouldn't
-
-expect to find it here that would obviously tip
-
-to the left so somewhere in between L and 2L. I
-
-don't know exactly where, but somewhere in there that's
-
-where the center of mass is going to be, right?
-
-So that's the region I would expect to find it in
-
-between L and 2L if I'm measuring from the left side.
-
-Any questions about this?
-
-All right, very good. Now let's go ahead
-
-and find the center of mass of this system.
-
-Something really strange happened. I have 39
-
-responses. That must have stuff from before. I'm
-
-going to deactivate this and clear the responses.
-
-Yeah, I'm not sure what's going on here,
-
-but we don't even have that many people here. I'm
-
-going to clear the responses and reactivate.
-
-Sorry about that. Not sure why the
-
-responses are showing up from before.
-
-so yeah if you did put in a
-
-response please do so again and
-
-I see most people have an answer in please put
-
-in an answer now if you still need to do that three
-
-two one all right thank you stopping delivery
-
-okay so let's see we want to use our center of
-
-mass formula for finding the center of mass. I am
-
-going to put this into terms of, if this is m1,
-
-and I'll call this m2. So x center of mass equals
-
-m1 x1 plus m2 x2 over m1 plus m2. Now we need
-
-to figure out what these masses are. The positions
-
-we can, we already sort of talked about, m1 plus
-
-m2. So m, so let's see, let's start with that.
-
-x1 would be the center of mass of m1. That
-
-equals l for measuring from the left side.
-
-And x2 would be l plus l. That takes me across
-
-the big block, plus L over 2, so 5 halves L.
-
-Now let's find the masses. If we have rho equals mass
-
-per volume, that tells us mass equals rho times the
-
-volume. So m1 equals the density rho times the volume
-
-of this cube. And so the volume of a cube is a side
-
-cubed. So that would be rho times 2L quantity cubed or 8
-
-rho L cubed. M2 equals rho L cubed. Just simply that.
-
-And
-
-And now let's see, we want to substitute those
-
-expressions into our equation. X center of
-
-mass equals m1 x1, so 8 rho l cubed times x1,
-
-which is l, plus m2, which is rho l cubed, times
-
-x2, which is 5 halves L, and then divided by
-
-M1 plus M2. So 8 rho L cubed plus rho L cubed.
-
-All right, now we want to, let's see, we have
-
-rho everywhere. That's going to cancel out. I
-
-can write this, let me write it as, just making
-
-it a little bit simpler, 8 rho L to the 4th plus
-
-5 halves rho L to the 4th over 9 rho L cubed.
-
-So I see L cubed cancels, rho cancels everywhere,
-
-X center of mass equals, I'm going to write
-
-this as 16 halves so I can combine these fractions,
-
-16 halves L plus 5 halves L. So I've canceled
-
-the row everywhere and canceled L cubed. And so
-
-that's going to be divided by 9. So that's what?
-
-16 and 5 over 2 is 21 halves over 9 L,
-
-which would be 21 18 l, which is 7 6
-
-l, which comes out to be 0.875 meters.
-
-Okay, questions about this. Oh, I
-
-see I have something in the chat.
-
-Okay, I like that you're talking to
-
-each other about things in the chat.
-
-It's better if you wait to ask about things that
-
-like when the quiz is being graded, when we're
-
-not working on a problem. So, yeah, ask me that
-
-stuff right at the end of class or after class
-
-if you didn't hear it at the start of class.
-
-Okay, so x center of mass, I have 76L or I can
-
-write that as a decimal, 0.88 meters, 0.875.
-
-Any questions about this?
-
-All right, we still have five minutes. we can work on
-
-another problem all right so now this had a volume
-
-mass density constant volume mass density now we're
-
-going to work with a system that has linear mass density
-
-so the mass changes with the disk or the mass yes the
-
-mass per length so i have a rod of mass m so i know
-
-So M and L, and the linear mass density is
-
-lambda of X equals CX, so linear mass density.
-
-And I'm going to find the constant C. So the way
-
-to think about this is I've got this rod, and as it
-
-goes to the right, it gets more and more and more
-
-massive. Don't know how that's happening, but I
-
-can identify this linear mass density. This thing
-
-is getting more and more massive, more and more
-
-dense as it goes to the left. And it also does so in
-
-a linear fashion. So if I plot m against x, then
-
-I would have this linear function with a slope c.
-
-And so this comes over to the length l.
-
-Now, I know lambda of x equals
-
-cx. and I want what is c.
-
-So I want to find this constant c. Now,
-
-useful to think about how to find the total mass of
-
-the system. We talked about finding the center of mass
-
-of the system, but the mass of a system, the simple
-
-way to write it would be from 0 to m of dm, right? So
-
-I'm adding up all the little m's. I add that up to the
-
-center of mass. Also, if I have lambda, this is a
-
-linear mass density, that's mass per length, and I can
-
-call that dm by dx. So this is some function of x, and
-
-since it's the same linear mass density anywhere
-
-along x, it varies with x the same way along x,
-
-then I can write lambda as mass per length or dm
-
-dx. It would be mass per length if it was constant,
-
-but it's changing, so these are all both functions.
-
-m is a function of x, so dm dx is the mass.
-
-And so, let's see, we're running a little bit low
-
-on time. This means I can write dm equals lambda dx.
-
-Okay, so do a substitution of variables here.
-
-I'll go ahead and activate.
-
-Oops.
-
-Let me deactivate. I see I have
-
-these responses in here again.
-
-How strange.
-
-I didn't notice that before
-
-class. Okay, now I'm activating.
-
-I see roughly two-thirds of you have an answer
-
-in, and we're getting a little short on time, so
-
-I'm going to ask people to go ahead and put an answer
-
-in. Remember, for participation in Zoom, you
-
-get credit whether your answer is correct or not.
-
-You You're doing the asynchronous assignment.
-
-So I'll give you three more
-
-seconds to get in an answer. Three,
-
-two,
-
-one.
-
-All right. Thank you. Stopping delivery.
-
-Okay.
-
-So now we set up the integral. The total mass
-
-equals from 0 to m, dm. And I've done the
-
-substitution. Mass equals from 0 to L, lambda dx.
-
-Next thing I want to do is substitute in my
-
-expression, lambda of x equals cx, so 0 to L of the
-
-limits of integration, cx dx. Now I simply have to
-
-take the integral of this polynomial, I raise by 1
-
-power and divide by that value. So mass equals cx
-
-squared over 2 from 0 to L. That gives me mass
-
-equals cl squared over 2, subtracting off the zeros.
-
-So I just really need to solve this for C. So
-
-let's see, multiply by 2 and divide by L squared.
-
-C equals 2M over L squared. So just getting
-
-C by itself, multiply by 2, divide by L
-
-squared, I get C equals 2M over L squared.
-
-And just plug in the values, you get 0.4.
-
-all right i see we're out of time so i'll go ahead
-
-and end here we'll pick up with problems related to
-
-this tomorrow and we'll work a little bit more on
-
-center of mass and also moment of inertia will be our
-
-main topic for tomorrow if you have any more questions
-
-for me just stick around and you can ask me in
-
-my office hour or shoot me an email if you'd rather
-
-do that bye thank you for coming see you next time
+These ideas provide the foundation for calculating the center of mass and moment of inertia of continuous and composite objects.

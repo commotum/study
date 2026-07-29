@@ -1,1017 +1,1091 @@
-Hey there.
+# Physics 212: Newtonian Gravitation, Kepler’s Laws, and Orbital Motion
 
-Welcome to Physics 212. Hey
+Welcome back to Physics 212.
 
-everybody, welcome back.
+## Announcements
 
-Well, not really anything new for an
+Quiz 1X is currently open and will close Friday at 6:00 p.m. The assignment is optional, but be sure to follow its instructions carefully if you choose to complete it.
 
-announcement today. We have Quiz 1X
+Quiz 2 will open on Saturday for the Proctorio version and close on Monday. The Zoom versions of Quiz 2 will also be administered on Monday.
 
-open that closes at 6 p.m. on Friday.
+You should continue preparing your handwritten note sheet for Quiz 2.
 
-And please make sure you follow the directions
+## Introduction to Newtonian Gravity
 
-in the assignment carefully. It's optional, so
+Today, we are beginning our study of gravity and orbital motion.
 
-don't have to do that one, but you can do it.
+We will use **Newtonian gravity**, meaning that we will describe gravitational interactions using forces rather than general relativity.
 
-We've talked about it quite a bit the last couple
+Gravity is a **central force**. The force between two objects acts along the line connecting their centers, and its magnitude depends only on the distance between them.
 
-of days, so we won't go into detail there.
+For two point masses $m_1$ and $m_2$ separated by a distance $r$, the magnitude of the gravitational force is
 
-and also Quiz 2 coming up. Quiz 2 will open on
+$$
+F_g
+=
+G\frac{m_1m_2}{r^2},
+$$
 
-Saturday for the Proctorio version, close on
+where $G$ is the universal gravitational constant:
 
-Monday, and Monday we'll have the Zoom versions.
+$$
+\boxed{
+G
+=
+6.67\times10^{-11}\ \mathrm{N\,m^2/kg^2}
+}.
+$$
 
-So be working on your note sheet for Quiz 2.
+If the radial unit vector $\hat{\mathbf r}$ points outward from the central mass, the force on the other mass can be written as
 
-We will be starting new material today, working
+$$
+\boxed{
+\vec{F}_g
+=
+-G\frac{m_1m_2}{r^2}\hat{\mathbf r}
+}.
+$$
 
-on gravity. Gravity is a central force,
+The negative sign indicates that gravity is attractive and points inward, opposite the outward radial direction.
 
-can be treated as a central force if you have
+By Newton’s third law, the two objects exert gravitational forces of equal magnitude and opposite direction on one another.
 
-a large enough body like a planet or a star.
+## Gravitational Acceleration Near Earth
 
-So we will be doing circular motion orbits and such.
+Near Earth’s surface, the gravitational force on an object of mass $m$ is often written as
 
-So let's see, I'd like to just kind of
+$$
+F_g=mg,
+$$
 
-bring up the idea of Newtonian gravity.
+where $g$ is the local acceleration due to gravity.
 
-By that we mean we're not doing
+The general gravitational-force equation gives
 
-general relativity, we're doing forces.
+$$
+F_g
+=
+G\frac{M_E m}{R_E^2},
+$$
 
-So two massive particles feel a gravitational
+where:
 
-force from each other. It is an attractive force,
+- $M_E$ is the mass of Earth
+- $R_E$ is the radius of Earth
+- $m$ is the mass of the object
 
-so Fg we can write as mg if we're close to the
+Equating the two expressions,
 
-surface of the Earth. If we're not close to the
+$$
+mg
+=
+G\frac{M_E m}{R_E^2}.
+$$
 
-surface of the Earth, we need to use the general
+The object’s mass cancels:
 
-form g times mass of one object times the mass
+$$
+g
+=
+G\frac{M_E}{R_E^2}.
+$$
 
-of the other object over r squared. squared,
+Using
 
-this is a vector equation in the r hat direction,
+$$
+M_E
+=
+5.97\times10^{24}\ \mathrm{kg}
+$$
 
-and it's an attractive force. So that's where this
+and
+
+$$
+R_E
+\approx
+6.37\times10^6\ \mathrm{m},
+$$
+
+we obtain
+
+$$
+g
+=
+\frac{
+\left(
+6.67\times10^{-11}\ \mathrm{N\,m^2/kg^2}
+\right)
+\left(
+5.97\times10^{24}\ \mathrm{kg}
+\right)
+}{
+\left(
+6.37\times10^6\ \mathrm{m}
+\right)^2
+}.
+$$
+
+Therefore,
+
+$$
+\boxed{
+g\approx9.81\ \mathrm{m/s^2}
+}.
+$$
+
+The universal gravitational constant $G$ has the same value everywhere. The local gravitational acceleration $g$, however, depends on the mass of the attracting body and the distance from its center.
+
+In general,
+
+$$
+\boxed{
+g(r)=\frac{GM}{r^2}
+}.
+$$
+
+## Gravitational Acceleration at an Altitude
+
+Consider a satellite at an altitude
+
+$$
+h=\frac{R_E}{3}
+$$
+
+above Earth’s surface.
+
+The distance from the satellite to Earth’s center is not $h$. It is
+
+$$
+r=R_E+h.
+$$
+
+The gravitational acceleration at this altitude is
+
+$$
+g_h
+=
+\frac{GM_E}{(R_E+h)^2}.
+$$
+
+At Earth’s surface,
+
+$$
+g_0
+=
+\frac{GM_E}{R_E^2}.
+$$
+
+To compare the two values, form the ratio
+
+$$
+\frac{g_h}{g_0}
+=
+\frac{
+GM_E/(R_E+h)^2
+}{
+GM_E/R_E^2
+}.
+$$
+
+The factors $G$ and $M_E$ cancel:
+
+$$
+\frac{g_h}{g_0}
+=
+\frac{R_E^2}{(R_E+h)^2}.
+$$
+
+Using
+
+$$
+h=\frac{R_E}{3},
+$$
+
+the distance from Earth’s center becomes
+
+$$
+R_E+h
+=
+R_E+\frac{R_E}{3}
+=
+\frac{4R_E}{3}.
+$$
 
-minus sign comes from. Two objects that are, that have
+Therefore,
+
+$$
+\frac{g_h}{g_0}
+=
+\frac{
+R_E^2
+}{
+\left(
+\frac{4R_E}{3}
+\right)^2
+}.
+$$
+
+Simplifying,
 
-mass are attracted to each other gravitationally.
+$$
+\frac{g_h}{g_0}
+=
+\frac{9}{16}.
+$$
+
+Thus,
 
-Now, if we have that, this minus gmm over r, I'm just
+$$
+\boxed{
+\frac{g_h}{g_0}
+\approx0.56
+}.
+$$
 
-going to work with the magnitude of it for the moment
+At an altitude equal to one-third of Earth’s radius, the gravitational acceleration is approximately $56\%$ of its surface value:
+
+$$
+g_h\approx0.56g_0.
+$$
+
+This calculation illustrates that gravity does not suddenly disappear above Earth’s surface. It decreases continuously according to the inverse-square relationship.
+
+## Gravity Compared with the Electric Force
+
+The electric and gravitational forces between two particles both follow inverse-square laws.
+
+For two electrons separated by a distance $r$, the electric-force magnitude is
+
+$$
+F_e
+=
+k_e\frac{e^2}{r^2},
+$$
+
+while the gravitational-force magnitude is
+
+$$
+F_g
+=
+G\frac{m_e^2}{r^2}.
+$$
 
-g m m over r squared equals mg this little m will
+Their ratio is
 
-cancel out so g capital m over r squared equals little
+$$
+\frac{F_e}{F_g}
+=
+\frac{
+k_e e^2/r^2
+}{
+Gm_e^2/r^2
+}.
+$$
 
-g and for this g we're going to use a gravitational
+The distance cancels:
 
-constant 6.67 times 10 to the minus 11 newton meters
+$$
+\frac{F_e}{F_g}
+=
+\frac{k_e e^2}{Gm_e^2}.
+$$
 
-squared per kilogram squared mass of the earth is 5.97
+Numerically,
 
-times 10 to the 24th kilograms and radius of the earth
+$$
+\boxed{
+\frac{F_e}{F_g}
+\approx4\times10^{42}
+}.
+$$
 
-the equatorial and polar radius are a little different
+The electric force between two electrons is therefore approximately $10^{42}$ times stronger than their gravitational attraction.
 
-from each other but if i average that which i'm just
+Gravity nevertheless dominates many astronomical systems because ordinary matter is usually close to electrically neutral. Positive and negative charges tend to cancel on large scales, while the gravitational effects of ordinary mass add together.
 
-barely i'm really just adding and dividing by two I'm
+Within Newtonian mechanics, gravity between ordinary masses is always attractive.
 
-not averaging carefully so that but I would say that
+## Gravitational Potential Energy
 
-then that the radius of the earth is 6.37 kilometers
+Force and potential energy are related by
 
-over average and if I plug in those values in fact
+$$
+F_r
+=
+-\frac{dU}{dr}.
+$$
 
-let me give you just a minute to do that I'd like you
+For gravity,
 
-to plug in those values and calculate what little g is
+$$
+F_r
+=
+-G\frac{Mm}{r^2}.
+$$
 
-but then 9.8 9.81 9 .81 9.7 9.8 okay good
+Therefore,
 
-I'm seeing a lot of people putting in 9.81.
+$$
+-\frac{dU}{dr}
+=
+-G\frac{Mm}{r^2}.
+$$
 
-Yeah, if you're rounding the values before you calculate
+Canceling the negative signs gives
 
-or something like that, you might be getting a
+$$
+\frac{dU}{dr}
+=
+G\frac{Mm}{r^2}.
+$$
 
-little different value. But 9.8, this is equals 9.81
+Integrating with respect to $r$,
 
-meters per second squared. So when you say that little
+$$
+U(r)
+=
+\int
+G\frac{Mm}{r^2}\,dr.
+$$
 
-g is 9.81 meters per second squared, you're really
+Because
 
-saying that the acceleration due to gravity well first
+$$
+\int r^{-2}\,dr=-r^{-1},
+$$
 
-of all this gravitational constant that's the same
+we obtain
 
-everywhere that's just a constant assuming the mass of
+$$
+U(r)
+=
+-\frac{GMm}{r}+C.
+$$
 
-the earth two three sig figs and the radius of the earth
+We conventionally choose the gravitational potential energy to be zero when the two objects are infinitely far apart:
 
-and like i said that the earth isn't exactly spherical
+$$
+U(\infty)=0.
+$$
 
-but we're assuming that it's spherical then um
+This makes $C=0$, so
 
-averaging the radius at 6 .37 kilometers oh sorry yeah
+$$
+\boxed{
+U(r)
+=
+-\frac{GMm}{r}
+}.
+$$
 
-6.37 kilometers then um i get 9.81 meters per second
+The negative sign means that two gravitationally interacting objects at a finite separation form a bound system relative to the reference state in which they are infinitely far apart.
 
-squared that's the acceleration due to gravity now
+As $r$ increases,
 
-notice if i was at a different height let's say it wasn't
+$$
+U(r)\rightarrow0.
+$$
 
-on the surface of the earth or Or maybe you'd ask
+As the objects move closer together, the potential energy becomes more negative.
 
-how far away from the surface of the Earth does this
+## Circular Orbits
 
-hold? And my answer to that would be, depending on the
+Consider a satellite of mass $m$ moving in a circular orbit of radius $r$ around a much more massive body of mass $M$.
 
-accuracy of your values, you could figure out how far
+The gravitational force supplies the required centripetal force:
 
-away you'd have to be to make some kind of a difference
+$$
+F_g=F_c.
+$$
 
-in this value. Let's do a calculation like that.
+Therefore,
 
-Let's say we have a satellite in circular orbit at
+$$
+G\frac{Mm}{r^2}
+=
+m\frac{v^2}{r}.
+$$
 
-a radius, an altitude of one-third Earth radius.
+The satellite’s mass cancels:
 
-So, let's see, here's earth,
+$$
+G\frac{M}{r^2}
+=
+\frac{v^2}{r}.
+$$
 
-there's the radius of the earth.
+Multiplying by $r$ gives
 
-Let's make this bigger.
+$$
+v^2
+=
+\frac{GM}{r}.
+$$
 
-We can do a bigger diagram here.
+Thus, the circular orbital speed is
 
-Okay, here's the earth, here's the radius of the
+$$
+\boxed{
+v
+=
+\sqrt{\frac{GM}{r}}
+}.
+$$
 
-earth, and then one-third the altitude of h. I'm going
+The speed is independent of the satellite’s mass. At a specified orbital radius, all sufficiently small satellites orbit the same central body with the same circular-orbit speed.
 
-to put my h here. h equals r e over 3 that's r sub e
+A larger orbital radius corresponds to a lower orbital speed:
 
-I'm going to ask you to find the acceleration of the
+$$
+r\uparrow
+\quad\Longrightarrow\quad
+v\downarrow.
+$$
 
-satellite g h in terms of little g so let's see no
+## Kinetic and Potential Energy in a Circular Orbit
 
-g equals 6.67 times 10 to the minus 11
+The satellite’s kinetic energy is
 
-newton meters squared per kilogram squared.
+$$
+K
+=
+\frac{1}{2}mv^2.
+$$
 
-Now, mass of the earth
+Using
 
-is 5.97 times 10 to the 24th kilograms.
+$$
+v^2=\frac{GM}{r},
+$$
 
-Radius of the earth is 6.37
+we obtain
 
-kilometers.
+$$
+K
+=
+\frac{1}{2}m
+\left(
+\frac{GM}{r}
+\right).
+$$
 
-Let's see. You might not even need these if
+Therefore,
 
-you do this. Depending on how you do this, find
+$$
+\boxed{
+K
+=
+\frac{GMm}{2r}
+}.
+$$
 
-And little gh over little g, and remember,
+The gravitational potential energy is
 
-so gm, m over r squared is the force due
+$$
+U
+=
+-\frac{GMm}{r}.
+$$
 
-to gravity, gm over r squared is little g.
+The total mechanical energy is therefore
 
-Now, so if I want to find little g at
+$$
+E=K+U.
+$$
 
-a radius other than the Earth, I
+Substituting,
 
-have to use the radius at that height.
+$$
+E
+=
+\frac{GMm}{2r}
+-
+\frac{GMm}{r}.
+$$
 
-I will go ahead and... Well,
+Thus,
 
-first let me put the Poll
+$$
+\boxed{
+E
+=
+-\frac{GMm}{2r}
+}.
+$$
 
-Everywhere link in the chat.
+The total energy of a circular orbit is negative, confirming that the satellite is gravitationally bound.
 
-Huh, somehow that is not copying
+The relationships among the energies are
 
-for me, but this one will.
+$$
+U=-2K
+$$
 
-Okay.
+and
 
-There's the Poll Everywhere link. I will activate.
+$$
+E=-K=\frac{U}{2}.
+$$
 
-Okay, enter your answer using two sig figs.
+## Newton’s Cannon and the Meaning of Orbit
 
-What's the acceleration of the satellite in units
+Newton’s cannon is a thought experiment that illustrates what it means for an object to orbit Earth.
 
-of g? So that's g, little g, h over little g.
+Imagine firing a cannonball horizontally from a sufficiently high mountain.
 
-Most of you have an answer in. Please put
+At a relatively low launch speed, the cannonball travels some distance before falling to Earth.
 
-in an answer now if you still need to do
+At a greater launch speed, it travels farther before reaching the surface.
 
-that. I will give you three more seconds.
+At the appropriate speed, the cannonball falls toward Earth at the same rate that Earth’s curved surface falls away beneath it. The object then remains in continuous free fall around the planet.
 
-Three, two,
+This is an orbit.
 
-one.
+An orbiting object is not free from gravity, and its acceleration is not zero. Gravity continually accelerates the object toward the center of Earth.
 
-All right. Thank you. Stopping delivery.
+For a circular orbit, the object may move at constant **speed**, but its velocity continually changes direction. Its acceleration is the centripetal acceleration
 
-Okay,
+$$
+a_c
+=
+\frac{v^2}{r}.
+$$
 
-so what I asked you to find is GH over G, so GH over
+Using the circular-orbit speed,
 
-little g. I can define that as gm, m, oops, sorry,
+$$
+a_c
+=
+\frac{GM}{r^2},
+$$
 
-not the second m, g times mass of the earth over radius
+which is exactly the local gravitational acceleration.
 
-of the earth plus h quantity squared over g times
+## Kepler’s Laws of Planetary Motion
 
-mass of the earth over radius of the earth squared.
+Johannes Kepler identified three empirical laws describing planetary motion.
 
-Okay, so little g at h is just going to be gm over
+### Kepler’s First Law
 
-that rh squared, which is radius of the earth plus h.
+Each planet moves in an elliptical orbit, with the Sun located at one focus of the ellipse.
 
-So gh over g equals, I can write this out,
+A circle is a special case of an ellipse. For a circular orbit, the two focal points coincide at the center.
 
-gme over re plus h quantity squared times
+### Kepler’s Second Law
 
-re squared over gme. So GH over G equals RE
+A line connecting a planet to the Sun sweeps out equal areas during equal intervals of time.
 
-squared over RE plus H quantity squared.
+This means that a planet does not generally move at constant speed in an elliptical orbit:
 
-So RE plus H would be the radius of the earth
+- The planet moves faster when it is closer to the Sun.
+- The planet moves more slowly when it is farther from the Sun.
 
-plus one-third radius of the earth. So four-thirds
+As the planet approaches the Sun, gravitational potential energy is converted into kinetic energy. As it moves away, kinetic energy is converted back into gravitational potential energy.
 
-RE, GH over little g equals RE squared over four
+Kepler’s second law is also a consequence of conservation of angular momentum.
 
--thirds RE quantity squared. So that would be 9
+### Kepler’s Third Law
 
-sixteenths, which equals 0.56 to 2 sig figs. Okay,
+The square of a planet’s orbital period is proportional to the cube of the orbit’s semimajor axis:
 
-so no units here because the units cancel out
+$$
+\boxed{
+T^2\propto a^3
+}.
+$$
 
-if I'm using the units to be little g. So 0.56,
+For a circular orbit, the semimajor axis $a$ is equal to the orbital radius $r$, so
 
-like a little more than half if I'm a third at an
+$$
+T^2\propto r^3.
+$$
 
-altitude of a third of the radius of the Earth.
+## Derivation of Kepler’s Third Law for a Circular Orbit
 
-So the radius of the Earth is like 6.37 kilometers.
+For a satellite of mass $m$ orbiting a dominant central mass $M$,
 
-That's got to be wrong. I've got to be off by some.
+$$
+G\frac{Mm}{r^2}
+=
+m\frac{v^2}{r}.
+$$
 
-Hold on a second.
+Canceling $m$ gives
 
-Let's 10 kilometers.
+$$
+v^2
+=
+\frac{GM}{r}.
+$$
 
-Oh, 6,300.
+For uniform circular motion, the orbital speed is also
 
-Okay, that should be a comma.
+$$
+v
+=
+\frac{2\pi r}{T},
+$$
 
-Yeah, 6,380 kilometers.
+where $T$ is the orbital period.
 
-Yeah, I'll put 3,000.
+Squaring,
 
-3,000
+$$
+v^2
+=
+\frac{4\pi^2r^2}{T^2}.
+$$
 
-6, 3
+Substituting this into the gravitational-force result,
 
-5, 6
+$$
+\frac{4\pi^2r^2}{T^2}
+=
+\frac{GM}{r}.
+$$
 
-to average it. Okay.
+Multiplying by $rT^2$ gives
 
-Yes.
+$$
+4\pi^2r^3
+=
+GMT^2.
+$$
 
-Sorry, my bad. I had a decimal
+Solving for $T^2$,
 
-point there instead of a comma.
+$$
+\boxed{
+T^2
+=
+\frac{4\pi^2}{GM}r^3
+}.
+$$
 
-Alright. But you didn't really
+Equivalently,
 
-need it for this problem anyway.
+$$
+\boxed{
+r^3
+=
+\frac{GM}{4\pi^2}T^2
+}.
+$$
 
-And I must have had it written correctly last time.
+For objects orbiting the same central body, the quantity
 
-No. I did not.
+$$
+\frac{T^2}{r^3}
+$$
 
-Times 10 to the 3 kilometers. Okay, so,
+is constant.
 
-oops,
+## Worked Example: A Planet with an Eight-Year Period
 
-powers of 10 off. So let's see. What we
+Suppose a planet orbits the Sun with a period of eight Earth years:
 
-want to do here is start to think about
+$$
+T_p=8T_E.
+$$
 
-Kepler's Law. So gravitational force, like I said, is
+We want to determine its orbital radius relative to Earth’s orbital radius.
 
-a 1 over r squared force. It's much, much larger than
+For the planet,
 
-the electromagnetic force. So if I take the
+$$
+r_p^3
+=
+\frac{GM_\odot}{4\pi^2}T_p^2.
+$$
 
-electromagnetic force between two particles, like two electrons,
+For Earth,
 
-and compare it to the gravitational force between
+$$
+r_E^3
+=
+\frac{GM_\odot}{4\pi^2}T_E^2.
+$$
 
-those two particles, so they both have a mass, gme,
+Dividing the equations eliminates the common constants:
 
-there the e is the mass of electrons squared over r
+$$
+\frac{r_p^3}{r_E^3}
+=
+\frac{T_p^2}{T_E^2}.
+$$
 
-squared. And I use that to divide kq squared over r
+Using
 
-squared. That's the electromagnetic force then i get
+$$
+T_p=8T_E,
+$$
 
-an answer of four times 10 to the 42 huge difference
+we obtain
 
-electromagnetic force is very very much stronger than
+$$
+\frac{r_p^3}{r_E^3}
+=
+\frac{(8T_E)^2}{T_E^2}.
+$$
 
-the gravitational force gravitational force actually
+Therefore,
 
-holds sway over a lot of things cosmologically because
+$$
+\frac{r_p^3}{r_E^3}=64.
+$$
 
-there are two kinds of charge and the matter is
+Taking the cube root,
 
-mostly charge neutral so as many positive charges as
+$$
+\frac{r_p}{r_E}=4.
+$$
 
-negative charges whereas there's only one kind of mass.
+Thus,
 
-There are theories that there could be
+$$
+\boxed{
+r_p=4r_E
+}.
+$$
 
-something like a negative mass involved with dark
+Because Earth’s average orbital radius is one astronomical unit,
 
-energy, but we don't understand that yet.
+$$
+\boxed{
+r_p=4.0\ \mathrm{AU}
+}.
+$$
 
-There may be a way to think about something
+A planet with an eight-year orbital period would therefore have a circular-orbit radius four times Earth’s orbital radius.
 
-that is a negative mass, but in Newtonian
+## Geostationary Satellites
 
-mechanics, at least we only have one kind of mass.
+A **geostationary satellite** remains above the same point on Earth’s equator.
 
-Gravitational force is always attractive. Now
+To do this, the satellite must:
 
-let's talk a little bit about the potential
+- Move in a circular orbit
+- Orbit above Earth’s equator
+- Move in the same direction as Earth’s rotation
+- Have an orbital period equal to Earth’s rotational period
 
-energy of a system, how to think about that. So
+Using the 24-hour approximation,
 
-we're talking about the gravitational force.
+$$
+T
+=
+24\ \mathrm{h}.
+$$
 
-In general, a force equals negative the gradient,
+Converting to seconds,
 
-the grad u, where u is potential energy. So
+$$
+T
+=
+24\ \mathrm{h}
+\left(
+\frac{60\ \mathrm{min}}{1\ \mathrm{h}}
+\right)
+\left(
+\frac{60\ \mathrm{s}}{1\ \mathrm{min}}
+\right).
+$$
 
-if I undo this and take the derivative of both
+Therefore,
 
-sides, I would have minus F dot dr equals u. So and
+$$
+T=86400\ \mathrm{s}.
+$$
 
-that's going from r0 to r. And now if I use my
+Let $h$ be the satellite’s altitude above Earth’s surface. Its orbital radius, measured from Earth’s center, is
 
-gravitational force, the force gravity is minus gmm
+$$
+r=R_E+h.
+$$
 
-over r squared r hat. then I would have negative r0
+The gravitational force supplies the centripetal force:
 
-to r of negative gmm over r squared r hat dot dr.
+$$
+G\frac{M_E m}{(R_E+h)^2}
+=
+m\frac{v^2}{R_E+h}.
+$$
 
-That equals my potential, gravitational potential.
+The satellite mass cancels:
 
-And so if these minus signs cancel, I come up with
+$$
+\frac{GM_E}{R_E+h}
+=
+v^2.
+$$
 
-a plus g capital M times little m, the integral of r
+The orbital speed is
 
-to the minus 2, I raise the power by 1 and then
+$$
+v
+=
+\frac{2\pi(R_E+h)}{T}.
+$$
 
-divide by that new number. So I'll call it r to the
+Squaring,
 
-minus 1 over negative 1 from 0 to r. That equals ug.
+$$
+v^2
+=
+\frac{
+4\pi^2(R_E+h)^2
+}{
+T^2
+}.
+$$
 
-So the minus sign comes out front, minus gmm over r.
+Substituting into the gravitational equation gives
 
-I'm going to let r 0 equals 0 equals ug. So
+$$
+\frac{
+4\pi^2(R_E+h)^2
+}{
+T^2
+}
+=
+\frac{GM_E}{R_E+h}.
+$$
 
-the form of the The gravitational potential is
+Multiplying by $(R_E+h)T^2$,
 
-minus gmm over r, potential energy, energy.
+$$
+4\pi^2(R_E+h)^3
+=
+GM_ET^2.
+$$
 
-And so we can also talk about the kinetic energy, sum
+Therefore,
 
-of force equals mv squared over r. And the force is
+$$
+(R_E+h)^3
+=
+\frac{GM_ET^2}{4\pi^2}.
+$$
 
-the only force, gmm over r squared. The mass cancels,
+Taking the cube root,
 
-the radius term cancels. So V squared equals G
+$$
+R_E+h
+=
+\left(
+\frac{GM_ET^2}{4\pi^2}
+\right)^{1/3}.
+$$
 
-capital M over R, multiply by one-half M. We have one
+Solving for altitude,
 
--half M V squared equals G capital M little m over 2 R.
+$$
+\boxed{
+h
+=
+\left(
+\frac{GM_ET^2}{4\pi^2}
+\right)^{1/3}
+-
+R_E
+}.
+$$
 
-That is the kinetic energy of
+Using
 
-a satellite.
+$$
+G
+=
+6.67\times10^{-11}\ \mathrm{N\,m^2/kg^2},
+$$
 
-So
+$$
+M_E
+=
+5.97\times10^{24}\ \mathrm{kg},
+$$
 
-by a satellite, I mean something that is in orbit.
+$$
+T
+=
+86400\ \mathrm{s},
+$$
 
-For something that is in orbit, it has to be going
+and
 
-around the center of mass, circling around the center
+$$
+R_E
+\approx
+6.37\times10^6\ \mathrm{m},
+$$
 
-of mass. In general, we can think of something as
+the orbital radius is approximately
 
-being, let's see, let's do it like this. So let's
+$$
+R_E+h
+\approx
+4.22\times10^7\ \mathrm{m}.
+$$
 
-say we have something like a cannonball shooting off
+Subtracting Earth’s radius gives
 
-at some, this is huge compared to the surface of
+$$
+h
+\approx
+3.58\times10^7\ \mathrm{m}.
+$$
 
-the Earth, but I shoot a cannonball off, it will come
+Therefore,
 
-down and land something like that. if I shoot it
+$$
+\boxed{
+h\approx3.58\times10^4\ \mathrm{km}
+}
+$$
 
-off with a bigger initial velocity, it would land
+or
 
-farther away. If I give it enough velocity, it falls
+$$
+\boxed{
+h\approx35{,}800\ \mathrm{km}
+}.
+$$
 
-off at the same rate that the surface of the planet
+A geostationary satellite is therefore much farther from Earth than a spacecraft in low Earth orbit. For comparison, the International Space Station orbits at an altitude of roughly $400\ \mathrm{km}$.
 
-falls away. And that's what we call being in orbit.
+It is important to distinguish between:
 
-Being in orbit means having a certain velocity at a
+- The **orbital radius**, measured from Earth’s center
+- The **altitude**, measured from Earth’s surface
 
-certain height such that the object can be in continual
+For a geostationary satellite,
 
-free fall. It doesn't mean that acceleration is
+$$
+r_{\mathrm{orbit}}
+\approx42{,}200\ \mathrm{km},
+$$
 
-zero. It does have acceleration it has radial acceleration
+while
 
-but it can be moving at constant velocity and
+$$
+h
+\approx35{,}800\ \mathrm{km}.
+$$
 
-that's what we mean by this newton's can and that's the
+## Summary
 
-idea here now let's see we want to also talk about
+The gravitational force between two point masses is
 
-kepler's laws kepler's laws are basic to
+$$
+\boxed{
+F_g
+=
+G\frac{m_1m_2}{r^2}
+}.
+$$
 
-gravitation and also to newton's law of gravity there
+In vector form, with $\hat{\mathbf r}$ directed outward,
 
-are three laws that kepler found planets or orbits,
+$$
+\boxed{
+\vec{F}_g
+=
+-G\frac{m_1m_2}{r^2}\hat{\mathbf r}
+}.
+$$
 
-our planet orbits are ellipses with the sun at one
+The gravitational acceleration produced by a mass $M$ is
 
-focus of the ellipse. So a special case of an ellipse
+$$
+\boxed{
+g(r)
+=
+\frac{GM}{r^2}
+}.
+$$
 
-is circular that has a radius, the same radius
+Near Earth’s surface,
 
-everywhere. An ellipse has two focal points. The sun, well,
+$$
+\boxed{
+g\approx9.81\ \mathrm{m/s^2}
+}.
+$$
 
-planet orbits that are in our solar system have
+The gravitational potential energy of two masses is
 
-the sun at one focus of the ellipse. And so they are
+$$
+\boxed{
+U(r)
+=
+-\frac{GMm}{r}
+}.
+$$
 
-moving faster at some points in this orbit than they
+For a circular orbit,
 
-are at other point. So a line joining a planet to the
+$$
+\boxed{
+v
+=
+\sqrt{\frac{GM}{r}}
+}.
+$$
 
-sun sweeps out equal areas in equal times, equal areas
+The kinetic, potential, and total energies are
 
-in the ellipse over equal times. And then the third
+$$
+\boxed{
+K
+=
+\frac{GMm}{2r}
+},
+$$
 
-Kepler's law is the square of the orbital period
+$$
+\boxed{
+U
+=
+-\frac{GMm}{r}
+},
+$$
 
-of a planet is proportional to the cube of its semi
+and
 
--major axis. If this was a circle then we'd think of the
+$$
+\boxed{
+E
+=
+-\frac{GMm}{2r}
+}.
+$$
 
-semi-major axis as being the radius of the circle.
+Kepler’s third law for a circular orbit around a dominant central mass is
 
-So let's look at what this second law interactive tells
+$$
+\boxed{
+T^2
+=
+\frac{4\pi^2}{GM}r^3
+}.
+$$
 
-us if we go here and i'm going to go ahead and run
+For two objects orbiting the same central mass,
 
-this this is a very elliptical system and the sun at one
+$$
+\boxed{
+\frac{T_1^2}{r_1^3}
+=
+\frac{T_2^2}{r_2^3}
+}.
+$$
 
-focus point of the ellipse i can move it if i want to
+A geostationary satellite has an orbital period equal to Earth’s rotational period and an altitude of approximately
 
-change the initial displacement but let's go ahead and
+$$
+\boxed{
+h\approx35{,}800\ \mathrm{km}
+}.
+$$
 
-run it like this and here goes the planet moving as
-
-it's farther away it has it's transferring potential
-
-energy into kinetic energy as it gets closer to the planet
-
-it gets more and more kinetic energy so it gets
-
-farther away from the planet it has smaller kinetic energy
-
-larger potential energy and notice that these areas at
-
-equal time so if it if you mark the time that it is
-
-moving it's moving farther when it's closer to the sun
-
-than it's moving when it's farther away from the sun
-
-but the areas that are swept out by the planet's radius
-
-are equal. So these black areas and white areas all the
-
-way around are equal areas. That's one of the things
-
-Kepler noticed with looking at the orbits of planets.
-
-And then the other, the third Kepler's law, is
-
-that the period squared is proportional to r cubed.
-
-Let's look at that one for a minute. The
-
-period squared is proportional to r cubed.
-
-So let's see, I'm going to start this like we did
-
-just a minute ago, looking at the sum of forces in
-
-the radial direction equals mv squared over r. And
-
-if I'm looking at a satellite, in this case it's a
-
-planet, so a satellite orbits It's another body.
-
-We can think of the planet Earth as being a satellite
-
-of the sun, has some radius away from it. If I
-
-did a free body diagram, there'd only be one force,
-
-this gravitational force in the plus r direction.
-
-Okay, so sum of forces equals mv squared
-
-over r equals gmm over r squared.
-
-And then like we just saw, this mass is going
-
-to cancel. The r value is going to cancel one
-
-factor of r, so I get v squared equals gm over r.
-
-Now, let's see, I can also work with
-
-this velocity. So I want to get this in
-
-terms of period instead of velocity.
-
-I can say that the velocity is 2 pi r over the
-
-period t. That's true for a circular orbit.
-
-So v squared is going to be 4 pi
-
-squared r squared over t squared.
-
-t is the orbital period, so I get 4 pi squared r
-
-squared over t squared equals gm over r. If I want
-
-to solve this for r and t, I could get all the
-
-r's on one side. So r cubed equals, let's see, gm
-
-over 4 pi squared gm times t squared gm. Yes,
-
-okay, so r squared is proportional to, r cubed is
-
-proportional to t squared. That's this third law
-
-of Kepler. So here are Kepler's three laws. and
-
-what we want to be able to do is use Kepler's law
-
-and also recognize where it's appropriate to use.
-
-So any questions about any of this part? Does
-
-Kepler's laws or Newtonian gravitational force?
-
-I missed the cannonball. I didn't
-
-fully understand the cannonball.
-
-Oh. Newton's cannon.
-
-It's really just saying, let's see
-
-if that software is working or no.
-
-I think it is we can go here so if I fire the cannonball
-
-I give it a certain amount of powder and it's going
-
-to fly a certain distance right if I give it a higher
-
-initial speed and then fire it it's going to go
-
-farther if I give it much more of an initial speed it
-
-will just keep going farther if I give it enough speed
-
-when I shoot it off the surface of the planet falls
-
-away as the cannonball is falling toward the surface.
-
-That's the idea going on here. So the cannonball is
-
-going to go into orbit as if it's going fast enough.
-
-So Newton's cannon is a thought experiment
-
-about what being in orbit means. It means
-
-it's moving fast enough such that as it falls
-
-away, the surface of the earth falls away
-
-at the same rate. Is that making more sense?
-
-yeah that makes sense okay thanks for asking
-
-so i'm going to go here suppose we there was a planet
-
-orbiting the sun that took eight earth years to complete
-
-one orbit now here i'm i'm saying that we can't for
-
-this because there's only one planet and one star this
-
-m is the total mass of the system so if the planet
-
-is small enough in mass that it's just orbiting in a
-
-circular orbit and it's the the star in the center isn't
-
-wobbling around to keep the center of mass in the
-
-same place which it actually would be doing but we're
-
-saying let's neglect that and assume that the total mass
-
-of the system is just the star and that we have a
-
-circular orbit then r squared is a constant value it's
-
-just a constant radius, a circular orbit, equals gm over
-
-4 pi squared times t squared, where t is the period.
-
-And that's called Kepler's third law. We
-
-can use Kepler's third law to figure out the
-
-orbital periods of the planets. And actually, what
-
-Kepler did was the opposite. He took very careful
-
-measurements of the orbital periods of the
-
-planets and came up with this relationship between
-
-the radius cubed and the period squared. So I will
-
-go ahead and activate this and give it to you.
-
-All right, everybody's back. Please put
-
-in an answer if you still need to do that.
-
-Three, two,
-
-one.
-
-All right, thank you, stopping delivery.
-
-Okay, so we have, suppose that there's a planet
-
-orbiting the sun that took eight earth years to
-
-complete one orbit so t planet equals eight t if t
-
-is the earth years and the radius r is the radius
-
-of the or the orbital radius of the earth so
-
-let's see r planet cubed equals gm over four pi
-
-squared t planet squared and then r radius of the,
-
-not the radius of the earth, but the orbital radius
-
-of the earth. I'll just leave that as r cubed.
-
-Equals gm over 4 pi squared t squared.
-
-Now since these are equal, I can divide one by
-
-the other and come up with a ratio. I like to do
-
-that because it gets rid of things that cancel. So
-
-gm over 4 pi squared cancels r planet cubed over
-
-r cubed equals t planet squared over t squared.
-
-r planet cubed over r cubed equals 8t quantity
-
-squared over t squared, so that equals 64t, or 64.
-
-so r p cubed equals 64 r cubed take the cube
-
-root of both sides r p equals 4 r so the
-
-radius the orbital radius of the planet is four
-
-times the orbital radius of the earth four
-
-au's so you should just have an answer of 4.0
-
-let me take a minute to see what your
-
-responses were Any questions about this?
-
-Oh, good, 4 AU.
-
-Good.
-
-I won't take time to look down through
-
-all of these, but it's looking like
-
-quite a few of you got this correct.
-
-Any questions about it?
-
-All right, let's move on to the next one.
-
-Here we're talking about a geostationary satellite.
-
-So geostationary means a satellite that stays over
-
-the same point above the surface of the Earth.
-
-Now,
-
-what I said a couple of minutes ago is that when
-
-something orbits a massive body, then it has to orbit
-
-around the center of mass of the body. So let's see if
-
-I have, well, I don't have anything around. Oh, maybe
-
-I do spherical object here. So I have some spherical
-
-object here. and well maybe if I hold it like this
-
-it's a little bit better. So if something is orbiting
-
-this spherical object then it could be going around
-
-like this. It could be going around like this. It can't
-
-be going around like a halo. It has to be going
-
-around some orbit that takes it about the center of the
-
-earth if this is the earth. So if this is the earth
-
-and it's going around the center of the earth and the
-
-earth is spinning at the same time so the earth has
-
-a rotation rate of one day then a satellite that stays
-
-above a certain point above the earth would have to
-
-be a certain height above the earth and moving at a
-
-speed so remember it has to have a certain speed to
-
-be able to stay in orbit and at a certain height such
-
-that it stayed above the same point in the earth so
-
-it couldn't be going at some angle like this around
-
-the center of the earth it must be stationary above
-
-the equator and we use these of course for you know
-
-satellite transmissions like tv and such video communication
-
-satellites so yeah if we if the earth is turning
-
-then we know the period we know it takes one day for
-
-the satellite to go all the way around if it's staying
-
-above one certain point above the earth. So let's
-
-find then the altitude of a geostationary satellite
-
-and what I'd like you to do here is start from
-
-first principles and similar to what we've been
-
-doing we'll start with a diagram so I have
-
-here's the earth well my earth is having trouble
-
-I hope the Earth is rounder than that.
-
-Okay, there's the radius of the Earth. And I don't
-
-know what this height is here, but there's some
-
-height above the surface of the Earth, and I'm
-
-asking you to find that altitude h. So the
-
-satellite's going around. It has some little mass m.
-
-Earth has a mass m.
-
-We know I've given you capital G, the mass
-
-of the Earth, the radius of the Earth.
-
-and i've given you actually a little bit larger radius
-
-of the earth here that's the the equatorial radius
-
-remember we said it's a little bit larger than the
-
-average radius so 3.8 times 10 to the 6 meters so three
-
-anyway yeah a little bit larger than the polar
-
-radius and we also know the period of the earth period
-
-and which is the same as a period of the satellite So
-
-start with sum of forces in the r direction equals
-
-mv squared over r, and the gravitational force is gm.
-
-I'll use that as a capital
-
-M for the mass of the earth.
-
-m over r squared.
-
-All right, this is a vector, but you can just use
-
-the magnitude in your free body diagram. Okay,
-
-so I will go ahead and activate this and
-
-give you a couple of minutes to work on
-
-your own and then open breakout rooms.
-
-Find the height of the satellite.
-
-Geostationary satellite stays above
-
-the same position on the Earth.
-
-Three,
-
-two,
-
-one.
-
-All right, thank you, stopping delivery.
-
-All right.
-
-So I got started out here with using a force
-
-approach, and we have the gravitational force.
-
-So let's see, we know the capital G, we know
-
-the mass of the Earth, the radius of the Earth,
-
-and we want H for a geostationary satellite.
-
-So sum of forces in the r direction equals mv squared
-
-over r. In this case, it would be r plus h. So the
-
-radius of orbit is r plus h. And then the gravitational
-
-force would be capital G times mass of the Earth times
-
-m over r radius of the Earth plus h quantity squared.
-
-Now, we'll do some cancellations here. We
-
-get v squared equals g times mass of the
-
-earth over r radius of the earth plus h.
-
-And then same as before, velocity equals
-
-2 pi times the radius, which is re plus h.
-
-And then that would be over the period t. So 4 pi
-
-squared RE plus H quantity squared over T squared
-
-equals GME over R radius of the Earth plus H.
-
-And then I just want to solve this for H. So I'm
-
-going to get RE plus H quantity cubed equals G
-
-times mass of the earth times T squared over 4 pi
-
-squared. T is the period, so that's 24 hours times
-
-60 minutes per hour times 60 seconds per minute.
-
-it. So that is t equals 86,400 seconds in a day.
-
-So t is a given value because we
-
-know it's the same as a day on earth.
-
-And then I just solve this for h. So I'm going to take
-
-the one-third power of both sides are e plus h
-
-equals gm e t squared over 4 pi squared to the 1 3rd. So
-
-h equals gm e t squared over 4 pi squared to the 1
-
-3rd minus the radius of the earth. And when I get that,
-
-when I do that, I get H equals 35,800 kilometers.
-
-So H over the radius of the Earth is actually like
-
-five and a half, almost six. So my diagram here
-
-is not very accurate. here's the earth and here's
-
-let's see one two three four five like almost six
-
-the satellite would be way out there and compare that
-
-to the space station at 400 kilometers so way
-
-higher than the space station the space station would
-
-be much much lower like in very low earth orbit
-
-okay any questions about this
-
-right so let's see we have three minutes left that's
-
-not really enough time to do a problem so the
-
-next problem we have to do is going to take a little
-
-bit more than that to set up and work through so
-
-I don't think I want to rush through that I think
-
-I will also know there's been a couple of times
-
-this term I've held you a minute longer than you I
-
-should have So I owe you a couple of minutes, it
-
-feels like. I'm going to go ahead and let you go early.
-
-And we'll start tomorrow. We'll come back in and
-
-talk about gravitation and do more of an energy
-
-approach with kinetic energy and potential energy.
-
-Thank you for coming.
-
-See you next time.
+An orbiting object remains in continuous free fall. Its acceleration is not zero; gravity continually changes the direction of its velocity and holds it in orbit.

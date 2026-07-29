@@ -1,999 +1,972 @@
-Hey there. Welcome to Physics 212.
+# Physics 212: Circular Motion on Flat and Banked Curves
 
-Hey everybody. Welcome back.
+Welcome back to Physics 212.
 
-Well, let's see. No real new announcements today.
+## Announcements
 
-Just want to remind you that Quiz 1 is coming up very
+Quiz 1 is approaching.
 
-soon. We'll open 5 p.m. on Saturday and close 5 p.m.
+The Proctorio version will open at 5:00 p.m. Saturday and close at 5:00 p.m. Monday. Zoom-proctored versions will be offered Monday at 11:00 a.m. and 6:00 p.m. The different versions will contain different questions but will be designed to have the same level of difficulty.
 
-on Monday for the Proctorio version that's delivered
+Students taking a Zoom-proctored version must have a working webcam and remain visible throughout the quiz.
 
-in Canvas, Proctored by Proctorio. If you want to
+The Quiz 1 Notes assignment is also open. Your note sheet must:
 
-come to the class at 11 o 'clock on Monday morning, you
+- Be between one-half page and one full page
+- Be written entirely in your own handwriting
+- Contain material relevant to the quiz
 
-can take the quiz that will be administered in
+The listed due date is 5:00 p.m. Saturday, when the quiz first opens. However, the note sheet will not be marked late as long as you submit it before beginning your quiz.
 
-Gradescope and using Zoom to be proctored or at 6 p.m.
+Today, we will continue studying circular motion in a plane, focusing on cars traveling around flat and banked curves.
 
-using Zoom to be proctored. Different versions of the
+# Review of Circular Motion
 
-quiz, but same level of difficulty for the questions.
+For an object moving in a circle of radius $r$ with speed $v$, the radial acceleration has magnitude
 
-And let's see, you need to have a working webcam,
+$$
+\boxed{
+a_r=\frac{v^2}{r}
+}.
+$$
 
-need to be visible in your webcam during the quiz.
+The radial acceleration points toward the center of the circle.
 
-also the quiz one notes assignment is open the due
+Newton’s second law in the radial direction is therefore
 
-date is at the first opening of the quiz so 5 p
+$$
+\boxed{
+\sum F_r=m\frac{v^2}{r}
+}.
+$$
 
-.m on saturday but as long as you submit your notes
+The expression
 
-before you start your quiz that'll be fine they
+$$
+m\frac{v^2}{r}
+$$
 
-won't be marked late you're required to write a note
+is not an additional force. It is the required net inward force for circular motion. The actual physical forces acting on the object must combine to produce this net radial force.
 
-sheet it needs to be in your own handwriting and
+# Car Traveling Around a Flat Curve
 
-at least half a page up to a full page of notes
+Consider a car traveling around a level circular curve.
 
-pertaining to the material that'll be on the quiz.
+Because the road is horizontal, the car has no vertical acceleration. However, it does have an inward radial acceleration because its velocity is continually changing direction.
 
-So we want to work on some of that material today.
+## Free-Body Diagram
 
-We want to talk about, continue to talk about
+The forces acting on the car are:
 
-circular motion in a plane, and I think what I'll do
+- The gravitational force $mg$, directed downward
+- The normal force $N$, directed upward
+- Static friction $f_s$, directed horizontally toward the center of the curve
 
-is I'll just go right into the problem that I'd like
+The static-friction force is what causes the car to follow the circular path.
 
-to start with. This is a top view and a side view
+Without friction, there would be no inward horizontal force. The car would continue approximately along a straight-line path tangent to the curve rather than following the road.
 
-of a car traveling around a circle, a level
+It is important that the friction force point toward the center of the circle. An outward friction force would cause acceleration in the wrong direction.
 
-circle, so there's no hill involved or slope involved.
+Because the car does not accelerate vertically,
 
-The diagram shows the car as seen from above and
+$$
+\sum F_y=0.
+$$
 
-from the side which free body is correct for the
+Therefore,
 
-side view of the car i will go ahead and activate
+$$
+N-mg=0,
+$$
 
-oh let me put the poll everywhere link in the chat
+so
 
-probably most people have it by
+$$
+\boxed{
+N=mg
+}.
+$$
 
-now but i will give it as well
+The normal-force and gravitational-force vectors must therefore have equal magnitudes.
 
-and activate the question okay
+In the radial direction,
 
-most people have an answer in please put one
+$$
+\sum F_r=m\frac{v^2}{r}.
+$$
 
-in if you still need to do that three two one
+The only radial force is friction, so
 
-all right thank you stopping delivery okay
+$$
+\boxed{
+f_s=m\frac{v^2}{r}
+}.
+$$
 
-let's see what you said
+# Maximum Speed on a Flat Curve
 
-check responses most people said a okay so you're
+Suppose the car is moving at the greatest speed possible without sliding.
 
-saying that from the side view i'm going to have
+At that threshold, static friction has reached its maximum value:
 
-vector pointing down i'll go ahead and label the vectors
+$$
+f_{s,\max}=\mu_sN,
+$$
 
-that would be the gravitational force vector then
+where $\mu_s$ is the coefficient of static friction between the tires and the road.
 
-pointing up normal force vector and what's keeping
+Because
 
-it moving in a circle that would be the friction
+$$
+N=mg,
+$$
 
-force vector and so yes that would be um choice a
+the maximum static-friction force is
 
-quite a few of you chose choice b a third of the class
+$$
+f_{s,\max}=\mu_smg.
+$$
 
-third of the people that are here chose choice b
+The radial equation is
 
-and if you were choosing choice b there would not be
+$$
+\mu_smg=m\frac{v^2}{r}.
+$$
 
-something causing you to move in a circle so there
+The mass cancels:
 
-must be friction again between your tires and the road
+$$
+\mu_sg=\frac{v^2}{r}.
+$$
 
-causing you to move in the circle and sometimes you
+Solving for the coefficient of static friction gives
 
-have to think about the system and ascertain what
+$$
+\boxed{
+\mu_s=\frac{v^2}{rg}
+}.
+$$
 
-forces must be present there was nothing in this problem
+For the values
 
-statement that said consider there's friction
+$$
+v=16\ \mathrm{m/s}
+$$
 
-between the ground and the car. But in order for the car
+and
 
-to move in a circle, there had to have been friction
+$$
+r=49\ \mathrm{m},
+$$
 
-between the tires and the road. So over half of you
+we obtain
 
-recognize that there must be a friction vector and
+$$
+\mu_s
+=
+\frac{
+(16\ \mathrm{m/s})^2
+}{
+(49\ \mathrm{m})(9.81\ \mathrm{m/s^2})
+}.
+$$
 
-it must be pointing toward the center of the circle.
+Therefore,
 
-Okay, any questions about this? I
+$$
+\boxed{
+\mu_s\approx0.53
+}.
+$$
 
-see a couple of people chose the friction
+The coefficient of friction is dimensionless.
 
-pointing away from the center of the circle.
+The mass of the car does not affect the required coefficient. A more massive car requires a larger inward force, but it also experiences a proportionally larger maximum friction force.
 
-And what you need to think about here is the friction
+## Why the Friction Is Static
 
-is what keeps the car moving in a circle so it
+The friction is static because the tire surfaces are not sliding sideways across the road.
 
-must be pointing toward the center of the circle
+If the car exceeds the maximum possible speed and begins to slide, kinetic friction becomes relevant. At the threshold just before sliding, however, the appropriate relationship is
 
-some of you chose c had it pointing the other direction
+$$
+f_s=\mu_sN.
+$$
 
-o and d had different length lengths of the
+# Car Traveling Around a Frictionless Banked Curve
 
-vectors for the normal force and for the gravitational
+Now consider a circular road banked at an angle $\theta$ above the horizontal.
 
-force so just do recognize that the length of the
+Assume that the surface is icy and effectively frictionless.
 
-vectors matters here okay any questions about this
+On a flat road, friction supplies the radial force. On a frictionless banked road, the inward component of the normal force supplies the radial force.
 
-okay then let's go to the next question
+## Choosing the Coordinate Axes
 
-same system i have but now i've given you the mass of
+Choose:
 
-the car level circular curve radius of the curve and
+- The positive $y$-axis vertically upward
+- The positive radial axis horizontally inward toward the center of the curve
 
-the speed of the car and i'm asking you to find the
+The radial axis must point toward the center of the circular path.
 
-coefficient of static friction between the car's tires
+Axes aligned with the banked road are possible, but then the circular acceleration would have components along both axes. Using vertical and radial axes allows us to write
 
-and a road that keeps it from sliding and here the
+$$
+a_r=\frac{v^2}{r}
+$$
 
-static friction is the maximum static friction as the
+directly in the radial direction.
 
-car is going as fast as it can go without sliding so i
+## Free-Body Diagram
 
-will go ahead and activate answer in if you still need
+The only forces acting on the car are:
 
-to do that three two one all right thank you stopping
+- The gravitational force $mg$, vertically downward
+- The normal force $N$, perpendicular to the road
 
-delivery all right so um same diagram here's our
+Because the road is banked at angle $\theta$, the normal force is tilted inward by angle $\theta$ from the vertical.
 
-free body diagram for the system we know the mass of the
+Its components are therefore:
 
-car the radius of the circle and the velocity of the
+$$
+N_y=N\cos\theta
+$$
 
-car and we want the coefficient of friction the maximum
+and
 
-static coefficient of friction to keep the car from
+$$
+N_r=N\sin\theta.
+$$
 
-sliding now you might wonder why this would be a
+## Vertical Equation
 
-static coefficient of friction there would could be some
+There is no vertical acceleration, so
 
-rolling friction between the tires and the road that
+$$
+\sum F_y=0.
+$$
 
-would happen if the car was speeding up or slowing
+Therefore,
 
-down tangentially to the circle but the sliding keeps
+$$
+N\cos\theta-mg=0.
+$$
 
-it from moving sideways and so yeah if it started to
+Thus,
 
-slide sideways if it started going faster than its
+$$
+\boxed{
+N\cos\theta=mg
+}
+$$
 
-maximum possible speed then it would be tending to go in
+and
 
-a straight line for the car it would feel like you
+$$
+\boxed{
+N=\frac{mg}{\cos\theta}
+}.
+$$
 
-were sliding outward radially outward and so yeah the
+## Radial Equation
 
-then you would have kinetic friction but we're saying
+The inward component of the normal force supplies the radial acceleration:
 
-that the highest friction that can exist if it's going
+$$
+\sum F_r=m\frac{v^2}{r}.
+$$
 
-just fast as fast as it possibly can without sliding
+Therefore,
 
-so from our free body diagram let's put in some
+$$
+N\sin\theta=m\frac{v^2}{r}.
+$$
 
-axes here i'm going to put plus y in the upward
+Substitute
 
-direction plus r toward the center of the circle
+$$
+N=\frac{mg}{\cos\theta}:
+$$
 
-we could call that um well we don't want to call
+$$
+\frac{mg}{\cos\theta}\sin\theta
+=
+m\frac{v^2}{r}.
+$$
 
-it tangential because that's going around the
+The mass cancels:
 
-circle so we'll call it plus y i could call it plus
+$$
+g\frac{\sin\theta}{\cos\theta}
+=
+\frac{v^2}{r}.
+$$
 
-z, or whatever you wanted. So we know the mass,
+Because
 
-the radius, and the velocity. We want mu zero.
+$$
+\frac{\sin\theta}{\cos\theta}=\tan\theta,
+$$
 
-I'm going to start with the sum of forces in the
+we obtain
 
-y direction equals m a y, which equals zero.
+$$
+g\tan\theta=\frac{v^2}{r}.
+$$
 
-It's not accelerating upward or downward, and
+Therefore,
 
-that would be equals the normal force minus m g.
+$$
+v^2=rg\tan\theta,
+$$
 
-sum of forces in the r direction equals mar,
+and the speed for which no friction is required is
 
-which equals mv squared over r. And in the r
+$$
+\boxed{
+v=\sqrt{rg\tan\theta}
+}.
+$$
 
-direction, all there is is the friction force. Now
+This is sometimes called the **design speed** of the banked curve.
 
-because it's going as fast as it can without sliding,
+For
 
-the friction force can be written as mu s
+$$
+r=48\ \mathrm{m}
+$$
 
-times the normal force. So we want to use our first
+and
 
-equation to find the normal force. That's
+$$
+\theta=6.2^\circ,
+$$
 
-pretty simple. I just have normal force equals mg.
+the speed is
 
-Then I can substitute that in my second
+$$
+v
+=
+\sqrt{
+(48\ \mathrm{m})
+(9.81\ \mathrm{m/s^2})
+\tan(6.2^\circ)
+}.
+$$
 
-equation, mv squared over r equals
+Therefore,
 
-mu s times mg. I'm trying to solve for
+$$
+\boxed{
+v\approx7.2\ \mathrm{m/s}
+}.
+$$
 
-mu s. I see that the mass cancels
+Once again, the car’s mass cancels.
 
-out. So v squared over rg equals mu s.
+# Friction on a Banked Curve
 
-And plugging in my values, we have, we don't care
+Suppose the ice melts and there is now static friction between the tires and the road.
 
-about the mass of the car, that canceled out.
+Friction allows the car to travel either faster or slower than the frictionless design speed without sliding.
 
-So the velocity was, oh, 16 meters per second.
+The direction of static friction depends on the direction in which the car would otherwise tend to slide.
 
-and that's squared and then
+Let
 
-divided by r which was 49 meters
+$$
+v_0=\sqrt{rg\tan\theta}
+$$
 
-and then times 9.81 meters per second squared and
+be the speed for which no friction is required.
 
-actually on my page I calculated this for a different value
+## Car Moving Slower Than the Design Speed
 
-of the velocity of 18 meters per second so let me give
+If the car is stopped or moving slowly, gravity tends to make it slide down the bank.
 
-me just a second to do the calculation to get the
+Static friction therefore points up the slope.
 
-value for these, get the answer for these these values.
+Thus, when
 
-Let's see.
+$$
+v<v_0,
+$$
 
-So I want 16 squared over 49 times 9.81. Notice
+the friction force points up the bank.
 
-I tend to keep one extra sig fig for the
+## Car Moving Faster Than the Design Speed
 
-gravitational, for a constant, the gravitational force
+If the car is moving faster than the design speed, its straight-line tendency would carry it toward the outside of the curve. Relative to the banked road, the car tends to slide up the slope.
 
-is a constant here 0.53 is keeping two sig figs
+Static friction therefore points down the slope.
 
-and unitless for the coefficient of friction
+Thus, when
 
-0.53 is what i'm getting here any questions questions
+$$
+v>v_0,
+$$
 
-about this
+the friction force points down the bank.
 
-okay well let's move on to the next question then
+## Car Moving at the Design Speed
 
-okay so now
+When
 
-how fast does a car well let's see i think i
+$$
+v=v_0,
+$$
 
-have a diagram in here yes there's my diagram how
+the inward component of the normal force alone supplies exactly the required radial force.
 
-fast does a car if i i know the mass of the
+No friction is necessary.
 
-car need to net to go to navigate an icy banked
+# Maximum Speed on a Banked Curve with Friction
 
-curve and so here i have the top down view let's
+We now want to determine the maximum speed at which the car can travel without sliding.
 
-do it like this here's my radius r here's my
+At the maximum speed:
 
-car top view and side view now I have a bank and that
+- The car tends to slide up the bank.
+- Static friction points down the bank.
+- Static friction has reached its maximum value.
 
-bank has an angle theta and I'm assuming that this
+Therefore,
 
-is still level in that the road is banked but it's
+$$
+f_s=\mu_sN.
+$$
 
-not going up a hill or down a hill the road is just
+## Force Components
 
-banked but it's on level ground and so I have a car on
+The normal force has components
 
-this banked curve it has still
+$$
+N_y=N\cos\theta
+$$
 
-has the radius same radius r
+and
 
-same mass m and angle theta okay so now here's my setup
+$$
+N_r=N\sin\theta.
+$$
 
-you want to start with a free body diagram i'm going
+Because friction points down the slope, its components are:
 
-to let's see hold on a second i thought i asked you
+- A downward vertical component $f_s\sin\theta$
+- An inward radial component $f_s\cos\theta$
 
-for a free body diagram maybe they got out oh that's
+## Vertical Force Equation
 
-for the friction force okay all right so start with
+The car has no vertical acceleration:
 
-a free body diagram and we know the mass we know the
+$$
+\sum F_y=0.
+$$
 
-radius and we know theta we want v so the idea here
+Therefore,
 
-is that there will be a normal force on the car from
+$$
+N\cos\theta-f_s\sin\theta-mg=0.
+$$
 
-the road, and that's what's keeping the car moving in
+Substituting
 
-a circle. On flat ground, without any banking in the
+$$
+f_s=\mu_sN
+$$
 
-curve, friction is what kept the car moving in a circle.
+gives
 
-Here, what's keeping the car moving in a circle is
+$$
+N\cos\theta-\mu_sN\sin\theta-mg=0.
+$$
 
-a component of the normal force, so the normal force
+Factor out $N$:
 
-is perpendicular to the slope, and that component of
-
-the normal force will be what keeps the car moving
-
-in a circle. So start by drawing your free body diagram.
-
-Use that to find the velocity or the situation where
-
-there's no friction. I will go ahead and activate.
-
-Right, everybody's back. Please enter an answer
-
-if you still need to do that. I will give
-
-you three more seconds to do that. Three, two,
-
-one.
-
-All right. Thank you, Stopping Delivery.
-
-All right. So let's see.
-
-Starting with a free body diagram, I'm going to do it
-
-of the side view here. So I have mg pointing straight
-
-down, and the slope is about like that. So the normal
-
-force should be perpendicular to that. I want this
-
-component to be equal. I need to make that just a little
-
-bit shorter. There's my normal force, and I'm going to
-
-use axes that are straight up and down and then radially
-
-inward now this is really important that my axis is
-
-radially inward if you chose to use axes that were
-
-rotated with the ramp then you can't just use it mv squared
-
-over r is the radial acceleration because the center
-
-of the circle isn't along the ramp. So very important
-
-that I use axes that have the radius of the circle
-
-pointing toward the center of the circle as one of the
-
-axes so that I can use that the circular acceleration
-
-is v squared over r. Now the next thing to do is to
-
-figure out where my angle theta is on the diagram. The
-
-way I do that is I superimpose the ramp onto the diagram.
-
-There's the ramp like that, so this is theta along
-
-here. This here would be 90 degrees minus theta, so this
-
-is theta here between the normal force and the y-axis.
-
-Okay, and so from this I'm going to take my equations.
-
-You don't really need to show this part here, just
-
-sometimes it's a little bit confusing how to find
-
-out which angle is the actual angle in the diagram.
-
-What I like to do here is just make one of the angles,
-
-like not put it as a 45 degree angle. This is a
-
-little bit less. I look for the one that's a little
-
-bit less. Or if you're not clear, then make it a lot
-
-less so you can see which angle is really narrow.
-
-Okay, so I'm going to do sum of forces in the y
-
-direction equals m, a, y equals 0. And now that isn't
-
-just n minus mg. That would be n equals n cosine
-
-theta would be the component against the y axis. And
-
-then minus mg. That means n cosine theta equals mg.
-
-and the normal force equals mg over cosine theta.
-
-Sum of forces in the r direction equals ma
-
-sub r equals mv squared over r. And in the y
-
-direction, I only have the sine component.
-
-of the angle. So equals n sine theta. So yeah,
-
-there's a radial part. That's the opposite of the
-
-angle theta. So n sine theta equals mv squared
-
-over r, just that component of the normal force.
-
-So let's see, what do I want to do here? I can
-
-use this. I can substitute in my expression for the
-
-normal force from my first equation. That gives
-
-me mv squared over r equals mg over cosine theta
-
-times sine theta. I see the mass cancels out again,
-
-and what I'm solving for is the velocity. I
-
-want velocity. So v squared equals mg r, and then
-
-sine theta over cosine theta. I can write That is
-
-tangent theta. So v equals, oops, mass canceled,
-
-square root gr tangent theta. And then
-
-just calculate your values for that.
-
-And this is what I would consider to be
-
-my completely, my symbolic solution
-
-completely in terms of given variables.
-
-and again when i did this i didn't notice when
-
-i looked at this before a class that i had used
-
-a different value so i'm going to take just a
-
-second to calculate this so that would be 9.81
-
-times my radius is 48 meters
-
-and then times tangent of 6.2
-
-and then take the square root of that that
-
-gives me
-
-7.2 meters per second okay any questions about this
-
-let me see what you got for responses 7.15
-
-okay that's agreeing with me 7.15. Very good.
-
-Excellent.
-
-7.1. Okay. I got 0.15 that rounded up to 7.2.
-
-Excellent.
-
-Okay. Very good.
-
-Very good. All right. I'm seeing
-
-that people really got this correct.
-
-Okay. Great.
-
-Let's go back to instructions. Let's go to the next
-
-one then. Oh, sorry. Any questions about this all right
-
-let's go to the next one okay so now we found the
-
-velocity speed v that a car can safely navigate a bank
-
-curve and that's for the radius of the curve and the
-
-banking angle now consider that the ice melted and there's
-
-some static friction between the tires and the road
-
-That means that the car can go faster or slower
-
-and there will be some friction along the road,
-
-along this road that will keep it from sliding.
-
-So that gives kind of a domain for the answer
-
-of the velocity. Now, if there's some friction,
-
-we can add into the system. What I'd like you
-
-to tell me is what is the direction of the
-
-friction force if the car is going faster than V?
-
-and I will activate.
-
-I think I will open breakout rooms
-
-just for a little bit on this.
-
-Go in there if you want to.
-
-It's the direction of the friction force.
-
-Everybody's back from the breakout room.
-
-I'll give you three more seconds to enter an
-
-answer if you still need to do that three two
-
-one all right thank you stopping delivery
-
-okay let's see what you responded okay down the slope
-
-of the bank term was uh more than half of you said
-
-that that's correct excellent okay i'm really happy with
-
-this you're really getting this I'm liking what I'm
-
-seeing here, but this is not a trivial question, so
-
-let's go into some detail about it. So I have this car
-
-on a bank slope. Now, even if you just think of it
-
-as being a block on a slope, on a ramp, if the car was
-
-just stopped, it would slide down the ramp, right?
-
-And if there was friction, then the friction would point
-
-upward up the slope of the ramp, because the friction
-
-is going to go opposite the direction that the car
-
-would slide. And even if we're talking about maximum
-
-static friction, the friction would point the opposite
-
-direction that the car would move if it moved. Now
-
-we're saying that would be true if the car was stopped.
-
-And it would also be true if the car was going
-
-slower than at this speed V that it would be taking the
-
-curve if there was no friction at all if the car was
-
-going faster then instead of tending to slide down the
-
-ramp the car would tend to slide up the ramp and what
-
-does that even mean you don't really think of a car
-
-sliding up the ramp against gravity but if you looked
-
-at this as the car is going around this slope as it's
-
-going around the ramp if it starts to slide then
-
-it's it looks like it's sliding up the ramp, but actually
-
-what it's trying to do is go in a straight line
-
-which takes it in a direction that would move it up the
-
-ramp. So if we draw a free body diagram of this, let's
-
-start with gravitational force pointing downward.
-
-Nice place to start. Then here's the slope of my ramp,
-
-and let's see, maybe I'll put my normal force in a
-
-little bit later, but I will have this friction force
-
-pointing down the ramp. So the car would tend to
-
-slide up the ramp. The friction force would tend to
-
-point down along the ramp. Now, a normal force
-
-perpendicular to this is going to have to keep it from,
-
-there's not going to be any acceleration in the y
-
-direction. Let's put our y axis in there and our radial
-
-axis in there, R. Now, I have this component of the
-
-friction force and the component and the gravitational
-
-force. The normal force has to be equal to that
-
-total force. I have to have the total force equal
-
-to zero. So that would be this gravitational force.
-
-let's see it needs to be it would be this tall
-
-without the friction force and so it would have to be
-
-a little bit taller needs to be about like that
-
-there's my normal force okay needs the this component
-
-needs to equal this gravitational force plus a
-
-little bit more now where's my angle theta. Theta is
-
-here, so this is my angle theta, opposite angle,
-
-and also this angle against the y-axis as well. So
-
-I have a friction force and the gravitational force
-
-and the normal force perpendicular to the road.
-
-Okay, so now that I have my free body diagram, I can
-
-actually solve this problem let's see if i go to the
-
-next problem um find the maximum speed so i i know
-
-let's see the radius the mass theta and mu s
-
-the mass the radius theta and mu s find v max
-
-that the car can move without sliding.
-
-Okay, so that means it has a
-
-coefficient of friction mu s.
-
-And I use free body diagram, use a force
-
-approach. You know that the radial force is mv
-
-squared over r. That's where the velocity comes
-
-into the equations, into the force equations.
-
-Oh, sorry, I'm leaning into my camera there a
-
-little bit. So I will go ahead and activate.
-
-This problem for you and I'll give you
-
-a couple of minutes to work on this on
-
-your own and then open breakout rooms
-
-Right everybody's back Please put in your answer
-
-if you still need to I will give you three more
-
-sections to do that and Remember if you are doing this
-
-in the zoom session then you get credit whether
-
-your answer is correct or not if you're doing this
-
-Asynchronously and can watch the video
-
-you do need to have a correct answer
-
-to get a point for the questions
-
-So three more seconds three
-
-two,
-
-one.
-
-All right, thank you, stopping delivery.
-
-All right, so let's take our equations
-
-from our free body diagram here.
-
-I'm going to start in the y direction. Sum of forces
-
-in the y direction equals zero, and so I have the
-
-normal force cosine theta component, the component
-
-along the y-axis going upward, so n cosine theta minus
-
-the friction force, and that would be the sine theta
-
-component, so minus F sine theta and then minus mg.
-
-And I'll call that my first equation, And
-
-my second equation is sum of forces in
-
-the r direction equals mv squared over r.
-
-And let's see, in the radial direction, I have the
-
-normal force sine theta, so the sine theta component
-
-of the normal force, n sine theta, and the friction
-
-force component, and that would be the cosine component,
-
-so n cosine, or n sine theta plus f cosine theta.
-
-Now, I want to solve all this for velocity. I have
-
-two equations. How many unknowns do I have?
-
-Well, first of all, I know the friction force equals
-
-mu s times the normal force. So the friction
-
-force doesn't introduce a new variable. It's really,
-
-and I know mu s. So n is an unknown. That's 1.
-
-Theta is known.
-
-M is known.
-
-v is unknown. So the normal force and the velocity
-
-are two unknowns. I should be able to solve this with
-
-two equations. Now there's a lot of different ways you
-
-could do this. You could do it with substitutions
-
-and such. What I'm going to do is maybe a little different
-
-than what you might think of doing. This equation
-
-here, I'm going to multiply through by r. So mv
-
-squared equals R N sine theta plus, and then the friction
-
-force is mu S times the normal force cosine theta.
-
-Okay,
-
-and this equation here, I'm going to solve that
-
-for Mg. So Mg equals the normal force, which is,
-
-so normal force cosine theta, and then minus the
-
-friction force, which is mu s normal sine theta.
-
-Now that looks like an odd choice, but I like it
-
-because if I divide this equation two, this form
-
-of equation two, by this form of equation one, then
-
-the normal force just cancels out. Now, oops,
-
-I forgot to multiply through by r here, so that
-
-should be rn cosine theta r, mu s rn cosine theta.
-
-Okay, so I'm going to divide by this equation,
-
-so divide by mg, and then n, divide this whole
-
-side, n cosine theta minus mu s n sine theta.
-
-And so what that gets, notice the mass cancels out
-
-and the normal force cancels out. So I get a v squared
-
-and I'm going to bring the g over to this side
-
-and factor out the r. so gr, and then what's left as
-
-a fraction here would be, let's see, normal force
-
-cancels out everywhere, so sine theta plus mu s
-
-cosine theta divided by cosine theta minus mu s sine
-
-theta, and that's squared, so if I take the square
-
-root of that, I have an expression for the velocity.
-
-now even if you did this algebra differently like
-
-I said there's a lot of different ways you could
-
-do the algebra I chose a way to do the algebra that
-
-made the cancellations really simple canceled
-
-the mass and canceled the normal force but you could
-
-have done you could have solved for normal force
-
-substituted into the second equation etc you could
-
-have gotten this expression a different way. If
-
-I plug in the values that I was given in the
-
-expression in the problem statement, I would get 25
-
-meters per second, which is about 55 miles an hour.
-
-Okay,
-
-any questions about this?
-
-We have two minutes left, and I just have a really
-
-quick question. This is interesting to do. So if I have,
-
-here's a system that looks different. So I have
-
-this key, and this is called a conical pendulum. So I
-
-basically have something at the end of a string that
-
-is swinging around in a circle. And I'm asking you,
-
-what would be the free body diagram for the key in
-
-this circumstance? I'm going to go ahead and activate.
-
-Oops, let me
-
-stop showing the responses.
-
-Okay, we're getting a little short on time. I'm going
-
-to go ahead and give you three more seconds to put
-
-in an answer if you haven't done so already. Three,
-
-two,
-
-one.
-
-All right, thank you, Stopping Delivery.
-
-Let's see what you said.
-
-B.
-
-Okay, so think about what's going on with this
-
-system. Also, there are contact forces and there are
-
-non-contact forces. I have gravity pulling downward,
-
+$$
+N
+\left(
+\cos\theta-\mu_s\sin\theta
+\right)
+=
 mg.
+$$
 
-All of these diagrams have the same mg. I have
+Therefore,
 
-tension from the string that would be pulling that
+$$
+\boxed{
+N
+=
+\frac{
+mg
+}{
+\cos\theta-\mu_s\sin\theta
+}
+}.
+$$
 
-way, and I should have these components equal.
+## Radial Force Equation
 
-Now, tension from the string,
+The inward radial components of both the normal force and friction contribute to the circular motion:
 
-and a lot of you have chosen that there would be a
+$$
+\sum F_r=m\frac{v^2}{r}.
+$$
 
-force pointing toward the center. that is not a real
+Therefore,
 
-force the thing the force keeping the object moving
+$$
+N\sin\theta+f_s\cos\theta
+=
+m\frac{v^2}{r}.
+$$
 
-in a circle is the component of the tension force this
+Using
 
-diagram is actually the same diagram as we had for
+$$
+f_s=\mu_sN,
+$$
 
-a car moving around a circular ramp with no friction
+we obtain
 
-right so a car moving around a circular
+$$
+N\sin\theta+\mu_sN\cos\theta
+=
+m\frac{v^2}{r}.
+$$
 
-um an incline that is a circular ramp
+Factor out $N$:
 
-a ramped curve bank curve has the same free body
+$$
+N
+\left(
+\sin\theta+\mu_s\cos\theta
+\right)
+=
+m\frac{v^2}{r}.
+$$
 
-diagram as this object moving around in a circle this
+Substitute the vertical-equation result for $N$:
 
-conical pendulum and you could think of some other
+$$
+\frac{
+mg
+}{
+\cos\theta-\mu_s\sin\theta
+}
+\left(
+\sin\theta+\mu_s\cos\theta
+\right)
+=
+m\frac{v^2}{r}.
+$$
 
-systems that could be treated identically to the
+The mass cancels:
 
-car on the ramp. So a car on the ramp is a really
+$$
+\frac{
+g
+\left(
+\sin\theta+\mu_s\cos\theta
+\right)
+}{
+\cos\theta-\mu_s\sin\theta
+}
+=
+\frac{v^2}{r}.
+$$
 
-classic problem that we do in physics, but there are
+Multiplying by $r$ gives
 
-other systems. I just think it's interesting to
+$$
+v^2
+=
+rg
+\frac{
+\sin\theta+\mu_s\cos\theta
+}{
+\cos\theta-\mu_s\sin\theta
+}.
+$$
 
-note that there are other systems that mathematically
+Therefore, the maximum speed is
 
-would be treated identically to systems that look
+$$
+\boxed{
+v_{\max}
+=
+\sqrt{
+rg
+\frac{
+\sin\theta+\mu_s\cos\theta
+}{
+\cos\theta-\mu_s\sin\theta
+}
+}
+}.
+$$
 
-very different on the outset. But if you think about
+Using the numerical values supplied in the problem gives approximately
 
-what the free-body diagrams look like and then
+$$
+\boxed{
+v_{\max}=25\ \mathrm{m/s}
+}.
+$$
 
-just use the free-body diagrams to do the analysis,
+This is approximately
 
-then you can see that the analysis would
+$$
+\boxed{
+v_{\max}\approx55\ \mathrm{mph}
+}.
+$$
 
-be the same. And I see that 41% of you
+The car’s mass and the normal force both cancel from the final result.
 
-did choose the right free body diagram.
+# Comparing the Three Curve Situations
 
-And some people wanted to put something, a force
+## Flat Curve
 
-pointing toward the center of the circle.
+On a flat curve, static friction supplies the entire inward force:
 
-That's actually a fictitious force. There's nothing,
+$$
+f_s=m\frac{v^2}{r}.
+$$
 
-there's no non-contact or contact force
+At the maximum speed,
 
-forcing that object toward the center of the circle.
+$$
+\boxed{
+v_{\max}=\sqrt{\mu_srg}
+}.
+$$
 
-It's just a component of the tension force.
+## Frictionless Banked Curve
 
-Question in the chat.
+On a frictionless banked curve, the inward component of the normal force supplies the radial force:
 
-So it's just the tension keeping the key moving in a
+$$
+N\sin\theta=m\frac{v^2}{r}.
+$$
 
-circle. that's absolutely right. Just the tension and
+The design speed is
 
-not even all of the tension, just the component of the
+$$
+\boxed{
+v_0=\sqrt{rg\tan\theta}
+}.
+$$
 
-tension that is the radial component of the tension.
+## Banked Curve with Friction
 
-Okay, I see we're out of time, so I'm going to go
+At the maximum speed, friction points down the bank and contributes to the inward radial force:
 
-ahead and end class here. Thank you so much for
+$$
+\boxed{
+v_{\max}
+=
+\sqrt{
+rg
+\frac{
+\sin\theta+\mu_s\cos\theta
+}{
+\cos\theta-\mu_s\sin\theta
+}
+}
+}.
+$$
 
-participating, and if you're watching the video, I
+# Conical Pendulum
 
-hope you enjoy the video. If you have any questions
+Consider a small object attached to a string and moving in a horizontal circle.
 
-for me, just stick around or shoot me an email.
+The string remains at a constant angle $\theta$ from the vertical, producing a shape similar to a cone. This system is called a **conical pendulum**.
 
-I'd be happy to answer you either way. Bye for now.
+## Free-Body Diagram
 
-Thank you for coming. See you next time.
+Only two physical forces act on the object:
+
+- The gravitational force $mg$, directed downward
+- The tension force $F_T$, directed along the string toward the pivot
+
+There is no separate force called “centripetal force.” The inward component of the tension supplies the required net radial force.
+
+If $\theta$ is measured from the vertical, the tension components are
+
+$$
+F_{T,y}=F_T\cos\theta
+$$
+
+and
+
+$$
+F_{T,r}=F_T\sin\theta.
+$$
+
+Because the object has no vertical acceleration,
+
+$$
+F_T\cos\theta=mg.
+$$
+
+The inward component produces the circular motion:
+
+$$
+F_T\sin\theta=m\frac{v^2}{r}.
+$$
+
+Dividing the radial equation by the vertical equation gives
+
+$$
+\tan\theta
+=
+\frac{v^2}{rg}.
+$$
+
+Therefore,
+
+$$
+\boxed{
+v=\sqrt{rg\tan\theta}
+}.
+$$
+
+This is mathematically identical to the result for a car traveling around a frictionless banked curve.
+
+The two systems look physically different, but their free-body diagrams have the same mathematical structure:
+
+- Gravity acts vertically downward.
+- A single angled contact force acts upward and inward.
+- The vertical component balances gravity.
+- The inward component supplies the radial acceleration.
+
+This illustrates the value of beginning each problem with a correct free-body diagram. Systems that appear unrelated may be governed by the same equations.
+
+# General Strategy for Circular-Motion Force Problems
+
+## 1. Draw the Physical Situation
+
+Identify:
+
+- The circular path
+- The center of the circle
+- The radius
+- The direction of the object’s velocity
+- Any slope or banking angle
+
+## 2. Draw a Free-Body Diagram
+
+Include only actual physical forces acting on the object.
+
+Possible forces include:
+
+- Gravity
+- Normal force
+- Friction
+- Tension
+
+Do not add a separate “centripetal-force” arrow. Centripetal force describes the net inward result of the actual forces.
+
+## 3. Choose Radial and Vertical Axes
+
+For a horizontal circular path, choose:
+
+- Positive radial direction toward the center
+- Positive vertical direction upward
+
+These axes allow the radial equation to be written directly as
+
+$$
+\sum F_r=m\frac{v^2}{r}.
+$$
+
+## 4. Resolve Angled Forces into Components
+
+For a banked curve:
+
+$$
+N_y=N\cos\theta,
+$$
+
+$$
+N_r=N\sin\theta.
+$$
+
+If friction acts along the bank, determine its vertical and radial components from the geometry.
+
+## 5. Determine the Direction of Friction
+
+Static friction opposes the impending relative motion between the tires and the road.
+
+- If the car tends to slide down the bank, friction points up the bank.
+- If the car tends to slide up the bank, friction points down the bank.
+
+## 6. Apply Newton’s Second Law Separately
+
+Use
+
+$$
+\sum F_y=ma_y
+$$
+
+and
+
+$$
+\sum F_r=m\frac{v^2}{r}.
+$$
+
+For the systems considered here,
+
+$$
+a_y=0.
+$$
+
+## 7. Use the Maximum Static-Friction Condition Only at the Threshold
+
+In general,
+
+$$
+f_s\leq\mu_sN.
+$$
+
+Use
+
+$$
+f_s=\mu_sN
+$$
+
+only when the object is just about to slide.
+
+## 8. Solve Symbolically Before Substituting Numbers
+
+A symbolic solution makes it easier to:
+
+- Identify cancellations
+- Check units
+- Compare related physical systems
+- Analyze how the result changes when a variable changes
+- Detect algebraic errors
+
+# Summary
+
+For circular motion,
+
+$$
+\boxed{
+a_r=\frac{v^2}{r}
+}
+$$
+
+and
+
+$$
+\boxed{
+\sum F_r=m\frac{v^2}{r}
+}.
+$$
+
+For a car traveling on a flat curve, static friction supplies the inward force:
+
+$$
+f_s=m\frac{v^2}{r}.
+$$
+
+At the maximum speed,
+
+$$
+\boxed{
+\mu_s=\frac{v^2}{rg}
+}
+$$
+
+or
+
+$$
+\boxed{
+v_{\max}=\sqrt{\mu_srg}
+}.
+$$
+
+For the flat-curve example,
+
+$$
+\boxed{
+\mu_s\approx0.53
+}.
+$$
+
+For a frictionless banked curve,
+
+$$
+N\cos\theta=mg
+$$
+
+and
+
+$$
+N\sin\theta=m\frac{v^2}{r}.
+$$
+
+Therefore,
+
+$$
+\boxed{
+v=\sqrt{rg\tan\theta}
+}.
+$$
+
+For the banked-curve example,
+
+$$
+\boxed{
+v\approx7.2\ \mathrm{m/s}
+}.
+$$
+
+On a banked curve with friction:
+
+- Friction points up the slope when the car is moving below the frictionless design speed.
+- Friction points down the slope when the car is moving above the frictionless design speed.
+
+At the maximum speed,
+
+$$
+\boxed{
+v_{\max}
+=
+\sqrt{
+rg
+\frac{
+\sin\theta+\mu_s\cos\theta
+}{
+\cos\theta-\mu_s\sin\theta
+}
+}
+}.
+$$
+
+For the values used in the problem,
+
+$$
+\boxed{
+v_{\max}=25\ \mathrm{m/s}
+}.
+$$
+
+A conical pendulum has the same force-component structure as a frictionless banked curve:
+
+$$
+F_T\cos\theta=mg
+$$
+
+and
+
+$$
+F_T\sin\theta=m\frac{v^2}{r}.
+$$
+
+In both systems, the inward component of an angled physical force supplies the radial acceleration. There is no additional centripetal force acting on the object.

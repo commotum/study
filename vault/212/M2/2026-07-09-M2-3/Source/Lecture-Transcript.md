@@ -1,996 +1,817 @@
+# Physics 212: Torque, Moment Arms, and Rotational Dynamics
 
-Hey there.
+Welcome back to Physics 212.
 
-Welcome to Physics 212. Hey
+## Announcements
 
-everybody, welcome back.
+Quiz 1 is currently being graded, and scores should be available by Monday. Once the scores are posted, the optional Quiz 1X extra-credit assignment will open.
 
-Well, not much to talk about
+Quiz 1X must address the Quiz 1 problem on which you lost the most points. Although the lowest Quiz Part A score and the lowest Quiz Part B score are dropped at the end of the term, any extra-credit points earned through Quiz 1X are retained even if Quiz 1 is ultimately one of your dropped scores.
 
-as far as announcements today.
+You should also be working on this week’s laboratory assignment.
 
-Quiz 1 is still in the process of being graded.
+Attendance and active participation in your scheduled laboratory meeting contribute to your discussion grade. If you cannot attend your regular meeting, contact your laboratory TA in advance and arrange to attend another meeting if possible.
 
-We should have those scores back to you by Monday.
+Each laboratory group submits one group report. The names and email addresses included with the submission should be those of the students who actively contributed to preparing the report. Posting in the discussion area without participating in the preparation of the report is not sufficient. If a group member is not responding or contributing, contact your laboratory TA.
 
-And at which time Quiz 1X will open. So
+## Introduction to Torque
 
-Quiz 1X is based on Quiz 1. And by the way,
+Torque describes the tendency of a force to produce rotation about a chosen point or axis.
 
-Quiz 1X is an extra credit assignment.
+The torque produced by a force is defined by the cross product
 
-But over the course of the term, we do drop
+$$
+\boxed{
+\vec{\tau}=\vec{r}\times\vec{F}
+}
+$$
 
-some scores. So we drop the lowest quiz
+where:
 
-score. Drop quiz part A and part B separately.
+- $\vec{r}$ is the position vector from the pivot to the point where the force is applied
+- $\vec{F}$ is the applied force
+- $\vec{\tau}$ is the resulting torque
 
-Even so, if you do quiz 1A, the extra credit assignment
+The rotational form of Newton’s second law is
 
-based on quiz 1, and it must be addressing the problem
+$$
+\boxed{
+\sum\vec{\tau}=I\vec{\alpha}
+}
+$$
 
-where you lost the most points, even if quiz 1 turns
+where:
 
-out to be the quiz that you drop for the term, either
+- $I$ is the moment of inertia about the selected rotation axis
+- $\vec{\alpha}$ is the angular acceleration
 
-the part a or part b or both you still get to keep
+This equation is analogous to the translational equation
 
-the extra credit points so worth doing and i know we've
+$$
+\sum\vec{F}=m\vec{a}.
+$$
 
-talked about that quite a bit already so i'm not going
+In translational motion, mass measures an object’s resistance to linear acceleration. In rotational motion, the moment of inertia measures the object’s resistance to angular acceleration. The moment of inertia depends on both the amount of mass and how that mass is distributed relative to the rotation axis.
 
-to go into it deeply until it's time to do it it's
+## Magnitude of Torque
 
-not open yet any questions from you about anything okay
+The magnitude of the cross product is
 
-should be working on the lab for this week make
+$$
+\boxed{
+\tau=rF\sin\theta
+}
+$$
 
-sure that when you meet up with your lab ta that
+where $\theta$ is the angle between $\vec{r}$ and $\vec{F}$.
 
-you attend those meetings and you're active in
+This equation shows that torque depends on three factors:
 
-those meetings part of your participation part
+- The magnitude of the force
+- The distance from the pivot to the point where the force is applied
+- The angle between the position vector and the force
 
-of your discussion grade in fact half of it is
+The SI unit of torque is the newton-meter:
 
-based on your participation in your lab meeting
+$$
+\boxed{
+[\tau]=\mathrm{N\,m}
+}.
+$$
 
-also your group should be getting together and
+## The Tangential Component of Force
 
-discussing the putting together your data and your information
+Only the component of force perpendicular to the position vector produces torque.
 
-and your answers for the group report you only
+The tangential component of the force is
 
-submit one group report per group and if somebody in
+$$
+F_{\perp}=F\sin\theta.
+$$
 
-your group is not contributing actively to the group
+Therefore, the torque magnitude can also be written as
 
-report then don't add their name to the group report
+$$
+\tau=rF_{\perp}.
+$$
 
-so one person will submit the group report and right
+A force applied perpendicular to $\vec{r}$ produces the greatest possible torque for a given force and distance:
 
-after as it's being submitted at the end of the
+$$
+\theta=90^\circ
+\quad\Longrightarrow\quad
+\tau=rF.
+$$
 
-submission it will ask you to add emails of people in
+A force directed along the position vector produces no torque:
 
-your group and you add the emails of the people who
+$$
+\theta=0^\circ
+\quad\Longrightarrow\quad
+\tau=0.
+$$
 
-are in your group also it should be that the people's
+This explains why a door is easiest to open by pushing perpendicular to its surface near the edge farthest from the hinges. Pushing near the hinges gives a small value of $r$, while pushing at an angle reduces the tangential component of the force.
 
-names are on the front page of the group report if
+In the force comparison shown in the lecture, $F_1$ produced the greatest torque because it acted far from the hinge and in the most effective direction.
 
-somebody even if they posted in the lab discussion
+## Moment Arm and Line of Action
 
-but they didn't get together with you they didn't
+Torque can also be expressed using a **moment arm**.
 
-contribute actively to the group report then don't add
+The line of action of a force is the infinite line extending in the direction of the force. The moment arm $d$ is the shortest perpendicular distance from the pivot to that line.
 
-their name to the group report just add the people who
+From the geometry,
 
-actively contributed so make sure you're actively
+$$
+d=r\sin\theta.
+$$
 
-contributing to your group's group report and if any
+The torque magnitude can therefore be written as
 
-issues come up contact your lab ta and you can copy
+$$
+\boxed{
+\tau=Fd
+}.
+$$
 
-me on that if something happens and you need to miss
+The two forms
 
-your lab meeting with your ta then contact them
+$$
+\tau=rF\sin\theta
+$$
 
-ahead of time you typically what you can do is just
+and
 
-attend one of their other meetings so look at their
+$$
+\tau=Fd
+$$
 
-schedule or even another lab ta schedule so make sure
+are equivalent.
 
-you can attend one of the meetings your lab meeting
+Using $rF\sin\theta$ is often the most direct method when the position vector, force, and angle are clearly shown. The moment-arm method can be convenient when the line of action is easier to identify than the angle.
 
-is the best but yeah if something comes up and you
+## Worked Example: Torque Applied to a Wrench
 
-can't make the meeting get a hold of them about that
+Consider a wrench with a force applied at its end.
 
-and if you have people in your a person or persons
+The given quantities are
 
-in your group who are not contributing or not answering
+$$
+r=52\ \mathrm{cm}=0.52\ \mathrm{m},
+$$
 
-your emails or messages then let your lab ta know
+$$
+F=120\ \mathrm{N},
+$$
 
-about that all right so let's talk about the physics
+and a marked angle
 
-for today we have we're talking about torque now
+$$
+\phi=33^\circ.
+$$
 
-i know we've mentioned torque a few times already.
+The marked $33^\circ$ angle is not the angle between the position vector and the force. The angle needed in the torque equation is
 
-Torque is, we can write torque as defined as R cross
+$$
+\theta=90^\circ-\phi.
+$$
 
-F, and so it has to do with a position and a force.
+Therefore,
 
-And notice this is a cross product, and we've talked
+$$
+\theta=90^\circ-33^\circ=57^\circ.
+$$
 
-about the directionality of a cross product, and
+The torque magnitude is
 
-we'll talk about that some more as well. So torque
+$$
+\tau=rF\sin\theta.
+$$
 
-is R cross F. Torque equals also let me write it
+Substituting the known values,
 
-like this sum of torques equals i alpha that's a vector
+$$
+\tau
+=
+(0.52\ \mathrm{m})
+(120\ \mathrm{N})
+\sin(57^\circ).
+$$
 
-equation so like sum of forces equals ma sum of
+This gives
 
-torque equals i alpha that's an equal sign didn't
+$$
+\boxed{
+\tau\approx52\ \mathrm{N\,m}
+}.
+$$
 
-erase very well equals I alpha so sum of forces equals
+Using the supplementary angle would give the same result because
 
-ma that's related to this torque equation the mass
+$$
+\sin(123^\circ)=\sin(57^\circ).
+$$
 
-term is this mass distribution this I that has to
+The important point is that the angle in
 
-do with the mass and the placement of the mass and
+$$
+\tau=rF\sin\theta
+$$
 
-then instead of the acceleration we have angular
+must be an angle between $\vec{r}$ and $\vec{F}$, not simply whichever angle happens to be labeled in the diagram.
 
-acceleration so sum of torque equals I alpha and torque
+## Direction of Torque
 
-is defined as r cross f we can write the magnitude
+Torque is a vector. Its direction is determined by the cross product
 
-of torque is r f sine theta where theta is the
+$$
+\vec{\tau}=\vec{r}\times\vec{F}.
+$$
 
-angle between r and f okay any questions about this
+The vectors $\vec{r}$ and $\vec{F}$ lie in a plane. The torque vector must be perpendicular to that plane.
 
-all right so let's go to poll everywhere and i will
+When $\vec{r}$ and $\vec{F}$ lie in the plane of the page, the torque must point either:
 
-put the poll everywhere link in the chat for you
+- Out of the page
+- Into the page
 
-and I will activate the first question okay
+The right-hand rule determines which direction applies.
 
-most people have an answer in if you still need to
+Point the fingers of your right hand along $\vec{r}$ and curl them toward $\vec{F}$. Your thumb points in the direction of $\vec{\tau}$.
 
-put one in please do that now I will give you
+For the wrench example, the right-hand rule gives a torque directed into the page:
 
-three more seconds three two one all right thank you
+$$
+\boxed{
+\vec{\tau}\text{ points into the page}
+}.
+$$
 
-stopping delivery what say you all right most
+The usual diagram symbols are:
 
-people said f1 that is correct F1 would be the largest
+- $\odot$ for a vector directed out of the page
+- $\otimes$ for a vector directed into the page
 
-torque. Or if you think about the net torque
+The downward direction of the applied force is not the direction of the torque. The force lies in the plane of the page, while the torque is perpendicular to that plane.
 
-equals I alpha, the moment of inertia of this door,
+## Point and Extended Free-Body Diagrams
 
-if you're looking straight down against the door,
+A point-particle free-body diagram is sufficient for translational motion because the sum of the forces does not depend on where the forces are applied.
 
-then the moment of inertia is set. But it's just
+Torque does depend on the point of application. Rotational problems therefore require an **extended free-body diagram**.
 
-basically a slab rotating on a hinge on one side of it.
+An extended free-body diagram should show:
 
-and so think of which one of these forces would produce
+- The physical shape of the object
+- The selected pivot or rotation axis
+- Every force acting on the object
+- The point where each force is applied
+- The distance from the pivot to each force
+- The angle between each position vector and force
 
-the largest alpha so you're walking up to a door
+A force may be present on the free-body diagram but contribute no torque. This occurs when its line of action passes through the pivot.
 
-you want to push the door to get in do you push it
+In that situation, the force is not zero. Its lever arm is zero:
 
-near the hinge no it's a lot harder to push it near
+$$
+r_{\perp}=0
+\quad\Longrightarrow\quad
+\tau=0.
+$$
 
-the hinge and get this door to open you're going to
+## Worked Example: Spool Pulled by a Constant Tension
 
-push it straight on close to the end so yeah f1
+Consider a solid cylindrical spool of mass $m$ and radius $r$ mounted on a frictionless fixed spindle.
 
-produces the largest torque so if these forces the
+A cord is wrapped around the spool and pulled with a constant tension $F_T$. Because the tension and moment of inertia are constant, the torque and angular acceleration are also constant.
 
-magnitudes of the forces are all the same, then the R and
+The spool rotates faster and faster, but its center does not translate because the spindle holds it in place.
 
-the sine theta is what produces the magnitude of the
+### Translational Free-Body Diagram
 
-torque. So the farther out away from the pivot
+From the side view, the forces include:
 
-point, R is a distance between the pivot point and the
+- The gravitational force $mg$ downward
+- An upward support force $N_1$
+- The cord tension $F_T$ horizontally
+- A horizontal spindle reaction $N_2$
 
-point where the force is acting, and then theta
+Because the spool’s center does not accelerate,
 
-is the angle between R and F. So I'm going to say
+$$
+\sum F_x=0
+$$
 
-Torque is due to the component of force
+and
 
-that is tangential to the circle applied.
+$$
+\sum F_y=0.
+$$
 
-a distance r from the pivot.
+In the horizontal direction,
 
-So if we have this, say we have some,
+$$
+F_T-N_2=0.
+$$
 
-let me draw it like this. In fact, I'm
+Therefore,
 
-going to refer to this diagram here
+$$
+N_2=F_T.
+$$
 
-that's on this first page about torque.
+In the vertical direction,
 
-So torque, if we, how do you draw a wrench?
+$$
+N_1-mg=0.
+$$
 
-So we have this wrench here would be the
+Therefore,
 
-pivot point, this point where the knot is,
+$$
+N_1=mg.
+$$
 
-and let's say we have, this would be our r distance
+These force equations describe the lack of translational acceleration, but they do not determine the angular acceleration.
 
-to where the force was applied and let's say we have
+### Extended Free-Body Diagram
 
-applying some force at some angle there's my angle
+Viewed along the rotation axis, the cord tension acts tangentially at the rim.
 
-theta there's my radius r the distance from the pivot
+The angle between the radius and tension is
 
-point to the place where the force is being applied
+$$
+90^\circ,
+$$
 
-and then if this let's say this wrench is being
+so the torque magnitude is
 
-rotated around the pivot then when it's
+$$
+\tau=F_Tr.
+$$
 
-see if i can draw a circle maybe easier
+The spindle reaction acts through the pivot. It may be nonzero, but its torque about the spindle is zero because its lever arm is zero.
 
-to draw the circle first. I will do that.
+The rotational equation is
 
-All right, so I have this circle,
+$$
+\sum\tau_p=I_p\alpha.
+$$
 
-and center of the circle here is our vector,
+Therefore,
 
-and then the force is at some angle, but the
+$$
+F_Tr=I_p\alpha.
+$$
 
-tangential component of that force, So this is F
+For a uniform solid cylinder,
 
-sine theta, if this is theta, so there's my
+$$
+I_p=\frac{1}{2}mr^2.
+$$
 
-triangle here. So F sine theta gives me the tangential
+Substituting,
 
-component of the force, and that's what's
+$$
+F_Tr
+=
+\left(
+\frac{1}{2}mr^2
+\right)
+\alpha.
+$$
 
-responsible for rotating it around this circle.
+Solving for the angular acceleration,
 
-Now,
+$$
+\alpha
+=
+\frac{F_Tr}{
+\frac{1}{2}mr^2
+}.
+$$
 
-you could write the torque equals R F sine theta, or
+Therefore,
 
-here it's being called phi, or torque equals R sine
+$$
+\boxed{
+\alpha=\frac{2F_T}{mr}
+}.
+$$
 
-phi times F. There's another way to look at this. We
+Using the numerical values supplied in the activity gives
 
-can look at something like the direction that the
+$$
+\boxed{
+\alpha=2.7\ \mathrm{rad/s^2}
+}.
+$$
 
-force is actually exerting. We call that the line of
+The central idea is that the support force does not disappear. Its torque disappears because it acts at the pivot.
 
-action along which the force acts. And then D is the
+## Worked Example: Two Coaxial Solid Cylinders
 
-distance from the pivot point to that line of action,
+Consider two solid cylinders rigidly attached along the same rotation axis.
 
-the shortest distance from the pivot point to the line
+The larger cylinder has:
 
-of action where it intersects it at a right angle.
+- Mass $M$
+- Radius $R$
 
-And so really, this is just saying that
+The smaller cylinder has:
 
-this is a moment arm. Torque is a force
+- Unknown mass $m$
+- Radius $r$
 
-multiplied by the moment arm, R sine phi.
+A tangential force $F$ is applied to the outer edge of the larger cylinder. The two cylinders rotate together with angular acceleration $\alpha$.
 
-Some of you, if you've learned this in an engineering
+We want to determine the mass $m$ of the smaller cylinder.
 
-class already, you may have taken this approach of
+### Applied Torque
 
-using the moment arm and the line of action, et cetera.
+Because the force is tangential to the larger cylinder,
 
-To me, this looks a lot more straightforward.
+$$
+\theta=90^\circ.
+$$
 
-Torque just equals RF sine phi, where phi is the angle
+The applied torque is therefore
 
-between the radius and the force. And notice, because
+$$
+\tau=FR.
+$$
 
-it's a sine, then you could take either the angle
+### Total Moment of Inertia
 
-between the radius, the position vector and the force, or
+The moment of inertia of the larger solid cylinder is
 
-the outer angle if you extended that radial component
+$$
+I_M=\frac{1}{2}MR^2.
+$$
 
-further along. I typically draw it between and just
+The moment of inertia of the smaller solid cylinder is
 
-define it as the angle between the radius and the force.
+$$
+I_m=\frac{1}{2}mr^2.
+$$
 
-Okay,
+Because the cylinders are rigidly attached and rotate about the same axis, their moments of inertia add:
 
-any questions about this?
+$$
+I_{\mathrm{total}}
+=
+I_M+I_m.
+$$
 
-All right, then let's do another
+Therefore,
 
-problem here. Let's go to the next one.
+$$
+I_{\mathrm{total}}
+=
+\frac{1}{2}MR^2
++
+\frac{1}{2}mr^2.
+$$
 
-Okay, so,
+### Rotational Equation of Motion
 
-oh, let me show the responses for
+Using
 
-a second before I activate it.
+$$
+\sum\tau=I_{\mathrm{total}}\alpha,
+$$
 
-This diagram, basically the same diagram, only this
+we obtain
 
-time we have different direction for the force.
+$$
+FR
+=
+\left(
+\frac{1}{2}MR^2
++
+\frac{1}{2}mr^2
+\right)
+\alpha.
+$$
 
-So,
+Multiply both sides by $2/\alpha$:
 
-oh, that was bad. Let me try this again.
+$$
+\frac{2FR}{\alpha}
+=
+MR^2+mr^2.
+$$
 
-I'm not very practiced at drawing
+Subtract $MR^2$:
 
-wrenches, and it's showing.
+$$
+mr^2
+=
+\frac{2FR}{\alpha}
+-
+MR^2.
+$$
 
-Okay, so I have some angle, kind of a
+Divide by $r^2$:
 
-low angle about like that, and then
+$$
+\boxed{
+m
+=
+\frac{
+\frac{2FR}{\alpha}-MR^2
+}{
+r^2
+}
+}.
+$$
 
-the wrench coming around, and then...
+An equivalent form is
 
-like that. There's my pivot point
+$$
+\boxed{
+m
+=
+\frac{2FR}{\alpha r^2}
+-
+M\frac{R^2}{r^2}
+}.
+$$
 
-and I have what the length here
+Using the numerical values supplied in the activity gives
 
-52 centimeters and then the force pushing
+$$
+\boxed{
+m=2.5\ \mathrm{kg}
+}.
+$$
 
-straight down 120 newtons and then the angle
+## Explicit Unit Check
 
-33 degrees okay and I'm asking you to from this diagram
+The first term in the result is
 
-first of all recognize what the variables are that
+$$
+\frac{2FR}{\alpha r^2}.
+$$
 
-are being given and define those solve this completely
+Ignoring the dimensionless factor of $2$, its units are
 
-symbolically even if you're getting a problem that
+$$
+\left[
+\frac{FR}{\alpha r^2}
+\right]
+=
+\frac{
+(\mathrm{N})(\mathrm{m})
+}{
+(\mathrm{s^{-2}})(\mathrm{m^2})
+}.
+$$
 
-has numbers in it change those numbers to symbols and
+Using
 
-then solve symbolically and then put numbers back in at
+$$
+1\ \mathrm{N}
+=
+1\ \mathrm{kg\,m/s^2},
+$$
 
-the very last and asking you to calculate the torque
+we obtain
 
-applied about the pivot point. Enter your answer in
+$$
+\left[
+\frac{FR}{\alpha r^2}
+\right]
+=
+\frac{
+(\mathrm{kg\,m/s^2})(\mathrm{m})
+}{
+(\mathrm{s^{-2}})(\mathrm{m^2})
+}.
+$$
 
-newton meters. The units of torque are newton meters.
+The factors of $\mathrm{m^2/s^2}$ cancel:
 
-That makes sense because RF has meters and newtons, so
+$$
+\left[
+\frac{FR}{\alpha r^2}
+\right]
+=
+\mathrm{kg}.
+$$
 
-newton meters are the units of torque. There's not a
+The second term has units
 
-special name for torque units like there are newtons.
+$$
+\left[
+M\frac{R^2}{r^2}
+\right]
+=
+(\mathrm{kg})
+\frac{\mathrm{m^2}}{\mathrm{m^2}}
+=
+\mathrm{kg}.
+$$
 
-Okay, I'm going to go ahead and activate right
+Both terms have units of mass, so the final expression is dimensionally consistent.
 
-everybody's back so please do enter an
+## General Strategy for Torque Problems
 
-answer if you still need to do that three two
+### 1. Select the System
 
-one all right thank you stopping delivery
+Identify the particular object or collection of objects being analyzed.
 
-good let's take a second to
+Only forces acting directly on that system belong on its free-body diagram.
 
-look at some responses 52.34
+### 2. Choose the Pivot or Rotation Axis
 
-52.45
+Torque and moment of inertia must be calculated about the same point or axis.
 
-34
+A strategic pivot choice can eliminate unknown forces from the torque equation.
 
-another 52
+### 3. Draw an Extended Free-Body Diagram
 
-34
+Show the object’s geometry, forces, points of application, distances, angles, and pivot.
 
-33.96, too many sig figs,
+Do not rely only on a point-particle free-body diagram when torque is involved.
 
-should only be 2 at 3 at most.
+### 4. Determine the Torque from Each Force
 
-All right, so I'm seeing 34s and 52s.
+Use either
 
-Let's go back to instructions here.
+$$
+\tau=rF\sin\theta
+$$
 
-So let's work through this. We want, we know,
+or
 
-let's see, we know the 4s, and we know R and we
+$$
+\tau=Fd.
+$$
 
-know this angle. I'm going to write it as phi.
+Assign signs according to a clearly stated rotational convention.
 
-We know phi, 33 degrees.
+For example, you may define counterclockwise as positive and clockwise as negative.
 
-And we have torque equals RF sine theta. Now
+### 5. Find the Correct Moment of Inertia
 
-notice I didn't write phi because if we look
+Use the moment of inertia about the selected axis.
 
-carefully at this diagram and a few of you
+For multiple rigidly connected objects,
 
-fell into this. if this is 33 degrees,
+$$
+I_{\mathrm{total}}=\sum_i I_i.
+$$
 
-there's my angle phi, here's my r, here's my f.
+### 6. Apply Rotational Newton’s Second Law
 
-This phi angle is not the angle
+Use
 
-between r and f, there's theta there.
+$$
+\sum\tau=I\alpha.
+$$
 
-So theta equals, so this is a 90 degree angle
+For static rotational equilibrium,
 
-here, so triangle has 180 degrees, That means
+$$
+\alpha=0
+$$
 
-there's 90 degrees taken up in this right angle
+and therefore
 
-and then 90 degrees between phi and theta.
+$$
+\sum\tau=0.
+$$
 
-So theta equals 90 degrees minus phi.
+### 7. Solve Symbolically
 
-Okay, so torque equals RF sine 90 degrees minus phi.
+Keep the calculation in variables until the requested quantity has been isolated.
 
-Now make sure that when you're doing torque, you
+A symbolic solution makes it easier to:
 
-recognize which angle is the correct angle to use here.
+- Identify cancellations
+- Check units
+- Examine limiting behavior
+- Find algebraic errors
 
-Now, like I said, you could use this one out here,
+### 8. Substitute Numerical Values
 
-and so that would give the same answer as using theta,
+Insert numerical values only after obtaining the symbolic result.
 
-but you can't use this other angle that's on the
+## Summary
 
-other side of the triangle. So I can have torque equals
+Torque is the rotational effect of a force:
 
-r is 0.52 meters times the force, which is 120 newtons,
+$$
+\boxed{
+\vec{\tau}=\vec{r}\times\vec{F}
+}.
+$$
 
-times sine of 90 degrees minus 33 degrees or sine
+Its magnitude is
 
-of 57 degrees, and that gives me 52 newton meters.
+$$
+\boxed{
+\tau=rF\sin\theta
+}.
+$$
 
-And if you got 34 meters, then you
+Only the component of force perpendicular to $\vec{r}$ produces torque:
 
-use this angle, this 33 degree angle,
+$$
+F_{\perp}=F\sin\theta.
+$$
 
-and I would say just chalk it up to oh right I need
+Using the moment arm $d$,
 
-to choose the right angle here and that's important
+$$
+\boxed{
+\tau=Fd
+}.
+$$
 
-sometimes we're going to get into more and more complex
+The rotational form of Newton’s second law is
 
-situations that have a couple of different angles
+$$
+\boxed{
+\sum\vec{\tau}=I\vec{\alpha}
+}.
+$$
 
-and you need to be able to identify which angle is
+Torque is greatest when the force is perpendicular to the position vector:
 
-correct so right here and also in for participation in
+$$
+\theta=90^\circ.
+$$
 
-the zoom meeting you get credit whether you've got the
+Torque is zero when the force acts through the pivot or along the radial direction.
 
-answer correct or not if you're in the asynchronous
+For the wrench example,
 
-assignment watching the video and then doing the
+$$
+\boxed{
+\tau\approx52\ \mathrm{N\,m}
+}
+$$
 
-asynchronous participation assignment you need to get it
+and the torque points into the page.
 
-correct but inside the zoom meeting you get participation
+For a solid cylindrical spool pulled tangentially by a tension $F_T$,
 
-credit either way okay any questions about this
+$$
+F_Tr=I\alpha
+$$
 
-all right let's go to the next question then
+with
 
-um what's the direction of the torque i will
+$$
+I=\frac{1}{2}mr^2.
+$$
 
-activate most people have an answer in please
+Therefore,
 
-oh well somebody's not able to see
+$$
+\boxed{
+\alpha=\frac{2F_T}{mr}
+}.
+$$
 
-the question so but most people can um
+For two rigidly attached coaxial solid cylinders,
 
-what is the direction of the torque
+$$
+I_{\mathrm{total}}
+=
+\frac{1}{2}MR^2
++
+\frac{1}{2}mr^2.
+$$
 
-is the question for the the um
+If a tangential force $F$ is applied at the outer radius $R$, then
 
-a diagram where we just were looking at.
+$$
+FR
+=
+\left(
+\frac{1}{2}MR^2
++
+\frac{1}{2}mr^2
+\right)
+\alpha.
+$$
 
-Still shows previous question. Okay,
+Solving for the smaller cylinder’s mass gives
 
-something like that. Just refresh your
+$$
+\boxed{
+m
+=
+\frac{
+\frac{2FR}{\alpha}-MR^2
+}{
+r^2
+}
+}.
+$$
 
-screen. Have you tried refreshing?
-
-This is not the previous question. It's a multiple
-
-choice. Anyway, most people are able to answer.
-
-So if you're having any issues like that, the
-
-thing to do is to put your answer in the chat.
-
-So I'm going to give you three more seconds to put
-
-an answer in three two one all right thank you stopping
-
-delivery okay let's see what you said all right
-
-into the page is correct and about half of you got
-
-that so up down about a third of you put down down
-
-is the direction of the force that's not the direction
-
-of the torque so if the force is going downward.
-
-What we want is the direction of the torque using
-
-the right-hand rule. So torque equals R cross F.
-
-And what I would say here, first thing to think about
-
-is R and F define a plane. These are two vectors, two
-
-lines define a plane. So two vectors define a plane.
-
-In this case, they define the plane in the plane of the
-
-page. So torque has to be perpendicular to this plane
-
-that R and F are in. So torque had better be either
-
-out of the page or into the page. Now the question is
-
-how do you figure out which way it is? And the answer
-
-there would be use the right -hand rule. So if R is in
-
-this direction and F is down, remember in general this
-
-is the right-hand rule I like to use. You may I've learned
-
-something else. If the first vector is in the
-
-direction of my fingers, the second vector is in the direction
-
-of the palm of my hand, or sometimes people bend
-
-their fingers like that for the second vector. I just
-
-use the palm of my hand, and then the answer is along
-
-my thumb. So A cross B is C, directionality. So if the
-
-first vector is R, that's in this direction, and F is
-
-downward, then R, F, and then theta, I
-
-mean, the torque then would be into the
-
-page, direction would be into the page.
-
-And let's see, I have a couple
-
-of questions in the chat.
-
-What is the direction between down and
-
-into the page? Okay, good question.
-
-What I'm talking about here is up, down,
-
-right, left, and then we use into the page and out
-
-of the page. Into the page we use an X and out of page
-
-as a dot. So up is toward the top of the paper and
-
-down is toward the bottom of the paper and then into
-
-the page and out of the page is perpendicular to the
-
-plane of the paper. Good question. Other questions?
-
-Okay well let's go on to the next question then.
-
-So I will go, here it is.
-
-All right, so here we have a spool, on a cord
-
-we're saying that the tension is constant.
-
-So if the tension is constant, that means that the
-
-spool must be spinning faster and faster and faster.
-
-So here's my spool,
-
-it's on a spindle.
-
-and let's see I can draw a hand not very well but
-
-good enough okay the hand is pulling the tension
-
-is constant so this must be spinning faster
-
-and faster. Now, I want you to take a second
-
-to do free body diagrams from the side view
-
-and from the top down view.
-
-So from the side view, I'm going to draw a point
-
-free body diagram. From the top down view of the
-
-spool, I'm going to draw an extended free body
-
-diagram because my torque has to do with the force
-
-and the position where it is acting on the object.
-
-So side view and top -down view. Take a minute
-
-to just draw out the free body diagrams there.
-
-Okay, so for the side view, I'm going to have mg
-
-pointing downward and a normal force pointing upward,
-
-and I have tension pointing to the right, and then
-
-a normal force on the spindle pointing to the left.
-
-I'll call this N1 and N2. There's two different
-
-normal forces, and it doesn't really matter which
-
-directions I put, plus x and plus y here. From
-
-the top down view, here's my pivot right there.
-
-The tension, I could draw this in different ways.
-
-I'm going to draw it pointing straight up.
-
-Here's the radius of the spool and the tension is
-
-tangential. So there's the tension. There's the
-
-distance away from the pivot point and the force, the
-
-tension force, and then the normal force would be
-
-pointing away here. So the normal force is opposite in
-
-direction of the tension. Now the normal force isn't
-
-going to be rotating it, it's just holding the
-
-spool from moving. So the spool is not accelerating
-
-any direction, but it is accelerating angularly. So
-
-here are my known quantities. I know the tension t,
-
-I know r and m, and I want the angular acceleration
-
-alpha. Okay, I'm going to go ahead and activate. All
-
-right, everybody's back. Please put in an answer
-
-if you still need to do that. Three, two, one.
-
-All right, thank you, stopping delivery. All
-
-right, so let's see. We know the tension,
-
-constant tension t. We know the radius
-
-of the spool and the mass of the spool.
-
-And we've also been told that it is a freely spinning
-
-solid cylinder. So freely spinning, there's no
-
-friction involved around the spindle. And solid cylinder
-
-radius r mass m, find the angular acceleration.
-
-So I could do sum of forces for the free body diagram
-
-here. I'm just going to do that for completeness. Sum
-
-of forces in the x direction equals m a x equals zero.
-
-And those forces would be the tension minus n2.
-
-And sum of forces in the y direction equals m
-
-a y equals zero. So this object, this spool
-
-isn't moving, it's spinning, but it's not moving,
-
-translating to a different position. So the
-
-net forces, net acceleration, net forces and
-
-acceleration is zero in both directions, A and Y,
-
-sorry, X and Y.
-
-So then in the Y direction, we
-
-have N1 minus mg equals zero.
-
-And that isn't helping us here. For some of the
-
-problems, you'll need both point free-body diagram
-
-equations and then the torque equation that comes from
-
-the extended free-body diagram. So let's do the
-
-torque equation, sum of torque about the pivot point.
-
-And we've defined this as being our pivot point.
-
-Sum of torque about the pivot point equals I alpha.
-
-And then the torque is, remember, now what I
-
-want to do is list out the torques. equals torque
-
-1 plus torque 2, etc., so equals the force FR,
-
-I'm going to say R, and then sine theta here
-
-is 90 degrees, so this is 1, so TR times
-
-1 plus N2 times 0 because it's at the pivot
-
-point, so this normal force term drops out.
-
-So again,
-
-alpha equals the tension times the radius r. Now
-
-I need to know what i is. So if you didn't
-
-automatically, like very quickly know what i was, what
-
-can you do about that? Well, you can go back to
-
-here and look at your tables of moments of inertia
-
-and also a good reminder that you should be
-
-working on your note sheet for quiz two and these
-
-standard moments of inertia should be on your quiz
-
-notes unless you just happen to know them but
-
-you do need a half a page to a full page of quiz
-
-notes so good to put those there solid cylinder
-
-has a moment of inertia of one half m r squared.
-
-So one half m r squared times alpha equals attention
-
-times r. I'm solving this for alpha. That
-
-gives me alpha equals t r over one half m r squared.
-
-Alpha equals two t over m r. I'm plugging in
-
-the values, I get 2.7 radians per second squared.
-
-All right, any questions about this?
-
-I had a quick question. Why does
-
-the normal force go to zero?
-
-The normal force doesn't go to
-
-zero, but the position goes to zero.
-
-If I'm taking this as my pivot point,
-
-the normal force is right at the
-
-pivot point. Very good question, yes.
-
-The position makes the torque go to zero.
-
-Other questions?
-
-Okay, well, then let's do one more.
-
-We have time for another question.
-
-Okay, here I have a system that
-
-is two stacked solid cylinders.
-
-And let's see, two stacked solid cylinders,
-
-one in the middle. and this is firmly affixed
-
-together so welded or whatever I know the radius
-
-I have a bigger radius R here and I have a mass
-
-capital M little m is the mass of the smaller
-
-cylinder I have a tangential force F and if I know
-
-let's see I know
-
-I've given you the acceleration.
-
-Yes, I know. Alpha, the mass of the big
-
-one, the radius of the big one, the radius
-
-of the small one, and constant force F,
-
-and I want the mass of the small cylinder.
-
-Okay,
-
-M, F, R, R, and alpha. Okay,
-
-I will go ahead and activate.
-
-Right, everybody's back. Please put in
-
-an answer if you still need to do that.
-
-Three, two,
-
-one.
-
-All right, thank you, stopping delivery.
-
-Hey, so I'm going to start with an extended free
-
-body diagram. Hope you did too. Even if you're
-
-not prompted to draw a free body diagram, if
-
-you're using forces or torques, that should be the
-
-first thing that you do. So this is a top view,
-
-top down view. There's a center, so I have the
-
-larger cylinder, solid cylinder, and a smaller solid
-
-cylinder. My force is tangential to the large
-
-cylinder. There's my force, there's my radius r, mass
-
-m, mass little m. I could put in my smaller radius
-
-here, but I don't need it for this diagram. I'll
-
-put it in just for completeness, but there's no force
-
-acting on it there. This force is acting on this
-
-cylinder system with both cylinders together, and
-
-I'm going to have this center as the pivot point.
-
-Okay, so sum of torque equals I alpha equals the force
-
-times r. So that's the only torque I have here. I
-
-could write force r sine of 90 degrees, so force r
-
-times 1. If there's an angle that's not just a right
-
-angle, then you need to include that sine theta term.
-
-Now, what is my moment of inertia here for
-
-this system? Well, remember, moment of inertia
-
-is just adding up all the little mass elements
-
-and their distance away from the rotation,
-
-the pivot point or the rotation axis. So here I have
-
-the moment of inertia is one-half little m little
-
-r squared plus one half big m big r squared it's just
-
-two cylinders stuck together so it's I'm just going
-
-to add the moments of inertia of the two cylinders
-
-together they're both rotating about the same axis
-
-so from this equation I should have one half little
-
-m r squared plus one-half big M capital R squared,
-
-and that multiplies onto alpha equals the force times
-
-the radius, the large radius. And now it's just a
-
-matter of sorting off the smaller mass. So first thing
-
-I do is I divide through by alpha and multiply
-
-through by 2. So I have m r squared plus capital M capital
-
-R squared equals, let's see, 2 f r over alpha.
-
-Subtract off the capital M r squared. m r squared equals
-
-2 f r over alpha minus capital M r squared. Divide
-
-through by r squared. I get mass equals 2fr over
-
-alpha r squared minus m capital R, capital M capital
-
-R squared over little r squared. That is my answer.
-
-And plugging in values, I would
-
-get 2.5 kilograms for the force,
-
-or sorry for the mass, 2 .5 kilograms for the mass.
-
-Let's do just a really quick unit check on this. That
-
-would be kilograms meters per second squared, that's
-
-newtons for force, and then meters for r, and then over
-
-alpha, that's seconds to the minus 2 times meters
-
-squared, and then minus kilogram meters squared over
-
-meters squared. So this first term gives me units equal,
-
-let's see,
-
-kilogram meters squared per second squared over meters
-
-squared per second squared minus kilogram meters
-
-squared over meters squared. Units are kilograms, so
-
-I'm happy with that. That's an explicit units check
-
-looking at each term and putting in the units for each
-
-term okay i'm going to go ahead and end here and what
-
-today's thursday what already thursday so yeah we
-
-don't have class tomorrow in fact we don't have class
-
-until monday so please do have a wonderful weekend
-
-i know i'm going to it's just gorgeous here in the
-
-summertime so if you have any questions for me i will
-
-stick Stick around and start my office hours right
-
-now. If not, I will see you good folks next week. Bye.
-
-Thank you for coming.
-
-See you next time.
+The most important step in a torque problem is constructing a correct extended free-body diagram. Once the forces, points of application, lever arms, angles, and pivot are clearly identified, the rotational equation follows systematically.

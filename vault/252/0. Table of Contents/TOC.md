@@ -65,7 +65,7 @@
 - [ ] M-3
 	- [ ] WHW-3
 		- [ ] [[M-3/WHW-3/Lessons/The Fundamental Theorem of Calculus - 283|9.2.2. The Fundamental Theorem of Calculus]]
-		- [ ] [[M-3/WHW-3/Lessons/Applying the Fundamental Theorem of Calculus to Exponential and Trigonometric Functions - 3575|9.2.3. Applying the Fundamental Theorem of Calculus to Exponential and Trigonometric Functions]]
+		- [x] [[M-3/WHW-3/Lessons/Applying the Fundamental Theorem of Calculus to Exponential and Trigonometric Functions - 3575|9.2.3. Applying the Fundamental Theorem of Calculus to Exponential and Trigonometric Functions]]
 		- [ ] [[M-3/WHW-3/Lessons/The Sum and Constant Multiple Rules for Definite Integrals - 1685|9.2.4. The Sum and Constant Multiple Rules for Definite Integrals]]
 		- [ ] [[M-3/WHW-3/Lessons/Properties of Definite Integrals Involving the Limits of Integration - 632|9.2.5. Properties of Definite Integrals Involving the Limits of Integration]]
 		- [ ] [[M-3/WHW-3/Lessons/Finding the Area Between a Curve and the X-Axis When They Intersect - 1432|9.3.4. Finding the Area Between a Curve and the X-Axis When They Intersect]]
@@ -80,10 +80,40 @@
 		- [ ] [[M-4/WHW-4/Lessons/The Antiderivative - 308|12.4.1. The Antiderivative]]
 		- [ ] [[M-4/WHW-4/Lessons/The Sum Rule for Indefinite Integrals - 3769|12.4.3. The Sum Rule for Indefinite Integrals]]
 		- [ ] [[M-4/WHW-4/Lessons/Integrating the Reciprocal Function - 1361|12.4.4. Integrating the Reciprocal Function]]
+		- [ ] [[M-4/WHW-4/Lessons/Integration Using Substitution - 443|10.1.3. Integration Using Substitution]]
+		- [ ] [[M-4/WHW-4/Lessons/Calculating Definite Integrals Using Substitution - 1159|10.1.4. Calculating Definite Integrals Using Substitution]]
+		- [ ] [[M-4/WHW-4/Lessons/Further Integration of Algebraic Functions Using Substitution - 316|10.1.5. Further Integration of Algebraic Functions Using Substitution]]
 		- [ ] [[M-4/WHW-4/Lessons/Integrating Trigonometric Functions Using Substitution - 478|10.1.8. Integrating Trigonometric Functions Using Substitution]]
 		- [x] [[M-4/WHW-4/Lessons/Calculating the Position Function of a Particle Using Integration - 335|11.1.6. Calculating the Position Function of a Particle Using Integration]]
 		- [ ] [[M-4/WHW-4/Lessons/Calculating the Displacement of a Particle Using Integration - 3576|11.1.7. Calculating the Displacement of a Particle Using Integration]]
-		- [ ] [[M-4/WHW-4/Lessons/Integration Using Substitution - 443|1.1.3. Integration Using Substitution]]
-		- [ ] [[M-4/WHW-4/Lessons/Calculating Definite Integrals Using Substitution - 1159|1.1.4. Calculating Definite Integrals Using Substitution]]
-		- [ ] [[M-4/WHW-4/Lessons/Further Integration of Algebraic Functions Using Substitution - 316|1.1.5. Further Integration of Algebraic Functions Using Substitution]]
 		- [ ] [[M-4/WHW-4/Lessons/Calculating the Total Distance Traveled by a Particle - 636|2.5.5. Calculating the Total Distance Traveled by a Particle]]
+- [ ] M-5
+	- [ ] WHW-5
+		- [ ] [[M-5/WHW-5/Lessons/Introduction to Integration by Parts - 317|1.5.1. Introduction to Integration by Parts]]
+		- [ ] [[M-5/WHW-5/Lessons/Using Integration by Parts to Calculate Integrals With Logarithms - 1140|1.5.2. Using Integration by Parts to Calculate Integrals With Logarithms]]
+	- [ ] OHW-8
+		- [ ] [[M-5/OHW-8/Lessons/Introduction to Integration by Parts - 317|1.5.1. Introduction to Integration by Parts]]
+		- [ ] [[M-5/OHW-8/Lessons/Using Integration by Parts to Calculate Integrals With Logarithms - 1140|1.5.2. Using Integration by Parts to Calculate Integrals With Logarithms]]
+		- [ ] [[M-5/OHW-8/Lessons/Applying the Integration By Parts Twice - 416|1.5.3. Applying the Integration By Parts Twice]]
+		- [ ] [[M-5/OHW-8/Lessons/Integration by Parts in Cyclic Cases - 424|1.5.5. Integration by Parts in Cyclic Cases]]
+	- [ ] OHW-9
+		- [ ] [[M-5/OHW-9/Lessons/Integrating Trigonometric Functions Using Substitution - 478|10.1.8. Integrating Trigonometric Functions Using Substitution]]
+		- [ ] [[M-5/OHW-9/Lessons/Integration Using the Double-Angle Formulas - 1038|1.3.3. Integration Using the Double-Angle Formulas]]
+- [ ] E-2
+	- [ ] Lessons
+		- [ ] [[E-2/Lessons/The Fundamental Theorem of Calculus - 283|9.2.2. The Fundamental Theorem of Calculus]]
+		- [ ] [[E-2/Lessons/The Sum and Constant Multiple Rules for Definite Integrals - 1685|9.2.4. The Sum and Constant Multiple Rules for Definite Integrals]]
+		- [ ] [[E-2/Lessons/Integration Using Substitution - 443|10.1.3. Integration Using Substitution]]
+		- [ ] [[E-2/Lessons/Evaluating Definite Integrals Using Symmetry - 2975|9.3.3. Evaluating Definite Integrals Using Symmetry]]
+		- [ ] [[E-2/Lessons/Calculating the Definite Integral of a Function Given Its Graph - 1200|9.3.5. Calculating the Definite Integral of a Function Given Its Graph]]
+		- [ ] [[E-2/Lessons/Further Integration of Algebraic Functions Using Substitution - 316|10.1.5. Further Integration of Algebraic Functions Using Substitution]]
+		- [ ] [[E-2/Lessons/Integrating Trigonometric Functions Using Substitution - 478|10.1.8. Integrating Trigonometric Functions Using Substitution]]
+		- [ ] [[E-2/Lessons/The Integral as an Accumulation Function - 333|9.4.1. The Integral as an Accumulation Function]]
+		- [ ] [[E-2/Lessons/The Average Value of a Function - 1203|9.5.1. The Average Value of a Function]]
+		- [ ] [[E-2/Lessons/Integrating Exponential Functions Using Substitution - 3770|10.1.7. Integrating Exponential Functions Using Substitution]]
+		- [ ] [[E-2/Lessons/The Second Fundamental Theorem of Calculus - 613|9.4.2. The Second Fundamental Theorem of Calculus]]
+		- [x] [[E-2/Lessons/Calculating the Position Function of a Particle Using Integration - 335|11.1.6. Calculating the Position Function of a Particle Using Integration]]
+		- [ ] [[E-2/Lessons/Calculating the Displacement of a Particle Using Integration - 3576|11.1.7. Calculating the Displacement of a Particle Using Integration]]
+		- [ ] [[E-2/Lessons/Sketching the Derivative of a Function From the Function's Graph - 1204|7.2.1. Sketching the Derivative of a Function From the Function's Graph]]
+		- [ ] [[E-2/Lessons/Interpreting the Graph of a Function's Derivative - 624|7.2.2. Interpreting the Graph of a Function's Derivative]]
+		- [ ] [[E-2/Lessons/Calculating the Total Distance Traveled by a Particle - 636|2.5.5. Calculating the Total Distance Traveled by a Particle]]

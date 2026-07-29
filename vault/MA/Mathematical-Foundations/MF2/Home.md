@@ -10,7 +10,7 @@
 
 ## Progress
 
-- Course: 0% (0/357 unique lessons)
+- Course: 0% (1/357 unique lessons)
 
 - 1. Quadratics: 0% (0/32)
 - 2. Polynomials: 0% (0/28)
@@ -23,17 +23,17 @@
 - 9. Trigonometry: 0% (0/52)
 - 10. Vectors: 0% (0/11)
 - 11. Limits & Continuity: 0% (0/22)
-- 12. Introduction to Calculus: 0% (0/30)
+- 12. Introduction to Calculus: 3% (1/30)
 - 13. Statistics: 0% (0/14)
 - 14. Probability & Combinatorics: 0% (0/18)
 
 ## History
 
-No completed lessons yet.
+- [Integrating Exponential Functions](<12. Introduction to Calculus/12.4. Indefinite Integrals/Lessons/12.4.5. Integrating Exponential Functions.md>) - 2026-07-23 20:45
 
 ## Summary
 
-- Completed unique lessons: 0 / 357
+- Completed unique lessons: 1 / 357
 - Assignment placements: 357
 - Queue size: 5 / 5
 

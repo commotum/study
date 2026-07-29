@@ -71,10 +71,11 @@ $$
 
 $$
 \begin{aligned}
-\frac{d}{dx}\begin{bmatrix}\frac{1}{2}\ln & 2x + 1 & + C\end{bmatrix} &= \frac{1}{2} \cdot \frac{d}{dx}[\ln \mid 2x + 1 \mid ] + \frac{d}{dx}(C) \\
-&= \frac{1}{2} \cdot \frac{1}{2x + 1} \cdot \frac{d}{dx}(2x + 1) + 0 \\
-&= (1)/(2(2x + 1)) \cdot 2 \\
-&= \frac{1}{2x + 1}✓
+\frac{d}{dx}\left[\frac{1}{2}\ln|2x+1|+C\right]
+&=\frac{1}{2}\cdot\frac{d}{dx}\left[\ln|2x+1|\right]+\frac{d}{dx}(C) \\
+&=\frac{1}{2}\cdot\frac{1}{2x+1}\cdot\frac{d}{dx}(2x+1)+0 \\
+&=\frac{1}{2(2x+1)}\cdot 2 \\
+&=\frac{1}{2x+1}\;\checkmark
 \end{aligned}
 $$
 
@@ -83,7 +84,7 @@ $$
 <a id="integrating-a-linear-rational-function"></a>
 ## Integrating a Linear Rational Function
 
-**Example:** Calculate $\displaystyle{\displaystyle \int \dfrac{3}{5x+2}\textrm{d}x}$.
+**Example:** Calculate $\displaystyle \int \frac{3}{5x+2}\,dx$.
 
 **Explanation**
 
@@ -106,7 +107,8 @@ $$
 \int\frac{3}{5x + 2}dx &= 3\int\frac{1}{5x + 2}dx \\
 &= 3\int\frac{1}{u} \cdot \frac{1}{5}du \\
 &= \frac{3}{5}\int\frac{1}{u}du \\
-&= \frac{3}{5}\ln\begin{vmatrix}u & + C \\ = \frac{3}{5}\ln & 5x + 2\end{vmatrix}+ C
+&=\frac{3}{5}\ln|u|+C \\
+&=\frac{3}{5}\ln|5x+2|+C
 \end{aligned}
 $$
 
@@ -171,7 +173,7 @@ options:
 <a id="integrating-a-linear-rational-function-and-simplifying-the-arbitrary-constant"></a>
 ## Integrating a Linear Rational Function and Simplifying the Arbitrary Constant
 
-**Example:** Calculate $\displaystyle{\displaystyle \int \dfrac{1}{1+2x}\textrm{d}x}$, writing your final answer as a single function.
+**Example:** Calculate $\displaystyle \int \frac{1}{1+2x}\,dx$, writing your final answer as a single function.
 
 **Explanation**
 
@@ -193,7 +195,8 @@ $$
 \begin{aligned}
 \int\frac{1}{1 + 2x}dx &= \int\frac{1}{u} \cdot \frac{1}{2}du \\
 &= \frac{1}{2}\int\frac{1}{u}du \\
-&= \frac{1}{2}\ln\begin{vmatrix}u & + C \\ = \frac{1}{2}\ln & 1 + 2x\end{vmatrix}+ C
+&=\frac{1}{2}\ln|u|+C \\
+&=\frac{1}{2}\ln|1+2x|+C
 \end{aligned}
 $$
 
@@ -207,8 +210,10 @@ for another arbitrary constant $K > 0$, and then we can combine the two terms us
 
 $$
 \begin{aligned}
-\frac{1}{2}\ln\begin{vmatrix}1 + 2x & + C &= \frac{1}{2}\ln & 1 + 2x\end{vmatrix}+ \frac{1}{2}\ln K \\
-&= \frac{1}{2}\ln (K \cdot \mid 1 + 2x\begin{vmatrix}) \\ = \frac{1}{2}\ln (K \mid 1 + 2x\end{vmatrix})
+\frac{1}{2}\ln|1+2x|+C
+&=\frac{1}{2}\ln|1+2x|+\frac{1}{2}\ln K \\
+&=\frac{1}{2}\ln\!\left(K\cdot|1+2x|\right) \\
+&=\frac{1}{2}\ln\!\left(K|1+2x|\right)
 \end{aligned}
 $$
 
@@ -301,8 +306,9 @@ Let's solve this using the general formula:
 $$
 \begin{aligned}
 \int(\frac{1}{1 + 2x} + \frac{1}{1 - 2x})dx &= \int\frac{1}{1 + 2x}dx + \int\frac{1}{1 - 2x}dx \\
-&= \frac{1}{2}\ln\begin{vmatrix}1 + 2x & -\frac{1}{2}\ln & 1 - 2x\end{vmatrix}+ C \\
-&= \frac{1}{2}\ln \mid \frac{1 + 2x}{1 - 2x}\begin{vmatrix}+ \frac{1}{2}\ln K \\ = \frac{1}{2}\ln (K \mid \frac{1 + 2x}{1 - 2x}\end{vmatrix})
+&=\frac{1}{2}\ln|1+2x|-\frac{1}{2}\ln|1-2x|+C \\
+&=\frac{1}{2}\ln\left|\frac{1+2x}{1-2x}\right|+\frac{1}{2}\ln K \\
+&=\frac{1}{2}\ln\!\left(K\left|\frac{1+2x}{1-2x}\right|\right)
 \end{aligned}
 $$
 
