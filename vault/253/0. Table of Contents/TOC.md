@@ -77,6 +77,12 @@
 		- [ ] [[M-2/OHW-3/Lessons/Harmonic Series and p-Series - 860|4.5.4. Harmonic Series and p-Series]]
 		- [ ] [[M-2/OHW-3/Lessons/Telescoping Series - 1176|4.3.5. Telescoping Series]]
 - [ ] M-3
+	- [ ] WHW-3
+		- [ ] [[M-3/WHW-3/Lessons/The Ratio Test - 746|4.5.8. The Ratio Test]]
+		- [ ] [[M-3/WHW-3/Lessons/The Comparison Test - 745|4.5.5. The Comparison Test]]
+		- [ ] [[M-3/WHW-3/Lessons/The Limit Comparison Test - 750|4.5.6. The Limit Comparison Test]]
+		- [ ] [[M-3/WHW-3/Lessons/Absolute and Conditional Convergence - 748|4.5.10. Absolute and Conditional Convergence]]
+		- [ ] [[M-3/WHW-3/Lessons/Selecting Procedures for Analyzing Infinite Series - 1172|4.5.13. Selecting Procedures for Analyzing Infinite Series]]
 	- [ ] OHW-4
 		- [ ] [[M-3/OHW-4/Lessons/Convergent and Divergent Infinite Series - 982|1.4.4. Convergent and Divergent Infinite Series]]
 		- [ ] [[M-3/OHW-4/Lessons/Properties of Infinite Series - 983|1.4.5. Properties of Infinite Series]]

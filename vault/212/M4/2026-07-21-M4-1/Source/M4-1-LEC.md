@@ -1,0 +1,211 @@
+
+```quiz
+type: blank
+id: m4-1lec-q1
+require_exact: true
+content: |-
+  **Question 1**
+
+  The graph shows the position of a simple harmonic oscillator. What is the amplitude of the oscillation?
+
+  ![](<Images/simple-harmonic-motion-position-time-graph.png>)
+
+  Enter the amplitude in centimeters as a number only: ==2.5==
+feedback: |-
+  The amplitude is the maximum displacement from equilibrium. The graph reaches $x=\pm2.5\ \mathrm{cm}$, so $A=2.5\ \mathrm{cm}$.
+```
+
+---
+
+```quiz
+type: blank
+id: m4-1lec-q2
+require_exact: true
+content: |-
+  **Question 2**
+
+  The graph shows the position of a simple harmonic oscillator. What is the period of the oscillation?
+
+  ![](<Images/simple-harmonic-motion-position-time-graph.png>)
+
+  Enter the period in seconds as a number only: ==4.0==
+feedback: |-
+  Consecutive maxima occur at $t=0$, $4.0\ \mathrm{s}$, and $8.0\ \mathrm{s}$. Therefore, the period is $T=4.0\ \mathrm{s}$.
+```
+
+---
+
+```quiz
+type: blank
+id: m4-1lec-q3
+require_exact: true
+content: |-
+  **Question 3**
+
+  The graph shows the position of a simple harmonic oscillator. What is the frequency $f$ of the oscillation?
+
+  ![](<Images/simple-harmonic-motion-position-time-graph.png>)
+
+  Enter the frequency in hertz as a number only: ==0.25==
+feedback: |-
+  From the graph, $T=4.0\ \mathrm{s}$. Thus,
+
+  $$
+  f=\frac{1}{T}=\frac{1}{4.0\ \mathrm{s}}=0.25\ \mathrm{Hz}.
+  $$
+
+  The period supports two significant figures.
+```
+
+---
+
+```quiz
+type: blank
+id: m4-1lec-q4
+require_exact: true
+content: |-
+  **Question 4**
+
+  The graph shows the position of a simple harmonic oscillator. What is its angular frequency $\omega$?
+
+  ![](<Images/simple-harmonic-motion-position-time-graph.png>)
+
+  Enter the angular frequency in radians per second as a number only: ==1.6==
+feedback: |-
+  With $T=4.0\ \mathrm{s}$,
+
+  $$
+  \omega=\frac{2\pi}{T}=\frac{2\pi}{4.0\ \mathrm{s}}=1.5708\ldots\ \mathrm{rad/s}.
+  $$
+
+  The period supports two significant figures, so $\omega=1.6\ \mathrm{rad/s}$.
+```
+
+---
+
+```quiz
+type: blank
+id: m4-1lec-q5
+require_exact: true
+content: |-
+  **Question 5**
+
+  The graph shows the position of a simple harmonic oscillator. What is the oscillator's maximum speed?
+
+  ![](<Images/simple-harmonic-motion-position-time-graph.png>)
+
+  Enter the maximum speed in centimeters per second as a number only: ==3.9==
+feedback: |-
+  The graph gives $A=2.5\ \mathrm{cm}$ and $T=4.0\ \mathrm{s}$. Therefore,
+
+  $$
+  v_{\max}=A\omega
+  =A\frac{2\pi}{T}
+  =(2.5\ \mathrm{cm})\frac{2\pi}{4.0\ \mathrm{s}}
+  =3.927\ldots\ \mathrm{cm/s}.
+  $$
+
+  The graph values support two significant figures, so $v_{\max}=3.9\ \mathrm{cm/s}$.
+```
+
+---
+
+```quiz
+type: blank
+id: m4-1lec-q6
+require_exact: true
+content: |-
+  **Question 6**
+
+  A block of mass $m$ rests on a frictionless surface and is attached to an ideal spring. The spring is unstretched when the block is at $x_0$. The block is pulled right to $x_f$ and released from rest, after which it completes 12 oscillations in $7.0\ \mathrm{s}$.
+
+  Use $m=0.18\ \mathrm{kg}$, $x_0=0.35\ \mathrm{m}$, and $x_f=0.48\ \mathrm{m}$. What is the block's displacement from equilibrium at $t=3.9\ \mathrm{s}$? Define right as positive.
+
+  ![](<Images/spring-block-displacement-setup.png>)
+
+  Enter the displacement in meters as a number only: ==-0.051==
+feedback: |-
+  The amplitude is $A=x_f-x_0=0.13\ \mathrm{m}$. Since the block is released from maximum positive displacement,
+
+  $$
+  x(t)=A\cos(\omega t),
+  \qquad
+  \omega=2\pi\left(\frac{12}{7.0\ \mathrm{s}}\right).
+  $$
+
+  Keeping guard digits through the calculation,
+
+  $$
+  x(3.9\ \mathrm{s})
+  =(0.13\ \mathrm{m})\cos\left[2\pi\left(\frac{12}{7.0\ \mathrm{s}}\right)(3.9\ \mathrm{s})\right]
+  =-0.05109\ldots\ \mathrm{m}.
+  $$
+
+  The measured givens support two significant figures, so $x=-0.051\ \mathrm{m}$. The negative sign places the block left of equilibrium.
+```
+
+---
+
+```quiz
+type: blank
+id: m4-1lec-q7
+require_exact: true
+content: |-
+  **Question 7**
+
+  For the same spring–block system, what is the block's velocity at $t=3.9\ \mathrm{s}$? Define right as positive.
+
+  Use $m=0.18\ \mathrm{kg}$, $x_0=0.35\ \mathrm{m}$, $x_f=0.48\ \mathrm{m}$, and 12 oscillations in $7.0\ \mathrm{s}$.
+
+  ![](<Images/spring-block-displacement-setup.png>)
+
+  Enter the velocity in meters per second as a number only: ==1.3==
+feedback: |-
+  With $A=0.13\ \mathrm{m}$ and $\omega=2\pi(12/7.0\ \mathrm{s})$,
+
+  $$
+  v(t)=-A\omega\sin(\omega t).
+  $$
+
+  Therefore,
+
+  $$
+  v(3.9\ \mathrm{s})
+  =-(0.13\ \mathrm{m})\omega\sin[\omega(3.9\ \mathrm{s})]
+  =1.2876\ldots\ \mathrm{m/s}.
+  $$
+
+  The measured givens support two significant figures, so $v=1.3\ \mathrm{m/s}$. The positive sign means the block is moving right.
+```
+
+---
+
+```quiz
+type: blank
+id: m4-1lec-q8
+require_exact: true
+content: |-
+  **Question 8**
+
+  A block of mass $m=0.86\ \mathrm{kg}$ on a frictionless surface is attached to an ideal spring with constant $k=78\ \mathrm{N/m}$. The block is pulled $0.92\ \mathrm{m}$ from equilibrium and released. What is its maximum speed?
+
+  ![](<Images/spring-block-displacement-setup.png>)
+
+  Enter the maximum speed in meters per second as a number only: ==8.8==
+feedback: |-
+  At maximum displacement, the energy is entirely spring potential; at equilibrium, it is entirely kinetic:
+
+  $$
+  \frac12kA^2=\frac12mv_{\max}^2.
+  $$
+
+  Thus,
+
+  $$
+  v_{\max}=A\sqrt{\frac{k}{m}}
+  =(0.92\ \mathrm{m})\sqrt{\frac{78\ \mathrm{N/m}}{0.86\ \mathrm{kg}}}
+  =8.7617\ldots\ \mathrm{m/s}.
+  $$
+
+  The measured givens have two significant figures, so $v_{\max}=8.8\ \mathrm{m/s}$.
+```

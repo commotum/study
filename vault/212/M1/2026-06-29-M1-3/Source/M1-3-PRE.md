@@ -1,12 +1,10 @@
-# M1-3-PRE
-
-**Question 1**
-
 ```quiz
 type: radio
 id: m1-3pre-q1
 shuffle: true
 content: |-
+  **Question 1**
+
   ![](<Images/ferris-wheel-top-bottom-normal-force.png>)
 
   A person is riding on a Ferris wheel which is rotating at constant angular speed. How does the magnitude of the normal force of the Ferris wheel on the person at the top of the wheel compare to the magnitude of the normal force of the wheel on the person at the bottom of the wheel?

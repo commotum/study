@@ -24,7 +24,7 @@
 
 The problem gives a graph of angular position $\theta_z(t)$ and asks for the matching angular acceleration graph over the same time interval.
 
-![Angular position graph for Problem 15](../Source/Images/problem-15-angular-position.png)
+![Angular position graph for Problem 15](../Source/Images/angular-position-vs-time.png)
 
 The recognition cue is the phrase **angular acceleration** paired with a graph of **angular position**. Since acceleration is the second derivative of position, the move is to read the concavity of the position graph:
 
@@ -213,7 +213,7 @@ shuffle: true
 content: |-
   The plot below shows $\theta_z(t)$ over a $5$ second interval. Which option shows the matching angular acceleration $\alpha_z(t)$ over the same interval?
 
-  ![Angular position graph](../Source/Images/problem-15-angular-position.png)
+  ![Angular position graph](../Source/Images/angular-position-vs-time.png)
 options:
 - id: a
   content: |-
@@ -221,10 +221,10 @@ options:
   correct: true
 - id: b
   content: |-
-    ![Option B](../Source/Images/problem-15-angular-acceleration-option-b.png)
+    ![Option B](../Source/Images/problem-15-angular-acceleration-positive-curve.png)
 - id: c
   content: |-
-    ![Option C](../Source/Images/problem-15-angular-acceleration-option-c.png)
+    ![Option C](../Source/Images/problem-15-angular-acceleration-positive-curve.png)
 - id: d
   content: |-
     ![Option D](../Source/Images/problem-15-angular-acceleration-option-d.png)

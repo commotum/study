@@ -224,7 +224,7 @@ options:
 
 **Example:** Match the angular velocity graph to this angular position graph.
 
-![](<../Source/Images/problem-14-angular-position.png>)
+![](<../Source/Images/angular-position-vs-time.png>)
 
 **Explanation**
 
@@ -254,7 +254,7 @@ shuffle: true
 content: |-
   The plot below shows the $z$-component of the angular position of an object over a $5$ second time interval. Select the option which shows the $z$-component of the object's corresponding angular velocity over that same interval.
 
-  ![](<../Source/Images/problem-14-angular-position.png>)
+  ![](<../Source/Images/angular-position-vs-time.png>)
 options:
 - id: a
   content: |-

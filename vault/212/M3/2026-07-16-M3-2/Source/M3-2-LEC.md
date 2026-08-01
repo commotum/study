@@ -1,0 +1,151 @@
+
+```quiz
+type: blank
+id: m3-2lec-q1
+require_exact: true
+content: |-
+  **Question 1**
+
+  A binary star system contains stars of masses $2.5\times10^{30}\ \mathrm{kg}$ and $5.0\times10^{30}\ \mathrm{kg}$ separated by a distance $d=3.0\times10^{12}\ \mathrm{m}$. Use the larger star's position as the origin. Find the center-of-mass position as a fraction of the separation.
+
+  Enter $x_{\mathrm{cm}}/d$ as a number only: ==0.33==
+feedback: |-
+  Place the $5.0\times10^{30}\ \mathrm{kg}$ star at $x=0$ and the $2.5\times10^{30}\ \mathrm{kg}$ star at $x=d$. Then
+
+  $$
+  \frac{x_{\mathrm{cm}}}{d}
+  =\frac{(5.0)(0)+(2.5)d}{(5.0+2.5)d}
+  =\frac{2.5}{7.5}
+  =0.3333\ldots.
+  $$
+
+  The masses have two significant figures, so $x_{\mathrm{cm}}/d=0.33$. The center of mass lies one-third of the separation from the larger star toward the smaller star.
+```
+
+---
+
+```quiz
+type: blank
+id: m3-2lec-q2
+require_exact: true
+content: |-
+  **Question 2**
+
+  The same binary star system has masses $2.5\times10^{30}\ \mathrm{kg}$ and $5.0\times10^{30}\ \mathrm{kg}$ separated by $3.0\times10^{12}\ \mathrm{m}$. Find its orbital period.
+
+  Enter the period in Earth years as a number only: ==46==
+feedback: |-
+  For a circular binary system with separation $d$,
+
+  $$
+  T=2\pi\sqrt{\frac{d^3}{G(m_1+m_2)}}.
+  $$
+
+  Using $G=6.67\times10^{-11}\ \mathrm{N\,m^2/kg^2}$ gives
+
+  $$
+  T=1.4597\times10^9\ \mathrm{s}
+  =46.2556\ldots\ \mathrm{yr}.
+  $$
+
+  The measured masses and separation have two significant figures, so $T=46\ \mathrm{yr}$.
+```
+
+---
+
+```quiz
+type: blank
+id: m3-2lec-q3
+require_exact: true
+content: |-
+  **Question 3**
+
+  Three equal masses occupy the corners of an equilateral triangle of side length $L$ and move in a stable circular orbit about their common center of mass. Find the net gravitational force on each mass for $m=2.5\times10^{30}\ \mathrm{kg}$ and $L=1.8\times10^{12}\ \mathrm{m}$.
+
+  Enter the force in yottanewtons, where $1\ \mathrm{YN}=10^{24}\ \mathrm{N}$, as a number only: ==220==
+feedback: |-
+  Each mass experiences two forces of magnitude
+
+  $$
+  F_{\mathrm{pair}}=\frac{Gm^2}{L^2}
+  $$
+
+  separated by $60^\circ$. Their resultant is
+
+  $$
+  F_{\mathrm{net}}
+  =\sqrt{3}\frac{Gm^2}{L^2}
+  =2.2285\times10^{26}\ \mathrm{N}
+  =222.85\ldots\ \mathrm{YN}.
+  $$
+
+  The measured givens have two significant figures, so $F_{\mathrm{net}}=2.2\times10^2\ \mathrm{YN}$, entered as `220`.
+```
+
+---
+
+```quiz
+type: blank
+id: m3-2lec-q4
+require_exact: true
+content: |-
+  **Question 4**
+
+  For the same three equal masses in an equilateral-triangle orbit, find the speed of each mass when $m=2.5\times10^{30}\ \mathrm{kg}$ and $L=1.8\times10^{12}\ \mathrm{m}$.
+
+  Enter the speed in meters per second as a number only: ==9600==
+feedback: |-
+  The distance from each corner to the triangle's center is $R=L/\sqrt{3}$. Setting the net gravitational force equal to the centripetal force gives
+
+  $$
+  \sqrt{3}\frac{Gm^2}{L^2}
+  =\frac{mv^2}{L/\sqrt{3}},
+  $$
+
+  so
+
+  $$
+  v=\sqrt{\frac{Gm}{L}}
+  =9624.9\ldots\ \mathrm{m/s}.
+  $$
+
+  The measured givens have two significant figures, so $v=9.6\times10^3\ \mathrm{m/s}$, entered as `9600`.
+```
+
+---
+
+```quiz
+type: blank
+id: m3-2lec-q5
+require_exact: true
+content: |-
+  **Question 5**
+
+  For the same three equal masses in an equilateral-triangle orbit, find the total mechanical energy of the system for $m=2.5\times10^{30}\ \mathrm{kg}$ and $L=1.8\times10^{12}\ \mathrm{m}$.
+
+  Enter the energy in units of $10^{36}\ \mathrm{J}$ as a number only: ==-350==
+feedback: |-
+  The three mass pairs give total gravitational potential energy
+
+  $$
+  U=-3\frac{Gm^2}{L}.
+  $$
+
+  Since $v^2=Gm/L$, the total kinetic energy is
+
+  $$
+  K=3\left(\frac12mv^2\right)
+  =\frac32\frac{Gm^2}{L}.
+  $$
+
+  Therefore,
+
+  $$
+  E=K+U
+  =-\frac32\frac{Gm^2}{L}
+  =-3.4740\times10^{38}\ \mathrm{J}
+  =-347.40\ldots\times10^{36}\ \mathrm{J}.
+  $$
+
+  The measured givens have two significant figures, so $E=-3.5\times10^{38}\ \mathrm{J}$, or $-3.5\times10^2$ in units of $10^{36}\ \mathrm{J}$, entered as `-350`.
+```

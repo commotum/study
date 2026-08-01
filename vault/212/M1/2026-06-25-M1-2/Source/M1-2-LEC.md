@@ -1,12 +1,10 @@
-# M1-2-LEC
-
-**Question 1**
-
 ```quiz
 type: radio
 id: m1-2asy-q1
 shuffle: true
 content: |-
+  **Question 1**
+
   Consider the system pictured: a bullet is shot through two holes in disks a distance $D$ apart, attached to a shaft that rotates at constant angular speed with period $T$. The angle $\theta$ describes the fixed angular separation of the holes.
 
   ![](<Images/bullet-through-rotating-disks.png>)
@@ -28,13 +26,13 @@ options:
 ```
 
 ---
-**Question 2**
-
 ```quiz
 type: radio
 id: m1-2asy-q2
 shuffle: true
 content: |-
+  **Question 2**
+
   Consider the system pictured: a bullet is shot through two holes in disks a distance $D$ apart, attached to a shaft that rotates at constant angular speed with period $T$. The angle $\theta$ describes the fixed angular separation of the holes.
 
   ![](<Images/bullet-through-rotating-disks.png>)
@@ -56,13 +54,13 @@ options:
 ```
 
 ---
-**Question 3**
-
 ```quiz
 type: radio
 id: m1-2asy-q3
 shuffle: true
 content: |-
+  **Question 3**
+
   Consider the system pictured: a bullet is shot through two holes in disks a distance $D$ apart, attached to a shaft that rotates at constant angular speed with period $T$. The angle $\theta$ describes the fixed angular separation of the holes.
 
   ![](<Images/bullet-through-rotating-disks.png>)
@@ -84,12 +82,12 @@ options:
 ```
 
 ---
-**Question 4**
-
 ```quiz
 type: blank
 id: m1-2asy-q4
 content: |-
+  **Question 4**
+
   Consider the system pictured: a bullet is shot through two holes in disks a distance $D$ apart, attached to a shaft that rotates at constant angular speed with period $T$. The angle $\theta$ describes the fixed angular separation of the holes.
 
   ![](<Images/bullet-through-rotating-disks.png>)
@@ -102,12 +100,12 @@ content: |-
 ```
 
 ---
-**Question 5**
-
 ```quiz
 type: blank
 id: m1-2asy-q5
 content: |-
+  **Question 5**
+
   The diagrams below show velocity vectors of objects in uniform circular motion. Rank their radial accelerations from least to greatest.
 
   Explain your choices in your submitted work.
@@ -120,12 +118,12 @@ content: |-
 ```
 
 ---
-**Question 6**
-
 ```quiz
 type: blank
 id: m1-2asy-q6
 content: |-
+  **Question 6**
+
   The angular velocity of a spinning disk is given by $\omega(t)=A-Bt^2$.
 
   Through what angle does the disk turn between $t_0=0.0\ \mathrm{s}$ and the time at which it reverses its direction of rotation?

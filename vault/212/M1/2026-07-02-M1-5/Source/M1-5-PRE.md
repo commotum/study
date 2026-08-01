@@ -1,16 +1,14 @@
-# M1-5-PRE
-
-**Question 1**
-
 ```quiz
 type: radio
 id: m1-5pre-q1
 content: |-
+  **Question 1**
+
   A particle is moving around a circle, with an arrow depicting the magnitude and direction of the net force acting on the particle.
 
   Which diagram represents a particle speeding up in the counterclockwise direction?
 
-  ![](<Images/counterclockwise-speeding-up-net-force.png>)
+  ![](<Images/circular-motion-net-force-options.png>)
 options:
 - id: a
   content: |-

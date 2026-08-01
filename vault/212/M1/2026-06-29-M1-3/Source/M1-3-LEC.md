@@ -1,11 +1,9 @@
-# M1-3-LEC
-
-**Question 1**
-
 ```quiz
 type: blank
 id: m1-3asy-q1
 content: |-
+  **Question 1**
+
   A Ferris wheel of radius $42\ \mathrm{m}$ is rotating at a constant angular velocity of $0.16\ \mathrm{rad}/\mathrm{s}$. What is the speed of a particle on the rim of the wheel?
 
   Enter your answer in $\mathrm{m}/\mathrm{s}$.
@@ -16,13 +14,13 @@ feedback: |-
 ```
 
 ---
-**Question 2**
-
 ```quiz
 type: radio
 id: m1-3asy-q2
 shuffle: true
 content: |-
+  **Question 2**
+
   A person rides on a Ferris wheel of radius $r$ at constant angular velocity $\omega$. How does the normal force exerted on the rider from their seat at the top compare to the normal force on the rider from their seat at the bottom?
 options:
 - id: a
@@ -40,12 +38,12 @@ options:
 ```
 
 ---
-**Question 3**
-
 ```quiz
 type: blank
 id: m1-3asy-q3
 content: |-
+  **Question 3**
+
   A Ferris wheel of radius $42\ \mathrm{m}$ is rotating at a constant angular velocity of $0.16\ \mathrm{rad}/\mathrm{s}$. What is the magnitude of the normal force on a $68\ \mathrm{kg}$ person from their seat when they are at the bottom of the wheel?
 
   Enter your answer in newtons.
@@ -56,12 +54,12 @@ feedback: |-
 ```
 
 ---
-**Question 4**
-
 ```quiz
 type: blank
 id: m1-3asy-q4
 content: |-
+  **Question 4**
+
   A Ferris wheel of radius $42\ \mathrm{m}$ is rotating at a constant angular velocity of $0.16\ \mathrm{rad}/\mathrm{s}$. What is the magnitude of the normal force on a $68\ \mathrm{kg}$ person from their seat when they are at the top of the wheel?
 
   Enter your answer in newtons.
@@ -72,12 +70,12 @@ feedback: |-
 ```
 
 ---
-**Question 5**
-
 ```quiz
 type: blank
 id: m1-3asy-q5
 content: |-
+  **Question 5**
+
   A $1.3\ \mathrm{g}$ coin on a turntable at radius $0.35\ \mathrm{m}$ has maximum static friction coefficient $\mu_s=0.18$ between the coin and the surface.
 
   Find $\omega$ in $\mathrm{rad}/\mathrm{s}$ such that the coin just starts to slip.

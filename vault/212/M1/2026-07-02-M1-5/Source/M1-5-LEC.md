@@ -1,14 +1,12 @@
-# M1-5-LEC
-
-**Question 1**
-
 ```quiz
 type: radio
 id: m1-5asy-q1
 content: |-
+  **Question 1**
+
   A particle is moving around a circle, with an arrow depicting the magnitude and direction of the net force acting on the particle. Which diagram represents a particle moving in the clockwise direction and speeding up?
 
-  ![](<Images/clockwise-speeding-up-net-force.png>)
+  ![](<Images/circular-motion-net-force-options.png>)
 options:
 - id: a
   content: |-
@@ -40,12 +38,12 @@ options:
 ```
 
 ---
-**Question 2**
-
 ```quiz
 type: blank
 id: m1-5asy-q2
 content: |-
+  **Question 2**
+
   A ball of mass $m$ is tied to the end of a string of length $L$ and swung in a vertical clockwise circle. At the instant the ball is at angle $\theta$ as shown, there is a tension $T$ in the string.
 
   What is the magnitude of the radial acceleration of the ball? Use $r$-$t$ axes with the $r$-axis inward along the string and the $t$-axis perpendicular to the string.
@@ -60,12 +58,12 @@ feedback: |-
 ```
 
 ---
-**Question 3**
-
 ```quiz
 type: blank
 id: m1-5asy-q3
 content: |-
+  **Question 3**
+
   A ball of mass $m$ is tied to the end of a string of length $L$ and swung in a vertical clockwise circle. At the instant the ball is at angle $\theta$ as shown, there is a tension $T$ in the string.
 
   What is the magnitude of the tangential acceleration of the ball? Use $r$-$t$ axes with the $r$-axis inward along the string and the $t$-axis perpendicular to the string.
@@ -80,12 +78,12 @@ feedback: |-
 ```
 
 ---
-**Question 4**
-
 ```quiz
 type: blank
 id: m1-5asy-q4
 content: |-
+  **Question 4**
+
   A ball of mass $m$ is tied to the end of a string of length $L$ and swung in a vertical clockwise circle. At the instant the ball is at angle $\theta$ as shown, there is a tension $T$ in the string.
 
   What is the magnitude of the acceleration of the ball? Use $r$-$t$ axes with the $r$-axis inward along the string and the $t$-axis perpendicular to the string.
@@ -100,12 +98,12 @@ feedback: |-
 ```
 
 ---
-**Question 5**
-
 ```quiz
 type: blank
 id: m1-5asy-q5
 content: |-
+  **Question 5**
+
   A ball of mass $m$ is tied to the end of a string of length $L$ and swung in a vertical clockwise circle. At the instant the ball is at angle $\theta$ as shown, there is a tension $T$ in the string.
 
   If the ball is released at the instant shown, how far above the release point will it go at its maximum height? Use $r$-$t$ axes with the $r$-axis inward along the string and the $t$-axis perpendicular to the string.

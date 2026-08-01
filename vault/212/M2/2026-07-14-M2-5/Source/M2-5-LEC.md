@@ -1,0 +1,142 @@
+
+```quiz
+type: blank
+id: m2-5lec-q1
+require_exact: true
+content: |-
+  **Question 1**
+
+  A hollow sphere of mass $m$ and radius $r$ starts from rest and rolls without slipping down a ramp inclined at angle $\theta$. How fast is its center of mass moving after traveling a distance $d$ along the ramp?
+
+  Use $m=0.65\ \mathrm{kg}$, $r=0.28\ \mathrm{m}$, $\theta=38^\circ$, and $d=0.86\ \mathrm{m}$.
+
+  ![](<Images/hollow-sphere-rolling-down-incline.png>)
+
+  Enter the speed in meters per second as a number only: ==2.5==
+feedback: |-
+  For a hollow sphere, $I=\frac23mr^2$. Conservation of energy with $h=d\sin\theta$ and $\omega=v/r$ gives
+
+  $$
+  mgd\sin\theta
+  =\frac12mv^2+\frac12\left(\frac23mr^2\right)\frac{v^2}{r^2}
+  =\frac56mv^2.
+  $$
+
+  Therefore,
+
+  $$
+  v=\sqrt{\frac65gd\sin\theta}
+  =2.503\ldots\ \mathrm{m/s}.
+  $$
+
+  The measured givens have two significant figures, so $v=2.5\ \mathrm{m/s}$. The mass and radius cancel.
+```
+
+---
+
+```quiz
+type: blank
+id: m2-5lec-q2
+require_exact: true
+content: |-
+  **Question 2**
+
+  Two cups, each of mass $m$, are connected by a negligible-mass rod of length $d$ and rotate at angular speed $\omega_0$. Rain falls into the cups until each contains an additional water mass $m$. What is the final angular speed?
+
+  Use $m=0.46\ \mathrm{kg}$, $d=0.68\ \mathrm{m}$, and $\omega_0=4.2\ \mathrm{rad/s}$.
+
+  ![](<Images/rotating-cups-collecting-rain.png>)
+
+  Enter the final angular speed in radians per second as a number only: ==2.1==
+feedback: |-
+  Each cup is $d/2$ from the axis. Initially,
+
+  $$
+  I_i=2m\left(\frac d2\right)^2.
+  $$
+
+  After the capture, each cup's mass doubles, so $I_f=2I_i$. Conservation of angular momentum gives
+
+  $$
+  I_i\omega_0=I_f\omega_f,
+  \qquad
+  \omega_f=\frac{\omega_0}{2}=2.1\ \mathrm{rad/s}.
+  $$
+
+  The mass and rod length cancel.
+```
+
+---
+
+```quiz
+type: blank
+id: m2-5lec-q3
+require_exact: true
+content: |-
+  **Question 3**
+
+  For the same rotating cups, how much mechanical energy is lost when each cup of mass $m$ captures a water mass $m$? Use $m=0.46\ \mathrm{kg}$, $d=0.68\ \mathrm{m}$, and $\omega_0=4.2\ \mathrm{rad/s}$.
+
+  ![](<Images/rotating-cups-collecting-rain.png>)
+
+  Enter the energy lost in joules as a number only: ==0.47==
+feedback: |-
+  The initial moment of inertia is $I_i=md^2/2$. After the capture, $I_f=2I_i$ and angular momentum conservation gives $\omega_f=\omega_0/2$. Therefore,
+
+  $$
+  \Delta E_{\mathrm{lost}}
+  =\frac12I_i\omega_0^2-\frac12I_f\omega_f^2
+  =\frac14I_i\omega_0^2
+  =\frac{md^2\omega_0^2}{8}.
+  $$
+
+  Substitution gives
+
+  $$
+  \Delta E_{\mathrm{lost}}
+  =\frac{(0.46)(0.68)^2(4.2)^2}{8}
+  =0.4689\ldots\ \mathrm{J}.
+  $$
+
+  The measured givens have two significant figures, so $\Delta E_{\mathrm{lost}}=0.47\ \mathrm{J}$.
+```
+
+---
+
+```quiz
+type: blank
+id: m2-5lec-q4
+require_exact: true
+content: |-
+  **Question 4**
+
+  A bullet of mass $m$ moving at speed $v$ embeds in the rim of a solid uniform cylinder of mass $M$ and radius $r$, initially at rest on a spindle. Find the final angular speed for $m=0.35\ \mathrm{kg}$, $M=2.6\ \mathrm{kg}$, $r=0.85\ \mathrm{m}$, and $v=3.8\ \mathrm{m/s}$.
+
+  ![](<Images/bullet-embedding-solid-cylinder.png>)
+
+  Enter the angular speed in radians per second as a number only: ==0.95==
+feedback: |-
+  Angular momentum about the spindle is conserved. The bullet's initial angular momentum is $mvr$, and the final moment of inertia is
+
+  $$
+  I_f=\frac12Mr^2+mr^2.
+  $$
+
+  Hence,
+
+  $$
+  \omega_f
+  =\frac{mvr}{\frac12Mr^2+mr^2}
+  =\frac{mv}{r(\frac12M+m)}.
+  $$
+
+  Substitution gives
+
+  $$
+  \omega_f
+  =\frac{(0.35)(3.8)}{(0.85)[\frac12(2.6)+0.35]}
+  =0.9483\ldots\ \mathrm{rad/s}.
+  $$
+
+  The measured givens have two significant figures, so $\omega_f=0.95\ \mathrm{rad/s}$.
+```

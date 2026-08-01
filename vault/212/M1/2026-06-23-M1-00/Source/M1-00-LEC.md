@@ -1,11 +1,9 @@
-# M1-00-LEC
-
-**Question 1**
-
 ```quiz
 type: blank
 id: m1-00-q1
 content: |-
+  **Question 1**
+
   The angular velocity of a spinning disk is given by $\omega(t)=A-Bt^2$. Starting from $t_0=0.0\ \mathrm{s}$, at what time does the disk reverse direction?
 
   Consider the case where $A=18\ \mathrm{rad}/\mathrm{s}$ and $B=0.50\ \mathrm{rad}/\mathrm{s}^3$.
@@ -16,12 +14,12 @@ content: |-
 ```
 
 ---
-**Question 2**
-
 ```quiz
 type: blank
 id: m1-00-q2
 content: |-
+  **Question 2**
+
   The angular velocity of a spinning disk is given by $\omega(t)=A-Bt^2$.
 
   Through what angle does the disk turn between $t_0=0.0\ \mathrm{s}$ and the time at which it reverses its direction of rotation?

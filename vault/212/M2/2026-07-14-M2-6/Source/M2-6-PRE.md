@@ -1,0 +1,39 @@
+
+```quiz
+type: radio
+id: m2-6pre-q1
+shuffle: true
+content: |-
+  **Question 1**
+
+  Two cups connected by a rod rotate in a horizontal circle on frictionless bearings. It begins to rain, and rainwater collects in the cups.
+
+  What happens to the system's angular speed?
+
+  ![](<Images/rotating-cups-collecting-rain.png>)
+options:
+- id: a
+  content: |-
+    It speeds up.
+- id: b
+  content: |-
+    It slows down.
+  correct: true
+  feedback: |-
+    The rain falls vertically and adds essentially no angular momentum about the rotation axis. With frictionless bearings, angular momentum is conserved:
+
+    $$
+    L=I\omega=\text{constant}.
+    $$
+
+    As rain collects, the system's mass and moment of inertia increase. Therefore,
+
+    $$
+    \omega_f=\frac{I_i}{I_f}\omega_0.
+    $$
+
+    Since $I_f>I_i$, it follows that $\omega_f<\omega_0$.
+- id: c
+  content: |-
+    It continues rotating at the same angular speed.
+```

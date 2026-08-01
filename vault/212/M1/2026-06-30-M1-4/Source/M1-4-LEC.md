@@ -1,11 +1,9 @@
-# M1-4-LEC
-
-**Question 1**
-
 ```quiz
 type: radio
 id: m1-4asy-q1
 content: |-
+  **Question 1**
+
   A car travels around a level circle at constant speed. The diagram shows the car as seen from above and from the side. Choose the correct free-body diagram for the car as seen from the side view.
 
   Be sure to include your explanation in the document you upload showing your work.
@@ -30,12 +28,12 @@ options:
 ```
 
 ---
-**Question 2**
-
 ```quiz
 type: blank
 id: m1-4asy-q2
 content: |-
+  **Question 2**
+
   A $1800\ \mathrm{kg}$ car is going around a level circular curve of radius $49\ \mathrm{m}$ at a speed of $16\ \mathrm{m}/\mathrm{s}$. What is the coefficient of static friction between the car's tires and road that keeps it from sliding? Assume it is going as fast as it can go without sliding.
 
   ![](<Images/level-curve-car-diagram.png>)
@@ -46,12 +44,12 @@ feedback: |-
 ```
 
 ---
-**Question 3**
-
 ```quiz
 type: blank
 id: m1-4asy-q3
 content: |-
+  **Question 3**
+
   How fast does a $1800\ \mathrm{kg}$ car need to go to navigate an icy, no-friction banked curve of radius $48\ \mathrm{m}$ and banking angle $6.2^\circ$ without sliding?
 
   Enter your answer in $\mathrm{m}/\mathrm{s}$.
@@ -64,13 +62,13 @@ feedback: |-
 ```
 
 ---
-**Question 4**
-
 ```quiz
 type: radio
 id: m1-4asy-q4
 shuffle: true
 content: |-
+  **Question 4**
+
   A car safely navigates an icy banked curve at speed $v$. Now consider that the ice has melted and there is static friction between the tires and road. What is the direction of the friction force if the car is going faster than $v$?
 
   ![](<Images/banked-curve-car-diagram.png>)
@@ -96,12 +94,12 @@ options:
 ```
 
 ---
-**Question 5**
-
 ```quiz
 type: blank
 id: m1-4asy-q5
 content: |-
+  **Question 5**
+
   Consider a car of mass $m$ going around a banked curve of angle $\theta$ and radius $r$. What is the maximum speed at which the car can navigate the curve without sliding, where the coefficient of maximum static friction is $\mu_s$?
 
   Consider the case where $r=55\ \mathrm{m}$, $m=1400\ \mathrm{kg}$, $\theta=12^\circ$, and $\mu_s=0.65$. Enter your answer in $\mathrm{m}/\mathrm{s}$.
@@ -114,12 +112,12 @@ feedback: |-
 ```
 
 ---
-**Question 6**
-
 ```quiz
 type: radio
 id: m1-4asy-q6
 content: |-
+  **Question 6**
+
   A key on a string traces out a horizontal circle as shown. Assume there is no air resistance. Which free-body diagram could accurately depict the key?
 
   ![](<Images/conical-pendulum-key-free-body-diagrams.png>)
