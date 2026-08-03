@@ -1,6 +1,6 @@
 # Quiz 2 Cheat-Sheet Variable Key
 
-This glossary applies to both [[212/M2/2026-07-20-Q-2/Cheat-Sheet-A|Cheat-Sheet A]] and [[212/M2/2026-07-20-Q-2/Cheat-Sheet-B|Cheat-Sheet B]].
+This glossary applies to [[212/M3/2026-07-20-Q-2/Cheat-Sheet|Cheat Sheet]]. The alternate display version is [[212/M3/2026-07-20-Q-2/Reference/Cheat-Sheet-Split-Layout|Cheat Sheet — Split Layout]].
 
 ## Subscripts and Shorthand
 

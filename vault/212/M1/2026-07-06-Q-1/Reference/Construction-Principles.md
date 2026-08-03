@@ -63,7 +63,7 @@ This row in [[212/M1/2026-07-06-Q-1/Cheat-Sheet]] is copied directly from the fi
 - The [[2026-06-25-M1-2]] rotating-disk/bullet sequence uses the parallel relationships $d=v\Delta t$ and $\theta=\omega\Delta t$ across P2–P5.
 - [[2026-06-29-M1-3]] LEC P2 directly asks for Ferris-wheel rim speed from $r$ and $\omega$.
 - [[2026-06-28-HW-1]] P8 asks whether $v=r\omega$; P12 checks the same relation in nonuniform circular motion.
-- [[Quiz 1]] version 1B’s greyhound-and-spool problem requires finding linear distance from $v(t)$, then converting that unwound distance into spool angle and revolutions using $s=r\theta$.
+- [[212/M1/2026-07-06-Q-1/2026-07-06-Q-1|Quiz 1]] version 1B’s greyhound-and-spool problem requires finding linear distance from $v(t)$, then converting that unwound distance into spool angle and revolutions using $s=r\theta$.
 
 **Why included:** these three equations are the conversion bridge between ordinary motion and rotational motion. They also cover Quiz 1B with very little space.
 
@@ -148,7 +148,7 @@ This is the conceptual center of the module in [[212/M1/2026-07-06-Q-1/Cheat-She
 - [[2026-06-28-HW-1]] P11 and P13 test nonuniform acceleration direction and radial-plus-tangential composition.
 - [[2026-07-02-M1-5]] PRE/LEC P1–P5 progress from net-force direction to $a_r$, $a_t$, and total acceleration.
 - [[2026-07-05-PQ-1]] P1 and P2 test radial-acceleration magnitude and net-force direction.
-- [[Quiz 1]] version 1A Q1 tests uniform-circular-motion acceleration; Q4 asks for total acceleration.
+- [[212/M1/2026-07-06-Q-1/2026-07-06-Q-1|Quiz 1]] version 1A Q1 tests uniform-circular-motion acceleration; Q4 asks for total acceleration.
 
 **Why included:** this row alone covers most conceptual and quantitative circular-motion questions.
 
@@ -207,7 +207,7 @@ The final instructions in [[212/M1/2026-06-29-M1-3/Source/Lecture-Notes|M1-3 Lec
 - [[2026-07-02-M1-5]] P1–P5.
 - [[2026-07-03-HW-2]] P3–P13.
 - [[2026-07-05-PQ-1]] P2–P5.
-- [[Quiz 1]] version 1A Q2–Q4.
+- [[212/M1/2026-07-06-Q-1/2026-07-06-Q-1|Quiz 1]] version 1A Q2–Q4.
 
 **Why included:** it is the generative force template. Most later scenario formulas can be reconstructed from this row plus a free-body diagram.
 
@@ -299,7 +299,7 @@ These occupy separate rows in [[212/M1/2026-07-06-Q-1/Cheat-Sheet]].
 - [[2026-06-29-M1-3]] LEC P3 compares them; P4 calculates the bottom; P5 calculates the top.
 - [[2026-07-05-PQ-1]] P3 asks whether $N$ is greater than or less than $mg$ at the top of a hill.
 - [[2026-07-03-HW-2]] P10–P13 use variants involving loop contact and loss of normal force.
-- [[Quiz 1]] version 1A Q2 asks for the net-force direction at the bottom of a circular dip.
+- [[212/M1/2026-07-06-Q-1/2026-07-06-Q-1|Quiz 1]] version 1A Q2 asks for the net-force direction at the bottom of a circular dip.
 
 **Why included:** the plus/minus distinction is a notorious error point. Giving the two cases separate rows makes the spatial cue—top versus bottom—immediately visible.
 
@@ -323,7 +323,7 @@ This row appears in [[212/M1/2026-07-06-Q-1/Cheat-Sheet]].
 
 - [[2026-07-03-HW-2]] P1–P5 form a five-question conical-pendulum sequence: uniform motion, radius geometry, centripetal force, net-force direction, and symbolic angle.
 - [[2026-07-05-PQ-1]] P5’s bead on an inverted cone has the same structure: one angled support force supplies vertical balance and radial force.
-- [[Quiz 1]] version 1A Q3 asks for the free-body diagram of a bead held at an angle on a spinning loop.
+- [[212/M1/2026-07-06-Q-1/2026-07-06-Q-1|Quiz 1]] version 1A Q3 asks for the free-body diagram of a bead held at an angle on a spinning loop.
 
 **Why included:** the two component equations are more flexible than a single solved formula. They can generate tension, angle, speed, period, or radius depending on what the question asks.
 
@@ -352,7 +352,7 @@ This row appears in [[212/M1/2026-07-06-Q-1/Cheat-Sheet]].
 - [[2026-07-02-M1-5]] LEC P4 asks for $a_t$.
 - [[2026-07-02-M1-5]] LEC P5 asks for total acceleration.
 - [[2026-07-03-HW-2]] loop-the-loop problems use the same radial-force logic in special positions.
-- [[Quiz 1]] version 1A Q4 asks for the key’s total acceleration and angular speed from its tension, mass, angle, and string length.
+- [[212/M1/2026-07-06-Q-1/2026-07-06-Q-1|Quiz 1]] version 1A Q4 asks for the key’s total acceleration and angular speed from its tension, mass, angle, and string length.
 
 **Why included:** this row is extremely closely aligned with the actual long written quiz question. It is probably the strongest example of a class-example template being selected for the sheet.
 

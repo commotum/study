@@ -64,9 +64,6 @@ $$
 $$
 r_{\square}=\frac{L}{\sqrt2}\qquad F_{\mathrm{net}}=\left(\sqrt2+\frac12\right)\frac{Gm^2}{L^2}\qquad v=\sqrt{\frac{Gm}{L}\left(1+\frac{1}{2\sqrt2}\right)}\qquad U=-\frac{Gm^2}{L}(4+\sqrt2)
 $$
-
-
-
 $$
 G=6.67430\times10^{-11}\ \frac{\mathrm{N,m^2}}{\mathrm{kg^2}}
 $$

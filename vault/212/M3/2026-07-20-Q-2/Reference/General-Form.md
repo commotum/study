@@ -1,6 +1,6 @@
 # Quiz 2 General Form
 
-Each section stands alone. See [[212/M2/2026-07-20-Q-2/Variables|Variables]] for symbol definitions.
+Each section stands alone. See [[212/M3/2026-07-20-Q-2/Reference/Variables|Variables]] for symbol definitions.
 
 ## 1. Center of Mass and Density
 

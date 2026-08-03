@@ -1,0 +1,207 @@
+
+## Problem 1
+
+```quiz
+type: radio
+id: q-1
+shuffle: true
+content: |-
+  **Question 1**
+
+  A bob of mass $m$ swings as a pendulum on a massless string with frequency $f$. If the bob's mass is doubled, what happens to the oscillation frequency?
+options:
+- id: a
+  content: The new frequency is one-fourth the original frequency.
+- id: b
+  content: The new frequency is one-half the original frequency.
+- id: c
+  content: The new frequency is the same as the original frequency.
+  correct: true
+  feedback: For a simple pendulum, $f=\dfrac{1}{2\pi}\sqrt{\dfrac{g}{L}}$. The bob's mass does not appear, so doubling it does not change the frequency.
+- id: d
+  content: The new frequency is twice the original frequency.
+- id: e
+  content: The new frequency is four times the original frequency.
+```
+
+---
+
+## Problem 2
+
+```quiz
+type: radio
+id: q-2
+shuffle: true
+content: |-
+  **Question 2**
+
+  If the intensity of a wave doubles, what happens to its intensity level?
+options:
+- id: a
+  content: It doubles.
+- id: b
+  content: It increases by a factor of ten.
+- id: c
+  content: It decreases by a factor of ten.
+- id: d
+  content: It increases by $2\ \mathrm{dB}$.
+- id: e
+  content: It increases by $3\ \mathrm{dB}$.
+  correct: true
+  feedback: The change is $\Delta\beta=(10\ \mathrm{dB})\log_{10}(I_2/I_1)=(10\ \mathrm{dB})\log_{10}(2)=3.01\ \mathrm{dB}$, which is approximately $3\ \mathrm{dB}$.
+- id: f
+  content: It increases by $10\ \mathrm{dB}$.
+```
+
+---
+
+## Problem 3
+
+```quiz
+type: radio
+id: q-3
+shuffle: true
+content: |-
+  **Question 3**
+
+  Whistle A and whistle B are $11\ \mathrm{m}$ apart. Each emits sound with wavelength $2.0\ \mathrm{m}$. Point P is $4.0\ \mathrm{m}$ to the right of whistle A, between the whistles. The signals have the same amplitude but begin completely out of phase.
+
+  What type of interference occurs at point P?
+
+  ![](<Source/PQ3/Images/two-whistles-interference-geometry.png>)
+options:
+- id: a
+  content: Completely constructive interference
+  correct: true
+  feedback: The path lengths are $4.0\ \mathrm{m}$ and $7.0\ \mathrm{m}$, so $\Delta r=3.0\ \mathrm{m}=1.5\lambda$. Propagation adds a phase difference of $3\pi$ to the sources' initial $\pi$ difference, giving $4\pi$, which is equivalent to zero phase difference.
+- id: b
+  content: Completely destructive interference
+- id: c
+  content: Neither
+```
+
+---
+
+## Problem 4
+
+A block of mass $m_2$ hangs from a massless string at the end of a uniform shelf of mass $m_1$ and length $L$. The shelf is pivoted at the wall and supported at its outer end by a uniform wire of mass $m_w$ that makes an angle $\theta$ with the shelf.
+
+The support wire is plucked, producing a traveling sinusoidal wave of amplitude $A$ and wavelength $\lambda$. Assume there are no reflections, so this is not a standing wave.
+
+![](<Source/PQ3/Images/shelf-block-support-wire.png>)
+
+```quiz
+type: free
+id: q-4a
+content: |-
+  **Question 4 — Part A**
+
+  Draw a free-body diagram of the hanging block and an extended free-body diagram of the shelf.
+correct: |-
+  ![](<Source/PQ3/Images/shelf-block-free-body-diagrams.png>)
+
+  The block has upward string tension $T_s$ and downward weight $m_2g$. Static equilibrium gives $T_s=m_2g$.
+
+  The shelf diagram should show:
+
+  - the wall-pivot reaction at the hinge;
+  - the shelf's weight $m_1g$ downward at its center, $L/2$ from the pivot;
+  - the block-string tension $T_s=m_2g$ downward at the outer end;
+  - the support-wire tension $T$ at the outer end, directed along the wire at angle $\theta$ above the shelf.
+```
+
+```quiz
+type: blank
+id: q-4b
+require_exact: false
+content: |-
+  **Question 4 — Part B**
+
+  Find the speed of the wave along the support wire. Solve symbolically in terms of the given variables.
+
+  Enter a keyboard-form expression using m1, m2, mw, g, L, and theta, then reveal the reference result: ==sqrt((m1+2*m2)*g*L/(2*mw*cos(theta)*sin(theta)))==
+feedback: |-
+  Taking torques about the wall pivot gives
+
+  $$
+  TL\sin\theta-m_1g\frac{L}{2}-m_2gL=0,
+  $$
+
+  so
+
+  $$
+  T=\frac{(m_1+2m_2)g}{2\sin\theta}.
+  $$
+
+  The wire length and linear density are
+
+  $$
+  L_w=\frac{L}{\cos\theta},
+  \qquad
+  \mu=\frac{m_w}{L_w}=\frac{m_w\cos\theta}{L}.
+  $$
+
+  Therefore,
+
+  $$
+  v=\sqrt{\frac{T}{\mu}}
+  =\sqrt{\frac{(m_1+2m_2)gL}{2m_w\cos\theta\sin\theta}}.
+  $$
+
+  The amplitude $A$ and wavelength $\lambda$ are not needed once the tension and linear density are known.
+```
+
+---
+
+## Problem 5
+
+```quiz
+type: blank
+id: q-5
+require_exact: false
+content: |-
+  **Question 5**
+
+  Giorgio swings a whistle on a $1.2\ \mathrm{m}$ string in a horizontal circle at $120\ \mathrm{rpm}$. The whistle emits a $740\ \mathrm{Hz}$ sound when at rest. Using $343\ \mathrm{m/s}$ for the speed of sound, find the highest and lowest Doppler-shifted frequencies heard by a stationary bystander.
+
+  ![](<Source/PQ3/Images/rotating-whistle-path.png>)
+
+  Enter each frequency in hertz as a number only.
+
+  Highest frequency: ==774== $\mathrm{Hz}$
+
+  Lowest frequency: ==709== $\mathrm{Hz}$
+feedback: |-
+  The rotational frequency and source speed are
+
+  $$
+  f_{\mathrm{rot}}
+  =120\ \frac{\mathrm{rev}}{\mathrm{min}}
+  \left(\frac{1\ \mathrm{min}}{60\ \mathrm{s}}\right)
+  =2.0\ \mathrm{Hz},
+  $$
+
+  $$
+  v_s=2\pi Lf_{\mathrm{rot}}
+  =2\pi(1.2\ \mathrm{m})(2.0\ \mathrm{Hz})
+  =15.08\ldots\ \mathrm{m/s}.
+  $$
+
+  The highest frequency occurs while the whistle moves toward the bystander, and the lowest occurs while it moves away:
+
+  $$
+  f_{\mathrm{high}}
+  =f_0\frac{v}{v-v_s}
+  =774.0\ldots\ \mathrm{Hz},
+  $$
+
+  $$
+  f_{\mathrm{low}}
+  =f_0\frac{v}{v+v_s}
+  =709.0\ldots\ \mathrm{Hz}.
+  $$
+
+  ![](<Source/PQ3/Images/rotating-whistle-doppler-wavefronts.png>)
+
+  The supplied solution reports the frequencies to the nearest hertz: $774\ \mathrm{Hz}$ and $709\ \mathrm{Hz}$. Strict rounding to the two significant figures shown by $1.2\ \mathrm{m}$ and $120\ \mathrm{rpm}$ would instead give $7.7\times10^2\ \mathrm{Hz}$ and $7.1\times10^2\ \mathrm{Hz}$. Exact string grading is disabled to accommodate both conventions.
+```
