@@ -186,10 +186,10 @@
     - **2026-07-22-M4-2**
         - [ ] [[M4/2026-07-22-M4-2/Lessons/Problem-1|M4.10. Comparing Pendulum Periods When Bob Mass Changes]]
         - [ ] [[M4/2026-07-22-M4-2/Lessons/Problem-2|M4.11. Calculating the Frequency of a Simple Pendulum]]
-        - [ ] [[M4/2026-07-22-M4-2/Lessons/Problem-3|M4.12. Period of a Uniform Rod as a Physical Pendulum]]
+        - [x] [[M4/2026-07-22-M4-2/Lessons/Problem-3|M4.12. Period of a Uniform Rod as a Physical Pendulum]]
         - [ ] [[M4/2026-07-22-M4-2/Lessons/Problem-4|M4.13. Finding the Period of a Uniform Rod About an Offset Pivot]]
         - [ ] [[M4/2026-07-22-M4-2/Lessons/Problem-5|M4.14. Period of a Rod-and-Point-Mass Pendulum]]
-        - [ ] [[M4/2026-07-22-M4-2/Lessons/Problem-6|M4.15. Finding the Period of a Rod–Disk Physical Pendulum]]
+        - [x] [[M4/2026-07-22-M4-2/Lessons/Problem-6|M4.15. Finding the Period of a Rod–Disk Physical Pendulum]]
     - **2026-07-23-HW-6**
         - [ ] [[M4/2026-07-23-HW-6/Lessons/Problem-1|M4.16. Amplitude and the Period of a Spring Oscillator]]
         - [ ] [[M4/2026-07-23-HW-6/Lessons/Problem-2|M4.17. Scaling Maximum Kinetic Energy with Amplitude]]
@@ -248,7 +248,7 @@
         - [ ] [[M5/2026-07-29-M5-4/Lessons/Problem-5|M5.35. Fifth Harmonic of an Open–Closed Pipe]]
     - **2026-07-30-M5-5**
         - [ ] [[M5/2026-07-30-M5-5/Lessons/Problem-1|M5.36. Largest Displacement When Two Pulses Overlap]]
-        - [ ] [[M5/2026-07-30-M5-5/Lessons/Problem-2|M5.37. Finding Complete Constructive Interference in a Crest Diagram]]
+        - [x] [[M5/2026-07-30-M5-5/Lessons/Problem-2|M5.37. Finding Complete Constructive Interference in a Crest Diagram]]
         - [ ] [[M5/2026-07-30-M5-5/Lessons/Problem-3|M5.38. Classifying Interference from Completely Out-of-Phase Sources]]
         - [ ] [[M5/2026-07-30-M5-5/Lessons/Problem-4|M5.39. Combining Path and Starting Phase Differences]]
         - [ ] [[M5/2026-07-30-M5-5/Lessons/Problem-5|M5.40. Finding the First Constructive-Interference Point]]
@@ -260,7 +260,7 @@
     - **2026-08-02-PQ-3**
         - [x] [[M5/2026-08-02-PQ-3/Lessons/Problem-1|M5.45. Deciding What Changes a Pendulum's Frequency]]
         - [ ] [[M5/2026-08-02-PQ-3/Lessons/Problem-2|M5.46. Convert an Intensity Ratio into a Decibel Change]]
-        - [ ] [[M5/2026-08-02-PQ-3/Lessons/Problem-3|M5.47. Classifying Two-Source Interference from Path and Starting Phase]]
+        - [x] [[M5/2026-08-02-PQ-3/Lessons/Problem-3|M5.47. Classifying Two-Source Interference from Path and Starting Phase]]
         - [ ] [[M5/2026-08-02-PQ-3/Lessons/Problem-4|M5.48. Deriving Wave Speed on a Load-Bearing Wire]]
         - [ ] [[M5/2026-08-02-PQ-3/Lessons/Problem-5|M5.49. Extreme Doppler Frequencies from a Rotating Source]]
     - **2026-08-03-Q-3**

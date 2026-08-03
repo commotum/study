@@ -12,13 +12,13 @@
 
 ## Progress
 
-- Course: 12% (26/223 unique lessons)
+- Course: 13% (30/223 unique lessons)
 
 - M1: 25% (16/65)
 - M2: 0% (0/49)
 - M3: 0% (0/28)
-- M4: 14% (4/29)
-- M5: 12% (6/52)
+- M4: 21% (6/29)
+- M5: 15% (8/52)
 
 <!-- update-progress:home-collections:start -->
 
@@ -28,13 +28,17 @@
   - Next: [Recognizing Uniform Circular Motion](M1/2026-07-03-HW-2/Lessons/Problem-1.md)
 - [Quiz 2 Study Guide](M3/2026-07-20-Q-2/Study-Guide.md): 0% (0/20)
   - Next: [Finding the Center of Mass of Two Point Masses](M2/2026-07-07-M2-1/Lessons/Problem-1.md)
-- [Quiz 3 Study Guide](M5/2026-08-03-Q-3/Study-Guide.md): 36% (10/28)
-  - Next: [Period of a Uniform Rod as a Physical Pendulum](M4/2026-07-22-M4-2/Lessons/Problem-3.md)
+- [Quiz 3 Study Guide](M5/2026-08-03-Q-3/Study-Guide.md): 50% (14/28)
+  - Next: [Deriving Wave Speed on a Load-Bearing Wire](M5/2026-08-02-PQ-3/Lessons/Problem-4.md)
 
 <!-- update-progress:home-collections:end -->
 
 ## History
 
+- [Classifying Two-Source Interference from Path and Starting Phase](M5/2026-08-02-PQ-3/Lessons/Problem-3.md) - 2026-08-03 15:16
+- [Finding Complete Constructive Interference in a Crest Diagram](M5/2026-07-30-M5-5/Lessons/Problem-2.md) - 2026-08-03 15:06
+- [Finding the Period of a Rod–Disk Physical Pendulum](M4/2026-07-22-M4-2/Lessons/Problem-6.md) - 2026-08-03 14:35
+- [Period of a Uniform Rod as a Physical Pendulum](M4/2026-07-22-M4-2/Lessons/Problem-3.md) - 2026-08-03 13:39
 - [Maximum Transverse Particle Speed on a Tensioned Wire](M5/2026-07-27-M5-2/Lessons/Problem-3.md) - 2026-08-03 10:31
 - [Wave Speed in a Wire Tensioned by a Hanging Mass](M5/2026-07-27-M5-2/Lessons/Problem-2.md) - 2026-08-03 07:32
 - [Finding Wave Speed from a Traveling-Wave Equation](M5/2026-07-28-HW-7/Lessons/Problem-10.md) - 2026-08-03 07:20
@@ -64,7 +68,7 @@
 
 ## Summary
 
-- Completed unique lessons: 26 / 223
+- Completed unique lessons: 30 / 223
 - Assignment placements: 223
 - Queue size: 5 / 5
 

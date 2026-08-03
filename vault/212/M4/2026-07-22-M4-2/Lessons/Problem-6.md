@@ -9,6 +9,7 @@ topic-code: MTH212.M4.15
 
 - [Introduction](#introduction)
 - [Locate Each Center of Mass](#locate-each-center-of-mass)
+- [Understand the Parallel-Axis Theorem](#understand-the-parallel-axis-theorem)
 - [Build the Total Moment of Inertia](#build-the-total-moment-of-inertia)
 - [Build the Gravitational Torque Factor](#build-the-gravitational-torque-factor)
 - [Assemble and Evaluate the Period](#assemble-and-evaluate-the-period)
@@ -17,7 +18,7 @@ topic-code: MTH212.M4.15
 
 ## Prerequisites
 
-- Use the parallel-axis theorem $I=I_{\mathrm{cm}}+Md^2$.
+- Know that a moment of inertia is defined relative to a particular rotation axis.
 - Know $I_{\mathrm{rod,end}}=\frac13mL^2$ and $I_{\mathrm{disk,cm}}=\frac12mr^2$.
 - Substitute several quantities into a fraction containing a square root.
 
@@ -107,6 +108,74 @@ options:
 
 ---
 
+<a id="understand-the-parallel-axis-theorem"></a>
+## Understand the Parallel-Axis Theorem
+
+A moment of inertia is always the moment of inertia **about a particular axis**. The subscript tells you which axis a formula uses:
+
+$$
+I_{\mathrm{disk,cm}}=\frac12m_dr^2
+$$
+
+is about an axis through the disk's center of mass. But the disk in this pendulum does not rotate about its own center. The entire disk swings around the pivot at the top of the rod.
+
+When the known axis passes through the center of mass and the required axis is parallel to it, use the **parallel-axis theorem**:
+
+$$
+\boxed{I_{\mathrm{pivot}}=I_{\mathrm{cm}}+Md^2}.
+$$
+
+Here:
+
+- $I_{\mathrm{cm}}$ describes how the object's mass is spread around its own center;
+- $M$ is the mass of that one component;
+- $d$ is the perpendicular distance from that component's center-of-mass axis to the new pivot axis;
+- $Md^2$ accounts for carrying the component's center of mass around the pivot.
+
+In this two-dimensional diagram, both rotation axes point perpendicular to the page, so they are parallel. For the disk, their separation is the pivot-to-disk-center distance
+
+$$
+d_d=L+r.
+$$
+
+Therefore,
+
+$$
+\boxed{
+I_{d,\mathrm{pivot}}
+=\underbrace{\frac12m_dr^2}_{\text{disk about its own center}}
++\underbrace{m_d(L+r)^2}_{\text{disk center carried around pivot}}
+}.
+$$
+
+The shift term is **added** to $I_{\mathrm{cm}}$; it does not replace it. Moving the axis away from the center of mass must increase the moment of inertia, and both terms have units $\mathrm{kg\,m^2}$.
+
+Use this decision rule for each component:
+
+1. Name the axis you actually need: here, the top pivot.
+2. Check the axis used by the formula you know.
+3. If it is already the required pivot axis, use it unchanged.
+4. If it is a parallel center-of-mass axis, add $Md^2$ using the distance between the two axes.
+
+That is why the rod is treated differently. Its tabulated end-axis formula
+
+$$
+I_{r,\mathrm{end}}=\frac13m_rL^2
+$$
+
+is already about the pendulum pivot, so shifting it again would double-count the axis change. If only the rod's center-axis formula were known, the theorem would reproduce the end-axis result:
+
+$$
+\begin{aligned}
+I_{r,\mathrm{end}}
+&=I_{r,\mathrm{cm}}+m_r\left(\frac L2\right)^2\\
+&=\frac1{12}m_rL^2+\frac14m_rL^2\\
+&=\frac13m_rL^2.
+\end{aligned}
+$$
+
+---
+
 <a id="build-the-total-moment-of-inertia"></a>
 ## Build the Total Moment of Inertia
 
@@ -114,13 +183,15 @@ options:
 
 **Explanation**
 
-The rod is already described by its moment of inertia about one end:
+First compare the axis of each known formula with the axis the pendulum actually rotates around.
+
+The rod is already described by its moment of inertia about one end, and that end is the pendulum pivot:
 
 $$
 I_r=\frac13m_rL^2.
 $$
 
-The disk's known formula is about its own center. Move that axis to the pendulum pivot with the parallel-axis theorem, using $d_d=L+r$:
+The disk's known formula is about its own center, not the pendulum pivot. Shift it to the parallel pivot axis using $d_d=L+r$:
 
 $$
 I_d
@@ -396,6 +467,9 @@ For a rod–disk physical pendulum:
 
 1. Locate the centers: $d_r=L/2$ and $d_d=L+r$.
 2. Add pivot-axis inertias:
+
+   - use an inertia formula unchanged if it is already about the pivot;
+   - use $I_{\mathrm{pivot}}=I_{\mathrm{cm}}+Md^2$ if the known formula is about a parallel center-of-mass axis.
 
    $$
    I_{\mathrm{pivot}}

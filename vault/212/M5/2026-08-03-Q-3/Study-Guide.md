@@ -9,11 +9,11 @@ The five **PQ3 anchors** are high-confidence forms, but they occupy only five sl
 <!-- update-progress:index:start -->
 ## Next Lesson
 
-1. [Period of a Uniform Rod as a Physical Pendulum](../../M4/2026-07-22-M4-2/Lessons/Problem-3.md)
+1. [Deriving Wave Speed on a Load-Bearing Wire](../2026-08-02-PQ-3/Lessons/Problem-4.md)
 
 ## Progress
 
-- Quiz 3 Study Guide: 36% (10/28)
+- Quiz 3 Study Guide: 50% (14/28)
 <!-- update-progress:index:end -->
 
 <!-- update-progress:members:start -->
@@ -28,8 +28,8 @@ The five **PQ3 anchors** are high-confidence forms, but they occupy only five sl
 ## 2. Simple and Physical Pendula
 
 6. [x] [Deciding What Changes a Pendulum's Frequency](<../2026-08-02-PQ-3/Lessons/Problem-1.md>) — **PQ3 anchor:** distinguish real dependencies on $L$ and $g$ from the false mass dependency.
-7. [ ] [Period of a Uniform Rod as a Physical Pendulum](<../../M4/2026-07-22-M4-2/Lessons/Problem-3.md>) — **Beyond PQ3:** apply $T=2\pi\sqrt{I_{\mathrm{pivot}}/(Mgd)}$ while separating pivot inertia from the center-of-mass distance.
-8. [ ] [Finding the Period of a Rod–Disk Physical Pendulum](<../../M4/2026-07-22-M4-2/Lessons/Problem-6.md>) — **Beyond PQ3:** construct a composite pivot inertia and a separate gravitational-torque ledger.
+7. [x] [Period of a Uniform Rod as a Physical Pendulum](<../../M4/2026-07-22-M4-2/Lessons/Problem-3.md>) — **Beyond PQ3:** apply $T=2\pi\sqrt{I_{\mathrm{pivot}}/(Mgd)}$ while separating pivot inertia from the center-of-mass distance.
+8. [x] [Finding the Period of a Rod–Disk Physical Pendulum](<../../M4/2026-07-22-M4-2/Lessons/Problem-6.md>) — **Beyond PQ3:** construct a composite pivot inertia and a separate gravitational-torque ledger.
 
 ## 3. Traveling-Wave Motion and Tensioned-Wire Speed
 
@@ -65,8 +65,8 @@ The five **PQ3 anchors** are high-confidence forms, but they occupy only five sl
 
 ## 8. Two-Source Interference
 
-26. [ ] [Finding Complete Constructive Interference in a Crest Diagram](<../2026-07-30-M5-5/Lessons/Problem-2.md>) — **Strong prospective cue:** distinguish crest–crest and trough–trough constructive interference from crest–trough destructive interference in a wavefront diagram.
-27. [ ] [Classifying Two-Source Interference from Path and Starting Phase](<../2026-08-02-PQ-3/Lessons/Problem-3.md>) — **PQ3 anchor:** add path phase and initial source phase before classifying the result.
+26. [x] [Finding Complete Constructive Interference in a Crest Diagram](<../2026-07-30-M5-5/Lessons/Problem-2.md>) — **Strong prospective cue:** distinguish crest–crest and trough–trough constructive interference from crest–trough destructive interference in a wavefront diagram.
+27. [x] [Classifying Two-Source Interference from Path and Starting Phase](<../2026-08-02-PQ-3/Lessons/Problem-3.md>) — **PQ3 anchor:** add path phase and initial source phase before classifying the result.
 28. [ ] [Finding the First Constructive-Interference Point](<../2026-07-30-M5-5/Lessons/Problem-5.md>) — **Beyond PQ3:** convert the first allowed path difference into a geometry equation.
 <!-- update-progress:members:end -->
 

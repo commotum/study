@@ -15,13 +15,13 @@ The boxed expressions are destinations, not substitutes for checking the geometr
 
 ### Physical-pendulum backbone
 
-For a rigid assembly of total mass \(M\), let \(\ell\) be the distance from the pivot to the combined center of mass and let \(I_P\) be the total moment of inertia about the pivot. For a small angular displacement,
+For a rigid assembly of total mass $M$, let $\ell$ be the distance from the pivot to the combined center of mass and let $I_P$ be the total moment of inertia about the pivot. For a small angular displacement,
 
 $$
 \tau_P=-Mg\ell\sin\theta\simeq-Mg\ell\theta.
 $$
 
-Using \(\tau_P=I_P\ddot\theta\),
+Using $\tau_P=I_P\ddot\theta$,
 
 $$
 I_P\ddot\theta=-Mg\ell\theta
@@ -29,7 +29,7 @@ I_P\ddot\theta=-Mg\ell\theta
 \ddot\theta+\frac{Mg\ell}{I_P}\theta=0.
 $$
 
-This has the SHM form \(\ddot\theta+\omega^2\theta=0\), so
+This has the SHM form $\ddot\theta+\omega^2\theta=0$, so
 
 $$
 \omega=\sqrt{\frac{Mg\ell}{I_P}},
@@ -41,7 +41,7 @@ This model assumes a rigid object, a fixed pivot, small oscillations, and a stab
 
 ### Apply it to a uniform rod
 
-Let a uniform rod have mass \(M\), length \(L\), and a pivot a distance \(a\) from one end. Its center of mass is at \(L/2\), so
+Let a uniform rod have mass $M$, length $L$, and a pivot a distance $a$ from one end. Its center of mass is at $L/2$, so
 
 $$
 \ell=\left|\frac L2-a\right|.
@@ -69,7 +69,7 @@ T_{\mathrm{rod}}
 \ell=\left|\frac L2-a\right|.
 $$
 
-For an end pivot, \(a=0\) and \(\ell=L/2\):
+For an end pivot, $a=0$ and $\ell=L/2$:
 
 $$
 T_{\mathrm{rod,end}}
@@ -77,7 +77,7 @@ T_{\mathrm{rod,end}}
 =\boxed{2\pi\sqrt{\frac{2L}{3g}}}.
 $$
 
-For a pivot \(L/6\) from an end, \(\ell=L/3\):
+For a pivot $L/6$ from an end, $\ell=L/3$:
 
 $$
 I_P=M\left(\frac{L^2}{12}+\frac{L^2}{9}\right)
@@ -90,7 +90,7 @@ T_{\mathrm{rod},\,a=L/6}
 =\boxed{2\pi\sqrt{\frac{7L}{12g}}}.
 $$
 
-The mass cancels, but the mass distribution does not. If \(a=L/2\), then \(\ell=0\); gravity supplies no first-order restoring torque, so this pendulum formula is not applicable.
+The mass cancels, but the mass distribution does not. If $a=L/2$, then $\ell=0$; gravity supplies no first-order restoring torque, so this pendulum formula is not applicable.
 
 ## 2. Rod with an attached point mass
 
@@ -110,7 +110,7 @@ T=2\pi\sqrt{\frac{\sum_i I_{i,P}}{g\sum_i m_id_i}}
 }.
 $$
 
-Let a uniform rod of mass \(M_r\) and length \(L\) pivot about one end. Attach a point mass \(M_p\) at distance \(d\) from the pivot.
+Let a uniform rod of mass $M_r$ and length $L$ pivot about one end. Attach a point mass $M_p$ at distance $d$ from the pivot.
 
 The inertia contributions are
 
@@ -138,7 +138,7 @@ T_{\mathrm{rod+point}}
 }.
 $$
 
-For a point mass at the rod tip, \(d=L\):
+For a point mass at the rod tip, $d=L$:
 
 $$
 T
@@ -165,7 +165,7 @@ M_r\to0
 T\to2\pi\sqrt{\frac dg}.
 $$
 
-The second limit is a point-mass pendulum of length \(d\), not automatically \(L\).
+The second limit is a point-mass pendulum of length $d$, not automatically $L$.
 
 ## 3. Rod with an attached extended body
 
@@ -199,7 +199,7 @@ T_{\mathrm{rod+body}}
 }.
 $$
 
-If a solid disk of radius \(R\) is attached end-to-end, with its center on the rod’s axis one radius below the rod tip,
+If a solid disk of radius $R$ is attached end-to-end, with its center on the rod’s axis one radius below the rod tip,
 
 $$
 d_b=L+R,
@@ -222,7 +222,7 @@ g[M_rL/2+M_b(L+R)]
 }.
 $$
 
-To adapt this result, replace only \(d_b\) and \(I_{b,\mathrm{CM}}\):
+To adapt this result, replace only $d_b$ and $I_{b,\mathrm{CM}}$:
 
 $$
 I_{b,\mathrm{CM}}=
@@ -232,11 +232,11 @@ I_{b,\mathrm{CM}}=
 \end{cases}
 $$
 
-Do not use \(d_b=L+R\) unless the body center lies on the rod axis one radius beyond its lower end. Do not omit \(I_{b,\mathrm{CM}}\) for a rigidly attached extended body. A freely spinning attachment requires a different kinetic-energy model.
+Do not use $d_b=L+R$ unless the body center lies on the rod axis one radius beyond its lower end. Do not omit $I_{b,\mathrm{CM}}$ for a rigidly attached extended body. A freely spinning attachment requires a different kinetic-energy model.
 
 ## 4. Hanging load, wave speed, and particle speed
 
-Let a hanging mass \(m_h\) supply tension to a uniform wire of vibrating length \(L_w\) and mass \(m_w\).
+Let a hanging mass $m_h$ supply tension to a uniform wire of vibrating length $L_w$ and mass $m_w$.
 
 Taking downward as positive for the hanging mass,
 
@@ -295,7 +295,7 @@ $$
 |v_y|_{\max}=A\omega.
 $$
 
-Using \(f=v_w/\lambda\) and \(\omega=2\pi f\),
+Using $f=v_w/\lambda$ and $\omega=2\pi f$,
 
 $$
 \boxed{
@@ -306,15 +306,15 @@ $$
 }.
 $$
 
-If the pulley is nonideal or tension varies along the wire, calculate the tension in the vibrating span before using \(v_w=\sqrt{F_T/\mu}\).
+If the pulley is nonideal or tension varies along the wire, calculate the tension in the vibrating span before using $v_w=\sqrt{F_T/\mu}$.
 
-The value \(\sqrt{F_T/\mu}\) is the propagation speed relative to the wire material. It is also the laboratory speed when the vibrating span is stationary. If the wire itself translates through a pulley, combine the relative wave speed with the material velocity using the appropriate propagation direction.
+The value $\sqrt{F_T/\mu}$ is the propagation speed relative to the wire material. It is also the laboratory speed when the vibrating span is stationary. If the wire itself translates through a pulley, combine the relative wave speed with the material velocity using the appropriate propagation direction.
 
 ## 5. Circular wavefront geometry
 
 A point source produces spherical wavefronts; a two-dimensional cross-section is a circle centered on the source.
 
-For a general source \(S=(x_s,y_s)\), two points \(P_1=(x_1,y_1)\) and \(P_2=(x_2,y_2)\) on the same wavefront satisfy
+For a general source $S=(x_s,y_s)$, two points $P_1=(x_1,y_1)$ and $P_2=(x_2,y_2)$ on the same wavefront satisfy
 
 $$
 (x_s-x_1)^2+(y_s-y_1)^2
@@ -350,13 +350,13 @@ $$
 \boxed{R=\frac{|x_2-x_1|}{2}}.
 $$
 
-Every other point \((x,y)\) on that wavefront obeys
+Every other point $(x,y)$ on that wavefront obeys
 
 $$
 (x-x_s)^2+(y-y_s)^2=R^2.
 $$
 
-If a third point’s horizontal coordinate \(x_3\) is known,
+If a third point’s horizontal coordinate $x_3$ is known,
 
 $$
 \boxed{
@@ -399,13 +399,13 @@ r_B=\sqrt{x^2+d^2},
 \Delta r=\sqrt{x^2+d^2}-x.
 $$
 
-Let \(D>0\) be whichever path difference the phase condition requires. Solve
+Let $D>0$ be whichever path difference the phase condition requires. Solve
 
 $$
 \sqrt{x^2+d^2}-x=D.
 $$
 
-Move \(x\) and square:
+Move $x$ and square:
 
 $$
 \sqrt{x^2+d^2}=x+D,
@@ -423,35 +423,35 @@ x(D)=\frac{d^2-D^2}{2D}
 }.
 $$
 
-A finite point with \(x>0\) requires
+A finite point with $x>0$ requires
 
 $$
 0<D<d.
 $$
 
-For arbitrary initial source-phase difference \(\delta\phi_0\),
+For arbitrary initial source-phase difference $\delta\phi_0$,
 
 $$
 \delta\phi=\frac{2\pi\Delta r}{\lambda}+\delta\phi_0.
 $$
 
-Constructive interference requires \(\delta\phi=2\pi N\), so
+Constructive interference requires $\delta\phi=2\pi N$, so
 
 $$
 D_N^{(\mathrm C)}
 =\left(N-\frac{\delta\phi_0}{2\pi}\right)\lambda.
 $$
 
-Destructive interference requires \(\delta\phi=(2N+1)\pi\), so
+Destructive interference requires $\delta\phi=(2N+1)\pi$, so
 
 $$
 D_N^{(\mathrm D)}
 =\left(N+\frac12-\frac{\delta\phi_0}{2\pi}\right)\lambda.
 $$
 
-Choose a positive allowed \(D_N<d\), then substitute it into \(x(D)\).
+Choose a positive allowed $D_N<d$, then substitute it into $x(D)$.
 
-For in-phase constructive interference, \(D=m\lambda\):
+For in-phase constructive interference, $D=m\lambda$:
 
 $$
 \boxed{
@@ -461,7 +461,7 @@ x_m=\frac{d^2-m^2\lambda^2}{2m\lambda}
 0<m\lambda<d.
 $$
 
-The first maximum encountered while moving right from the origin uses the largest allowed path difference, not necessarily \(m=1\). Since \(\Delta r\) decreases as \(x\) increases,
+The first maximum encountered while moving right from the origin uses the largest allowed path difference, not necessarily $m=1$. Since $\Delta r$ decreases as $x$ increases,
 
 $$
 \boxed{
@@ -471,17 +471,17 @@ m_*=\left\lceil\frac d\lambda\right\rceil-1
 x_{\mathrm{first}}=x_{m_*},
 $$
 
-provided \(m_*\ge1\). If \(d/\lambda\) is an integer, the order \(m=d/\lambda\) lies at \(x=0\) and is excluded by \(x>0\). Complete destructive interference additionally requires equal received amplitudes.
+provided $m_*\ge1$. If $d/\lambda$ is an integer, the order $m=d/\lambda$ lies at $x=0$ and is excluded by $x>0$. Complete destructive interference additionally requires equal received amplitudes.
 
 # Homework and practice-quiz families
 
 ## 7. Perfectly inelastic capture by a spring oscillator
 
-Consider a mass \(M\) oscillating horizontally on an ideal spring of constant \(k\). At displacement \(x_c\), an incoming mass \(m\) sticks to it.
+Consider a mass $M$ oscillating horizontally on an ideal spring of constant $k$. At displacement $x_c$, an incoming mass $m$ sticks to it.
 
-Assume the collision is short compared with the oscillation period. The spring then supplies negligible impulse during the collision, and the position does not change appreciably. Let \(v^-\) be the oscillator’s signed velocity immediately before capture and \(u^-\) the incoming mass’s horizontal velocity.
+Assume the collision is short compared with the oscillation period. The spring then supplies negligible impulse during the collision, and the position does not change appreciably. Let $v^-$ be the oscillator’s signed velocity immediately before capture and $u^-$ the incoming mass’s horizontal velocity.
 
-All momentum and energy terms below refer to motion along the oscillator’s \(x\)-axis. If the incoming object also has perpendicular kinetic energy, the reduced-mass expression below is only the horizontal mechanical-energy change \(\Delta E_x\), not the total collision-energy loss.
+All momentum and energy terms below refer to motion along the oscillator’s $x$-axis. If the incoming object also has perpendicular kinetic energy, the reduced-mass expression below is only the horizontal mechanical-energy change $\Delta E_x$, not the total collision-energy loss.
 
 ### Recover the pre-collision velocity
 
@@ -559,7 +559,7 @@ T_f=2\pi\sqrt{\frac{M+m}{k}}
 }.
 $$
 
-If the incoming object has no horizontal velocity, \(u^-=0\):
+If the incoming object has no horizontal velocity, $u^-=0$:
 
 $$
 v^+=\frac{M}{M+m}v^-,
@@ -572,15 +572,15 @@ A_f=\sqrt{\frac{MA_i^2+mx_c^2}{M+m}}
 =\sqrt{A_i^2+\frac{2\Delta E_x}{k}}.
 $$
 
-In the strictly one-dimensional model, \(\Delta E_x\) is the complete mechanical-energy change and may be written simply as \(\Delta E\).
+In the strictly one-dimensional model, $\Delta E_x$ is the complete mechanical-energy change and may be written simply as $\Delta E$.
 
 For a vertical spring, adding mass shifts equilibrium; measure the impact position relative to the new equilibrium before applying the post-collision amplitude formula. If the objects rebound, replace the sticking condition with the appropriate collision relation.
 
 ## 8. Support tension for a hinged shelf
 
-Consider a horizontal rigid shelf hinged at one end. A support cable attaches a distance \(a\) from the hinge and makes angle \(\theta\) with the shelf. Distances \(a\), \(x_s\), and \(x_j\) are measured along the shelf.
+Consider a horizontal rigid shelf hinged at one end. A support cable attaches a distance $a$ from the hinge and makes angle $\theta$ with the shelf. Distances $a$, $x_s$, and $x_j$ are measured along the shelf.
 
-Let the shelf’s weight \(W_s=M_sg\) act at distance \(x_s\), and let additional downward forces \(F_j\) act at positions \(x_j\).
+Let the shelf’s weight $W_s=M_sg$ act at distance $x_s$, and let additional downward forces $F_j$ act at positions $x_j$.
 
 Take torques about the hinge so the unknown hinge forces disappear. Only the component of cable tension perpendicular to the shelf contributes:
 
@@ -602,7 +602,7 @@ F_T=\frac{W_sx_s+\sum_jF_jx_j}{a\sin\theta}
 }.
 $$
 
-If every load is a stationary suspended mass, \(F_j=m_jg\):
+If every load is a stationary suspended mass, $F_j=m_jg$:
 
 $$
 \boxed{
@@ -610,7 +610,7 @@ F_T=\frac{g(M_sx_s+\sum_jm_jx_j)}{a\sin\theta}
 }.
 $$
 
-For a uniform shelf of length \(L\), a cable attached at its end, and one stationary end load \(m_\ell\),
+For a uniform shelf of length $L$, a cable attached at its end, and one stationary end load $m_\ell$,
 
 $$
 a=L,
@@ -628,9 +628,9 @@ F_T=\frac{(M_s+2m_\ell)g}{2\sin\theta}
 }.
 $$
 
-The angle must be measured between the cable and shelf. A hanging object contributes its string tension, which equals \(mg\) only when that object has zero acceleration.
+The angle must be measured between the cable and shelf. A hanging object contributes its string tension, which equals $mg$ only when that object has zero acceleration.
 
-If the shelf instead makes angle \(\varphi\) above horizontal while the listed distances remain measured along it, each downward force gains the perpendicular factor \(\cos\varphi\):
+If the shelf instead makes angle $\varphi$ above horizontal while the listed distances remain measured along it, each downward force gains the perpendicular factor $\cos\varphi$:
 
 $$
 \boxed{
@@ -642,7 +642,7 @@ $$
 
 ## 9. Wave speed in a shelf-support wire
 
-Treat the taut support wire as a uniform string of vibrating length \(L_w\), mass \(m_w\), and approximately uniform tension \(F_T\):
+Treat the taut support wire as a uniform string of vibrating length $L_w$, mass $m_w$, and approximately uniform tension $F_T$:
 
 $$
 \mu=\frac{m_w}{L_w},
@@ -663,7 +663,7 @@ v_w=
 }.
 $$
 
-For a horizontal shelf, if the cable’s upper endpoint is directly above the hinge, its horizontal projection is \(a\):
+For a horizontal shelf, if the cable’s upper endpoint is directly above the hinge, its horizontal projection is $a$:
 
 $$
 L_w\cos\theta=a
@@ -683,7 +683,7 @@ v_w=
 }.
 $$
 
-For a uniform shelf of length \(L\), supported at its end, with a stationary end load \(m_\ell\),
+For a uniform shelf of length $L$, supported at its end, with a stationary end load $m_\ell$,
 
 $$
 W_sx_s+F_\ell x_\ell
@@ -700,11 +700,11 @@ v_w=
 }.
 $$
 
-Wave amplitude and wavelength do not determine propagation speed in this ideal-string model; once \(v_w\) is known, \(f=v_w/\lambda\). Significant wire weight, sag, or varying density makes \(F_T\) or \(\mu\) position-dependent.
+Wave amplitude and wavelength do not determine propagation speed in this ideal-string model; once $v_w$ is known, $f=v_w/\lambda$. Significant wire weight, sag, or varying density makes $F_T$ or $\mu$ position-dependent.
 
 ## 10. Difference between wavelength counts
 
-Suppose electromagnetic wave \(i\), of frequency \(f_i\), travels an actual path length \(d_i\) through a stationary homogeneous medium with refractive index \(n_i\).
+Suppose electromagnetic wave $i$, of frequency $f_i$, travels an actual path length $d_i$ through a stationary homogeneous medium with refractive index $n_i$.
 
 The number of phase cycles across the path is
 
@@ -751,13 +751,13 @@ N_1-N_2
 }.
 $$
 
-If both traverse the same distance \(d\),
+If both traverse the same distance $d$,
 
 $$
 N_1-N_2=\frac d{c_0}(n_1f_1-n_2f_2).
 $$
 
-If the medium is also nondispersive over the two frequencies, \(n_1=n_2=n\):
+If the medium is also nondispersive over the two frequencies, $n_1=n_2=n$:
 
 $$
 \boxed{
@@ -765,7 +765,7 @@ N_1-N_2=\frac{nd}{c_0}(f_1-f_2)
 }.
 $$
 
-Use \(|N_1-N_2|\) if only the magnitude is requested. In a dispersive medium, retain \(n(f_1)\) and \(n(f_2)\). The associated propagation-phase difference is
+Use $|N_1-N_2|$ if only the magnitude is requested. In a dispersive medium, retain $n(f_1)$ and $n(f_2)$. The associated propagation-phase difference is
 
 $$
 \Delta\phi=2\pi\Delta N.
@@ -779,13 +779,13 @@ $$
 
 ## 11. Confined sound versus spherical spreading
 
-Let a source emit acoustic power \(P\). At distance \(d\), ideal isotropic spherical spreading gives
+Let a source emit acoustic power $P$. At distance $d$, ideal isotropic spherical spreading gives
 
 $$
 I_{\mathrm{sph}}=\frac{P}{4\pi d^2}.
 $$
 
-Now guide a fraction \(\eta\) of that power through a uniform tube of cross-sectional area \(\mathcal A_t\). If the power is uniformly distributed and wall losses are neglected,
+Now guide a fraction $\eta$ of that power through a uniform tube of cross-sectional area $\mathcal A_t$. If the power is uniformly distributed and wall losses are neglected,
 
 $$
 P_{\mathrm{tube}}=\eta P,
@@ -802,7 +802,7 @@ $$
 }.
 $$
 
-For a circular tube of radius \(r\), \(\mathcal A_t=\pi r^2\):
+For a circular tube of radius $r$, $\mathcal A_t=\pi r^2$:
 
 $$
 \boxed{
@@ -817,7 +817,7 @@ $$
 \beta=(10\,\mathrm{dB})\log_{10}\frac I{I_0}.
 $$
 
-Subtracting the spherical and tube levels eliminates \(I_0\):
+Subtracting the spherical and tube levels eliminates $I_0$:
 
 $$
 \beta_{\mathrm{tube}}-\beta_{\mathrm{sph}}
@@ -836,21 +836,21 @@ $$
 }.
 $$
 
-For perfect coupling and no losses, \(\eta=1\), leaving the familiar \(20\log_{10}(2d/r)\) increase. If power is not uniformly distributed across the tube or leaks through the walls, replace this ideal area model with the actual transmitted power and effective area.
+For perfect coupling and no losses, $\eta=1$, leaving the familiar $20\log_{10}(2d/r)$ increase. If power is not uniformly distributed across the tube or leaks through the walls, replace this ideal area model with the actual transmitted power and effective area.
 
 ## 12. Double Doppler shift from a stationary reflector
 
 Treat reflection as two consecutive Doppler transformations.
 
-Let a source emit frequency \(f_0\) while moving directly toward a stationary wall at speed \(u_s\). The wall is a stationary observer, so it receives
+Let a source emit frequency $f_0$ while moving directly toward a stationary wall at speed $u_s$. The wall is a stationary observer, so it receives
 
 $$
 f_1=f_0\frac{c_s}{c_s-u_s}.
 $$
 
-A stationary reflector does not change frequency in the medium’s frame. It therefore reradiates the reflected wave with frequency \(f_1\).
+A stationary reflector does not change frequency in the medium’s frame. It therefore reradiates the reflected wave with frequency $f_1$.
 
-Let the returning observer move toward the reflected wave at speed \(u_o\). For a moving observer and stationary reflected source,
+Let the returning observer move toward the reflected wave at speed $u_o$. For a moving observer and stationary reflected source,
 
 $$
 f_{\mathrm{echo}}=f_1\frac{c_s+u_o}{c_s}.
@@ -865,7 +865,7 @@ f_{\mathrm{echo}}
 }.
 $$
 
-If the emitter and receiver are the same object continuing toward the wall at constant speed \(u\),
+If the emitter and receiver are the same object continuing toward the wall at constant speed $u$,
 
 $$
 \boxed{
@@ -884,13 +884,13 @@ $$
 f_{\mathrm{rot}}=\frac{\mathrm{rpm}}{60}.
 $$
 
-For circular radius \(R\), the source speed is
+For circular radius $R$, the source speed is
 
 $$
 u=2\pi Rf_{\mathrm{rot}}.
 $$
 
-Only the line-of-sight component changes the observed frequency. Let \(\hat n\) point from the source toward the observer and define
+Only the line-of-sight component changes the observed frequency. Let $\hat n$ point from the source toward the observer and define
 
 $$
 u_{\mathrm{LOS}}=\vec u\cdot\hat n,
@@ -925,7 +925,7 @@ f_{\min}=f_0\frac{c_s}{c_s+u}
 }.
 $$
 
-Do not automatically substitute \(\pm u\) when the observer geometry cannot produce those projections. For example, an observer at the center of the circle has \(u_{\mathrm{LOS}}=0\) at every instant and hears no first-order Doppler modulation.
+Do not automatically substitute $\pm u$ when the observer geometry cannot produce those projections. For example, an observer at the center of the circle has $u_{\mathrm{LOS}}=0$ at every instant and hears no first-order Doppler modulation.
 
 ## 14. Standing-wave shortcuts from boundary conditions
 
@@ -950,7 +950,7 @@ f=\frac{v}{2\Delta x_{NN}}
 }.
 $$
 
-An adjacent node and antinode are separated by \(\lambda/4\), so \(f=v/(4\Delta x_{NA})\).
+An adjacent node and antinode are separated by $\lambda/4$, so $f=v/(4\Delta x_{NA})$.
 
 ### Allowed harmonics
 
@@ -986,7 +986,7 @@ f_n=\frac{nv}{4L}=nf_1
 }.
 $$
 
-At fixed \(v\), \(L\), and boundary conditions,
+At fixed $v$, $L$, and boundary conditions,
 
 $$
 \boxed{
@@ -994,7 +994,7 @@ $$
 }.
 $$
 
-For an open–closed pipe, use odd harmonic labels; the next mode after \(n=1\) is \(n=3\), not \(n=2\).
+For an open–closed pipe, use odd harmonic labels; the next mode after $n=1$ is $n=3$, not $n=2$.
 
 ### Equal fundamentals
 
@@ -1037,7 +1037,7 @@ F_T=\mu\left(\frac{2Lf_n}{n}\right)^2
 }.
 $$
 
-If the entire vibrating span has mass \(m_w\), then \(\mu=m_w/L\):
+If the entire vibrating span has mass $m_w$, then $\mu=m_w/L$:
 
 $$
 \boxed{
@@ -1045,4 +1045,4 @@ F_T=\frac{4m_wLf_n^2}{n^2}
 }.
 $$
 
-All of these shortcuts come from the same two moves: translate the boundary pattern into \(\lambda_n\), then use \(f_n=v/\lambda_n\).
+All of these shortcuts come from the same two moves: translate the boundary pattern into $\lambda_n$, then use $f_n=v/\lambda_n$.

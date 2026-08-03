@@ -8,8 +8,9 @@ topic-code: MTH212.M5.28
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Decode the Reduced Cheat-Sheet Block](#decode-the-cheat-sheet-block)
 - [Identify the Moving Observer Case](#identify-the-moving-observer-case)
-- [Evaluate the Frequency Factor](#evaluate-the-frequency-factor)
+- [Evaluate the Doppler Multiplier](#evaluate-the-doppler-multiplier)
 - [Choose the Sign and Check the Direction](#choose-the-sign-and-check-the-direction)
 - [Match the Number-Only Answer Form](#match-the-number-only-answer-form)
 - [Summary](#summary)
@@ -28,19 +29,75 @@ topic-code: MTH212.M5.28
 When a sound source is stationary and the **observer** moves through the sound wave, use
 
 $$
-f'=f\left(\frac{v\pm v_o}{v}\right),
+f'=f_0\left(1\pm\frac{v_o}{c_s}\right)
+=f_0\left(\frac{c_s\pm v_o}{c_s}\right),
 $$
 
-where $f$ is the emitted frequency, $f'$ is the observed frequency, $v$ is the speed of sound, and $v_o$ is the observer's speed.
+where $f_0$ is the emitted frequency, $f'$ is the observed frequency, $c_s$ is the speed of sound, and $v_o$ is the observer's speed along the line joining the observer and source.
 
 Use the plus sign when the observer moves **toward** the source and the minus sign when the observer moves **away**. The recognition cue is that the listener moves while the sound-producing source stays fixed.
 
 | Symbol | Meaning |
 | --- | --- |
-| $f$ | frequency emitted by the stationary source |
-| $f'$ | frequency heard by the moving observer |
-| $v$ | speed of sound through the medium |
-| $v_o$ | observer's speed relative to the medium |
+| $f_0$ (“$f$ naught”) | original frequency emitted by the source |
+| $f'$ (“$f$ prime”) | frequency heard by the moving observer |
+| $c_s$ (“$c$ sub $s$”) | speed of sound through the medium; use $343\ \mathrm{m/s}$ for ordinary air unless another value is given |
+| $v_o$ | positive magnitude of the observer's line-of-sight speed relative to the medium |
+| $v_s$ | positive magnitude of the source's line-of-sight speed relative to the medium |
+| $\mathrm{LOS}$ | **line of sight**: the straight line joining source and observer |
+
+---
+
+<a id="decode-the-cheat-sheet-block"></a>
+## Decode the Reduced Cheat-Sheet Block
+
+The reduced sheet compresses all four one-moving-object Doppler cases into
+
+$$
+\mathrm{LOS},\ v_s<c_s:\qquad
+\begin{array}{c|cc}
+&\text{toward }(f'>f_0)&\text{away }(f'<f_0)\\
+\mathrm O&f'=f_0(1+v_o/c_s)&f'=f_0(1-v_o/c_s)\\
+\mathrm S&f'=f_0/(1-v_s/c_s)&f'=f_0/(1+v_s/c_s)
+\end{array}.
+$$
+
+Read the shorthand as follows:
+
+- $\mathrm{LOS}$ says to use motion **along the line of sight**. Motion perpendicular to that line does not make the source–observer distance close or open at that instant.
+- $\mathrm O$ means the **observer moves** while the source is stationary. Use the observer row.
+- $\mathrm S$ means the **source moves** while the observer is stationary. Use the source row.
+- “Toward” means their separation is decreasing, so the heard frequency is higher: $f'>f_0$.
+- “Away” means their separation is increasing, so the heard frequency is lower: $f'<f_0$.
+- $v_s<c_s$ says these source formulas assume a source moving slower than sound.
+
+This compact table assumes that only one party moves at a time. Choose the toward or away column separately; do not give $v_o$ or $v_s$ a negative value and then apply another sign from the table.
+
+The location of the motion term tells you which row you are using:
+
+$$
+\boxed{
+\begin{aligned}
+\text{observer moves:}&\quad v_o\text{ appears in the numerator},\\
+\text{source moves:}&\quad v_s\text{ appears in the denominator}.
+\end{aligned}
+}
+$$
+
+This lesson uses only the $\mathrm O$ row. Its two entries can also be written
+
+$$
+\begin{aligned}
+\text{observer toward:}\quad
+f'&=f_0\left(1+\frac{v_o}{c_s}\right)
+=f_0\left(\frac{c_s+v_o}{c_s}\right),\\
+\text{observer away:}\quad
+f'&=f_0\left(1-\frac{v_o}{c_s}\right)
+=f_0\left(\frac{c_s-v_o}{c_s}\right).
+\end{aligned}
+$$
+
+The two notational forms are algebraically identical. The first matches the reduced cheat sheet; the second can be easier when substituting numerical speeds.
 
 ---
 
@@ -78,12 +135,12 @@ options:
   content: |-
     $\displaystyle 680\left(\frac{340-20}{340}\right)$
   feedback: |-
-    The minus sign lowers the wavefront arrival rate and applies when the observer moves away. Here the observer approaches, so the numerator must be $v+v_o=340+20$.
+    The minus sign lowers the wavefront arrival rate and applies when the observer moves away. Here the observer approaches, so the numerator must be $c_s+v_o=340+20$.
 - id: c
   content: |-
     $\displaystyle 680\left(\frac{340}{340-20}\right)$
   feedback: |-
-    This puts the motion term in the denominator, which changes the wavefront spacing and is the moving-source structure. The source is stationary; observer motion changes the arrival rate through the numerator $(v+v_o)/v$.
+    This puts the motion term in the denominator, which changes the wavefront spacing and is the moving-source structure. The source is stationary; observer motion changes the arrival rate through the numerator $(c_s+v_o)/c_s$.
 - id: d
   content: |-
     $\displaystyle 680\left(\frac{340}{340+20}\right)$
@@ -93,30 +150,24 @@ options:
   content: |-
     $\displaystyle 680\left(\frac{20}{340}\right)$
   feedback: |-
-    This keeps only the fractional Doppler increase $v_o/v$ and discards the original emitted frequency contribution. The full observer factor is $1+v_o/v=(v+v_o)/v$.
+    This keeps only the fractional Doppler increase $v_o/c_s$ and discards the original emitted frequency contribution. The full observer factor is $1+v_o/c_s=(c_s+v_o)/c_s$.
 ```
 
 ---
 
-<a id="evaluate-the-frequency-factor"></a>
-## Evaluate the Frequency Factor
+<a id="evaluate-the-doppler-multiplier"></a>
+## Evaluate the Doppler Multiplier
 
 For an approaching observer, the multiplier
 
 $$
-\frac{v+v_o}{v}
-=1+\frac{v_o}{v}
+1+\frac{v_o}{c_s}
+=\frac{c_s+v_o}{c_s}
 $$
 
-is greater than $1$. Multiply the emitted frequency by this factor.
+is greater than $1$. Multiply the emitted frequency $f_0$ by this dimensionless Doppler multiplier.
 
-Call this multiplier the frequency factor $M$:
-
-$$
-M=\frac{v+v_o}{v}.
-$$
-
-Both $v$ and $v_o$ have units $\mathrm{m/s}$, so $M$ is unitless. Therefore $f'=fM$ keeps the frequency unit $\mathrm{Hz}$. For approaching motion, $M>1$ provides a quick check before multiplication.
+Both $c_s$ and $v_o$ have units $\mathrm{m/s}$, so $v_o/c_s$ is unitless. Therefore multiplying $f_0$ by the Doppler multiplier keeps the frequency unit $\mathrm{Hz}$. For approaching motion, a multiplier greater than $1$ provides a quick check before multiplication.
 
 **Example:** A stationary source emits $720\ \mathrm{Hz}$. An observer approaches at $34\ \mathrm{m/s}$, and the sound speed is $340\ \mathrm{m/s}$. Find the observed frequency.
 
@@ -134,7 +185,7 @@ f'
 \end{aligned}
 $$
 
-Evaluate in the displayed order: add $v+v_o$, divide by $v$, and only then multiply by $f$. Keeping the numerator grouped prevents the motion term from being applied to the wrong part of the expression.
+Evaluate in the displayed order: add $c_s+v_o$, divide by $c_s$, and only then multiply by $f_0$. Keeping the numerator grouped prevents the motion term from being applied to the wrong part of the expression.
 
 ```quiz
 type: radio
@@ -167,7 +218,7 @@ options:
   content: |-
     $544\ \mathrm{Hz}$
   feedback: |-
-    The moving-observer factor is fixed by the given speeds: $(v+v_o)/v=(320+20)/320=1.0625$. Multiplying $480\ \mathrm{Hz}$ by that factor gives $510\ \mathrm{Hz}$, so $544\ \mathrm{Hz}$ does not satisfy the Doppler relation.
+    The moving-observer factor is fixed by the given speeds: $(c_s+v_o)/c_s=(320+20)/320=1.0625$. Multiplying $480\ \mathrm{Hz}$ by that factor gives $510\ \mathrm{Hz}$, so $544\ \mathrm{Hz}$ does not satisfy the Doppler relation.
 ```
 
 ---
@@ -180,9 +231,9 @@ The sign describes the observer's motion relative to the source:
 $$
 \begin{aligned}
 \text{toward:}\quad
-f'&=f\left(\frac{v+v_o}{v}\right)>f,\\
+f'&=f_0\left(1+\frac{v_o}{c_s}\right)>f_0,\\
 \text{away:}\quad
-f'&=f\left(\frac{v-v_o}{v}\right)<f.
+f'&=f_0\left(1-\frac{v_o}{c_s}\right)<f_0.
 \end{aligned}
 $$
 
@@ -225,7 +276,7 @@ options:
   content: |-
     $700\ \mathrm{Hz}$
   feedback: |-
-    This uses $v-v_o$, which lowers the frequency for a listener moving away. Here the listener approaches and encounters wavefronts faster, so $f'$ must exceed $750\ \mathrm{Hz}$ and equals $800\ \mathrm{Hz}$.
+    This uses $c_s-v_o$, which lowers the frequency for a listener moving away. Here the listener approaches and encounters wavefronts faster, so $f'$ must exceed $750\ \mathrm{Hz}$ and equals $800\ \mathrm{Hz}$.
 - id: c
   content: |-
     $750\ \mathrm{Hz}$
@@ -241,7 +292,7 @@ options:
   content: |-
     $11\,250\ \mathrm{Hz}$
   feedback: |-
-    This multiplies by $v/v_o=15$, but that ratio is not the wavefront-arrival factor. Observer motion modifies the emitted frequency by the near-unity factor $(v+v_o)/v=352/330$, giving $800\ \mathrm{Hz}$.
+    This multiplies by $c_s/v_o=15$, but that ratio is not the wavefront-arrival factor. Observer motion modifies the emitted frequency by the near-unity factor $(c_s+v_o)/c_s=352/330$, giving $800\ \mathrm{Hz}$.
 ```
 
 ---
@@ -262,7 +313,7 @@ The bat is the moving observer and approaches the stationary singer:
 $$
 \begin{aligned}
 f'
-&=f\left(\frac{v+v_o}{v}\right)\\
+&=f_0\left(1+\frac{v_o}{c_s}\right)\\
 &=(880\ \mathrm{Hz})
 \left(\frac{343+35}{343}\right)\\
 &=969.8\ldots\ \mathrm{Hz}.
@@ -286,7 +337,7 @@ options:
   content: |-
     $540$
   feedback: |-
-    This uses $v-v_o$, which describes an observer moving away and produces a lower frequency. The observer moves toward the source, so wavefronts arrive faster and the result must be above $600\ \mathrm{Hz}$: $660\ \mathrm{Hz}$.
+    This uses $c_s-v_o$, which describes an observer moving away and produces a lower frequency. The observer moves toward the source, so wavefronts arrive faster and the result must be above $600\ \mathrm{Hz}$: $660\ \mathrm{Hz}$.
 - id: c
   content: |-
     $600$
@@ -302,7 +353,7 @@ options:
   content: |-
     $6000$
   feedback: |-
-    This multiplies by $v/v_o=10$, which is not the moving-observer factor. The correct near-unity factor is $(v+v_o)/v=(340+34)/340=1.10$, giving the entry $660$.
+    This multiplies by $c_s/v_o=10$, which is not the moving-observer factor. The correct near-unity factor is $(c_s+v_o)/c_s=(340+34)/340=1.10$, giving the entry $660$.
 ```
 
 ---
@@ -312,14 +363,14 @@ options:
 
 For a stationary sound source and a moving observer:
 
-1. Label $f$ as the emitted frequency, $f'$ as the heard frequency, $v$ as sound speed, and $v_o$ as observer speed.
+1. Label $f_0$ as the emitted frequency, $f'$ as the heard frequency, $c_s$ as sound speed, and $v_o$ as the positive line-of-sight observer speed.
 2. Use
    $$
-   f'=f\left(\frac{v\pm v_o}{v}\right).
+   f'=f_0\left(1\pm\frac{v_o}{c_s}\right).
    $$
 3. Choose plus for motion toward the source and minus for motion away.
-4. Evaluate the unitless factor $(v\pm v_o)/v$ before multiplying by $f$.
-5. Check the direction: toward means $f'>f$; away means $f'<f$.
+4. Evaluate the unitless factor $1\pm v_o/c_s$ before multiplying by $f_0$.
+5. Check the direction: toward means $f'>f_0$; away means $f'<f_0$.
 6. Round only the final frequency and follow the requested answer format.
 
 The main traps are treating observer motion as source motion, choosing the wrong sign, and rounding before the final step.

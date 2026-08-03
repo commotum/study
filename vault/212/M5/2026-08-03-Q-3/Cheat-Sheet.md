@@ -23,7 +23,7 @@ $$
 I_{\mathrm{point}}=md^2\qquad I_{\mathrm{rod,CM}}=\frac1{12}mL^2\qquad I_{\mathrm{rod,end}}=\frac13mL^2\qquad I_{\mathrm{disk,CM}}=\frac12mR^2\qquad I_{\mathrm{sphere,CM}}=\frac25mR^2
 $$
 $$
-y=A\sin(kx\mp\omega t+\phi_0)\qquad k=\frac{2\pi}{\lambda}\qquad \omega=2\pi f\qquad v_w=\lambda f=\frac\omega k\qquad \begin{array}{c|c}kx-\omega t&+x\\kx+\omega t&-x\end{array}
+y=A\sin(kx\pm\omega t+\phi_0)\qquad k=\frac{2\pi}{\lambda}\qquad \omega=2\pi f\qquad v_w=\lambda f=\frac\omega k\qquad \begin{array}{c|c}kx-\omega t&+x\\kx+\omega t&-x\end{array}
 $$
 $$
 \mu=\frac{m_w}{L_w}\qquad v_w=\sqrt{\frac{F_T}{\mu}}=\sqrt{\frac{F_TL_w}{m_w}}\qquad F_T=\mu v_w^2\qquad \frac{v_2}{v_1}=\sqrt{\frac{F_{T2}}{F_{T1}}\frac{\mu_1}{\mu_2}}
