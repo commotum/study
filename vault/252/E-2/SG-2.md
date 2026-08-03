@@ -150,7 +150,7 @@ Observe: Notice that that next two problems have similar problem statements but 
 
 Let $F(x)=\int_0^x f(t) d t$, for $0 \leq x \leq 5$, where the graph of $f$ is the piecewise function given below. Use the graph $y=f(t)$ below to answer as much as possible.
 
-![[Screenshot 2026-07-23 at 3.16.04 PM.png]]
+![](<Source/SG-2/Images/problem-3-integrand-graph.png>)
 
 **(a)** On which interval(s) is $f$ positive? On which interval(s) is $f$ negative? On which interval(s) is $f$ zero?
 
@@ -174,7 +174,7 @@ G(x)=\int_{-1}^{x}g(t)\,dt,
 $$
 for $-1\leq x\leq 5$, be given by the graph below. Note that $g$ is a piecewise function and is not shown below.
 
-![[Screenshot 2026-07-23 at 3.21.11 PM.png]]
+![](<Source/SG-2/Images/problem-4-accumulation-function-graph.png>)
 
 **(a)** Over which interval(s) is $g$ positive? Over which interval(s) is $g$ negative? Over which interval(s) is $g$ zero?
 
