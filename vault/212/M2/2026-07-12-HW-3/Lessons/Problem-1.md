@@ -301,7 +301,6 @@ options:
 **Check:** The units of $I$ are mass·length². The main trap is using a slanted distance, a distance from the center of mass, or a familiar object dimension instead of the perpendicular distance to the specified axis.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -311,5 +310,4 @@ options:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

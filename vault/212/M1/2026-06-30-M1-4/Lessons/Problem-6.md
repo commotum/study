@@ -296,7 +296,6 @@ The main trap is using the minimum-speed signs. For maximum speed, friction poin
 The mass may be given, but it cancels out. Use the mass only if you are later asked for $N$ or $f_s$, not when the target is $v_{\max}$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -311,5 +310,4 @@ Next: [Deciding True Statements About Static Friction on a Banked Turn](../../20
 Study guide index: 24/30
 
 ---
-
 <!-- lesson-nav:end -->

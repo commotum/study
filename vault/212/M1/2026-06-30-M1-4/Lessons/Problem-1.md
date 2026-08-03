@@ -226,7 +226,6 @@ For an icy banked curve, use this checklist:
 The correct side-view diagram has exactly two arrows: $mg$ downward and $N$ perpendicular to the bank, tilted inward.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -241,5 +240,4 @@ Next: [Finding the Speed for a Frictionless Banked Curve](Problem-4.md)
 Study guide index: 21/30
 
 ---
-
 <!-- lesson-nav:end -->

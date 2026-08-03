@@ -357,7 +357,6 @@ For positive amplitude and angular-frequency magnitudes, this is $v_{\max}=A\ome
 The main trap is using $\omega/k$. That is the propagation speed of the wave pattern, not the maximum transverse speed of one string element.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -367,5 +366,4 @@ The main trap is using $\omega/k$. That is the propagation speed of the wave pat
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

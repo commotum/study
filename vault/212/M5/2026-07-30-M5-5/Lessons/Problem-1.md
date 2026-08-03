@@ -263,7 +263,6 @@ $$
 so the number-only entry is **$3.0$**.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -273,10 +272,9 @@ so the number-only entry is **$3.0$**.
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 [Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
-Next: [Classifying Two-Source Interference from Path and Starting Phase](../../2026-08-02-PQ-3/Lessons/Problem-3.md)
+Next: [Reflections at Fixed and Free Ends](../../2026-08-03-Q-3/Lessons/fixed-free-end-reflection.md)
 
-Study guide index: 18/20
+Study guide index: 21/28
 
 ---
-
 <!-- lesson-nav:end -->

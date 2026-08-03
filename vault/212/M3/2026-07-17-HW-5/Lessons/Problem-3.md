@@ -280,7 +280,6 @@ options:
 - **Check:** The net magnitude cannot be smaller than the absolute value of either of its perpendicular components.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -295,5 +294,4 @@ Next: [Gravitational Potential Energy of a Three-Body System](Problem-8.md)
 Study guide index: 14/20
 
 ---
-
 <!-- lesson-nav:end -->

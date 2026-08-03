@@ -264,7 +264,6 @@ $$
 The main trap is keeping the force from support A in the threshold equation. At the instant tipping begins, $N_A=0$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -279,5 +278,4 @@ Next: [Speed of a Rolling Solid Cylinder From Energy](../../../M2/2026-07-15-HW-
 Study guide index: 08/20
 
 ---
-
 <!-- lesson-nav:end -->

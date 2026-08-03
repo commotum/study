@@ -226,7 +226,6 @@ $$
 The period belongs in the denominator of $v$ because increasing the period makes the rotation slower, gives the bullet more time to travel, and therefore lowers the required speed. The main trap is to treat $T$ as if it directly increases speed; it directly increases the travel time instead.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -236,5 +235,4 @@ The period belongs in the denominator of $v$ because increasing the period makes
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

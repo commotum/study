@@ -316,7 +316,6 @@ For a simple pendulum under the small-angle approximation:
 **Main trap:** \(2\pi\sqrt{L/g}\) gives the period \(T\), while \(\sqrt{g/L}\) gives angular frequency \(\omega\). The requested frequency is \(f=\omega/(2\pi)=1/T\).
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -326,5 +325,4 @@ For a simple pendulum under the small-angle approximation:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

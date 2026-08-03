@@ -299,7 +299,6 @@ Use this checklist when a turntable object is "just about to slip":
 4. Divide by $r$ before taking the square root; do not multiply by $r$ or forget the square root.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -314,5 +313,4 @@ Next: [Finding the Minimum Period Before a Coin Slips](../../2026-07-05-PQ-1/Les
 Study guide index: 14/30
 
 ---
-
 <!-- lesson-nav:end -->

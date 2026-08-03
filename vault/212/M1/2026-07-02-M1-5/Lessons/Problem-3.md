@@ -250,7 +250,6 @@ $$
 The main trap is using the length $L$, using the full weight $mg$, or using $mg\sin\theta$. In this diagram, $\theta$ is the angle that makes the inward part of weight the adjacent component, so the radial weight component is $mg\cos\theta$. For numerical work, keep the calculator in degree mode when $\theta$ is given in degrees.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -260,5 +259,4 @@ The main trap is using the length $L$, using the full weight $mg$, or using $mg\
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

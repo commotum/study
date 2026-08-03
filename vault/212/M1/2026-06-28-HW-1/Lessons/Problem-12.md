@@ -334,7 +334,6 @@ In non-uniform circular motion, $\omega$ may change with time, so use the value 
 The statement "$\vec v$ has magnitude $r\omega$" is true because it describes the speed, not the full velocity vector.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -344,5 +343,4 @@ The statement "$\vec v$ has magnitude $r\omega$" is true because it describes th
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

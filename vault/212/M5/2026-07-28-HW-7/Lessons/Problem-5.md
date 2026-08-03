@@ -262,7 +262,6 @@ When a sound reflects from a stationary wall and returns to a moving listener:
 The main trap is putting $c\pm v$ in the denominator, which would treat the hawk as a moving source instead of the moving observer it is on the return trip.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -272,5 +271,4 @@ The main trap is putting $c\pm v$ in the denominator, which would treat the hawk
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

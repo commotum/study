@@ -396,7 +396,6 @@ To build a moment of inertia:
 The main trap is using a correct shape formula about the wrong axis.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -406,5 +405,4 @@ The main trap is using a correct shape formula about the wrong axis.
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

@@ -331,7 +331,6 @@ options:
 6. Check units, keep guard digits, and round only the final result.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -341,5 +340,4 @@ options:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

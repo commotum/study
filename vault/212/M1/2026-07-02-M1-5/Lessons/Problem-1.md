@@ -305,7 +305,6 @@ For circular motion with changing speed:
 5. Choose the net-force arrow that points between the radial and tangential components.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -320,5 +319,4 @@ Next: [Reading Net Force Arrows for Circular Motion](../../2026-07-05-PQ-1/Lesso
 Study guide index: 09/30
 
 ---
-
 <!-- lesson-nav:end -->

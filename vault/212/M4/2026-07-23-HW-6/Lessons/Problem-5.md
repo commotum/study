@@ -261,7 +261,6 @@ When a single SHM position graph asks for a ranking of acceleration magnitudes:
 Do not rank signed positions, and do not use the graph's slope. Equal distances on opposite sides of equilibrium produce equal acceleration magnitudes.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -271,10 +270,9 @@ Do not rank signed positions, and do not use the graph's slope. Equal distances 
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 [Quiz 3 Study Guide](../../../M5/2026-08-03-Q-3/Study-Guide.md)
-Next: [Speed of a Spring Oscillator at a Given Position](Problem-7.md)
+Next: [Deciding Whether an SHM Oscillator Is Speeding Up or Slowing Down](../../../M5/2026-08-03-Q-3/Lessons/shm-speeding-up-or-slowing-down.md)
 
-Study guide index: 03/20
+Study guide index: 03/28
 
 ---
-
 <!-- lesson-nav:end -->

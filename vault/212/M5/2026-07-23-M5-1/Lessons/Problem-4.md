@@ -269,7 +269,6 @@ To identify the restoring force for a transverse wave on a string:
 The restoring interaction is **tension**. Curvature makes its transverse components fail to cancel, producing the net force toward equilibrium.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -279,5 +278,4 @@ The restoring interaction is **tension**. Curvature makes its transverse compone
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

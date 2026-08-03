@@ -318,7 +318,6 @@ For the same satellite in circular orbits around the same central mass:
 6. Do not use the $1/r^2$ scaling of gravitational force for kinetic energy.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -333,5 +332,4 @@ Next: [Total Mechanical Energy of a Three-Body Orbit](../../2026-07-16-M3-2/Less
 Study guide index: 18/20
 
 ---
-
 <!-- lesson-nav:end -->

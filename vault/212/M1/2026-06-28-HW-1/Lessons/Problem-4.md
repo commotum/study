@@ -416,7 +416,6 @@ $$
 The key trap is mixing up constants: the given $C$ in $\alpha_z(t)$ integrates to $Ct$, while the initial angular velocity determines the separate integration constant.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -426,5 +425,4 @@ The key trap is mixing up constants: the given $C$ in $\alpha_z(t)$ integrates t
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

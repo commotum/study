@@ -206,7 +206,6 @@ Use this checklist:
 - Smaller radius means larger acceleration because $r$ is in the denominator.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -216,5 +215,4 @@ Use this checklist:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

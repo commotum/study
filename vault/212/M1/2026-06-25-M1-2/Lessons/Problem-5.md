@@ -332,7 +332,6 @@ Use this checklist:
 The main trap is using the full period $T$ as the flight time. Use $T$ only after scaling it by the fraction of a rotation.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -342,5 +341,4 @@ The main trap is using the full period $T$ as the flight time. Use $T$ only afte
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

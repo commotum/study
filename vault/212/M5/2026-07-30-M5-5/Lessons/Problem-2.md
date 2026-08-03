@@ -217,7 +217,6 @@ For a diagram in which the circles represent crests, use **trace → label → c
 The main trap is treating drawn crest-circle intersections as the only constructive locations. In the assigned diagram, $P$ is crest–crest and $R$ is trough–trough, so both are constructive; $Q$ is crest–trough and is destructive.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -226,6 +225,10 @@ The main trap is treating drawn crest-circle intersections as the only construct
 [[212/Home|Home]]
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
----
+[Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
+Next: [Classifying Two-Source Interference from Path and Starting Phase](../../2026-08-02-PQ-3/Lessons/Problem-3.md)
 
+Study guide index: 26/28
+
+---
 <!-- lesson-nav:end -->

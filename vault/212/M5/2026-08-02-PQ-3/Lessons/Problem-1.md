@@ -215,7 +215,6 @@ When a pendulum parameter changes:
 The main trap is inventing a mass dependence that the simple-pendulum formula does not contain.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -227,8 +226,7 @@ The main trap is inventing a mass dependence that the simple-pendulum formula do
 [Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
 Next: [Period of a Uniform Rod as a Physical Pendulum](../../../M4/2026-07-22-M4-2/Lessons/Problem-3.md)
 
-Study guide index: 05/20
+Study guide index: 06/28
 
 ---
-
 <!-- lesson-nav:end -->

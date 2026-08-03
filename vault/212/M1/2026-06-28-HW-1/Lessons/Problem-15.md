@@ -296,7 +296,6 @@ Concave up means the slope of $\theta_z(t)$ is increasing, so $\alpha_z(t)>0$. C
 The main trap is using position height or velocity sign instead of concavity. Acceleration is the second derivative of position, so the matching graph follows how the slope changes.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -306,5 +305,4 @@ The main trap is using position height or velocity sign instead of concavity. Ac
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

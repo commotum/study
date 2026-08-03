@@ -328,7 +328,6 @@ When source positions, a detector position, frequency, wave speed, and an initia
 The main traps are subtracting source coordinates instead of path lengths, dropping the factor $2\pi$, forgetting the initial phase offset, and reporting a reduced phase when an unreduced value was requested.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -338,5 +337,4 @@ The main traps are subtracting source coordinates instead of path lengths, dropp
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

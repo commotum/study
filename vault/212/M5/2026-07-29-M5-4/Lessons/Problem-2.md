@@ -295,7 +295,6 @@ For a wire fixed at both ends, the phrase **fundamental frequency** signals $\la
 The main trap is confusing total mass $m$ with linear mass density $\mu$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -305,5 +304,4 @@ The main trap is confusing total mass $m$ with linear mass density $\mu$.
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

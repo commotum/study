@@ -270,7 +270,6 @@ When a rod has position-dependent density and the question asks for its center o
 The main trap is integrating $\lambda(x)$ alone in the numerator; that produces mass, not the first moment.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -280,5 +279,4 @@ The main trap is integrating $\lambda(x)$ alone in the numerator; that produces 
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

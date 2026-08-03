@@ -287,7 +287,6 @@ For two ideal mass–spring oscillators:
 The main traps are treating frequency as proportional to mass and confusing equal amplitude with equal frequency.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -297,5 +296,4 @@ The main traps are treating frequency as proportional to mass and confusing equa
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

@@ -303,7 +303,6 @@ options:
 - Main traps: using only one mass, failing to cube $d$, omitting $2\pi$, or reporting the answer in seconds.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -318,5 +317,4 @@ Next: [Scaling Kinetic Energy in a Circular Orbit](../../2026-07-17-HW-5/Lessons
 Study guide index: 17/20
 
 ---
-
 <!-- lesson-nav:end -->

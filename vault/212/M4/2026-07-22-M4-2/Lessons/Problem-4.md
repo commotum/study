@@ -383,7 +383,6 @@ T=2\pi\sqrt{\frac{7L}{12g}}.
 $$
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -393,5 +392,4 @@ $$
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

@@ -323,7 +323,6 @@ When a simple piece is removed from a uniform body:
 5. Check the sign: the center of mass shifts away from the removed material.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -333,5 +332,4 @@ When a simple piece is removed from a uniform body:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

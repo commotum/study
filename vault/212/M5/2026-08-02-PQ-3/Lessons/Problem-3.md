@@ -309,7 +309,6 @@ When two sources interfere at a point:
 The main trap is ignoring the initial phase. A half-integer path difference reverses the usual result when the sources begin completely out of phase.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -321,8 +320,7 @@ The main trap is ignoring the initial phase. A half-integer path difference reve
 [Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
 Next: [Finding the First Constructive-Interference Point](../../2026-07-30-M5-5/Lessons/Problem-5.md)
 
-Study guide index: 19/20
+Study guide index: 27/28
 
 ---
-
 <!-- lesson-nav:end -->

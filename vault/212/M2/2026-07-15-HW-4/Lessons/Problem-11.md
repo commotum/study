@@ -255,7 +255,6 @@ When a free composite object rotates after a collision, use the axis through its
 The quick reasonableness check is $I_{\text{CM}}<I_{\text{off}}$: shifting an axis away from the center of mass adds the nonnegative quantity $M_{\text{tot}}d^2$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -265,5 +264,4 @@ The quick reasonableness check is $I_{\text{CM}}<I_{\text{off}}$: shifting an ax
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

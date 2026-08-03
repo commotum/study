@@ -542,7 +542,6 @@ $$
 The other root is negative, so it cannot be the elapsed time. The most common setup mistakes are using $\pi r$ instead of $2\pi r$, or writing $at^2$ instead of $\dfrac12at^2$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -552,5 +551,4 @@ The other root is negative, so it cannot be the elapsed time. The most common se
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

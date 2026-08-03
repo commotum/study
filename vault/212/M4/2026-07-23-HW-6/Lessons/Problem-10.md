@@ -285,7 +285,6 @@ $$
 The main trap is replacing $+\Delta E$ with $-\Delta E$. Keep the definition $\Delta E=E_{\mathrm{after}}-E_{\mathrm{before}}$ visible and substitute the sign of $\Delta E$ only once.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -295,5 +294,4 @@ The main trap is replacing $+\Delta E$ with $-\Delta E$. Keep the definition $\D
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

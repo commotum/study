@@ -282,7 +282,6 @@ When $\theta(t)$ is given and the question asks for angular speed at a time, use
 The main trap is substituting into the position formula instead of its derivative.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -292,5 +291,4 @@ The main trap is substituting into the position formula instead of its derivativ
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

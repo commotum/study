@@ -1,4 +1,4 @@
-# MTH 212 Home
+# PHY 212 Home
 
 <!-- update-progress:home:start -->
 
@@ -12,20 +12,30 @@
 
 ## Progress
 
-- Course: 8% (18/223 unique lessons)
+- Course: 9% (19/223 unique lessons)
 
 - M1: 25% (16/65)
 - M2: 0% (0/49)
 - M3: 0% (0/28)
-- M4: 7% (2/29)
+- M4: 10% (3/29)
 - M5: 0% (0/52)
 
 <!-- update-progress:home-collections:start -->
+
+## Study Guides
+
+- [Quiz 1 Study Guide](M1/2026-07-06-Q-1/Study-Guide.md): 53% (16/30)
+  - Next: [Recognizing Uniform Circular Motion](M1/2026-07-03-HW-2/Lessons/Problem-1.md)
+- [Quiz 2 Study Guide](M3/2026-07-20-Q-2/Study-Guide.md): 0% (0/20)
+  - Next: [Finding the Center of Mass of Two Point Masses](M2/2026-07-07-M2-1/Lessons/Problem-1.md)
+- [Quiz 3 Study Guide](M5/2026-08-03-Q-3/Study-Guide.md): 11% (3/28)
+  - Next: [Deciding Whether an SHM Oscillator Is Speeding Up or Slowing Down](M5/2026-08-03-Q-3/Lessons/shm-speeding-up-or-slowing-down.md)
 
 <!-- update-progress:home-collections:end -->
 
 ## History
 
+- [Ranking Acceleration Magnitudes from an SHM Position Graph](M4/2026-07-23-HW-6/Lessons/Problem-5.md) - 2026-08-03 02:45
 - [Finding Instantaneous SHM Velocity From Cycle Data](M4/2026-07-21-M4-1/Lessons/Problem-8.md) - 2026-08-03 02:16
 - [Finding Maximum SHM Speed From a Position-Time Graph](M4/2026-07-21-M4-1/Lessons/Problem-6.md) - 2026-08-03 01:47
 - [Relating Tangential Speed to Angular Speed](M1/2026-06-28-HW-1/Lessons/Problem-8.md) - 2026-07-08 16:29
@@ -47,7 +57,7 @@
 
 ## Summary
 
-- Completed unique lessons: 18 / 223
+- Completed unique lessons: 19 / 223
 - Assignment placements: 223
 - Queue size: 5 / 5
 

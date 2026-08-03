@@ -204,7 +204,6 @@ $$
 The hole's position does not affect its mass. The main trap is forgetting to square the radius fraction. For $r=R/2$, the removed mass is $M/4$ (written as $m/4$ in the source choices).
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -214,5 +213,4 @@ The hole's position does not affect its mass. The main trap is forgetting to squ
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

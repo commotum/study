@@ -285,7 +285,6 @@ $$
 The main trap is dividing by $c/n$ incorrectly. Since $c/n$ is the medium speed, it belongs in the denominator of $df/v$, so the final count is multiplied by $n$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -295,5 +294,4 @@ The main trap is dividing by $c/n$ incorrectly. Since $c/n$ is the medium speed,
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

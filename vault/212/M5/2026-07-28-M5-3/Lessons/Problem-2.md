@@ -323,7 +323,6 @@ When the same point source is measured at two distances:
 The main traps are using a linear distance ratio and reversing the old-to-new distance ratio.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -333,5 +332,4 @@ The main traps are using a linear distance ratio and reversing the old-to-new di
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

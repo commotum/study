@@ -278,7 +278,6 @@ The sign in $\vec a=-\omega^2\vec r$ is the deciding cue: a negative scalar reve
 The main trap is mixing up acceleration with velocity: $\vec v$ is tangent and perpendicular to $\vec r$, but $\vec a$ is inward and opposite $\vec r$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -293,5 +292,4 @@ Next: [Choosing the Acceleration Direction When Circular Motion Speeds Up](Probl
 Study guide index: 07/30
 
 ---
-
 <!-- lesson-nav:end -->

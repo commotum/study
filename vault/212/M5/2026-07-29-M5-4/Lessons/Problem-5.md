@@ -291,7 +291,6 @@ Useful checks: increasing the odd harmonic number raises the frequency, while in
 For the given fifth-harmonic problem, the pattern is $N-A-N-A-N-A$ and the numeric-only frequency entry is **500**.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -301,5 +300,4 @@ For the given fifth-harmonic problem, the pattern is $N-A-N-A-N-A$ and the numer
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

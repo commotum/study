@@ -298,7 +298,6 @@ $$
 The main trap is reporting the negative signed acceleration when the problem asks for the nonnegative magnitude.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -308,5 +307,4 @@ The main trap is reporting the negative signed acceleration when the problem ask
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

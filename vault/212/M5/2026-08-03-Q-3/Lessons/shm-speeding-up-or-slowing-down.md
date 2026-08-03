@@ -281,7 +281,6 @@ $$
 The main trap is treating the sign of $x$ as the direction of motion. Position tells which side of equilibrium the oscillator occupies; velocity tells which way it moves.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -290,6 +289,10 @@ The main trap is treating the sign of $x$ as the direction of motion. Position t
 [[212/Home|Home]]
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
----
+[Quiz 3 Study Guide](../Study-Guide.md)
+Next: [Speed of a Spring Oscillator at a Given Position](../../../M4/2026-07-23-HW-6/Lessons/Problem-7.md)
 
+Study guide index: 04/28
+
+---
 <!-- lesson-nav:end -->

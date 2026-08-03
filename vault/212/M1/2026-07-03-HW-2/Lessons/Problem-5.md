@@ -340,7 +340,6 @@ $$
 The main trap is using the formula for an angle measured from the vertical. Here the angle is measured from the horizontal, so the answer uses $\arcsin$, not $\arccos$ or $\arctan$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -355,5 +354,4 @@ Next: [Finding the Minimum Entry Speed for a Loop-the-Loop](Problem-11.md)
 Study guide index: 28/30
 
 ---
-
 <!-- lesson-nav:end -->

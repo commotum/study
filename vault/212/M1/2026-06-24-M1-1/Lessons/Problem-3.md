@@ -235,7 +235,6 @@ Use the right-hand rule to turn the visible spin direction into the angular velo
 For the pictured disk, counterclockwise rotation gives angular velocity out of the page, and stopping reverses the acceleration direction to into the page.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -245,5 +244,4 @@ For the pictured disk, counterclockwise rotation gives angular velocity out of t
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

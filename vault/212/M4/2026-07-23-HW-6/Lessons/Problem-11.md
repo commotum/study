@@ -233,7 +233,6 @@ When an added object sticks to a spring oscillator:
 The main trap is reversing the fraction. More moving mass makes the period longer, so the mass belongs in the numerator.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -243,5 +242,4 @@ The main trap is reversing the fraction. More moving mass makes the period longe
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

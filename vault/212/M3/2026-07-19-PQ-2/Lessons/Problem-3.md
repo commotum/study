@@ -253,7 +253,6 @@ When otherwise identical falling-block systems differ only in flywheel inertia:
 The main trap is comparing only the equal block weights. The massive flywheel requires torque, so cord tension reduces that block's net downward force.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -268,5 +267,4 @@ Next: [Finding the Tipping Threshold With Torque Balance](Problem-4.md)
 Study guide index: 07/20
 
 ---
-
 <!-- lesson-nav:end -->

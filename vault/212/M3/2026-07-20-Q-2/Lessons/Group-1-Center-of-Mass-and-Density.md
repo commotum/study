@@ -358,7 +358,6 @@ When asked where a system balances:
 The main trap is averaging positions without weighting them by mass.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -368,5 +367,4 @@ The main trap is averaging positions without weighting them by mass.
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

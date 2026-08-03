@@ -335,7 +335,6 @@ $$
 The main trap is the sign of the radial friction component: uphill friction points outward on the bank, so it subtracts from the inward centripetal-force equation.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -345,5 +344,4 @@ The main trap is the sign of the radial friction component: uphill friction poin
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

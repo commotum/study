@@ -340,7 +340,6 @@ options:
 - **Main trap:** a frictionless bearing does not make a massive pulley behave like a massless pulley.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -355,5 +354,4 @@ Next: [Comparing Descent Times with a Rotating Flywheel](../../../M3/2026-07-19-
 Study guide index: 06/20
 
 ---
-
 <!-- lesson-nav:end -->

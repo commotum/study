@@ -297,7 +297,6 @@ options:
 - Check that the answer lies between the masses and closer to the heavier one.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -312,5 +311,4 @@ Next: [Finding a Two-Object Center of Mass in the Plane](../../2026-07-15-HW-4/L
 Study guide index: 01/20
 
 ---
-
 <!-- lesson-nav:end -->

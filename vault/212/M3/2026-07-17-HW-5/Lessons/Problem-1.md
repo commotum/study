@@ -322,7 +322,6 @@ To test a conceptual statement:
 The main trap is accepting familiar vocabulary while overlooking one decisive word such as “inverse,” or confusing a complete quantity with half of it.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -332,5 +331,4 @@ The main trap is accepting familiar vocabulary while overlooking one decisive wo
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

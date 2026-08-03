@@ -432,7 +432,6 @@ $$
 so the answer is $4\pi$ radians per second.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -442,5 +441,4 @@ so the answer is $4\pi$ radians per second.
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

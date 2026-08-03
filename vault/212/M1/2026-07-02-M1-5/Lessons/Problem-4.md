@@ -266,7 +266,6 @@ $$
 The main trap is using the radial expression $T/m+g\cos\theta$ or including $L$. Those belong to radial acceleration, not tangential acceleration.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -276,5 +275,4 @@ The main trap is using the radial expression $T/m+g\cos\theta$ or including $L$.
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

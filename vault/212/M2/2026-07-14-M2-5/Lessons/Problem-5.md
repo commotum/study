@@ -361,7 +361,6 @@ options:
 - **Main trap:** the embedded bullet contributes to both the initial angular momentum and the final moment of inertia.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -376,5 +375,4 @@ Next: [Comparing Angular Momentum at Equal Angular Speed](../../../M3/2026-07-19
 Study guide index: 11/20
 
 ---
-
 <!-- lesson-nav:end -->

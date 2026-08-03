@@ -295,7 +295,6 @@ For the same point-like sound source:
 If the listener moves farther away, the answer must be smaller. The main trap is forgetting the square and using a linear inverse ratio.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -305,5 +304,4 @@ If the listener moves farther away, the answer must be smaller. The main trap is
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

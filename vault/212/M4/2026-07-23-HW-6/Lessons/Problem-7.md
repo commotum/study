@@ -273,7 +273,6 @@ When an ideal, frictionless spring oscillator has amplitude $A$ and is observed 
 6. Check the endpoints: $v=A\sqrt{k/M}$ at $x=0$ and $v=0$ at $|x|=A$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -285,8 +284,7 @@ When an ideal, frictionless spring oscillator has amplitude $A$ and is observed 
 [Quiz 3 Study Guide](../../../M5/2026-08-03-Q-3/Study-Guide.md)
 Next: [Deciding What Changes a Pendulum's Frequency](../../../M5/2026-08-02-PQ-3/Lessons/Problem-1.md)
 
-Study guide index: 04/20
+Study guide index: 05/28
 
 ---
-
 <!-- lesson-nav:end -->

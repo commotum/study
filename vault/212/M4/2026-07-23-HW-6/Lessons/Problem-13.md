@@ -312,7 +312,6 @@ $$
 The main trap is copying the familiar form $e^{-t/\tau}$ instead of reading the given exponent $e^{-t/(2\tau)}$. That mistake doubles the result.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -322,5 +321,4 @@ The main trap is copying the familiar form $e^{-t/\tau}$ instead of reading the 
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

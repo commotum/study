@@ -377,7 +377,6 @@ $$
 The main traps are double-counting pairs, omitting one of the three kinetic terms, dropping the negative sign of $U$, or mishandling the requested $10^{36}\ \mathrm{J}$ scale.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -392,5 +391,4 @@ Next: [Four Stars Orbiting at the Corners of a Square](../../2026-07-19-PQ-2/Les
 Study guide index: 19/20
 
 ---
-
 <!-- lesson-nav:end -->

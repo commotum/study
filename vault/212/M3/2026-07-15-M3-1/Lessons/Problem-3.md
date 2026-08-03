@@ -308,7 +308,6 @@ options:
 - Convert meters to kilometers with a factor whose meters cancel, and round only at the end; for Problem 3, enter `35800`.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -318,5 +317,4 @@ options:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

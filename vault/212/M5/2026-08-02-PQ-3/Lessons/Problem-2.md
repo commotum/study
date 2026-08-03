@@ -288,7 +288,6 @@ $$
 The main trap is treating the decibel scale as linear. Doubling intensity adds about $3\ \mathrm{dB}$; it does not double the intensity level.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -300,8 +299,7 @@ The main trap is treating the decibel scale as linear. Doubling intensity adds a
 [Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
 Next: [Doppler Shift for a Moving Observer](../../2026-07-28-M5-3/Lessons/Problem-5.md)
 
-Study guide index: 13/20
+Study guide index: 18/28
 
 ---
-
 <!-- lesson-nav:end -->

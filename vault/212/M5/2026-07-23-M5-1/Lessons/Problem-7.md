@@ -328,7 +328,6 @@ To predict the wave-speed change in this setup:
 The hanging block changes the tension, not the string's linear density. A heavier hanging block makes the wave travel faster.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -338,5 +337,4 @@ The hanging block changes the tension, not the string's linear density. A heavie
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

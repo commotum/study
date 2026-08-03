@@ -340,7 +340,6 @@ For a load-bearing wire that carries a traveling wave:
 The main traps are confusing the two tensions, putting the shelf's weight at $L$ instead of $L/2$, using $T$ instead of $T\sin\theta$ in the torque, and using the shelf length instead of the support-wire length in $\mu$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -350,10 +349,9 @@ The main traps are confusing the two tensions, putting the shelf's weight at $L$
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 [Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
-Next: [Finding Distance From Sound Intensity](../../2026-07-28-M5-3/Lessons/Problem-1.md)
+Next: [Locate a Listener on a Circular Wavefront](../../2026-07-27-M5-2/Lessons/Problem-4.md)
 
-Study guide index: 11/20
+Study guide index: 13/28
 
 ---
-
 <!-- lesson-nav:end -->

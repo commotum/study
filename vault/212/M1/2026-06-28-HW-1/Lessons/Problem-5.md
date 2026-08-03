@@ -395,7 +395,6 @@ $$
 The main trap is forgetting that both $Bt^2$ and $C$ must be integrated twice, and that the initial velocity contributes the term $\omega_0t$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -405,5 +404,4 @@ The main trap is forgetting that both $Bt^2$ and $C$ must be integrated twice, a
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

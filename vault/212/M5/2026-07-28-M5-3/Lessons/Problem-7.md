@@ -319,7 +319,6 @@ For a source moving away from a stationary observer:
 The main traps are using the approaching-source sign, reversing $f_s/f'$, and confusing $v$ with $v_s$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -329,5 +328,4 @@ The main traps are using the approaching-source sign, reversing $f_s/f'$, and co
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

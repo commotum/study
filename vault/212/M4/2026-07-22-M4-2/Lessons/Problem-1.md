@@ -306,7 +306,6 @@ When comparing the time for one full pendulum oscillation:
 Changing only the bob mass does not change a simple pendulum's small-angle period.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -316,5 +315,4 @@ Changing only the bob mass does not change a simple pendulum's small-angle perio
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

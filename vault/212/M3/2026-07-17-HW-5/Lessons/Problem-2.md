@@ -268,7 +268,6 @@ Use this checklist:
 The main traps are using $L+x$, dropping a source-mass factor, forgetting the square on distance, or keeping a nonphysical square-root branch.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -278,5 +277,4 @@ The main traps are using $L+x$, dropping a source-mass factor, forgetting the sq
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

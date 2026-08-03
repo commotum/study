@@ -296,7 +296,6 @@ In symbols:
 5. Round only at the end and use the requested answer form.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -305,6 +304,10 @@ In symbols:
 [[212/Home|Home]]
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
----
+[Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
+Next: [Scaling Wave Power and Intensity with Frequency and Amplitude](../../2026-08-03-Q-3/Lessons/wave-power-intensity-scaling.md)
 
+Study guide index: 15/28
+
+---
 <!-- lesson-nav:end -->

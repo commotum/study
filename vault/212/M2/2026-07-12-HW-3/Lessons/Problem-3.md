@@ -234,7 +234,6 @@ When a density function contains an unknown constant and the total mass is known
 For $\lambda(x)=cx^2$ on $0\le x\le l$, the main traps are using only the endpoint density $cl^2$, forgetting that $\int_0^l x^2\,dx=l^3/3$, or leaving the factor $3$ in the denominator when isolating $c$. Thus $m=cl^3/3$ and $c=3m/l^3$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -244,5 +243,4 @@ For $\lambda(x)=cx^2$ on $0\le x\le l$, the main traps are using only the endpoi
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

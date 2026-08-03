@@ -284,7 +284,6 @@ Use this decision routine for a moving source and stationary listener:
 The main traps are reversing the direction rule and confusing a change in frequency with a change in loudness.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -294,5 +293,4 @@ The main traps are reversing the direction rule and confusing a change in freque
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

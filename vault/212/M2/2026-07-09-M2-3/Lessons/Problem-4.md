@@ -290,7 +290,6 @@ For torque caused by forces drawn in the page:
 Always preserve the cross-product order $\vec r\times\vec F$. Swapping the vectors reverses the torque direction.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -300,5 +299,4 @@ Always preserve the cross-product order $\vec r\times\vec F$. Swapping the vecto
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

@@ -413,7 +413,6 @@ For a block pulled right from equilibrium and released from rest:
 **Main traps:** using \(x_f\) as the amplitude, choosing sine despite release at \(+A\), using \(f\) in place of \(\omega\), switching the calculator to degrees, or dropping a negative displacement sign.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -423,5 +422,4 @@ For a block pulled right from equilibrium and released from rest:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

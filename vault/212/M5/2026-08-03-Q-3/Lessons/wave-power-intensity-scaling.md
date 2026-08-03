@@ -283,7 +283,6 @@ Use this decision routine:
 The main trap is confusing wave amplitude $A$ with surface area $A_s$. Wave amplitude is squared in the power scaling; surface area divides power in the definition of intensity.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -292,6 +291,10 @@ The main trap is confusing wave amplitude $A$ with surface area $A_s$. Wave ampl
 [[212/Home|Home]]
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
----
+[Quiz 3 Study Guide](../Study-Guide.md)
+Next: [Finding Distance From Sound Intensity](../../2026-07-28-M5-3/Lessons/Problem-1.md)
 
+Study guide index: 16/28
+
+---
 <!-- lesson-nav:end -->

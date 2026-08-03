@@ -549,7 +549,6 @@ Use this decision process:
 7. In a sticking collision, include the attached mass in the final moment of inertia and do not conserve mechanical energy.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -559,5 +558,4 @@ Use this decision process:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

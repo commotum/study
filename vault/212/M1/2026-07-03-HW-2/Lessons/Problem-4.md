@@ -194,7 +194,6 @@ options:
 For uniform circular motion, use the circular path as the cue: the net force points toward the center of the circle. In a conical pendulum, the bob stays at one height, so vertical forces balance and the remaining net force is horizontal and inward. If the bob is on the right side of the side view, inward is left; if the bob is on the left side, inward is right. Do not choose the string direction unless the question asks for the tension force itself.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -209,5 +208,4 @@ Next: [Free-Body Diagrams for Level Circular Motion](../../2026-06-30-M1-4/Lesso
 Study guide index: 11/30
 
 ---
-
 <!-- lesson-nav:end -->

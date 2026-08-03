@@ -328,7 +328,6 @@ options:
 - **Main trap:** use $2/3$, not $3/2$, when solving for $a$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -338,5 +337,4 @@ options:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

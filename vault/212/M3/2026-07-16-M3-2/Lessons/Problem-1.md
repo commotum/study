@@ -375,7 +375,6 @@ For a solar orbit stated in Earth years and AU:
 The main traps are stopping at $T^2$, omitting the square in $T^{2/3}$, or using the inverse exponent $3/2$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -385,5 +384,4 @@ The main traps are stopping at $T^2$, omitting the square in $T^{2/3}$, or using
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

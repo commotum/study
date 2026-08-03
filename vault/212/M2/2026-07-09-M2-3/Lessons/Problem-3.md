@@ -271,7 +271,6 @@ options:
 For the source wrench, $\theta=120^\circ$, so the torque magnitude is $43\ \mathrm{N\,m}$ and the rotation is clockwise.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -286,5 +285,4 @@ Next: [Finding Atwood-Machine Acceleration With a Massive Pulley](../../2026-07-
 Study guide index: 04/20
 
 ---
-
 <!-- lesson-nav:end -->

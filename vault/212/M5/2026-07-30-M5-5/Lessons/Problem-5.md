@@ -374,7 +374,6 @@ For two in-phase sources and a listener on the positive $x$-axis:
 The main trap is choosing the next higher integer multiple of $\lambda$. That value cannot be reached because the path difference decreases as the listener moves right.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -386,8 +385,7 @@ The main trap is choosing the next higher integer multiple of $\lambda$. That va
 [Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
 Next: End of Quiz 3 Study Guide.
 
-Study guide index: 20/20
+Study guide index: 28/28
 
 ---
-
 <!-- lesson-nav:end -->

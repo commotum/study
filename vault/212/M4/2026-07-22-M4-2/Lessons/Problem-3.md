@@ -295,7 +295,6 @@ options:
 5. Evaluate the radicand, take the square root, multiply by $2\pi$, and round only the final answer.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -307,8 +306,7 @@ options:
 [Quiz 3 Study Guide](../../../M5/2026-08-03-Q-3/Study-Guide.md)
 Next: [Finding the Period of a Rod–Disk Physical Pendulum](Problem-6.md)
 
-Study guide index: 06/20
+Study guide index: 07/28
 
 ---
-
 <!-- lesson-nav:end -->

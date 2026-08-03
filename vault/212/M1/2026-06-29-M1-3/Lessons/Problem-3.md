@@ -274,7 +274,6 @@ $$
 Solving gives $N_{\text{top}}=mg-m\omega^2r$ and $N_{\text{bottom}}=mg+m\omega^2r$, so the normal force is smaller at the top. The main trap is using the same sign pattern at both positions instead of changing the inward direction.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -284,5 +283,4 @@ Solving gives $N_{\text{top}}=mg-m\omega^2r$ and $N_{\text{bottom}}=mg+m\omega^2
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

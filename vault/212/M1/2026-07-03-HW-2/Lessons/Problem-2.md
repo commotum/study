@@ -235,7 +235,6 @@ $$
 Use cosine because the radius is adjacent to the angle. The main trap is choosing $L\sin\theta$, which would be the vertical projection when the angle is measured from the horizontal.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -250,5 +249,4 @@ Next: [Deriving the Angle in a Conical Pendulum](Problem-5.md)
 Study guide index: 27/30
 
 ---
-
 <!-- lesson-nav:end -->

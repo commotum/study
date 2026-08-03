@@ -280,7 +280,6 @@ To find the smallest torque magnitude in a force diagram:
 For equal forces, the smallest perpendicular lever arm produces the smallest torque. The main trap is choosing the force closest to the hinge or most nearly horizontal without checking whether its line of action actually passes through the pivot.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -290,5 +289,4 @@ For equal forces, the smallest perpendicular lever arm produces the smallest tor
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

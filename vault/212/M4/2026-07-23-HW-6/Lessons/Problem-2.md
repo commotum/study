@@ -278,7 +278,6 @@ When the same spring is used, $k$ is fixed and $K_{\max}\propto A^2$. If only th
 The main trap is using $c$ instead of $c^2$. Doubling the amplitude makes the maximum kinetic energy four times as large.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -288,5 +287,4 @@ The main trap is using $c$ instead of $c^2$. Doubling the amplitude makes the ma
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

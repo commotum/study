@@ -274,7 +274,6 @@ $$
 The main trap is treating "non-uniform" as if it changes the direction of velocity. It does not. Non-uniform circular motion changes the speed and the acceleration structure, but the velocity direction remains tangent to the circle.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -284,5 +283,4 @@ The main trap is treating "non-uniform" as if it changes the direction of veloci
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

@@ -288,7 +288,6 @@ The reusable checklist is:
 The main trap is using $\omega_0t$ as if the disk never slowed down. For a uniform stop, that gives twice the correct angular displacement.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -298,5 +297,4 @@ The main trap is using $\omega_0t$ as if the disk never slowed down. For a unifo
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

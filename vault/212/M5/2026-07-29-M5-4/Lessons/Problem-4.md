@@ -311,7 +311,6 @@ The reusable procedure is:
 The main trap is using the fundamental relation $L=\lambda/4$ for the third harmonic. For the assigned values, the unrounded result is $302.647\ldots\ \mathrm{Hz}$ and the required number-only answer is $300$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -320,6 +319,10 @@ The main trap is using the fundamental relation $L=\lambda/4$ for the third harm
 [[212/Home|Home]]
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
----
+[Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
+Next: [Finding Complete Constructive Interference in a Crest Diagram](../../2026-07-30-M5-5/Lessons/Problem-2.md)
 
+Study guide index: 25/28
+
+---
 <!-- lesson-nav:end -->

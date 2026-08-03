@@ -302,7 +302,6 @@ To find frequency from a position-time graph:
 **Main trap:** crest to trough or opposite-direction equilibrium crossing to crossing spans only \(T/2\). Vertical graph values describe position or amplitude, not frequency.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -312,5 +311,4 @@ To find frequency from a position-time graph:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

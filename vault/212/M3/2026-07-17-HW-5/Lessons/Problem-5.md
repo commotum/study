@@ -241,7 +241,6 @@ When two circular orbits are around the same central body:
 The main trap is using $k$ or $k^3$ instead of $k^{3/2}$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -251,5 +250,4 @@ The main trap is using $k$ or $k^3$ instead of $k^{3/2}$.
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

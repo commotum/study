@@ -299,7 +299,6 @@ options:
 - In Problem 3, $I_f/I_i=2$ because the common $m$ and $(d/2)^2$ factors cancel, so $\omega_f=\omega_0/2=2.1\ \mathrm{rad/s}$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -309,5 +308,4 @@ options:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

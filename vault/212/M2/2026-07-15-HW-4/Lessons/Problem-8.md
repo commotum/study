@@ -256,7 +256,6 @@ For a collision-conservation question:
 Main trap: do not transfer a conservation law for the complete isolated system to one object or to an origin attached to only one part of the system.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -266,5 +265,4 @@ Main trap: do not transfer a conservation law for the complete isolated system t
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

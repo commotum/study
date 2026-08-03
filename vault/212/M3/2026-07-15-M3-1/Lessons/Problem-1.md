@@ -271,7 +271,6 @@ options:
 - **Main trap:** doubling the distance gives $F/4$, not $F/2$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -286,5 +285,4 @@ Next: [Net Gravitational Force from a Right-Triangle Arrangement](../../2026-07-
 Study guide index: 13/20
 
 ---
-
 <!-- lesson-nav:end -->

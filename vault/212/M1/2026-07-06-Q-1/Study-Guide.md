@@ -15,7 +15,7 @@ Progress: [Home](<../../Home.md>) | [Table of Contents](<../../0. Table of Conte
 <!-- update-progress:index:start -->
 ## Next Lesson
 
-1. [Recognizing Uniform Circular Motion](<../2026-07-03-HW-2/Lessons/Problem-1.md>)
+1. [Recognizing Uniform Circular Motion](../2026-07-03-HW-2/Lessons/Problem-1.md)
 
 ## Progress
 

@@ -374,7 +374,6 @@ $$
 The main traps are using $d$ as the vertical drop, omitting rotational kinetic energy, or forgetting the final square root.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -384,5 +383,4 @@ The main traps are using $d$ as the vertical drop, omitting rotational kinetic e
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

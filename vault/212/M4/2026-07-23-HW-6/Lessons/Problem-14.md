@@ -363,7 +363,6 @@ When a pendulum contains several extended masses:
 The main trap is using $L$ as the sphere-center distance or omitting one of the parallel-axis terms.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -373,5 +372,4 @@ The main trap is using $L$ as the sphere-center distance or omitting one of the 
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

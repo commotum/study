@@ -306,7 +306,6 @@ For a rod on $0\le x\le l$ with $\lambda(x)=cx$:
 The main trap is using the mass integral again for inertia and forgetting the distance-squared factor $x^2$. Check that the final units are $\mathrm{kg\,m^2}$ and that $\tfrac13ml^2<I<ml^2$ for this linearly increasing density.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -316,5 +315,4 @@ The main trap is using the mass integral again for inertia and forgetting the di
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

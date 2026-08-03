@@ -334,7 +334,6 @@ When rolling objects are compared on the same ramp:
 The main trap is assuming that a heavier or smaller object must roll faster. Those details cancel for objects with the same shape; a different mass distribution is what can change the result.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -344,5 +343,4 @@ The main trap is assuming that a heavier or smaller object must roll faster. Tho
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

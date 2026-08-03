@@ -297,7 +297,6 @@ $$
 The main trap is subtracting the spring potential only once. Because the spring remains at $x=A/2$ throughout the brief collision, its potential energy appears in both snapshots and cancels.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -307,5 +306,4 @@ The main trap is subtracting the spring potential only once. Because the spring 
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

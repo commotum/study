@@ -372,7 +372,6 @@ options:
 - **Main trap:** frictionless does not mean massless, and the pulley contributes $m_p/2$, not $m_p$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -387,5 +386,4 @@ Next: [Comparing Atwood-Machine Accelerations With Pulley Inertia](../../2026-07
 Study guide index: 05/20
 
 ---
-
 <!-- lesson-nav:end -->

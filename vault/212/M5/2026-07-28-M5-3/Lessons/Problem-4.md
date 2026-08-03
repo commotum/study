@@ -319,7 +319,6 @@ When $N$ equally loud independent sources are present:
 For two equal sources, remember the shortcut: doubling intensity adds about $3\ \mathrm{dB}$. The main trap is adding the decibel levels directly.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -329,5 +328,4 @@ For two equal sources, remember the shortcut: doubling intensity adds about $3\ 
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

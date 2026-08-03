@@ -230,7 +230,6 @@ Use this checklist:
 For the original problem, counterclockwise motion at the upper-left point gives a down-left tangential component, while the center is down-right. Speeding up means the acceleration is the sum of those two directions, so the correct arrow is C.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -245,5 +244,4 @@ Next: [Choosing the Net Force Direction for Speeding-Up Circular Motion](../../2
 Study guide index: 08/30
 
 ---
-
 <!-- lesson-nav:end -->

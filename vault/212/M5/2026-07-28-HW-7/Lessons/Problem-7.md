@@ -275,7 +275,6 @@ To read a traveling wave's direction:
 For the standard form with positive $k$ and $\omega$, $kx-\omega t$ travels toward increasing $x$ and $kx+\omega t$ travels toward decreasing $x$. Amplitude, sine versus cosine, and a constant phase shift do not change the direction.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -285,5 +284,4 @@ For the standard form with positive $k$ and $\omega$, $kx-\omega t$ travels towa
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

@@ -305,7 +305,6 @@ options:
 - Do not compare distance alone or angle alone; compare their combined effect through the perpendicular lever arm.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -315,5 +314,4 @@ options:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

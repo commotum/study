@@ -237,7 +237,6 @@ Use this boundary check:
 The main trap is confusing reversal of travel direction with inversion. Every reflected pulse travels back, but only a fixed-end reflection flips upward to downward or downward to upward.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -246,6 +245,10 @@ The main trap is confusing reversal of travel direction with inversion. Every re
 [[212/Home|Home]]
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
----
+[Quiz 3 Study Guide](../Study-Guide.md)
+Next: [Third-Harmonic Frequency of a Wire Tensioned by a Hanging Mass](../../2026-07-29-M5-4/Lessons/Problem-3.md)
 
+Study guide index: 22/28
+
+---
 <!-- lesson-nav:end -->

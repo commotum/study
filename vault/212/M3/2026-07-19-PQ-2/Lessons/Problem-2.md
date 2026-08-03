@@ -271,7 +271,6 @@ When an object **rolls without slipping**:
 For a uniform hoop, $\beta=1$, so $K_{\mathrm{rot}}=K_{\mathrm{trans}}$. The main trap is confusing either equal part with the total: for the hoop, each part is one-half of $K_{\mathrm{total}}$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -286,5 +285,4 @@ Next: [Finding Angular Speed After a Bullet Embeds in a Rotor](../../../M2/2026-
 Study guide index: 10/20
 
 ---
-
 <!-- lesson-nav:end -->

@@ -306,7 +306,6 @@ $$
 $$
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -321,5 +320,4 @@ Next: [Finding the Orbital Period of a Binary Star System](Problem-3.md)
 Study guide index: 16/20
 
 ---
-
 <!-- lesson-nav:end -->

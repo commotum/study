@@ -260,7 +260,6 @@ $$
 $$
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -272,8 +271,7 @@ $$
 [Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
 Next: [Finding Wave Speed from a Traveling-Wave Equation](../../2026-07-28-HW-7/Lessons/Problem-10.md)
 
-Study guide index: 08/20
+Study guide index: 09/28
 
 ---
-
 <!-- lesson-nav:end -->

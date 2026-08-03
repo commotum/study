@@ -240,7 +240,6 @@ Use this checklist:
 Speed does not belong in a center-of-mass position formula. The main geometry trap is using the contact point instead of the ball's center; the main algebra trap is dividing by one object's mass instead of the total mass.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -255,5 +254,4 @@ Next: [Comparing Moment of Inertia From Mass Distribution](../../2026-07-08-M2-2
 Study guide index: 02/20
 
 ---
-
 <!-- lesson-nav:end -->

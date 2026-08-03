@@ -279,7 +279,6 @@ $$
 for a motion starting at $t_0=0$. The main trap is stopping at $t^2$ or reporting both $\pm$ roots even though the requested answer is a time after the start.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -289,5 +288,4 @@ for a motion starting at $t_0=0$. The main trap is stopping at $t^2$ or reportin
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

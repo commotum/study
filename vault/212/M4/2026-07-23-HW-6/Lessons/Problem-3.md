@@ -323,7 +323,6 @@ For a graph modeled by $x(t)=A\cos(\omega t+\phi)$:
 The main traps are treating peak-to-trough as a full period and choosing the phase sign from the initial height without checking whether the graph is rising or falling.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -333,5 +332,4 @@ The main traps are treating peak-to-trough as a full period and choosing the pha
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

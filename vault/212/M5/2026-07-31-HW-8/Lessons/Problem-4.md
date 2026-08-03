@@ -356,7 +356,6 @@ $$
 **Main trap:** The harmonic factor is inside the wave speed, so it must be squared when computing tension. For the third harmonic, $(2/3)^2=4/9$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -366,5 +365,4 @@ $$
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

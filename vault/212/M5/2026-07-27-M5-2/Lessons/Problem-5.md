@@ -320,7 +320,6 @@ For a same-frequency wave crossing several media:
 The main trap is reversing only one link. At fixed frequency, wavelength and speed change together, while speed and refractive index change oppositely.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -330,5 +329,4 @@ The main trap is reversing only one link. At fixed frequency, wavelength and spe
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

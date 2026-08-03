@@ -9,19 +9,19 @@ The five **PQ3 anchors** are high-confidence forms, but they occupy only five sl
 <!-- update-progress:index:start -->
 ## Next Lesson
 
-1. [Finding Maximum SHM Speed From a Position-Time Graph](<../../M4/2026-07-21-M4-1/Lessons/Problem-6.md>)
+1. [Deciding Whether an SHM Oscillator Is Speeding Up or Slowing Down](Lessons/shm-speeding-up-or-slowing-down.md)
 
 ## Progress
 
-- Quiz 3 Study Guide: 0% (0/28)
+- Quiz 3 Study Guide: 11% (3/28)
 <!-- update-progress:index:end -->
 
 <!-- update-progress:members:start -->
 ## 1. Read and Model Simple Harmonic Motion
 
-1. [ ] [Finding Maximum SHM Speed From a Position-Time Graph](<../../M4/2026-07-21-M4-1/Lessons/Problem-6.md>) — **Beyond PQ3:** extract $A$, $T$, $\omega$, and $v_{\max}$ from one graph.
-2. [ ] [Finding Instantaneous SHM Velocity From Cycle Data](<../../M4/2026-07-21-M4-1/Lessons/Problem-8.md>) — **Beyond PQ3:** build $x(t)$, differentiate it, and interpret the sign of $v(t)$.
-3. [ ] [Ranking Acceleration Magnitudes from an SHM Position Graph](<../../M4/2026-07-23-HW-6/Lessons/Problem-5.md>) — **Beyond PQ3:** use $a=-\omega^2x$ instead of confusing acceleration with graph slope.
+1. [x] [Finding Maximum SHM Speed From a Position-Time Graph](<../../M4/2026-07-21-M4-1/Lessons/Problem-6.md>) — **Beyond PQ3:** extract $A$, $T$, $\omega$, and $v_{\max}$ from one graph.
+2. [x] [Finding Instantaneous SHM Velocity From Cycle Data](<../../M4/2026-07-21-M4-1/Lessons/Problem-8.md>) — **Beyond PQ3:** build $x(t)$, differentiate it, and interpret the sign of $v(t)$.
+3. [x] [Ranking Acceleration Magnitudes from an SHM Position Graph](<../../M4/2026-07-23-HW-6/Lessons/Problem-5.md>) — **Beyond PQ3:** use $a=-\omega^2x$ instead of confusing acceleration with graph slope.
 4. [ ] [Deciding Whether an SHM Oscillator Is Speeding Up or Slowing Down](<Lessons/shm-speeding-up-or-slowing-down.md>) — **Strong lecture cue:** combine the signs of $x$, $v$, and $a=-\omega^2x$ to determine whether speed is increasing or decreasing.
 5. [ ] [Speed of a Spring Oscillator at a Given Position](<../../M4/2026-07-23-HW-6/Lessons/Problem-7.md>) — **Beyond PQ3:** move between amplitude, position, and speed with oscillator energy.
 

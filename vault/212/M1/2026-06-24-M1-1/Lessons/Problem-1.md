@@ -243,7 +243,6 @@ The seconds stay in the denominator, and each revolution becomes \(2\pi\) radian
 The main trap is to report the revolutions-per-second number as if it were already in radians per second.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -253,5 +252,4 @@ The main trap is to report the revolutions-per-second number as if it were alrea
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

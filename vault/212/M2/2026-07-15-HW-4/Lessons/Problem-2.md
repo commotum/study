@@ -269,7 +269,6 @@ $$
 The main traps are using $h$ as the along-ramp distance, forgetting rotational inertia, or assuming that mass and radius affect the time even though they cancel for cylinders of the same shape.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -279,5 +278,4 @@ The main traps are using $h$ as the along-ramp distance, forgetting rotational i
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

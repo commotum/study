@@ -314,7 +314,6 @@ options:
 - Use $\Delta E_{\mathrm{lost}}=md^2\omega_0^2/8$ and round only after substitution.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -324,5 +323,4 @@ options:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

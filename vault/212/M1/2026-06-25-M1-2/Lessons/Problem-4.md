@@ -273,7 +273,6 @@ $$
 The main trap is treating $\theta$ like extra bullet distance. In this setup, a larger $\theta$ gives the bullet more time, so $\theta$ belongs in the denominator of the speed formula.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -283,5 +282,4 @@ The main trap is treating $\theta$ like extra bullet distance. In this setup, a 
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

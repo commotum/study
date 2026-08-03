@@ -371,7 +371,6 @@ For a uniform massive string held taut by a stationary hanging ball:
 The main trap is swapping the two masses: the **string mass** belongs in $\mu$, while the **ball mass** belongs in $T$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -381,5 +380,4 @@ The main trap is swapping the two masses: the **string mass** belongs in $\mu$, 
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

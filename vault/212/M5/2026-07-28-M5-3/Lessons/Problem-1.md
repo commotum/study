@@ -378,7 +378,6 @@ When the same source has intensity measurements at two distances:
 The main traps are reversing $I_1/I_2$, forgetting the square root, and reporting a negative or over-rounded distance.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -390,8 +389,7 @@ The main traps are reversing $I_1/I_2$, forgetting the square root, and reportin
 [Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
 Next: [Convert an Intensity Ratio into a Decibel Change](../../2026-08-02-PQ-3/Lessons/Problem-2.md)
 
-Study guide index: 12/20
+Study guide index: 17/28
 
 ---
-
 <!-- lesson-nav:end -->

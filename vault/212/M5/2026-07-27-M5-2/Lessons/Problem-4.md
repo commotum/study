@@ -332,7 +332,6 @@ When two $x$-axis listeners detect the same circular wavefront simultaneously:
 The main traps are mishandling the negative coordinate, using the full listener separation as the radius, and adding the squared legs instead of subtracting the known leg from $r^2$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -341,6 +340,10 @@ The main traps are mishandling the negative coordinate, using the full listener 
 [[212/Home|Home]]
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
----
+[Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
+Next: [Counting Wavelengths Inside a Material](Problem-6.md)
 
+Study guide index: 14/28
+
+---
 <!-- lesson-nav:end -->

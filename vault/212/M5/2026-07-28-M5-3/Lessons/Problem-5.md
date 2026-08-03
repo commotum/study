@@ -309,7 +309,6 @@ For a stationary sound source and a moving observer:
 The main traps are treating observer motion as source motion, choosing the wrong sign, and rounding before the final step.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -321,8 +320,7 @@ The main traps are treating observer motion as source motion, choosing the wrong
 [Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
 Next: [Extreme Doppler Frequencies from a Rotating Source](../../2026-08-02-PQ-3/Lessons/Problem-5.md)
 
-Study guide index: 14/20
+Study guide index: 19/28
 
 ---
-
 <!-- lesson-nav:end -->

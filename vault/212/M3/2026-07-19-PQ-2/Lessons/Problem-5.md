@@ -308,7 +308,6 @@ For four identical masses at the corners of a square:
 The main traps are swapping $\sqrt{2}L$ with $L/\sqrt{2}$, failing to resolve the adjacent forces, and double-counting pairs.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -323,5 +322,4 @@ Next: End of Quiz 2 Study Guide.
 Study guide index: 20/20
 
 ---
-
 <!-- lesson-nav:end -->

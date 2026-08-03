@@ -248,7 +248,6 @@ When a period is requested **before** a collision or attachment:
 5. Do not use a mass that joins the oscillator later, and do not mistake the frequency formula for the period formula.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -258,5 +257,4 @@ When a period is requested **before** a collision or attachment:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

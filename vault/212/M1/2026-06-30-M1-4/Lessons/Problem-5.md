@@ -219,7 +219,6 @@ Use the no-friction speed as the comparison point:
 The main trap is choosing a forward or backward direction. For this kind of banked-curve question, static friction is opposing slipping along the slope, not pushing along the direction of travel.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -234,5 +233,4 @@ Next: [Maximum Speed on a Frictional Banked Curve](Problem-6.md)
 Study guide index: 23/30
 
 ---
-
 <!-- lesson-nav:end -->

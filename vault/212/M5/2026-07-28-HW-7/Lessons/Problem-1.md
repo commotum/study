@@ -264,7 +264,6 @@ options:
 **Main trap:** A higher driving frequency does not make the wave travel faster on an unchanged string; it makes the wavelength shorter. In particular, doubling $f$ leaves $v$ unchanged and halves $\lambda$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -274,5 +273,4 @@ options:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

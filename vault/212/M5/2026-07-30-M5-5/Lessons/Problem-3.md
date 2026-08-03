@@ -326,7 +326,6 @@ For two sources that begin completely out of phase:
 For completely out-of-phase sources, remember the reversal: an integer-wavelength path difference is destructive, while a half-integer-wavelength path difference is constructive. The main trap is to ignore the initial $\pi$ phase difference and classify from $\Delta r$ alone.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -336,5 +335,4 @@ For completely out-of-phase sources, remember the reversal: an integer-wavelengt
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

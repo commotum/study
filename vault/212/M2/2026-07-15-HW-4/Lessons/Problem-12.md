@@ -320,7 +320,6 @@ $$
 The main traps are using $L/2$ instead of $L/3$, reversing the cross-product order, and including the radius even though its displacement is parallel to the momentum.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -330,5 +329,4 @@ The main traps are using $L/2$ instead of $L/3$, reversing the cross-product ord
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

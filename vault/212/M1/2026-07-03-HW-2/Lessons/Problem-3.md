@@ -282,7 +282,6 @@ $$
 The main traps are forgetting to square $2\pi$, forgetting to square $T$, or leaving $r^2$ after one factor of $r$ should cancel.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -292,5 +291,4 @@ The main traps are forgetting to square $2\pi$, forgetting to square $T$, or lea
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

@@ -292,7 +292,6 @@ Use this checklist:
 Do not choose a velocity graph by copying the height of $\theta(t)$. Match the slope behavior instead.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -302,5 +301,4 @@ Do not choose a velocity graph by copying the height of $\theta(t)$. Match the s
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

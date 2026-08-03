@@ -346,7 +346,6 @@ For a stationary block tensioning a wire over a pulley:
 The main trap is swapping the hanging mass $M$, which sets tension, with the wire mass $m_w$, which sets linear density.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -356,10 +355,9 @@ The main trap is swapping the hanging mass $M$, which sets tension, with the wir
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 [Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
-Next: [Deriving Wave Speed on a Load-Bearing Wire](../../2026-08-02-PQ-3/Lessons/Problem-4.md)
+Next: [Maximum Transverse Particle Speed on a Tensioned Wire](Problem-3.md)
 
-Study guide index: 10/20
+Study guide index: 11/28
 
 ---
-
 <!-- lesson-nav:end -->

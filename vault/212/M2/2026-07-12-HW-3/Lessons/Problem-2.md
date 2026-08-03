@@ -238,7 +238,6 @@ options:
 - **Main trap:** do not mass-weight $I_1$ and $I_2$ again; each moment of inertia already contains its object's mass contribution.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -248,5 +247,4 @@ options:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

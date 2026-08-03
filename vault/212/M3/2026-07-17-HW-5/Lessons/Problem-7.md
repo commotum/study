@@ -257,7 +257,6 @@ At the closest and farthest points of an orbit:
 6. Do not square the factor; orbital speed at the apsides follows $v\propto1/r$ from the area law, not the inverse-square force relation.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -267,5 +266,4 @@ At the closest and farthest points of an orbit:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

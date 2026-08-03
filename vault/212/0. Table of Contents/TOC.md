@@ -1,4 +1,4 @@
-# MTH 212
+# PHY 212
 
 ```check-progress
 ```
@@ -195,7 +195,7 @@
         - [ ] [[M4/2026-07-23-HW-6/Lessons/Problem-2|M4.17. Scaling Maximum Kinetic Energy with Amplitude]]
         - [ ] [[M4/2026-07-23-HW-6/Lessons/Problem-3|M4.18. Choosing an SHM Cosine Equation from a Position–Time Graph]]
         - [ ] [[M4/2026-07-23-HW-6/Lessons/Problem-4|M4.19. Maximum Kinetic Energy from an SHM Position–Time Graph]]
-        - [ ] [[M4/2026-07-23-HW-6/Lessons/Problem-5|M4.20. Ranking Acceleration Magnitudes from an SHM Position Graph]]
+        - [x] [[M4/2026-07-23-HW-6/Lessons/Problem-5|M4.20. Ranking Acceleration Magnitudes from an SHM Position Graph]]
         - [ ] [[M4/2026-07-23-HW-6/Lessons/Problem-6|M4.21. Period of an Oscillator Before Its Mass Changes]]
         - [ ] [[M4/2026-07-23-HW-6/Lessons/Problem-7|M4.22. Speed of a Spring Oscillator at a Given Position]]
         - [ ] [[M4/2026-07-23-HW-6/Lessons/Problem-8|M4.23. Speed Immediately After a Mass Sticks to a Moving Block]]
@@ -263,3 +263,7 @@
         - [ ] [[M5/2026-08-02-PQ-3/Lessons/Problem-3|M5.47. Classifying Two-Source Interference from Path and Starting Phase]]
         - [ ] [[M5/2026-08-02-PQ-3/Lessons/Problem-4|M5.48. Deriving Wave Speed on a Load-Bearing Wire]]
         - [ ] [[M5/2026-08-02-PQ-3/Lessons/Problem-5|M5.49. Extreme Doppler Frequencies from a Rotating Source]]
+    - **2026-08-03-Q-3**
+        - [ ] [[M5/2026-08-03-Q-3/Lessons/shm-speeding-up-or-slowing-down|M5.50. Deciding Whether an SHM Oscillator Is Speeding Up or Slowing Down]]
+        - [ ] [[M5/2026-08-03-Q-3/Lessons/wave-power-intensity-scaling|M5.51. Scaling Wave Power and Intensity with Frequency and Amplitude]]
+        - [ ] [[M5/2026-08-03-Q-3/Lessons/fixed-free-end-reflection|M5.52. Reflections at Fixed and Free Ends]]

@@ -258,7 +258,6 @@ For an isolated collision in which objects stick:
 The main traps are choosing the rod's original center or the contact point as though either were an external pivot, and assuming that sticking by itself guarantees rotation. The nonzero lever arm is what establishes the rotation.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -268,5 +267,4 @@ The main traps are choosing the rod's original center or the contact point as th
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

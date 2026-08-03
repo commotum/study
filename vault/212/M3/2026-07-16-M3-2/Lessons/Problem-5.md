@@ -312,7 +312,6 @@ options:
 - Check the requested format and round only at the end; for Problem 5, enter `9600`.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -322,5 +321,4 @@ options:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

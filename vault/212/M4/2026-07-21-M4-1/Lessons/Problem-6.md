@@ -303,7 +303,6 @@ To find maximum speed from a sinusoidal position-time graph:
 For the given graph, $A=2.5\ \mathrm{cm}$ and $T=4.0\ \mathrm{s}$, so $v_{\max}=3.9\ \mathrm{cm/s}$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -315,8 +314,7 @@ For the given graph, $A=2.5\ \mathrm{cm}$ and $T=4.0\ \mathrm{s}$, so $v_{\max}=
 [Quiz 3 Study Guide](../../../M5/2026-08-03-Q-3/Study-Guide.md)
 Next: [Finding Instantaneous SHM Velocity From Cycle Data](Problem-8.md)
 
-Study guide index: 01/20
+Study guide index: 01/28
 
 ---
-
 <!-- lesson-nav:end -->

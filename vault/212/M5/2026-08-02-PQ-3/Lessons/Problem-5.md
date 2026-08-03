@@ -309,7 +309,6 @@ For a rotating sound source and a stationary listener:
 The main traps are treating rpm as hertz, omitting $2\pi$, and swapping the Doppler signs.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -319,10 +318,9 @@ The main traps are treating rpm as hertz, omitting $2\pi$, and swapping the Dopp
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 [Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
-Next: [Third-Harmonic Frequency of a Wire Tensioned by a Hanging Mass](../../2026-07-29-M5-4/Lessons/Problem-3.md)
+Next: [Largest Displacement When Two Pulses Overlap](../../2026-07-30-M5-5/Lessons/Problem-1.md)
 
-Study guide index: 15/20
+Study guide index: 20/28
 
 ---
-
 <!-- lesson-nav:end -->

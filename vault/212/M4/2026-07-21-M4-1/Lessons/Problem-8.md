@@ -395,7 +395,6 @@ For a block released from rest at maximum positive displacement:
 The main traps are treating $x_f$ as the amplitude, omitting $2\pi$ or the chain-rule factor $\omega$, and reporting speed instead of signed velocity.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -407,8 +406,7 @@ The main traps are treating $x_f$ as the amplitude, omitting $2\pi$ or the chain
 [Quiz 3 Study Guide](../../../M5/2026-08-03-Q-3/Study-Guide.md)
 Next: [Ranking Acceleration Magnitudes from an SHM Position Graph](../../2026-07-23-HW-6/Lessons/Problem-5.md)
 
-Study guide index: 02/20
+Study guide index: 02/28
 
 ---
-
 <!-- lesson-nav:end -->

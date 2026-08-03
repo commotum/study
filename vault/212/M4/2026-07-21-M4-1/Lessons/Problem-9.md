@@ -291,7 +291,6 @@ options:
 - Main trap: the release distance is the full amplitude, and the square root must apply to $k/m$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -301,5 +300,4 @@ options:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

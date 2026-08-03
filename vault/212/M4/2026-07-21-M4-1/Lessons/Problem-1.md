@@ -318,7 +318,6 @@ When $x(t)=A\cos(\omega t)$ and the problem asks for maximum speed:
 The main trap is forgetting the chain-rule factor $\omega$ when differentiating $\cos(\omega t)$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -328,5 +327,4 @@ The main trap is forgetting the chain-rule factor $\omega$ when differentiating 
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

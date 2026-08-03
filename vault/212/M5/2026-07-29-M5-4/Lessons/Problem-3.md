@@ -344,7 +344,6 @@ For a fixed-end wire tensioned by a stationary hanging mass:
 The main trap is using the wrong mass: $M$ determines tension, while $m_w$ determines linear density.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -356,8 +355,7 @@ The main trap is using the wrong mass: $M$ determines tension, while $m_w$ deter
 [Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
 Next: [Matching Fundamental Frequencies of Open and Closed Tubes](../../2026-07-31-HW-8/Lessons/Problem-2.md)
 
-Study guide index: 16/20
+Study guide index: 23/28
 
 ---
-
 <!-- lesson-nav:end -->

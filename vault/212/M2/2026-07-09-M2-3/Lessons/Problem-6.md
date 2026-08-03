@@ -339,7 +339,6 @@ $$
 The main traps are treating the cylinders separately even though they share one angular acceleration, swapping $R$ and $r$, or forgetting the $\tfrac12$ and the squared radius in the solid-cylinder formula. A correct result has units of kilograms and reproduces the total inertia when substituted back.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -349,5 +348,4 @@ The main traps are treating the cylinders separately even though they share one 
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

@@ -271,7 +271,6 @@ When rotating objects have the same angular speed:
 The main trap is assuming that equal total mass and equal angular speed imply equal angular momentum. They do not: the radial distribution of the mass can make the moments of inertia different.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -286,5 +285,4 @@ Next: [Scaling Force With an Inverse-Square Law](../../2026-07-15-M3-1/Lessons/P
 Study guide index: 12/20
 
 ---
-
 <!-- lesson-nav:end -->

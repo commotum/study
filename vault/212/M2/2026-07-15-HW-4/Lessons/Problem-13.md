@@ -233,7 +233,6 @@ options:
 - **Main trap:** Do not insert an extra mass factor or collision factor after $L_0$ and $I_0$ have already been calculated.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -243,5 +242,4 @@ options:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

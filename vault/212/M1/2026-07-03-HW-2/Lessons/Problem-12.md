@@ -292,7 +292,6 @@ $$
 That does not make the radial acceleration zero. Just before the object leaves, it can still have speed, so the inward net force is still $m\dfrac{v^2}{r}$. The main traps are confusing the normal force with the whole inward net force, calling the acceleration purely tangential, or assuming that any circular path is uniform circular motion.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -307,5 +306,4 @@ Next: [Choosing a Free-Body Diagram for an Icy Banked Curve](../../2026-06-30-M1
 Study guide index: 20/30
 
 ---
-
 <!-- lesson-nav:end -->

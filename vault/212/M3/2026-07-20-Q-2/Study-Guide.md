@@ -9,7 +9,7 @@ The five **PQ2 anchors** preserve every practice-quiz form. The other fifteen **
 <!-- update-progress:index:start -->
 ## Next Lesson
 
-1. [Finding the Center of Mass of Two Point Masses](<../../M2/2026-07-07-M2-1/Lessons/Problem-1.md>)
+1. [Finding the Center of Mass of Two Point Masses](../../M2/2026-07-07-M2-1/Lessons/Problem-1.md)
 
 ## Progress
 

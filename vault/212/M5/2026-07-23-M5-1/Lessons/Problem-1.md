@@ -287,7 +287,6 @@ For a displacement-versus-time graph:
 The main trap is choosing “right” from the propagation arrow instead of choosing “down” from the negative displacement-time slope.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -297,5 +296,4 @@ The main trap is choosing “right” from the propagation arrow instead of choo
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

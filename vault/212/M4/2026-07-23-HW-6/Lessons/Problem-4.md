@@ -321,7 +321,6 @@ For an SHM position–time graph and a known mass:
 Maximum kinetic energy occurs at equilibrium. The most common traps are using the peak-to-peak distance as $A$, using $1/T$ in place of $2\pi/T$, or failing to square all of $\omega A$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -331,5 +330,4 @@ Maximum kinetic energy occurs at equilibrium. The most common traps are using th
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

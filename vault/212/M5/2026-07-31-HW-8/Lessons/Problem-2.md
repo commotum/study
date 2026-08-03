@@ -347,7 +347,6 @@ $$
 In ratio form, $\ell_{\mathrm{co}}:\ell_{\mathrm{oo}}=1:2$. The main trap is setting the physical lengths equal. Equal frequency and equal wave speed give the same wavelength, but the two boundary conditions fit different fractions of that wavelength into the tubes.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -357,10 +356,9 @@ In ratio form, $\ell_{\mathrm{co}}:\ell_{\mathrm{oo}}=1:2$. The main trap is set
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 [Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
-Next: [Largest Displacement When Two Pulses Overlap](../../2026-07-30-M5-5/Lessons/Problem-1.md)
+Next: [Third Harmonic of an Open–Closed Pipe](../../2026-07-29-M5-4/Lessons/Problem-4.md)
 
-Study guide index: 17/20
+Study guide index: 24/28
 
 ---
-
 <!-- lesson-nav:end -->

@@ -287,7 +287,6 @@ options:
 4. Do not assume both coordinates vanish. An off-center hole can shift the center of mass along the symmetry axis while leaving the perpendicular coordinate equal to zero.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -297,5 +296,4 @@ options:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

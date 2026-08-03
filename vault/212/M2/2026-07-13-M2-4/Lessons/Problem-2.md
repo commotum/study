@@ -345,7 +345,6 @@ $$
 The main traps are pivoting about the wrong support, including the zero force from support A, or using a position from the board's end instead of a lever arm from the pivot.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -355,5 +354,4 @@ The main traps are pivoting about the wrong support, including the zero force fr
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

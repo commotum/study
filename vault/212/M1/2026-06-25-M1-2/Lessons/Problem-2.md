@@ -230,7 +230,6 @@ options:
 To decide where one variable belongs, hold the other givens fixed and ask how increasing that variable changes the target quantity. For Problem 2, keep $T$ and $\theta$ fixed. A larger disk separation $D$ means the bullet must travel farther under the same timing condition, so the required speed $v$ increases. That means $D$ appears in the numerator.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -240,5 +239,4 @@ To decide where one variable belongs, hold the other givens fixed and ask how in
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

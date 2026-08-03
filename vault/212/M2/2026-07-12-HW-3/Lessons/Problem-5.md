@@ -282,7 +282,6 @@ $$
 The main trap is computing $\int\lambda(x)\,dx$, which gives mass, and forgetting the extra squared-distance factor needed for moment of inertia.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -292,5 +291,4 @@ The main trap is computing $\int\lambda(x)\,dx$, which gives mass, and forgettin
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

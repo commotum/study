@@ -226,7 +226,6 @@ When asked for the gravitational potential energy of several point masses:
 For a right-triangle arrangement, the diagonal separation is the positive length $\sqrt{d_2^2+d_3^2}$. The main trap is importing the inverse-square distance from the force law; gravitational potential energy uses the first power of separation.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -241,5 +240,4 @@ Next: [Finding a Two-Body Center of Mass as a Fraction of Separation](../../2026
 Study guide index: 15/20
 
 ---
-
 <!-- lesson-nav:end -->

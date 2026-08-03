@@ -432,7 +432,6 @@ For a rod–disk physical pendulum:
 **Main trap:** use squared distances in the parallel-axis inertia terms, but first-power distances in the gravitational torque terms.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -444,8 +443,7 @@ For a rod–disk physical pendulum:
 [Quiz 3 Study Guide](../../../M5/2026-08-03-Q-3/Study-Guide.md)
 Next: [Inferring Particle Motion From a Traveling-Wave Snapshot](../../../M5/2026-07-23-M5-1/Lessons/Problem-5.md)
 
-Study guide index: 07/20
+Study guide index: 08/28
 
 ---
-
 <!-- lesson-nav:end -->

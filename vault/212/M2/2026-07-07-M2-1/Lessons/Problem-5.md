@@ -319,7 +319,6 @@ $$
 The main traps are using the touching face as a component center, treating the mass ratio as a side-length ratio, or placing the combined center at the midpoint when the masses are unequal.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -329,5 +328,4 @@ The main traps are using the touching face as a component center, treating the m
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

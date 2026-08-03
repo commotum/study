@@ -269,7 +269,6 @@ options:
 6. Keep frequency separate: $f=1/T$ has units of hertz, while period has units of seconds.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -279,5 +278,4 @@ options:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

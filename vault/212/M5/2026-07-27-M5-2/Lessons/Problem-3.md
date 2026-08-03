@@ -344,7 +344,6 @@ For a sinusoidal wave on a wire tensioned by a stationary hanging mass:
 The main trap is reporting $v_{\mathrm{wave}}$ instead of the maximum transverse particle speed.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -353,6 +352,10 @@ The main trap is reporting $v_{\mathrm{wave}}$ instead of the maximum transverse
 [[212/Home|Home]]
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
----
+[Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
+Next: [Deriving Wave Speed on a Load-Bearing Wire](../../2026-08-02-PQ-3/Lessons/Problem-4.md)
 
+Study guide index: 12/28
+
+---
 <!-- lesson-nav:end -->

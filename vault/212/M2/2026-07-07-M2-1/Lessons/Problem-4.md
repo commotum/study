@@ -345,7 +345,6 @@ options:
 - Keep the symbolic result exact, check that it lies between the component centers and closer to the heavier piece, then round once at the end.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -355,5 +354,4 @@ options:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

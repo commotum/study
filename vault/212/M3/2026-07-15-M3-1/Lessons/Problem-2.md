@@ -375,7 +375,6 @@ When altitude is given as $h=\alpha r_E$:
 The main trap is treating altitude $h$ as though it were already the distance $r$ from Earth's center.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -385,5 +384,4 @@ The main trap is treating altitude $h$ as though it were already the distance $r
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

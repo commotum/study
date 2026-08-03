@@ -338,7 +338,6 @@ $$
 The main trap is mixing up the two uses of the angle: $\cos\theta$ appears in the radial force equation for weight's inward component, while $\sin\theta$ appears in the projectile step for the upward component of the tangent velocity.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -348,5 +347,4 @@ The main trap is mixing up the two uses of the angle: $\cos\theta$ appears in th
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

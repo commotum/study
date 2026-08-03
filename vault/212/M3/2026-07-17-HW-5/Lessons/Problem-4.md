@@ -283,7 +283,6 @@ Use this checklist:
 The main trap is forgetting to square the radius factor. For the exoplanet in the problem, $a=3$ and $b=2$, so $g_p=(3/4)g$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -293,5 +292,4 @@ The main trap is forgetting to square the radius factor. For the exoplanet in th
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

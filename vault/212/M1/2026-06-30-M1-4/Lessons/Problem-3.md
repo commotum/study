@@ -322,7 +322,6 @@ $$
 The main traps are using $v$ instead of $v^2$, keeping the mass after it cancels, or using the normal force as the inward force on a level road.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -337,5 +336,4 @@ Next: [Threshold Angular Speed Before Slipping](../../2026-06-29-M1-3/Lessons/Pr
 Study guide index: 13/30
 
 ---
-
 <!-- lesson-nav:end -->

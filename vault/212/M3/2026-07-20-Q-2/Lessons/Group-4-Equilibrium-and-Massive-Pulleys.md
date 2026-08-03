@@ -413,7 +413,6 @@ For massive pulleys:
 The main trap is trying to solve the entire coupled system with only a force equation or only a torque equation.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -423,5 +422,4 @@ The main trap is trying to solve the entire coupled system with only a force equ
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

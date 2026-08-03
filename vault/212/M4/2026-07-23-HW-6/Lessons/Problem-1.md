@@ -247,7 +247,6 @@ For an ideal block–spring oscillator:
 The main trap is assuming that a larger travel distance automatically means a longer period. In ideal simple harmonic motion, amplitude changes the size of the motion, not its cycle time.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -257,5 +256,4 @@ The main trap is assuming that a larger travel distance automatically means a lo
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

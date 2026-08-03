@@ -243,7 +243,6 @@ $$
 Mass and radius cancel for cylinders of the same shape. If $h$ is already the vertical height, the ramp angle does not enter the final speed.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -258,5 +257,4 @@ Next: [Comparing Translational and Rotational Kinetic Energy in Rolling](../../.
 Study guide index: 09/20
 
 ---
-
 <!-- lesson-nav:end -->

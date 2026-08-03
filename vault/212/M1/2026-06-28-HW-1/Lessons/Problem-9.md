@@ -319,7 +319,6 @@ $$
 The statement "$\vec{a}$ has magnitude $\dfrac{v^2}{r}=\omega^2r$" is true. It describes the size of the acceleration, not the direction of the acceleration vector. Since $\vec{r}$ points outward from the center, the acceleration vector points opposite $\vec{r}$; that direction detail does not change the magnitude.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -334,5 +333,4 @@ Next: [Recognizing Uniform Circular Motion](../../2026-07-03-HW-2/Lessons/Proble
 Study guide index: 04/30
 
 ---
-
 <!-- lesson-nav:end -->

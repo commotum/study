@@ -374,7 +374,6 @@ options:
 - Use the right-hand rule separately to report clockwise/into-page or counterclockwise/out-of-page direction.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -384,5 +383,4 @@ options:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

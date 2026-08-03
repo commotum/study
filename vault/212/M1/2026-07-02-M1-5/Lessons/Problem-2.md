@@ -259,7 +259,6 @@ For a particle on the lower-right side moving clockwise and speeding up, inward 
 Do not choose the inward-only arrow unless the speed is constant. Do not choose the opposite tangential lean unless the particle is slowing down or moving the other way.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -269,5 +268,4 @@ Do not choose the inward-only arrow unless the speed is constant. Do not choose 
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

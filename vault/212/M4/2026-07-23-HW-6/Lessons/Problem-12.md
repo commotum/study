@@ -203,7 +203,6 @@ When the problem says to use the simple-pendulum model, remember **filter, subst
 Mass and bob radius are real physical details, but the stated ideal model excludes them.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -213,5 +212,4 @@ Mass and bob radius are real physical details, but the stated ideal model exclud
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

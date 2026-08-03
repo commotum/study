@@ -272,7 +272,6 @@ options:
 - The main trap is assuming equal total mass means equal moment of inertia. Distribution relative to the axis matters.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -287,5 +286,4 @@ Next: [Finding Torque from a Force at an Angle](../../2026-07-09-M2-3/Lessons/Pr
 Study guide index: 03/20
 
 ---
-
 <!-- lesson-nav:end -->

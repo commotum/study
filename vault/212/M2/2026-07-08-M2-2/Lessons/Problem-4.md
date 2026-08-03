@@ -295,7 +295,6 @@ options:
 - Factor out $mL^2$, use a common denominator, and report only the requested coefficient.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -305,5 +304,4 @@ options:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

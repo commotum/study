@@ -323,7 +323,6 @@ $$
 The tangential part is perpendicular to $\vec{r}$, but the radial part is opposite $\vec{r}$. Since the net acceleration has a radial component, $\vec{a}$ is not perpendicular to $\vec{r}$. The statement "$\vec{a}$ is perpendicular to $\vec{r}$" is false.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -333,5 +332,4 @@ The tangential part is perpendicular to $\vec{r}$, but the radial part is opposi
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

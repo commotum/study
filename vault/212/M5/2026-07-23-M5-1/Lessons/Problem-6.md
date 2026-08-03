@@ -257,7 +257,6 @@ options:
 - Main trap: do not confuse greatest displacement with greatest particle speed.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -267,5 +266,4 @@ options:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->
