@@ -1,3 +1,4 @@
+
 # Inferring Particle Motion From a Traveling-Wave Snapshot
 
 <!--
@@ -16,7 +17,7 @@ topic-code: MTH212.M5.05
 
 ## Prerequisites
 
-- Read whether a graph rises, falls, or is locally horizontal as \(x\) increases.
+- Read whether a graph rises, falls, or is locally horizontal as $x$ increases.
 - Distinguish the motion of a wave pattern from the motion of a string particle.
 - Interpret the sign of a velocity.
 
@@ -25,12 +26,12 @@ topic-code: MTH212.M5.05
 <a id="introduction"></a>
 ## Introduction
 
-A snapshot \(y\) versus \(x\) shows the string's shape at one instant. It does **not** directly graph a particle's displacement versus time. To predict the particle's next motion, combine:
+A snapshot $y$ versus $x$ shows the string's shape at one instant. It does **not** directly graph a particle's displacement versus time. To predict the particle's next motion, combine:
 
 1. the wave's propagation direction, and
 2. the snapshot's local slope at the particle.
 
-For a wave moving right at speed \(v\),
+For a wave moving right at speed $v$,
 
 $$
 y(x,t)=F(x-vt)
@@ -38,9 +39,9 @@ y(x,t)=F(x-vt)
 \frac{\partial y}{\partial t}=-v\frac{\partial y}{\partial x}.
 $$
 
-Because \(v>0\), the vertical velocity and spatial slope have opposite signs.
+Because $v>0$, the vertical velocity and spatial slope have opposite signs.
 
-**Recognition cue:** If the horizontal axis is position \(x\), read a **spatial slope** and combine it with the propagation direction. If the horizontal axis were time \(t\), the graph's slope would already be the particle's velocity.
+**Recognition cue:** If the horizontal axis is position $x$, read a **spatial slope** and combine it with the propagation direction. If the horizontal axis were time $t$, the graph's slope would already be the particle's velocity.
 
 ---
 
@@ -84,23 +85,23 @@ options:
 <a id="advance-the-wave-while-holding-the-particle-position-fixed"></a>
 ## Advance the Wave While Holding the Particle Position Fixed
 
-**Example:** A right-moving wave has positive slope at a marked horizontal position \(x_0\). In the next instant, does the string at \(x_0\) move up or down?
+**Example:** A right-moving wave has positive slope at a marked horizontal position $x_0$. In the next instant, does the string at $x_0$ move up or down?
 
 **Explanation**
 
-Imagine shifting the entire profile a tiny distance to the right, but keep your eye on the same horizontal position \(x_0\). The future height at \(x_0\) is the height that was a little to its left:
+Imagine shifting the entire profile a tiny distance to the right, but keep your eye on the same horizontal position $x_0$. The future height at $x_0$ is the height that was a little to its left:
 
 $$
 y(x_0,t+\Delta t)=y(x_0-v\Delta t,t).
 $$
 
-On a positive-slope segment, the point just to the left is lower. That lower value arrives at \(x_0\), so the marked particle moves **down**.
+On a positive-slope segment, the point just to the left is lower. That lower value arrives at $x_0$, so the marked particle moves **down**.
 
-| Keep fixed | Move mentally | Compare |
-|---|---|---|
-| The particle's horizontal position \(x_0\) | The entire wave profile slightly right | The old height just left of \(x_0\) with the current height at \(x_0\) |
+| Keep fixed                                 | Move mentally                          | Compare                                                                |
+| ------------------------------------------ | -------------------------------------- | ---------------------------------------------------------------------- |
+| The particle's horizontal position $x_0$ | The entire wave profile slightly right | The old height just left of $x_0$ with the current height at $x_0$ |
 
-This corresponding-point comparison is the safest visual method: translate the **profile**, then compare heights at one fixed \(x\).
+This corresponding-point comparison is the safest visual method: translate the **profile**, then compare heights at one fixed $x$.
 
 ```quiz
 type: radio
@@ -131,7 +132,7 @@ options:
 <a id="use-the-local-slope-rule"></a>
 ## Use the Local-Slope Rule
 
-**Example:** At a marked point on a right-moving wave, the snapshot falls as \(x\) increases. Which way is the particle moving?
+**Example:** At a marked point on a right-moving wave, the snapshot falls as $x$ increases. Which way is the particle moving?
 
 **Explanation**
 
@@ -195,7 +196,7 @@ options:
 
 Use a three-pass scan:
 
-1. **Wave direction:** the profile propagates in the positive \(x\) direction.
+1. **Wave direction:** the profile propagates in the positive $x$ direction.
 2. **Local slope:** the curve rises from left to right at the marked point, so the spatial slope is positive.
 3. **Particle direction:** for a right-moving wave, reverse the slope sign.
 

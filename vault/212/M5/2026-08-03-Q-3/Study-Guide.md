@@ -9,11 +9,11 @@ The five **PQ3 anchors** are high-confidence forms, but they occupy only five sl
 <!-- update-progress:index:start -->
 ## Next Lesson
 
-1. [Deciding What Changes a Pendulum's Frequency](../2026-08-02-PQ-3/Lessons/Problem-1.md)
+1. [Period of a Uniform Rod as a Physical Pendulum](../../M4/2026-07-22-M4-2/Lessons/Problem-3.md)
 
 ## Progress
 
-- Quiz 3 Study Guide: 18% (5/28)
+- Quiz 3 Study Guide: 36% (10/28)
 <!-- update-progress:index:end -->
 
 <!-- update-progress:members:start -->
@@ -27,16 +27,16 @@ The five **PQ3 anchors** are high-confidence forms, but they occupy only five sl
 
 ## 2. Simple and Physical Pendula
 
-6. [ ] [Deciding What Changes a Pendulum's Frequency](<../2026-08-02-PQ-3/Lessons/Problem-1.md>) — **PQ3 anchor:** distinguish real dependencies on $L$ and $g$ from the false mass dependency.
+6. [x] [Deciding What Changes a Pendulum's Frequency](<../2026-08-02-PQ-3/Lessons/Problem-1.md>) — **PQ3 anchor:** distinguish real dependencies on $L$ and $g$ from the false mass dependency.
 7. [ ] [Period of a Uniform Rod as a Physical Pendulum](<../../M4/2026-07-22-M4-2/Lessons/Problem-3.md>) — **Beyond PQ3:** apply $T=2\pi\sqrt{I_{\mathrm{pivot}}/(Mgd)}$ while separating pivot inertia from the center-of-mass distance.
 8. [ ] [Finding the Period of a Rod–Disk Physical Pendulum](<../../M4/2026-07-22-M4-2/Lessons/Problem-6.md>) — **Beyond PQ3:** construct a composite pivot inertia and a separate gravitational-torque ledger.
 
 ## 3. Traveling-Wave Motion and Tensioned-Wire Speed
 
-9. [ ] [Inferring Particle Motion From a Traveling-Wave Snapshot](<../2026-07-23-M5-1/Lessons/Problem-5.md>) — **Beyond PQ3:** separate the wave's propagation direction from each particle's transverse motion.
-10. [ ] [Finding Wave Speed from a Traveling-Wave Equation](<../2026-07-28-HW-7/Lessons/Problem-10.md>) — **Beyond PQ3:** read $k$ and $\omega$ from phase and use $v=\omega/k$.
-11. [ ] [Wave Speed in a Wire Tensioned by a Hanging Mass](<../2026-07-27-M5-2/Lessons/Problem-2.md>) — **Beyond PQ3:** form $T$, $\mu$, and $v=\sqrt{T/\mu}$ in the basic case.
-12. [ ] [Maximum Transverse Particle Speed on a Tensioned Wire](<../2026-07-27-M5-2/Lessons/Problem-3.md>) — **Strong lecture cue:** connect the oscillator and wave frequencies after distinguishing particle speed from propagation speed.
+9. [x] [Inferring Particle Motion From a Traveling-Wave Snapshot](<../2026-07-23-M5-1/Lessons/Problem-5.md>) — **Beyond PQ3:** separate the wave's propagation direction from each particle's transverse motion.
+10. [x] [Finding Wave Speed from a Traveling-Wave Equation](<../2026-07-28-HW-7/Lessons/Problem-10.md>) — **Beyond PQ3:** read $k$ and $\omega$ from phase and use $v=\omega/k$.
+11. [x] [Wave Speed in a Wire Tensioned by a Hanging Mass](<../2026-07-27-M5-2/Lessons/Problem-2.md>) — **Beyond PQ3:** form $T$, $\mu$, and $v=\sqrt{T/\mu}$ in the basic case.
+12. [x] [Maximum Transverse Particle Speed on a Tensioned Wire](<../2026-07-27-M5-2/Lessons/Problem-3.md>) — **Strong lecture cue:** connect the oscillator and wave frequencies after distinguishing particle speed from propagation speed.
 13. [ ] [Deriving Wave Speed on a Load-Bearing Wire](<../2026-08-02-PQ-3/Lessons/Problem-4.md>) — **PQ3 anchor:** chain free-body diagrams and torque equilibrium into wire geometry, linear density, and wave speed.
 
 ## 4. Wavefront Geometry and Refraction

@@ -12,13 +12,13 @@
 
 ## Progress
 
-- Course: 9% (21/223 unique lessons)
+- Course: 12% (26/223 unique lessons)
 
 - M1: 25% (16/65)
 - M2: 0% (0/49)
 - M3: 0% (0/28)
 - M4: 14% (4/29)
-- M5: 2% (1/52)
+- M5: 12% (6/52)
 
 <!-- update-progress:home-collections:start -->
 
@@ -28,13 +28,18 @@
   - Next: [Recognizing Uniform Circular Motion](M1/2026-07-03-HW-2/Lessons/Problem-1.md)
 - [Quiz 2 Study Guide](M3/2026-07-20-Q-2/Study-Guide.md): 0% (0/20)
   - Next: [Finding the Center of Mass of Two Point Masses](M2/2026-07-07-M2-1/Lessons/Problem-1.md)
-- [Quiz 3 Study Guide](M5/2026-08-03-Q-3/Study-Guide.md): 18% (5/28)
-  - Next: [Deciding What Changes a Pendulum's Frequency](M5/2026-08-02-PQ-3/Lessons/Problem-1.md)
+- [Quiz 3 Study Guide](M5/2026-08-03-Q-3/Study-Guide.md): 36% (10/28)
+  - Next: [Period of a Uniform Rod as a Physical Pendulum](M4/2026-07-22-M4-2/Lessons/Problem-3.md)
 
 <!-- update-progress:home-collections:end -->
 
 ## History
 
+- [Maximum Transverse Particle Speed on a Tensioned Wire](M5/2026-07-27-M5-2/Lessons/Problem-3.md) - 2026-08-03 10:31
+- [Wave Speed in a Wire Tensioned by a Hanging Mass](M5/2026-07-27-M5-2/Lessons/Problem-2.md) - 2026-08-03 07:32
+- [Finding Wave Speed from a Traveling-Wave Equation](M5/2026-07-28-HW-7/Lessons/Problem-10.md) - 2026-08-03 07:20
+- [Inferring Particle Motion From a Traveling-Wave Snapshot](M5/2026-07-23-M5-1/Lessons/Problem-5.md) - 2026-08-03 06:59
+- [Deciding What Changes a Pendulum's Frequency](M5/2026-08-02-PQ-3/Lessons/Problem-1.md) - 2026-08-03 06:14
 - [Speed of a Spring Oscillator at a Given Position](M4/2026-07-23-HW-6/Lessons/Problem-7.md) - 2026-08-03 05:09
 - [Deciding Whether an SHM Oscillator Is Speeding Up or Slowing Down](M5/2026-08-03-Q-3/Lessons/shm-speeding-up-or-slowing-down.md) - 2026-08-03 04:38
 - [Ranking Acceleration Magnitudes from an SHM Position Graph](M4/2026-07-23-HW-6/Lessons/Problem-5.md) - 2026-08-03 02:45
@@ -59,7 +64,7 @@
 
 ## Summary
 
-- Completed unique lessons: 21 / 223
+- Completed unique lessons: 26 / 223
 - Assignment placements: 223
 - Queue size: 5 / 5
 

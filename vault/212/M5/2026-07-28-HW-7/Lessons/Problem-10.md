@@ -41,11 +41,11 @@ $$
 v=\frac{\omega}{k}.
 $$
 
-| Part of the equation | What to read | Role in the speed |
-| --- | --- | --- |
-| $A$ outside sine or cosine | Amplitude | Do not use |
-| Coefficient of $x$ inside the phase | $k$ | Denominator |
-| Magnitude of the coefficient of $t$ inside the phase | $\omega$ | Numerator |
+| Part of the equation                                 | What to read | Role in the speed |
+| ---------------------------------------------------- | ------------ | ----------------- |
+| $A$ outside sine or cosine                           | Amplitude    | Do not use        |
+| Coefficient of $x$ inside the phase                  | $k$          | Denominator       |
+| Magnitude of the coefficient of $t$ inside the phase | $\omega$     | Numerator         |
 
 A point that stays on the same crest or trough has constant phase. For the minus-sign form,
 
