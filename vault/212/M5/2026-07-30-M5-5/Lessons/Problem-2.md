@@ -65,15 +65,23 @@ options:
   content: |-
     A position occupied by a crest from that circle's source
   correct: true
+  feedback: |-
+    Each blue circumference is a crest wavefront, so every point on it has crest phase from that source.
 - id: b
   content: |-
     A position that must be a trough from that source
+  feedback: |-
+    The diagram explicitly assigns the blue circles to crests; troughs lie between adjacent crest circles.
 - id: c
   content: |-
     A position where two sources must already interfere constructively
+  feedback: |-
+    One crest circle identifies only one source's phase; the phase arriving from the second source must also be checked.
 - id: d
   content: |-
     The location of the wave source
+  feedback: |-
+    The source is at the common center of its circular wavefronts, not at every point on a circumference.
 ```
 
 ---
@@ -97,15 +105,23 @@ options:
   content: |-
     Crest–crest or trough–trough
   correct: true
+  feedback: |-
+    Equal phases add: two positive crest displacements reinforce, and two negative trough displacements reinforce.
 - id: b
   content: |-
     Crest–trough only
+  feedback: |-
+    A crest and trough have opposite displacement signs, so their overlap is destructive rather than constructive.
 - id: c
   content: |-
     Crest–crest only; trough–trough is destructive
+  feedback: |-
+    Two troughs are also in phase; their negative displacements add to a deeper trough.
 - id: d
   content: |-
     Any point lying on one visible crest circle
+  feedback: |-
+    Complete interference depends on both arrivals, so one source's crest phase is insufficient.
 ```
 
 ---
@@ -128,16 +144,24 @@ options:
 - id: a
   content: |-
     Complete constructive interference because one crest reaches $X$
+  feedback: |-
+    One crest does not determine the result; halfway between source 1's crests corresponds to a trough from source 1.
 - id: b
   content: |-
     Complete constructive interference because $X$ lies between two other crests
+  feedback: |-
+    Halfway between adjacent crests is trough phase, not another crest.
 - id: c
   content: |-
     Complete destructive interference because a crest meets a trough
   correct: true
+  feedback: |-
+    Source 2 supplies a crest while source 1 supplies the trough halfway between its crest circles, so the arrivals are opposite in phase.
 - id: d
   content: |-
     Neither, because the drawn circles do not cross at $X$
+  feedback: |-
+    Crest-circle crossings mark crest–crest points, but an implied trough between circles can still meet a crest and produce complete destruction.
 ```
 
 ---

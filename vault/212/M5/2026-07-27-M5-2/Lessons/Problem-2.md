@@ -99,15 +99,23 @@ options:
 - id: b
   content: |-
     $T=0.30\ \mathrm{N}$ and $\mu=0.40\ \mathrm{kg/m}$
+  feedback: |-
+    This swaps the two masses: $0.030(10)$ uses the wire mass for tension, while $0.60/1.5$ uses the hanging mass for linear density.
 - id: c
   content: |-
     $T=6.0\ \mathrm{N}$ and $\mu=0.045\ \mathrm{kg/m}$
+  feedback: |-
+    The tension is correct, but $0.045$ comes from multiplying $m_wL$; linear density is mass divided by length.
 - id: d
   content: |-
     $T=0.60\ \mathrm{N}$ and $\mu=0.020\ \mathrm{kg/m}$
+  feedback: |-
+    The density is correct, but the tension cannot equal the mass numerically; it is $T=Mg=(0.60)(10)=6.0\ \mathrm N$.
 - id: e
   content: |-
     $T=15\ \mathrm{N}$ and $\mu=0.050\ \mathrm{kg/m}$
+  feedback: |-
+    This assigns length to the tension calculation and hanging mass to the density calculation. Use only $M$ in $Mg$ and only $m_w/L$ for $\mu$.
 ```
 
 ---
@@ -168,7 +176,7 @@ options:
   content: |-
     $3.9\ \mathrm{m/s}$
   feedback: |-
-    This does not result from the grouped quotient $MgL/m_w$.
+    The correctly grouped radicand is $MgL/m_w=225$; a value near $3.9$ indicates that the division or radical was applied to only part of that quotient.
 - id: b
   content: |-
     $9.0\ \mathrm{m/s}$
@@ -184,7 +192,7 @@ options:
   content: |-
     $150\ \mathrm{m/s}$
   feedback: |-
-    This does not keep all four quantities in their correct roles.
+    This is $Mg/m_w=150$, which omits the wire length and the square root required by $v=\sqrt{MgL/m_w}$.
 - id: e
   content: |-
     $225\ \mathrm{m/s}$
@@ -308,9 +316,13 @@ options:
 - id: a
   content: |-
     $5$
+  feedback: |-
+    This is the tension value $T=Mg=5\ \mathrm N$, not the propagation speed obtained after dividing by $\mu$ and taking a square root.
 - id: b
   content: |-
     $16$
+  feedback: |-
+    This is the product $gL=16$ and ignores both mass roles and the square root in $v=\sqrt{MgL/m_w}$.
 - id: c
   content: |-
     $20$
@@ -320,9 +332,13 @@ options:
 - id: d
   content: |-
     $40$
+  feedback: |-
+    The grouped radicand is $400$, but its positive square root is $20$, not $40$.
 - id: e
   content: |-
     $400$
+  feedback: |-
+    This is $MgL/m_w$, the value inside the radical; the requested speed is $\sqrt{400}=20\ \mathrm{m/s}$.
 ```
 
 ---

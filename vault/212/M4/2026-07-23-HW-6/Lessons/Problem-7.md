@@ -78,15 +78,23 @@ options:
   content: |-
     $M$
   correct: true
+  feedback: |-
+    Immediately before contact, only the original block is part of the oscillator, so the kinetic term is $\frac12Mv^2$.
 - id: b
   content: |-
     $M+m$
+  feedback: |-
+    This includes the bead before it has landed. The combined mass matters only after the sticking collision.
 - id: c
   content: |-
     $m$
+  feedback: |-
+    The bead is not yet oscillating, and this choice omits the moving block whose speed is being found.
 - id: d
   content: |-
     No mass appears in the speed formula.
+  feedback: |-
+    Solving the energy equation gives $v=\sqrt{(k/M)(A^2-x^2)}$, so the block mass remains in the denominator.
 ```
 
 ---
@@ -134,18 +142,28 @@ options:
   content: |-
     $\frac12kA^2=\frac12Mv^2+\frac12kx^2$
   correct: true
+  feedback: |-
+    The turning-point energy $\frac12kA^2$ equals the kinetic plus spring potential energy at position $x$.
 - id: b
   content: |-
     $\frac12kA^2=\frac12Mv^2-\frac12kx^2$
+  feedback: |-
+    Spring potential energy is a positive part of the energy at $x$; it must be added, not subtracted, on the right.
 - id: c
   content: |-
     $\frac12kA=\frac12Mv^2+\frac12kx$
+  feedback: |-
+    Ideal-spring energy is $\frac12kx^2$, so both the amplitude and displacement must be squared.
 - id: d
   content: |-
     $\frac12kx^2=\frac12Mv^2+\frac12kA^2$
+  feedback: |-
+    This reverses the energy ledger: $\frac12kA^2$ is the fixed total, while $\frac12kx^2$ is only the potential energy at the observed position.
 - id: e
   content: |-
     $\frac12kA^2=\frac12(M+m)v^2+\frac12kx^2$
+  feedback: |-
+    The bead has not landed yet, so using $M+m$ inserts post-collision mass into a pre-collision energy balance.
 ```
 
 ---
@@ -199,16 +217,24 @@ options:
 - id: a
   content: |-
     $\sqrt{\dfrac{k}{M}}A$
+  feedback: |-
+    This is the maximum speed at $x=0$ and ignores the spring potential energy still present at $x=A/2$.
 - id: b
   content: |-
     $\sqrt{\dfrac{2k}{M}}A$
+  feedback: |-
+    This exceeds the oscillator's maximum speed $A\sqrt{k/M}$, so it cannot occur at any position in this motion.
 - id: c
   content: |-
     $\sqrt{\dfrac{3k}{4M}}A$
   correct: true
+  feedback: |-
+    Since $(A/2)^2=A^2/4$, the kinetic-energy fraction is $1-1/4=3/4$, giving $v=A\sqrt{3k/(4M)}$.
 - id: d
   content: |-
     $\sqrt{\dfrac{2k}{5M}}A$
+  feedback: |-
+    Neither the pre-impact mass nor the energy fraction supports $2/5$; the mass is $M$ and $A^2-x^2=3A^2/4$.
 ```
 
 ---
@@ -238,19 +264,29 @@ options:
 - id: a
   content: |-
     $-A\sqrt{\dfrac{5k}{9M}}$
+  feedback: |-
+    A negative position does not make speed negative. Speed is a magnitude and must be nonnegative.
 - id: b
   content: |-
     $A\sqrt{\dfrac{5k}{9M}}$
   correct: true
+  feedback: |-
+    Squaring $x=-2A/3$ gives $4A^2/9$, so $A^2-x^2=5A^2/9$ and $v=A\sqrt{5k/(9M)}$.
 - id: c
   content: |-
     $A\sqrt{\dfrac{5k}{3M}}$
+  feedback: |-
+    The fractional displacement must be squared: the remaining factor is $1-4/9=5/9$, not $5/3$.
 - id: d
   content: |-
     $\dfrac{2A}{3}\sqrt{\dfrac{k}{M}}$
+  feedback: |-
+    This substitutes the position magnitude for the speed factor. Energy requires $\sqrt{1-(2/3)^2}=\sqrt5/3$, not $2/3$.
 - id: e
   content: |-
     $A\sqrt{\dfrac{k}{M}}$
+  feedback: |-
+    This is the equilibrium maximum speed and ignores the spring potential energy at the nonzero position $x=-2A/3$.
 ```
 
 ---

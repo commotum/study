@@ -81,12 +81,18 @@ options:
 - id: p6-glass-wavelength-b
   content: |-
     $540\ \mathrm{nm}$
+  feedback: |-
+    This leaves the wavelength unchanged. The frequency stays fixed at the boundary, but the lower speed in the material makes $\lambda$ decrease to $\lambda_{\mathrm{air}}/n$.
 - id: p6-glass-wavelength-c
   content: |-
     $972\ \mathrm{nm}$
+  feedback: |-
+    This multiplies by the index instead of dividing. For $n>1$, the in-material wavelength must be shorter than $540\ \mathrm{nm}$, not longer.
 - id: p6-glass-wavelength-d
   content: |-
     $3.33\ \mathrm{nm}$
+  feedback: |-
+    This does not evaluate $540/1.8$ and loses two orders of magnitude. A dimensionless index of $1.8$ reduces the wavelength moderately, to $300\ \mathrm{nm}$.
 ```
 
 ## Count Wavelengths Using Matching Units
@@ -152,12 +158,18 @@ options:
 - id: p6-count-wavelengths-b
   content: |-
     $0.003$
+  feedback: |-
+    This divides $0.90$ by $300$ before matching units. Convert $0.90\ \mathrm{mm}$ to $9.0\times10^5\ \mathrm{nm}$ first.
 - id: p6-count-wavelengths-c
   content: |-
     $300$
+  feedback: |-
+    This repeats the wavelength's numerical value instead of counting how many wavelengths fit. The required ratio is total thickness divided by wavelength.
 - id: p6-count-wavelengths-d
   content: |-
     $270$
+  feedback: |-
+    This multiplies the unmatched numbers $0.90$ and $300$. A wavelength count comes from division after both lengths use the same unit.
 ```
 
 ## Combine the Two Steps
@@ -192,12 +204,18 @@ options:
 - id: p6-combined-formula-b
   content: |-
     $1000$
+  feedback: |-
+    This uses the air wavelength directly: $(6.0\times10^5)/600=1000$. In the material the wavelength is shorter by $n$, so the count is larger by $n$.
 - id: p6-combined-formula-c
   content: |-
     $667$
+  feedback: |-
+    This divides the air-based count by $n$ instead of multiplying it. Since $\lambda_{\mathrm{material}}=\lambda_{\mathrm{air}}/n$, the count is $N=nd/\lambda_{\mathrm{air}}$.
 - id: p6-combined-formula-d
   content: |-
     $400$
+  feedback: |-
+    This is the wavelength inside the material, $600/1.5=400\ \mathrm{nm}$, not the number of those wavelengths across the slab.
 ```
 
 ## Apply the Move to Problem 6
@@ -271,12 +289,18 @@ options:
 - id: p6-source-check-b
   content: |-
     1800
+  feedback: |-
+    This counts with the unchanged air wavelength: $(1.2\times10^6)/650\approx1800$. The wavelength shortens in glass, so more wavelengths fit.
 - id: p6-source-check-c
   content: |-
     1200
+  feedback: |-
+    This effectively lengthens the wavelength by multiplying by $n$. The correct boundary relation divides the air wavelength by $1.5$.
 - id: p6-source-check-d
   content: |-
     433
+  feedback: |-
+    This reports $\lambda_{\mathrm{glass}}=650/1.5\approx433\ \mathrm{nm}$. The question asks for the count $d/\lambda_{\mathrm{glass}}$, not the wavelength itself.
 ```
 
 ## Summary

@@ -68,9 +68,13 @@ options:
 - id: pq3-p1-mass-tripled-a
   content: |-
     $f/3$
+  feedback: |-
+    This invents an inverse linear dependence on mass, but $m$ does not appear anywhere in the simple-pendulum frequency formula.
 - id: pq3-p1-mass-tripled-b
   content: |-
     $f/\sqrt{3}$
+  feedback: |-
+    This treats bob mass like the mass in a spring oscillator. A simple pendulum has $f\propto\sqrt{g/L}$, with no $m$ factor.
 - id: pq3-p1-mass-tripled-c
   content: |-
     $f$
@@ -80,9 +84,13 @@ options:
 - id: pq3-p1-mass-tripled-d
   content: |-
     $\sqrt{3}f$
+  feedback: |-
+    A square-root multiplier applies when $g$ changes, not when the absent bob-mass variable changes.
 - id: pq3-p1-mass-tripled-e
   content: |-
     $3f$
+  feedback: |-
+    This assumes frequency is directly proportional to bob mass, contradicting the mass-independent pendulum formula.
 ```
 
 ---
@@ -126,12 +134,18 @@ options:
 - id: pq3-p1-length-reduced-a
   content: |-
     $f/9$
+  feedback: |-
+    This treats frequency as directly proportional to length. In fact, $f\propto L^{-1/2}$.
 - id: pq3-p1-length-reduced-b
   content: |-
     $f/3$
+  feedback: |-
+    This takes the square root but reverses the dependence: a shorter pendulum oscillates faster, not slower.
 - id: pq3-p1-length-reduced-c
   content: |-
     $f$
+  feedback: |-
+    Length appears explicitly in $f=(2\pi)^{-1}\sqrt{g/L}$, so changing $L$ cannot leave the frequency unchanged.
 - id: pq3-p1-length-reduced-d
   content: |-
     $3f$
@@ -141,6 +155,8 @@ options:
 - id: pq3-p1-length-reduced-e
   content: |-
     $9f$
+  feedback: |-
+    This uses an inverse linear dependence and misses the square root; the multiplier is $\sqrt9=3$, not $9$.
 ```
 
 ---
@@ -178,9 +194,13 @@ options:
 - id: pq3-p1-original-check-a
   content: |-
     The new frequency is one-fourth the original frequency.
+  feedback: |-
+    This applies an inverse-square mass factor even though bob mass cancels from the pendulum equation of motion.
 - id: pq3-p1-original-check-b
   content: |-
     The new frequency is one-half the original frequency.
+  feedback: |-
+    This assumes an inverse linear mass dependence that the simple-pendulum frequency formula does not contain.
 - id: pq3-p1-original-check-c
   content: |-
     The new frequency is the same as the original frequency.
@@ -190,9 +210,13 @@ options:
 - id: pq3-p1-original-check-d
   content: |-
     The new frequency is twice the original frequency.
+  feedback: |-
+    This assumes frequency is directly proportional to bob mass; changing $m$ alone leaves $g$ and $L$ unchanged.
 - id: pq3-p1-original-check-e
   content: |-
     The new frequency is four times the original frequency.
+  feedback: |-
+    Squaring the mass-change factor has no basis here because mass is absent from $f=(2\pi)^{-1}\sqrt{g/L}$.
 ```
 
 ---

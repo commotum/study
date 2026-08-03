@@ -105,12 +105,12 @@ options:
   content: |-
     $49.0\ \mathrm{m/s}$
   feedback: |-
-    This does not take the square root after combining tension and linear density.
+    Here $T=4.9\ \mathrm N$ and $\mu=0.0050\ \mathrm{kg/m}$, so $T/\mu=980\ \mathrm{m^2/s^2}$; $49.0$ does not result from the required quotient and square root.
 - id: e
   content: |-
     $98.0\ \mathrm{m/s}$
   feedback: |-
-    Recheck the placement of $m_w$ and the required square root.
+    The correct radicand is $980$, not $98$; after dividing by $m_w=0.010\ \mathrm{kg}$, take $\sqrt{980}=31.3\ \mathrm{m/s}$.
 ```
 
 ---

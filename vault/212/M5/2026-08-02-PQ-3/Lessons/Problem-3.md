@@ -94,16 +94,24 @@ options:
 - id: q1-a
   content: |-
     $4\ \mathrm{m}$
+  feedback: |-
+    This is only P's distance from source A, not the difference between the two path lengths.
 - id: q1-b
   content: |-
     $6\ \mathrm{m}$
   correct: true
+  feedback: |-
+    P is $14-4=10\ \mathrm{m}$ from B, so $\Delta r=|10-4|=6\ \mathrm{m}$.
 - id: q1-c
   content: |-
     $10\ \mathrm{m}$
+  feedback: |-
+    This is P's distance from source B; path difference still requires subtracting the $4\ \mathrm{m}$ path.
 - id: q1-d
   content: |-
     $14\ \mathrm{m}$
+  feedback: |-
+    This is the source separation, not the difference between their distances to P.
 ```
 
 ---
@@ -143,16 +151,24 @@ options:
 - id: q2-a
   content: |-
     $\pi$
+  feedback: |-
+    $\pi$ is what $3\pi$ becomes after removing one full $2\pi$ cycle, but the question asks for the unreduced value.
 - id: q2-b
   content: |-
     $2\pi$
+  feedback: |-
+    This would require $\Delta r/\lambda=1$, whereas here the path difference is $1.5$ wavelengths.
 - id: q2-c
   content: |-
     $3\pi$
   correct: true
+  feedback: |-
+    Since $\Delta r/\lambda=4.5/3.0=1.5$, the path phase is $2\pi(1.5)=3\pi$.
 - id: q2-d
   content: |-
     $4.5\pi$
+  feedback: |-
+    This uses the distance value directly and does not form the dimensionless ratio $\Delta r/\lambda$ correctly.
 ```
 
 ---
@@ -237,12 +253,18 @@ options:
   content: |-
     Completely constructive interference
   correct: true
+  feedback: |-
+    The paths are $5$ and $11\ \mathrm{m}$, so $\Delta r=6\ \mathrm{m}=1.5\lambda$ adds $3\pi$; with the initial $\pi$, the total is $4\pi\equiv0$.
 - id: q3-b
   content: |-
     Completely destructive interference
+  feedback: |-
+    This considers one $\pi$ offset alone; the initial and path phase differences must be added before classification.
 - id: q3-c
   content: |-
     Neither
+  feedback: |-
+    The total phase is exactly $4\pi$, a whole number of cycles, so the waves arrive completely in phase.
 ```
 
 ---
@@ -278,13 +300,19 @@ options:
 - id: q4-a
   content: |-
     Completely constructive interference
+  feedback: |-
+    Constructive interference requires total phase $0$ modulo $2\pi$, but the total here reduces to $\pi/2$.
 - id: q4-b
   content: |-
     Completely destructive interference
+  feedback: |-
+    The initial $\pi$ offset is altered by the path phase $3\pi/2$; their sum is not $\pi$ modulo $2\pi$.
 - id: q4-c
   content: |-
     Neither
   correct: true
+  feedback: |-
+    The total phase is $\pi+2\pi(3/4)=5\pi/2\equiv\pi/2$, which is neither $0$ nor $\pi$ modulo $2\pi$.
 ```
 
 ---

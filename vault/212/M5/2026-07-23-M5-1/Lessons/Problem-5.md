@@ -221,6 +221,8 @@ content: |-
 options:
 - id: a
   content: Up
+  feedback: |-
+    Upward motion would require a negative local slope. The marked point has positive slope, so a right-moving profile gives downward velocity.
 - id: b
   content: Down
   correct: true
@@ -228,18 +230,32 @@ options:
     For a right-moving wave, $\partial y/\partial t=-v\,\partial y/\partial x$. The string has positive slope at the marked point, so its vertical velocity is negative: downward.
 - id: c
   content: Right
+  feedback: |-
+    Right is the propagation direction of the wave pattern; a particle of the transverse string does not travel horizontally with it.
 - id: d
   content: Left
+  feedback: |-
+    Reversing the wave's propagation arrow does not give the particle direction. The particle moves transversely, not along the string.
 - id: e
   content: Up and to the right
+  feedback: |-
+    This both assigns the pattern's rightward motion to the particle and misses the sign rule: positive slope means downward motion here.
 - id: f
   content: Up and to the left
+  feedback: |-
+    The particle has no horizontal motion, and positive slope on a right-moving wave gives downward rather than upward velocity.
 - id: g
   content: Down and to the right
+  feedback: |-
+    Down is the correct transverse direction, but rightward motion belongs to the traveling profile, not to the marked string particle.
 - id: h
   content: Down and to the left
+  feedback: |-
+    Down is correct, but the marked particle remains at its horizontal coordinate rather than moving left along the string.
 - id: i
   content: It is not moving
+  feedback: |-
+    Momentary vertical rest requires zero local slope. The marked point has positive slope, so its vertical velocity is nonzero and downward.
 ```
 
 ---

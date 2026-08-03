@@ -88,7 +88,7 @@ options:
   content: |-
     $1.25\ \mathrm{m}$
   feedback: |-
-    This does not use $\lambda=v/f$.
+    The number $1.25$ comes from the period in milliseconds: $1/f=0.00125\ \mathrm{s}=1.25\ \mathrm{ms}$. A period is not a wavelength, and labeling it meters omits the wave speed in $\lambda=v/f$.
 - id: problem-5-q1-d
   content: |-
     $800\ \mathrm{m}$
@@ -355,7 +355,7 @@ options:
   content: |-
     $0.55\ \mathrm{m}$
   feedback: |-
-    This uses the wrong geometric values in the path-difference equation.
+    This fails the geometry check: at $x=0.55\ \mathrm{m}$, $\sqrt{x^2+2.6^2}-x\approx2.11\ \mathrm{m}$, not the required $2.50\ \mathrm{m}$.
 ```
 
 ---

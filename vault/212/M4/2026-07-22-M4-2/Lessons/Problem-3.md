@@ -73,12 +73,18 @@ options:
 - id: p3-rod-quantities-b
   content: |-
     $I=\frac1{12}mL^2$ and $d=\frac L2$
+  feedback: |-
+    The distance is correct, but $\frac1{12}mL^2$ is the inertia about the rod's center, not about the end pivot.
 - id: p3-rod-quantities-c
   content: |-
     $I=\frac13mL^2$ and $d=L$
+  feedback: |-
+    The inertia is about the correct axis, but a uniform rod's center of mass is only $L/2$ from the end pivot.
 - id: p3-rod-quantities-d
   content: |-
     $I=mL^2$ and $d=L$
+  feedback: |-
+    These values treat the whole rod like a point mass at its far end instead of using its distributed mass and midpoint center of mass.
 ```
 
 ---
@@ -125,9 +131,13 @@ options:
 - id: p3-mass-cancels-a
   content: |-
     Rod 2 has three times the period.
+  feedback: |-
+    This assumes a direct mass dependence, but the factor of $m$ in $I$ cancels the $m$ in $mgd$.
 - id: p3-mass-cancels-b
   content: |-
     Rod 2 has $\sqrt{3}$ times the period.
+  feedback: |-
+    This leaves mass under the square root instead of canceling it from the ratio $I/(mgd)$.
 - id: p3-mass-cancels-c
   content: |-
     The rods have equal periods.
@@ -137,6 +147,8 @@ options:
 - id: p3-mass-cancels-d
   content: |-
     Rod 2 has one-third the period.
+  feedback: |-
+    This invents an inverse mass dependence; both inertia and gravitational torque scale by the same mass factor.
 ```
 
 ---
@@ -192,12 +204,18 @@ options:
 - id: p3-evaluate-period-b
   content: |-
     $1.74\ \mathrm s$
+  feedback: |-
+    This uses the point-mass formula $2\pi\sqrt{L/g}$ and ignores the rod's distributed moment of inertia.
 - id: p3-evaluate-period-c
   content: |-
     $0.71\ \mathrm s$
+  feedback: |-
+    This is half the correct period, indicating that the factor $2$ in the required prefactor $2\pi$ was dropped.
 - id: p3-evaluate-period-d
   content: |-
     $4.02\ \mathrm s$
+  feedback: |-
+    Correct grouping gives $2L/(3g)=0.05097\ \mathrm{s^2}$ and its square root is $0.2258\ \mathrm s$; this value comes from a numerical or parenthesis error in that step.
 ```
 
 ---
@@ -276,12 +294,18 @@ options:
 - id: p3-source-check-b
   content: |-
     1.9
+  feedback: |-
+    This treats the rod as a point bob a distance $L$ from the pivot by using $2\pi\sqrt{L/g}$.
 - id: p3-source-check-c
   content: |-
     1.4
+  feedback: |-
+    This treats all of the rod's mass as a point at its center of mass, using the simple-pendulum length $L/2$ instead of the rod's pivot inertia.
 - id: p3-source-check-d
   content: |-
     0.79
+  feedback: |-
+    This uses the center-axis inertia $I=\frac1{12}mL^2$ without shifting it to the end pivot, making the calculated period too small.
 ```
 
 ---

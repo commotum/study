@@ -85,18 +85,28 @@ options:
   content: |-
     $1.20\ \mathrm{m}$ and $1.00\ \mathrm{m}$
   correct: true
+  feedback: |-
+    The fundamentals satisfy $\lambda_{oo}=2L=1.20\ \mathrm{m}$ and $\lambda_{co}=4L=1.00\ \mathrm{m}$.
 - id: p2-pattern-b
   content: |-
     $0.60\ \mathrm{m}$ and $0.25\ \mathrm{m}$
+  feedback: |-
+    This sets each wavelength equal to its tube length and ignores both boundary-condition patterns.
 - id: p2-pattern-c
   content: |-
     $1.20\ \mathrm{m}$ and $0.50\ \mathrm{m}$
+  feedback: |-
+    The open-open value is right, but a closed-open fundamental holds a quarter wavelength, so $\lambda=4L$, not $2L$.
 - id: p2-pattern-d
   content: |-
     $2.40\ \mathrm{m}$ and $1.00\ \mathrm{m}$
+  feedback: |-
+    This incorrectly applies the closed-open relation $\lambda=4L$ to the open-open tube.
 - id: p2-pattern-e
   content: |-
     $0.30\ \mathrm{m}$ and $1.00\ \mathrm{m}$
+  feedback: |-
+    The closed-open value is right, but $0.30\ \mathrm{m}$ is half the open tube's length rather than twice it.
 ```
 
 ---
@@ -145,19 +155,29 @@ options:
 - id: p2-match-a
   content: |-
     $0.225\ \mathrm{m}$
+  feedback: |-
+    This makes the closed tube one quarter of the open tube; matching the common wavelength gives a one-half ratio.
 - id: p2-match-b
   content: |-
     $0.45\ \mathrm{m}$
   correct: true
+  feedback: |-
+    Equal $f$ in the same air means equal $\lambda$; equating $2L_{oo}=4L_{co}$ gives $L_{co}=0.90/2=0.45\ \mathrm{m}$.
 - id: p2-match-c
   content: |-
     $0.90\ \mathrm{m}$
+  feedback: |-
+    Equal frequencies do not require equal lengths because the two boundary conditions contain different fractions of a wavelength.
 - id: p2-match-d
   content: |-
     $1.80\ \mathrm{m}$
+  feedback: |-
+    $1.80\ \mathrm{m}$ is the common wavelength, not the closed-open tube length; that tube holds only one quarter of it.
 - id: p2-match-e
   content: |-
     $3.60\ \mathrm{m}$
+  feedback: |-
+    This multiplies the open tube length by $4$ instead of solving $2L_{oo}=4L_{co}$.
 ```
 
 ---
@@ -215,19 +235,29 @@ options:
 - id: p2-original-a
   content: |-
     $L/4$
+  feedback: |-
+    The quarter-wave rule applies to the common wavelength, not directly to the open tube's length.
 - id: p2-original-b
   content: |-
     $L/2$
   correct: true
+  feedback: |-
+    Since $f_{oo}=v/(2L)$ and $f_{co}=v/(4L_{co})$, equal frequencies give $L_{co}=L/2$.
 - id: p2-original-c
   content: |-
     $L$
+  feedback: |-
+    Equal lengths would give different fundamentals because one tube contains a half-wave and the other a quarter-wave.
 - id: p2-original-d
   content: |-
     $2L$
+  feedback: |-
+    This reverses the required ratio; the closed-open tube must be shorter, not longer.
 - id: p2-original-e
   content: |-
     $4L$
+  feedback: |-
+    This treats the closed-open factor of $4$ as a direct length multiplier instead of equating the two frequencies.
 ```
 
 ---
@@ -264,19 +294,29 @@ options:
 - id: p2-reverse-a
   content: |-
     $0.12\ \mathrm{m}$
+  feedback: |-
+    This divides the closed tube length by $4$ rather than first finding its fundamental wavelength $\lambda=4L_{co}$.
 - id: p2-reverse-b
   content: |-
     $0.24\ \mathrm{m}$
+  feedback: |-
+    This halves the closed tube length, reversing the relation between matching open-open and closed-open tubes.
 - id: p2-reverse-c
   content: |-
     $0.48\ \mathrm{m}$
+  feedback: |-
+    Equal physical lengths do not give equal fundamentals when the endpoint patterns differ.
 - id: p2-reverse-d
   content: |-
     $0.96\ \mathrm{m}$
   correct: true
+  feedback: |-
+    The common wavelength is $4(0.48)=1.92\ \mathrm{m}$, so the open-open tube has length $\lambda/2=0.96\ \mathrm{m}$.
 - id: p2-reverse-e
   content: |-
     $1.92\ \mathrm{m}$
+  feedback: |-
+    This is the common wavelength; the open-open tube contains half of it, not all of it.
 ```
 
 ---
@@ -313,19 +353,29 @@ options:
 - id: p2-trap-a
   content: |-
     Sound travels twice as fast in the closed-open tube.
+  feedback: |-
+    Both tubes contain the same air, so the sound speed is the same; their boundary patterns cause the length difference.
 - id: p2-trap-b
   content: |-
     Equal frequencies require equal physical tube lengths.
+  feedback: |-
+    Equal frequency in the same medium fixes the wavelength, while the endpoint conditions determine what fraction each tube contains.
 - id: p2-trap-c
   content: |-
     The open-open tube holds half of the common wavelength, while the closed-open tube holds one quarter.
   correct: true
+  feedback: |-
+    Thus $L_{oo}=\lambda/2$ and $L_{co}=\lambda/4$, so $L_{co}=L_{oo}/2$.
 - id: p2-trap-d
   content: |-
     The open-open tube holds one quarter of the wavelength, while the closed-open tube holds one half.
+  feedback: |-
+    This swaps the boundary patterns: open-open is the half-wave fundamental and closed-open is the quarter-wave fundamental.
 - id: p2-trap-e
   content: |-
     Closing one end doubles the wavelength without changing either tube's length.
+  feedback: |-
+    That describes changing the boundary of one fixed-length tube, not choosing two lengths that share the same frequency and wavelength.
 ```
 
 ---

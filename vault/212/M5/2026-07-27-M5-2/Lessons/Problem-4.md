@@ -292,6 +292,8 @@ options:
 - id: a
   content: |-
     $2.0$
+  feedback: |-
+    This is the horizontal distance from the source at $x_s=-2.0$ to the $y$-axis, not the listener's vertical coordinate.
 - id: b
   content: |-
     $3.5$
@@ -301,12 +303,18 @@ options:
 - id: c
   content: |-
     $4.0$
+  feedback: |-
+    This is the wavefront radius. Because the source is not on the $y$-axis, the vertical leg must be shorter than the $4.0\ \mathrm{m}$ hypotenuse.
 - id: d
   content: |-
     $4.5$
+  feedback: |-
+    This comes from an incorrect triangle calculation or rounding. Use $y=\sqrt{4.0^2-2.0^2}=3.464\ldots$ before rounding to two significant figures.
 - id: e
   content: |-
     $8.0$
+  feedback: |-
+    This is the full separation between the two $x$-axis listeners, which is the diameter. The source-to-listener radius is only $4.0\ \mathrm{m}$.
 ```
 
 ---

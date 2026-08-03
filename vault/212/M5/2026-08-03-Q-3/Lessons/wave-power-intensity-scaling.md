@@ -87,15 +87,23 @@ options:
 - id: q3-wpis-amplitude-a
   content: |-
     $1/9$
+  feedback: |-
+    This reverses the comparison. Wave 2 has the larger amplitude, so $I_2/I_1$ must exceed $1$, and the new-to-old ratio is $3^2$.
 - id: q3-wpis-amplitude-b
   content: |-
     $1/3$
+  feedback: |-
+    This both reverses the ratio and leaves it unsquared. Intensity scales with the square of wave amplitude.
 - id: q3-wpis-amplitude-c
   content: |-
     $3$
+  feedback: |-
+    This uses a linear amplitude scaling. The factor must be squared: $(A_2/A_1)^2=3^2$.
 - id: q3-wpis-amplitude-d
   content: |-
     $6$
+  feedback: |-
+    This doubles the amplitude factor rather than squaring it. A factor of $3$ in amplitude produces a factor of $9$ in intensity.
 - id: q3-wpis-amplitude-e
   content: |-
     $9$
@@ -136,9 +144,13 @@ options:
 - id: q3-wpis-two-a
   content: |-
     $1/4$
+  feedback: |-
+    This includes only the squared amplitude decrease, $(1/2)^2$. The doubled frequency contributes the compensating factor $2^2=4$.
 - id: q3-wpis-two-b
   content: |-
     $1/2$
+  feedback: |-
+    This treats the amplitude change linearly and ignores the squared frequency increase. Both new-to-old ratios must be squared.
 - id: q3-wpis-two-c
   content: |-
     $1$
@@ -148,9 +160,13 @@ options:
 - id: q3-wpis-two-d
   content: |-
     $2$
+  feedback: |-
+    This does not apply both square-law factors. The frequency contributes $4$ while the amplitude contributes $1/4$, so their product is $1$.
 - id: q3-wpis-two-e
   content: |-
     $4$
+  feedback: |-
+    This keeps only the doubled frequency's squared effect. The halved amplitude also contributes $(1/2)^2=1/4$ and cancels it.
 ```
 
 ---
@@ -185,9 +201,13 @@ options:
 - id: q3-wpis-reverse-a
   content: |-
     $1/81$
+  feedback: |-
+    This squares the intensity ratio again. To undo $I\propto f^2$, take the positive square root of $1/9$.
 - id: q3-wpis-reverse-b
   content: |-
     $1/9$
+  feedback: |-
+    This reports the intensity ratio as though frequency scaled linearly. Since the frequency ratio is squared, solve it with a square root.
 - id: q3-wpis-reverse-c
   content: |-
     $1/3$
@@ -197,9 +217,13 @@ options:
 - id: q3-wpis-reverse-d
   content: |-
     $3$
+  feedback: |-
+    This takes the square root but reverses the ratio. Because $I_2<I_1$, the corresponding positive frequency ratio must be less than $1$.
 - id: q3-wpis-reverse-e
   content: |-
     $9$
+  feedback: |-
+    This reverses the given ratio and also fails to undo the square. The required ratio is $\sqrt{1/9}=1/3$.
 ```
 
 ---
@@ -240,6 +264,8 @@ options:
 - id: q3-wpis-area-a
   content: |-
     $2/25$
+  feedback: |-
+    This incorrectly squares the surface-area factor. Surface area appears to the first power in $I=P_{\mathrm{avg}}/A_s$.
 - id: q3-wpis-area-b
   content: |-
     $2/5$
@@ -249,12 +275,18 @@ options:
 - id: q3-wpis-area-c
   content: |-
     $1/2$
+  feedback: |-
+    This reverses the power change and ignores the fivefold area increase. Use the new-to-old power factor $2$ and area factor $1/5$ together.
 - id: q3-wpis-area-d
   content: |-
     $5/2$
+  feedback: |-
+    This puts the area ratio in the numerator. A larger carrying area spreads the power out, so the factor is $A_{s,1}/A_{s,2}=1/5$.
 - id: q3-wpis-area-e
   content: |-
     $10$
+  feedback: |-
+    This multiplies by the area increase as though larger area concentrated the power. Intensity divides power by surface area, giving $2/5$.
 ```
 
 ---

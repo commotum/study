@@ -90,7 +90,7 @@ options:
   content: |-
     $T=0.098\ \mathrm{N}$ and $\mu=1.5\ \mathrm{kg/m}$
   feedback: |-
-    Both quantities use the wrong mass-length relationship.
+    This uses the wire's weight for $T$ and the hanging mass divided by wire length for $\mu$; the two masses have been swapped.
 - id: e
   content: |-
     $T=29.4\ \mathrm{N}$ and $\mu=1.5\ \mathrm{kg/m}$

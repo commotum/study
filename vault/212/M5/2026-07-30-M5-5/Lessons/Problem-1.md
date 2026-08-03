@@ -64,16 +64,24 @@ options:
 - id: a
   content: |-
     $+0.9\ \mathrm{cm}$
+  feedback: |-
+    Above equilibrium is positive; a point below equilibrium must have negative displacement.
 - id: b
   content: |-
     $-0.9\ \mathrm{cm}$
   correct: true
+  feedback: |-
+    Displacement is measured from equilibrium, so $0.9\ \mathrm{cm}$ below it is $-0.9\ \mathrm{cm}$.
 - id: c
   content: |-
     $0\ \mathrm{cm}$
+  feedback: |-
+    Zero displacement applies only at the equilibrium line, not at a peak below it.
 - id: d
   content: |-
     Its sign is determined by the pulse's direction of travel.
+  feedback: |-
+    Travel direction does not set the displacement sign; position above or below equilibrium does.
 ```
 
 ---
@@ -102,19 +110,29 @@ options:
 - id: a
   content: |-
     $0.9\ \mathrm{cm}$
+  feedback: |-
+    This subtracts the two upward displacements: $1.6-0.7=0.9$.
 - id: b
   content: |-
     $1.6\ \mathrm{cm}$
+  feedback: |-
+    This keeps only the larger pulse and omits the other pulse's $0.7\ \mathrm{cm}$ contribution.
 - id: c
   content: |-
     $2.3\ \mathrm{cm}$
   correct: true
+  feedback: |-
+    Both contributions are upward, so superposition gives $0.7+1.6=2.3\ \mathrm{cm}$.
 - id: d
   content: |-
     $1.12\ \mathrm{cm}$
+  feedback: |-
+    This multiplies the displacements; superposition adds signed displacements point by point.
 - id: e
   content: |-
     $0\ \mathrm{cm}$
+  feedback: |-
+    Complete cancellation requires equal, opposite displacements, not two upward contributions.
 ```
 
 If one displacement is downward, keep its negative sign inside the sum. For example,
@@ -133,18 +151,28 @@ options:
   content: |-
     $+0.8\ \mathrm{cm}$
   correct: true
+  feedback: |-
+    Add the signed contributions: $+1.3+(-0.5)=+0.8\ \mathrm{cm}$.
 - id: b
   content: |-
     $+1.8\ \mathrm{cm}$
+  feedback: |-
+    This adds magnitudes and ignores that the second contribution is negative.
 - id: c
   content: |-
     $-0.8\ \mathrm{cm}$
+  feedback: |-
+    The magnitude is right, but the larger contribution is positive, so the net sign is positive.
 - id: d
   content: |-
     $+1.3\ \mathrm{cm}$
+  feedback: |-
+    This ignores the $-0.5\ \mathrm{cm}$ displacement from the second pulse.
 - id: e
   content: |-
     $-1.8\ \mathrm{cm}$
+  feedback: |-
+    This both adds the magnitudes and assigns the sign of the smaller contribution.
 ```
 
 ---
@@ -177,19 +205,29 @@ options:
 - id: a
   content: |-
     $0.4\ \mathrm{cm}$
+  feedback: |-
+    This is the difference of the peak heights, which would describe opposite-signed overlap.
 - id: b
   content: |-
     $1.5\ \mathrm{cm}$
+  feedback: |-
+    This keeps only the larger pulse instead of including both overlapping displacements.
 - id: c
   content: |-
     $1.65\ \mathrm{cm}$
+  feedback: |-
+    This multiplies $1.1$ and $1.5$; superposition requires addition.
 - id: d
   content: |-
     $2.6\ \mathrm{cm}$
   correct: true
+  feedback: |-
+    At complete overlap the two upward peaks add: $1.1+1.5=2.6\ \mathrm{cm}$.
 - id: e
   content: |-
     $0\ \mathrm{cm}$
+  feedback: |-
+    Zero would require equal peaks on opposite sides of equilibrium.
 ```
 
 ---
@@ -220,19 +258,29 @@ options:
 - id: a
   content: |-
     $0.9$
+  feedback: |-
+    This subtracts the peak heights instead of adding two upward displacements.
 - id: b
   content: |-
     $1.7$
+  feedback: |-
+    This reports only the larger peak and ignores the $0.8\ \mathrm{cm}$ contribution.
 - id: c
   content: |-
     $2.5$
   correct: true
+  feedback: |-
+    The largest displacement is $0.8+1.7=2.5\ \mathrm{cm}$, and a number-only box takes $2.5$.
 - id: d
   content: |-
     $2.5\ \mathrm{cm}$
+  feedback: |-
+    The physical value is right, but the requested response format excludes the unit text.
 - id: e
   content: |-
     $25$
+  feedback: |-
+    This introduces an unsupported factor of ten; the centimeter values already share units.
 ```
 
 ---

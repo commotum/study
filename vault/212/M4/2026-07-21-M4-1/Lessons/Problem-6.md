@@ -281,10 +281,16 @@ options:
     The graph values support two significant figures, so $v_{\max}=3.9\ \mathrm{cm/s}$.
 - id: b
   content: 0.63
+  feedback: |-
+    This is $A/T=2.5/4.0=0.625$, which omits the factor $2\pi$ that converts cycles to radians.
 - id: c
   content: 7.9
+  feedback: |-
+    This uses the full $5.0\ \mathrm{cm}$ peak-to-peak distance as the amplitude. The amplitude is only $2.5\ \mathrm{cm}$.
 - id: d
   content: 1.6
+  feedback: |-
+    This is approximately the angular frequency $\omega=2\pi/T=1.57\ \mathrm{s^{-1}}$, not a speed. Multiply by $A$ to obtain $v_{\max}$.
 ```
 
 ---

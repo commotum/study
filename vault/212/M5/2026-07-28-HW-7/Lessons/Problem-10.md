@@ -100,18 +100,28 @@ options:
   content: |-
     $k=6\ \mathrm{rad/m}$ and $\omega=15\ \mathrm{rad/s}$
   correct: true
+  feedback: |-
+    Inside the phase, $6\ \mathrm{rad/m}$ multiplies $x$ and is $k$, while $15\ \mathrm{rad/s}$ multiplies $t$ and is $\omega$.
 - id: p10-coefficients-q1-b
   content: |-
     $k=15\ \mathrm{rad/m}$ and $\omega=6\ \mathrm{rad/s}$
+  feedback: |-
+    This swaps the coefficients: $k$ must multiply position $x$, and $\omega$ must multiply time $t$.
 - id: p10-coefficients-q1-c
   content: |-
     $k=0.08\ \mathrm{rad/m}$ and $\omega=15\ \mathrm{rad/s}$
+  feedback: |-
+    The value $0.08\ \mathrm m$ is outside the cosine and is the amplitude, not the coefficient of $x$.
 - id: p10-coefficients-q1-d
   content: |-
     $k=6\ \mathrm{rad/m}$ and $\omega=0.08\ \mathrm{rad/s}$
+  feedback: |-
+    The amplitude $0.08\ \mathrm m$ does not multiply $t$; the time coefficient inside the phase is $15\ \mathrm{rad/s}$.
 - id: p10-coefficients-q1-e
   content: |-
     $k=21\ \mathrm{rad/m}$ and $\omega=9\ \mathrm{rad/s}$
+  feedback: |-
+    Wave number and angular frequency are read directly from their separate variable coefficients; they are not formed by adding or subtracting $6$ and $15$.
 ```
 
 ---
@@ -160,19 +170,29 @@ options:
 - id: p10-speed-q1-a
   content: |-
     $\dfrac{1}{3}\ \mathrm{m/s}$
+  feedback: |-
+    This reverses the quotient to $k/\omega=6/18$. Speed requires $\omega/k$.
 - id: p10-speed-q1-b
   content: |-
     $3\ \mathrm{m/s}$
   correct: true
+  feedback: |-
+    The phase gives $\omega=18\ \mathrm{rad/s}$ and $k=6\ \mathrm{rad/m}$, so $v=\omega/k=3\ \mathrm{m/s}$.
 - id: p10-speed-q1-c
   content: |-
     $12\ \mathrm{m/s}$
+  feedback: |-
+    This subtracts the phase coefficients, $18-6$, but wave speed is their quotient, not their difference.
 - id: p10-speed-q1-d
   content: |-
     $24\ \mathrm{m/s}$
+  feedback: |-
+    This adds $18+6$ instead of dividing angular frequency by wave number.
 - id: p10-speed-q1-e
   content: |-
     $108\ \mathrm{m/s}$
+  feedback: |-
+    This multiplies $18$ by $6$; the constant-phase relation gives $v=\omega/k$, not $\omega k$.
 ```
 
 ---
@@ -209,19 +229,29 @@ options:
 - id: p10-units-q1-a
   content: |-
     $\mathrm{s/m}$
+  feedback: |-
+    These are the units of the reversed quotient $k/\omega$, not of $\omega/k$.
 - id: p10-units-q1-b
   content: |-
     $\mathrm{m/s}$
   correct: true
+  feedback: |-
+    Dividing gives $(\mathrm{rad/s})(\mathrm{m/rad})$, so radians cancel and leave meters per second.
 - id: p10-units-q1-c
   content: |-
     $\mathrm{rad/s}$
+  feedback: |-
+    These are the units of $\omega$ alone; dividing by $k$ must also cancel the radians and introduce meters.
 - id: p10-units-q1-d
   content: |-
     $\mathrm{rad/m}$
+  feedback: |-
+    These are the units of the denominator $k$, not the units after dividing $\omega$ by $k$.
 - id: p10-units-q1-e
   content: |-
     $\mathrm{m}\cdot\mathrm{s}$
+  feedback: |-
+    Dividing by $\mathrm{rad/m}$ multiplies by $\mathrm{m/rad}$, but the numerator still contains $1/\mathrm s$, leaving $\mathrm{m/s}$ rather than $\mathrm{m\,s}$.
 ```
 
 ---
@@ -267,19 +297,29 @@ options:
 - id: p10-features-q1-a
   content: |-
     $0.20\ \mathrm{m/s}$
+  feedback: |-
+    This reuses the amplitude as a speed. Amplitude lies outside the phase and does not enter $v=\omega/k$.
 - id: p10-features-q1-b
   content: |-
     $0.40\ \mathrm{m/s}$
+  feedback: |-
+    This manipulates the $0.20\ \mathrm m$ amplitude, but wave speed is determined only by the $x$- and $t$-coefficients inside the phase.
 - id: p10-features-q1-c
   content: |-
     $2.5\ \mathrm{m/s}$
   correct: true
+  feedback: |-
+    The phase gives $k=4\ \mathrm{rad/m}$ and $\omega=10\ \mathrm{rad/s}$, so $v=10/4=2.5\ \mathrm{m/s}$.
 - id: p10-features-q1-d
   content: |-
     $6\ \mathrm{m/s}$
+  feedback: |-
+    This subtracts the coefficients, $10-4$. The plus sign sets travel direction, while speed magnitude is the quotient $10/4$.
 - id: p10-features-q1-e
   content: |-
     $14\ \mathrm{m/s}$
+  feedback: |-
+    This adds the phase coefficients, $10+4$, instead of using the constant-phase result $v=\omega/k$.
 ```
 
 ---

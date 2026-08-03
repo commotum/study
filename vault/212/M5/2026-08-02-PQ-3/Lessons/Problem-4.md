@@ -95,16 +95,24 @@ options:
 - id: q1-a
   content: |-
     An upward force $mg$ at the shelf's end
+  feedback: |-
+    This reverses the interaction force. The string pulls upward on the hanging block, so by Newton's third law it pulls downward on the shelf.
 - id: q1-b
   content: |-
     A downward force $mg$ at the shelf's end
   correct: true
+  feedback: |-
+    The stationary block has string tension $T_s=mg$. The same string therefore pulls downward on the shelf with magnitude $mg$ at the attachment point.
 - id: q1-c
   content: |-
     A downward force $mg/2$ at the shelf's center
+  feedback: |-
+    The block's full weight is transmitted through the string, and the force acts where the string attaches at the shelf's end. The shelf's own weight is the force that acts at its center.
 - id: q1-d
   content: |-
     No force, because the block is stationary
+  feedback: |-
+    Stationary means the block's forces balance, not that they vanish. Its weight is balanced by string tension, and that tension acts on the shelf.
 ```
 
 ---
@@ -146,15 +154,23 @@ options:
   content: |-
     $\dfrac{(M+2m)g}{2\sin\alpha}$
   correct: true
+  feedback: |-
+    About the hinge, $TL\sin\alpha=Mg(L/2)+mgL$. Canceling $L$ and solving gives $T=(M+2m)g/(2\sin\alpha)$.
 - id: q2-b
   content: |-
     $\dfrac{(M+m)g}{\sin\alpha}$
+  feedback: |-
+    This treats the shelf's weight as though it acted at the end. Its lever arm is $L/2$, while the hanging mass acts at $L$.
 - id: q2-c
   content: |-
     $\dfrac{(M+2m)g}{2\cos\alpha}$
+  feedback: |-
+    This uses the wire component parallel to the shelf. The torque-producing component is perpendicular to the shelf, $T\sin\alpha$.
 - id: q2-d
   content: |-
     $\dfrac{(2M+m)g}{2\sin\alpha}$
+  feedback: |-
+    This assigns the half-length lever arm to the hanging mass instead of the shelf. The correct torque weights are $M/2$ and $m$.
 ```
 
 ---
@@ -193,16 +209,24 @@ options:
 - id: q3-a
   content: |-
     $\dfrac{m}{d}$
+  feedback: |-
+    This mistakes the horizontal span for the wire length. Because the wire is the hypotenuse, its length is $d/\cos\beta$.
 - id: q3-b
   content: |-
     $\dfrac{m}{d\cos\beta}$
+  feedback: |-
+    This inverts the geometry factor. Dividing $m$ by the actual length $d/\cos\beta$ multiplies by $\cos\beta$ rather than dividing by it.
 - id: q3-c
   content: |-
     $\dfrac{m\cos\beta}{d}$
   correct: true
+  feedback: |-
+    Since $L_w=d/\cos\beta$, the linear density is $\mu=m/L_w=m\cos\beta/d$.
 - id: q3-d
   content: |-
     $\dfrac{m\sin\beta}{d}$
+  feedback: |-
+    The given span $d$ is adjacent to $\beta$, so the relevant relation uses cosine. Sine would connect the wire length to the vertical rise.
 ```
 
 ---
@@ -267,16 +291,24 @@ options:
 - id: q4-a
   content: |-
     $6.7\ \mathrm{m/s}$
+  feedback: |-
+    This is too small because it does not combine the full shelf-and-block torque with the actual wire density. Use both $T=(M+2m)g/(2\sin\theta)$ and $\mu=m_w\cos\theta/L$.
 - id: q4-b
   content: |-
     $9.8\ \mathrm{m/s}$
+  feedback: |-
+    Matching the numerical value of $g$ is not a wave-speed calculation. Gravity first sets the tension; then compute $v=\sqrt{T/\mu}$.
 - id: q4-c
   content: |-
     $13.5\ \mathrm{m/s}$
   correct: true
+  feedback: |-
+    The torque balance gives $T=78.4\ \mathrm{N}$, and the wire geometry gives $\mu=(1.5\cos30^\circ)/3.0=0.433\ \mathrm{kg/m}$. Thus $v=\sqrt{78.4/0.433}=13.5\ \mathrm{m/s}$.
 - id: q4-d
   content: |-
     $19.6\ \mathrm{m/s}$
+  feedback: |-
+    This overestimates the speed by mishandling a geometric or square-root factor. The wire is longer than the shelf, so $\mu=m_w\cos30^\circ/L$, and the final ratio must be square-rooted.
 ```
 
 ---
@@ -307,16 +339,24 @@ options:
 - id: q5-a
   content: |-
     Doubling the wave amplitude
+  feedback: |-
+    In the ideal small-amplitude model, amplitude changes the wave's energy and power, not the medium-controlled speed $\sqrt{T/\mu}$.
 - id: q5-b
   content: |-
     Doubling the wavelength while leaving the medium unchanged
+  feedback: |-
+    Wavelength and frequency adjust together so that $v=f\lambda$ remains fixed for the unchanged medium. Wavelength alone does not set this speed.
 - id: q5-c
   content: |-
     Doubling the wire tension
   correct: true
+  feedback: |-
+    With $\mu$ fixed, $v=\sqrt{T/\mu}$, so doubling $T$ increases the speed by a factor of $\sqrt{2}$.
 - id: q5-d
   content: |-
     Shifting the wave's phase by $\pi$
+  feedback: |-
+    A phase shift changes where the waveform is in its cycle, not the wire's tension or linear density, so it cannot change the propagation speed.
 ```
 
 ---

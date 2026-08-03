@@ -372,10 +372,16 @@ options:
     The measured givens support two significant figures, so $v=1.3\ \mathrm{m/s}$. The positive sign means the block is moving right.
 - id: b
   content: -1.3
+  feedback: |-
+    This has the correct magnitude but the wrong direction. At $t=3.9\ \mathrm{s}$, the sine value and the leading minus sign in $v=-A\omega\sin(\omega t)$ make the velocity positive.
 - id: c
   content: 1.4
+  feedback: |-
+    This is the maximum speed $A\omega\approx1.4\ \mathrm{m/s}$. The instantaneous velocity must also include the phase factor $-\sin(\omega t)$.
 - id: d
   content: -0.051
+  feedback: |-
+    This is approximately the displacement $x=A\cos(\omega t)$ at that instant, not the velocity. Use the derivative $v=-A\omega\sin(\omega t)$.
 ```
 
 ---

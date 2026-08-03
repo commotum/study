@@ -95,9 +95,13 @@ options:
 - id: pq3-p5-source-speed-a
   content: |-
     $1.5\ \mathrm{m/s}$
+  feedback: |-
+    This uses $Lf_{\mathrm{rot}}=(0.50)(3.0)$ and omits the circumference factor $2\pi$. Each revolution covers $2\pi L$, not just $L$.
 - id: pq3-p5-source-speed-b
   content: |-
     $3.0\ \mathrm{m/s}$
+  feedback: |-
+    This is the converted rotation frequency, $180/60=3.0\ \mathrm{rev/s}$, mislabeled as a linear speed. Multiply by $2\pi L$ to obtain meters per second.
 - id: pq3-p5-source-speed-c
   content: |-
     $9.4\ \mathrm{m/s}$
@@ -107,9 +111,13 @@ options:
 - id: pq3-p5-source-speed-d
   content: |-
     $19\ \mathrm{m/s}$
+  feedback: |-
+    This doubles the correct circumference, effectively using the diameter as though it were the radius. The orbit radius is the given $0.50\ \mathrm{m}$.
 - id: pq3-p5-source-speed-e
   content: |-
     $570\ \mathrm{m/s}$
+  feedback: |-
+    This inserts $180\ \mathrm{rpm}$ as though it were $180\ \mathrm{rev/s}$. Divide by $60$ before using $v_s=2\pi Lf_{\mathrm{rot}}$.
 ```
 
 ---
@@ -144,9 +152,13 @@ options:
 - id: pq3-p5-sign-choice-a
   content: |-
     $f_{\mathrm{high}}=f_0\dfrac{v+v_s}{v}$ and $f_{\mathrm{low}}=f_0\dfrac{v-v_s}{v}$
+  feedback: |-
+    This puts the motion term in the numerator, which is the moving-observer structure. For a moving source, $v_s$ changes the wavefront spacing through the denominator.
 - id: pq3-p5-sign-choice-b
   content: |-
     $f_{\mathrm{high}}=f_0\dfrac{v}{v+v_s}$ and $f_{\mathrm{low}}=f_0\dfrac{v}{v-v_s}$
+  feedback: |-
+    This swaps the toward and away denominators. The high frequency needs the smaller denominator $v-v_s$.
 - id: pq3-p5-sign-choice-c
   content: |-
     $f_{\mathrm{high}}=f_0\dfrac{v}{v-v_s}$ and $f_{\mathrm{low}}=f_0\dfrac{v}{v+v_s}$
@@ -156,9 +168,13 @@ options:
 - id: pq3-p5-sign-choice-d
   content: |-
     $f_{\mathrm{high}}=f_0\dfrac{v}{v-v_s}$ and $f_{\mathrm{low}}=f_0\dfrac{v}{v-v_s}$
+  feedback: |-
+    This uses the toward-motion formula at both extremes. When the source moves away, the denominator changes to $v+v_s$.
 - id: pq3-p5-sign-choice-e
   content: |-
     $f_{\mathrm{high}}=f_{\mathrm{low}}=f_0$
+  feedback: |-
+    This ignores the radial component of source motion. At the toward and away points, the wavefront spacing changes maximally, so the observed frequencies differ from $f_0$.
 ```
 
 ---
@@ -207,12 +223,18 @@ options:
 - id: pq3-p5-numerical-extremes-a
   content: |-
     $f_{\mathrm{high}}=481\ \mathrm{Hz}$ and $f_{\mathrm{low}}=521\ \mathrm{Hz}$
+  feedback: |-
+    These are the two calculated magnitudes in reverse order. Toward motion produces $521\ \mathrm{Hz}$, while away motion produces $481\ \mathrm{Hz}$.
 - id: pq3-p5-numerical-extremes-b
   content: |-
     $f_{\mathrm{high}}=500\ \mathrm{Hz}$ and $f_{\mathrm{low}}=500\ \mathrm{Hz}$
+  feedback: |-
+    This ignores the source's $14\ \mathrm{m/s}$ motion. A moving source gives one frequency above and one below the emitted $500\ \mathrm{Hz}$.
 - id: pq3-p5-numerical-extremes-c
   content: |-
     $f_{\mathrm{high}}=520\ \mathrm{Hz}$ and $f_{\mathrm{low}}=480\ \mathrm{Hz}$
+  feedback: |-
+    These values are rounded incorrectly for the requested nearest hertz. $520.8$ rounds to $521$, and $480.8$ rounds to $481$.
 - id: pq3-p5-numerical-extremes-d
   content: |-
     $f_{\mathrm{high}}=521\ \mathrm{Hz}$ and $f_{\mathrm{low}}=481\ \mathrm{Hz}$
@@ -222,6 +244,8 @@ options:
 - id: pq3-p5-numerical-extremes-e
   content: |-
     $f_{\mathrm{high}}=514\ \mathrm{Hz}$ and $f_{\mathrm{low}}=486\ \mathrm{Hz}$
+  feedback: |-
+    This adds and subtracts the source speed directly from the frequency, mixing $\mathrm{m/s}$ with $\mathrm{Hz}$. Source speed belongs inside the Doppler denominator.
 ```
 
 ---

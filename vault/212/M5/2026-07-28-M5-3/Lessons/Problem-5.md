@@ -219,12 +219,18 @@ options:
 - id: a
   content: |-
     $50\ \mathrm{Hz}$
+  feedback: |-
+    This is only the Doppler increase, $750(22/330)=50\ \mathrm{Hz}$. The observed frequency is the emitted $750\ \mathrm{Hz}$ plus that increase.
 - id: b
   content: |-
     $700\ \mathrm{Hz}$
+  feedback: |-
+    This uses the minus sign, $750(330-22)/330$, which describes a listener moving away. An approaching listener must hear a frequency above $750\ \mathrm{Hz}$.
 - id: c
   content: |-
     $750\ \mathrm{Hz}$
+  feedback: |-
+    This assumes no observer motion. Since the listener approaches at $22\ \mathrm{m/s}$, the arrival rate of wavefronts increases.
 - id: d
   content: |-
     $800\ \mathrm{Hz}$
@@ -234,6 +240,8 @@ options:
 - id: e
   content: |-
     $11\,250\ \mathrm{Hz}$
+  feedback: |-
+    This inverts the speed ratio and multiplies by $v/v_o=15$. Observer motion modifies the frequency by the near-unity factor $(v+v_o)/v$, not by $v/v_o$.
 ```
 
 ---
@@ -272,12 +280,18 @@ options:
 - id: a
   content: |-
     $60$
+  feedback: |-
+    This is only the increase $600(34/340)=60\ \mathrm{Hz}$. Add it to the emitted frequency, or evaluate the full factor $(340+34)/340$.
 - id: b
   content: |-
     $540$
+  feedback: |-
+    This uses $v-v_o$ and therefore models an observer moving away. Toward motion requires the plus sign and a result above $600\ \mathrm{Hz}$.
 - id: c
   content: |-
     $600$
+  feedback: |-
+    This ignores the observer's motion. A nonzero approaching speed makes the multiplier greater than $1$.
 - id: d
   content: |-
     $660$
@@ -287,6 +301,8 @@ options:
 - id: e
   content: |-
     $6000$
+  feedback: |-
+    This multiplies by the inverted ratio $v/v_o=10$. The correct dimensionless factor is $(v+v_o)/v=1.10$.
 ```
 
 ---
