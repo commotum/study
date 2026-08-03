@@ -1,5 +1,10 @@
 # Finding the Period of a Rod–Disk Physical Pendulum
 
+<!--
+lesson-id: 212-M4-015
+topic-code: MTH212.M4.15
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -425,3 +430,22 @@ For a rod–disk physical pendulum:
    Check that the radical has units of $\mathrm{s^2}$, then round only the final period.
 
 **Main trap:** use squared distances in the parallel-axis inertia terms, but first-power distances in the gravitational torque terms.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 3 Study Guide](../../../M5/2026-08-03-Q-3/Study-Guide.md)
+Next: [Inferring Particle Motion From a Traveling-Wave Snapshot](../../../M5/2026-07-23-M5-1/Lessons/Problem-5.md)
+
+Study guide index: 07/20
+
+---
+
+<!-- lesson-nav:end -->

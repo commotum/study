@@ -1,5 +1,10 @@
 # Finding Atwood-Machine Acceleration With a Massive Pulley
 
+<!--
+lesson-id: 212-M2-030
+topic-code: MTH212.M2.30
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -76,6 +81,8 @@ options:
   content: |-
     $m_2g-T_2=m_2a$ and $T_1-m_1g=m_1a$
   correct: true
+  feedback: |-
+    For Block 2, downward weight is positive and upward tension is negative. For Block 1, upward tension is positive and downward weight is negative.
 - id: b
   content: |-
     $T_2-m_2g=m_2a$ and $m_1g-T_1=m_1a$
@@ -88,8 +95,6 @@ options:
 - id: e
   content: |-
     $m_2g-m_1g=(m_2-m_1)a$ for each block separately
-feedback: |-
-  For Block 2, downward weight is positive and upward tension is negative. For Block 1, upward tension is positive and downward weight is negative.
 ```
 
 ---
@@ -134,6 +139,8 @@ options:
   content: |-
     $T_2-T_1=Ia/r^2$
   correct: true
+  feedback: |-
+    $(T_2-T_1)r=I\alpha$ and $\alpha=a/r$, so dividing by $r$ gives $T_2-T_1=Ia/r^2$.
 - id: b
   content: |-
     $T_2-T_1=Iar^2$
@@ -146,8 +153,6 @@ options:
 - id: e
   content: |-
     $T_2=T_1$
-feedback: |-
-  $(T_2-T_1)r=I\alpha$ and $\alpha=a/r$, so dividing by $r$ gives $T_2-T_1=Ia/r^2$.
 ```
 
 ---
@@ -196,6 +201,8 @@ options:
   content: |-
     $a=\dfrac{(m_2-m_1)g}{m_1+m_2+I/r^2}$
   correct: true
+  feedback: |-
+    Eliminating the tensions places the pulley's positive effective inertia $I/r^2$ alongside the two block masses in the denominator.
 - id: b
   content: |-
     $a=\dfrac{(m_2-m_1)g}{m_1+m_2-I/r^2}$
@@ -208,8 +215,6 @@ options:
 - id: e
   content: |-
     $a=\dfrac{(m_2-m_1)g}{I/r^2}$
-feedback: |-
-  Eliminating the tensions places the pulley's positive effective inertia $I/r^2$ alongside the two block masses in the denominator.
 ```
 
 ---
@@ -249,6 +254,8 @@ options:
   content: |-
     $\frac12m_p$
   correct: true
+  feedback: |-
+    Substitute $I=\frac12m_pr^2$ into $I/r^2$ and cancel the common nonzero factor $r^2$, leaving $m_p/2$.
 - id: b
   content: |-
     $m_p$
@@ -261,8 +268,6 @@ options:
 - id: e
   content: |-
     $m_p/r^2$
-feedback: |-
-  Substitute $I=\frac12m_pr^2$ into $I/r^2$ and cancel the common nonzero factor $r^2$, leaving $m_p/2$.
 ```
 
 ---
@@ -317,6 +322,27 @@ options:
   content: |-
     `2.5`
   correct: true
+  feedback: |-
+    The block equations and pulley torque equation combine to give
+
+    $$
+    a=\frac{(m_2-m_1)g}{m_1+m_2+I/r^2}.
+    $$
+
+    For a uniform-disk pulley, $I=\frac12m_pr^2$, so
+
+    $$
+    a=\frac{(m_2-m_1)g}{m_1+m_2+\frac12m_p}.
+    $$
+
+    Substitution gives
+
+    $$
+    a=\frac{(2.6-1.2)(9.81)}{1.2+2.6+\frac12(3.3)}
+    =2.519\ldots\ \mathrm{m/s^2}.
+    $$
+
+    The measured givens have two significant figures, so $a=2.5\ \mathrm{m/s^2}$. Block 2 accelerates downward while block 1 accelerates upward.
 - id: b
   content: |-
     `3.6`
@@ -329,27 +355,6 @@ options:
 - id: e
   content: |-
     `2.52`
-feedback: |-
-  The block equations and pulley torque equation combine to give
-
-  $$
-  a=\frac{(m_2-m_1)g}{m_1+m_2+I/r^2}.
-  $$
-
-  For a uniform-disk pulley, $I=\frac12m_pr^2$, so
-
-  $$
-  a=\frac{(m_2-m_1)g}{m_1+m_2+\frac12m_p}.
-  $$
-
-  Substitution gives
-
-  $$
-  a=\frac{(2.6-1.2)(9.81)}{1.2+2.6+\frac12(3.3)}
-  =2.519\ldots\ \mathrm{m/s^2}.
-  $$
-
-  The measured givens have two significant figures, so $a=2.5\ \mathrm{m/s^2}$. Block 2 accelerates downward while block 1 accelerates upward.
 ```
 
 ---
@@ -365,3 +370,22 @@ feedback: |-
 - **Direction:** the heavier block moves downward.
 - **Check:** a massive pulley must give a positive acceleration smaller than the massless-pulley result and smaller than $g$.
 - **Main trap:** frictionless does not mean massless, and the pulley contributes $m_p/2$, not $m_p$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 2 Study Guide](../../../M3/2026-07-20-Q-2/Study-Guide.md)
+Next: [Comparing Atwood-Machine Accelerations With Pulley Inertia](../../2026-07-14-M2-5/Lessons/Problem-1.md)
+
+Study guide index: 05/20
+
+---
+
+<!-- lesson-nav:end -->

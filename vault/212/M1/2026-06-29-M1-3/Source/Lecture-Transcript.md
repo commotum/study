@@ -1,6 +1,7 @@
 # Physics 212: Circular Motion, Ferris Wheels, and Static Friction
 
 Welcome back to Physics 212.
+[View Notes](Lecture-Notes.md)
 
 ## Course Announcements
 
@@ -954,3 +955,10 @@ $$
 $$
 
 A larger coefficient of static friction permits a greater angular speed, while placing the coin farther from the rotation axis lowers the angular speed at which slipping begins.
+
+---
+
+Up Next: [Circular Motion on Flat and Banked Curves](../../2026-06-30-M1-4/Source/Lecture-Transcript.md)
+Previous: [Covariational Reasoning and Radial Acceleration](../../2026-06-25-M1-2/Source/Lecture-Transcript.md)
+
+---

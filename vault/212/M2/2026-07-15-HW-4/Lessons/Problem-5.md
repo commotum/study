@@ -1,5 +1,10 @@
 # Acceleration of a Yo-Yo Pulled at Its Axle
 
+<!--
+lesson-id: 212-M2-041
+topic-code: MTH212.M2.41
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -285,3 +290,17 @@ $$
 $$
 
 Before choosing an answer, check that the result has units of $T/M$. The main trap is assuming friction's direction or dropping the string's torque. Keep signs consistent and let the solved value of $f$ reveal its actual direction.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

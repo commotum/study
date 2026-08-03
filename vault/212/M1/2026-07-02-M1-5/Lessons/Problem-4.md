@@ -1,5 +1,10 @@
 # Finding Tangential Acceleration in a Vertical Circle
 
+<!--
+lesson-id: 212-M1-056
+topic-code: MTH212.M1.56
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -259,3 +264,17 @@ a_t = g\sin\theta.
 $$
 
 The main trap is using the radial expression $T/m+g\cos\theta$ or including $L$. Those belong to radial acceleration, not tangential acceleration.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

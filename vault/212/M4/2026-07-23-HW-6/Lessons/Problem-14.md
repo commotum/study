@@ -1,5 +1,10 @@
 # Finding the Period of a Rod-and-Sphere Physical Pendulum
 
+<!--
+lesson-id: 212-M4-029
+topic-code: MTH212.M4.29
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -356,3 +361,17 @@ When a pendulum contains several extended masses:
 4. Check that the expression inside the square root has units of $\mathrm{s^2}$.
 
 The main trap is using $L$ as the sphere-center distance or omitting one of the parallel-axis terms.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

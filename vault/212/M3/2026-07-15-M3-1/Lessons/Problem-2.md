@@ -1,5 +1,10 @@
 # Gravity at Altitude as a Fraction of Surface Gravity
 
+<!--
+lesson-id: 212-M3-002
+topic-code: MTH212.M3.02
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -296,7 +301,6 @@ $$
 ```quiz
 type: radio
 id: m3-1lec-q1
-require_exact: true
 content: |-
   **Question 1**
 
@@ -369,3 +373,17 @@ When altitude is given as $h=\alpha r_E$:
 4. Check that a positive altitude gives a ratio between $0$ and $1$.
 
 The main trap is treating altitude $h$ as though it were already the distance $r$ from Earth's center.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

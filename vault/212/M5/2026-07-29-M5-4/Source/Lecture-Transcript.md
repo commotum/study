@@ -1,384 +1,185 @@
-# Physics 212: Sound Intensity, Decibels, and the Doppler Effect
+# Physics 212: Superposition, Standing Waves, and Harmonics
 
 Welcome back to Physics 212.
+[View Notes](Lecture-Notes.md)
 
 ## Announcements
 
-Quiz 2 has finished being graded, and the scores will be posted this afternoon. The optional Quiz 2X assignment will open at the same time.
+Quiz 2 scores have been posted, and the optional Quiz 2X assignment is available. Quiz 2X is due next Tuesday at 6:00 p.m.
 
-Because Quiz 3 is approaching, Quiz 2X will be due Tuesday at 6:00 p.m., after Quiz 3 has been completed. This provides additional time to complete the assignment without interfering as much with Quiz 3 preparation.
+Quiz 3 will be available through Proctorio beginning Saturday at 5:00 p.m. The Zoom-proctored versions will be administered Monday during the regular class period and again at 6:00 p.m.
 
-Quiz 3 will open Saturday and close Monday for the Proctorio version. The Zoom-proctored versions will be administered on Monday using the same format as the previous quizzes.
+Continue preparing your handwritten note sheet for Quiz 3.
 
-You should be completing your Quiz 3 note sheet. Remember to submit it to Gradescope with your photo ID visible before beginning the quiz.
+# The Principle of Superposition
 
-# Review: Energy Transported by a Wave
+When two or more waves occupy the same region of a linear medium, their displacements combine according to the **principle of superposition**.
 
-We previously discussed the energy, power, intensity, and intensity level associated with waves.
-
-Consider a particle in a medium undergoing sinusoidal motion. Its kinetic energy is
-
-$$
-K=\frac{1}{2}mv^2.
-$$
-
-For simple harmonic motion, the maximum particle speed is
-
-$$
-v_{\max}=\omega A,
-$$
-
-where $A$ is the amplitude and $\omega$ is the angular frequency.
-
-Because
-
-$$
-\omega=2\pi f,
-$$
-
-we can also write
-
-$$
-v_{\max}=2\pi fA.
-$$
-
-The characteristic particle speed is therefore proportional to both the frequency and amplitude:
-
-$$
-v\propto fA.
-$$
-
-Because kinetic energy depends on the square of the speed,
-
-$$
-K\propto v^2,
-$$
-
-so
-
-$$
-K\propto f^2A^2.
-$$
-
-For a sinusoidal wave traveling through a fixed linear medium, the average power transported by the wave has the same frequency and amplitude dependence:
+At every position and instant, the displacement of the medium is the algebraic sum of the displacements that the individual waves would produce:
 
 $$
 \boxed{
-P_{\mathrm{avg}}\propto f^2A^2
+y_{\mathrm{net}}(x,t)
+=
+y_1(x,t)
++
+y_2(x,t)
++
+\cdots
 }.
 $$
 
-Thus:
+The displacements must be added point by point. An upward displacement is positive, while a downward displacement is negative.
 
-- Doubling the frequency increases the transported power by a factor of four.
-- Doubling the amplitude increases the transported power by a factor of four.
-- Doubling both the frequency and amplitude increases the transported power by a factor of sixteen.
+After the waves overlap, they continue traveling through one another. The temporary combined shape does not prevent either original wave from continuing through the medium.
 
-The proportionality constant depends on the type of wave and the properties of the medium.
+## Example: Ripples on a Pond
 
-# Intensity
+Suppose two raindrops strike a pond at different locations. Each drop produces circular ripples that spread outward.
 
-Intensity is the average power transmitted per unit area:
+When the two sets of ripples overlap, the surface displacement at each point is determined by adding the displacement produced by each ripple. In some places the ripples reinforce one another, while in other places they partially or completely cancel.
 
-$$
-\boxed{
-I=\frac{P}{A_s}
-},
-$$
+This combination of overlapping waves is called **interference**.
 
-where $A_s$ is the surface area through which the wave’s power passes.
+# Interference
 
-The SI unit of intensity is
+Interference is the pattern produced when waves overlap and superpose. The nature of the interference depends on the relative phase of the waves.
+
+## Complete Constructive Interference
+
+Consider two identical sinusoidal waves with the same amplitude, frequency, wavelength, and phase:
 
 $$
-\boxed{
-[I]=\mathrm{W/m^2}
-}.
-$$
-
-We use $A_s$ for surface area so that it is not confused with the wave amplitude $A$.
-
-Because intensity is proportional to power, a sinusoidal wave in a fixed medium also satisfies
-
-$$
-\boxed{
-I\propto f^2A^2
-}.
-$$
-
-# Intensity from an Isotropic Point Source
-
-Consider an ideal point source radiating power uniformly in every direction.
-
-At a distance $r$ from the source, the power is spread over the surface of a sphere. The area of that sphere is
-
-$$
-A_s=4\pi r^2.
-$$
-
-The intensity is therefore
-
-$$
-\boxed{
-I(r)=\frac{P}{4\pi r^2}
-}.
-$$
-
-This is an inverse-square relationship:
-
-$$
-I\propto\frac{1}{r^2}.
-$$
-
-The total power emitted by the source remains constant, but it is distributed over a progressively larger spherical surface as the wave moves outward.
-
-This expression assumes:
-
-- An ideal point source
-- Uniform radiation in every direction
-- No absorption by the medium
-- No reflections or interference
-- Constant source power
-
-## Worked Example: Doubling the Distance from a Speaker
-
-Suppose the sound intensity measured at a distance $r_1$ from a speaker is
-
-$$
-I_1=240\ \mathrm{W/m^2}.
-$$
-
-The listener then moves to a distance
-
-$$
-r_2=2r_1.
-$$
-
-The intensities at the two positions are
-
-$$
-I_1=\frac{P}{4\pi r_1^2}
+y_1(x,t)
+=
+A\sin(kx-\omega t)
 $$
 
 and
 
 $$
-I_2=\frac{P}{4\pi r_2^2}.
-$$
-
-Taking the ratio eliminates the source power and the factor $4\pi$:
-
-$$
-\frac{I_2}{I_1}
+y_2(x,t)
 =
-\frac{
-P/(4\pi r_2^2)
-}{
-P/(4\pi r_1^2)
+A\sin(kx-\omega t).
+$$
+
+Because the waves are in phase, their crests align with crests and their troughs align with troughs.
+
+Using superposition,
+
+$$
+y_{\mathrm{net}}
+=
+y_1+y_2,
+$$
+
+so
+
+$$
+y_{\mathrm{net}}(x,t)
+=
+2A\sin(kx-\omega t).
+$$
+
+The resulting amplitude is
+
+$$
+\boxed{
+A_{\mathrm{net}}=2A
 }.
 $$
 
-Therefore,
+This is **complete constructive interference**.
+
+The amplitude doubles, but the frequency and wavelength remain unchanged.
+
+## Complete Destructive Interference
+
+Now consider two otherwise identical waves that are exactly $180^\circ$, or $\pi$ radians, out of phase.
+
+If
 
 $$
-\frac{I_2}{I_1}
+y_1(x,t)
 =
-\frac{r_1^2}{r_2^2}.
+A\sin(kx-\omega t),
 $$
 
-Using $r_2=2r_1$,
+then the second wave may be written as
 
 $$
-\frac{I_2}{I_1}
+y_2(x,t)
 =
-\frac{r_1^2}{(2r_1)^2}.
+A\sin(kx-\omega t+\pi).
+$$
+
+Because
+
+$$
+\sin(\phi+\pi)=-\sin\phi,
+$$
+
+the second wave becomes
+
+$$
+y_2(x,t)
+=
+-A\sin(kx-\omega t).
+$$
+
+The net displacement is therefore
+
+$$
+y_{\mathrm{net}}
+=
+y_1+y_2
+=
+0.
 $$
 
 Thus,
 
 $$
-\frac{I_2}{I_1}
-=
-\frac{1}{4}.
-$$
-
-Therefore,
-
-$$
-I_2=\frac{1}{4}I_1.
-$$
-
-Substituting the original intensity,
-
-$$
-I_2
-=
-\frac{1}{4}
-\left(
-240\ \mathrm{W/m^2}
-\right).
-$$
-
-The resulting intensity is
-
-$$
 \boxed{
-I_2=60\ \mathrm{W/m^2}
+y_{\mathrm{net}}=0
 }.
 $$
 
-Doubling the distance from an isotropic point source reduces the intensity to one-fourth of its original value.
+This is **complete destructive interference**. Each crest coincides with an equal-magnitude trough, so the waves cancel while they overlap.
 
-# Sound Intensity Level
+Complete cancellation requires equal amplitudes and a phase difference of exactly $\pi$ radians.
 
-The human ear can respond to sound intensities covering an enormous numerical range. A logarithmic scale is therefore more convenient than a linear scale.
+# Beats
 
-The **sound intensity level** is defined as
+When two waves have slightly different frequencies, their relative phase continually changes.
 
-$$
-\boxed{
-\beta
-=
-10\log_{10}
-\left(
-\frac{I}{I_0}
-\right)
-\ \mathrm{dB}
-},
-$$
+At some times, the waves are nearly in phase and interfere constructively. At other times, they are nearly out of phase and interfere destructively.
 
-where:
+The result is an oscillation whose amplitude repeatedly increases and decreases. This slowly varying amplitude forms an **envelope** around the faster oscillations.
 
-- $\beta$ is the sound intensity level,
-- $I$ is the measured sound intensity, and
-- $I_0$ is the reference intensity.
+This periodic variation in amplitude is called **beats**.
 
-The standard reference intensity is
+During each beat cycle:
 
-$$
-\boxed{
-I_0=1.0\times10^{-12}\ \mathrm{W/m^2}
-}.
-$$
+- Constructive interference produces a maximum in the resultant amplitude.
+- Destructive interference produces a minimum in the resultant amplitude.
+- The waves then drift back into phase, and the pattern repeats.
 
-This is approximately the threshold of human hearing under standard reference conditions.
+# Reflection of Waves
 
-The unit of intensity level is the decibel:
+A traveling wave may reflect when it reaches the end of a medium. The phase of the reflected wave depends on the boundary condition.
 
-$$
-10\ \mathrm{dB}=1\ \mathrm{bel}.
-$$
+## Reflection from a Fixed End
 
-Because the scale is logarithmic, multiplying the physical intensity corresponds to adding to the intensity level.
+At a fixed or hard boundary, the end of the medium cannot move.
 
-## Solving for Intensity
+The reflected wave is inverted relative to the incident wave. A crest returns as a trough, and a trough returns as a crest.
 
-Starting with
-
-$$
-\beta
-=
-10\log_{10}
-\left(
-\frac{I}{I_0}
-\right)
-\ \mathrm{dB},
-$$
-
-divide by $10\ \mathrm{dB}$:
-
-$$
-\frac{\beta}{10\ \mathrm{dB}}
-=
-\log_{10}
-\left(
-\frac{I}{I_0}
-\right).
-$$
-
-Raise $10$ to the power of each side:
-
-$$
-10^{\beta/(10\ \mathrm{dB})}
-=
-\frac{I}{I_0}.
-$$
-
-Therefore,
+This inversion corresponds to a phase change of
 
 $$
 \boxed{
-I
-=
-I_0
-10^{\beta/(10\ \mathrm{dB})}
-}.
-$$
-
-## Worked Example: Intensity of Normal Conversation
-
-A normal conversation has an approximate sound intensity level of
-
-$$
-\beta=60\ \mathrm{dB}.
-$$
-
-The corresponding intensity is
-
-$$
-I
-=
-I_0
-10^{\beta/(10\ \mathrm{dB})}.
-$$
-
-Substituting the reference intensity,
-
-$$
-I
-=
-\left(
-1.0\times10^{-12}\ \mathrm{W/m^2}
-\right)
-10^{60/10}.
-$$
-
-Because
-
-$$
-\frac{60}{10}=6,
-$$
-
-we obtain
-
-$$
-I
-=
-\left(
-1.0\times10^{-12}\ \mathrm{W/m^2}
-\right)
-10^6.
-$$
-
-Therefore,
-
-$$
-\boxed{
-I=1.0\times10^{-6}\ \mathrm{W/m^2}
-}.
-$$
-
-Because
-
-$$
-1\ \mathrm{mW}=10^{-3}\ \mathrm{W},
-$$
-
-this may also be written as
-
-$$
-\boxed{
-I=1.0\times10^{-3}\ \mathrm{mW/m^2}
+\Delta\phi=\pi\ \mathrm{rad}
 }
 $$
 
@@ -386,628 +187,746 @@ or
 
 $$
 \boxed{
-I=0.0010\ \mathrm{mW/m^2}
+\Delta\phi=180^\circ
 }.
 $$
 
-# Comparing Two Intensity Levels
+## Reflection from a Free End
 
-Suppose two sound intensities $I_1$ and $I_2$ have intensity levels $\beta_1$ and $\beta_2$.
+At a free or soft boundary, the end of the medium is allowed to move.
 
-Their definitions are
+The reflected wave is not inverted. A crest returns as a crest, and a trough returns as a trough.
+
+More complicated boundaries may involve both reflection and transmission, but the detailed behavior at such discontinuities is outside the present course scope.
+
+# Standing Waves
+
+A **standing wave** can form when two waves with the same frequency and amplitude travel in opposite directions through the same medium.
+
+The waves continuously superpose. At certain resonant frequencies, their interference produces a stable spatial pattern rather than a pattern that appears to travel through the medium.
+
+## Nodes
+
+A **node** is a position where the displacement is always zero:
 
 $$
-\beta_1
+\boxed{
+y_{\mathrm{node}}=0
+}.
+$$
+
+The two traveling waves interfere destructively at every node.
+
+## Antinodes
+
+An **antinode** is a position where the oscillation has its maximum amplitude.
+
+The two traveling waves interfere constructively at each antinode.
+
+Thus, a standing wave contains alternating nodes and antinodes whose positions remain fixed.
+
+## Standing Waves on a Driven String
+
+Consider a driver oscillating one end of a string while the other end is fixed.
+
+The driver sends a wave along the string. When the wave reaches the fixed end, it reflects and returns inverted. The incident and reflected waves then travel in opposite directions and overlap.
+
+At an arbitrary driving frequency, the resulting motion may appear complicated and does not form a simple, stable pattern of nodes and antinodes.
+
+At a resonant frequency, however, the incident and reflected waves interfere in a way that produces a stable standing-wave pattern.
+
+Wave speed, wavelength, and frequency are related by
+
+$$
+\boxed{
+v=\lambda f
+}.
+$$
+
+For a particular string, the wave speed is determined by the properties of the medium, including the string’s tension and linear mass density.
+
+The oscillator determines the driving frequency. Once $v$ and $f$ are fixed, the wavelength is
+
+$$
+\boxed{
+\lambda=\frac{v}{f}
+}.
+$$
+
+The string also has a fixed length and specific boundary conditions. A stable standing wave forms only when the wavelength fits those conditions. Therefore, only particular driving frequencies produce resonance.
+
+# Standing Waves on a String Fixed at Both Ends
+
+For a string fixed at both ends, each end must be a displacement node.
+
+The string’s length must contain an integer number of half-wavelengths:
+
+$$
+L
 =
-10\log_{10}
-\left(
-\frac{I_1}{I_0}
-\right)
-\ \mathrm{dB}
+m\frac{\lambda_m}{2},
+$$
+
+where
+
+$$
+m=1,2,3,\ldots
+$$
+
+is the mode number or harmonic number.
+
+Solving for the wavelength gives
+
+$$
+\boxed{
+\lambda_m=\frac{2L}{m}
+}.
+$$
+
+The mode number counts the number of half-wavelength segments that fit along the string.
+
+Because
+
+$$
+v=f\lambda,
+$$
+
+the frequency of mode $m$ is
+
+$$
+f_m
+=
+\frac{v}{\lambda_m}.
+$$
+
+Substituting the allowed wavelength,
+
+$$
+f_m
+=
+\frac{v}{2L/m},
+$$
+
+so
+
+$$
+\boxed{
+f_m=\frac{mv}{2L}
+}.
+$$
+
+## Fundamental Frequency
+
+The lowest-frequency standing-wave pattern is the **fundamental mode**, also called the **first harmonic**.
+
+It has:
+
+- Nodes at the two fixed ends
+- One antinode
+- One-half of a wavelength along the string
+
+Therefore,
+
+$$
+L=\frac{\lambda_1}{2},
+$$
+
+so
+
+$$
+\boxed{
+\lambda_1=2L
+}.
+$$
+
+The fundamental frequency is
+
+$$
+\boxed{
+f_1=\frac{v}{2L}
+}.
+$$
+
+## Second Harmonic
+
+The second harmonic has:
+
+- Nodes at the two fixed ends
+- One interior node
+- Two antinodes
+- One complete wavelength along the string
+
+Therefore,
+
+$$
+L=\lambda_2,
+$$
+
+so
+
+$$
+\boxed{
+\lambda_2=L
+}.
+$$
+
+Its frequency is
+
+$$
+f_2=\frac{v}{L}.
+$$
+
+Comparing this with the fundamental frequency,
+
+$$
+\boxed{
+f_2=2f_1
+}.
+$$
+
+## Third Harmonic
+
+The third harmonic has:
+
+- Nodes at the two fixed ends
+- Two interior nodes
+- Three antinodes
+- Three half-wavelengths along the string
+
+Therefore,
+
+$$
+L=\frac{3\lambda_3}{2}.
+$$
+
+Solving for the wavelength gives
+
+$$
+\boxed{
+\lambda_3=\frac{2L}{3}
+}.
+$$
+
+The corresponding frequency is
+
+$$
+f_3
+=
+\frac{v}{\lambda_3}
+=
+\frac{3v}{2L}.
+$$
+
+Therefore,
+
+$$
+\boxed{
+f_3=3f_1
+}.
+$$
+
+## General Harmonic Relationships
+
+For a string fixed at both ends,
+
+$$
+\boxed{
+\lambda_m=\frac{2L}{m}
+}
 $$
 
 and
 
 $$
-\beta_2
-=
-10\log_{10}
-\left(
-\frac{I_2}{I_0}
-\right)
-\ \mathrm{dB}.
-$$
-
-Subtracting gives
-
-$$
-\beta_2-\beta_1
-=
-10
-\left[
-\log_{10}
-\left(
-\frac{I_2}{I_0}
-\right)
--
-\log_{10}
-\left(
-\frac{I_1}{I_0}
-\right)
-\right]
-\mathrm{dB}.
-$$
-
-Using the logarithm identity
-
-$$
-\log_{10}B-\log_{10}A
-=
-\log_{10}
-\left(
-\frac{B}{A}
-\right),
-$$
-
-we obtain
-
-$$
-\beta_2-\beta_1
-=
-10\log_{10}
-\left[
-\frac{
-I_2/I_0
-}{
-I_1/I_0
-}
-\right]
-\mathrm{dB}.
-$$
-
-The reference intensity cancels:
-
-$$
 \boxed{
-\beta_2-\beta_1
-=
-10\log_{10}
-\left(
-\frac{I_2}{I_1}
-\right)
-\ \mathrm{dB}
+f_m=\frac{mv}{2L}=mf_1
 }.
 $$
 
-This equation allows us to compare sound levels without explicitly using $I_0$.
-
-## Worked Example: Two People Talking
-
-Suppose one person produces an intensity level of
+Thus, the allowed frequencies are integer multiples of the fundamental frequency:
 
 $$
-\beta_1=60\ \mathrm{dB}
+f_1,\ 2f_1,\ 3f_1,\ 4f_1,\ldots
 $$
 
-at a listener’s position.
+The mode numbered $m$ has:
 
-Now suppose a second person speaks with the same power at the same distance. If the two speakers are independent, their intensities add.
+- $m$ antinodes
+- $m-1$ interior nodes
+- $m+1$ total nodes when the fixed endpoints are included
 
-The total intensity is therefore
+As the harmonic number increases, the wavelength decreases and the frequency increases.
 
-$$
-I_2=2I_1.
-$$
+# Standing-Wave Simulation
 
-The change in intensity level is
-
-$$
-\beta_2-\beta_1
-=
-10\log_{10}
-\left(
-\frac{I_2}{I_1}
-\right)
-\ \mathrm{dB}.
-$$
-
-Substituting $I_2=2I_1$,
+In the simulation, the second harmonic occurred at approximately
 
 $$
-\beta_2-\beta_1
-=
-10\log_{10}(2)
-\ \mathrm{dB}.
+f_2\approx0.88\ \mathrm{Hz}.
 $$
 
 Because
 
 $$
-\log_{10}(2)\approx0.301,
+f_2=2f_1,
 $$
 
-we obtain
+the predicted fundamental frequency was
 
 $$
-\beta_2-\beta_1
-\approx
-3.01\ \mathrm{dB}.
-$$
-
-Therefore,
-
-$$
-\beta_2
-=
-\beta_1+3.01\ \mathrm{dB}.
-$$
-
-Using $\beta_1=60\ \mathrm{dB}$,
-
-$$
-\boxed{
-\beta_2\approx63\ \mathrm{dB}
-}.
-$$
-
-Doubling the physical intensity does not double the decibel level. It increases the intensity level by approximately $3\ \mathrm{dB}$.
-
-More generally:
-
-$$
-\boxed{
-I_2=2I_1
-\quad\Longrightarrow\quad
-\beta_2=\beta_1+3.0\ \mathrm{dB}
-}.
-$$
-
-# The Doppler Effect
-
-The **Doppler effect** is the change in observed frequency caused by relative motion between a wave source and an observer.
-
-A familiar example is the sound of a siren on a moving vehicle:
-
-- As the vehicle approaches, the observed frequency is higher.
-- After it passes and moves away, the observed frequency is lower.
-
-The same qualitative phenomenon occurs for light, although the equations developed here are specifically for sound waves propagating through a material medium.
-
-We will use the following notation:
-
-- $f_0$ is the frequency emitted in the source’s rest frame.
-- $f_{\mathrm{obs}}$ is the frequency measured by the observer.
-- $v_o$ is the observer’s speed relative to the medium.
-- $v_s$ is the source’s speed relative to the medium.
-- $v$ is the speed of sound through the medium.
-
-For sound in air under the conditions used in these examples,
-
-$$
-\boxed{
-v=343\ \mathrm{m/s}
-}.
-$$
-
-The speeds $v_o$ and $v_s$ will be treated as positive magnitudes. The appropriate sign is built into each of the following case-specific formulas.
-
-# Moving Observer and Stationary Source
-
-When the source is stationary and the observer moves through the wave, the wavelength in the medium remains unchanged. The observer simply encounters the wavefronts at a different rate.
-
-## Observer Moving Toward the Source
-
-An observer moving toward the source encounters wavefronts more frequently. The observed frequency is
-
-$$
-\boxed{
-f_{\mathrm{obs}}
-=
-f_0
-\left(
-1+\frac{v_o}{v}
-\right)
-}.
-$$
-
-Because the factor in parentheses is greater than one,
-
-$$
-f_{\mathrm{obs}}>f_0.
-$$
-
-## Observer Moving Away from the Source
-
-An observer moving away from the source encounters wavefronts less frequently:
-
-$$
-\boxed{
-f_{\mathrm{obs}}
-=
-f_0
-\left(
-1-\frac{v_o}{v}
-\right)
-}.
-$$
-
-In this case,
-
-$$
-f_{\mathrm{obs}}<f_0.
-$$
-
-# Moving Source and Stationary Observer
-
-When the source moves through the medium, the source changes the spacing between the wavefronts.
-
-Wavefronts are compressed in front of an approaching source and spread farther apart behind a receding source. The wavelength in the medium therefore changes.
-
-## Source Moving Toward the Observer
-
-For a source moving toward a stationary observer,
-
-$$
-\boxed{
-f_{\mathrm{obs}}
-=
-\frac{f_0}{
-1-\frac{v_s}{v}
-}
-}.
-$$
-
-The denominator is less than one, so
-
-$$
-f_{\mathrm{obs}}>f_0.
-$$
-
-## Source Moving Away from the Observer
-
-For a source moving away from a stationary observer,
-
-$$
-\boxed{
-f_{\mathrm{obs}}
-=
-\frac{f_0}{
-1+\frac{v_s}{v}
-}
-}.
-$$
-
-The denominator is greater than one, so
-
-$$
-f_{\mathrm{obs}}<f_0.
-$$
-
-# Why the Observer and Source Formulas Differ
-
-The effects of source motion and observer motion are not simply inverses of one another.
-
-When the observer moves, the wave pattern in the medium remains unchanged. The observer merely crosses the existing wavefronts more or less rapidly.
-
-When the source moves, it changes the spacing of the wavefronts in the medium itself:
-
-- Motion toward the observer compresses the wavelength.
-- Motion away from the observer stretches the wavelength.
-
-Because these are physically different situations, the source speed and observer speed appear differently in the Doppler equations.
-
-# Worked Example: A Bat Flying Toward a Singer
-
-A singer produces a note with frequency
-
-$$
-f_0=880\ \mathrm{Hz}.
-$$
-
-A bat flies toward the singer at
-
-$$
-v_o=35\ \mathrm{m/s}.
-$$
-
-The singer is the stationary source, while the bat is the moving observer. Because the observer moves toward the source, we use
-
-$$
-f_{\mathrm{obs}}
-=
-f_0
-\left(
-1+\frac{v_o}{v}
-\right).
-$$
-
-Substituting the known values,
-
-$$
-f_{\mathrm{obs}}
-=
-(880\ \mathrm{Hz})
-\left(
-1+
-\frac{
-35\ \mathrm{m/s}
-}{
-343\ \mathrm{m/s}
-}
-\right).
-$$
-
-The speed units cancel inside the parentheses:
-
-$$
-f_{\mathrm{obs}}
-=
-(880\ \mathrm{Hz})(1.102).
+f_1=\frac{f_2}{2}.
 $$
 
 Therefore,
 
 $$
-f_{\mathrm{obs}}
-\approx969.8\ \mathrm{Hz}.
-$$
-
-To the appropriate precision,
-
-$$
-\boxed{
-f_{\mathrm{obs}}\approx970\ \mathrm{Hz}
-}.
-$$
-
-The observed frequency is higher than the emitted frequency because the bat is moving into the approaching wavefronts.
-
-# Worked Example: Can a Receding Bat Chirp Enter the Human Audible Range?
-
-Suppose a bat emits an echolocation chirp at
-
-$$
-f_0=25\ \mathrm{kHz}.
-$$
-
-The approximate upper limit of human hearing is
-
-$$
-f_{\mathrm{obs}}=20\ \mathrm{kHz}.
-$$
-
-We want to determine how rapidly the bat would need to move for its chirp to be Doppler-shifted down to $20\ \mathrm{kHz}$.
-
-Because the observed frequency must be lower than the emitted frequency, the bat must move **away** from the observer.
-
-The bat is the moving source, and the observer is stationary. We therefore use
-
-$$
-f_{\mathrm{obs}}
+f_1
 =
-\frac{f_0}{
-1+\frac{v_s}{v}
-}.
-$$
-
-Substituting the known frequencies,
-
-$$
-20\ \mathrm{kHz}
+\frac{0.88\ \mathrm{Hz}}{2}
 =
-\frac{
-25\ \mathrm{kHz}
-}{
-1+\frac{v_s}{343\ \mathrm{m/s}}
-}.
-$$
-
-Divide both sides by $25\ \mathrm{kHz}$:
-
-$$
-\frac{20}{25}
-=
-\frac{1}{
-1+\frac{v_s}{343\ \mathrm{m/s}}
-}.
-$$
-
-Taking the reciprocal gives
-
-$$
-1+\frac{v_s}{343\ \mathrm{m/s}}
-=
-\frac{25}{20}.
-$$
-
-Therefore,
-
-$$
-\frac{v_s}{343\ \mathrm{m/s}}
-=
-\frac{25}{20}-1.
-$$
-
-Since
-
-$$
-\frac{25}{20}=1.25,
-$$
-
-we obtain
-
-$$
-\frac{v_s}{343\ \mathrm{m/s}}
-=
-0.25.
+0.44\ \mathrm{Hz}.
 $$
 
 Thus,
 
 $$
-v_s
-=
-(343\ \mathrm{m/s})(0.25).
-$$
-
-Therefore,
-
-$$
 \boxed{
-v_s\approx86\ \mathrm{m/s}
+f_1\approx0.44\ \mathrm{Hz}
 }.
 $$
 
-This is approximately
+The third-harmonic frequency can be found from
+
+$$
+f_3=3f_1.
+$$
+
+Substituting the fundamental frequency,
+
+$$
+f_3
+=
+3(0.44\ \mathrm{Hz})
+=
+1.32\ \mathrm{Hz}.
+$$
+
+Equivalently,
+
+$$
+\frac{f_3}{f_2}=\frac{3}{2},
+$$
+
+so
+
+$$
+f_3
+=
+\frac{3}{2}f_2
+=
+\frac{3}{2}(0.88\ \mathrm{Hz})
+=
+1.32\ \mathrm{Hz}.
+$$
+
+The simulated node and antinode patterns agreed with the predicted harmonic numbers:
+
+- The fundamental had one antinode.
+- The second harmonic had two antinodes and one interior node.
+- The third harmonic had three antinodes and two interior nodes.
+
+Frequencies that were not harmonics of the fundamental did not produce stable standing-wave patterns.
+
+# Wave Speed on a String
+
+The speed of a transverse wave on a stretched string is
 
 $$
 \boxed{
-v_s\approx190\ \mathrm{mph}
-}.
+v=\sqrt{\frac{T}{\mu}}
+},
 $$
 
-That speed is unrealistically high for a flying bat. A bat emitting a $25\ \mathrm{kHz}$ chirp therefore cannot ordinarily lower the frequency into the human audible range merely by flying away from the listener.
+where:
 
-# General Strategy for Doppler-Effect Problems
+- $T$ is the string tension.
+- $\mu$ is the string’s linear mass density.
 
-## 1. Identify the Emitted and Observed Frequencies
-
-The emitted frequency is $f_0$.
-
-The frequency measured by the listener or detector is $f_{\mathrm{obs}}$.
-
-## 2. Identify What Is Moving
-
-Determine whether the moving object is:
-
-- The observer
-- The source
-- Both
-
-The observer and source formulas are physically different.
-
-## 3. Determine Whether the Frequency Should Increase or Decrease
-
-Before choosing an equation, make a qualitative prediction:
-
-- Motion toward produces a higher observed frequency.
-- Motion away produces a lower observed frequency.
-
-This provides an immediate check on the selected signs.
-
-## 4. Distinguish Signal Speed from Source or Observer Speed
-
-The sound speed $v$ describes the propagation of the wave through the medium.
-
-The source speed $v_s$ describes the motion of the object producing the sound.
-
-The observer speed $v_o$ describes the motion of the listener or detector.
-
-These are different physical quantities.
-
-## 5. Solve Symbolically Before Substituting Values
-
-For example, for a receding source,
-
-$$
-f_{\mathrm{obs}}
-=
-\frac{f_0}{
-1+\frac{v_s}{v}
-}.
-$$
-
-Solving symbolically for the source speed gives
-
-$$
-1+\frac{v_s}{v}
-=
-\frac{f_0}{f_{\mathrm{obs}}},
-$$
-
-$$
-\frac{v_s}{v}
-=
-\frac{f_0}{f_{\mathrm{obs}}}-1,
-$$
-
-and therefore
+Linear mass density is mass per unit length:
 
 $$
 \boxed{
-v_s
-=
-v
-\left(
-\frac{f_0}{f_{\mathrm{obs}}}-1
-\right)
+\mu=\frac{m_{\mathrm{wire}}}{L}
 }.
 $$
 
-The numerical values should be inserted only after this symbolic result has been obtained.
+A larger tension produces a greater wave speed, while a larger linear mass density produces a smaller wave speed.
 
-## 6. Check the Physical Meaning of the Result
+Combining the wave-speed equation with the harmonic-frequency equation gives
 
-Confirm that:
+$$
+f_m
+=
+\frac{m}{2L}
+\sqrt{\frac{T}{\mu}}.
+$$
 
-- An approaching source or observer gives $f_{\mathrm{obs}}>f_0$.
-- A receding source or observer gives $f_{\mathrm{obs}}<f_0$.
-- The units of the calculated speed are correct.
-- The resulting speed is physically plausible.
+Using
 
-# Summary
+$$
+\mu=\frac{m_{\mathrm{wire}}}{L},
+$$
 
-For a sinusoidal wave in a fixed linear medium,
+we obtain
 
 $$
 \boxed{
-P_{\mathrm{avg}}\propto f^2A^2
+f_m
+=
+\frac{m}{2}
+\sqrt{
+\frac{T}{
+m_{\mathrm{wire}}L
 }
-$$
-
-and
-
-$$
-\boxed{
-I\propto f^2A^2
+}
 }.
 $$
 
-Intensity is power per unit area:
+For the fundamental mode,
 
 $$
 \boxed{
-I=\frac{P}{A_s}
+f_1
+=
+\frac{1}{2}
+\sqrt{
+\frac{T}{
+m_{\mathrm{wire}}L
+}
+}
 }.
 $$
 
-For an isotropic point source,
+# Worked Example: Fundamental Frequency of a Stretched Wire
+
+A wire has length
 
 $$
-\boxed{
-I=\frac{P}{4\pi r^2}
+L=0.85\ \mathrm{m},
+$$
+
+tension
+
+$$
+T=52\ \mathrm{N},
+$$
+
+and mass
+
+$$
+m_{\mathrm{wire}}=0.0022\ \mathrm{kg}.
+$$
+
+Determine its fundamental frequency.
+
+## 1. Find the Linear Mass Density
+
+The linear mass density is
+
+$$
+\mu
+=
+\frac{m_{\mathrm{wire}}}{L}.
+$$
+
+Substituting the given values,
+
+$$
+\mu
+=
+\frac{
+0.0022\ \mathrm{kg}
+}{
+0.85\ \mathrm{m}
 }.
 $$
 
 Therefore,
 
 $$
-I\propto\frac{1}{r^2}.
+\mu
+\approx
+2.59\times10^{-3}\ \mathrm{kg/m}.
 $$
 
-Doubling the distance reduces the intensity to one-fourth of its original value.
+## 2. Find the Wave Speed
 
-Sound intensity level is
+The wave speed is
+
+$$
+v=\sqrt{\frac{T}{\mu}}.
+$$
+
+Substituting,
+
+$$
+v
+=
+\sqrt{
+\frac{
+52\ \mathrm{N}
+}{
+2.59\times10^{-3}\ \mathrm{kg/m}
+}
+}.
+$$
+
+This gives
+
+$$
+v\approx142\ \mathrm{m/s}.
+$$
+
+## 3. Find the Fundamental Frequency
+
+For a string fixed at both ends,
+
+$$
+f_1=\frac{v}{2L}.
+$$
+
+Therefore,
+
+$$
+f_1
+=
+\frac{
+142\ \mathrm{m/s}
+}{
+2(0.85\ \mathrm{m})
+}.
+$$
+
+Thus,
 
 $$
 \boxed{
-\beta
+f_1\approx83.4\ \mathrm{Hz}
+}.
+$$
+
+The same result follows directly from
+
+$$
+f_1
 =
-10\log_{10}
-\left(
-\frac{I}{I_0}
-\right)
-\ \mathrm{dB}
+\frac{1}{2}
+\sqrt{
+\frac{T}{
+m_{\mathrm{wire}}L
+}
+}.
+$$
+
+# Worked Example: Third Harmonic with a Hanging Mass
+
+Consider a wire of vibrating length $L$ and mass $m_{\mathrm{wire}}$. A hanging mass $M$ supplies the tension, and the system is in equilibrium.
+
+Determine the third-harmonic frequency.
+
+## 1. Determine the Tension
+
+Because the hanging mass is in equilibrium, its acceleration is zero. The upward tension balances its downward weight:
+
+$$
+T-Mg=0.
+$$
+
+Therefore,
+
+$$
+\boxed{
+T=Mg
+}.
+$$
+
+## 2. Determine the Linear Mass Density
+
+For a uniform wire,
+
+$$
+\boxed{
+\mu=\frac{m_{\mathrm{wire}}}{L}
+}.
+$$
+
+## 3. Use the Third-Harmonic Frequency
+
+For the third harmonic,
+
+$$
+f_3=\frac{3v}{2L}.
+$$
+
+The wave speed is
+
+$$
+v=\sqrt{\frac{T}{\mu}}.
+$$
+
+Therefore,
+
+$$
+f_3
+=
+\frac{3}{2L}
+\sqrt{\frac{T}{\mu}}.
+$$
+
+Substituting the tension and linear mass density,
+
+$$
+f_3
+=
+\frac{3}{2L}
+\sqrt{
+\frac{
+Mg
+}{
+m_{\mathrm{wire}}/L
+}
+}.
+$$
+
+Simplifying,
+
+$$
+\boxed{
+f_3
+=
+\frac{3}{2}
+\sqrt{
+\frac{
+Mg
+}{
+m_{\mathrm{wire}}L
+}
+}
+}.
+$$
+
+Using the numerical quantities supplied in the lecture diagram gives
+
+$$
+\boxed{
+f_3\approx130\ \mathrm{Hz}
+}.
+$$
+
+# Standing Sound Waves in Pipes
+
+Air columns can support standing sound waves when a traveling sound wave reflects from the ends of a pipe and interferes with itself.
+
+Because sound is longitudinal, the standing-wave pattern describes the longitudinal displacement of air particles. The permitted wavelengths are determined by the displacement boundary condition at each end of the pipe.
+
+## Boundary Conditions
+
+At a closed end, air cannot move through the wall. A closed end is therefore a **displacement node**:
+
+$$
+\boxed{
+\text{closed end}
+\longrightarrow
+\text{displacement node}
+}.
+$$
+
+At an open end, air can move freely. An open end is therefore a **displacement antinode**:
+
+$$
+\boxed{
+\text{open end}
+\longrightarrow
+\text{displacement antinode}
+}.
+$$
+
+These assignments apply when the standing-wave diagram represents air displacement.
+
+For pressure variations, the pattern is reversed:
+
+- A displacement node is a pressure antinode.
+- A displacement antinode is a pressure node.
+
+Thus, a closed end is a pressure antinode, while an open end is a pressure node.
+
+# Pipes with the Same Boundary Condition at Both Ends
+
+A pipe that is open at both ends and a pipe that is closed at both ends have different displacement patterns, but they permit the same set of wavelengths and frequencies.
+
+## Closed–Closed Pipe
+
+A pipe closed at both ends must have a displacement node at each end.
+
+For the fundamental mode, one-half wavelength fits inside the pipe:
+
+$$
+L=\frac{\lambda_1}{2}.
+$$
+
+Therefore,
+
+$$
+\boxed{
+\lambda_1=2L
+}.
+$$
+
+## Open–Open Pipe
+
+A pipe open at both ends must have a displacement antinode at each end.
+
+The fundamental mode also contains one-half wavelength:
+
+$$
+L=\frac{\lambda_1}{2},
+$$
+
+so
+
+$$
+\boxed{
+\lambda_1=2L
+}.
+$$
+
+Although the locations of the displacement nodes and antinodes differ from those in a closed–closed pipe, the permitted wavelengths are the same.
+
+## Harmonics for Open–Open and Closed–Closed Pipes
+
+For either type of pipe, the length contains an integer number of half-wavelengths:
+
+$$
+L=m\frac{\lambda_m}{2},
+\qquad
+m=1,2,3,\ldots
+$$
+
+Solving for wavelength gives
+
+$$
+\boxed{
+\lambda_m=\frac{2L}{m}
+}.
+$$
+
+The permitted frequencies are
+
+$$
+\boxed{
+f_m=\frac{mv}{2L}=mf_1,
+\qquad
+m=1,2,3,\ldots
 }
 $$
 
@@ -1015,95 +934,434 @@ with
 
 $$
 \boxed{
-I_0=1.0\times10^{-12}\ \mathrm{W/m^2}
+f_1=\frac{v}{2L}
 }.
 $$
 
-Solving for intensity gives
+All positive-integer harmonics are permitted:
+
+$$
+f_1,\ 2f_1,\ 3f_1,\ 4f_1,\ldots
+$$
+
+This is the same harmonic sequence produced by a string fixed at both ends.
+
+# Pipe Closed at One End and Open at the Other
+
+A closed–open pipe has unlike boundary conditions:
+
+- The closed end is a displacement node.
+- The open end is a displacement antinode.
+
+The shortest standing-wave pattern connecting a node to an antinode contains one-quarter wavelength.
+
+## Fundamental Mode
+
+For the fundamental,
+
+$$
+L=\frac{\lambda_1}{4}.
+$$
+
+Therefore,
 
 $$
 \boxed{
-I
-=
-I_0
-10^{\beta/(10\ \mathrm{dB})}
+\lambda_1=4L
 }.
 $$
 
-The difference between two sound intensity levels is
+The fundamental frequency is
 
 $$
 \boxed{
-\beta_2-\beta_1
-=
-10\log_{10}
-\left(
-\frac{I_2}{I_1}
-\right)
-\ \mathrm{dB}
+f_1=\frac{v}{4L}
 }.
 $$
 
-Doubling intensity increases the sound intensity level by approximately
+For the same length and wave speed, the fundamental frequency of a closed–open pipe is one-half that of an open–open or closed–closed pipe.
+
+## Higher Modes
+
+The next standing-wave pattern that satisfies a node at one end and an antinode at the other contains three-quarters of a wavelength:
+
+$$
+L=\frac{3\lambda_3}{4}.
+$$
+
+Therefore,
+
+$$
+\lambda_3=\frac{4L}{3}.
+$$
+
+The following allowed mode contains five-quarters of a wavelength:
+
+$$
+L=\frac{5\lambda_5}{4},
+$$
+
+so
+
+$$
+\lambda_5=\frac{4L}{5}.
+$$
+
+In general,
+
+$$
+L=m\frac{\lambda_m}{4},
+\qquad
+m=1,3,5,\ldots
+$$
+
+Therefore,
 
 $$
 \boxed{
-3.0\ \mathrm{dB}
+\lambda_m=\frac{4L}{m},
+\qquad
+m=1,3,5,\ldots
+}
+$$
+
+and
+
+$$
+\boxed{
+f_m=\frac{mv}{4L}=mf_1,
+\qquad
+m=1,3,5,\ldots
 }.
 $$
 
-For a stationary source and moving observer:
+Only the odd harmonics are permitted:
 
 $$
 \boxed{
-f_{\mathrm{obs}}
-=
-f_0
-\left(
-1+\frac{v_o}{v}
-\right)
-}
+f_1,\ 3f_1,\ 5f_1,\ 7f_1,\ldots
+}.
 $$
 
-when the observer moves toward the source, and
+The third harmonic is the **second allowed resonance**, and the fifth harmonic is the **third allowed resonance**. There are no second or fourth harmonics in the ideal closed–open pipe.
 
-$$
-\boxed{
-f_{\mathrm{obs}}
-=
-f_0
-\left(
-1-\frac{v_o}{v}
-\right)
-}
-$$
+# Speed of Sound
 
-when the observer moves away.
-
-For a moving source and stationary observer:
+For sound waves in air under typical conditions, use
 
 $$
 \boxed{
-f_{\mathrm{obs}}
-=
-\frac{f_0}{
-1-\frac{v_s}{v}
-}
-}
+v\approx343\ \mathrm{m/s}
+}.
 $$
 
-when the source moves toward the observer, and
+The speed of sound varies with temperature and other properties of the medium, but $343\ \mathrm{m/s}$ is the value used in these examples.
+
+# Worked Example: Third Harmonic of a Closed–Open Pipe
+
+Consider a pipe that is closed at one end and open at the other, with length
+
+$$
+L=0.85\ \mathrm{m}.
+$$
+
+Find the frequency of the third harmonic.
+
+For a closed–open pipe,
+
+$$
+f_m=\frac{mv}{4L}
+$$
+
+for odd values of $m$.
+
+Using $m=3$,
+
+$$
+f_3
+=
+\frac{3v}{4L}.
+$$
+
+Substituting the known values,
+
+$$
+f_3
+=
+\frac{
+3(343\ \mathrm{m/s})
+}{
+4(0.85\ \mathrm{m})
+}.
+$$
+
+Therefore,
+
+$$
+f_3
+\approx
+302.6\ \mathrm{Hz}.
+$$
+
+To the appropriate precision,
 
 $$
 \boxed{
-f_{\mathrm{obs}}
+f_3\approx3.0\times10^2\ \mathrm{Hz}
+}.
+$$
+
+The corresponding fundamental frequency is
+
+$$
+f_1
 =
-\frac{f_0}{
-1+\frac{v_s}{v}
+\frac{
+343\ \mathrm{m/s}
+}{
+4(0.85\ \mathrm{m})
 }
+\approx100.9\ \mathrm{Hz},
+$$
+
+which confirms that
+
+$$
+f_3=3f_1.
+$$
+
+# Worked Example: Fifth Harmonic of the Same Pipe
+
+For the fifth harmonic,
+
+$$
+f_5
+=
+\frac{5v}{4L}.
+$$
+
+Substituting,
+
+$$
+f_5
+=
+\frac{
+5(343\ \mathrm{m/s})
+}{
+4(0.85\ \mathrm{m})
+}.
+$$
+
+Therefore,
+
+$$
+f_5
+\approx504.4\ \mathrm{Hz}.
+$$
+
+Thus,
+
+$$
+\boxed{
+f_5\approx5.0\times10^2\ \mathrm{Hz}
+}.
+$$
+
+Because
+
+$$
+f_3=3f_1
+$$
+
+and
+
+$$
+f_5=5f_1,
+$$
+
+the fifth and third harmonics are related by
+
+$$
+\frac{f_5}{f_3}
+=
+\frac{5f_1}{3f_1}
+=
+\frac{5}{3}.
+$$
+
+Therefore,
+
+$$
+\boxed{
+f_5=\frac{5}{3}f_3
+}.
+$$
+
+# Strategy for Standing-Wave Problems
+
+## 1. Identify the Boundary Conditions
+
+Determine whether each end must be a displacement node or antinode.
+
+- A fixed string end is a node.
+- A closed pipe end is a displacement node.
+- An open pipe end is a displacement antinode.
+
+## 2. Sketch the Requested Mode
+
+Draw the simplest standing-wave pattern that satisfies the boundary conditions, then add the required number of additional segments for the requested harmonic.
+
+## 3. Relate the Length to the Wavelength
+
+For a fixed–fixed string, open–open pipe, or closed–closed pipe:
+
+$$
+\lambda_m=\frac{2L}{m},
+\qquad
+m=1,2,3,\ldots
+$$
+
+For a closed–open pipe:
+
+$$
+\lambda_m=\frac{4L}{m},
+\qquad
+m=1,3,5,\ldots
+$$
+
+## 4. Determine the Wave Speed
+
+For a string,
+
+$$
+v=\sqrt{\frac{T}{\mu}}.
+$$
+
+For sound in air under typical conditions,
+
+$$
+v\approx343\ \mathrm{m/s}.
+$$
+
+## 5. Calculate the Frequency
+
+Use
+
+$$
+f_m=\frac{v}{\lambda_m}.
+$$
+
+## 6. Check the Result
+
+Confirm that:
+
+- The answer has units of hertz.
+- Higher harmonics have higher frequencies.
+- The node and antinode pattern satisfies the boundary conditions.
+- A closed–open pipe contains only odd harmonics.
+
+# Summary
+
+When waves overlap in a linear medium, their displacements add:
+
+$$
+\boxed{
+y_{\mathrm{net}}
+=
+\sum_i y_i
+}.
+$$
+
+In-phase waves interfere constructively. Equal waves separated by $\pi$ radians interfere destructively.
+
+A reflection from a fixed end is inverted, while a reflection from a free end is not inverted.
+
+A standing wave contains fixed nodes and antinodes. It forms only when the wavelength and boundary conditions permit a resonant mode.
+
+For a string fixed at both ends,
+
+$$
+\boxed{
+\lambda_m=\frac{2L}{m}
 }
 $$
 
-when the source moves away.
+and
 
-Approaching motion produces a higher observed frequency. Receding motion produces a lower observed frequency.
+$$
+\boxed{
+f_m=\frac{mv}{2L}=mf_1,
+\qquad
+m=1,2,3,\ldots
+}.
+$$
+
+The wave speed on a string is
+
+$$
+\boxed{
+v=\sqrt{\frac{T}{\mu}}
+}
+$$
+
+with
+
+$$
+\boxed{
+\mu=\frac{m_{\mathrm{wire}}}{L}
+}.
+$$
+
+For open–open and closed–closed pipes,
+
+$$
+\boxed{
+\lambda_m=\frac{2L}{m}
+}
+$$
+
+and
+
+$$
+\boxed{
+f_m=\frac{mv}{2L}=mf_1,
+\qquad
+m=1,2,3,\ldots
+}.
+$$
+
+For a closed–open pipe,
+
+$$
+\boxed{
+\lambda_m=\frac{4L}{m}
+}
+$$
+
+and
+
+$$
+\boxed{
+f_m=\frac{mv}{4L}=mf_1,
+\qquad
+m=1,3,5,\ldots
+}.
+$$
+
+Closed–open pipes support only odd harmonics.
+
+The principal standing-wave relationships are:
+
+| System | End conditions | Allowed $m$ | Wavelengths | Frequencies |
+|---|---|---:|---|---|
+| Fixed–fixed string | Node–node | $1,2,3,\ldots$ | $\lambda_m=\dfrac{2L}{m}$ | $f_m=\dfrac{mv}{2L}$ |
+| Open–open pipe | Antinode–antinode | $1,2,3,\ldots$ | $\lambda_m=\dfrac{2L}{m}$ | $f_m=\dfrac{mv}{2L}$ |
+| Closed–closed pipe | Node–node | $1,2,3,\ldots$ | $\lambda_m=\dfrac{2L}{m}$ | $f_m=\dfrac{mv}{2L}$ |
+| Closed–open pipe | Node–antinode | $1,3,5,\ldots$ | $\lambda_m=\dfrac{4L}{m}$ | $f_m=\dfrac{mv}{4L}$ |
+
+---
+
+Up Next: [Phase Difference and Two-Source Interference](../../2026-07-30-M5-5/Source/Lecture-Transcript.md)
+Previous: [Sound Intensity, Decibels, and the Doppler Effect](../../2026-07-28-M5-3/Source/Lecture-Transcript.md)
+
+---

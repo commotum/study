@@ -1,5 +1,10 @@
 # Center of Mass on a Symmetry Axis
 
+<!--
+lesson-id: 212-M2-025
+topic-code: MTH212.M2.25
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -280,3 +285,17 @@ options:
    - $x$-axis symmetry gives $y_{\mathrm{cm}}=0$;
    - $y$-axis symmetry gives $x_{\mathrm{cm}}=0$.
 4. Do not assume both coordinates vanish. An off-center hole can shift the center of mass along the symmetry axis while leaving the perpendicular coordinate equal to zero.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

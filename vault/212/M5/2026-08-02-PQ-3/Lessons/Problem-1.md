@@ -1,5 +1,10 @@
 # Deciding What Changes a Pendulum's Frequency
 
+<!--
+lesson-id: 212-M5-045
+topic-code: MTH212.M5.45
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -208,3 +213,22 @@ When a pendulum parameter changes:
 | $L\to kL$ | $1/\sqrt{k}$ |
 
 The main trap is inventing a mass dependence that the simple-pendulum formula does not contain.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
+Next: [Period of a Uniform Rod as a Physical Pendulum](../../../M4/2026-07-22-M4-2/Lessons/Problem-3.md)
+
+Study guide index: 05/20
+
+---
+
+<!-- lesson-nav:end -->

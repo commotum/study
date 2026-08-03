@@ -1,5 +1,10 @@
 # Choosing the Net Force Direction for Clockwise Speeding Up
 
+<!--
+lesson-id: 212-M1-054
+topic-code: MTH212.M1.54
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -252,3 +257,17 @@ For a net-force diagram in circular motion, use this checklist:
 For a particle on the lower-right side moving clockwise and speeding up, inward is up-left and the forward tangent is down-left. The sum points leftward with an inward lean, so the matching choice is D.
 
 Do not choose the inward-only arrow unless the speed is constant. Do not choose the opposite tangential lean unless the particle is slowing down or moving the other way.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

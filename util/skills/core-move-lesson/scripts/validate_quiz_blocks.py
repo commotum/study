@@ -20,7 +20,26 @@ SUPPORTED_TYPES = {
     "blank",
 }
 
-TOP_KEY_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_-]*\s*:")
+# These mirror the plugin's canonical strict root schemas in
+# vault/.obsidian/plugins/quiz-blocks/main.js. The validator deliberately
+# requires canonical `content` rather than the plugin's legacy root aliases
+# `text` and `question`. In particular, feedback is a root field only for free
+# and blank quizzes; radio/checkbox feedback belongs on individual options.
+COMMON_ROOT_FIELDS = {"type", "id", "content", "gated", "shuffle"}
+TYPE_ROOT_FIELDS = {
+    "radio": {"options"},
+    "checkbox": {"options"},
+    "select": {"options", "questions"},
+    "multi-select": {"questions"},
+    "noodle": {"options", "questions"},
+    "free": {"correct", "feedback"},
+    "blank": {"require_exact", "feedback"},
+}
+
+TOP_KEY_CAPTURE_RE = re.compile(
+    r'''^(?:"([^"]+)"|'([^']+)'|([A-Za-z_][A-Za-z0-9_.-]*))\s*:'''
+)
+TOP_KEY_RE = TOP_KEY_CAPTURE_RE
 RAW_MCQ_RE = re.compile(r"^\s*-\s+\[[ xX]\]\s+[A-Za-z]\.\s+")
 OPEN_FENCE = "```quiz"
 CLOSE_FENCE = "```"
@@ -181,6 +200,27 @@ def count_correct_true(items: list[list[str]]) -> int:
     )
 
 
+def validate_top_level_fields(path: Path, block: QuizBlock, quiz_type: str) -> list[Issue]:
+    """Reject fields that the plugin's strict schema rejects for this type."""
+    allowed = COMMON_ROOT_FIELDS | TYPE_ROOT_FIELDS[quiz_type]
+    issues: list[Issue] = []
+    for offset, line in enumerate(block.lines, start=1):
+        match = TOP_KEY_CAPTURE_RE.match(line)
+        if match:
+            field = next(group for group in match.groups() if group is not None)
+        else:
+            field = None
+        if field is not None and field not in allowed:
+            issues.append(
+                Issue(
+                    path,
+                    block.start_line + offset,
+                    f"unknown top-level field for {quiz_type} quiz: {field}",
+                )
+            )
+    return issues
+
+
 def option_ids(items: list[list[str]]) -> list[str]:
     ids: list[str] = []
     for item in items:
@@ -313,6 +353,7 @@ def validate_block(
         return [Issue(path, block.start_line, "quiz block is missing type")]
     if quiz_type not in SUPPORTED_TYPES:
         return [Issue(path, block.start_line, f"unsupported quiz type: {quiz_type}")]
+    issues.extend(validate_top_level_fields(path, block, quiz_type))
     if require_radio_practice and quiz_type != "radio":
         issues.append(Issue(path, block.start_line, f"expected type: radio for core-move practice, found {quiz_type}"))
     if strict_ids and not scalar_value(block.lines, "id"):

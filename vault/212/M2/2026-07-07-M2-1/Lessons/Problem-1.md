@@ -1,5 +1,10 @@
 # Finding the Center of Mass of Two Point Masses
 
+<!--
+lesson-id: 212-M2-001
+topic-code: MTH212.M2.01
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -251,6 +256,21 @@ options:
   content: |-
     `9d/14`
   correct: true
+  feedback: |-
+    For two point masses on the $x$-axis,
+
+    $$
+    x_{\mathrm{cm}}=\frac{m_1x_1+m_2x_2}{m_1+m_2}.
+    $$
+
+    Here, $m_1=m$ at $x_1=0$ and $m_2=1.8m$ at $x_2=d$. Therefore,
+
+    $$
+    x_{\mathrm{cm}}
+    =\frac{m(0)+(1.8m)d}{m+1.8m}
+    =\frac{1.8}{2.8}d
+    =\frac{9d}{14}.
+    $$
 - id: b
   content: |-
     `d/2`
@@ -263,21 +283,6 @@ options:
 - id: e
   content: |-
     `1.8d`
-feedback: |-
-  For two point masses on the $x$-axis,
-
-  $$
-  x_{\mathrm{cm}}=\frac{m_1x_1+m_2x_2}{m_1+m_2}.
-  $$
-
-  Here, $m_1=m$ at $x_1=0$ and $m_2=1.8m$ at $x_2=d$. Therefore,
-
-  $$
-  x_{\mathrm{cm}}
-  =\frac{m(0)+(1.8m)d}{m+1.8m}
-  =\frac{1.8}{2.8}d
-  =\frac{9d}{14}.
-  $$
 ```
 
 ---
@@ -290,3 +295,22 @@ feedback: |-
 - Include every mass in the denominator, even when its position is zero.
 - Cancel only common factors of the complete numerator and denominator.
 - Check that the answer lies between the masses and closer to the heavier one.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 2 Study Guide](../../../M3/2026-07-20-Q-2/Study-Guide.md)
+Next: [Finding a Two-Object Center of Mass in the Plane](../../2026-07-15-HW-4/Lessons/Problem-10.md)
+
+Study guide index: 01/20
+
+---
+
+<!-- lesson-nav:end -->

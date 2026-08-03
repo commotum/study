@@ -1,5 +1,10 @@
 # Finding the Period of a Uniform Rod About an Offset Pivot
 
+<!--
+lesson-id: 212-M4-013
+topic-code: MTH212.M4.13
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -327,35 +332,35 @@ options:
 - id: a
   content: 1.3
   correct: true
+  feedback: |-
+    The pivot lies a distance
+
+    $$
+    d=\frac{L}{2}-\frac{L}{6}=\frac{L}{3}
+    $$
+
+    from the rod's center of mass. By the parallel-axis theorem,
+
+    $$
+    I_p=\frac{1}{12}mL^2+m\left(\frac{L}{3}\right)^2
+    =\frac{7}{36}mL^2.
+    $$
+
+    Therefore,
+
+    $$
+    T=2\pi\sqrt{\frac{I_p}{mgd}}
+    =2\pi\sqrt{\frac{7L}{12g}}
+    =1.3269\ldots\ \mathrm{s}.
+    $$
+
+    The measured length has two significant figures, so $T=1.3\ \mathrm{s}$. The rod's mass cancels.
 - id: b
   content: 1.4
 - id: c
   content: 0.21
 - id: d
   content: 0.87
-feedback: |-
-  The pivot lies a distance
-
-  $$
-  d=\frac{L}{2}-\frac{L}{6}=\frac{L}{3}
-  $$
-
-  from the rod's center of mass. By the parallel-axis theorem,
-
-  $$
-  I_p=\frac{1}{12}mL^2+m\left(\frac{L}{3}\right)^2
-  =\frac{7}{36}mL^2.
-  $$
-
-  Therefore,
-
-  $$
-  T=2\pi\sqrt{\frac{I_p}{mgd}}
-  =2\pi\sqrt{\frac{7L}{12g}}
-  =1.3269\ldots\ \mathrm{s}.
-  $$
-
-  The measured length has two significant figures, so $T=1.3\ \mathrm{s}$. The rod's mass cancels.
 ```
 
 ---
@@ -376,3 +381,17 @@ For a pivot $L/6$ below the upper end, $d=L/3$, $I_p=\frac{7}{36}mL^2$, and
 $$
 T=2\pi\sqrt{\frac{7L}{12g}}.
 $$
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

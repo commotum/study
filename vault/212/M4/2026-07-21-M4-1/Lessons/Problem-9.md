@@ -1,5 +1,10 @@
 # Finding Maximum Speed in a Spring Oscillation
 
+<!--
+lesson-id: 212-M4-009
+topic-code: MTH212.M4.09
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -79,6 +84,8 @@ options:
   content: |-
     $1.5\ \mathrm{m/s}$
   correct: true
+  feedback: |-
+    Use the full amplitude and equate the endpoint energies: $v_{\max}=A\sqrt{k/m}=(0.50)\sqrt{18/2.0}=1.5\ \mathrm{m/s}$.
 - id: p9-match-b
   content: |-
     $4.5\ \mathrm{m/s}$
@@ -91,8 +98,6 @@ options:
 - id: p9-match-e
   content: |-
     $9.0\ \mathrm{m/s}$
-feedback: |-
-  Use the full amplitude and equate the endpoint energies: $v_{\max}=A\sqrt{k/m}=(0.50)\sqrt{18/2.0}=1.5\ \mathrm{m/s}$.
 ```
 
 ---
@@ -130,6 +135,8 @@ options:
   content: |-
     $v_{\max}=A\sqrt{\frac{k}{m}}$
   correct: true
+  feedback: |-
+    First isolate $v_{\max}^2=kA^2/m$, then take the nonnegative square root. The square root changes $A^2$ into $A$.
 - id: p9-isolate-b
   content: |-
     $v_{\max}=A\frac{k}{m}$
@@ -142,8 +149,6 @@ options:
 - id: p9-isolate-e
   content: |-
     $v_{\max}=\frac{1}{A}\sqrt{\frac{k}{m}}$
-feedback: |-
-  First isolate $v_{\max}^2=kA^2/m$, then take the nonnegative square root. The square root changes $A^2$ into $A$.
 ```
 
 ---
@@ -179,6 +184,8 @@ options:
   content: |-
     It is half as large.
   correct: true
+  feedback: |-
+    Since $v_{\max}\propto 1/\sqrt m$, multiplying the mass by $4$ multiplies the speed by $1/\sqrt4=1/2$.
 - id: p9-scale-b
   content: |-
     It is one-fourth as large.
@@ -191,8 +198,6 @@ options:
 - id: p9-scale-e
   content: |-
     It is unchanged.
-feedback: |-
-  Since $v_{\max}\propto 1/\sqrt m$, multiplying the mass by $4$ multiplies the speed by $1/\sqrt4=1/2$.
 ```
 
 ---
@@ -245,6 +250,22 @@ options:
   content: |-
     $8.8$
   correct: true
+  feedback: |-
+    At maximum displacement, the energy is entirely spring potential; at equilibrium, it is entirely kinetic:
+
+    $$
+    \frac12kA^2=\frac12mv_{\max}^2.
+    $$
+
+    Thus,
+
+    $$
+    v_{\max}=A\sqrt{\frac{k}{m}}
+    =(0.92\ \mathrm{m})\sqrt{\frac{78\ \mathrm{N/m}}{0.86\ \mathrm{kg}}}
+    =8.7617\ldots\ \mathrm{m/s}.
+    $$
+
+    The measured givens have two significant figures, so $v_{\max}=8.8\ \mathrm{m/s}$.
 - id: p9-source-b
   content: |-
     $8.7617$
@@ -257,22 +278,6 @@ options:
 - id: p9-source-e
   content: |-
     $9.6$
-feedback: |-
-  At maximum displacement, the energy is entirely spring potential; at equilibrium, it is entirely kinetic:
-
-  $$
-  \frac12kA^2=\frac12mv_{\max}^2.
-  $$
-
-  Thus,
-
-  $$
-  v_{\max}=A\sqrt{\frac{k}{m}}
-  =(0.92\ \mathrm{m})\sqrt{\frac{78\ \mathrm{N/m}}{0.86\ \mathrm{kg}}}
-  =8.7617\ldots\ \mathrm{m/s}.
-  $$
-
-  The measured givens have two significant figures, so $v_{\max}=8.8\ \mathrm{m/s}$.
 ```
 
 ---
@@ -284,3 +289,17 @@ feedback: |-
 - Make speed the subject, then choose its nonnegative magnitude: $v_{\max}=A\sqrt{k/m}$.
 - Check that the result has units of $\mathrm{m/s}$ and round only after the full calculation.
 - Main trap: the release distance is the full amplitude, and the square root must apply to $k/m$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,5 +1,10 @@
 # Mass Removed from a Uniform Disk
 
+<!--
+lesson-id: 212-M2-024
+topic-code: MTH212.M2.24
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -197,3 +202,17 @@ m_{\text{removed}}=M\left(\frac{r}{R}\right)^2.
 $$
 
 The hole's position does not affect its mass. The main trap is forgetting to square the radius fraction. For $r=R/2$, the removed mass is $M/4$ (written as $m/4$ in the source choices).
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

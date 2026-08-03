@@ -1,5 +1,10 @@
 # Inferring Particle Motion From a Traveling-Wave Snapshot
 
+<!--
+lesson-id: 212-M5-005
+topic-code: MTH212.M5.05
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -253,3 +258,22 @@ $$
 \text{negative slope}\to\text{up},\quad
 \text{zero slope}\to\text{momentary rest}}
 $$
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
+Next: [Finding Wave Speed from a Traveling-Wave Equation](../../2026-07-28-HW-7/Lessons/Problem-10.md)
+
+Study guide index: 08/20
+
+---
+
+<!-- lesson-nav:end -->

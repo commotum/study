@@ -1,5 +1,10 @@
 # Finding a Geostationary Satellite's Altitude
 
+<!--
+lesson-id: 212-M3-003
+topic-code: MTH212.M3.03
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -77,6 +82,8 @@ options:
   content: |-
     $43200\ \mathrm s$
   correct: true
+  feedback: |-
+    Multiply by $60\ \mathrm{min/h}$ and $60\ \mathrm{s/min}$: $12(60)(60)=43200\ \mathrm s$.
 - id: p3-time-b
   content: |-
     $720\ \mathrm s$
@@ -89,8 +96,6 @@ options:
 - id: p3-time-e
   content: |-
     $4.32\times10^6\ \mathrm s$
-feedback: |-
-  Multiply by $60\ \mathrm{min/h}$ and $60\ \mathrm{s/min}$: $12(60)(60)=43200\ \mathrm s$.
 ```
 
 ---
@@ -131,6 +136,8 @@ options:
   content: |-
     $r=\left(\dfrac{GMT^2}{4\pi^2}\right)^{1/3}$
   correct: true
+  feedback: |-
+    Multiply by $GM$, divide by $4\pi^2$, and then take the cube root of the entire result.
 - id: p3-radius-b
   content: |-
     $r=\left(\dfrac{4\pi^2T^2}{GM}\right)^{1/3}$
@@ -143,8 +150,6 @@ options:
 - id: p3-radius-e
   content: |-
     $r=\left(\dfrac{GMT^2}{4\pi}\right)^{1/2}$
-feedback: |-
-  Multiply by $GM$, divide by $4\pi^2$, and then take the cube root of the entire result.
 ```
 
 ---
@@ -184,6 +189,8 @@ options:
   content: |-
     $2.5\times10^4\ \mathrm{km}$
   correct: true
+  feedback: |-
+    Subtract the planet's radius, then divide by $1000$: $(3.2\times10^7-7.0\times10^6)\ \mathrm m=2.5\times10^7\ \mathrm m=2.5\times10^4\ \mathrm{km}$.
 - id: p3-altitude-b
   content: |-
     $3.2\times10^4\ \mathrm{km}$
@@ -196,8 +203,6 @@ options:
 - id: p3-altitude-e
   content: |-
     $7.0\times10^3\ \mathrm{km}$
-feedback: |-
-  Subtract the planet's radius, then divide by $1000$: $(3.2\times10^7-7.0\times10^6)\ \mathrm m=2.5\times10^7\ \mathrm m=2.5\times10^4\ \mathrm{km}$.
 ```
 
 ---
@@ -254,6 +259,30 @@ options:
   content: |-
     $35800$
   correct: true
+  feedback: |-
+    For a circular orbit,
+
+    $$
+    T^2=\frac{4\pi^2r^3}{GM_E},
+    \qquad
+    r=\left(\frac{GM_ET^2}{4\pi^2}\right)^{1/3}.
+    $$
+
+    With $T=86400\ \mathrm{s}$,
+
+    $$
+    r=4.2227\times10^7\ \mathrm{m}.
+    $$
+
+    Subtracting Earth's radius gives
+
+    $$
+    h=r-r_E
+    =3.5847\times10^7\ \mathrm{m}
+    =3.5847\times10^4\ \mathrm{km}.
+    $$
+
+    The supplied constants support three significant figures, so $h=3.58\times10^4\ \mathrm{km}$, entered as `35800`.
 - id: p3-source-b
   content: |-
     $42200$
@@ -266,30 +295,6 @@ options:
 - id: p3-source-e
   content: |-
     $6380$
-feedback: |-
-  For a circular orbit,
-
-  $$
-  T^2=\frac{4\pi^2r^3}{GM_E},
-  \qquad
-  r=\left(\frac{GM_ET^2}{4\pi^2}\right)^{1/3}.
-  $$
-
-  With $T=86400\ \mathrm{s}$,
-
-  $$
-  r=4.2227\times10^7\ \mathrm{m}.
-  $$
-
-  Subtracting Earth's radius gives
-
-  $$
-  h=r-r_E
-  =3.5847\times10^7\ \mathrm{m}
-  =3.5847\times10^4\ \mathrm{km}.
-  $$
-
-  The supplied constants support three significant figures, so $h=3.58\times10^4\ \mathrm{km}$, entered as `35800`.
 ```
 
 ---
@@ -301,3 +306,17 @@ feedback: |-
 - Make orbital radius the subject: $r=[GM_ET^2/(4\pi^2)]^{1/3}$.
 - Convert radius to altitude with $h=r-r_E$ while both quantities are in meters.
 - Convert meters to kilometers with a factor whose meters cancel, and round only at the end; for Problem 3, enter `35800`.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

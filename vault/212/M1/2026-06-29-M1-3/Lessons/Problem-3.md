@@ -1,5 +1,10 @@
 # Comparing Ferris-Wheel Normal Forces at the Top and Bottom
 
+<!--
+lesson-id: 212-M1-053
+topic-code: MTH212.M1.53
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -267,3 +272,17 @@ N_{\text{bottom}}-mg=m\omega^2r.
 $$
 
 Solving gives $N_{\text{top}}=mg-m\omega^2r$ and $N_{\text{bottom}}=mg+m\omega^2r$, so the normal force is smaller at the top. The main trap is using the same sign pattern at both positions instead of changing the inward direction.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

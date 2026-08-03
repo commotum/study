@@ -1,5 +1,10 @@
 # Classifying Interference from Completely Out-of-Phase Sources
 
+<!--
+lesson-id: 212-M5-038
+topic-code: MTH212.M5.38
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -319,3 +324,17 @@ For two sources that begin completely out of phase:
 4. Classify: integer means destructive, half-integer means constructive, and any other value means neither.
 
 For completely out-of-phase sources, remember the reversal: an integer-wavelength path difference is destructive, while a half-integer-wavelength path difference is constructive. The main trap is to ignore the initial $\pi$ phase difference and classify from $\Delta r$ alone.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

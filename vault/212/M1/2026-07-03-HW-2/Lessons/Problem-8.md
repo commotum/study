@@ -1,5 +1,10 @@
 # Finding Uphill Friction on a Banked Curve
 
+<!--
+lesson-id: 212-M1-062
+topic-code: MTH212.M1.62
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -328,3 +333,17 @@ f_s=mg\sin\theta-\dfrac{mv^2}{r}\cos\theta
 $$
 
 The main trap is the sign of the radial friction component: uphill friction points outward on the bank, so it subtracts from the inward centripetal-force equation.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

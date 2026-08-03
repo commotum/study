@@ -1,5 +1,10 @@
 # Calculating a Rod's Moment of Inertia from Linear Density
 
+<!--
+lesson-id: 212-M2-021
+topic-code: MTH212.M2.21
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -275,3 +280,17 @@ I=\int_0^L x^2\lambda(x)\,dx.
 $$
 
 The main trap is computing $\int\lambda(x)\,dx$, which gives mass, and forgetting the extra squared-distance factor needed for moment of inertia.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

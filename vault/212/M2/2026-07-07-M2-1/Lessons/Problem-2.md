@@ -1,5 +1,10 @@
 # Center of Mass of Two Point Masses
 
+<!--
+lesson-id: 212-M2-002
+topic-code: MTH212.M2.02
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -264,7 +269,6 @@ The result is between the masses and is closer to the heavier block at the origi
 ```quiz
 type: radio
 id: m2-1lec-q1
-require_exact: true
 content: |-
   **Question 1**
 
@@ -327,3 +331,17 @@ If $m_1=rm_2$ is at $x=0$ and $m_2$ is at $x=L$, then
 $$
 \boxed{x_{\mathrm{cm}}=\frac{L}{r+1}}.
 $$
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

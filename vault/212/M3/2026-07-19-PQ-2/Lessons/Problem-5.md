@@ -1,5 +1,10 @@
 # Four Stars Orbiting at the Corners of a Square
 
+<!--
+lesson-id: 212-M3-023
+topic-code: MTH212.M3.23
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -301,3 +306,22 @@ For four identical masses at the corners of a square:
 5. For potential energy, count four edge pairs and two diagonal pairs exactly once.
 
 The main traps are swapping $\sqrt{2}L$ with $L/\sqrt{2}$, failing to resolve the adjacent forces, and double-counting pairs.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 2 Study Guide](../../2026-07-20-Q-2/Study-Guide.md)
+Next: End of Quiz 2 Study Guide.
+
+Study guide index: 20/20
+
+---
+
+<!-- lesson-nav:end -->

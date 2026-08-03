@@ -1,5 +1,10 @@
 # Reading Particle Motion From a Displacement-Time Graph
 
+<!--
+lesson-id: 212-M5-001
+topic-code: MTH212.M5.01
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -280,3 +285,17 @@ For a displacement-versus-time graph:
 5. Keep transverse particle motion separate from the wave pattern's propagation direction.
 
 The main trap is choosing “right” from the propagation arrow instead of choosing “down” from the negative displacement-time slope.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,5 +1,10 @@
 # Finding Radial Acceleration From Inward Forces
 
+<!--
+lesson-id: 212-M1-055
+topic-code: MTH212.M1.55
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -243,3 +248,17 @@ a_r = \frac{T}{m} + g\cos\theta.
 $$
 
 The main trap is using the length $L$, using the full weight $mg$, or using $mg\sin\theta$. In this diagram, $\theta$ is the angle that makes the inward part of weight the adjacent component, so the radial weight component is $mg\cos\theta$. For numerical work, keep the calculator in degree mode when $\theta$ is given in degrees.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

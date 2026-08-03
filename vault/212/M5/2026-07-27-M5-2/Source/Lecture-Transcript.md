@@ -1,6 +1,7 @@
 # Physics 212: Traveling Waves, Refraction, and Intensity
 
 Welcome back to Physics 212.
+[View Notes](Lecture-Notes.md)
 
 ## Announcements
 
@@ -1202,3 +1203,10 @@ $$
 I_0=1.0\times10^{-12}\ \mathrm{W/m^2}
 }.
 $$
+
+---
+
+Up Next: [Sound Intensity, Decibels, and the Doppler Effect](../../2026-07-28-M5-3/Source/Lecture-Transcript.md)
+Previous: [From Oscillations to Wave Motion](../../2026-07-23-M5-1/Source/Lecture-Transcript.md)
+
+---

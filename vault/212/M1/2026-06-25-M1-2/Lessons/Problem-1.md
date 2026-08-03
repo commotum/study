@@ -1,5 +1,10 @@
 # Find Angular Speed From Angular Position
 
+<!--
+lesson-id: 212-M1-037
+topic-code: MTH212.M1.37
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -275,3 +280,17 @@ When $\theta(t)$ is given and the question asks for angular speed at a time, use
 4. Report the value in $\mathrm{rad}/\mathrm{s}$, or enter just the number if the prompt asks for no units.
 
 The main trap is substituting into the position formula instead of its derivative.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

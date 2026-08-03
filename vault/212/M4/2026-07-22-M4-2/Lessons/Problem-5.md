@@ -1,5 +1,10 @@
 # Period of a Rod-and-Point-Mass Pendulum
 
+<!--
+lesson-id: 212-M4-014
+topic-code: MTH212.M4.14
+-->
+
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -74,6 +79,8 @@ options:
   content: |-
     $2\pi\sqrt{\dfrac{I_1+I_2}{g(m_1d_1+m_2d_2)}}$
   correct: true
+  feedback: |-
+    Add the pivot moments and add each component's own $m_id_i$ term. Moments of inertia add; they do not multiply. Also, each mass must stay paired with the distance to its own center of mass.
 - id: p5-composite-formula-b
   content: |-
     $2\pi\sqrt{\dfrac{I_1I_2}{g(m_1d_1+m_2d_2)}}$
@@ -83,8 +90,6 @@ options:
 - id: p5-composite-formula-d
   content: |-
     $2\pi\sqrt{\dfrac{I_1+I_2}{g(m_1d_2+m_2d_1)}}$
-feedback: |-
-  Add the pivot moments and add each component's own $m_id_i$ term. Moments of inertia add; they do not multiply. Also, each mass must stay paired with the distance to its own center of mass.
 ```
 
 ---
@@ -127,6 +132,8 @@ options:
   content: |-
     $I_{\mathrm{total}}=\frac13m_rL^2+m_pL^2$ and $\sum m_id_i=m_r\frac L2+m_pL$
   correct: true
+  feedback: |-
+    The rod uses its end-pivot moment $\frac13m_rL^2$ and center-of-mass distance $L/2$. The point mass is distance $L$ from the pivot, so its moment is $m_pL^2$ and its torque weight is $m_pL$.
 - id: p5-component-ledger-b
   content: |-
     $I_{\mathrm{total}}=\frac1{12}m_rL^2+m_pL^2$ and $\sum m_id_i=m_r\frac L2+m_pL$
@@ -136,8 +143,6 @@ options:
 - id: p5-component-ledger-d
   content: |-
     $I_{\mathrm{total}}=\frac13m_rL^2+m_pL$ and $\sum m_id_i=m_r+m_p$
-feedback: |-
-  The rod uses its end-pivot moment $\frac13m_rL^2$ and center-of-mass distance $L/2$. The point mass is distance $L$ from the pivot, so its moment is $m_pL^2$ and its torque weight is $m_pL$.
 ```
 
 ---
@@ -212,6 +217,8 @@ options:
   content: |-
     $1.64\ \mathrm s$
   correct: true
+  feedback: |-
+    Substitute with parentheses into $T=2\pi\sqrt{L(m_r/3+m_p)/[g(m_r/2+m_p)]}$. This gives $1.637\ldots\ \mathrm s$, or $1.64\ \mathrm s$. The value $1.79\ \mathrm s$ ignores the point mass and uses the rod-only period.
 - id: p5-evaluate-composite-b
   content: |-
     $1.79\ \mathrm s$
@@ -221,8 +228,6 @@ options:
 - id: p5-evaluate-composite-d
   content: |-
     $2.32\ \mathrm s$
-feedback: |-
-  Substitute with parentheses into $T=2\pi\sqrt{L(m_r/3+m_p)/[g(m_r/2+m_p)]}$. This gives $1.637\ldots\ \mathrm s$, or $1.64\ \mathrm s$. The value $1.79\ \mathrm s$ ignores the point mass and uses the rod-only period.
 ```
 
 ---
@@ -286,6 +291,23 @@ options:
   content: |-
     2.0
   correct: true
+  feedback: |-
+    The total moment of inertia about the pivot is
+
+    $$
+    I=\frac13m_rL^2+m_pL^2.
+    $$
+
+    The gravitational torque factor is $g[m_r(L/2)+m_pL]$, so
+
+    $$
+    T=2\pi\sqrt{\frac{\frac13m_rL^2+m_pL^2}{g[m_r(L/2)+m_pL]}}
+    =2.0412\ldots\ \mathrm{s}.
+    $$
+
+    The measured givens have two significant figures, so $T=2.0\ \mathrm{s}$.
+
+    The distractors encode nearby errors: `2.2` treats the whole system as a point mass at distance $L$; `1.8` ignores the attached point mass and uses the rod-only period; and `1.0` effectively loses the factor of $2$ in $2\pi$.
 - id: p5-source-check-b
   content: |-
     2.2
@@ -295,23 +317,6 @@ options:
 - id: p5-source-check-d
   content: |-
     1.0
-feedback: |-
-  The total moment of inertia about the pivot is
-
-  $$
-  I=\frac13m_rL^2+m_pL^2.
-  $$
-
-  The gravitational torque factor is $g[m_r(L/2)+m_pL]$, so
-
-  $$
-  T=2\pi\sqrt{\frac{\frac13m_rL^2+m_pL^2}{g[m_r(L/2)+m_pL]}}
-  =2.0412\ldots\ \mathrm{s}.
-  $$
-
-  The measured givens have two significant figures, so $T=2.0\ \mathrm{s}$.
-
-  The distractors encode nearby errors: `2.2` treats the whole system as a point mass at distance $L$; `1.8` ignores the attached point mass and uses the rod-only period; and `1.0` effectively loses the factor of $2$ in $2\pi$.
 ```
 
 ---
@@ -324,3 +329,17 @@ feedback: |-
 4. Use $T=2\pi\sqrt{I_{\mathrm{total}}/(g\sum m_i d_i)}$; never cancel through an addition sign.
 5. Evaluate both sums, form the radicand, take the positive square root, then multiply by $2\pi$.
 6. Check units, keep guard digits, and round only the final result.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

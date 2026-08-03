@@ -1,5 +1,10 @@
 # Choosing the Rotation Axis After an Off-Center Collision
 
+<!--
+lesson-id: 212-M2-043
+topic-code: MTH212.M2.43
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -251,3 +256,17 @@ For an isolated collision in which objects stick:
 4. If $r_\perp\ne 0$, the combined object rotates about an axis through its center of mass while that center of mass translates.
 
 The main traps are choosing the rod's original center or the contact point as though either were an external pivot, and assuming that sticking by itself guarantees rotation. The nonzero lever arm is what establishes the rotation.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

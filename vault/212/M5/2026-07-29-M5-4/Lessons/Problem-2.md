@@ -1,5 +1,10 @@
 # Fundamental Frequency of a Tensioned Wire
 
+<!--
+lesson-id: 212-M5-032
+topic-code: MTH212.M5.32
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -288,3 +293,17 @@ For a wire fixed at both ends, the phrase **fundamental frequency** signals $\la
 4. Round only the final frequency, then enter it in the requested form.
 
 The main trap is confusing total mass $m$ with linear mass density $\mu$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

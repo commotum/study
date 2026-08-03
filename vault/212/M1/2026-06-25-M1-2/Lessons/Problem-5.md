@@ -1,5 +1,10 @@
 # Bullet Speed from Rotating Disk Alignment
 
+<!--
+lesson-id: 212-M1-041
+topic-code: MTH212.M1.41
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -325,3 +330,17 @@ Use this checklist:
 - Divide distance by flight time: $v=\dfrac{2\pi D}{\theta T}$.
 
 The main trap is using the full period $T$ as the flight time. Use $T$ only after scaling it by the fraction of a rotation.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

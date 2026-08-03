@@ -1,5 +1,10 @@
 # Finding Angular Frequency From an Oscillation Graph
 
+<!--
+lesson-id: 212-M4-005
+topic-code: MTH212.M4.05
+-->
+
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -63,6 +68,8 @@ options:
   content: |-
     $3.0\ \mathrm s$
   correct: true
+  feedback: |-
+    Consecutive troughs are one full cycle apart, so $T=3.5-0.5=3.0\ \mathrm s$. The value $1.5\ \mathrm s$ incorrectly halves an already complete cycle, while $0.33$ is a reciprocal rate.
 - id: p5-read-period-b
   content: |-
     $4.0\ \mathrm s$
@@ -72,8 +79,6 @@ options:
 - id: p5-read-period-d
   content: |-
     $0.33\ \mathrm s$
-feedback: |-
-  Consecutive troughs are one full cycle apart, so $T=3.5-0.5=3.0\ \mathrm s$. The value $1.5\ \mathrm s$ incorrectly halves an already complete cycle, while $0.33$ is a reciprocal rate.
 ```
 
 ---
@@ -131,6 +136,8 @@ options:
   content: |-
     $1.26\ \mathrm{rad/s}$
   correct: true
+  feedback: |-
+    Use $\omega=2\pi/T$: $2\pi/(5.0\ \mathrm s)=1.26\ \mathrm{rad/s}$. The value $0.20$ is the ordinary frequency $f=1/T$ in hertz, before converting cycles to radians.
 - id: p5-convert-angular-frequency-b
   content: |-
     $0.20\ \mathrm{rad/s}$
@@ -140,8 +147,6 @@ options:
 - id: p5-convert-angular-frequency-d
   content: |-
     $31.4\ \mathrm{rad/s}$
-feedback: |-
-  Use $\omega=2\pi/T$: $2\pi/(5.0\ \mathrm s)=1.26\ \mathrm{rad/s}$. The value $0.20$ is the ordinary frequency $f=1/T$ in hertz, before converting cycles to radians.
 ```
 
 ---
@@ -185,6 +190,8 @@ options:
   content: |-
     $3.14\ \mathrm{rad/s}$
   correct: true
+  feedback: |-
+    Five cycles take $12-2=10\ \mathrm s$, so $T=10/5=2.0\ \mathrm s$. Then $\omega=2\pi/2.0=3.14\ \mathrm{rad/s}$. The value $0.50$ is ordinary frequency, not angular frequency.
 - id: p5-multiple-cycles-b
   content: |-
     $0.50\ \mathrm{rad/s}$
@@ -194,8 +201,6 @@ options:
 - id: p5-multiple-cycles-d
   content: |-
     $0.63\ \mathrm{rad/s}$
-feedback: |-
-  Five cycles take $12-2=10\ \mathrm s$, so $T=10/5=2.0\ \mathrm s$. Then $\omega=2\pi/2.0=3.14\ \mathrm{rad/s}$. The value $0.50$ is ordinary frequency, not angular frequency.
 ```
 
 ---
@@ -254,6 +259,16 @@ options:
   content: |-
     1.6
   correct: true
+  feedback: |-
+    With $T=4.0\ \mathrm{s}$,
+
+    $$
+    \omega=\frac{2\pi}{T}=\frac{2\pi}{4.0\ \mathrm{s}}=1.5708\ldots\ \mathrm{rad/s}.
+    $$
+
+    The period supports two significant figures, so $\omega=1.6\ \mathrm{rad/s}$.
+
+    The value `0.25` is the ordinary frequency $f=1/T$ in hertz; `4.0` is the period in seconds; and `6.3` multiplies by $2\pi$ instead of dividing by the period.
 - id: p5-source-check-b
   content: |-
     0.25
@@ -263,16 +278,6 @@ options:
 - id: p5-source-check-d
   content: |-
     6.3
-feedback: |-
-  With $T=4.0\ \mathrm{s}$,
-
-  $$
-  \omega=\frac{2\pi}{T}=\frac{2\pi}{4.0\ \mathrm{s}}=1.5708\ldots\ \mathrm{rad/s}.
-  $$
-
-  The period supports two significant figures, so $\omega=1.6\ \mathrm{rad/s}$.
-
-  The value `0.25` is the ordinary frequency $f=1/T$ in hertz; `4.0` is the period in seconds; and `6.3` multiplies by $2\pi$ instead of dividing by the period.
 ```
 
 ---
@@ -284,3 +289,17 @@ feedback: |-
 3. Convert cycles to radians: $\omega=(2\pi\ \mathrm{rad/cycle})f=2\pi/T$.
 4. Check that angular frequency is reported in $\mathrm{rad/s}$, not seconds or hertz.
 5. Keep calculator digits until the final rounding step.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

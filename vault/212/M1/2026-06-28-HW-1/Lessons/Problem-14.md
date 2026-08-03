@@ -1,5 +1,10 @@
 # Matching Angular Velocity to an Angular Position Graph
 
+<!--
+lesson-id: 212-M1-051
+topic-code: MTH212.M1.51
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -285,3 +290,17 @@ Use this checklist:
 - Steeper position graphs give larger velocity magnitudes
 
 Do not choose a velocity graph by copying the height of $\theta(t)$. Match the slope behavior instead.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

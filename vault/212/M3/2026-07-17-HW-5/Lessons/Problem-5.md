@@ -1,5 +1,10 @@
 # Scaling Orbital Period with Orbital Radius
 
+<!--
+lesson-id: 212-M3-015
+topic-code: MTH212.M3.15
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -234,3 +239,17 @@ When two circular orbits are around the same central body:
 4. Check direction: a larger radius must give a longer period. When $k>1$, the factor $k^{3/2}$ should also lie between $k$ and $k^2$.
 
 The main trap is using $k$ or $k^3$ instead of $k^{3/2}$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

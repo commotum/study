@@ -1,5 +1,10 @@
 # Conservation Tests for an Off-Center Sticking Collision
 
+<!--
+lesson-id: 212-M2-044
+topic-code: MTH212.M2.44
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -249,3 +254,17 @@ For a collision-conservation question:
 4. **Read the collision type.** If the objects stick, kinetic energy is not conserved.
 
 Main trap: do not transfer a conservation law for the complete isolated system to one object or to an origin attached to only one part of the system.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,5 +1,10 @@
 # Turn Applied Forces into Angular Acceleration
 
+<!--
+lesson-id: 212-M3-026
+topic-code: MTH212.M3.26
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -368,3 +373,17 @@ For a rotational-dynamics problem:
 6. Apply $\sum\tau=I\alpha$ and check how the answer scales with $F$, $r$, and $I$.
 
 The main traps are using the wrong angle, forgetting torque direction, or computing $I$ about a different axis from the torque equation.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

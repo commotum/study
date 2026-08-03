@@ -1,5 +1,10 @@
 # Fifth Harmonic of an Open–Closed Pipe
 
+<!--
+lesson-id: 212-M5-035
+topic-code: MTH212.M5.35
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -284,3 +289,17 @@ For an open–closed pipe:
 Useful checks: increasing the odd harmonic number raises the frequency, while increasing the pipe length lowers it. The main trap is using a half-wavelength condition instead of the open–closed quarter-wavelength condition.
 
 For the given fifth-harmonic problem, the pattern is $N-A-N-A-N-A$ and the numeric-only frequency entry is **500**.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

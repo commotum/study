@@ -1,5 +1,10 @@
 # Speed Immediately After a Mass Sticks to a Moving Block
 
+<!--
+lesson-id: 212-M4-023
+topic-code: MTH212.M4.23
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -318,3 +323,17 @@ options:
 **Check:** For positive added mass, $\dfrac{M}{M+m}$ lies between $0$ and $1$, so $0<v_f<v_0$.
 
 **Main trap:** Do not conserve kinetic energy across a sticking collision. Conserve the system's horizontal momentum during impact.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

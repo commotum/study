@@ -1,6 +1,7 @@
 # Physics 212: Nonuniform Circular Motion and Tangential Projectile Motion
 
 Welcome back to Physics 212.
+[View Notes](Lecture-Notes.md)
 
 ## Announcements
 
@@ -924,3 +925,10 @@ $$
 \Delta y_{\max}=0.031\ \mathrm{m}
 }.
 $$
+
+---
+
+Up Next: [Center of Mass, Torque Balance, and Mass Density](../../../M2/2026-07-07-M2-1/Source/Lecture-Transcript.md)
+Previous: [Circular Motion on Flat and Banked Curves](../../2026-06-30-M1-4/Source/Lecture-Transcript.md)
+
+---

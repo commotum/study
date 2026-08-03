@@ -1,5 +1,10 @@
 # Bounding the Center of Mass of Two Unequal Cubes
 
+<!--
+lesson-id: 212-M2-005
+topic-code: MTH212.M2.05
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -312,3 +317,17 @@ x_{\mathrm{cm}}=x_1+\frac{m_2}{m_1+m_2}(x_2-x_1).
 $$
 
 The main traps are using the touching face as a component center, treating the mass ratio as a side-length ratio, or placing the combined center at the midpoint when the masses are unequal.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

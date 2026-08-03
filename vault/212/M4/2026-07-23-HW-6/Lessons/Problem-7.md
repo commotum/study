@@ -1,5 +1,10 @@
 # Speed of a Spring Oscillator at a Given Position
 
+<!--
+lesson-id: 212-M4-022
+topic-code: MTH212.M4.22
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -266,3 +271,22 @@ When an ideal, frictionless spring oscillator has amplitude $A$ and is observed 
 4. Square the entire position. If $x=rA$, then $x^2=r^2A^2$.
 5. Do not attach a direction sign to speed; positions $x$ and $-x$ have the same speed.
 6. Check the endpoints: $v=A\sqrt{k/M}$ at $x=0$ and $v=0$ at $|x|=A$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 3 Study Guide](../../../M5/2026-08-03-Q-3/Study-Guide.md)
+Next: [Deciding What Changes a Pendulum's Frequency](../../../M5/2026-08-02-PQ-3/Lessons/Problem-1.md)
+
+Study guide index: 04/20
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,5 +1,10 @@
 # Comparing Orbital Speeds at the Apsides
 
+<!--
+lesson-id: 212-M3-017
+topic-code: MTH212.M3.17
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -250,3 +255,17 @@ At the closest and farthest points of an orbit:
 4. The smaller-radius point is faster.
 5. Check that $r_2/r_1>1$ when point $1$ is closer; a “faster by” factor must exceed $1$.
 6. Do not square the factor; orbital speed at the apsides follows $v\propto1/r$ from the area law, not the inverse-square force relation.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

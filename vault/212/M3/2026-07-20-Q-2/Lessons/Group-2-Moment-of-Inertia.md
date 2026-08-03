@@ -1,5 +1,10 @@
 # Build the Moment of Inertia About a Chosen Axis
 
+<!--
+lesson-id: 212-M3-025
+topic-code: MTH212.M3.25
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -389,3 +394,17 @@ To build a moment of inertia:
 6. Use $K_{\mathrm{rot}}=\frac12I\omega^2$ to translate inertia comparisons into energy comparisons when $\omega$ is fixed.
 
 The main trap is using a correct shape formula about the wrong axis.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

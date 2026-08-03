@@ -1,5 +1,10 @@
 # Finding a Two-Object Center of Mass in the Plane
 
+<!--
+lesson-id: 212-M2-046
+topic-code: MTH212.M2.46
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -233,3 +238,22 @@ Use this checklist:
 5. If the question asks **how far**, return $\sqrt{x_{\mathrm{cm}}^2+y_{\mathrm{cm}}^2}$.
 
 Speed does not belong in a center-of-mass position formula. The main geometry trap is using the contact point instead of the ball's center; the main algebra trap is dividing by one object's mass instead of the total mass.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 2 Study Guide](../../../M3/2026-07-20-Q-2/Study-Guide.md)
+Next: [Comparing Moment of Inertia From Mass Distribution](../../2026-07-08-M2-2/Lessons/Problem-1.md)
+
+Study guide index: 02/20
+
+---
+
+<!-- lesson-nav:end -->

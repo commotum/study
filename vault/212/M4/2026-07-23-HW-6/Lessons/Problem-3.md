@@ -1,5 +1,10 @@
 # Choosing an SHM Cosine Equation from a Position–Time Graph
 
+<!--
+lesson-id: 212-M4-018
+topic-code: MTH212.M4.18
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -316,3 +321,17 @@ For a graph modeled by $x(t)=A\cos(\omega t+\phi)$:
 5. Use the initial direction to choose the phase: in the $+\phi$ convention, a rising graph requires $-\sin\phi>0$.
 
 The main traps are treating peak-to-trough as a full period and choosing the phase sign from the initial height without checking whether the graph is rising or falling.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

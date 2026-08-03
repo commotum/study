@@ -1,5 +1,10 @@
 # Period After Mass Sticks to a Spring Oscillator
 
+<!--
+lesson-id: 212-M4-026
+topic-code: MTH212.M4.26
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -226,3 +231,17 @@ When an added object sticks to a spring oscillator:
 5. Ignore amplitude and collision position when the question asks only for the ideal-spring period.
 
 The main trap is reversing the fraction. More moving mass makes the period longer, so the mass belongs in the numerator.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

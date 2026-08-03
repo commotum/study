@@ -1,40 +1,48 @@
+
 # Finding Complete Constructive Interference in a Crest Diagram
+
+<!--
+lesson-id: 212-M5-037
+topic-code: MTH212.M5.37
+-->
 
 ## Table of Contents
 
 - [Introduction](#introduction)
 - [Read One Wavefront Family](#read-one-wavefront-family)
-- [Require a Crest From Both Sources](#require-a-crest-from-both-sources)
-- [Avoid the One-Crest Trap](#avoid-the-one-crest-trap)
+- [Recognize Both In-Phase Combinations](#recognize-both-in-phase-combinations)
+- [Reject a Crest–Trough Pair](#reject-a-cresttrough-pair)
 - [Check Every Labeled Point](#check-every-labeled-point)
 - [Summary](#summary)
 
 ## Prerequisites
 
-- Recognize a wave crest.
-- Know that waves arriving crest with crest are in phase and interfere constructively.
+- Recognize wave crests and troughs.
+- Know that waves with the same phase interfere constructively.
 
 ---
 
 <a id="introduction"></a>
 ## Introduction
 
-When a diagram shows circular wave crests from two sources, each circle belongs to one source. Complete constructive interference occurs where the two waves arrive in phase:
+When a diagram shows circular wave crests from two sources, each circle belongs to one source. The troughs are halfway between adjacent crest circles from the same source. Complete constructive interference occurs wherever the two waves arrive in phase:
 
 $$
-\text{crest from source 1}+\text{crest from source 2}
-\longrightarrow \text{complete constructive interference}.
+\begin{aligned}
+\text{crest}+\text{crest}&\longrightarrow\text{constructive},\\
+\text{trough}+\text{trough}&\longrightarrow\text{constructive}.
+\end{aligned}
 $$
 
-In a crest-only diagram, the visible cue is a point shared by a crest circle from source 1 and a crest circle from source 2. The curves must pass through the same point; being close is not enough.
+The drawn circles locate crests directly, but complete constructive interference is not limited to circle intersections. A point halfway between adjacent crest circles can mark a trough. Two troughs meeting are just as in phase as two crests meeting.
 
 Use this test on each candidate point:
 
 1. **Trace:** Decide which source each circle is centered on.
-2. **Pair:** Check whether one crest from each source passes through the same point.
-3. **Select:** Choose the point only when both crests pass through it.
+2. **Label:** For each source, decide whether the point is on a crest circle or halfway between neighboring crest circles at a trough.
+3. **Compare:** Select crest–crest and trough–trough; reject crest–trough.
 
-This is a two-condition test, like finding an element that belongs to both of two sets.
+The key question is whether the two sources have the same phase at the point, not merely whether two drawn lines cross there.
 
 ---
 
@@ -45,7 +53,7 @@ This is a two-condition test, like finding an element that belongs to both of tw
 
 **Explanation**
 
-The problem states that the blue circles represent wave crests. Each circle is therefore the set of positions reached by one crest from that source. To identify its family, follow the circle around and note whether it is centered on source 1 or source 2. The space between drawn circles is not another drawn crest.
+The problem states that the blue circles represent wave crests. Each circle is therefore the set of positions occupied by one crest from that source. To identify its family, follow the circle around and note whether it is centered on source 1 or source 2. A trough from that source lies halfway between two adjacent crest circles.
 
 ```quiz
 type: radio
@@ -70,66 +78,66 @@ options:
 
 ---
 
-<a id="require-a-crest-from-both-sources"></a>
-## Require a Crest From Both Sources
+<a id="recognize-both-in-phase-combinations"></a>
+## Recognize Both In-Phase Combinations
 
-**Example:** A candidate point lies where one crest circle centered on source 1 crosses one crest circle centered on source 2. Classify the interference there.
+**Example:** Compare a point where two crests meet with a point where two troughs meet. Classify the interference at each point.
 
 **Explanation**
 
-At the crossing, both sources contribute a crest at the same place. Crest plus crest means the waves arrive in phase, so their positive displacements add. The point is a position of complete constructive interference. This conclusion depends on the two curves belonging to different source families.
+At the first point, the two positive displacements add. At the second point, the two negative displacements add. Both pairs have zero relative phase difference, so both points are positions of complete constructive interference. Crest–crest produces the largest positive displacement at that instant, while trough–trough produces the largest negative displacement.
 
 ```quiz
 type: radio
 id: p2-two-crest-test
 content: |-
-  A labeled point lies exactly at the crossing of a crest circle from each of two sources. What does the diagram show at that point?
+  Which pair of arrivals represents complete constructive interference?
 options:
 - id: a
   content: |-
-    Complete constructive interference
+    Crest–crest or trough–trough
   correct: true
 - id: b
   content: |-
-    Complete destructive interference
+    Crest–trough only
 - id: c
   content: |-
-    Complete constructive interference only if the two curves belong to the same source
+    Crest–crest only; trough–trough is destructive
 - id: d
   content: |-
-    The location of a third source
+    Any point lying on one visible crest circle
 ```
 
 ---
 
-<a id="avoid-the-one-crest-trap"></a>
-## Avoid the One-Crest Trap
+<a id="reject-a-cresttrough-pair"></a>
+## Reject a Crest–Trough Pair
 
-**Example:** A point lies on a crest circle from source 1, but no crest circle from source 2 passes through it. Should it be marked as a crest–crest position?
+**Example:** A point lies on a crest circle from source 1 and halfway between adjacent crest circles from source 2. Classify the interference there.
 
 **Explanation**
 
-No. One visible crest is only half of the test. Complete constructive interference in this diagram requires the same point to lie on one crest from each source. A nearby circle does not count; both curves must pass through the point.
+The first source contributes a crest while the second contributes a trough. Their phases differ by $\pi$, so this is complete destructive interference, not constructive interference.
 
 ```quiz
 type: radio
 id: p2-one-crest-trap
 content: |-
-  Point $X$ lies on a crest circle from source 2. The nearest crest circle from source 1 passes beside $X$ but not through it. Should $X$ be selected as a crest–crest position?
+  Point $X$ lies on a crest circle from source 2 and halfway between adjacent crest circles from source 1. What occurs at $X$?
 options:
 - id: a
   content: |-
-    Yes, because one crest reaches $X$
+    Complete constructive interference because one crest reaches $X$
 - id: b
   content: |-
-    Yes, because the other crest is nearby
+    Complete constructive interference because $X$ lies between two other crests
 - id: c
   content: |-
-    No, because a crest from each source must pass through the same point
+    Complete destructive interference because a crest meets a trough
   correct: true
 - id: d
   content: |-
-    No, because circular waves cannot interfere
+    Neither, because the drawn circles do not cross at $X$
 ```
 
 ---
@@ -143,19 +151,19 @@ options:
 
 **Explanation**
 
-- At $P$, a crest from source 1 crosses a crest from source 2, so $P$ is complete constructive interference.
-- At $Q$, a crest from source 1 also crosses a crest from source 2, so $Q$ is complete constructive interference.
-- At $R$, the point is not at a crest–crest intersection, so the diagram does not identify $R$ as complete constructive interference.
+- At $P$, a crest from source 1 meets a crest from source 2, so $P$ is complete constructive interference.
+- At $Q$, a crest from one source meets a trough from the other, so $Q$ is complete destructive interference.
+- At $R$, a trough from source 1 meets a trough from source 2, so $R$ is complete constructive interference.
 
-The same two-condition test organizes the decisions:
+The phase comparison organizes the decisions:
 
-| Point | Shared by a crest from each source? | Decision |
-|---|---:|---|
-| $P$ | Yes | Select |
-| $Q$ | Yes | Select |
-| $R$ | No | Do not select |
+| Point | One source | Other source | Decision |
+|---|---|---|---|
+| $P$ | Crest | Crest | Select: constructive |
+| $Q$ | Crest | Trough | Do not select: destructive |
+| $R$ | Trough | Trough | Select: constructive |
 
-Thus the correct selections are $P$ and $Q$.
+Thus the correct selections are $P$ and $R$.
 
 ```quiz
 type: radio
@@ -171,24 +179,28 @@ options:
 - id: p
   content: |-
     $P$ only
-  feedback: P is constructive, but Q is also at a crest–crest intersection.
+  feedback: P is constructive, but R is also constructive because two troughs meet there.
 - id: q
   content: |-
     $Q$ only
-  feedback: Q is constructive, but P is also at a crest–crest intersection.
+  feedback: Q is destructive because a crest meets a trough there.
 - id: r
   content: |-
     $R$ only
-  feedback: R is not at a crest–crest intersection.
+  feedback: R is constructive, but P is also constructive because two crests meet there.
 - id: pq
   content: |-
     $P$ and $Q$
+  feedback: P is constructive, but Q is destructive; this choice also omits constructive point R.
+- id: pr
+  content: |-
+    $P$ and $R$
   correct: true
-  feedback: P and Q each lie at a crest–crest intersection, so the two waves arrive in phase at both points.
+  feedback: P is crest–crest and R is trough–trough, so the two waves arrive in phase at both points.
 - id: pqr
   content: |-
     $P$, $Q$, and $R$
-  feedback: P and Q qualify, but R is not at a crest–crest intersection.
+  feedback: P and R are constructive, but Q is destructive because a crest meets a trough there.
 ```
 
 ---
@@ -196,10 +208,24 @@ options:
 <a id="summary"></a>
 ## Summary
 
-For a diagram in which the circles represent crests, use **trace → pair → select**:
+For a diagram in which the circles represent crests, use **trace → label → compare**:
 
 1. **Trace** each circle to its source family.
-2. **Pair** one crest from each source at the same labeled point.
-3. **Select** the point only when both crests pass through it.
+2. **Label** each source's phase at the point: on a circle is a crest; halfway between adjacent circles is a trough.
+3. **Compare** the phases: crest–crest and trough–trough are constructive; crest–trough is destructive.
 
-The main trap is choosing a point that lies on only one crest or merely sits near a crossing. In the assigned diagram, $P$ and $Q$ pass the two-crest test; $R$ does not.
+The main trap is treating drawn crest-circle intersections as the only constructive locations. In the assigned diagram, $P$ is crest–crest and $R$ is trough–trough, so both are constructive; $Q$ is crest–trough and is destructive.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

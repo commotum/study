@@ -1,5 +1,10 @@
 # Angular Speed After Rotating Cups Collect Rain
 
+<!--
+lesson-id: 212-M2-033
+topic-code: MTH212.M2.33
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -65,6 +70,8 @@ options:
   content: |-
     $I_i\omega_i=I_f\omega_f$
   correct: true
+  feedback: |-
+    Negligible external torque means angular momentum is conserved: $L=I\omega$, so $I_i\omega_i=I_f\omega_f$.
 - id: p3-conserve-b
   content: |-
     $I_i=I_f$
@@ -77,8 +84,6 @@ options:
 - id: p3-conserve-e
   content: |-
     $m_i\omega_i=m_f\omega_f$
-feedback: |-
-  Negligible external torque means angular momentum is conserved: $L=I\omega$, so $I_i\omega_i=I_f\omega_f$.
 ```
 
 ---
@@ -132,6 +137,8 @@ options:
   content: |-
     $I_f=3I_i$
   correct: true
+  feedback: |-
+    With the radius fixed, every term $mr^2$ is multiplied by $3$, so the total moment of inertia is also multiplied by $3$.
 - id: p3-inertia-b
   content: |-
     $I_f=9I_i$
@@ -144,8 +151,6 @@ options:
 - id: p3-inertia-e
   content: |-
     $I_f=I_i$
-feedback: |-
-  With the radius fixed, every term $mr^2$ is multiplied by $3$, so the total moment of inertia is also multiplied by $3$.
 ```
 
 ---
@@ -183,6 +188,8 @@ options:
   content: |-
     $\omega_f=\dfrac23\omega_i$
   correct: true
+  feedback: |-
+    Conservation gives $\omega_f=(I_i/I_f)\omega_i=(1/1.5)\omega_i=(2/3)\omega_i$.
 - id: p3-inverse-b
   content: |-
     $\omega_f=1.5\omega_i$
@@ -195,8 +202,6 @@ options:
 - id: p3-inverse-e
   content: |-
     $\omega_f=\omega_i$
-feedback: |-
-  Conservation gives $\omega_f=(I_i/I_f)\omega_i=(1/1.5)\omega_i=(2/3)\omega_i$.
 ```
 
 ---
@@ -253,6 +258,22 @@ options:
   content: |-
     $2.1$
   correct: true
+  feedback: |-
+    Each cup is $d/2$ from the axis. Initially,
+
+    $$
+    I_i=2m\left(\frac d2\right)^2.
+    $$
+
+    After the capture, each cup's mass doubles, so $I_f=2I_i$. Conservation of angular momentum gives
+
+    $$
+    I_i\omega_0=I_f\omega_f,
+    \qquad
+    \omega_f=\frac{\omega_0}{2}=2.1\ \mathrm{rad/s}.
+    $$
+
+    The mass and rod length cancel.
 - id: p3-source-b
   content: |-
     $4.2$
@@ -265,22 +286,6 @@ options:
 - id: p3-source-e
   content: |-
     $0.46$
-feedback: |-
-  Each cup is $d/2$ from the axis. Initially,
-
-  $$
-  I_i=2m\left(\frac d2\right)^2.
-  $$
-
-  After the capture, each cup's mass doubles, so $I_f=2I_i$. Conservation of angular momentum gives
-
-  $$
-  I_i\omega_0=I_f\omega_f,
-  \qquad
-  \omega_f=\frac{\omega_0}{2}=2.1\ \mathrm{rad/s}.
-  $$
-
-  The mass and rod length cancel.
 ```
 
 ---
@@ -292,3 +297,17 @@ feedback: |-
 - Conserve angular momentum: $I_i\omega_i=I_f\omega_f$.
 - If $I$ grows by a factor $q$, then $\omega$ shrinks by the reciprocal factor $1/q$.
 - In Problem 3, $I_f/I_i=2$ because the common $m$ and $(d/2)^2$ factors cancel, so $\omega_f=\omega_0/2=2.1\ \mathrm{rad/s}$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

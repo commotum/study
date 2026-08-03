@@ -1,5 +1,10 @@
 # Predicting Wave-Speed Changes From a Hanging Mass
 
+<!--
+lesson-id: 212-M5-007
+topic-code: MTH212.M5.07
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -321,3 +326,17 @@ To predict the wave-speed change in this setup:
 5. For a numerical scale factor, use $v_2/v_1=\sqrt{M_2/M_1}$.
 
 The hanging block changes the tension, not the string's linear density. A heavier hanging block makes the wave travel faster.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

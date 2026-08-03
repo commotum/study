@@ -1,5 +1,10 @@
 # Placing Angular Separation in a Speed Formula
 
+<!--
+lesson-id: 212-M1-040
+topic-code: MTH212.M1.40
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -266,3 +271,17 @@ v=\dfrac{D}{t}=\dfrac{2\pi D}{\theta T}.
 $$
 
 The main trap is treating $\theta$ like extra bullet distance. In this setup, a larger $\theta$ gives the bullet more time, so $\theta$ belongs in the denominator of the speed formula.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

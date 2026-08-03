@@ -1,5 +1,10 @@
 # Angular Displacement Before Reversal
 
+<!--
+lesson-id: 212-M1-032
+topic-code: MTH212.M1.32
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -278,3 +283,17 @@ When a problem asks for the angle turned before reversal, do not stop after find
 4. Report the result in radians.
 
 The main trap is answering with the time of reversal instead of the angular displacement.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

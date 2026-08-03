@@ -1,5 +1,10 @@
 # Reading a Wave's Direction from Its Phase
 
+<!--
+lesson-id: 212-M5-020
+topic-code: MTH212.M5.20
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -268,3 +273,17 @@ To read a traveling wave's direction:
 4. Read the sign: $v_{\text{pattern}}>0$ means increasing $x$, while $v_{\text{pattern}}<0$ means decreasing $x$.
 
 For the standard form with positive $k$ and $\omega$, $kx-\omega t$ travels toward increasing $x$ and $kx+\omega t$ travels toward decreasing $x$. Amplitude, sine versus cosine, and a constant phase shift do not change the direction.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

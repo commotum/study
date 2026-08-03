@@ -1,5 +1,10 @@
 # Scaling Surface Gravity With Mass and Radius
 
+<!--
+lesson-id: 212-M3-014
+topic-code: MTH212.M3.14
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -276,3 +281,17 @@ Use this checklist:
 5. Check the direction: mass raises surface gravity, while radius lowers it through an inverse square.
 
 The main trap is forgetting to square the radius factor. For the exoplanet in the problem, $a=3$ and $b=2$, so $g_p=(3/4)g$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

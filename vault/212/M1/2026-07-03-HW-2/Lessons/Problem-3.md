@@ -1,5 +1,10 @@
 # Finding Centripetal Force From Radius and Period
 
+<!--
+lesson-id: 212-M1-059
+topic-code: MTH212.M1.59
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -275,3 +280,17 @@ F_c=\dfrac{mv^2}{r}
 $$
 
 The main traps are forgetting to square $2\pi$, forgetting to square $T$, or leaving $r^2$ after one factor of $r$ should cancel.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

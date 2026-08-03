@@ -1,5 +1,10 @@
 # Time for a Traveling Wave to Move One Wavelength
 
+<!--
+lesson-id: 212-M5-021
+topic-code: MTH212.M5.21
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -383,3 +388,17 @@ When a traveling-wave question asks for the time to move one wavelength:
 4. Confirm that the units reduce to seconds.
 
 The main trap is confusing $k$ with $\omega$ or using $1/\omega$. The wavenumber $k$ sets the wavelength, while the angular frequency $\omega$ sets the period, and one full cycle contains $2\pi$ radians.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

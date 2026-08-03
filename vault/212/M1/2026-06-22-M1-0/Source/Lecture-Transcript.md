@@ -1,6 +1,7 @@
 # Physics 212: Course Orientation, Assessments, and Laboratory Structure
 
 Welcome to Physics 212.
+[View Notes](Lecture-Notes.md)
 
 My name is Kathy Hadley, and I will be your instructor this term. I am an astrophysicist, and I also developed this version of the course.
 
@@ -500,3 +501,9 @@ Each quiz requires a handwritten note sheet submitted with a photo ID. Quizzes c
 The laboratory component is required unless an approved opt-out applies. Students perform the experiments individually, discuss their work with a group and TA, and submit one group report after the first week.
 
 Because this is an accelerated course, remain attentive to deadlines, work consistently, and contact the course staff as soon as you encounter a problem.
+
+---
+
+Up Next: [Course Framework and Introduction to Rotational Kinematics](../../2026-06-23-M1-00/Source/Lecture-Transcript.md)
+
+---

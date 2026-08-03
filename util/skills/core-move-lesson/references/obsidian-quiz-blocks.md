@@ -76,5 +76,7 @@ content: |-
   - `content: |-`
   - then indent content lines by two spaces.
 - For `radio`, include `options`, at least two options, and exactly one `correct: true`.
+- For `radio` and `checkbox`, put `feedback` inside an individual option. A root-level `feedback` field is valid only for `free` and `blank` quizzes.
+- Use `require_exact` only on `blank` quizzes.
 - For generated core-move lessons, include ids on quiz blocks and options.
-- Do not use old aliases: use `free`, not `text`; use `blank`, not `prompt`; use `select`, not `choice`.
+- Use canonical names: use `content`, not `text` or `question`; use `free`, not `text`; use `blank`, not `prompt`; use `select`, not `choice`.

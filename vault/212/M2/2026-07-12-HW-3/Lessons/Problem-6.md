@@ -1,5 +1,10 @@
 # Shifting a Moment of Inertia to a Parallel Axis
 
+<!--
+lesson-id: 212-M2-022
+topic-code: MTH212.M2.22
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -225,3 +230,17 @@ For a disk shifted from its central perpendicular axis to a parallel axis throug
 $$
 I_{\text{rim}}=\frac12MR^2+MR^2=\frac32MR^2.
 $$
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

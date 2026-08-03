@@ -1,5 +1,10 @@
 # Comparing Moment of Inertia From Mass Distribution
 
+<!--
+lesson-id: 212-M2-007
+topic-code: MTH212.M2.07
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -265,3 +270,22 @@ options:
 - Equal masses moved to a fraction $k$ of their old distance contribute a fraction $k^2$ as much.
 - Ignore contributions that are identical in both configurations; they cannot change which total is larger.
 - The main trap is assuming equal total mass means equal moment of inertia. Distribution relative to the axis matters.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 2 Study Guide](../../../M3/2026-07-20-Q-2/Study-Guide.md)
+Next: [Finding Torque from a Force at an Angle](../../2026-07-09-M2-3/Lessons/Problem-3.md)
+
+Study guide index: 03/20
+
+---
+
+<!-- lesson-nav:end -->

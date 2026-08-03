@@ -1,6 +1,7 @@
 # Physics 212: Circular Motion on Flat and Banked Curves
 
 Welcome back to Physics 212.
+[View Notes](Lecture-Notes.md)
 
 ## Announcements
 
@@ -970,3 +971,10 @@ F_T\sin\theta=m\frac{v^2}{r}.
 $$
 
 In both systems, the inward component of an angled physical force supplies the radial acceleration. There is no additional centripetal force acting on the object.
+
+---
+
+Up Next: [Nonuniform Circular Motion and Tangential Projectile Motion](../../2026-07-02-M1-5/Source/Lecture-Transcript.md)
+Previous: [Circular Motion, Ferris Wheels, and Static Friction](../../2026-06-29-M1-3/Source/Lecture-Transcript.md)
+
+---

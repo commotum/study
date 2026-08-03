@@ -1,6 +1,7 @@
 # Physics 212: Static Equilibrium and Rotational Dynamics
 
 Welcome back to Physics 212.
+[View Notes](Lecture-Notes.md)
 
 ## Announcements
 
@@ -1157,3 +1158,10 @@ a=2.5\ \mathrm{m/s^2}
 $$
 
 The central skill in all of these problems is constructing a correct extended free-body diagram. Once the forces, application points, lever arms, and rotational directions are identified, the equations of force and torque follow systematically.
+
+---
+
+Up Next: [Rolling Motion and Conservation of Angular Momentum](../../2026-07-14-M2-5/Source/Lecture-Transcript.md)
+Previous: [Torque, Moment Arms, and Rotational Dynamics](../../2026-07-09-M2-3/Source/Lecture-Transcript.md)
+
+---

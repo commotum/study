@@ -1,6 +1,7 @@
 # Physics 212: Newtonian Gravitation, Kepler’s Laws, and Orbital Motion
 
 Welcome back to Physics 212.
+[View Notes](Lecture-Notes.md)
 
 ## Announcements
 
@@ -1089,3 +1090,10 @@ h\approx35{,}800\ \mathrm{km}
 $$
 
 An orbiting object remains in continuous free fall. Its acceleration is not zero; gravity continually changes the direction of its velocity and holds it in orbit.
+
+---
+
+Up Next: [Binary Stars and Three-Body Gravitational Orbits](../../2026-07-16-M3-2/Source/Lecture-Transcript.md)
+Previous: [Rolling Motion and Conservation of Angular Momentum](../../../M2/2026-07-14-M2-5/Source/Lecture-Transcript.md)
+
+---

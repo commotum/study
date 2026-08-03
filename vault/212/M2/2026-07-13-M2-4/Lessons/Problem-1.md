@@ -1,5 +1,10 @@
 # Balancing a Plank With Opposing Torques
 
+<!--
+lesson-id: 212-M2-027
+topic-code: MTH212.M2.27
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -73,6 +78,8 @@ options:
   content: |-
     Zero, because the weight's line of action passes through the pivot
   correct: true
+  feedback: |-
+    The uniform plank's weight acts at its center, which is the pivot. A force whose line of action passes through the pivot has zero lever arm and therefore zero torque.
 - id: b
   content: |-
     $MgL$
@@ -85,8 +92,6 @@ options:
 - id: e
   content: |-
     It cannot be determined without the support force.
-feedback: |-
-  The uniform plank's weight acts at its center, which is the pivot. A force whose line of action passes through the pivot has zero lever arm and therefore zero torque.
 ```
 
 ---
@@ -121,6 +126,8 @@ options:
   content: |-
     $2.4\ \mathrm{N\,m}$
   correct: true
+  feedback: |-
+    The force is perpendicular to the lever arm, so $\tau=rF=(0.40)(6.0)=2.4\ \mathrm{N\,m}$.
 - id: b
   content: |-
     $15\ \mathrm{N\,m}$
@@ -133,8 +140,6 @@ options:
 - id: e
   content: |-
     $0\ \mathrm{N\,m}$
-feedback: |-
-  The force is perpendicular to the lever arm, so $\tau=rF=(0.40)(6.0)=2.4\ \mathrm{N\,m}$.
 ```
 
 ---
@@ -179,6 +184,8 @@ options:
   content: |-
     $2.0\ \mathrm{kg}$
   correct: true
+  feedback: |-
+    Equal opposing torques give $m_2=m_1r_1/r_2=(3.0)(0.80)/(1.2)=2.0\ \mathrm{kg}$.
 - id: b
   content: |-
     $4.5\ \mathrm{kg}$
@@ -191,8 +198,6 @@ options:
 - id: e
   content: |-
     $3.8\ \mathrm{kg}$
-feedback: |-
-  Equal opposing torques give $m_2=m_1r_1/r_2=(3.0)(0.80)/(1.2)=2.0\ \mathrm{kg}$.
 ```
 
 ---
@@ -230,6 +235,8 @@ options:
   content: |-
     $m_2=2m_1$
   correct: true
+  feedback: |-
+    Since $m_1r_1=m_2r_2$ and $r_2=r_1/2$, $m_2=m_1r_1/(r_1/2)=2m_1$.
 - id: b
   content: |-
     $m_2=m_1/2$
@@ -242,8 +249,6 @@ options:
 - id: e
   content: |-
     $m_2=m_1/4$
-feedback: |-
-  Since $m_1r_1=m_2r_2$ and $r_2=r_1/2$, $m_2=m_1r_1/(r_1/2)=2m_1$.
 ```
 
 ---
@@ -300,6 +305,22 @@ options:
   content: |-
     `2.5`
   correct: true
+  feedback: |-
+    The plank's weight acts through the fulcrum and therefore produces no torque about it. Balance requires equal torque magnitudes:
+
+    $$
+    m_1gr_1=m_2gr_2.
+    $$
+
+    Therefore,
+
+    $$
+    m_2=\frac{m_1r_1}{r_2}
+    =\frac{(1.6)(1.7)}{1.1}
+    =2.4727\ldots\ \mathrm{kg}.
+    $$
+
+    The measured givens each have two significant figures, so $m_2=2.5\ \mathrm{kg}$.
 - id: b
   content: |-
     `1.0`
@@ -312,22 +333,6 @@ options:
 - id: e
   content: |-
     `2.47`
-feedback: |-
-  The plank's weight acts through the fulcrum and therefore produces no torque about it. Balance requires equal torque magnitudes:
-
-  $$
-  m_1gr_1=m_2gr_2.
-  $$
-
-  Therefore,
-
-  $$
-  m_2=\frac{m_1r_1}{r_2}
-  =\frac{(1.6)(1.7)}{1.1}
-  =2.4727\ldots\ \mathrm{kg}.
-  $$
-
-  The measured givens each have two significant figures, so $m_2=2.5\ \mathrm{kg}$.
 ```
 
 ---
@@ -343,3 +348,17 @@ feedback: |-
 - **Evaluate:** group $m_1r_1$ first, divide by $r_2$, and round only the final result.
 - **Check:** the box closer to the pivot must be heavier.
 - **Main trap:** a given plank mass does not matter when its center of mass lies at the fulcrum.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

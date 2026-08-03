@@ -1,5 +1,10 @@
 # Solving for the Speed of a Receding Sound Source
 
+<!--
+lesson-id: 212-M5-030
+topic-code: MTH212.M5.30
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -312,3 +317,17 @@ For a source moving away from a stationary observer:
 5. State the chosen speed of sound, calculate without premature rounding, and round the final speed.
 
 The main traps are using the approaching-source sign, reversing $f_s/f'$, and confusing $v$ with $v_s$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

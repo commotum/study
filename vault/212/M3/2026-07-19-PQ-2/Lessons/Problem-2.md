@@ -1,5 +1,10 @@
 # Comparing Translational and Rotational Kinetic Energy in Rolling
 
+<!--
+lesson-id: 212-M3-020
+topic-code: MTH212.M3.20
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -264,3 +269,22 @@ When an object **rolls without slipping**:
 4. Compare $\beta$ with $1$.
 
 For a uniform hoop, $\beta=1$, so $K_{\mathrm{rot}}=K_{\mathrm{trans}}$. The main trap is confusing either equal part with the total: for the hoop, each part is one-half of $K_{\mathrm{total}}$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 2 Study Guide](../../2026-07-20-Q-2/Study-Guide.md)
+Next: [Finding Angular Speed After a Bullet Embeds in a Rotor](../../../M2/2026-07-14-M2-5/Lessons/Problem-5.md)
+
+Study guide index: 10/20
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,5 +1,10 @@
 # Finding Angular Speed from Angular Momentum
 
+<!--
+lesson-id: 212-M2-049
+topic-code: MTH212.M2.49
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -226,3 +231,17 @@ options:
 - **Procedure:** Divide by the nonzero moment of inertia: $\omega=L/I$.
 - **Checks:** The units reduce to $1/\mathrm{s}$, and at fixed $L$, a larger $I$ gives a smaller $\omega$.
 - **Main trap:** Do not insert an extra mass factor or collision factor after $L_0$ and $I_0$ have already been calculated.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,5 +1,10 @@
 # Finding Maximum Speed From a Cosine Position Function
 
+<!--
+lesson-id: 212-M4-001
+topic-code: MTH212.M4.01
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -275,26 +280,26 @@ options:
 - id: a
   content: 0.45
   correct: true
+  feedback: |-
+    Differentiating the position gives
+
+    $$
+    v(t)=-A\omega\sin(\omega t).
+    $$
+
+    The maximum speed is therefore
+
+    $$
+    v_{\max}=A\omega=(0.25\ \mathrm{m})(1.8\ \mathrm{rad/s})=0.45\ \mathrm{m/s}.
+    $$
+
+    Both measured givens have two significant figures, so the result is $0.45\ \mathrm{m/s}$.
 - id: b
   content: 0.14
 - id: c
   content: 0.25
 - id: d
   content: 1.8
-feedback: |-
-  Differentiating the position gives
-
-  $$
-  v(t)=-A\omega\sin(\omega t).
-  $$
-
-  The maximum speed is therefore
-
-  $$
-  v_{\max}=A\omega=(0.25\ \mathrm{m})(1.8\ \mathrm{rad/s})=0.45\ \mathrm{m/s}.
-  $$
-
-  Both measured givens have two significant figures, so the result is $0.45\ \mathrm{m/s}$.
 ```
 
 ---
@@ -311,3 +316,17 @@ When $x(t)=A\cos(\omega t)$ and the problem asks for maximum speed:
 5. Check for distance-per-time units and round to the precision of the measured givens.
 
 The main trap is forgetting the chain-rule factor $\omega$ when differentiating $\cos(\omega t)$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

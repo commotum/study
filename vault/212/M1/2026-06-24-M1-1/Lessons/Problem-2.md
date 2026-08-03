@@ -1,5 +1,10 @@
 # Magnitude of Constant Angular Acceleration
 
+<!--
+lesson-id: 212-M1-034
+topic-code: MTH212.M1.34
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -291,3 +296,17 @@ $$
 4. If the problem asks for magnitude, take $|\alpha|$ and report a nonnegative answer.
 
 The main trap is reporting the negative signed acceleration when the problem asks for the nonnegative magnitude.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

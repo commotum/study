@@ -292,22 +292,21 @@ When ranking radial accelerations in uniform circular motion, read each speed $v
 
 The main trap is comparing only speed or only circle size. Speed is squared, and radius is in the denominator, so a faster object can outrank a larger-radius object even when the diagrams look similar.
 
+<!-- lesson-nav:start -->
+
+---
+
 ```update-progress
 ```
 
 [[212/Home|Home]]
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
-<!-- study-guide-nav:start -->
-
----
-
-## Study Guide Navigation
-
-Study guide: [212 Study Guide](<Study-Guide.md>)
-
-Next: [Checking the Magnitude of Centripetal Acceleration](<../../2026-06-28-HW-1/Lessons/Problem-9.md>)
+[Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
+Next: [Checking the Magnitude of Centripetal Acceleration](../../2026-06-28-HW-1/Lessons/Problem-9.md)
 
 Study guide index: 03/30
 
-<!-- study-guide-nav:end -->
+---
+
+<!-- lesson-nav:end -->

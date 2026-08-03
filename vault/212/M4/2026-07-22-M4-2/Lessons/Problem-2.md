@@ -1,5 +1,10 @@
 # Calculating the Frequency of a Simple Pendulum
 
+<!--
+lesson-id: 212-M4-011
+topic-code: MTH212.M4.11
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -309,3 +314,17 @@ For a simple pendulum under the small-angle approximation:
 4. Check for \(\mathrm{s^{-1}}=\mathrm{Hz}\), keep guard digits, and round only the final frequency.
 
 **Main trap:** \(2\pi\sqrt{L/g}\) gives the period \(T\), while \(\sqrt{g/L}\) gives angular frequency \(\omega\). The requested frequency is \(f=\omega/(2\pi)=1/T\).
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

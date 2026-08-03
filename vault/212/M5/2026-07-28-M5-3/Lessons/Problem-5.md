@@ -1,5 +1,10 @@
 # Doppler Shift for a Moving Observer
 
+<!--
+lesson-id: 212-M5-028
+topic-code: MTH212.M5.28
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -302,3 +307,22 @@ For a stationary sound source and a moving observer:
 6. Round only the final frequency and follow the requested answer format.
 
 The main traps are treating observer motion as source motion, choosing the wrong sign, and rounding before the final step.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
+Next: [Extreme Doppler Frequencies from a Rotating Source](../../2026-08-02-PQ-3/Lessons/Problem-5.md)
+
+Study guide index: 14/20
+
+---
+
+<!-- lesson-nav:end -->

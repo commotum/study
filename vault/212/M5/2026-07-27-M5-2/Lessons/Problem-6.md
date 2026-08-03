@@ -1,5 +1,10 @@
 # Counting Wavelengths Inside a Material
 
+<!--
+lesson-id: 212-M5-013
+topic-code: MTH212.M5.13
+-->
+
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -71,6 +76,8 @@ options:
   content: |-
     $300\ \mathrm{nm}$
   correct: true
+  feedback: |-
+    Divide the air wavelength by the index: $540\ \mathrm{nm}/1.8=300\ \mathrm{nm}$. The wavelength must decrease because $n>1$. The choice $540\ \mathrm{nm}$ leaves the wavelength unchanged, while $972\ \mathrm{nm}$ multiplies by $n$ and changes it in the wrong direction.
 - id: p6-glass-wavelength-b
   content: |-
     $540\ \mathrm{nm}$
@@ -80,8 +87,6 @@ options:
 - id: p6-glass-wavelength-d
   content: |-
     $3.33\ \mathrm{nm}$
-feedback: |-
-  Divide the air wavelength by the index: $540\ \mathrm{nm}/1.8=300\ \mathrm{nm}$. The wavelength must decrease because $n>1$. The choice $540\ \mathrm{nm}$ leaves the wavelength unchanged, while $972\ \mathrm{nm}$ multiplies by $n$ and changes it in the wrong direction.
 ```
 
 ## Count Wavelengths Using Matching Units
@@ -142,6 +147,8 @@ options:
   content: |-
     $3000$
   correct: true
+  feedback: |-
+    Convert $0.90\ \mathrm{mm}$ to $9.0\times10^5\ \mathrm{nm}$, then divide by $300\ \mathrm{nm}$. The units cancel and give $N=3000$. A result with a remaining length unit would not be a wavelength count.
 - id: p6-count-wavelengths-b
   content: |-
     $0.003$
@@ -151,8 +158,6 @@ options:
 - id: p6-count-wavelengths-d
   content: |-
     $270$
-feedback: |-
-  Convert $0.90\ \mathrm{mm}$ to $9.0\times10^5\ \mathrm{nm}$, then divide by $300\ \mathrm{nm}$. The units cancel and give $N=3000$. A result with a remaining length unit would not be a wavelength count.
 ```
 
 ## Combine the Two Steps
@@ -182,6 +187,8 @@ options:
   content: |-
     $1500$
   correct: true
+  feedback: |-
+    Convert $0.60\ \mathrm{mm}$ to $6.0\times10^5\ \mathrm{nm}$ and use $N=nd/\lambda_{\text{air}}$. This gives $N=(1.5)(6.0\times10^5)/600=1500$. The choice $1000$ comes from using the air wavelength without accounting for the material.
 - id: p6-combined-formula-b
   content: |-
     $1000$
@@ -191,8 +198,6 @@ options:
 - id: p6-combined-formula-d
   content: |-
     $400$
-feedback: |-
-  Convert $0.60\ \mathrm{mm}$ to $6.0\times10^5\ \mathrm{nm}$ and use $N=nd/\lambda_{\text{air}}$. This gives $N=(1.5)(6.0\times10^5)/600=1500$. The choice $1000$ comes from using the air wavelength without accounting for the material.
 ```
 
 ## Apply the Move to Problem 6
@@ -261,6 +266,8 @@ options:
   content: |-
     2800
   correct: true
+  feedback: |-
+    The glass wavelength is $650/1.5=433.3\ldots\ \mathrm{nm}$, but the question asks how many of those wavelengths fit into the slide. Converting $1.2\ \mathrm{mm}$ to $1.2\times10^6\ \mathrm{nm}$ and dividing gives $2769.2\ldots$, which rounds to two significant figures as $2800$. The choice $1800$ uses the air wavelength; $1200$ changes the wavelength in the wrong direction; and $433$ reports the glass wavelength instead of the count.
 - id: p6-source-check-b
   content: |-
     1800
@@ -270,8 +277,6 @@ options:
 - id: p6-source-check-d
   content: |-
     433
-feedback: |-
-  The glass wavelength is $650/1.5=433.3\ldots\ \mathrm{nm}$, but the question asks how many of those wavelengths fit into the slide. Converting $1.2\ \mathrm{mm}$ to $1.2\times10^6\ \mathrm{nm}$ and dividing gives $2769.2\ldots$, which rounds to two significant figures as $2800$. The choice $1800$ uses the air wavelength; $1200$ changes the wavelength in the wrong direction; and $433$ reports the glass wavelength instead of the count.
 ```
 
 ## Summary
@@ -289,3 +294,17 @@ In symbols:
 3. Count with $N=d/\lambda_{\text{material}}$, or equivalently $N=nd/\lambda_{\text{air}}$.
 4. Confirm that the length units cancel and that $n>1$ makes the in-material wavelength shorter.
 5. Round only at the end and use the requested answer form.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

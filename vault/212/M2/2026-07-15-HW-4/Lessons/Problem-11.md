@@ -1,5 +1,10 @@
 # Shifting Moment of Inertia to the Center-of-Mass Axis
 
+<!--
+lesson-id: 212-M2-047
+topic-code: MTH212.M2.47
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -248,3 +253,17 @@ When a free composite object rotates after a collision, use the axis through its
 4. Combine $L^2$ terms only with $L^2$ terms and $r^2$ terms only with $r^2$ terms.
 
 The quick reasonableness check is $I_{\text{CM}}<I_{\text{off}}$: shifting an axis away from the center of mass adds the nonnegative quantity $M_{\text{tot}}d^2$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

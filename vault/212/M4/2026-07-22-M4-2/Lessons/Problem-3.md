@@ -1,5 +1,10 @@
 # Period of a Uniform Rod as a Physical Pendulum
 
+<!--
+lesson-id: 212-M4-012
+topic-code: MTH212.M4.12
+-->
+
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -63,6 +68,8 @@ options:
   content: |-
     $I=\frac13mL^2$ and $d=\frac L2$
   correct: true
+  feedback: |-
+    The center of mass is $L/2$ from the end, and the moment of inertia must be about that end: $I=\frac13mL^2$. The value $\frac1{12}mL^2$ belongs to an axis through the rod's center.
 - id: p3-rod-quantities-b
   content: |-
     $I=\frac1{12}mL^2$ and $d=\frac L2$
@@ -72,8 +79,6 @@ options:
 - id: p3-rod-quantities-d
   content: |-
     $I=mL^2$ and $d=L$
-feedback: |-
-  The center of mass is $L/2$ from the end, and the moment of inertia must be about that end: $I=\frac13mL^2$. The value $\frac1{12}mL^2$ belongs to an axis through the rod's center.
 ```
 
 ---
@@ -127,11 +132,11 @@ options:
   content: |-
     The rods have equal periods.
   correct: true
+  feedback: |-
+    In $I/(mgd)$, the factor $m$ in $I=\frac13mL^2$ cancels the factor $m$ in the denominator. Rods with the same $L$ and pivot geometry therefore have the same small-angle period regardless of mass.
 - id: p3-mass-cancels-d
   content: |-
     Rod 2 has one-third the period.
-feedback: |-
-  In $I/(mgd)$, the factor $m$ in $I=\frac13mL^2$ cancels the factor $m$ in the denominator. Rods with the same $L$ and pivot geometry therefore have the same small-angle period regardless of mass.
 ```
 
 ---
@@ -182,6 +187,8 @@ options:
   content: |-
     $1.42\ \mathrm s$
   correct: true
+  feedback: |-
+    Substitute with parentheses: $T=2\pi\sqrt{2(0.75)/(3(9.81))}=1.418\ldots\ \mathrm s$. The value $1.74\ \mathrm s$ comes from using the simple-pendulum formula $2\pi\sqrt{L/g}$ instead of the rod formula.
 - id: p3-evaluate-period-b
   content: |-
     $1.74\ \mathrm s$
@@ -191,8 +198,6 @@ options:
 - id: p3-evaluate-period-d
   content: |-
     $4.02\ \mathrm s$
-feedback: |-
-  Substitute with parentheses: $T=2\pi\sqrt{2(0.75)/(3(9.81))}=1.418\ldots\ \mathrm s$. The value $1.74\ \mathrm s$ comes from using the simple-pendulum formula $2\pi\sqrt{L/g}$ instead of the rod formula.
 ```
 
 ---
@@ -250,6 +255,24 @@ options:
   content: |-
     1.6
   correct: true
+  feedback: |-
+    For a physical pendulum,
+
+    $$
+    T=2\pi\sqrt{\frac{I}{mgd}}.
+    $$
+
+    A uniform rod pivoted at one end has $I=\frac13mL^2$ and $d=L/2$, so
+
+    $$
+    T=2\pi\sqrt{\frac{2L}{3g}}
+    =2\pi\sqrt{\frac{2(0.92\ \mathrm{m})}{3(9.81\ \mathrm{m/s^2})}}
+    =1.5711\ldots\ \mathrm{s}.
+    $$
+
+    The measured length has two significant figures, so $T=1.6\ \mathrm{s}$. The rod's mass cancels.
+
+    The other values reflect nearby formula errors: `1.9` uses the point-mass simple-pendulum formula with length $L$; `1.4` treats the rod as a point mass at $L/2$; and `0.79` uses the rod's center-axis moment of inertia instead of its end-pivot moment of inertia.
 - id: p3-source-check-b
   content: |-
     1.9
@@ -259,24 +282,6 @@ options:
 - id: p3-source-check-d
   content: |-
     0.79
-feedback: |-
-  For a physical pendulum,
-
-  $$
-  T=2\pi\sqrt{\frac{I}{mgd}}.
-  $$
-
-  A uniform rod pivoted at one end has $I=\frac13mL^2$ and $d=L/2$, so
-
-  $$
-  T=2\pi\sqrt{\frac{2L}{3g}}
-  =2\pi\sqrt{\frac{2(0.92\ \mathrm{m})}{3(9.81\ \mathrm{m/s^2})}}
-  =1.5711\ldots\ \mathrm{s}.
-  $$
-
-  The measured length has two significant figures, so $T=1.6\ \mathrm{s}$. The rod's mass cancels.
-
-  The other values reflect nearby formula errors: `1.9` uses the point-mass simple-pendulum formula with length $L$; `1.4` treats the rod as a point mass at $L/2$; and `0.79` uses the rod's center-axis moment of inertia instead of its end-pivot moment of inertia.
 ```
 
 ---
@@ -288,3 +293,22 @@ feedback: |-
 3. Substitute symbolically, expose the common factors, and simplify to $T=2\pi\sqrt{2L/(3g)}$.
 4. Check that mass cancels and the remaining units reduce to seconds.
 5. Evaluate the radicand, take the square root, multiply by $2\pi$, and round only the final answer.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 3 Study Guide](../../../M5/2026-08-03-Q-3/Study-Guide.md)
+Next: [Finding the Period of a Rod–Disk Physical Pendulum](Problem-6.md)
+
+Study guide index: 06/20
+
+---
+
+<!-- lesson-nav:end -->

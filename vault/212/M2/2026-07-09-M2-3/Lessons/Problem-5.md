@@ -1,5 +1,10 @@
 # Finding a Spool's Angular Acceleration From Tension
 
+<!--
+lesson-id: 212-M2-015
+topic-code: MTH212.M2.15
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -322,6 +327,27 @@ options:
   content: |-
     `16`
   correct: true
+  feedback: |-
+    The free-body diagram should include the tangential tension, the weight through the center, and the axle/support force through the center. The extended diagram should show tension acting with perpendicular lever arm $r$; the other forces produce no torque about the axle.
+
+    Thus,
+
+    $$
+    \tau=Tr,
+    \qquad
+    I=\frac12mr^2,
+    \qquad
+    \alpha=\frac{\tau}{I}=\frac{2T}{mr}.
+    $$
+
+    With $r=0.016\ \mathrm{m}$,
+
+    $$
+    \alpha=\frac{2(0.35\ \mathrm{N})}{(2.8\ \mathrm{kg})(0.016\ \mathrm{m})}
+    =15.625\ \mathrm{rad/s^2}.
+    $$
+
+    The measured givens have two significant figures, so $\alpha=16\ \mathrm{rad/s^2}$. The angular acceleration is clockwise, into the page.
 - id: b
   content: |-
     `15.625`
@@ -334,27 +360,6 @@ options:
 - id: e
   content: |-
     `0.016`
-feedback: |-
-  The free-body diagram should include the tangential tension, the weight through the center, and the axle/support force through the center. The extended diagram should show tension acting with perpendicular lever arm $r$; the other forces produce no torque about the axle.
-
-  Thus,
-
-  $$
-  \tau=Tr,
-  \qquad
-  I=\frac12mr^2,
-  \qquad
-  \alpha=\frac{\tau}{I}=\frac{2T}{mr}.
-  $$
-
-  With $r=0.016\ \mathrm{m}$,
-
-  $$
-  \alpha=\frac{2(0.35\ \mathrm{N})}{(2.8\ \mathrm{kg})(0.016\ \mathrm{m})}
-  =15.625\ \mathrm{rad/s^2}.
-  $$
-
-  The measured givens have two significant figures, so $\alpha=16\ \mathrm{rad/s^2}$. The angular acceleration is clockwise, into the page.
 ```
 
 ---
@@ -367,3 +372,17 @@ feedback: |-
 - Simplify to $\alpha=2T/(mr)$ before substituting, canceling only one factor of $r$.
 - Convert the radius from centimeters to meters, carry extra digits, and round only the final result.
 - Use the right-hand rule separately to report clockwise/into-page or counterclockwise/out-of-page direction.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

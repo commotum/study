@@ -1,5 +1,10 @@
 # Finding Wave Speed on a String With a Hanging Mass
 
+<!--
+lesson-id: 212-M5-008
+topic-code: MTH212.M5.08
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -364,3 +369,17 @@ For a uniform massive string held taut by a stationary hanging ball:
 5. Keep full precision until the end, then round and use the requested answer form.
 
 The main trap is swapping the two masses: the **string mass** belongs in $\mu$, while the **ball mass** belongs in $T$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

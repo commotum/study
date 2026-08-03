@@ -1,5 +1,10 @@
 # Release Height from a Vertical Circle
 
+<!--
+lesson-id: 212-M1-058
+topic-code: MTH212.M1.58
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -331,3 +336,17 @@ $$
 $$
 
 The main trap is mixing up the two uses of the angle: $\cos\theta$ appears in the radial force equation for weight's inward component, while $\sin\theta$ appears in the projectile step for the upward component of the tangent velocity.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

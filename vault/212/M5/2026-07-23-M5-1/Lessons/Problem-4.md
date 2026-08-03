@@ -1,5 +1,10 @@
 # Identifying the Restoring Force in a Transverse String Wave
 
+<!--
+lesson-id: 212-M5-004
+topic-code: MTH212.M5.04
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -262,3 +267,17 @@ To identify the restoring force for a transverse wave on a string:
 5. Reject forces such as gravity that do not reverse direction between crests and troughs.
 
 The restoring interaction is **tension**. Curvature makes its transverse components fail to cancel, producing the net force toward equilibrium.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

@@ -16,10 +16,11 @@ options:
   feedback: P lies at a crest–crest intersection, so the two waves arrive in phase and interfere constructively.
 - id: q
   content: Q
-  feedback: Q lies on only one crest line, so it is not a point of complete constructive interference.
+  feedback: Q lies on a crest circle from one source and halfway between adjacent crest circles from the other source. A crest meets a trough there, so the interference is completely destructive.
 - id: r
   content: R
-  feedback: R lies between crest lines, so it is not a point of complete constructive interference.
+  correct: true
+  feedback: R lies halfway between adjacent crest circles from both sources. Two troughs meet there, so the waves arrive in phase and interfere constructively.
 ```
 
 ---

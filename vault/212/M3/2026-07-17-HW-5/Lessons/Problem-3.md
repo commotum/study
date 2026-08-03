@@ -1,5 +1,10 @@
 # Net Gravitational Force from a Right-Triangle Arrangement
 
+<!--
+lesson-id: 212-M3-013
+topic-code: MTH212.M3.13
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -273,3 +278,22 @@ options:
 - **Procedure:** Add $x$-components, add $y$-components, then use $\sqrt{F_x^2+F_y^2}$.
 - **Main trap:** Forces that point left have negative $x$-components. If two forces both point left, their horizontal magnitudes reinforce even though the component sum is negative.
 - **Check:** The net magnitude cannot be smaller than the absolute value of either of its perpendicular components.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 2 Study Guide](../../2026-07-20-Q-2/Study-Guide.md)
+Next: [Gravitational Potential Energy of a Three-Body System](Problem-8.md)
+
+Study guide index: 14/20
+
+---
+
+<!-- lesson-nav:end -->

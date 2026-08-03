@@ -1,6 +1,7 @@
 # Physics 212: From Oscillations to Wave Motion
 
 Welcome back to Physics 212.
+[View Notes](Lecture-Notes.md)
 
 ## Announcements
 
@@ -720,3 +721,10 @@ $$
 $$
 
 Mechanical waves require a material medium. Electromagnetic waves do not and can propagate through a vacuum.
+
+---
+
+Up Next: [Traveling Waves, Refraction, and Intensity](../../2026-07-27-M5-2/Source/Lecture-Transcript.md)
+Previous: [Simple and Physical Pendula](../../../M4/2026-07-22-M4-2/Source/Lecture-Transcript.md)
+
+---

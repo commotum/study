@@ -1,5 +1,10 @@
 # Speed of a Rolling Solid Cylinder From Energy
 
+<!--
+lesson-id: 212-M2-039
+topic-code: MTH212.M2.39
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -236,3 +241,22 @@ v=\sqrt{\frac{4gh}{3}}.
 $$
 
 Mass and radius cancel for cylinders of the same shape. If $h$ is already the vertical height, the ramp angle does not enter the final speed.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 2 Study Guide](../../../M3/2026-07-20-Q-2/Study-Guide.md)
+Next: [Comparing Translational and Rotational Kinetic Energy in Rolling](../../../M3/2026-07-19-PQ-2/Lessons/Problem-2.md)
+
+Study guide index: 09/20
+
+---
+
+<!-- lesson-nav:end -->

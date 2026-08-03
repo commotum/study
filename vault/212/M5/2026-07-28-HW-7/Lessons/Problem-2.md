@@ -1,5 +1,10 @@
 # Wave Speed on a String Supporting a Hanging Mass
 
+<!--
+lesson-id: 212-M5-015
+topic-code: MTH212.M5.15
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -285,3 +290,17 @@ $$
 $$
 
 **Main trap:** $M$ and $m$ are not interchangeable. The hanging mass $M$ determines the tension, while the string mass $m$ determines the linear mass density.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

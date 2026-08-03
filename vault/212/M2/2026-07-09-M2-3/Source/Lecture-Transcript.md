@@ -1,6 +1,7 @@
 # Physics 212: Torque, Moment Arms, and Rotational Dynamics
 
 Welcome back to Physics 212.
+[View Notes](Lecture-Notes.md)
 
 ## Announcements
 
@@ -815,3 +816,10 @@ r^2
 $$
 
 The most important step in a torque problem is constructing a correct extended free-body diagram. Once the forces, points of application, lever arms, angles, and pivot are clearly identified, the rotational equation follows systematically.
+
+---
+
+Up Next: [Static Equilibrium and Rotational Dynamics](../../2026-07-13-M2-4/Source/Lecture-Transcript.md)
+Previous: [Center of Mass and Moment of Inertia](../../2026-07-08-M2-2/Source/Lecture-Transcript.md)
+
+---

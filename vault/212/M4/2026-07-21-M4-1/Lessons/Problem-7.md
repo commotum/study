@@ -1,5 +1,10 @@
 # Finding SHM Displacement From Release Data
 
+<!--
+lesson-id: 212-M4-007
+topic-code: MTH212.M4.07
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -406,3 +411,17 @@ For a block pulled right from equilibrium and released from rest:
 5. Keep guard digits, verify \(|x|\le A\), and interpret the sign relative to equilibrium.
 
 **Main traps:** using \(x_f\) as the amplitude, choosing sine despite release at \(+A\), using \(f\) in place of \(\omega\), switching the calculator to degrees, or dropping a negative displacement sign.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

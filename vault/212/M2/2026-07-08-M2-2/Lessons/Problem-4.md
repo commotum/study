@@ -1,5 +1,10 @@
 # Moment of Inertia About an Off-Center Rod Pivot
 
+<!--
+lesson-id: 212-M2-010
+topic-code: MTH212.M2.10
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -250,6 +255,20 @@ options:
   content: |-
     `1/9`
   correct: true
+  feedback: |-
+    The rod's center is at $L/2$, so the pivot is a distance
+
+    $$
+    d=\frac{L}{2}-\frac{L}{3}=\frac{L}{6}
+    $$
+
+    from the center. By the parallel-axis theorem,
+
+    $$
+    I=I_{\mathrm{cm}}+md^2
+    =\frac{1}{12}mL^2+m\left(\frac{L}{6}\right)^2
+    =\frac19mL^2.
+    $$
 - id: b
   content: |-
     `1/12`
@@ -262,20 +281,6 @@ options:
 - id: e
   content: |-
     `1/3`
-feedback: |-
-  The rod's center is at $L/2$, so the pivot is a distance
-
-  $$
-  d=\frac{L}{2}-\frac{L}{3}=\frac{L}{6}
-  $$
-
-  from the center. By the parallel-axis theorem,
-
-  $$
-  I=I_{\mathrm{cm}}+md^2
-  =\frac{1}{12}mL^2+m\left(\frac{L}{6}\right)^2
-  =\frac19mL^2.
-  $$
 ```
 
 ---
@@ -288,3 +293,17 @@ feedback: |-
 - Use $I_{\text{pivot}}=I_{\mathrm{cm}}+md^2$ and always add the nonnegative shift term.
 - Square the entire fractional offset before combining coefficients.
 - Factor out $mL^2$, use a common denominator, and report only the requested coefficient.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

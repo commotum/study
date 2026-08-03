@@ -1,5 +1,10 @@
 # Comparing Heard Frequencies for a Moving Sound Source
 
+<!--
+lesson-id: 212-M5-031
+topic-code: MTH212.M5.31
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -248,3 +253,17 @@ Use this comparison routine:
 4. Compare the listeners only after classifying what each one hears.
 
 The main trap is confusing frequency with loudness. **Toward** means higher frequency because the wavefront spacing is shorter—not simply because the sound is louder.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

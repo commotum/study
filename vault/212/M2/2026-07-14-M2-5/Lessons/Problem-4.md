@@ -1,5 +1,10 @@
 # Mechanical Energy Lost When Rotating Cups Capture Rain
 
+<!--
+lesson-id: 212-M2-034
+topic-code: MTH212.M2.34
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -65,6 +70,8 @@ options:
   content: |-
     $\omega_f=\dfrac13\omega_i$
   correct: true
+  feedback: |-
+    From $I_i\omega_i=I_f\omega_f$, increasing $I$ by a factor of $3$ decreases $\omega$ by the reciprocal factor: $\omega_f=\omega_i/3$.
 - id: p4-state-b
   content: |-
     $\omega_f=3\omega_i$
@@ -77,8 +84,6 @@ options:
 - id: p4-state-e
   content: |-
     $\omega_f=\omega_i$
-feedback: |-
-  From $I_i\omega_i=I_f\omega_f$, increasing $I$ by a factor of $3$ decreases $\omega$ by the reciprocal factor: $\omega_f=\omega_i/3$.
 ```
 
 ---
@@ -130,6 +135,8 @@ options:
   content: |-
     $\dfrac14$
   correct: true
+  feedback: |-
+    $K_f/K_i=(I_f/I_i)(\omega_f/\omega_i)^2=4(1/4)^2=1/4$. The angular-speed factor must be squared.
 - id: p4-fraction-b
   content: |-
     $\dfrac12$
@@ -142,8 +149,6 @@ options:
 - id: p4-fraction-e
   content: |-
     $1$
-feedback: |-
-  $K_f/K_i=(I_f/I_i)(\omega_f/\omega_i)^2=4(1/4)^2=1/4$. The angular-speed factor must be squared.
 ```
 
 ---
@@ -196,6 +201,8 @@ options:
   content: |-
     $\Delta E_{\mathrm{lost}}=\dfrac{md^2\omega_0^2}{8}$
   correct: true
+  feedback: |-
+    First $I_i=md^2/2$, then $K_i=\frac12I_i\omega_0^2=md^2\omega_0^2/4$. Since half remains, the other half is lost: $\Delta E_{\mathrm{lost}}=md^2\omega_0^2/8$.
 - id: p4-formula-b
   content: |-
     $\Delta E_{\mathrm{lost}}=\dfrac{md^2\omega_0^2}{4}$
@@ -208,8 +215,6 @@ options:
 - id: p4-formula-e
   content: |-
     $\Delta E_{\mathrm{lost}}=2md^2\omega_0^2$
-feedback: |-
-  First $I_i=md^2/2$, then $K_i=\frac12I_i\omega_0^2=md^2\omega_0^2/4$. Since half remains, the other half is lost: $\Delta E_{\mathrm{lost}}=md^2\omega_0^2/8$.
 ```
 
 ---
@@ -265,6 +270,25 @@ options:
   content: |-
     $0.47$
   correct: true
+  feedback: |-
+    The initial moment of inertia is $I_i=md^2/2$. After the capture, $I_f=2I_i$ and angular momentum conservation gives $\omega_f=\omega_0/2$. Therefore,
+
+    $$
+    \Delta E_{\mathrm{lost}}
+    =\frac12I_i\omega_0^2-\frac12I_f\omega_f^2
+    =\frac14I_i\omega_0^2
+    =\frac{md^2\omega_0^2}{8}.
+    $$
+
+    Substitution gives
+
+    $$
+    \Delta E_{\mathrm{lost}}
+    =\frac{(0.46)(0.68)^2(4.2)^2}{8}
+    =0.4689\ldots\ \mathrm{J}.
+    $$
+
+    The measured givens have two significant figures, so $\Delta E_{\mathrm{lost}}=0.47\ \mathrm{J}$.
 - id: p4-source-b
   content: |-
     $0.94$
@@ -277,25 +301,6 @@ options:
 - id: p4-source-e
   content: |-
     $4.2$
-feedback: |-
-  The initial moment of inertia is $I_i=md^2/2$. After the capture, $I_f=2I_i$ and angular momentum conservation gives $\omega_f=\omega_0/2$. Therefore,
-
-  $$
-  \Delta E_{\mathrm{lost}}
-  =\frac12I_i\omega_0^2-\frac12I_f\omega_f^2
-  =\frac14I_i\omega_0^2
-  =\frac{md^2\omega_0^2}{8}.
-  $$
-
-  Substitution gives
-
-  $$
-  \Delta E_{\mathrm{lost}}
-  =\frac{(0.46)(0.68)^2(4.2)^2}{8}
-  =0.4689\ldots\ \mathrm{J}.
-  $$
-
-  The measured givens have two significant figures, so $\Delta E_{\mathrm{lost}}=0.47\ \mathrm{J}$.
 ```
 
 ---
@@ -307,3 +312,17 @@ feedback: |-
 - Compare energies with $K_f/K_i=(I_f/I_i)(\omega_f/\omega_i)^2$.
 - For equal captured and cup masses, $I_f=2I_i$, $\omega_f=\omega_0/2$, and $50\%$ of $K_i$ is lost.
 - Use $\Delta E_{\mathrm{lost}}=md^2\omega_0^2/8$ and round only after substitution.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

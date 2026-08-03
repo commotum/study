@@ -1,5 +1,10 @@
 # Finding Orbital Distance From Orbital Period
 
+<!--
+lesson-id: 212-M3-005
+topic-code: MTH212.M3.05
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -332,26 +337,26 @@ options:
 - id: a
   content: 3.3
   correct: true
+  feedback: |-
+    Relative to Earth's orbit, Kepler's third law is
+
+    $$
+    T^2=a^3,
+    $$
+
+    with $T$ in Earth years and $a$ in astronomical units. Therefore,
+
+    $$
+    a=T^{2/3}=(6.0)^{2/3}=3.3019\ldots\ \mathrm{AU}.
+    $$
+
+    The period has two significant figures, so $a=3.3\ \mathrm{AU}$.
 - id: b
   content: 36
 - id: c
   content: 1.8
 - id: d
   content: 15
-feedback: |-
-  Relative to Earth's orbit, Kepler's third law is
-
-  $$
-  T^2=a^3,
-  $$
-
-  with $T$ in Earth years and $a$ in astronomical units. Therefore,
-
-  $$
-  a=T^{2/3}=(6.0)^{2/3}=3.3019\ldots\ \mathrm{AU}.
-  $$
-
-  The period has two significant figures, so $a=3.3\ \mathrm{AU}$.
 ```
 
 ---
@@ -368,3 +373,17 @@ For a solar orbit stated in Earth years and AU:
 5. Keep guard digits and round only the final distance to the precision of the measured period.
 
 The main traps are stopping at $T^2$, omitting the square in $T^{2/3}$, or using the inverse exponent $3/2$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

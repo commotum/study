@@ -1,5 +1,10 @@
 # Finding a New Spring-Oscillation Amplitude After an Energy Change
 
+<!--
+lesson-id: 212-M4-025
+topic-code: MTH212.M4.25
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -278,3 +283,17 @@ A_{\mathrm{new}}=\sqrt{A^2+\frac{2\Delta E}{k}}.
 $$
 
 The main trap is replacing $+\Delta E$ with $-\Delta E$. Keep the definition $\Delta E=E_{\mathrm{after}}-E_{\mathrm{before}}$ visible and substitute the sign of $\Delta E$ only once.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

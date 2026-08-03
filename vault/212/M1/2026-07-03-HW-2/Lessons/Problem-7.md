@@ -1,5 +1,10 @@
 # Resolving Banked-Track Forces Along the Centripetal Direction
 
+<!--
+lesson-id: 212-M1-061
+topic-code: MTH212.M1.61
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -273,3 +278,17 @@ The sign on friction is negative because up the track points outward in the side
 $$
 \dfrac{mv^2}{r}=ma_c=\sum F_c=n\sin\theta-f\cos\theta.
 $$
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

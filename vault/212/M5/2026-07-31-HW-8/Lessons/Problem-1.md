@@ -1,5 +1,10 @@
 # Finding the Fundamental Frequency from a Harmonic
 
+<!--
+lesson-id: 212-M5-041
+topic-code: MTH212.M5.41
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -200,3 +205,17 @@ $$
 4. Check that the fundamental is lower than the higher harmonic and that $nf_1$ rebuilds the given frequency.
 
 **Main trap:** Multiplying by $n$ moves from the fundamental to the $n$th harmonic. To move backward from the $n$th harmonic to the fundamental, divide by $n$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

@@ -225,22 +225,21 @@ For an icy banked curve, use this checklist:
 
 The correct side-view diagram has exactly two arrows: $mg$ downward and $N$ perpendicular to the bank, tilted inward.
 
+<!-- lesson-nav:start -->
+
+---
+
 ```update-progress
 ```
 
 [[212/Home|Home]]
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
-<!-- study-guide-nav:start -->
-
----
-
-## Study Guide Navigation
-
-Study guide: [212 Study Guide](<Study-Guide.md>)
-
-Next: [Finding the Speed for a Frictionless Banked Curve](<Problem-4.md>)
+[Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
+Next: [Finding the Speed for a Frictionless Banked Curve](Problem-4.md)
 
 Study guide index: 21/30
 
-<!-- study-guide-nav:end -->
+---
+
+<!-- lesson-nav:end -->

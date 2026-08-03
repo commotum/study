@@ -1,5 +1,10 @@
 # Writing the Vertical Force Equation on a Banked Track
 
+<!--
+lesson-id: 212-M1-060
+topic-code: MTH212.M1.60
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -252,3 +257,17 @@ $$
 $$
 
 The main trap is using $n\sin\theta$ and $f\cos\theta$. Check each force against the angle it actually makes before choosing sine or cosine.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

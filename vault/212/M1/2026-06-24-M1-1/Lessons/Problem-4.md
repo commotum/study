@@ -1,5 +1,10 @@
 # Revolutions While A Disk Stops
 
+<!--
+lesson-id: 212-M1-036
+topic-code: MTH212.M1.36
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -281,3 +286,17 @@ The reusable checklist is:
 - Convert radians to revolutions with $\frac{1\ \mathrm{rev}}{2\pi\ \mathrm{rad}}$.
 
 The main trap is using $\omega_0t$ as if the disk never slowed down. For a uniform stop, that gives twice the correct angular displacement.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

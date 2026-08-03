@@ -1,5 +1,10 @@
 # Total Acceleration From Radial and Tangential Components
 
+<!--
+lesson-id: 212-M1-057
+topic-code: MTH212.M1.57
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -317,3 +322,17 @@ a_t=g\sin\theta
 $$
 
 Find the two components first, square them, add them, and take the positive square root. The common trap is adding $a_r+a_t$ directly, reporting only the larger radial component, or using the string length $L$ even though the force equations already gave the needed components.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

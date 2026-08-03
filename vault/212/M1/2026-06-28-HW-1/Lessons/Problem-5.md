@@ -1,5 +1,10 @@
 # Finding Angular Position From Angular Acceleration
 
+<!--
+lesson-id: 212-M1-047
+topic-code: MTH212.M1.47
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -388,3 +393,17 @@ $$
 $$
 
 The main trap is forgetting that both $Bt^2$ and $C$ must be integrated twice, and that the initial velocity contributes the term $\omega_0t$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

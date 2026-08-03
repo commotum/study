@@ -1,6 +1,7 @@
 # Physics 212: Course Framework and Introduction to Rotational Kinematics
 
 Welcome back to Physics 212.
+[View Notes](Lecture-Notes.md)
 
 ## Course Questions and Logistics
 
@@ -1340,3 +1341,10 @@ $$
 \Delta\theta=72\ \mathrm{rad}
 }.
 $$
+
+---
+
+Up Next: [Rotational Kinematics, Angular Acceleration, and the Right-Hand Rule](../../2026-06-24-M1-1/Source/Lecture-Transcript.md)
+Previous: [Course Orientation, Assessments, and Laboratory Structure](../../2026-06-22-M1-0/Source/Lecture-Transcript.md)
+
+---

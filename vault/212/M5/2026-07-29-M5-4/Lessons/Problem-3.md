@@ -1,5 +1,10 @@
 # Third-Harmonic Frequency of a Wire Tensioned by a Hanging Mass
 
+<!--
+lesson-id: 212-M5-033
+topic-code: MTH212.M5.33
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -337,3 +342,22 @@ For a fixed-end wire tensioned by a stationary hanging mass:
 5. Keep unrounded intermediate values, then round the final frequency and follow the requested answer format.
 
 The main trap is using the wrong mass: $M$ determines tension, while $m_w$ determines linear density.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
+Next: [Matching Fundamental Frequencies of Open and Closed Tubes](../../2026-07-31-HW-8/Lessons/Problem-2.md)
+
+Study guide index: 16/20
+
+---
+
+<!-- lesson-nav:end -->

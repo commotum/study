@@ -1,5 +1,10 @@
 # Total Mechanical Energy of a Three-Body Orbit
 
+<!--
+lesson-id: 212-M3-010
+topic-code: MTH212.M3.10
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -293,7 +298,6 @@ $$
 ```quiz
 type: radio
 id: m3-2lec-q5
-require_exact: true
 content: |-
   **Question 5**
 
@@ -371,3 +375,22 @@ $$
 $$
 
 The main traps are double-counting pairs, omitting one of the three kinetic terms, dropping the negative sign of $U$, or mishandling the requested $10^{36}\ \mathrm{J}$ scale.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 2 Study Guide](../../2026-07-20-Q-2/Study-Guide.md)
+Next: [Four Stars Orbiting at the Corners of a Square](../../2026-07-19-PQ-2/Lessons/Problem-5.md)
+
+Study guide index: 19/20
+
+---
+
+<!-- lesson-nav:end -->

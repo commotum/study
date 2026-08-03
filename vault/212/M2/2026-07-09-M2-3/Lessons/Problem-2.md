@@ -1,5 +1,10 @@
 # Finding the Smallest Torque From a Force Diagram
 
+<!--
+lesson-id: 212-M2-012
+topic-code: MTH212.M2.12
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -273,3 +278,17 @@ To find the smallest torque magnitude in a force diagram:
 5. Check first for a line of action through the pivot; it gives $\tau=0$.
 
 For equal forces, the smallest perpendicular lever arm produces the smallest torque. The main trap is choosing the force closest to the hinge or most nearly horizontal without checking whether its line of action actually passes through the pivot.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

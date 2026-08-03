@@ -1,5 +1,10 @@
 # Hearing an Echo as a Moving Observer
 
+<!--
+lesson-id: 212-M5-018
+topic-code: MTH212.M5.18
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -255,3 +260,17 @@ When a sound reflects from a stationary wall and returns to a moving listener:
 4. Check the result: $(c+v)/c>1$, which matches the higher frequency expected when the observer moves toward the crests.
 
 The main trap is putting $c\pm v$ in the denominator, which would treat the hawk as a moving source instead of the moving observer it is on the return trip.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

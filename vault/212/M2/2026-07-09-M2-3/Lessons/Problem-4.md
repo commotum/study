@@ -1,5 +1,10 @@
 # Finding the Direction of a Torque Vector
 
+<!--
+lesson-id: 212-M2-014
+topic-code: MTH212.M2.14
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -283,3 +288,17 @@ For torque caused by forces drawn in the page:
 5. If needed, verify with $\tau_z=r_xF_y-r_yF_x$.
 
 Always preserve the cross-product order $\vec r\times\vec F$. Swapping the vectors reverses the torque direction.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

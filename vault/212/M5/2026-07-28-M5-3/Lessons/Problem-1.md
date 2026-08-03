@@ -1,5 +1,10 @@
 # Finding Distance From Sound Intensity
 
+<!--
+lesson-id: 212-M5-024
+topic-code: MTH212.M5.24
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -371,3 +376,22 @@ When the same source has intensity measurements at two distances:
 5. Keep the positive root, round only at the end, and follow the requested answer format.
 
 The main traps are reversing $I_1/I_2$, forgetting the square root, and reporting a negative or over-rounded distance.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
+Next: [Convert an Intensity Ratio into a Decibel Change](../../2026-08-02-PQ-3/Lessons/Problem-2.md)
+
+Study guide index: 12/20
+
+---
+
+<!-- lesson-nav:end -->

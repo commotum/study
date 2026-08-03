@@ -1,6 +1,7 @@
 # Physics 212: Rotational Kinematics, Angular Acceleration, and the Right-Hand Rule
 
 Welcome back to Physics 212.
+[View Notes](Lecture-Notes.md)
 
 ## Announcements and Course Resources
 
@@ -1084,3 +1085,9 @@ N\approx25\ \mathrm{revolutions}
 }.
 $$
 
+---
+
+Up Next: [Covariational Reasoning and Radial Acceleration](../../2026-06-25-M1-2/Source/Lecture-Transcript.md)
+Previous: [Course Framework and Introduction to Rotational Kinematics](../../2026-06-23-M1-00/Source/Lecture-Transcript.md)
+
+---

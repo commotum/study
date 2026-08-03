@@ -1,5 +1,10 @@
 # Finding the Orbital Period of a Binary Star System
 
+<!--
+lesson-id: 212-M3-007
+topic-code: MTH212.M3.07
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -64,6 +69,8 @@ options:
   content: |-
     $T=2\pi\sqrt{\dfrac{(2.0\times10^{12})^3}{G(8.0\times10^{30})}}$
   correct: true
+  feedback: |-
+    Add both masses to obtain $8.0\times10^{30}\ \mathrm{kg}$, and cube the full separation $d=2.0\times10^{12}\ \mathrm m$.
 - id: p3-setup-b
   content: |-
     $T=2\pi\sqrt{\dfrac{(2.0\times10^{12})^3}{G(6.0\times10^{30})}}$
@@ -76,8 +83,6 @@ options:
 - id: p3-setup-e
   content: |-
     $T=2\pi\sqrt{\dfrac{(8.0\times10^{30})^3}{G(2.0\times10^{12})}}$
-feedback: |-
-  Add both masses to obtain $8.0\times10^{30}\ \mathrm{kg}$, and cube the full separation $d=2.0\times10^{12}\ \mathrm m$.
 ```
 
 ---
@@ -142,6 +147,8 @@ options:
   content: |-
     $7.69\times10^8\ \mathrm s$
   correct: true
+  feedback: |-
+    The complete evaluation is $T=2\pi\sqrt{(2.0\times10^{12})^3/[G(8.0\times10^{30})]}=7.69\times10^8\ \mathrm s$. The outside factor $2\pi$ is applied after the square root.
 - id: p3-evaluate-b
   content: |-
     $1.22\times10^8\ \mathrm s$
@@ -154,8 +161,6 @@ options:
 - id: p3-evaluate-e
   content: |-
     $2.44\times10^1\ \mathrm s$
-feedback: |-
-  The complete evaluation is $T=2\pi\sqrt{(2.0\times10^{12})^3/[G(8.0\times10^{30})]}=7.69\times10^8\ \mathrm s$. The outside factor $2\pi$ is applied after the square root.
 ```
 
 ---
@@ -190,6 +195,8 @@ options:
   content: |-
     $24.38\ \mathrm{yr}$
   correct: true
+  feedback: |-
+    Multiply by $1\ \mathrm{yr}/(3.15576\times10^7\ \mathrm s)$ so seconds cancel: $(7.6934\times10^8)/(3.15576\times10^7)=24.38\ \mathrm{yr}$.
 - id: p3-convert-b
   content: |-
     $2.43\times10^{16}\ \mathrm{yr}$
@@ -202,8 +209,6 @@ options:
 - id: p3-convert-e
   content: |-
     $2.11\times10^6\ \mathrm{yr}$
-feedback: |-
-  Multiply by $1\ \mathrm{yr}/(3.15576\times10^7\ \mathrm s)$ so seconds cancel: $(7.6934\times10^8)/(3.15576\times10^7)=24.38\ \mathrm{yr}$.
 ```
 
 ---
@@ -257,6 +262,21 @@ options:
   content: |-
     $46$
   correct: true
+  feedback: |-
+    For a circular binary system with separation $d$,
+
+    $$
+    T=2\pi\sqrt{\frac{d^3}{G(m_1+m_2)}}.
+    $$
+
+    Using $G=6.67\times10^{-11}\ \mathrm{N\,m^2/kg^2}$ gives
+
+    $$
+    T=1.4597\times10^9\ \mathrm{s}
+    =46.2556\ldots\ \mathrm{yr}.
+    $$
+
+    The measured masses and separation have two significant figures, so $T=46\ \mathrm{yr}$.
 - id: p3-source-b
   content: |-
     $1.5\times10^9$
@@ -269,21 +289,6 @@ options:
 - id: p3-source-e
   content: |-
     $7.4$
-feedback: |-
-  For a circular binary system with separation $d$,
-
-  $$
-  T=2\pi\sqrt{\frac{d^3}{G(m_1+m_2)}}.
-  $$
-
-  Using $G=6.67\times10^{-11}\ \mathrm{N\,m^2/kg^2}$ gives
-
-  $$
-  T=1.4597\times10^9\ \mathrm{s}
-  =46.2556\ldots\ \mathrm{yr}.
-  $$
-
-  The measured masses and separation have two significant figures, so $T=46\ \mathrm{yr}$.
 ```
 
 ---
@@ -296,3 +301,22 @@ feedback: |-
 - Use units to check that the radicand is in $\mathrm{s^2}$ and the period is in seconds.
 - Convert seconds to Earth years with a factor whose seconds cancel, and round only at the end.
 - Main traps: using only one mass, failing to cube $d$, omitting $2\pi$, or reporting the answer in seconds.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 2 Study Guide](../../2026-07-20-Q-2/Study-Guide.md)
+Next: [Scaling Kinetic Energy in a Circular Orbit](../../2026-07-17-HW-5/Lessons/Problem-6.md)
+
+Study guide index: 17/20
+
+---
+
+<!-- lesson-nav:end -->

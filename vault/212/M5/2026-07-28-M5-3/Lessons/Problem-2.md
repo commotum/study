@@ -1,5 +1,10 @@
 # Sound Intensity at a New Distance
 
+<!--
+lesson-id: 212-M5-025
+topic-code: MTH212.M5.25
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -316,3 +321,17 @@ When the same point source is measured at two distances:
 6. Report the result in $\mathrm{W/m^2}$, or omit the unit only when the response field explicitly asks for a number.
 
 The main traps are using a linear distance ratio and reversing the old-to-new distance ratio.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

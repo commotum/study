@@ -1,5 +1,10 @@
 # Solve Coupled Equilibrium and Massive-Pulley Systems
 
+<!--
+lesson-id: 212-M3-027
+topic-code: MTH212.M3.27
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -406,3 +411,17 @@ For massive pulleys:
 5. Check the $I\to0$ limit and whether increasing $I$ correctly reduces $a$.
 
 The main trap is trying to solve the entire coupled system with only a force equation or only a torque equation.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

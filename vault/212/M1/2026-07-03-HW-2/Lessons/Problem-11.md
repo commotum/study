@@ -299,22 +299,21 @@ $$
 
 The main trap is stopping at the top-speed condition or using a height change of only $r$ instead of $2r$.
 
+<!-- lesson-nav:start -->
+
+---
+
 ```update-progress
 ```
 
 [[212/Home|Home]]
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
-<!-- study-guide-nav:start -->
-
----
-
-## Study Guide Navigation
-
-Study guide: [212 Study Guide](<Study-Guide.md>)
-
-Next: [Finding the Critical Angle Where a Slider Leaves a Sphere](<Problem-13.md>)
+[Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
+Next: [Finding the Critical Angle Where a Slider Leaves a Sphere](Problem-13.md)
 
 Study guide index: 29/30
 
-<!-- study-guide-nav:end -->
+---
+
+<!-- lesson-nav:end -->

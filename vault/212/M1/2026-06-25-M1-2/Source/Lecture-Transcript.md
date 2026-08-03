@@ -1,6 +1,7 @@
 # Physics 212: Covariational Reasoning and Radial Acceleration
 
 Welcome back to Physics 212.
+[View Notes](Lecture-Notes.md)
 
 ## Announcements
 
@@ -923,3 +924,10 @@ $$
 D<A<C<B
 }.
 $$
+
+---
+
+Up Next: [Circular Motion, Ferris Wheels, and Static Friction](../../2026-06-29-M1-3/Source/Lecture-Transcript.md)
+Previous: [Rotational Kinematics, Angular Acceleration, and the Right-Hand Rule](../../2026-06-24-M1-1/Source/Lecture-Transcript.md)
+
+---

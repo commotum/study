@@ -1,5 +1,10 @@
 # Mechanical-Energy Change During a Sticking Collision
 
+<!--
+lesson-id: 212-M4-024
+topic-code: MTH212.M4.24
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -290,3 +295,17 @@ $$
 $$
 
 The main trap is subtracting the spring potential only once. Because the spring remains at $x=A/2$ throughout the brief collision, its potential energy appears in both snapshots and cancels.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

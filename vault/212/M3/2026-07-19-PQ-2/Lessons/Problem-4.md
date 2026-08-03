@@ -1,5 +1,10 @@
 # Finding the Tipping Threshold With Torque Balance
 
+<!--
+lesson-id: 212-M3-022
+topic-code: MTH212.M3.22
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -257,3 +262,22 @@ x_{\max}=\frac{ML}{4m}.
 $$
 
 The main trap is keeping the force from support A in the threshold equation. At the instant tipping begins, $N_A=0$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 2 Study Guide](../../2026-07-20-Q-2/Study-Guide.md)
+Next: [Speed of a Rolling Solid Cylinder From Energy](../../../M2/2026-07-15-HW-4/Lessons/Problem-3.md)
+
+Study guide index: 08/20
+
+---
+
+<!-- lesson-nav:end -->

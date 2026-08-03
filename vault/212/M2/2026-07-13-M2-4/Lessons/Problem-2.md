@@ -1,5 +1,10 @@
 # Finding the Load Position at the Tipping Point
 
+<!--
+lesson-id: 212-M2-028
+topic-code: MTH212.M2.28
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -253,7 +258,6 @@ The result is less than the available right overhang, $L-2L/3=L/3\approx0.47\ \m
 ```quiz
 type: radio
 id: m2-4lec-q1
-require_exact: true
 content: |-
   **Question 1**
 
@@ -339,3 +343,17 @@ $$
 $$
 
 The main traps are pivoting about the wrong support, including the zero force from support A, or using a position from the board's end instead of a lever arm from the pivot.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,5 +1,10 @@
 # Comparing Descent Times with a Rotating Flywheel
 
+<!--
+lesson-id: 212-M3-021
+topic-code: MTH212.M3.21
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -246,3 +251,22 @@ When otherwise identical falling-block systems differ only in flywheel inertia:
 4. Use $t=\sqrt{2h/g}\sqrt{1+I/(mr^2)}$ to conclude that larger $I$ gives longer time.
 
 The main trap is comparing only the equal block weights. The massive flywheel requires torque, so cord tension reduces that block's net downward force.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 2 Study Guide](../../2026-07-20-Q-2/Study-Guide.md)
+Next: [Finding the Tipping Threshold With Torque Balance](Problem-4.md)
+
+Study guide index: 07/20
+
+---
+
+<!-- lesson-nav:end -->

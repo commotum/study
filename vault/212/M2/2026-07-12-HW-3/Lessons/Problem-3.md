@@ -1,5 +1,10 @@
 # Finding a Density Constant from Total Mass
 
+<!--
+lesson-id: 212-M2-019
+topic-code: MTH212.M2.19
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -227,3 +232,17 @@ When a density function contains an unknown constant and the total mass is known
 4. Check that the units fit the density and that substituting the constant reproduces the total mass.
 
 For $\lambda(x)=cx^2$ on $0\le x\le l$, the main traps are using only the endpoint density $cl^2$, forgetting that $\int_0^l x^2\,dx=l^3/3$, or leaving the factor $3$ in the denominator when isolating $c$. Thus $m=cl^3/3$ and $c=3m/l^3$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

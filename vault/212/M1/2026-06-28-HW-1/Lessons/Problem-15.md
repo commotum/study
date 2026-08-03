@@ -1,5 +1,10 @@
 # Matching Angular Acceleration to a Position Graph
 
+<!--
+lesson-id: 212-M1-052
+topic-code: MTH212.M1.52
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -289,3 +294,17 @@ To match an angular-position graph to an angular-acceleration graph, read the co
 Concave up means the slope of $\theta_z(t)$ is increasing, so $\alpha_z(t)>0$. Concave down means the slope is decreasing, so $\alpha_z(t)<0$. When the concavity changes, the acceleration graph should cross zero.
 
 The main trap is using position height or velocity sign instead of concavity. Acceleration is the second derivative of position, so the matching graph follows how the slope changes.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

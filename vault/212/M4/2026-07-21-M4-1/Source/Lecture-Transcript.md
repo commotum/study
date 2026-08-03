@@ -1,6 +1,7 @@
 # Physics 212: Oscillations and Simple Harmonic Motion
 
 Welcome back to Physics 212.
+[View Notes](Lecture-Notes.md)
 
 ## Announcements
 
@@ -864,3 +865,10 @@ v_{\max}=A\sqrt{\frac{k}{m}}.
 $$
 
 These principles provide the foundation for our study of waves. A wave can be understood as a propagating pattern produced by many connected oscillators, with the oscillation frequency determined by the wave’s source.
+
+---
+
+Up Next: [Simple and Physical Pendula](../../2026-07-22-M4-2/Source/Lecture-Transcript.md)
+Previous: [Binary Stars and Three-Body Gravitational Orbits](../../../M3/2026-07-16-M3-2/Source/Lecture-Transcript.md)
+
+---

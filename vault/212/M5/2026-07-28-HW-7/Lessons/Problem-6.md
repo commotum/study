@@ -1,5 +1,10 @@
 # Comparing Sound Levels for Spherical and Tube Spreading
 
+<!--
+lesson-id: 212-M5-019
+topic-code: MTH212.M5.19
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -324,3 +329,17 @@ $$
 $$
 
 **Main traps:** Do not use the area ratio in the wrong direction, omit the square from the geometric areas, or multiply $\beta$ by the intensity ratio. A multiplicative intensity ratio produces an additive decibel change.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

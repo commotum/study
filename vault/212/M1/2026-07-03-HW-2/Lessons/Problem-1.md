@@ -216,22 +216,21 @@ To decide whether motion is uniform circular motion, check the definition first:
 
 If both answers are yes, the object is undergoing uniform circular motion. A constant period on a fixed circular path supports constant speed because each lap covers the same distance in the same time. Do not reject uniform circular motion just because the velocity direction changes, the object accelerates inward, or a force analysis could be done later.
 
+<!-- lesson-nav:start -->
+
+---
+
 ```update-progress
 ```
 
 [[212/Home|Home]]
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
-<!-- study-guide-nav:start -->
-
----
-
-## Study Guide Navigation
-
-Study guide: [212 Study Guide](<Study-Guide.md>)
-
-Next: [Recognizing Tangential Velocity in Circular Motion](<../../2026-06-28-HW-1/Lessons/Problem-6.md>)
+[Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
+Next: [Recognizing Tangential Velocity in Circular Motion](../../2026-06-28-HW-1/Lessons/Problem-6.md)
 
 Study guide index: 05/30
 
-<!-- study-guide-nav:end -->
+---
+
+<!-- lesson-nav:end -->

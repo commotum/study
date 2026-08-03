@@ -1,5 +1,10 @@
 # Comparing Centripetal Acceleration At Fixed Speed
 
+<!--
+lesson-id: 212-M1-064
+topic-code: MTH212.M1.64
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -199,3 +204,17 @@ Use this checklist:
 - The centripetal acceleration magnitude is $a_c=\frac{v^2}{r}$.
 - If $v$ is fixed, compare only the radius.
 - Smaller radius means larger acceleration because $r$ is in the denominator.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

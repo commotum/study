@@ -1,5 +1,10 @@
 # Comparing Torque Magnitudes From a Diagram
 
+<!--
+lesson-id: 212-M2-011
+topic-code: MTH212.M2.11
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -298,3 +303,17 @@ options:
 - A perpendicular force gives the largest possible torque for fixed $r$ and $F$.
 - A force whose line of action passes through the pivot gives zero torque.
 - Do not compare distance alone or angle alone; compare their combined effect through the perpendicular lever arm.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

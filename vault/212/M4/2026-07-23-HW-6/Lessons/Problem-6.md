@@ -1,5 +1,10 @@
 # Period of an Oscillator Before Its Mass Changes
 
+<!--
+lesson-id: 212-M4-021
+topic-code: MTH212.M4.21
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -241,3 +246,17 @@ When a period is requested **before** a collision or attachment:
 
 4. Ignore amplitude and instantaneous position for an ideal spring.
 5. Do not use a mass that joins the oscillator later, and do not mistake the frequency formula for the period formula.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

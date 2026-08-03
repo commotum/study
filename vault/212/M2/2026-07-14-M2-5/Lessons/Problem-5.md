@@ -1,5 +1,10 @@
 # Finding Angular Speed After a Bullet Embeds in a Rotor
 
+<!--
+lesson-id: 212-M2-035
+topic-code: MTH212.M2.35
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -64,6 +69,8 @@ options:
   content: |-
     Angular momentum about the spindle
   correct: true
+  feedback: |-
+    The spindle impulse has zero lever arm about the spindle, so angular momentum about that axis is conserved. Embedding is inelastic, so mechanical energy is not conserved.
 - id: b
   content: |-
     Linear momentum of the projectile-disk system
@@ -76,8 +83,6 @@ options:
 - id: e
   content: |-
     The disk's moment of inertia
-feedback: |-
-  The spindle impulse has zero lever arm about the spindle, so angular momentum about that axis is conserved. Embedding is inelastic, so mechanical energy is not conserved.
 ```
 
 ---
@@ -113,6 +118,8 @@ options:
   content: |-
     $\dfrac12mvr$
   correct: true
+  feedback: |-
+    Use the perpendicular lever arm $b=r/2$: $L=mvb=mv(r/2)=mvr/2$.
 - id: b
   content: |-
     $mvr$
@@ -125,8 +132,6 @@ options:
 - id: e
   content: |-
     $mr^2$
-feedback: |-
-  Use the perpendicular lever arm $b=r/2$: $L=mvb=mv(r/2)=mvr/2$.
 ```
 
 ---
@@ -162,6 +167,8 @@ options:
   content: |-
     $\dfrac12Mr^2+mr^2$
   correct: true
+  feedback: |-
+    Add the solid cylinder's $\frac12Mr^2$ and the point mass's $mr^2$. The bullet remains part of the rotating final system.
 - id: b
   content: |-
     $\dfrac12Mr^2$
@@ -174,8 +181,6 @@ options:
 - id: e
   content: |-
     $Mmr^2$
-feedback: |-
-  Add the solid cylinder's $\frac12Mr^2$ and the point mass's $mr^2$. The bullet remains part of the rotating final system.
 ```
 
 ---
@@ -232,6 +237,8 @@ options:
   content: |-
     $1.2\ \mathrm{rad/s}$
   correct: true
+  feedback: |-
+    $\omega_f=mv/[r(\frac12M+m)]=(0.20)(3.0)/[(0.50)(0.80+0.20)]=1.2\ \mathrm{rad/s}$.
 - id: b
   content: |-
     $0.60\ \mathrm{rad/s}$
@@ -244,8 +251,6 @@ options:
 - id: e
   content: |-
     $6.0\ \mathrm{rad/s}$
-feedback: |-
-  $\omega_f=mv/[r(\frac12M+m)]=(0.20)(3.0)/[(0.50)(0.80+0.20)]=1.2\ \mathrm{rad/s}$.
 ```
 
 ---
@@ -303,6 +308,30 @@ options:
   content: |-
     `0.95`
   correct: true
+  feedback: |-
+    Angular momentum about the spindle is conserved. The bullet's initial angular momentum is $mvr$, and the final moment of inertia is
+
+    $$
+    I_f=\frac12Mr^2+mr^2.
+    $$
+
+    Hence,
+
+    $$
+    \omega_f
+    =\frac{mvr}{\frac12Mr^2+mr^2}
+    =\frac{mv}{r(\frac12M+m)}.
+    $$
+
+    Substitution gives
+
+    $$
+    \omega_f
+    =\frac{(0.35)(3.8)}{(0.85)[\frac12(2.6)+0.35]}
+    =0.9483\ldots\ \mathrm{rad/s}.
+    $$
+
+    The measured givens have two significant figures, so $\omega_f=0.95\ \mathrm{rad/s}$.
 - id: b
   content: |-
     `1.2`
@@ -315,30 +344,6 @@ options:
 - id: e
   content: |-
     `2.7`
-feedback: |-
-  Angular momentum about the spindle is conserved. The bullet's initial angular momentum is $mvr$, and the final moment of inertia is
-
-  $$
-  I_f=\frac12Mr^2+mr^2.
-  $$
-
-  Hence,
-
-  $$
-  \omega_f
-  =\frac{mvr}{\frac12Mr^2+mr^2}
-  =\frac{mv}{r(\frac12M+m)}.
-  $$
-
-  Substitution gives
-
-  $$
-  \omega_f
-  =\frac{(0.35)(3.8)}{(0.85)[\frac12(2.6)+0.35]}
-  =0.9483\ldots\ \mathrm{rad/s}.
-  $$
-
-  The measured givens have two significant figures, so $\omega_f=0.95\ \mathrm{rad/s}$.
 ```
 
 ---
@@ -354,3 +359,22 @@ feedback: |-
 - **Check:** the result must have units of $\mathrm{s^{-1}}$ and use the precision of the measured inputs.
 - **Bound:** because the cylinder adds inertia, $\omega_f<v/r$.
 - **Main trap:** the embedded bullet contributes to both the initial angular momentum and the final moment of inertia.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 2 Study Guide](../../../M3/2026-07-20-Q-2/Study-Guide.md)
+Next: [Comparing Angular Momentum at Equal Angular Speed](../../../M3/2026-07-19-PQ-2/Lessons/Problem-1.md)
+
+Study guide index: 11/20
+
+---
+
+<!-- lesson-nav:end -->

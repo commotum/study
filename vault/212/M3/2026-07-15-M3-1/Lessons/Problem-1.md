@@ -1,5 +1,10 @@
 # Scaling Force With an Inverse-Square Law
 
+<!--
+lesson-id: 212-M3-001
+topic-code: MTH212.M3.01
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -65,6 +70,8 @@ options:
   content: |-
     $I$ is inversely proportional to the square of $d$.
   correct: true
+  feedback: |-
+    The variable $d$ is squared in the denominator, so $I\propto 1/d^2$. Do not drop the exponent or reverse the relationship.
 - id: b
   content: |-
     $I$ is inversely proportional to $d$.
@@ -77,8 +84,6 @@ options:
 - id: e
   content: |-
     $I$ is directly proportional to $d$.
-feedback: |-
-  The variable $d$ is squared in the denominator, so $I\propto 1/d^2$. Do not drop the exponent or reverse the relationship.
 ```
 
 ---
@@ -145,6 +150,8 @@ options:
   content: |-
     $F/16$
   correct: true
+  feedback: |-
+    Here $k=4$, so $F_{\text{new}}=F/k^2=F/16$. The distractor $F/4$ comes from forgetting to square the distance factor.
 - id: b
   content: |-
     $F/4$
@@ -157,8 +164,6 @@ options:
 - id: e
   content: |-
     $F$
-feedback: |-
-  Here $k=4$, so $F_{\text{new}}=F/k^2=F/16$. The distractor $F/4$ comes from forgetting to square the distance factor.
 ```
 
 ---
@@ -192,6 +197,8 @@ options:
   content: |-
     $9F$
   correct: true
+  feedback: |-
+    The scale factor is $k=1/3$, so $F_{\text{new}}=F/(1/3)^2=9F$. A shorter distance must produce a larger force.
 - id: b
   content: |-
     $3F$
@@ -204,8 +211,6 @@ options:
 - id: e
   content: |-
     $F$
-feedback: |-
-  The scale factor is $k=1/3$, so $F_{\text{new}}=F/(1/3)^2=9F$. A shorter distance must produce a larger force.
 ```
 
 ---
@@ -264,3 +269,22 @@ options:
 - **Procedure:** identify $k$, substitute $(kr)^2$ for $r^2$, expand it as $k^2r^2$, and multiply the old force by $1/k^2$.
 - **Direction check:** greater distance means less force; smaller distance means greater force.
 - **Main trap:** doubling the distance gives $F/4$, not $F/2$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 2 Study Guide](../../2026-07-20-Q-2/Study-Guide.md)
+Next: [Net Gravitational Force from a Right-Triangle Arrangement](../../2026-07-17-HW-5/Lessons/Problem-3.md)
+
+Study guide index: 13/20
+
+---
+
+<!-- lesson-nav:end -->

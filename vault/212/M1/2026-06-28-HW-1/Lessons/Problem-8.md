@@ -354,23 +354,21 @@ $$
 
 The main trap is mixing a vector with a scalar. The velocity $\vec v$ is tangent to the circle, while $r\omega$ is only its magnitude. A statement saying "$\vec v$ has magnitude $r\omega$" is true.
 
+<!-- lesson-nav:start -->
+
+---
+
 ```update-progress
 ```
 
 [[212/Home|Home]]
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
-<!-- study-guide-nav:start -->
-
----
-
-## Study Guide Navigation
-
-Study guide: [212 Study Guide](<Study-Guide.md>)
-
-Next: [Tangential Speed From Angular Velocity](<../../2026-06-29-M1-3/Lessons/Problem-2.md>)
+[Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
+Next: [Tangential Speed From Angular Velocity](../../2026-06-29-M1-3/Lessons/Problem-2.md)
 
 Study guide index: 01/30
 
-<!-- study-guide-nav:end -->
+---
 
+<!-- lesson-nav:end -->

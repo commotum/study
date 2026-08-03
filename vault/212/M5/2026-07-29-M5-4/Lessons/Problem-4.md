@@ -1,5 +1,10 @@
 # Third Harmonic of an Open–Closed Pipe
 
+<!--
+lesson-id: 212-M5-034
+topic-code: MTH212.M5.34
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -304,3 +309,17 @@ The reusable procedure is:
 5. Keep full calculator precision and round only the reported answer.
 
 The main trap is using the fundamental relation $L=\lambda/4$ for the third harmonic. For the assigned values, the unrounded result is $302.647\ldots\ \mathrm{Hz}$ and the required number-only answer is $300$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,5 +1,10 @@
 # Bead on a Frictionless Cone
 
+<!--
+lesson-id: 212-M1-065
+topic-code: MTH212.M1.65
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -317,3 +322,17 @@ T = \frac{2\pi r}{\sqrt{gh}}
 $$
 
 The main trap is treating "centripetal force" as an extra force instead of using the inward component of the normal force.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

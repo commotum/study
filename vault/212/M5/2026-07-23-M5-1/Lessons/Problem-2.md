@@ -1,5 +1,10 @@
 # Compare Frequencies on Identical Springs
 
+<!--
+lesson-id: 212-M5-002
+topic-code: MTH212.M5.02
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -280,3 +285,17 @@ For two ideal mass–spring oscillators:
 6. Do not use equal pull distance to infer equal frequency; pull distance sets amplitude.
 
 The main traps are treating frequency as proportional to mass and confusing equal amplitude with equal frequency.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

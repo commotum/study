@@ -1,5 +1,10 @@
 # Scaling Maximum Kinetic Energy with Amplitude
 
+<!--
+lesson-id: 212-M4-017
+topic-code: MTH212.M4.17
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -271,3 +276,17 @@ When the same spring is used, $k$ is fixed and $K_{\max}\propto A^2$. If only th
 5. For an inverse question, solve $c^2=$ energy factor and keep the positive root.
 
 The main trap is using $c$ instead of $c^2$. Doubling the amplitude makes the maximum kinetic energy four times as large.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

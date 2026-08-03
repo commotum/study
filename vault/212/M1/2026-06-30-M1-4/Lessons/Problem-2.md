@@ -284,22 +284,21 @@ For a car moving at constant speed around a level circle, use this three-check t
 
 The main trap is thinking that constant speed means no acceleration. In circular motion, the speed can stay constant while the direction changes, so the net force points inward.
 
+<!-- lesson-nav:start -->
+
+---
+
 ```update-progress
 ```
 
 [[212/Home|Home]]
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
-<!-- study-guide-nav:start -->
-
----
-
-## Study Guide Navigation
-
-Study guide: [212 Study Guide](<Study-Guide.md>)
-
-Next: [Finding Static Friction on a Flat Curve](<Problem-3.md>)
+[Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
+Next: [Finding Static Friction on a Flat Curve](Problem-3.md)
 
 Study guide index: 12/30
 
-<!-- study-guide-nav:end -->
+---
+
+<!-- lesson-nav:end -->

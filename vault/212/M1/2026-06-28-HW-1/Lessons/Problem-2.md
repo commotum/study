@@ -1,5 +1,10 @@
 # Finding the Time for One Revolution While Speeding Up
 
+<!--
+lesson-id: 212-M1-044
+topic-code: MTH212.M1.44
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -535,3 +540,17 @@ $$
 $$
 
 The other root is negative, so it cannot be the elapsed time. The most common setup mistakes are using $\pi r$ instead of $2\pi r$, or writing $at^2$ instead of $\dfrac12at^2$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,5 +1,10 @@
 # Finding a Decay Constant from Period Counts
 
+<!--
+lesson-id: 212-M4-028
+topic-code: MTH212.M4.28
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -305,3 +310,17 @@ $$
 $$
 
 The main trap is copying the familiar form $e^{-t/\tau}$ instead of reading the given exponent $e^{-t/(2\tau)}$. That mistake doubles the result.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,5 +1,10 @@
 # Balancing Opposing Inverse-Square Forces
 
+<!--
+lesson-id: 212-M3-012
+topic-code: MTH212.M3.12
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -261,3 +266,17 @@ Use this checklist:
 5. Verify $0<x<L$ and confirm the point is closer to the smaller source mass.
 
 The main traps are using $L+x$, dropping a source-mass factor, forgetting the square on distance, or keeping a nonphysical square-root branch.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

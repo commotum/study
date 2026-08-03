@@ -1,5 +1,10 @@
 # Center of Mass of an Object with a Hole
 
+<!--
+lesson-id: 212-M2-026
+topic-code: MTH212.M2.26
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -316,3 +321,17 @@ When a simple piece is removed from a uniform body:
 
 4. Divide by the **remaining** mass $M-m_h$.
 5. Check the sign: the center of mass shifts away from the removed material.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

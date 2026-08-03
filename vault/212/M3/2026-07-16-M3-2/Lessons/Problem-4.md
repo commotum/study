@@ -1,5 +1,10 @@
 # Combining Equal Gravitational Forces in an Equilateral Triangle
 
+<!--
+lesson-id: 212-M3-008
+topic-code: MTH212.M3.08
+-->
+
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -60,6 +65,8 @@ options:
   content: |-
     $\dfrac{Gm^2}{L^2}$
   correct: true
+  feedback: |-
+    Apply Newton's law to one pair of equal masses separated by one side length: $F_{\text{pair}}=Gm^2/L^2$. The other mass produces a second force of the same magnitude, which must be combined later as a vector.
 - id: b
   content: |-
     $\dfrac{2Gm^2}{L^2}$
@@ -69,8 +76,6 @@ options:
 - id: d
   content: |-
     $\dfrac{Gm}{L^2}$
-feedback: |-
-  Apply Newton's law to one pair of equal masses separated by one side length: $F_{\text{pair}}=Gm^2/L^2$. The other mass produces a second force of the same magnitude, which must be combined later as a vector.
 ```
 
 ## Use the Triangle Geometry to Set the Angle
@@ -97,6 +102,8 @@ options:
   content: |-
     The forces are $60^\circ$ apart, and each is $30^\circ$ from the bisector.
   correct: true
+  feedback: |-
+    Each force follows a side of the equilateral triangle. The sides meet at the $60^\circ$ interior angle, and symmetry divides that angle into two $30^\circ$ angles.
 - id: b
   content: |-
     The forces are $30^\circ$ apart, and each is $15^\circ$ from the bisector.
@@ -106,8 +113,6 @@ options:
 - id: d
   content: |-
     The forces are $180^\circ$ apart and cancel.
-feedback: |-
-  Each force follows a side of the equilateral triangle. The sides meet at the $60^\circ$ interior angle, and symmetry divides that angle into two $30^\circ$ angles.
 ```
 
 ## Add the Two Equal Force Vectors
@@ -165,6 +170,8 @@ options:
   content: |-
     $17.3\ \mathrm{N}$
   correct: true
+  feedback: |-
+    For equal forces separated by $60^\circ$, $F_{\text{net}}=\sqrt3F=(1.732)(10.0\ \mathrm{N})=17.3\ \mathrm{N}$. Adding the magnitudes to get $20.0\ \mathrm{N}$ would incorrectly treat the forces as parallel.
 - id: b
   content: |-
     $20.0\ \mathrm{N}$
@@ -174,8 +181,6 @@ options:
 - id: d
   content: |-
     $0\ \mathrm{N}$
-feedback: |-
-  For equal forces separated by $60^\circ$, $F_{\text{net}}=\sqrt3F=(1.732)(10.0\ \mathrm{N})=17.3\ \mathrm{N}$. Adding the magnitudes to get $20.0\ \mathrm{N}$ would incorrectly treat the forces as parallel.
 ```
 
 ## Convert to Yottanewtons and Round
@@ -206,6 +211,8 @@ options:
   content: |-
     $460\ \mathrm{YN}$
   correct: true
+  feedback: |-
+    Dividing by $10^{24}$ gives $456\ \mathrm{YN}$. Rounded to two significant figures, this is $4.6\times10^2\ \mathrm{YN}=460\ \mathrm{YN}$.
 - id: b
   content: |-
     $4.6\ \mathrm{YN}$
@@ -215,8 +222,6 @@ options:
 - id: d
   content: |-
     $4.6\times10^{50}\ \mathrm{YN}$
-feedback: |-
-  Dividing by $10^{24}$ gives $456\ \mathrm{YN}$. Rounded to two significant figures, this is $4.6\times10^2\ \mathrm{YN}=460\ \mathrm{YN}$.
 ```
 
 ## Apply the Method
@@ -272,6 +277,23 @@ options:
   content: |-
     `220`
   correct: true
+  feedback: |-
+    Each mass experiences two forces of magnitude
+
+    $$
+    F_{\mathrm{pair}}=\frac{Gm^2}{L^2}
+    $$
+
+    separated by $60^\circ$. Their resultant is
+
+    $$
+    F_{\mathrm{net}}
+    =\sqrt{3}\frac{Gm^2}{L^2}
+    =2.2285\times10^{26}\ \mathrm{N}
+    =222.85\ldots\ \mathrm{YN}.
+    $$
+
+    The measured givens have two significant figures, so $F_{\mathrm{net}}=2.2\times10^2\ \mathrm{YN}$, entered as `220`.
 - id: b
   content: |-
     `130`
@@ -281,23 +303,6 @@ options:
 - id: d
   content: |-
     `2.2`
-feedback: |-
-  Each mass experiences two forces of magnitude
-
-  $$
-  F_{\mathrm{pair}}=\frac{Gm^2}{L^2}
-  $$
-
-  separated by $60^\circ$. Their resultant is
-
-  $$
-  F_{\mathrm{net}}
-  =\sqrt{3}\frac{Gm^2}{L^2}
-  =2.2285\times10^{26}\ \mathrm{N}
-  =222.85\ldots\ \mathrm{YN}.
-  $$
-
-  The measured givens have two significant figures, so $F_{\mathrm{net}}=2.2\times10^2\ \mathrm{YN}$, entered as `220`.
 ```
 
 ## Summary
@@ -307,3 +312,17 @@ feedback: |-
 - Use symmetry to add the vectors: $F_{\text{net}}=2F_{\text{pair}}\cos30^\circ=\sqrt3F_{\text{pair}}$.
 - Convert from newtons to yottanewtons by dividing by $10^{24}$.
 - Keep guard digits and round only the final result.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

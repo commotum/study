@@ -1,5 +1,10 @@
 # Convert Revolutions Per Second to Angular Frequency
 
+<!--
+lesson-id: 212-M1-033
+topic-code: MTH212.M1.33
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -236,3 +241,17 @@ The seconds stay in the denominator, and each revolution becomes \(2\pi\) radian
 3. Cancel \(\text{rev}\), keep \(\text{rad/s}\), and round only if the problem asks for a rounded answer.
 
 The main trap is to report the revolutions-per-second number as if it were already in radians per second.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

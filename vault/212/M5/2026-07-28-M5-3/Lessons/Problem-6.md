@@ -1,5 +1,10 @@
 # Choosing Source Motion for a Doppler Shift
 
+<!--
+lesson-id: 212-M5-029
+topic-code: MTH212.M5.29
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -277,3 +282,17 @@ Use this decision routine for a moving source and stationary listener:
 5. Explain the choice with wavefront spacing: compressed means higher frequency; spread out means lower frequency.
 
 The main traps are reversing the direction rule and confusing a change in frequency with a change in loudness.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

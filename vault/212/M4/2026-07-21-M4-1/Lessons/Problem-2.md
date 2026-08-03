@@ -1,5 +1,10 @@
 # Reading Amplitude From a Position–Time Graph
 
+<!--
+lesson-id: 212-M4-002
+topic-code: MTH212.M4.02
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -290,3 +295,17 @@ To read amplitude from a position-time graph:
 4. Report a nonnegative value in the vertical axis's units.
 
 **Main trap:** the full peak-to-peak distance is $2A$. Time coordinates describe timing quantities such as period, not amplitude; changing where a peak occurs horizontally does not change its vertical distance from equilibrium.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

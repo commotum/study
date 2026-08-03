@@ -1,5 +1,10 @@
 # Putting Period in the Denominator for Rotating-Disk Speed
 
+<!--
+lesson-id: 212-M1-039
+topic-code: MTH212.M1.39
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -219,3 +224,17 @@ v=\dfrac{D}{\Delta t}=\dfrac{2\pi D}{\theta T}.
 $$
 
 The period belongs in the denominator of $v$ because increasing the period makes the rotation slower, gives the bullet more time to travel, and therefore lowers the required speed. The main trap is to treat $T$ as if it directly increases speed; it directly increases the travel time instead.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

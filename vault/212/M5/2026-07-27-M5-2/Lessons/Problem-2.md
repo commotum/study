@@ -1,5 +1,10 @@
 # Wave Speed in a Wire Tensioned by a Hanging Mass
 
+<!--
+lesson-id: 212-M5-009
+topic-code: MTH212.M5.09
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -339,3 +344,22 @@ For a stationary block tensioning a wire over a pulley:
 6. Round only at the end and follow the requested answer format.
 
 The main trap is swapping the hanging mass $M$, which sets tension, with the wire mass $m_w$, which sets linear density.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
+Next: [Deriving Wave Speed on a Load-Bearing Wire](../../2026-08-02-PQ-3/Lessons/Problem-4.md)
+
+Study guide index: 10/20
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,5 +1,10 @@
 # Finding the Units of a Coefficient in Angular Acceleration
 
+<!--
+lesson-id: 212-M1-045
+topic-code: MTH212.M1.45
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -426,3 +431,17 @@ The answer is
 $$
 \boxed{\mathrm{rad}/\mathrm{s}^4}.
 $$
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

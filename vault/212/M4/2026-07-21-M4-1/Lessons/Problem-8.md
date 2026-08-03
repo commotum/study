@@ -1,4 +1,10 @@
+
 # Finding Instantaneous SHM Velocity From Cycle Data
+
+<!--
+lesson-id: 212-M4-008
+topic-code: MTH212.M4.08
+-->
 
 ## Table of Contents
 
@@ -49,13 +55,13 @@ The recognition cue is a block released from rest at one extreme, a cycle count 
 
 Map each given to its role before calculating:
 
-| Given | Produces | Used in |
-|---|---|---|
-| $x_0$ and $x_f$ | $A=|x_f-x_0|$ | Velocity amplitude $A\omega$ |
-| $N$ oscillations in $\Delta t$ | $f=N/\Delta t$ | $\omega=2\pi f$ |
-| Released from rest at the right extreme | Zero-phase cosine model | Sign and trigonometric form of $v(t)$ |
-| Evaluation time $t$ | Phase $\omega t$ | Instantaneous velocity |
-| Mass $m$ | No needed quantity here | Does not enter after $A$ and $\omega$ are known |
+| Given                                   | Produces                        | Used in                                         |
+| --------------------------------------- | ------------------------------- | ----------------------------------------------- |
+| $x_0$ and $x_f$                         | $A=\lvert x_f-x_0\rvert$       | Velocity amplitude $A\omega$                   |
+| $N$ oscillations in $\Delta t$          | $f=N/\Delta t$                  | $\omega=2\pi f$                                |
+| Released from rest at the right extreme | Zero-phase cosine model         | Sign and trigonometric form of $v(t)$           |
+| Evaluation time $t$                     | Phase $\omega t$                | Instantaneous velocity                          |
+| Mass $m$                                | No needed quantity here         | Does not enter after $A$ and $\omega$ are known |
 
 ---
 
@@ -348,28 +354,28 @@ options:
 - id: a
   content: 1.3
   correct: true
+  feedback: |-
+    With $A=0.13\ \mathrm{m}$ and $\omega=2\pi(12/7.0\ \mathrm{s})$,
+
+    $$
+    v(t)=-A\omega\sin(\omega t).
+    $$
+
+    Therefore,
+
+    $$
+    v(3.9\ \mathrm{s})
+    =-(0.13\ \mathrm{m})\omega\sin[\omega(3.9\ \mathrm{s})]
+    =1.2876\ldots\ \mathrm{m/s}.
+    $$
+
+    The measured givens support two significant figures, so $v=1.3\ \mathrm{m/s}$. The positive sign means the block is moving right.
 - id: b
   content: -1.3
 - id: c
   content: 1.4
 - id: d
   content: -0.051
-feedback: |-
-  With $A=0.13\ \mathrm{m}$ and $\omega=2\pi(12/7.0\ \mathrm{s})$,
-
-  $$
-  v(t)=-A\omega\sin(\omega t).
-  $$
-
-  Therefore,
-
-  $$
-  v(3.9\ \mathrm{s})
-  =-(0.13\ \mathrm{m})\omega\sin[\omega(3.9\ \mathrm{s})]
-  =1.2876\ldots\ \mathrm{m/s}.
-  $$
-
-  The measured givens support two significant figures, so $v=1.3\ \mathrm{m/s}$. The positive sign means the block is moving right.
 ```
 
 ---
@@ -387,3 +393,22 @@ For a block released from rest at maximum positive displacement:
 6. Interpret the velocity sign using the stated positive direction.
 
 The main traps are treating $x_f$ as the amplitude, omitting $2\pi$ or the chain-rule factor $\omega$, and reporting speed instead of signed velocity.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 3 Study Guide](../../../M5/2026-08-03-Q-3/Study-Guide.md)
+Next: [Ranking Acceleration Magnitudes from an SHM Position Graph](../../2026-07-23-HW-6/Lessons/Problem-5.md)
+
+Study guide index: 02/20
+
+---
+
+<!-- lesson-nav:end -->

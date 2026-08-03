@@ -1,5 +1,10 @@
 # Finding Frequency from Adjacent Antinode Spacing
 
+<!--
+lesson-id: 212-M5-043
+topic-code: MTH212.M5.43
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -264,3 +269,17 @@ $$
 5. Check that the result is half of $v/d$; at fixed speed, a larger spacing should give a lower frequency.
 
 **Main trap:** Adjacent antinodes are half a wavelength apart, not one full wavelength apart.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

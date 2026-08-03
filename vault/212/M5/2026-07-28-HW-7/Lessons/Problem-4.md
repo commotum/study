@@ -1,5 +1,10 @@
 # Doppler Shift from a Moving Sound Source
 
+<!--
+lesson-id: 212-M5-017
+topic-code: MTH212.M5.17
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -339,3 +344,17 @@ For a sound source moving at speed $v$ while its listener is stationary:
 3. Check the result: approaching must raise the frequency, and receding must lower it.
 
 The main trap is using a moving-listener numerator when the **source** is moving. Source motion changes wavelength, so its speed adjustment appears in the denominator. Extra story details, such as a later echo, matter only if the question asks about that later path.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

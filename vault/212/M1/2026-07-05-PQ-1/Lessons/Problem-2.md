@@ -227,22 +227,21 @@ options:
 
 For a net-force diagram in circular motion, first find the inward direction toward the center. Then find the tangent direction from the stated clockwise or counterclockwise motion. If the particle is speeding up, the tangential force component points with the velocity; if it is slowing down, the tangential component points opposite the velocity. The main trap is choosing an arrow that is only tangent or only inward instead of combining both required components.
 
+<!-- lesson-nav:start -->
+
+---
+
 ```update-progress
 ```
 
 [[212/Home|Home]]
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
-<!-- study-guide-nav:start -->
-
----
-
-## Study Guide Navigation
-
-Study guide: [212 Study Guide](<Study-Guide.md>)
-
-Next: [Finding the Net-Force Direction in Circular Motion](<../../2026-07-03-HW-2/Lessons/Problem-4.md>)
+[Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
+Next: [Finding the Net-Force Direction in Circular Motion](../../2026-07-03-HW-2/Lessons/Problem-4.md)
 
 Study guide index: 10/30
 
-<!-- study-guide-nav:end -->
+---
+
+<!-- lesson-nav:end -->

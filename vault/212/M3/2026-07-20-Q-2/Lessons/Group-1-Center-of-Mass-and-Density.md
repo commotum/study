@@ -1,5 +1,10 @@
 # Locate a System's Center of Mass
 
+<!--
+lesson-id: 212-M3-024
+topic-code: MTH212.M3.24
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -351,3 +356,17 @@ When asked where a system balances:
 5. Check that the result lies near the greater concentration of mass and gives zero net torque when used as the support point.
 
 The main trap is averaging positions without weighting them by mass.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

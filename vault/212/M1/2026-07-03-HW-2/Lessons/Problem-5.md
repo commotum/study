@@ -339,22 +339,21 @@ $$
 
 The main trap is using the formula for an angle measured from the vertical. Here the angle is measured from the horizontal, so the answer uses $\arcsin$, not $\arccos$ or $\arctan$.
 
+<!-- lesson-nav:start -->
+
+---
+
 ```update-progress
 ```
 
 [[212/Home|Home]]
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
-<!-- study-guide-nav:start -->
-
----
-
-## Study Guide Navigation
-
-Study guide: [212 Study Guide](<Study-Guide.md>)
-
-Next: [Finding the Minimum Entry Speed for a Loop-the-Loop](<Problem-11.md>)
+[Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
+Next: [Finding the Minimum Entry Speed for a Loop-the-Loop](Problem-11.md)
 
 Study guide index: 28/30
 
-<!-- study-guide-nav:end -->
+---
+
+<!-- lesson-nav:end -->

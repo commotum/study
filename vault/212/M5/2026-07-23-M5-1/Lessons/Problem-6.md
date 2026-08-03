@@ -1,5 +1,10 @@
 # Finding Where a Wave Particle Moves Fastest
 
+<!--
+lesson-id: 212-M5-006
+topic-code: MTH212.M5.06
+-->
+
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -76,11 +81,11 @@ options:
   content: |-
     The point with slope $+4$
   correct: true
+  feedback: |-
+    Compare absolute values: $1$, $0$, $4$, and $3$. The greatest is $4$, so the point with slope $+4$ has the greatest particle speed. The sign changes direction, not speed.
 - id: p6-largest-slope-d
   content: |-
     The point with slope $-3$
-feedback: |-
-  Compare absolute values: $1$, $0$, $4$, and $3$. The greatest is $4$, so the point with slope $+4$ has the greatest particle speed. The sign changes direction, not speed.
 ```
 
 ---
@@ -123,6 +128,8 @@ options:
   content: |-
     A point at a crest
   correct: true
+  feedback: |-
+    A smooth crest or trough has a horizontal tangent, so $\partial y/\partial x=0$ and the particle is instantaneously at rest. A zero-displacement crossing is usually steep, so it is not at rest.
 - id: p6-height-trap-b
   content: |-
     A point at a steep equilibrium crossing
@@ -132,8 +139,6 @@ options:
 - id: p6-height-trap-d
   content: |-
     Every point where the displacement is zero
-feedback: |-
-  A smooth crest or trough has a horizontal tangent, so $\partial y/\partial x=0$ and the particle is instantaneously at rest. A zero-displacement crossing is usually steep, so it is not at rest.
 ```
 
 ---
@@ -183,6 +188,8 @@ options:
   content: |-
     $P$ and $Q$ have equal particle speeds but opposite vertical velocities.
   correct: true
+  feedback: |-
+    The equal slope magnitudes give equal speeds. For a right-moving wave, the minus sign makes the positive-slope point move downward and the negative-slope point move upward.
 - id: p6-direction-versus-speed-b
   content: |-
     $Q$ has the greater particle speed because its slope is negative.
@@ -192,8 +199,6 @@ options:
 - id: p6-direction-versus-speed-d
   content: |-
     Both particles are instantaneously at rest.
-feedback: |-
-  The equal slope magnitudes give equal speeds. For a right-moving wave, the minus sign makes the positive-slope point move downward and the negative-slope point move upward.
 ```
 
 ---
@@ -250,3 +255,17 @@ options:
 - Fastest point: the labeled point where the graph is locally steepest.
 - Stationary point: a smooth crest or trough, where the slope is zero.
 - Main trap: do not confuse greatest displacement with greatest particle speed.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,5 +1,10 @@
 # Speed of a Rolling Hollow Sphere From Energy
 
+<!--
+lesson-id: 212-M2-032
+topic-code: MTH212.M2.32
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -286,7 +291,6 @@ To two significant figures, $v=2.5\ \mathrm{m/s}$. The supplied mass and radius 
 ```quiz
 type: radio
 id: m2-5lec-q1
-require_exact: true
 content: |-
   **Question 1**
 
@@ -368,3 +372,17 @@ $$
 $$
 
 The main traps are using $d$ as the vertical drop, omitting rotational kinetic energy, or forgetting the final square root.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

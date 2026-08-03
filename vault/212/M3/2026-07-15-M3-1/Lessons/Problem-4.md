@@ -1,5 +1,10 @@
 # Finding Orbital Distance From Orbital Period
 
+<!--
+lesson-id: 212-M3-004
+topic-code: MTH212.M3.04
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -62,6 +67,8 @@ options:
   content: |-
     $T^2=a^3$
   correct: true
+  feedback: |-
+    With $T$ in Earth years and $a$ in astronomical units for an orbit around the Sun, Kepler's third law is $T^2=a^3$.
 - id: b
   content: |-
     $T=a$
@@ -74,8 +81,6 @@ options:
 - id: e
   content: |-
     $T=a^3$
-feedback: |-
-  With $T$ in Earth years and $a$ in astronomical units for an orbit around the Sun, Kepler's third law is $T^2=a^3$.
 ```
 
 ---
@@ -126,6 +131,8 @@ options:
   content: |-
     $a=T^{2/3}$
   correct: true
+  feedback: |-
+    Taking the cube root of $T^2=a^3$ gives $a=\sqrt[3]{T^2}=T^{2/3}$. The reciprocal exponent $3/2$ would solve for $T$ from $a$ instead.
 - id: b
   content: |-
     $a=T^{3/2}$
@@ -138,8 +145,6 @@ options:
 - id: e
   content: |-
     $a=T^2/3$
-feedback: |-
-  Taking the cube root of $T^2=a^3$ gives $a=\sqrt[3]{T^2}=T^{2/3}$. The reciprocal exponent $3/2$ would solve for $T$ from $a$ instead.
 ```
 
 ---
@@ -175,6 +180,8 @@ options:
   content: |-
     $16\ \mathrm{AU}$
   correct: true
+  feedback: |-
+    Use $a=T^{2/3}$: $64^{2/3}=(\sqrt[3]{64})^2=4^2=16\ \mathrm{AU}$.
 - id: b
   content: |-
     $8\ \mathrm{AU}$
@@ -187,8 +194,6 @@ options:
 - id: e
   content: |-
     $4096\ \mathrm{AU}$
-feedback: |-
-  Use $a=T^{2/3}$: $64^{2/3}=(\sqrt[3]{64})^2=4^2=16\ \mathrm{AU}$.
 ```
 
 ---
@@ -224,6 +229,8 @@ options:
   content: |-
     $9.00\ \mathrm{AU}$
   correct: true
+  feedback: |-
+    Since $(27.0)^{2/3}=9$ and the measured period has three significant figures, report the result as $9.00\ \mathrm{AU}$.
 - id: b
   content: |-
     $9\ \mathrm{AU}$
@@ -236,8 +243,6 @@ options:
 - id: e
   content: |-
     $729\ \mathrm{AU}$
-feedback: |-
-  Since $(27.0)^{2/3}=9$ and the measured period has three significant figures, report the result as $9.00\ \mathrm{AU}$.
 ```
 
 ---
@@ -281,6 +286,20 @@ options:
   content: |-
     `4.0`
   correct: true
+  feedback: |-
+    Relative to Earth's orbit, Kepler's third law is
+
+    $$
+    T^2=a^3,
+    $$
+
+    with $T$ in Earth years and $a$ in astronomical units. Therefore,
+
+    $$
+    a=T^{2/3}=(8.0)^{2/3}=4.0\ \mathrm{AU}.
+    $$
+
+    The period is given with two significant figures, so the distance is $4.0\ \mathrm{AU}$.
 - id: b
   content: |-
     `4`
@@ -293,20 +312,6 @@ options:
 - id: e
   content: |-
     `64`
-feedback: |-
-  Relative to Earth's orbit, Kepler's third law is
-
-  $$
-  T^2=a^3,
-  $$
-
-  with $T$ in Earth years and $a$ in astronomical units. Therefore,
-
-  $$
-  a=T^{2/3}=(8.0)^{2/3}=4.0\ \mathrm{AU}.
-  $$
-
-  The period is given with two significant figures, so the distance is $4.0\ \mathrm{AU}$.
 ```
 
 ---
@@ -321,3 +326,17 @@ feedback: |-
 - **Precision:** keep calculator digits until the end, then match the significant figures in the measured period.
 - **Check:** substitute the result back into $T^2=a^3$ and compare its direction with Earth's $T=a=1$ reference.
 - **Main trap:** use $2/3$, not $3/2$, when solving for $a$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

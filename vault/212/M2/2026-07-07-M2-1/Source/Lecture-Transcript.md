@@ -1,6 +1,7 @@
 # Physics 212: Center of Mass, Torque Balance, and Mass Density
 
 Welcome back to Physics 212.
+[View Notes](Lecture-Notes.md)
 
 ## Announcements
 
@@ -1113,3 +1114,10 @@ C=\frac{2M}{L^2}
 $$
 
 These ideas provide the foundation for calculating the center of mass and moment of inertia of continuous and composite objects.
+
+---
+
+Up Next: [Center of Mass and Moment of Inertia](../../2026-07-08-M2-2/Source/Lecture-Transcript.md)
+Previous: [Nonuniform Circular Motion and Tangential Projectile Motion](../../../M1/2026-07-02-M1-5/Source/Lecture-Transcript.md)
+
+---

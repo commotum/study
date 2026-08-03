@@ -1,5 +1,10 @@
 # Combining Center of Mass and Moment of Inertia
 
+<!--
+lesson-id: 212-M2-018
+topic-code: MTH212.M2.18
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -231,3 +236,17 @@ options:
 - **Location average:** for center-of-mass position, multiply each position by its mass, add, then divide by total mass.
 - **Accumulated total:** for moment of inertia, add the component inertias when they are about the same axis.
 - **Main trap:** do not mass-weight $I_1$ and $I_2$ again; each moment of inertia already contains its object's mass contribution.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

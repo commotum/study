@@ -1,5 +1,10 @@
 # Finding a Two-Body Center of Mass as a Fraction of Separation
 
+<!--
+lesson-id: 212-M3-006
+topic-code: MTH212.M3.06
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -243,7 +248,6 @@ The numerical value $d=3.0\times10^{12}\ \mathrm{m}$ is therefore not needed whe
 ```quiz
 type: radio
 id: m3-2lec-q1
-require_exact: true
 content: |-
   **Question 1**
 
@@ -300,3 +304,22 @@ With mass $M$ at the origin and mass $m$ at $x=d$, the shortcut is
 $$
 \boxed{\frac{x_{\mathrm{cm}}}{d}=\frac{m}{M+m}}.
 $$
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 2 Study Guide](../../2026-07-20-Q-2/Study-Guide.md)
+Next: [Finding the Orbital Period of a Binary Star System](Problem-3.md)
+
+Study guide index: 16/20
+
+---
+
+<!-- lesson-nav:end -->

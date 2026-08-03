@@ -1,5 +1,10 @@
 # Locate a Listener on a Circular Wavefront
 
+<!--
+lesson-id: 212-M5-011
+topic-code: MTH212.M5.11
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -325,3 +330,17 @@ When two $x$-axis listeners detect the same circular wavefront simultaneously:
 6. Round only the final coordinate and follow the requested answer format.
 
 The main traps are mishandling the negative coordinate, using the full listener separation as the radius, and adding the squared legs instead of subtracting the known leg from $r^2$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

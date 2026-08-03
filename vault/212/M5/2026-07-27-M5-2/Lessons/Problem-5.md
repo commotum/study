@@ -1,5 +1,10 @@
 # Ranking Index of Refraction From Wavelength
 
+<!--
+lesson-id: 212-M5-012
+topic-code: MTH212.M5.12
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -313,3 +318,17 @@ For a same-frequency wave crossing several media:
 4. Therefore, the shortest wavelength identifies the largest refractive index.
 
 The main trap is reversing only one link. At fixed frequency, wavelength and speed change together, while speed and refractive index change oppositely.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

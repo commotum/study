@@ -1,5 +1,10 @@
 # Scaling Kinetic Energy in a Circular Orbit
 
+<!--
+lesson-id: 212-M3-016
+topic-code: MTH212.M3.16
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -311,3 +316,22 @@ For the same satellite in circular orbits around the same central mass:
 4. If the radius is multiplied by $c$, divide the kinetic energy by $c$.
 5. Check the direction: a larger circular orbit has smaller kinetic energy.
 6. Do not use the $1/r^2$ scaling of gravitational force for kinetic energy.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 2 Study Guide](../../2026-07-20-Q-2/Study-Guide.md)
+Next: [Total Mechanical Energy of a Three-Body Orbit](../../2026-07-16-M3-2/Lessons/Problem-6.md)
+
+Study guide index: 18/20
+
+---
+
+<!-- lesson-nav:end -->

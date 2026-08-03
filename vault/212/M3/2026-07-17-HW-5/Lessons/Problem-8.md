@@ -1,5 +1,10 @@
 # Gravitational Potential Energy of a Three-Body System
 
+<!--
+lesson-id: 212-M3-018
+topic-code: MTH212.M3.18
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -219,3 +224,22 @@ When asked for the gravitational potential energy of several point masses:
 4. Add all the pair terms without counting either order twice.
 
 For a right-triangle arrangement, the diagonal separation is the positive length $\sqrt{d_2^2+d_3^2}$. The main trap is importing the inverse-square distance from the force law; gravitational potential energy uses the first power of separation.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 2 Study Guide](../../2026-07-20-Q-2/Study-Guide.md)
+Next: [Finding a Two-Body Center of Mass as a Fraction of Separation](../../2026-07-16-M3-2/Lessons/Problem-2.md)
+
+Study guide index: 15/20
+
+---
+
+<!-- lesson-nav:end -->

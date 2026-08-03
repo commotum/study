@@ -1,5 +1,10 @@
 # Counting Wavelengths in a Refractive Medium
 
+<!--
+lesson-id: 212-M5-016
+topic-code: MTH212.M5.16
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -278,3 +283,17 @@ $$
 $$
 
 The main trap is dividing by $c/n$ incorrectly. Since $c/n$ is the medium speed, it belongs in the denominator of $df/v$, so the final count is multiplied by $n$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

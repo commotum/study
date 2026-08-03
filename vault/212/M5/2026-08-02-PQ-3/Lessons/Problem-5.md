@@ -1,5 +1,10 @@
 # Extreme Doppler Frequencies from a Rotating Source
 
+<!--
+lesson-id: 212-M5-049
+topic-code: MTH212.M5.49
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -302,3 +307,22 @@ For a rotating sound source and a stationary listener:
 5. Check that $f_{\mathrm{high}}>f_0>f_{\mathrm{low}}$.
 
 The main traps are treating rpm as hertz, omitting $2\pi$, and swapping the Doppler signs.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
+Next: [Third-Harmonic Frequency of a Wire Tensioned by a Hanging Mass](../../2026-07-29-M5-4/Lessons/Problem-3.md)
+
+Study guide index: 15/20
+
+---
+
+<!-- lesson-nav:end -->

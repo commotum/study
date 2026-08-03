@@ -1,5 +1,10 @@
 # Predicting Angular Speed When Mass Is Added
 
+<!--
+lesson-id: 212-M2-036
+topic-code: MTH212.M2.36
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -63,6 +68,8 @@ options:
   content: |-
     Angular momentum
   correct: true
+  feedback: |-
+    With negligible external torque about the axle, angular momentum is conserved. Sticking is inelastic, so rotational kinetic energy generally decreases.
 - id: b
   content: |-
     Angular speed
@@ -75,8 +82,6 @@ options:
 - id: e
   content: |-
     Tangential speed at every point
-feedback: |-
-  With negligible external torque about the axle, angular momentum is conserved. Sticking is inelastic, so rotational kinetic energy generally decreases.
 ```
 
 ---
@@ -102,6 +107,8 @@ options:
   content: |-
     Essentially zero, because it has no tangential velocity about the axis
   correct: true
+  feedback: |-
+    Angular momentum about the vertical axis depends on motion around that axis. Vertically falling water has essentially no tangential velocity, so its incoming angular momentum about that axis is negligible.
 - id: b
   content: |-
     Large and in the direction of the container's rotation
@@ -114,8 +121,6 @@ options:
 - id: e
   content: |-
     Undefined because the water is moving vertically
-feedback: |-
-  Angular momentum about the vertical axis depends on motion around that axis. Vertically falling water has essentially no tangential velocity, so its incoming angular momentum about that axis is negligible.
 ```
 
 ---
@@ -157,6 +162,8 @@ options:
   content: |-
     It increases.
   correct: true
+  feedback: |-
+    Moment of inertia includes contributions of the form $mr^2$. Adding mass at a fixed nonzero radius increases the moment of inertia.
 - id: b
   content: |-
     It decreases.
@@ -169,8 +176,6 @@ options:
 - id: e
   content: |-
     Its change cannot be determined from the mass change.
-feedback: |-
-  Moment of inertia includes contributions of the form $mr^2$. Adding mass at a fixed nonzero radius increases the moment of inertia.
 ```
 
 ---
@@ -216,6 +221,8 @@ options:
   content: |-
     It becomes one-half as large.
   correct: true
+  feedback: |-
+    Since $I_i\omega_i=I_f\omega_f$, doubling $I$ makes $\omega_f=(I_i/2I_i)\omega_i=\omega_i/2$.
 - id: b
   content: |-
     It doubles.
@@ -228,8 +235,6 @@ options:
 - id: e
   content: |-
     It becomes zero.
-feedback: |-
-  Since $I_i\omega_i=I_f\omega_f$, doubling $I$ makes $\omega_f=(I_i/2I_i)\omega_i=\omega_i/2$.
 ```
 
 ---
@@ -316,3 +321,17 @@ options:
 - **Ratio check:** if $I_f>I_i$, then $I_i/I_f<1$.
 - **Conclusion:** multiplying $\omega_i$ by a factor below $1$ makes the system slow down.
 - **Main trap:** conservation of angular momentum does not mean constant angular speed.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,5 +1,10 @@
 # Angle Turned Before Reversal
 
+<!--
+lesson-id: 212-M1-042
+topic-code: MTH212.M1.42
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -359,3 +364,17 @@ $$
 $$
 
 The main trap is stopping at $t_{\text{rev}}$. The reversal time is measured in seconds; the requested angle is found by integrating angular velocity and is measured in radians.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

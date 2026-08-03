@@ -1,5 +1,10 @@
 # Finding the Center of Mass of Identical Blocks
 
+<!--
+lesson-id: 212-M2-003
+topic-code: MTH212.M2.03
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -273,3 +278,17 @@ For identical uniform blocks:
 4. Ignore vertical placement when only $x_{\mathrm{cm}}$ is requested.
 
 The main traps are averaging block edges instead of centers, counting occupied columns instead of blocks, or omitting stacked blocks from the denominator and sum. The result should lie between the leftmost and rightmost block centers.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

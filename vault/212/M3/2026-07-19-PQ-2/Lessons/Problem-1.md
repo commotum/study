@@ -1,5 +1,10 @@
 # Comparing Angular Momentum at Equal Angular Speed
 
+<!--
+lesson-id: 212-M3-019
+topic-code: MTH212.M3.19
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -264,3 +269,22 @@ When rotating objects have the same angular speed:
 5. Choose the object with more mass farther from the axis.
 
 The main trap is assuming that equal total mass and equal angular speed imply equal angular momentum. They do not: the radial distribution of the mass can make the moments of inertia different.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 2 Study Guide](../../2026-07-20-Q-2/Study-Guide.md)
+Next: [Scaling Force With an Inverse-Square Law](../../2026-07-15-M3-1/Lessons/Problem-1.md)
+
+Study guide index: 12/20
+
+---
+
+<!-- lesson-nav:end -->

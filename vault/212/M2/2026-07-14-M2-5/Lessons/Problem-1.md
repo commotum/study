@@ -1,5 +1,10 @@
 # Comparing Atwood-Machine Accelerations With Pulley Inertia
 
+<!--
+lesson-id: 212-M2-031
+topic-code: MTH212.M2.31
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -64,6 +69,8 @@ options:
   content: |-
     $(m_2-m_1)g$
   correct: true
+  feedback: |-
+    The weights oppose each other, leaving $(m_2-m_1)g$. Pulley inertia affects the response to this force, not the gravitational driving-force numerator.
 - id: b
   content: |-
     $(m_1+m_2)g$
@@ -76,8 +83,6 @@ options:
 - id: e
   content: |-
     $(m_2-m_1+I/r^2)g$
-feedback: |-
-  The weights oppose each other, leaving $(m_2-m_1)g$. Pulley inertia affects the response to this force, not the gravitational driving-force numerator.
 ```
 
 ---
@@ -142,6 +147,8 @@ options:
   content: |-
     $a=\dfrac{(m_2-m_1)g}{m_1+m_2+I/r^2}$
   correct: true
+  feedback: |-
+    The torque equation contributes the positive effective-inertia term $I/r^2$ to the denominator. It does not change the gravitational driving force $(m_2-m_1)g$.
 - id: b
   content: |-
     $a=\dfrac{(m_2-m_1)g}{m_1+m_2-I/r^2}$
@@ -154,8 +161,6 @@ options:
 - id: e
   content: |-
     $a=\dfrac{(m_2-m_1+I/r^2)g}{m_1+m_2}$
-feedback: |-
-  The torque equation contributes the positive effective-inertia term $I/r^2$ to the denominator. It does not change the gravitational driving force $(m_2-m_1)g$.
 ```
 
 ---
@@ -204,6 +209,8 @@ options:
   content: |-
     $a_1<a_0$
   correct: true
+  feedback: |-
+    The numerator is unchanged and positive, while $D+q>D$. The larger positive denominator makes $a_1$ smaller.
 - id: b
   content: |-
     $a_1>a_0$
@@ -216,8 +223,6 @@ options:
 - id: e
   content: |-
     The comparison cannot be determined.
-feedback: |-
-  The numerator is unchanged and positive, while $D+q>D$. The larger positive denominator makes $a_1$ smaller.
 ```
 
 ---
@@ -247,6 +252,8 @@ options:
   content: |-
     The string tensions differ so that they provide the pulley a net torque.
   correct: true
+  feedback: |-
+    Frictionless describes the bearing torque, not the pulley's inertia. A massive accelerating pulley requires $(T_2-T_1)r=I\alpha$, so the tensions differ.
 - id: b
   content: |-
     The string tensions must be equal because the bearing is frictionless.
@@ -259,8 +266,6 @@ options:
 - id: e
   content: |-
     The pulley adds its full weight to the hanging driving force.
-feedback: |-
-  Frictionless describes the bearing torque, not the pulley's inertia. A massive accelerating pulley requires $(T_2-T_1)r=I\alpha$, so the tensions differ.
 ```
 
 ---
@@ -333,3 +338,22 @@ options:
 - **Ratio check:** $a_B/a_A=(m_1+m_2)/(m_1+m_2+I/r^2)<1$.
 - **Conclusion:** $a_B<a_A$.
 - **Main trap:** a frictionless bearing does not make a massive pulley behave like a massless pulley.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 2 Study Guide](../../../M3/2026-07-20-Q-2/Study-Guide.md)
+Next: [Comparing Descent Times with a Rotating Flywheel](../../../M3/2026-07-19-PQ-2/Lessons/Problem-3.md)
+
+Study guide index: 06/20
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,4 +1,10 @@
+
 # Ranking Acceleration Magnitudes from an SHM Position Graph
+
+<!--
+lesson-id: 212-M4-020
+topic-code: MTH212.M4.20
+-->
 
 ## Table of Contents
 
@@ -188,11 +194,11 @@ options:
 
 For each time, move vertically from the time axis to the red curve, then read the position from the vertical axis. Record the signed position first and take its absolute value second.
 
-| Time | Position read from the graph | Distance from equilibrium |
-| --- | ---: | ---: |
-| $1\ \mathrm{s}$ | $x(1)\approx 1.3\ \mathrm{m}$ | $|x(1)|\approx 1.3\ \mathrm{m}$ |
-| $4\ \mathrm{s}$ | $x(4)\approx -0.7\ \mathrm{m}$ | $|x(4)|\approx 0.7\ \mathrm{m}$ |
-| $7\ \mathrm{s}$ | $x(7)\approx -0.2\ \mathrm{m}$ | $|x(7)|\approx 0.2\ \mathrm{m}$ |
+| Time            |   Position read from the graph |               Distance from equilibrium |
+| --------------- | -----------------------------: | --------------------------------------: |
+| $1\ \mathrm{s}$ |  $x(1)\approx 1.3\ \mathrm{m}$ | $\lvert x(1)\rvert\approx 1.3\ \mathrm{m}$ |
+| $4\ \mathrm{s}$ | $x(4)\approx -0.7\ \mathrm{m}$ | $\lvert x(4)\rvert\approx 0.7\ \mathrm{m}$ |
+| $7\ \mathrm{s}$ | $x(7)\approx -0.2\ \mathrm{m}$ | $\lvert x(7)\rvert\approx 0.2\ \mathrm{m}$ |
 
 Their distances from equilibrium satisfy
 
@@ -253,3 +259,22 @@ When a single SHM position graph asks for a ranking of acceleration magnitudes:
 4. Use the same order for the acceleration magnitudes because $|a|=\omega^2|x|$.
 
 Do not rank signed positions, and do not use the graph's slope. Equal distances on opposite sides of equilibrium produce equal acceleration magnitudes.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 3 Study Guide](../../../M5/2026-08-03-Q-3/Study-Guide.md)
+Next: [Speed of a Spring Oscillator at a Given Position](Problem-7.md)
+
+Study guide index: 03/20
+
+---
+
+<!-- lesson-nav:end -->

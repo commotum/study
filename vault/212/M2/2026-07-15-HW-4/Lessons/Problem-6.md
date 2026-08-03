@@ -1,5 +1,10 @@
 # Balancing a Rod and Sphere About a Support
 
+<!--
+lesson-id: 212-M2-042
+topic-code: MTH212.M2.42
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -301,3 +306,17 @@ $$
 $$
 
 The main trap is using $L/2$ as the rod's lever arm. Its correct lever arm about the support is $L/2-d$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

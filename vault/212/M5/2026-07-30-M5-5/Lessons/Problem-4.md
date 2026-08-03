@@ -1,5 +1,10 @@
 # Combining Path and Starting Phase Differences
 
+<!--
+lesson-id: 212-M5-039
+topic-code: MTH212.M5.39
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -321,3 +326,17 @@ When source positions, a detector position, frequency, wave speed, and an initia
 5. Reduce modulo $2\pi$ only if the requested answer convention calls for it.
 
 The main traps are subtracting source coordinates instead of path lengths, dropping the factor $2\pi$, forgetting the initial phase offset, and reporting a reduced phase when an unreduced value was requested.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

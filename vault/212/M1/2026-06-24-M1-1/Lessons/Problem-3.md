@@ -1,5 +1,10 @@
 # Finding Angular Acceleration Direction While Stopping
 
+<!--
+lesson-id: 212-M1-035
+topic-code: MTH212.M1.35
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -228,3 +233,17 @@ Use the right-hand rule to turn the visible spin direction into the angular velo
 - Speeding up: angular acceleration points in the same direction as the angular velocity.
 
 For the pictured disk, counterclockwise rotation gives angular velocity out of the page, and stopping reverses the acceleration direction to into the page.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

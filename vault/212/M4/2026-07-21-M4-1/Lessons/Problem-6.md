@@ -1,5 +1,10 @@
 # Finding Maximum SHM Speed From a Position-Time Graph
 
+<!--
+lesson-id: 212-M4-006
+topic-code: MTH212.M4.06
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -263,23 +268,23 @@ options:
 - id: a
   content: 3.9
   correct: true
+  feedback: |-
+    The graph gives $A=2.5\ \mathrm{cm}$ and $T=4.0\ \mathrm{s}$. Therefore,
+
+    $$
+    v_{\max}=A\omega
+    =A\frac{2\pi}{T}
+    =(2.5\ \mathrm{cm})\frac{2\pi}{4.0\ \mathrm{s}}
+    =3.927\ldots\ \mathrm{cm/s}.
+    $$
+
+    The graph values support two significant figures, so $v_{\max}=3.9\ \mathrm{cm/s}$.
 - id: b
   content: 0.63
 - id: c
   content: 7.9
 - id: d
   content: 1.6
-feedback: |-
-  The graph gives $A=2.5\ \mathrm{cm}$ and $T=4.0\ \mathrm{s}$. Therefore,
-
-  $$
-  v_{\max}=A\omega
-  =A\frac{2\pi}{T}
-  =(2.5\ \mathrm{cm})\frac{2\pi}{4.0\ \mathrm{s}}
-  =3.927\ldots\ \mathrm{cm/s}.
-  $$
-
-  The graph values support two significant figures, so $v_{\max}=3.9\ \mathrm{cm/s}$.
 ```
 
 ---
@@ -296,3 +301,22 @@ To find maximum speed from a sinusoidal position-time graph:
 5. Preserve the graph's distance unit, divide by seconds, and round only the final value.
 
 For the given graph, $A=2.5\ \mathrm{cm}$ and $T=4.0\ \mathrm{s}$, so $v_{\max}=3.9\ \mathrm{cm/s}$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 3 Study Guide](../../../M5/2026-08-03-Q-3/Study-Guide.md)
+Next: [Finding Instantaneous SHM Velocity From Cycle Data](Problem-8.md)
+
+Study guide index: 01/20
+
+---
+
+<!-- lesson-nav:end -->

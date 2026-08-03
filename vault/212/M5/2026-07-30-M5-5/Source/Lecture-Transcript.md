@@ -1,6 +1,7 @@
 # Physics 212: Phase Difference and Two-Source Interference
 
 Welcome back to Physics 212.
+[View Notes](Lecture-Notes.md)
 
 ## Announcements
 
@@ -1261,3 +1262,9 @@ $$
 For sources that begin $\pi$ radians out of phase, a path difference of an integer number of wavelengths instead produces destructive interference.
 
 Both the path difference and the initial source phase must be included when determining the interference at an observation point.
+
+---
+
+Previous: [Superposition, Standing Waves, and Harmonics](../../2026-07-29-M5-4/Source/Lecture-Transcript.md)
+
+---

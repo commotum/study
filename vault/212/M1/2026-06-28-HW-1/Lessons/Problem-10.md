@@ -1,5 +1,10 @@
 # Identifying Velocity Direction in Non-Uniform Circular Motion
 
+<!--
+lesson-id: 212-M1-048
+topic-code: MTH212.M1.48
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -267,3 +272,17 @@ $$
 $$
 
 The main trap is treating "non-uniform" as if it changes the direction of velocity. It does not. Non-uniform circular motion changes the speed and the acceleration structure, but the velocity direction remains tangent to the circle.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

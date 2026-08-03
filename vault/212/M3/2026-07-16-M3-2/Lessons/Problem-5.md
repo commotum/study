@@ -1,5 +1,10 @@
 # Finding the Speed in a Three-Mass Equilateral Orbit
 
+<!--
+lesson-id: 212-M3-009
+topic-code: MTH212.M3.09
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -76,6 +81,8 @@ options:
   content: |-
     $\sqrt3F$
   correct: true
+  feedback: |-
+    Use the included angle of $60^\circ$: $F_{\mathrm{net}}=\sqrt{F^2+F^2+2F^2\cos60^\circ}=\sqrt3F$. Adding the magnitudes as $2F$ ignores their different directions.
 - id: p5-resultant-b
   content: |-
     $2F$
@@ -88,8 +95,6 @@ options:
 - id: p5-resultant-e
   content: |-
     $\sqrt2F$
-feedback: |-
-  Use the included angle of $60^\circ$: $F_{\mathrm{net}}=\sqrt{F^2+F^2+2F^2\cos60^\circ}=\sqrt3F$. Adding the magnitudes as $2F$ ignores their different directions.
 ```
 
 ---
@@ -135,6 +140,8 @@ options:
   content: |-
     $R=\dfrac{L}{\sqrt3}$
   correct: true
+  feedback: |-
+    The orbit radius is the corner-to-center distance, which is two-thirds of the altitude: $R=(2/3)(\sqrt3L/2)=L/\sqrt3$.
 - id: p5-radius-b
   content: |-
     $R=L$
@@ -147,8 +154,6 @@ options:
 - id: p5-radius-e
   content: |-
     $R=\dfrac{\sqrt3}{2}L$
-feedback: |-
-  The orbit radius is the corner-to-center distance, which is two-thirds of the altitude: $R=(2/3)(\sqrt3L/2)=L/\sqrt3$.
 ```
 
 ---
@@ -203,6 +208,8 @@ options:
   content: |-
     $v=\sqrt{\dfrac{Gm}{L}}$
   correct: true
+  feedback: |-
+    Isolate $v^2$, then take the nonnegative square root because the requested quantity is speed: $v=\sqrt{Gm/L}$.
 - id: p5-speed-b
   content: |-
     $v=\dfrac{Gm}{L}$
@@ -215,8 +222,6 @@ options:
 - id: p5-speed-e
   content: |-
     $v=\sqrt{GmL}$
-feedback: |-
-  Isolate $v^2$, then take the nonnegative square root because the requested quantity is speed: $v=\sqrt{Gm/L}$.
 ```
 
 ---
@@ -265,6 +270,22 @@ options:
   content: |-
     $9600$
   correct: true
+  feedback: |-
+    The distance from each corner to the triangle's center is $R=L/\sqrt{3}$. Setting the net gravitational force equal to the centripetal force gives
+
+    $$
+    \sqrt{3}\frac{Gm^2}{L^2}
+    =\frac{mv^2}{L/\sqrt{3}},
+    $$
+
+    so
+
+    $$
+    v=\sqrt{\frac{Gm}{L}}
+    =9624.9\ldots\ \mathrm{m/s}.
+    $$
+
+    The measured givens have two significant figures, so $v=9.6\times10^3\ \mathrm{m/s}$, entered as `9600`.
 - id: p5-source-b
   content: |-
     $9624.9$
@@ -277,22 +298,6 @@ options:
 - id: p5-source-e
   content: |-
     $220$
-feedback: |-
-  The distance from each corner to the triangle's center is $R=L/\sqrt{3}$. Setting the net gravitational force equal to the centripetal force gives
-
-  $$
-  \sqrt{3}\frac{Gm^2}{L^2}
-  =\frac{mv^2}{L/\sqrt{3}},
-  $$
-
-  so
-
-  $$
-  v=\sqrt{\frac{Gm}{L}}
-  =9624.9\ldots\ \mathrm{m/s}.
-  $$
-
-  The measured givens have two significant figures, so $v=9.6\times10^3\ \mathrm{m/s}$, entered as `9600`.
 ```
 
 ---
@@ -305,3 +310,17 @@ feedback: |-
 - Set $F_{\mathrm{net}}=mv^2/R$ and simplify to $v=\sqrt{Gm/L}$.
 - Confirm that $Gm/L$ has units $\mathrm{m^2/s^2}$ before taking the square root.
 - Check the requested format and round only at the end; for Problem 5, enter `9600`.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,5 +1,10 @@
 # Interpreting the Moment of Inertia Integral
 
+<!--
+lesson-id: 212-M2-017
+topic-code: MTH212.M2.17
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -294,3 +299,17 @@ options:
 5. Replace the integral with $\sum m_i r_i^2$ for discrete point-like masses.
 
 **Check:** The units of $I$ are mass·length². The main trap is using a slanted distance, a distance from the center of mass, or a familiar object dimension instead of the perpendicular distance to the specified axis.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

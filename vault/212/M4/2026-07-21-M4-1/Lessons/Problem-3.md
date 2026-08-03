@@ -1,5 +1,10 @@
 # Reading an Oscillation Period From a Position-Time Graph
 
+<!--
+lesson-id: 212-M4-003
+topic-code: MTH212.M4.03
+-->
+
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -64,6 +69,8 @@ options:
   content: |-
     $5.0\ \mathrm s$
   correct: true
+  feedback: |-
+    Consecutive troughs are matching phase points, so subtract their time coordinates: $T=7.0-2.0=5.0\ \mathrm s$. Adding the times or halving their separation does not measure one complete repeat.
 - id: p3-consecutive-landmarks-b
   content: |-
     $9.0\ \mathrm s$
@@ -73,8 +80,6 @@ options:
 - id: p3-consecutive-landmarks-d
   content: |-
     $3.5\ \mathrm s$
-feedback: |-
-  Consecutive troughs are matching phase points, so subtract their time coordinates: $T=7.0-2.0=5.0\ \mathrm s$. Adding the times or halving their separation does not measure one complete repeat.
 ```
 
 ---
@@ -129,6 +134,8 @@ options:
   content: |-
     $3.0\ \mathrm s$
   correct: true
+  feedback: |-
+    The two crossings have the same position and the same direction, so they are one full cycle apart: $T=3.5-0.5=3.0\ \mathrm s$. The value $1.5\ \mathrm s$ incorrectly treats the interval as two cycles.
 - id: p3-phase-match-b
   content: |-
     $1.5\ \mathrm s$
@@ -138,8 +145,6 @@ options:
 - id: p3-phase-match-d
   content: |-
     $0.33\ \mathrm s$
-feedback: |-
-  The two crossings have the same position and the same direction, so they are one full cycle apart: $T=3.5-0.5=3.0\ \mathrm s$. The value $1.5\ \mathrm s$ incorrectly treats the interval as two cycles.
 ```
 
 ---
@@ -175,6 +180,8 @@ options:
   content: |-
     $5\ \mathrm s$
   correct: true
+  feedback: |-
+    Four consecutive maxima create three cycle gaps. The total time is $17-2=15\ \mathrm s$, so $T=15/3=5\ \mathrm s$. Dividing by four counts landmarks instead of intervals.
 - id: p3-multiple-cycles-b
   content: |-
     $15\ \mathrm s$
@@ -184,8 +191,6 @@ options:
 - id: p3-multiple-cycles-d
   content: |-
     $7.5\ \mathrm s$
-feedback: |-
-  Four consecutive maxima create three cycle gaps. The total time is $17-2=15\ \mathrm s$, so $T=15/3=5\ \mathrm s$. Dividing by four counts landmarks instead of intervals.
 ```
 
 ---
@@ -237,6 +242,10 @@ options:
   content: |-
     4.0
   correct: true
+  feedback: |-
+    Consecutive maxima occur at $t=0$, $4.0\ \mathrm{s}$, and $8.0\ \mathrm{s}$. Therefore, the period is $T=4.0\ \mathrm{s}$.
+
+    The value `2.0` is the maximum-to-minimum half-period. The value `8.0` spans two cycles without dividing by two. The value `0.25` is the frequency $f=1/T$ in hertz, not the period in seconds.
 - id: p3-source-check-b
   content: |-
     2.0
@@ -246,10 +255,6 @@ options:
 - id: p3-source-check-d
   content: |-
     0.25
-feedback: |-
-  Consecutive maxima occur at $t=0$, $4.0\ \mathrm{s}$, and $8.0\ \mathrm{s}$. Therefore, the period is $T=4.0\ \mathrm{s}$.
-
-  The value `2.0` is the maximum-to-minimum half-period. The value `8.0` spans two cycles without dividing by two. The value `0.25` is the frequency $f=1/T$ in hertz, not the period in seconds.
 ```
 
 ---
@@ -262,3 +267,17 @@ feedback: |-
 4. If measuring across several repeats, divide by the number of cycle gaps.
 5. Do not confuse a maximum-to-minimum gap, which is $T/2$, with a full period.
 6. Keep frequency separate: $f=1/T$ has units of hertz, while period has units of seconds.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

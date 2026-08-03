@@ -1,5 +1,10 @@
 # Testing Loop-the-Loop Statements
 
+<!--
+lesson-id: 212-M1-063
+topic-code: MTH212.M1.63
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -329,3 +334,17 @@ N+mg=m\dfrac{v_{\text{top}}^2}{R}.
 $$
 
 At the minimum speed, $N=0$ at the top. Energy conservation connects the entry speed to that top speed when friction is neglected. Do not confuse a circular path with uniform circular motion: in a vertical loop, speed changes with height, so the required inward force $m\dfrac{v^2}{R}$ also changes.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

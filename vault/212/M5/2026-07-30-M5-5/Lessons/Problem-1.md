@@ -1,5 +1,10 @@
 # Largest Displacement When Two Pulses Overlap
 
+<!--
+lesson-id: 212-M5-036
+topic-code: MTH212.M5.36
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -256,3 +261,22 @@ $$
 $$
 
 so the number-only entry is **$3.0$**.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
+Next: [Classifying Two-Source Interference from Path and Starting Phase](../../2026-08-02-PQ-3/Lessons/Problem-3.md)
+
+Study guide index: 18/20
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,5 +1,10 @@
 # Comparing Pendulum Periods When Bob Mass Changes
 
+<!--
+lesson-id: 212-M4-010
+topic-code: MTH212.M4.10
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -299,3 +304,17 @@ When comparing the time for one full pendulum oscillation:
 5. Do not infer a shorter period from the heavier bob's larger weight.
 
 Changing only the bob mass does not change a simple pendulum's small-angle period.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,6 +1,7 @@
 # Physics 212: Binary Stars and Three-Body Gravitational Orbits
 
 Welcome back to Physics 212.
+[View Notes](Lecture-Notes.md)
 
 ## Announcements
 
@@ -1007,3 +1008,10 @@ E_{\mathrm{total}}
 $$
 
 The negative total energy confirms that the three masses form a gravitationally bound system.
+
+---
+
+Up Next: [Oscillations and Simple Harmonic Motion](../../../M4/2026-07-21-M4-1/Source/Lecture-Transcript.md)
+Previous: [Newtonian Gravitation, Kepler’s Laws, and Orbital Motion](../../2026-07-15-M3-1/Source/Lecture-Transcript.md)
+
+---

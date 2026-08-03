@@ -1,5 +1,10 @@
 # Center of Mass of a Rod With Linearly Increasing Density
 
+<!--
+lesson-id: 212-M2-008
+topic-code: MTH212.M2.08
+-->
+
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -278,7 +283,6 @@ The given mass $m=0.65\ \mathrm{kg}$ is not needed because the scale factor $c$ 
 ```quiz
 type: radio
 id: m2-2lec-q1
-require_exact: true
 content: |-
   **Question 1**
 
@@ -349,3 +353,17 @@ For $\lambda(x)=kx$, this process gives
 $$
 \boxed{x_{\mathrm{cm}}=\frac{2L}{3}}.
 $$
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

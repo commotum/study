@@ -1,5 +1,10 @@
 # Identifying the Restoring Force of a Hanging Spring
 
+<!--
+lesson-id: 212-M5-003
+topic-code: MTH212.M5.03
+-->
+
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -59,6 +64,8 @@ options:
   content: |-
     To the right
   correct: true
+  feedback: |-
+    A restoring net force points opposite the displacement. A leftward displacement therefore requires a rightward net force. Choosing “to the left” makes the force push the block farther from equilibrium.
 - id: p3-recognize-restoring-b
   content: |-
     To the left
@@ -68,8 +75,6 @@ options:
 - id: p3-recognize-restoring-d
   content: |-
     Perpendicular to the displacement
-feedback: |-
-  A restoring net force points opposite the displacement. A leftward displacement therefore requires a rightward net force. Choosing “to the left” makes the force push the block farther from equilibrium.
 ```
 
 ---
@@ -122,11 +127,11 @@ options:
   content: |-
     The spring force and gravity balance, so the net force is zero.
   correct: true
+  feedback: |-
+    At equilibrium, both forces act and are opposite vectors of equal magnitude. Their resultant is zero. Equilibrium does not mean that the individual forces disappear.
 - id: p3-equilibrium-balance-d
   content: |-
     Gravity is the only force on the mass.
-feedback: |-
-  At equilibrium, both forces act and are opposite vectors of equal magnitude. Their resultant is zero. Equilibrium does not mean that the individual forces disappear.
 ```
 
 ---
@@ -171,14 +176,14 @@ options:
   content: |-
     The upward spring force becomes smaller than the constant downward gravitational force.
   correct: true
+  feedback: |-
+    Gravity remains constant. Above equilibrium, the spring is less stretched, so its upward force is smaller than gravity and the resultant points downward. The spring force itself need not reverse direction.
 - id: p3-both-sides-c
   content: |-
     Both gravity and the spring force vanish.
 - id: p3-both-sides-d
   content: |-
     The spring force changes direction and points downward.
-feedback: |-
-  Gravity remains constant. Above equilibrium, the spring is less stretched, so its upward force is smaller than gravity and the resultant points downward. The spring force itself need not reverse direction.
 ```
 
 ---
@@ -233,3 +238,17 @@ options:
 - Hanging-spring result: gravity fixes the equilibrium stretch; the changing spring force provides the restoring effect.
 - Resultant check: the spring force and gravity add to zero at equilibrium, not because either individual force vanishes.
 - Main trap: do not call gravity the restoring force merely because gravity acts on the mass; it stays approximately constant during the oscillation.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

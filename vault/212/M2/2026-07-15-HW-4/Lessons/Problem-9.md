@@ -1,5 +1,10 @@
 # Moment of Inertia of a Rod–Ball Composite
 
+<!--
+lesson-id: 212-M2-045
+topic-code: MTH212.M2.45
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -233,3 +238,17 @@ For a composite rigid body about a specified axis:
 5. add all component inertias.
 
 For the rod–ball system, the cue **axis through the rod's center but not the ball's center** means “rod formula directly, sphere formula plus a parallel-axis shift.” Here $d^2=L^2/4+r^2$. The main traps are treating the ball as a point mass, using $L/2+r$ for perpendicular offsets, or using the rod's mass in the ball terms.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

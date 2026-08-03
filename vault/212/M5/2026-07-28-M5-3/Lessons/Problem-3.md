@@ -1,5 +1,10 @@
 # Scaling Sound Intensity With the Inverse-Square Law
 
+<!--
+lesson-id: 212-M5-026
+topic-code: MTH212.M5.26
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -288,3 +293,17 @@ For the same point-like sound source:
 4. **Verify:** the distance ratio is unitless, the result retains $\mathrm{W/m^2}$, and its direction agrees with the prediction.
 
 If the listener moves farther away, the answer must be smaller. The main trap is forgetting the square and using a linear inverse ratio.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

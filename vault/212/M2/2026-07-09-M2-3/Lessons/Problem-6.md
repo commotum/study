@@ -1,5 +1,10 @@
 # Finding an Unknown Mass in Rigidly Attached Cylinders
 
+<!--
+lesson-id: 212-M2-016
+topic-code: MTH212.M2.16
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -332,3 +337,17 @@ m=\frac{2}{r^2}\left(\frac{FR}{\alpha}-\frac12MR^2\right).
 $$
 
 The main traps are treating the cylinders separately even though they share one angular acceleration, swapping $R$ and $r$, or forgetting the $\tfrac12$ and the squared radius in the solid-cylinder formula. A correct result has units of kilograms and reproduces the total inertia when substituted back.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

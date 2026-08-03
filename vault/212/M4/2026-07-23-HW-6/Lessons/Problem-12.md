@@ -1,5 +1,10 @@
 # Period of an Ideal Simple Pendulum
 
+<!--
+lesson-id: 212-M4-027
+topic-code: MTH212.M4.27
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -196,3 +201,17 @@ When the problem says to use the simple-pendulum model, remember **filter, subst
 4. Compare the decimal period with the endpoints of the requested time ranges.
 
 Mass and bob radius are real physical details, but the stated ideal model excludes them.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

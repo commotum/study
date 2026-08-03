@@ -1,5 +1,10 @@
 # Convert an Intensity Ratio into a Decibel Change
 
+<!--
+lesson-id: 212-M5-046
+topic-code: MTH212.M5.46
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -281,3 +286,22 @@ $$
 $$
 
 The main trap is treating the decibel scale as linear. Doubling intensity adds about $3\ \mathrm{dB}$; it does not double the intensity level.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
+Next: [Doppler Shift for a Moving Observer](../../2026-07-28-M5-3/Lessons/Problem-5.md)
+
+Study guide index: 13/20
+
+---
+
+<!-- lesson-nav:end -->

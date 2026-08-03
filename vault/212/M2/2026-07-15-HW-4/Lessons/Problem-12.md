@@ -1,5 +1,10 @@
 # Angular Momentum About a Combined Center of Mass
 
+<!--
+lesson-id: 212-M2-048
+topic-code: MTH212.M2.48
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -313,3 +318,17 @@ $$
 $$
 
 The main traps are using $L/2$ instead of $L/3$, reversing the cross-product order, and including the radius even though its displacement is parallel to the momentum.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

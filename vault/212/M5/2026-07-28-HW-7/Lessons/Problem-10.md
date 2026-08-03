@@ -1,5 +1,10 @@
 # Finding Wave Speed from a Traveling-Wave Equation
 
+<!--
+lesson-id: 212-M5-023
+topic-code: MTH212.M5.23
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -291,3 +296,22 @@ When a traveling wave is written as $y=A\sin(kx\pm\omega t+\phi)$ or with cosine
 5. Check that $(\mathrm{rad/s})/(\mathrm{rad/m})$ simplifies to $\mathrm{m/s}$.
 
 Do not use the amplitude, reverse the quotient, or let sine versus cosine or a constant phase shift distract you. The sign between the phase terms affects direction, not the speed's magnitude.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 3 Study Guide](../../2026-08-03-Q-3/Study-Guide.md)
+Next: [Wave Speed in a Wire Tensioned by a Hanging Mass](../../2026-07-27-M5-2/Lessons/Problem-2.md)
+
+Study guide index: 09/20
+
+---
+
+<!-- lesson-nav:end -->

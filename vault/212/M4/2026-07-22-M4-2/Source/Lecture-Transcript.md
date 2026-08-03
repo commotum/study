@@ -1,6 +1,7 @@
 # Physics 212: Simple and Physical Pendula
 
 Welcome back to Physics 212.
+[View Notes](Lecture-Notes.md)
 
 ## Announcements
 
@@ -941,3 +942,10 @@ The period of a physical pendulum depends on two aspects of its mass distributio
 - The distance between the pivot and the center of mass
 
 Changing the pivot location, adding point masses, or attaching extended objects changes one or both of these quantities and therefore changes the oscillation period.
+
+---
+
+Up Next: [From Oscillations to Wave Motion](../../../M5/2026-07-23-M5-1/Source/Lecture-Transcript.md)
+Previous: [Oscillations and Simple Harmonic Motion](../../2026-07-21-M4-1/Source/Lecture-Transcript.md)
+
+---

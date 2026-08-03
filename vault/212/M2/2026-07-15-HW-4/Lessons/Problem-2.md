@@ -1,5 +1,10 @@
 # Time for a Solid Cylinder to Roll Down a Ramp
 
+<!--
+lesson-id: 212-M2-038
+topic-code: MTH212.M2.38
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -262,3 +267,17 @@ t=\sqrt{\frac{3h}{g\sin^2\theta}}.
 $$
 
 The main traps are using $h$ as the along-ramp distance, forgetting rotational inertia, or assuming that mass and radius affect the time even though they cancel for cylinders of the same shape.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,5 +1,10 @@
 # Finding the Maximum Speed of a String Element
 
+<!--
+lesson-id: 212-M5-022
+topic-code: MTH212.M5.22
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -350,3 +355,17 @@ $$
 For positive amplitude and angular-frequency magnitudes, this is $v_{\max}=A\omega$.
 
 The main trap is using $\omega/k$. That is the propagation speed of the wave pattern, not the maximum transverse speed of one string element.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

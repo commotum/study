@@ -1,5 +1,10 @@
 # Combining Equal Independent Sound Sources in Decibels
 
+<!--
+lesson-id: 212-M5-027
+topic-code: MTH212.M5.27
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -312,3 +317,17 @@ When $N$ equally loud independent sources are present:
 4. Round only the final value and follow the requested answer form.
 
 For two equal sources, remember the shortcut: doubling intensity adds about $3\ \mathrm{dB}$. The main trap is adding the decibel levels directly.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,5 +1,10 @@
 # Comparing Rotational Kinetic Energies About Parallel Axes
 
+<!--
+lesson-id: 212-M2-023
+topic-code: MTH212.M2.23
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -255,3 +260,17 @@ When the system and angular speed are unchanged, use this checklist:
 5. Form the ratio in the requested order.
 
 The main trap is using one distance for the whole composite object. About the center axis of one disk, the two center distances are $0$ and $2R$, and the distance must be squared in the parallel-axis term.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

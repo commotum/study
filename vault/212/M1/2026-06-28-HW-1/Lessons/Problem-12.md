@@ -1,5 +1,10 @@
 # Checking Speed From Angular Speed in Non-Uniform Circular Motion
 
+<!--
+lesson-id: 212-M1-050
+topic-code: MTH212.M1.50
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -327,3 +332,17 @@ $$
 In non-uniform circular motion, $\omega$ may change with time, so use the value of $\omega$ at the instant being discussed. Check the claim by asking whether both sides are scalar speeds, whether the units are length per time, and whether $\omega$ refers to that same instant.
 
 The statement "$\vec v$ has magnitude $r\omega$" is true because it describes the speed, not the full velocity vector.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

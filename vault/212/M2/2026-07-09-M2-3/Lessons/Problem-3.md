@@ -1,5 +1,10 @@
 # Finding Torque from a Force at an Angle
 
+<!--
+lesson-id: 212-M2-013
+topic-code: MTH212.M2.13
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -264,3 +269,22 @@ options:
 4. Report the magnitude in $\mathrm{N\,m}$ and determine clockwise or counterclockwise direction separately.
 
 For the source wrench, $\theta=120^\circ$, so the torque magnitude is $43\ \mathrm{N\,m}$ and the rotation is clockwise.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 2 Study Guide](../../../M3/2026-07-20-Q-2/Study-Guide.md)
+Next: [Finding Atwood-Machine Acceleration With a Massive Pulley](../../2026-07-13-M2-4/Lessons/Problem-4.md)
+
+Study guide index: 04/20
+
+---
+
+<!-- lesson-nav:end -->

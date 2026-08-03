@@ -1,5 +1,10 @@
 # Center of Mass from a Linear Density
 
+<!--
+lesson-id: 212-M2-020
+topic-code: MTH212.M2.20
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -263,3 +268,17 @@ When a rod has position-dependent density and the question asks for its center o
 5. Check that the answer has units of length, lies on the rod, and shifts toward the denser end.
 
 The main trap is integrating $\lambda(x)$ alone in the numerator; that produces mass, not the first moment.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,5 +1,10 @@
 # Total Kinetic Energy From a Loss of Height
 
+<!--
+lesson-id: 212-M2-040
+topic-code: MTH212.M2.40
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -235,3 +240,17 @@ For the cylinder of mass $4M$, the result is
 $$
 \boxed{4Mgh}.
 $$
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

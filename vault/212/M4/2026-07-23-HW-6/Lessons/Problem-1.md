@@ -1,5 +1,10 @@
 # Amplitude and the Period of a Spring Oscillator
 
+<!--
+lesson-id: 212-M4-016
+topic-code: MTH212.M4.16
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -240,3 +245,17 @@ For an ideal block–spring oscillator:
 5. Since $A$ does not appear in the period formula, conclude $T_{\text{new}}=T_{\text{old}}$.
 
 The main trap is assuming that a larger travel distance automatically means a longer period. In ideal simple harmonic motion, amplitude changes the size of the motion, not its cycle time.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

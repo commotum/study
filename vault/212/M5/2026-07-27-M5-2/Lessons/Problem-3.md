@@ -1,5 +1,10 @@
 # Maximum Transverse Particle Speed on a Tensioned Wire
 
+<!--
+lesson-id: 212-M5-010
+topic-code: MTH212.M5.10
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -337,3 +342,17 @@ For a sinusoidal wave on a wire tensioned by a stationary hanging mass:
 5. Keep $A$ and $\lambda$ in matching length units, retain unrounded intermediate values, and round only the final result.
 
 The main trap is reporting $v_{\mathrm{wave}}$ instead of the maximum transverse particle speed.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

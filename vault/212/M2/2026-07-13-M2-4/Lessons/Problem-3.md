@@ -1,5 +1,10 @@
 # Minimum Friction for a Ladder Against a Smooth Wall
 
+<!--
+lesson-id: 212-M2-029
+topic-code: MTH212.M2.29
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -61,6 +66,8 @@ options:
   content: |-
     The ladder's bottom contact point
   correct: true
+  feedback: |-
+    Both $N_g$ and $f_s$ act through the bottom contact point, so their torques vanish when that point is the pivot.
 - id: p3-pivot-b
   content: |-
     The ladder's midpoint
@@ -73,8 +80,6 @@ options:
 - id: p3-pivot-e
   content: |-
     Any point gives the same number of unknown torques
-feedback: |-
-  Both $N_g$ and $f_s$ act through the bottom contact point, so their torques vanish when that point is the pivot.
 ```
 
 ---
@@ -130,6 +135,8 @@ options:
   content: |-
     $N_wL\sin\theta=mg\dfrac L2\cos\theta$
   correct: true
+  feedback: |-
+    The horizontal wall force uses vertical lever arm $L\sin\theta$; the weight acts at the midpoint and uses horizontal lever arm $(L/2)\cos\theta$.
 - id: p3-torque-b
   content: |-
     $N_wL\cos\theta=mg\dfrac L2\sin\theta$
@@ -142,8 +149,6 @@ options:
 - id: p3-torque-e
   content: |-
     $N_wL=mgL$
-feedback: |-
-  The horizontal wall force uses vertical lever arm $L\sin\theta$; the weight acts at the midpoint and uses horizontal lever arm $(L/2)\cos\theta$.
 ```
 
 ---
@@ -190,6 +195,8 @@ options:
   content: |-
     $0.29$
   correct: true
+  feedback: |-
+    Use $\mu_s=\frac12\cot\theta$: $\mu_s=\frac12\cot60^\circ=0.2887\ldots\approx0.29$. Be sure the calculator is in degree mode.
 - id: p3-friction-b
   content: |-
     $0.58$
@@ -202,8 +209,6 @@ options:
 - id: p3-friction-e
   content: |-
     $0.50$
-feedback: |-
-  Use $\mu_s=\frac12\cot\theta$: $\mu_s=\frac12\cot60^\circ=0.2887\ldots\approx0.29$. Be sure the calculator is in degree mode.
 ```
 
 ---
@@ -266,6 +271,28 @@ options:
   content: |-
     $0.39$
   correct: true
+  feedback: |-
+    Taking torques about the ladder's bottom gives
+
+    $$
+    N_wL\sin\theta=mg\frac{L}{2}\cos\theta,
+    \qquad
+    N_w=\frac{mg}{2}\cot\theta.
+    $$
+
+    Horizontal equilibrium requires $f_s=N_w$, while vertical equilibrium gives $N_g=mg$. At impending slip,
+
+    $$
+    \mu_s=\frac{f_s}{N_g}=\frac12\cot\theta.
+    $$
+
+    Thus,
+
+    $$
+    \mu_s=\frac12\cot(52^\circ)=0.39064\ldots\approx0.39.
+    $$
+
+    The mass and length cancel, and the angle supports two significant figures.
 - id: p3-source-b
   content: |-
     $0.78$
@@ -278,28 +305,6 @@ options:
 - id: p3-source-e
   content: |-
     $0.31$
-feedback: |-
-  Taking torques about the ladder's bottom gives
-
-  $$
-  N_wL\sin\theta=mg\frac{L}{2}\cos\theta,
-  \qquad
-  N_w=\frac{mg}{2}\cot\theta.
-  $$
-
-  Horizontal equilibrium requires $f_s=N_w$, while vertical equilibrium gives $N_g=mg$. At impending slip,
-
-  $$
-  \mu_s=\frac{f_s}{N_g}=\frac12\cot\theta.
-  $$
-
-  Thus,
-
-  $$
-  \mu_s=\frac12\cot(52^\circ)=0.39064\ldots\approx0.39.
-  $$
-
-  The mass and length cancel, and the angle supports two significant figures.
 ```
 
 ---
@@ -312,3 +317,17 @@ feedback: |-
 - Apply $f_s=N_w$, $N_g=mg$, and $f_s=\mu_sN_g$ at impending slip.
 - The reusable result is $\mu_s=\frac12\cot\theta$; a larger $\theta$ should produce a smaller coefficient.
 - Use degree mode and round only at the end.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

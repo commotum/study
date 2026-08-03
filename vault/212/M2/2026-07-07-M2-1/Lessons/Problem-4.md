@@ -1,5 +1,10 @@
 # Finding the Center of Mass of Joined Cubes
 
+<!--
+lesson-id: 212-M2-004
+topic-code: MTH212.M2.04
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -297,6 +302,23 @@ options:
   content: |-
     `0.88`
   correct: true
+  feedback: |-
+    The large cube has mass $m_1=\rho(2L)^3=8\rho L^3$ and center $x_1=L$. The small cube has mass $m_2=\rho L^3$ and center $x_2=2L+L/2=5L/2$. Therefore,
+
+    $$
+    x_{\mathrm{cm}}
+    =\frac{m_1x_1+m_2x_2}{m_1+m_2}
+    =\frac{(8\rho L^3)L+(\rho L^3)(5L/2)}{9\rho L^3}
+    =\frac{7L}{6}.
+    $$
+
+    With $L=0.75\ \mathrm{m}$,
+
+    $$
+    x_{\mathrm{cm}}=\frac76(0.75\ \mathrm{m})=0.875\ \mathrm{m}.
+    $$
+
+    The measured length has two significant figures, so $x_{\mathrm{cm}}=0.88\ \mathrm{m}$.
 - id: b
   content: |-
     `0.875`
@@ -309,23 +331,6 @@ options:
 - id: e
   content: |-
     `1.88`
-feedback: |-
-  The large cube has mass $m_1=\rho(2L)^3=8\rho L^3$ and center $x_1=L$. The small cube has mass $m_2=\rho L^3$ and center $x_2=2L+L/2=5L/2$. Therefore,
-
-  $$
-  x_{\mathrm{cm}}
-  =\frac{m_1x_1+m_2x_2}{m_1+m_2}
-  =\frac{(8\rho L^3)L+(\rho L^3)(5L/2)}{9\rho L^3}
-  =\frac{7L}{6}.
-  $$
-
-  With $L=0.75\ \mathrm{m}$,
-
-  $$
-  x_{\mathrm{cm}}=\frac76(0.75\ \mathrm{m})=0.875\ \mathrm{m}.
-  $$
-
-  The measured length has two significant figures, so $x_{\mathrm{cm}}=0.88\ \mathrm{m}$.
 ```
 
 ---
@@ -338,3 +343,17 @@ feedback: |-
 - Measure every component center from the same origin.
 - Assemble $x_{\mathrm{cm}}=(\sum m_ix_i)/(\sum m_i)$ before canceling common factors.
 - Keep the symbolic result exact, check that it lies between the component centers and closer to the heavier piece, then round once at the end.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

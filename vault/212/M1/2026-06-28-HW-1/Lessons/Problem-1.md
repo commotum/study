@@ -1,5 +1,10 @@
 # Converting Revolutions per Minute to Radians per Second
 
+<!--
+lesson-id: 212-M1-043
+topic-code: MTH212.M1.43
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -425,3 +430,17 @@ $$
 $$
 
 so the answer is $4\pi$ radians per second.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

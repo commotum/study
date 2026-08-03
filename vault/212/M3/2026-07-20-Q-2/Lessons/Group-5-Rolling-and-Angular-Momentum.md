@@ -1,5 +1,10 @@
 # Connect Rolling Motion to Angular-Momentum Conservation
 
+<!--
+lesson-id: 212-M3-028
+topic-code: MTH212.M3.28
+-->
+
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -542,3 +547,17 @@ Use this decision process:
 5. Write particle angular momentum as $\vec r\times m\vec v$ and rigid-body angular momentum as $I\omega$.
 6. Conserve angular momentum only after verifying that the net external torque about the chosen axis is zero.
 7. In a sticking collision, include the attached mass in the final moment of inertia and do not conserve mechanical energy.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,5 +1,10 @@
 # Testing Statements About Gravity and Orbits
 
+<!--
+lesson-id: 212-M3-011
+topic-code: MTH212.M3.11
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -315,3 +320,17 @@ To test a conceptual statement:
 5. Translate proportionality exactly: Kepler's third law is $T^2\propto a^3$, not an inverse law.
 
 The main trap is accepting familiar vocabulary while overlooking one decisive word such as “inverse,” or confusing a complete quantity with half of it.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

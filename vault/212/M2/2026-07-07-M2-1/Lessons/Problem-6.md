@@ -1,5 +1,10 @@
 # Finding a Linear-Density Coefficient From Total Mass
 
+<!--
+lesson-id: 212-M2-006
+topic-code: MTH212.M2.06
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -268,7 +273,6 @@ $$
 ```quiz
 type: radio
 id: m2-1lec-q5
-require_exact: true
 content: |-
   **Question 5**
 
@@ -340,3 +344,17 @@ $$
 \qquad
 [c]=\mathrm{kg/m^2}.
 $$
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

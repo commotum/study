@@ -1,6 +1,7 @@
 # Physics 212: Center of Mass and Moment of Inertia
 
 Welcome back to Physics 212.
+[View Notes](Lecture-Notes.md)
 
 ## Announcements
 
@@ -1449,3 +1450,10 @@ I_{\mathrm{total}}
 $$
 
 Moment of inertia depends on both the amount of mass and its distribution relative to the rotation axis. Because each mass element is weighted by the square of its distance from the axis, moving mass outward can greatly increase the rotational inertia of a system.
+
+---
+
+Up Next: [Torque, Moment Arms, and Rotational Dynamics](../../2026-07-09-M2-3/Source/Lecture-Transcript.md)
+Previous: [Center of Mass, Torque Balance, and Mass Density](../../2026-07-07-M2-1/Source/Lecture-Transcript.md)
+
+---

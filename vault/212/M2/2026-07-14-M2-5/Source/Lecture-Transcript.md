@@ -1,6 +1,7 @@
 # Physics 212: Rolling Motion and Conservation of Angular Momentum
 
 Welcome back to Physics 212.
+[View Notes](Lecture-Notes.md)
 
 ## Announcements
 
@@ -1202,3 +1203,10 @@ $$
 $$
 
 Angular momentum can remain conserved during an inelastic collision even when mechanical energy is converted into thermal energy, deformation, and other internal forms.
+
+---
+
+Up Next: [Newtonian Gravitation, Kepler’s Laws, and Orbital Motion](../../../M3/2026-07-15-M3-1/Source/Lecture-Transcript.md)
+Previous: [Static Equilibrium and Rotational Dynamics](../../2026-07-13-M2-4/Source/Lecture-Transcript.md)
+
+---

@@ -1,5 +1,10 @@
 # Finding Frequency From a Position–Time Graph
 
+<!--
+lesson-id: 212-M4-004
+topic-code: MTH212.M4.04
+-->
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -295,3 +300,17 @@ To find frequency from a position-time graph:
 4. Report the result in hertz.
 
 **Main trap:** crest to trough or opposite-direction equilibrium crossing to crossing spans only \(T/2\). Vertical graph values describe position or amplitude, not frequency.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->
