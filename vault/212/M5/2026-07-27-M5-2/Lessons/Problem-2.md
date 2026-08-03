@@ -95,27 +95,27 @@ options:
     $T=6.0\ \mathrm{N}$ and $\mu=0.020\ \mathrm{kg/m}$
   correct: true
   feedback: |-
-    $T=Mg=(0.60)(10)=6.0\ \mathrm{N}$ and $\mu=m_w/L=0.030/1.5=0.020\ \mathrm{kg/m}$.
+    Because the hanging block is stationary, the wire tension balances its weight: $T=Mg=6.0\ \mathrm N$. Linear density belongs to the wire segment itself, so $\mu=m_w/L=0.020\ \mathrm{kg/m}$.
 - id: b
   content: |-
     $T=0.30\ \mathrm{N}$ and $\mu=0.40\ \mathrm{kg/m}$
   feedback: |-
-    This swaps the two masses: $0.030(10)$ uses the wire mass for tension, while $0.60/1.5$ uses the hanging mass for linear density.
+    This swaps the objects' physical roles. The hanging mass $M=0.60\ \mathrm{kg}$ supplies the tension through $Mg$, while the wire's own mass $m_w=0.030\ \mathrm{kg}$ is spread over $L$ and determines $\mu$.
 - id: c
   content: |-
     $T=6.0\ \mathrm{N}$ and $\mu=0.045\ \mathrm{kg/m}$
   feedback: |-
-    The tension is correct, but $0.045$ comes from multiplying $m_wL$; linear density is mass divided by length.
+    The tension correctly balances the hanging weight, but the density multiplies wire mass by length. Linear density means mass per unit length, so $\mu=0.030/1.5=0.020\ \mathrm{kg/m}$ rather than $0.045\ \mathrm{kg/m}$.
 - id: d
   content: |-
     $T=0.60\ \mathrm{N}$ and $\mu=0.020\ \mathrm{kg/m}$
   feedback: |-
-    The density is correct, but the tension cannot equal the mass numerically; it is $T=Mg=(0.60)(10)=6.0\ \mathrm N$.
+    The density is correct, but this reports the block's mass value as a force. Tension balances weight, so the mass must be multiplied by $g$: $T=(0.60)(10)=6.0\ \mathrm N$, not $0.60\ \mathrm N$.
 - id: e
   content: |-
     $T=15\ \mathrm{N}$ and $\mu=0.050\ \mathrm{kg/m}$
   feedback: |-
-    This assigns length to the tension calculation and hanging mass to the density calculation. Use only $M$ in $Mg$ and only $m_w/L$ for $\mu$.
+    Neither value respects the quantities' roles: $15$ comes from $gL$, although length does not set the hanging weight, and $0.050$ is not the wire mass per length. Use $T=Mg=6.0\ \mathrm N$ and $\mu=m_w/L=0.020\ \mathrm{kg/m}$.
 ```
 
 ---
@@ -176,28 +176,28 @@ options:
   content: |-
     $3.9\ \mathrm{m/s}$
   feedback: |-
-    The correctly grouped radicand is $MgL/m_w=225$; a value near $3.9$ indicates that the division or radical was applied to only part of that quotient.
+    This is approximately $\sqrt{gL}=\sqrt{15}$, which drops both masses and therefore ignores tension and wire density. Using $T=Mg$ and $\mu=m_w/L$ gives the full radicand $MgL/m_w=225$ and speed $15\ \mathrm{m/s}$.
 - id: b
   content: |-
     $9.0\ \mathrm{m/s}$
   feedback: |-
-    This is the numerator $MgL$, not the wave speed.
+    This stops at the numerator $MgL=9.0$ and does not account for the wire mass or square-root dependence. Wave speed is $\sqrt{MgL/m_w}=\sqrt{225}=15\ \mathrm{m/s}$.
 - id: c
   content: |-
     $15\ \mathrm{m/s}$
   correct: true
   feedback: |-
-    $v=\sqrt{(0.60)(10)(1.5)/0.040}=\sqrt{225}=15\ \mathrm{m/s}$.
+    The stationary block sets $T=Mg$, and the wire segment sets $\mu=m_w/L$, so $v=\sqrt{T/\mu}=\sqrt{MgL/m_w}$. The given values make the radicand $225\ \mathrm{m^2/s^2}$ and the speed $15\ \mathrm{m/s}$.
 - id: d
   content: |-
     $150\ \mathrm{m/s}$
   feedback: |-
-    This is $Mg/m_w=150$, which omits the wire length and the square root required by $v=\sqrt{MgL/m_w}$.
+    This divides the hanging weight factor by wire mass but omits the length needed to turn wire mass into linear density. It also stops before the square root; the complete expression is $v=\sqrt{MgL/m_w}=15\ \mathrm{m/s}$.
 - id: e
   content: |-
     $225\ \mathrm{m/s}$
   feedback: |-
-    This is the value inside the radical; the wave speed is its square root.
+    This reports $MgL/m_w=225$, which has units of speed squared. The wave-speed formula is $v=\sqrt{T/\mu}$, so the requested speed is the positive square root, $15\ \mathrm{m/s}$.
 ```
 
 ---
@@ -253,27 +253,27 @@ options:
     $\displaystyle \sqrt{\frac{(0.80)(10)(1.5)}{0.020}}$
   correct: true
   feedback: |-
-    The hanging mass belongs in $T=Mg$, while the wire mass belongs in $\mu=m_w/L$, giving $v=\sqrt{MgL/m_w}$.
+    The hanging block supplies $T=Mg$, while the vibrating wire's own mass and length supply $\mu=m_w/L$. Substituting those roles into $v=\sqrt{T/\mu}$ gives exactly $\sqrt{(0.80)(10)(1.5)/0.020}$.
 - id: b
   content: |-
     $\displaystyle \sqrt{\frac{(0.020)(10)(1.5)}{0.80}}$
   feedback: |-
-    This swaps the block mass and wire mass.
+    This lets the wire's small mass generate the tension and spreads the hanging block's mass along the wire. Those roles are reversed: $M$ belongs in $T=Mg$ and $m_w$ belongs in $\mu=m_w/L$, so the correct ratio is $MgL/m_w$.
 - id: c
   content: |-
     $\displaystyle \frac{(0.80)(10)(1.5)}{0.020}$
   feedback: |-
-    This omits the square root from $v=\sqrt{T/\mu}$.
+    This expression is $T/\mu$, which has units of speed squared, not speed. The propagation speed is the positive square root of that ratio, so the entire quotient must remain under the radical.
 - id: d
   content: |-
     $\displaystyle \sqrt{\frac{(0.80)(0.020)}{(10)(1.5)}}$
   feedback: |-
-    The wire mass belongs alone in the denominator after substituting $\mu=m_w/L$.
+    This multiplies the two masses and divides by $gL$, losing both the tension-over-density structure and the units of speed. Substituting $T=Mg$ and $\mu=m_w/L$ places $MgL$ in the numerator and $m_w$ alone in the denominator.
 - id: e
   content: |-
     $\displaystyle \sqrt{\frac{(0.80)(10)}{(0.020)(1.5)}}$
   feedback: |-
-    Since $\mu=m_w/L$, dividing by $\mu$ moves $L$ into the numerator, not the denominator.
+    This treats linear density as though it were $m_wL$. Since $\mu=m_w/L$, dividing by $\mu$ means multiplying by $L/m_w$, so $L$ moves to the numerator and the radicand is $MgL/m_w$.
 ```
 
 ---
@@ -317,28 +317,28 @@ options:
   content: |-
     $5$
   feedback: |-
-    This is the tension value $T=Mg=5\ \mathrm N$, not the propagation speed obtained after dividing by $\mu$ and taking a square root.
+    This reports the wire tension's numerical value, $T=Mg=5\ \mathrm N$, as though it were a speed. Tension is only one input; combining it with $\mu=m_w/L$ gives $v=20\ \mathrm{m/s}$.
 - id: b
   content: |-
     $16$
   feedback: |-
-    This is the product $gL=16$ and ignores both mass roles and the square root in $v=\sqrt{MgL/m_w}$.
+    This multiplies gravity by length but omits how the hanging mass sets tension and the wire mass sets density. The complete relation is $v=\sqrt{MgL/m_w}$, which gives $20\ \mathrm{m/s}$.
 - id: c
   content: |-
     $20$
   correct: true
   feedback: |-
-    $v=\sqrt{(0.50)(10)(1.6)/0.020}=\sqrt{400}=20\ \mathrm{m/s}$, so enter $20$.
+    The hanging block supplies tension and the wire segment supplies linear density, so $v=\sqrt{MgL/m_w}$. The values give $\sqrt{400}=20\ \mathrm{m/s}$; because the field requests a number only, enter `20`.
 - id: d
   content: |-
     $40$
   feedback: |-
-    The grouped radicand is $400$, but its positive square root is $20$, not $40$.
+    This does not equal the square root of the required tension-to-density ratio. The grouped radicand is $MgL/m_w=400\ \mathrm{m^2/s^2}$, whose positive square root is $20\ \mathrm{m/s}$, so the entry is `20`.
 - id: e
   content: |-
     $400$
   feedback: |-
-    This is $MgL/m_w$, the value inside the radical; the requested speed is $\sqrt{400}=20\ \mathrm{m/s}$.
+    This reports the radicand $MgL/m_w=400$, which represents speed squared. The wave speed is its positive square root, $20\ \mathrm{m/s}$, so the number-only entry is `20`.
 ```
 
 ---

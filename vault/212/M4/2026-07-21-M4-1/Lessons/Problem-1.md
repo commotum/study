@@ -1,3 +1,4 @@
+
 # Finding Maximum Speed From a Cosine Position Function
 
 <!--
@@ -54,7 +55,7 @@ Track how the coefficient changes:
 |---|---:|---|
 | $x(t)=A\cos(\omega t)$ | $A$ | Maximum position magnitude |
 | $v(t)=-A\omega\sin(\omega t)$ | $-A\omega$ | Signed velocity amplitude |
-| $|v(t)|$ | $A\omega$ | Maximum speed |
+| $\lvert v(t)\rvert$ | $A\omega$ | Maximum speed |
 
 The negative sign changes the velocity's direction, not its largest magnitude.
 

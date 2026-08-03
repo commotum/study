@@ -69,28 +69,28 @@ options:
   content: |-
     $f/3$
   feedback: |-
-    This invents an inverse linear dependence on mass, but $m$ does not appear anywhere in the simple-pendulum frequency formula.
+    This assumes that tripling the bob's mass makes the pendulum three times slower. For a simple pendulum, the greater gravitational force and greater inertia scale together, so mass cancels; with $g$ and $L$ unchanged, the frequency remains $f$.
 - id: pq3-p1-mass-tripled-b
   content: |-
     $f/\sqrt{3}$
   feedback: |-
-    This treats bob mass like the mass in a spring oscillator. A simple pendulum has $f\propto\sqrt{g/L}$, with no $m$ factor.
+    This imports the spring-oscillator dependence $f\propto 1/\sqrt m$ into a pendulum. Bob mass affects a mass-spring frequency, but a simple pendulum is controlled by $g$ and $L$, so tripling $m$ does not introduce a factor of $1/\sqrt3$.
 - id: pq3-p1-mass-tripled-c
   content: |-
     $f$
   correct: true
   feedback: |-
-    Mass does not appear in $f=\frac{1}{2\pi}\sqrt{g/L}$, so changing only the mass leaves $f$ unchanged.
+    A heavier pendulum bob has proportionally more weight and inertia, so mass cancels from its small-angle motion. Since $f=(2\pi)^{-1}\sqrt{g/L}$ and neither $g$ nor $L$ changes, the new frequency is $f$.
 - id: pq3-p1-mass-tripled-d
   content: |-
     $\sqrt{3}f$
   feedback: |-
-    A square-root multiplier applies when $g$ changes, not when the absent bob-mass variable changes.
+    The factor $\sqrt3$ would follow if the gravitational field $g$ tripled, because $f\propto\sqrt g$. Here only the bob mass triples, and mass is absent from the pendulum frequency, so the multiplier is $1$.
 - id: pq3-p1-mass-tripled-e
   content: |-
     $3f$
   feedback: |-
-    This assumes frequency is directly proportional to bob mass, contradicting the mass-independent pendulum formula.
+    This treats frequency as directly proportional to bob mass. Increasing mass increases both the restoring torque and rotational inertia by the same factor, leaving $f=(2\pi)^{-1}\sqrt{g/L}$ and therefore the frequency unchanged.
 ```
 
 ---
@@ -135,28 +135,28 @@ options:
   content: |-
     $f/9$
   feedback: |-
-    This treats frequency as directly proportional to length. In fact, $f\propto L^{-1/2}$.
+    This gives frequency the same change factor as length. Pendulum frequency varies inversely with the square root of length, so shortening $L$ to $L/9$ makes the oscillation faster rather than nine times slower.
 - id: pq3-p1-length-reduced-b
   content: |-
     $f/3$
   feedback: |-
-    This takes the square root but reverses the dependence: a shorter pendulum oscillates faster, not slower.
+    This uses the correct square-root factor but applies it in the wrong direction. Because $L$ is in the denominator of $f=(2\pi)^{-1}\sqrt{g/L}$, reducing the length to $L/9$ increases the frequency by $\sqrt9=3$.
 - id: pq3-p1-length-reduced-c
   content: |-
     $f$
   feedback: |-
-    Length appears explicitly in $f=(2\pi)^{-1}\sqrt{g/L}$, so changing $L$ cannot leave the frequency unchanged.
+    Unlike bob mass, length controls a simple pendulum's frequency. A shorter pendulum has a shorter time scale; changing $L$ to $L/9$ multiplies $f$ by $\sqrt{L/(L/9)}=3$, so it does not remain $f$.
 - id: pq3-p1-length-reduced-d
   content: |-
     $3f$
   correct: true
   feedback: |-
-    Since $f\propto 1/\sqrt{L}$, reducing the length by a factor of $9$ increases the frequency by $\sqrt{9}=3$.
+    A shorter simple pendulum oscillates more rapidly, with $f\propto 1/\sqrt L$. Reducing the length from $L$ to $L/9$ therefore increases the frequency by $\sqrt9=3$, giving $f_{\mathrm{new}}=3f$.
 - id: pq3-p1-length-reduced-e
   content: |-
     $9f$
   feedback: |-
-    This uses an inverse linear dependence and misses the square root; the multiplier is $\sqrt9=3$, not $9$.
+    This correctly predicts an increase but treats frequency as inversely proportional to length. The dependence is inverse square root, so a factor-of-$9$ decrease in $L$ produces only a factor-of-$3$ increase: $f_{\mathrm{new}}=3f$.
 ```
 
 ---
@@ -195,28 +195,28 @@ options:
   content: |-
     The new frequency is one-fourth the original frequency.
   feedback: |-
-    This applies an inverse-square mass factor even though bob mass cancels from the pendulum equation of motion.
+    This invents an inverse-square dependence on bob mass. Mass increases the pendulum's gravitational restoring torque and its rotational inertia by the same factor, so it cancels; doubling $m$ leaves the frequency at $f$, not $f/4$.
 - id: pq3-p1-original-check-b
   content: |-
     The new frequency is one-half the original frequency.
   feedback: |-
-    This assumes an inverse linear mass dependence that the simple-pendulum frequency formula does not contain.
+    This assumes that doubling the bob mass doubles the period and halves the frequency. In the simple-pendulum model, bob mass cancels and only $g$ and $L$ control the frequency, so changing $m$ alone leaves it unchanged.
 - id: pq3-p1-original-check-c
   content: |-
     The new frequency is the same as the original frequency.
   correct: true
   feedback: |-
-    The mass is absent from the simple-pendulum frequency formula, so doubling it does not change the frequency.
+    A simple pendulum's small-angle frequency is $f=(2\pi)^{-1}\sqrt{g/L}$ because mass cancels between restoring force and inertia. Doubling only the bob mass leaves $g$ and $L$ unchanged, so the new frequency is still $f$.
 - id: pq3-p1-original-check-d
   content: |-
     The new frequency is twice the original frequency.
   feedback: |-
-    This assumes frequency is directly proportional to bob mass; changing $m$ alone leaves $g$ and $L$ unchanged.
+    This treats bob mass as a direct frequency multiplier. Mass is not a control variable in $f=(2\pi)^{-1}\sqrt{g/L}$; with the same length and location, doubling $m$ leaves the frequency at $f$ rather than $2f$.
 - id: pq3-p1-original-check-e
   content: |-
     The new frequency is four times the original frequency.
   feedback: |-
-    Squaring the mass-change factor has no basis here because mass is absent from $f=(2\pi)^{-1}\sqrt{g/L}$.
+    This both introduces a mass dependence and squares the change factor. Bob mass cancels entirely from the simple-pendulum motion, so neither a factor of $2$ nor $4$ belongs in the frequency; it remains $f$.
 ```
 
 ---

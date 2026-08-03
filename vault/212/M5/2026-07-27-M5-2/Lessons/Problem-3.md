@@ -89,28 +89,28 @@ options:
   content: |-
     $9.8\ \mathrm{m/s}$
   feedback: |-
-    This copies the numerical value of $g$ instead of evaluating $\sqrt{MgL/m_w}$.
+    This copies gravitational acceleration as though it were a wave speed, even though their units differ. Gravity first sets the hanging block's weight and hence the tension; combining that tension with the wire density gives $v_{\mathrm{wave}}=\sqrt{MgL/m_w}=31.3\ \mathrm{m/s}$.
 - id: b
   content: |-
     $22.1\ \mathrm{m/s}$
   feedback: |-
-    This is the result for a wire mass of $0.020\ \mathrm{kg}$, not the given $0.010\ \mathrm{kg}$.
+    This uses twice the stated wire mass. A heavier wire has greater linear density and a lower wave speed; using the actual $0.010\ \mathrm{kg}$ mass gives $\mu=0.0050\ \mathrm{kg/m}$ and $v_{\mathrm{wave}}=31.3\ \mathrm{m/s}$.
 - id: c
   content: |-
     $31.3\ \mathrm{m/s}$
   correct: true
   feedback: |-
-    Correct. $\sqrt{(0.50)(9.8)(2.0)/0.010}=31.3\ldots\ \mathrm{m/s}$.
+    The stationary block supplies tension $T=Mg$, and the wire segment supplies linear density $\mu=m_w/L$. Therefore $v_{\mathrm{wave}}=\sqrt{T/\mu}=\sqrt{(0.50)(9.8)(2.0)/0.010}=31.3\ \mathrm{m/s}$.
 - id: d
   content: |-
     $49.0\ \mathrm{m/s}$
   feedback: |-
-    Here $T=4.9\ \mathrm N$ and $\mu=0.0050\ \mathrm{kg/m}$, so $T/\mu=980\ \mathrm{m^2/s^2}$; $49.0$ does not result from the required quotient and square root.
+    This reflects an arithmetic error in evaluating the tension-to-density ratio. The inputs give $T=4.9\ \mathrm N$ and $\mu=0.0050\ \mathrm{kg/m}$, so $T/\mu=980\ \mathrm{m^2/s^2}$ and its square root is $31.3\ \mathrm{m/s}$, not $49.0\ \mathrm{m/s}$.
 - id: e
   content: |-
     $98.0\ \mathrm{m/s}$
   feedback: |-
-    The correct radicand is $980$, not $98$; after dividing by $m_w=0.010\ \mathrm{kg}$, take $\sqrt{980}=31.3\ \mathrm{m/s}$.
+    This uses the wrong value beneath the radical or fails to complete the wire-density substitution. Since $\mu=m_w/L$, the full radicand is $MgL/m_w=980\ \mathrm{m^2/s^2}$, whose square root is $31.3\ \mathrm{m/s}$.
 ```
 
 ---
@@ -150,28 +150,28 @@ options:
   content: |-
     $3.0\ \mathrm{m/s}$
   feedback: |-
-    This uses $(A/\lambda)v_{\mathrm{wave}}$ but omits the factor $2\pi$.
+    This uses cycles per second where angular frequency is required. The particle's SHM speed is $A\omega$, and $\omega=2\pi v_{\mathrm{wave}}/\lambda$; omitting $2\pi$ gives $3.0\ \mathrm{m/s}$ instead of $18.85\ \mathrm{m/s}$.
 - id: b
   content: |-
     $6.0\ \mathrm{m/s}$
   feedback: |-
-    This replaces the angular factor $2\pi$ with $2$.
+    This converts from cycles to radians with a factor of $2$ rather than $2\pi$. One full cycle is $2\pi$ radians, so $v_{\mathrm{particle,max}}=(2\pi A/\lambda)v_{\mathrm{wave}}=18.85\ \mathrm{m/s}$.
 - id: c
   content: |-
     $18\ \mathrm{m/s}$
   feedback: |-
-    This reports the propagation speed rather than the maximum transverse particle speed.
+    This is the speed of the wave pattern along the wire, not the transverse speed of a material particle. Particle motion has maximum speed $A\omega=(2\pi A/\lambda)v_{\mathrm{wave}}$, which is $18.85\ \mathrm{m/s}$ here.
 - id: d
   content: |-
     $18.85\ \mathrm{m/s}$
   correct: true
   feedback: |-
-    Correct. $(2\pi A/\lambda)v_{\mathrm{wave}}=2\pi(0.0050/0.030)(18)$.
+    Each wire particle executes SHM with angular frequency $\omega=2\pi v_{\mathrm{wave}}/\lambda$, so its maximum transverse speed is $A\omega$. Here $(2\pi A/\lambda)v_{\mathrm{wave}}=18.85\ \mathrm{m/s}$.
 - id: e
   content: |-
     $113.1\ \mathrm{m/s}$
   feedback: |-
-    This multiplies $v_{\mathrm{wave}}$ by $2\pi$ but omits the ratio $A/\lambda$.
+    This includes the radians-per-cycle factor but treats the particle's motion as though $A=\lambda$. The transverse-speed multiplier is $2\pi A/\lambda$, so the actual ratio $0.0050/0.030$ reduces the result to $18.85\ \mathrm{m/s}$.
 ```
 
 ---
@@ -213,28 +213,28 @@ options:
   content: |-
     $5.0\ \mathrm{m/s}$
   feedback: |-
-    This uses $(A/\lambda)v_{\mathrm{wave}}$ without the factor $2\pi$.
+    This uses the amplitude-to-wavelength ratio but omits the conversion from cycles to radians. Since a particle's maximum SHM speed is $A\omega$ and $\omega=2\pi v_{\mathrm{wave}}/\lambda$, the result must include $2\pi$.
 - id: b
   content: |-
     $15.7\ \mathrm{m/s}$
   feedback: |-
-    This uses $\pi$ instead of $2\pi$.
+    This accounts for only half of the angular cycle by using $\pi$ instead of $2\pi$. A full sinusoidal cycle spans $2\pi$ radians, giving $v_{\mathrm{particle,max}}=2\pi(0.20)(25)=31.4\ \mathrm{m/s}$.
 - id: c
   content: |-
     $25\ \mathrm{m/s}$
   feedback: |-
-    This is the wave propagation speed, not the transverse particle speed.
+    This reports how fast the pattern travels along the wire. The material particle oscillates transversely with maximum speed $A\omega=(2\pi A/\lambda)v_{\mathrm{wave}}$, which is $31.4\ \mathrm{m/s}$ for the stated ratio.
 - id: d
   content: |-
     $31.4\ \mathrm{m/s}$
   correct: true
   feedback: |-
-    Correct. Since $A/\lambda=0.20$, the multiplier is $2\pi(0.20)$.
+    The amplitude and wavelength share units, so their ratio is $A/\lambda=0.20$. Multiplying the propagation speed by the dimensionless SHM factor $2\pi A/\lambda$ gives $v_{\mathrm{particle,max}}=31.4\ \mathrm{m/s}$.
 - id: e
   content: |-
     $157\ \mathrm{m/s}$
   feedback: |-
-    This introduces a factor-of-$10$ unit or decimal error in $A/\lambda$.
+    This effectively drops the required ratio $A/\lambda=0.20$ and uses only $2\pi v_{\mathrm{wave}}$. Amplitude sets the particle's oscillation scale, so the ratio must remain: $2\pi(0.20)(25)=31.4\ \mathrm{m/s}$.
 ```
 
 ---
@@ -304,28 +304,28 @@ options:
   content: |-
     $2.0$
   feedback: |-
-    This does not include the propagation speed and is far below the calculated result.
+    This never combines the transverse oscillation scale with the wave's propagation speed. First $v_{\mathrm{wave}}=\sqrt{MgL/m_w}=24.26\ldots\ \mathrm{m/s}$, then the factor $2\pi A/\lambda=8.216\ldots$ gives about $200\ \mathrm{m/s}$.
 - id: b
   content: |-
     $24$
   feedback: |-
-    This is the wave propagation speed, only the first stage of the calculation.
+    This is the wave pattern's propagation speed from $\sqrt{MgL/m_w}$. The question asks for a wire particle's maximum transverse speed, so it must also be multiplied by $2\pi A/\lambda=8.216\ldots$, producing the entry `200`.
 - id: c
   content: |-
     $32$
   feedback: |-
-    This is approximately $(A/\lambda)v_{\mathrm{wave}}$ and omits $2\pi$.
+    This uses the dimensionless ratio $A/\lambda$ but omits the $2\pi$ conversion from wave cycles to particle angular motion. Including it gives $(2\pi A/\lambda)v_{\mathrm{wave}}=199.3\ldots\ \mathrm{m/s}$, which rounds to `200`.
 - id: d
   content: |-
     $200$
   correct: true
   feedback: |-
-    Correct. The unrounded particle speed is $199.3\ldots\ \mathrm{m/s}$, which rounds to the number-only entry $200$.
+    The hanging mass and wire density give $v_{\mathrm{wave}}=24.261\ldots\ \mathrm{m/s}$. A wire particle has maximum transverse speed $(2\pi A/\lambda)v_{\mathrm{wave}}=199.3\ldots\ \mathrm{m/s}$, so the number-only entry is `200`.
 - id: e
   content: |-
     $2400$
   feedback: |-
-    This results from an inconsistent centimeter-to-meter or decimal conversion.
+    This is far larger than the two-stage result and is not supported by a consistent length ratio. Because $A$ and $\lambda$ are both in centimeters, their units cancel directly: $A/\lambda=0.85/0.65$, leading to $199.3\ldots\ \mathrm{m/s}$ and the entry `200`.
 ```
 
 ---

@@ -14,6 +14,7 @@ Required local skills:
 ```text
 /Users/jake/Developer/study/util/skills/core-move-lesson
 /Users/jake/Developer/study/util/skills/core-move-refiner
+/Users/jake/Developer/study/util/skills/quiz-block-factory
 ```
 
 ## Assignment Contract
@@ -61,27 +62,28 @@ find /path/to/assignment-parent/Lessons -maxdepth 1 -type f -name 'Problem-*.md'
    - Omit the `model` field. Spawned agents inherit the parent model by default; this is the required same-model behavior.
    - Do not set `model` to a smaller or cheaper model such as mini or spark.
    - Use `fork_context: false` unless the current thread contains essential context that is not in the prompt.
-   - Pass both local skills as skill items when the tool supports structured items.
+   - Pass all three local skills as skill items when the tool supports structured items.
    - Give each worker ownership of exactly one expected lesson file, such as `Lessons/Problem-7.md`.
    - Tell each worker that other agents may be editing different lesson files and that it must not revert unrelated files.
 
 Example worker prompt:
 
 ```text
-Use $core-move-lesson at /Users/jake/Developer/study/util/skills/core-move-lesson and $core-move-refiner at /Users/jake/Developer/study/util/skills/core-move-refiner.
+Use $core-move-lesson at /Users/jake/Developer/study/util/skills/core-move-lesson, $core-move-refiner at /Users/jake/Developer/study/util/skills/core-move-refiner, and $quiz-block-factory at /Users/jake/Developer/study/util/skills/quiz-block-factory.
 
 Assignment file: /absolute/path/to/assignment.md
 Problem number: N
 Target lesson file: /absolute/path/to/Lessons/Problem-N.md
 
-Create the missing lesson for only Problem N. First run the core-move-lesson workflow for Problem N, then run the core-move-refiner workflow on the lesson you created. Do not edit any other lesson file. Do not overwrite existing non-empty files. Validate the final quiz blocks and run git diff --check for your target file. In your final response, list the target file, whether validation passed, and any issue that prevented completion.
+Create the missing lesson for only Problem N. First run the core-move-lesson workflow for Problem N, then run the core-move-refiner workflow on the lesson you created. Use quiz-block-factory as the authoritative schema and feedback standard throughout. Do not edit any other lesson file. Do not overwrite existing non-empty files. Validate the final quiz blocks with the quiz-block-factory validator, including strict ids, required feedback, and feedback lint, then run git diff --check for your target file. In your final response, list the target file, whether validation passed, and any issue that prevented completion.
 ```
 
-When using structured `items`, include the two skill paths explicitly:
+When using structured `items`, include the three skill paths explicitly:
 
 ```text
 type=skill name=core-move-lesson path=/Users/jake/Developer/study/util/skills/core-move-lesson
 type=skill name=core-move-refiner path=/Users/jake/Developer/study/util/skills/core-move-refiner
+type=skill name=quiz-block-factory path=/Users/jake/Developer/study/util/skills/quiz-block-factory
 ```
 
 4. Manage concurrency.
@@ -97,10 +99,12 @@ type=skill name=core-move-refiner path=/Users/jake/Developer/study/util/skills/c
    - Run the core-move lesson quiz validator on each newly created lesson:
 
 ```bash
-python3 /Users/jake/Developer/study/util/skills/core-move-lesson/scripts/validate_quiz_blocks.py \
+python3 /Users/jake/Developer/study/util/skills/quiz-block-factory/scripts/validate_quiz_blocks.py \
   /path/to/Lessons/Problem-N.md \
   --require-radio-practice \
-  --strict-ids
+  --strict-ids \
+  --require-feedback \
+  --lint-feedback
 ```
 
    - Run `git diff --check -- /path/to/Lessons/Problem-N.md` for each new lesson, or for all new files together.

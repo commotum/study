@@ -43,10 +43,14 @@ options:
 - id: a
   content: |-
     ...
+  feedback: |-
+    Diagnose the specific misconception represented by this option, then contrast it with the rule that controls the answer.
 - id: b
   content: |-
     ...
   correct: true
+  feedback: |-
+    State the governing rule in natural language, apply it to the prompt, and finish with the requested conclusion.
 ```
 
 ---
@@ -65,6 +69,8 @@ Compress the cue, rule, procedure, and main trap.
 - Prefer concrete section titles over generic labels like "Step 1".
 - Use `**Example:**`, then `**Explanation**`, then a quiz block.
 - Do not use raw checklist multiple choice in final output.
+- Follow `$quiz-block-factory` for quiz structure and feedback placement. Every
+  generated radio or checkbox option needs substantive, response-specific feedback.
 
 ## Quiz Placement
 

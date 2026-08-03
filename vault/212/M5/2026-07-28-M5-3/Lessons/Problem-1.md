@@ -75,18 +75,18 @@ options:
   content: |-
     The new distance is greater.
   feedback: |-
-    Greater distance would reduce the intensity under an inverse-square law.
+    This gives the opposite physical trend. For the same spreading source, intensity decreases as $1/r^2$, so a greater measured intensity means the listener moved closer, not farther away.
 - id: b
   content: |-
     The new distance is smaller.
   correct: true
   feedback: |-
-    Greater intensity means the listener is closer to the same source.
+    Sound from the same source spreads over more area as distance increases, so $I\propto1/r^2$. A greater intensity therefore means the new distance is smaller.
 - id: c
   content: |-
     The new distance is unchanged.
   feedback: |-
-    An unchanged distance would give the same intensity under the stated conditions.
+    With the source and conditions unchanged, one distance corresponds to one intensity under $I\propto1/r^2$. A greater intensity therefore requires a smaller distance; it cannot occur at the unchanged distance in this model.
 ```
 
 ---
@@ -136,23 +136,23 @@ options:
   content: |-
     $2.7\ \mathrm{m}$
   feedback: |-
-    This result comes from reversing the intensity ratio and also fails the direction check.
+    This comes from reversing the ratio in $r_2=r_1\sqrt{I_1/I_2}$. Because the intensity fell from $180$ to $80\ \mathrm{W/m^2}$, the listener must be farther than $4.0\ \mathrm{m}$; the correct distance is $6.0\ \mathrm{m}$.
 - id: b
   content: |-
     $6.0\ \mathrm{m}$
   correct: true
   feedback: |-
-    $r_2=(4.0\ \mathrm{m})\sqrt{180/80}=(4.0\ \mathrm{m})(1.5)=6.0\ \mathrm{m}$.
+    For the same source, $Ir^2$ stays constant. The lower second intensity means a larger second distance, and $r_2=(4.0\ \mathrm{m})\sqrt{180/80}=6.0\ \mathrm{m}$.
 - id: c
   content: |-
     $9.0\ \mathrm{m}$
   feedback: |-
-    This uses the intensity ratio directly instead of taking its square root.
+    This scales distance by the full intensity ratio $180/80=2.25$. Because intensity depends on distance squared, the distance changes by the square root of that factor: $r_2=4.0\sqrt{2.25}=6.0\ \mathrm{m}$.
 - id: d
   content: |-
     $4.0\ \mathrm{m}$
   feedback: |-
-    A lower measured intensity requires a greater distance from the same source.
+    This leaves the distance unchanged even though the intensity changed. For the same source, a lower intensity means greater distance; $I_1r_1^2=I_2r_2^2$ gives $r_2=6.0\ \mathrm{m}$.
 ```
 
 ```quiz
@@ -166,22 +166,22 @@ options:
     $3.0\ \mathrm{m}$
   correct: true
   feedback: |-
-    $r_2=(5.0\ \mathrm{m})\sqrt{72/200}=(5.0\ \mathrm{m})(0.60)=3.0\ \mathrm{m}$.
+    For the same source, greater intensity means smaller distance because $Ir^2$ is constant. Thus $r_2=(5.0\ \mathrm{m})\sqrt{72/200}=3.0\ \mathrm{m}$.
 - id: b
   content: |-
     $8.3\ \mathrm{m}$
   feedback: |-
-    This reverses the ratio and gives a greater distance even though the intensity increased.
+    This reverses $I_1/I_2$ under the square root. It also fails the physical check: intensity increased, so the new distance must be less than $5.0\ \mathrm{m}$; the correct value is $3.0\ \mathrm{m}$.
 - id: c
   content: |-
     $1.8\ \mathrm{m}$
   feedback: |-
-    This uses $I_1/I_2$ directly instead of its square root.
+    This multiplies the distance by $I_1/I_2=0.36$ directly. Since intensity varies with inverse distance squared, the distance factor is $\sqrt{0.36}=0.60$, giving $r_2=3.0\ \mathrm{m}$.
 - id: d
   content: |-
     $5.0\ \mathrm{m}$
   feedback: |-
-    A changed intensity from the same source requires a changed distance under this model.
+    This keeps the distance fixed, which would keep the intensity fixed for the unchanged source. Because the intensity rose from $72$ to $200\ \mathrm{W/m^2}$, the listener must be closer: $r_2=3.0\ \mathrm{m}$.
 ```
 
 ---
@@ -224,22 +224,22 @@ options:
     $r_2=r_1\sqrt{\dfrac{I_1}{I_2}}$
   correct: true
   feedback: |-
-    Since $I_1/I_2>1$, this expression correctly gives $r_2>r_1$.
+    The inverse-square invariant is $I_1r_1^2=I_2r_2^2$. Solving for the second distance gives $r_2=r_1\sqrt{I_1/I_2}$; because $I_2<I_1$, this correctly makes $r_2>r_1$.
 - id: b
   content: |-
     $r_2=r_1\sqrt{\dfrac{I_2}{I_1}}$
   feedback: |-
-    This would give $r_2<r_1$ even though the measured intensity decreased.
+    This reverses the ratio obtained by isolating $r_2^2$. It would make $r_2<r_1$ even though a lower intensity from the same source means the listener is farther away.
 - id: c
   content: |-
     $r_2=r_1\dfrac{I_1}{I_2}$
   feedback: |-
-    The distance is related to the square root of the intensity ratio.
+    This uses the correct ratio order but scales distance linearly with intensity. Since $I\propto1/r^2$, the distance factor is the square root: $r_2/r_1=\sqrt{I_1/I_2}$.
 - id: d
   content: |-
     $r_2=r_1\dfrac{I_2}{I_1}$
   feedback: |-
-    This both reverses the ratio and omits the square root.
+    This has both parts of the scaling wrong: it reverses the isolated ratio and treats the inverse-square law as linear. The lower second intensity requires $r_2=r_1\sqrt{I_1/I_2}>r_1$.
 ```
 
 ---
@@ -277,23 +277,23 @@ options:
   content: |-
     `3.307 m`
   feedback: |-
-    This keeps too many significant figures and includes units in a number-only field.
+    The numerical value has not been rounded to the two significant figures supported by the givens, and the field requests no units. Round $3.307\ldots$ once at the end and enter `3.3`.
 - id: b
   content: |-
     `3.31`
   feedback: |-
-    This has three significant figures rather than two.
+    This is numerically close but retains three significant figures. The first two significant digits are $3$ and $3$, and the next digit is $0$, so the required entry is `3.3`.
 - id: c
   content: |-
     `3.3`
   correct: true
   feedback: |-
-    $3.307\ldots$ rounds to $3.3$ at two significant figures, entered without units.
+    Keep guard digits until the end, then match the two significant figures of the measured data. The value $3.307\ldots\ \mathrm{m}$ rounds to $3.3\ \mathrm{m}$, and a number-only field requires `3.3`.
 - id: d
   content: |-
     `-3.3`
   feedback: |-
-    A physical distance from the speaker is nonnegative.
+    A radial distance is a nonnegative magnitude, not a signed coordinate. The calculation's physical value is $+3.307\ldots\ \mathrm{m}$, which rounds to the entry `3.3`, not `-3.3`.
 ```
 
 ---
@@ -344,22 +344,22 @@ options:
     `3.3`
   correct: true
   feedback: |-
-    Sound intensity follows $I_1r_1^2=I_2r_2^2$, so $r_2=(2.5\ \mathrm{m})\sqrt{280/160}=3.307\ldots\ \mathrm{m}$. To two significant figures, enter `3.3`.
+    The lower second intensity means the listener is farther away, and the same-source invariant is $I_1r_1^2=I_2r_2^2$. Thus $r_2=(2.5\ \mathrm{m})\sqrt{280/160}=3.307\ldots\ \mathrm{m}$, so the number-only entry is `3.3`.
 - id: b
   content: |-
     `3.31`
   feedback: |-
-    This keeps three significant figures, but the givens support two.
+    This keeps three significant figures even though the measured givens support two. Round $3.307\ldots$ once at the end to obtain the number-only entry `3.3`.
 - id: c
   content: |-
     `4.4`
   feedback: |-
-    This uses the intensity ratio without the required square root.
+    This multiplies $2.5\ \mathrm{m}$ by the full ratio $280/160=1.75$. Because intensity follows an inverse-square law, distance scales with the square root of that ratio, giving $3.307\ldots\ \mathrm{m}$ and the entry `3.3`.
 - id: d
   content: |-
     `1.9`
   feedback: |-
-    This reverses the intensity ratio and predicts a smaller distance even though the intensity decreased.
+    This reverses the ratio under the square root. It also contradicts the physical trend: the intensity decreased, so the new distance must exceed $2.5\ \mathrm{m}$; the correct entry is `3.3`.
 ```
 
 ---

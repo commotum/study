@@ -65,23 +65,23 @@ options:
   content: |-
     $+0.9\ \mathrm{cm}$
   feedback: |-
-    Above equilibrium is positive; a point below equilibrium must have negative displacement.
+    Positive displacement points above equilibrium, not below it. Since the peak is $0.9\ \mathrm{cm}$ below equilibrium, its signed displacement is $-0.9\ \mathrm{cm}$.
 - id: b
   content: |-
     $-0.9\ \mathrm{cm}$
   correct: true
   feedback: |-
-    Displacement is measured from equilibrium, so $0.9\ \mathrm{cm}$ below it is $-0.9\ \mathrm{cm}$.
+    Signed displacement records which side of equilibrium the string occupies. Below equilibrium is negative, so the peak is at $-0.9\ \mathrm{cm}$.
 - id: c
   content: |-
     $0\ \mathrm{cm}$
   feedback: |-
-    Zero displacement applies only at the equilibrium line, not at a peak below it.
+    Zero displacement occurs on the equilibrium line. This peak is $0.9\ \mathrm{cm}$ below that line, so its displacement is nonzero and negative.
 - id: d
   content: |-
     Its sign is determined by the pulse's direction of travel.
   feedback: |-
-    Travel direction does not set the displacement sign; position above or below equilibrium does.
+    Travel direction tells how the pulse moves along the string; it does not tell which side of equilibrium the string occupies. Being below equilibrium fixes the displacement as $-0.9\ \mathrm{cm}$ regardless of travel direction.
 ```
 
 ---
@@ -111,28 +111,28 @@ options:
   content: |-
     $0.9\ \mathrm{cm}$
   feedback: |-
-    This subtracts the two upward displacements: $1.6-0.7=0.9$.
+    This subtracts the two heights, but superposition adds signed displacements. Subtraction would describe opposite-signed contributions; both contributions are upward, so they add to $2.3\ \mathrm{cm}$.
 - id: b
   content: |-
     $1.6\ \mathrm{cm}$
   feedback: |-
-    This keeps only the larger pulse and omits the other pulse's $0.7\ \mathrm{cm}$ contribution.
+    A point in the overlap contains both pulses' displacements. Keeping only $1.6\ \mathrm{cm}$ omits the additional upward $0.7\ \mathrm{cm}$, so the net is $2.3\ \mathrm{cm}$.
 - id: c
   content: |-
     $2.3\ \mathrm{cm}$
   correct: true
   feedback: |-
-    Both contributions are upward, so superposition gives $0.7+1.6=2.3\ \mathrm{cm}$.
+    Superposition adds the signed displacements at the same point. Both are upward, so $y_{\mathrm{net}}=0.7+1.6=2.3\ \mathrm{cm}$.
 - id: d
   content: |-
     $1.12\ \mathrm{cm}$
   feedback: |-
-    This multiplies the displacements; superposition adds signed displacements point by point.
+    Multiplication does not describe wave superposition and even gives the wrong units. At one point, the string displacement is the sum $0.7+1.6=2.3\ \mathrm{cm}$.
 - id: e
   content: |-
     $0\ \mathrm{cm}$
   feedback: |-
-    Complete cancellation requires equal, opposite displacements, not two upward contributions.
+    Zero net displacement requires equal contributions on opposite sides of equilibrium. Both segments point upward here, so they reinforce to give $2.3\ \mathrm{cm}$.
 ```
 
 If one displacement is downward, keep its negative sign inside the sum. For example,
@@ -152,27 +152,27 @@ options:
     $+0.8\ \mathrm{cm}$
   correct: true
   feedback: |-
-    Add the signed contributions: $+1.3+(-0.5)=+0.8\ \mathrm{cm}$.
+    Superposition adds signed displacements. The negative contribution partly cancels the larger positive one, leaving $+1.3+(-0.5)=+0.8\ \mathrm{cm}$.
 - id: b
   content: |-
     $+1.8\ \mathrm{cm}$
   feedback: |-
-    This adds magnitudes and ignores that the second contribution is negative.
+    Adding magnitudes treats both pulses as upward. The second contribution is downward, so its minus sign must remain in the sum: $1.3-0.5=+0.8\ \mathrm{cm}$.
 - id: c
   content: |-
     $-0.8\ \mathrm{cm}$
   feedback: |-
-    The magnitude is right, but the larger contribution is positive, so the net sign is positive.
+    The difference has magnitude $0.8\ \mathrm{cm}$, but its sign follows the larger-magnitude contribution. Since $+1.3\ \mathrm{cm}$ outweighs $-0.5\ \mathrm{cm}$, the net is $+0.8\ \mathrm{cm}$.
 - id: d
   content: |-
     $+1.3\ \mathrm{cm}$
   feedback: |-
-    This ignores the $-0.5\ \mathrm{cm}$ displacement from the second pulse.
+    The net displacement must include both overlapping pulses. The $-0.5\ \mathrm{cm}$ contribution partially cancels $+1.3\ \mathrm{cm}$, leaving $+0.8\ \mathrm{cm}$ rather than $+1.3\ \mathrm{cm}$.
 - id: e
   content: |-
     $-1.8\ \mathrm{cm}$
   feedback: |-
-    This both adds the magnitudes and assigns the sign of the smaller contribution.
+    Opposite-signed contributions partially cancel, so their magnitudes should be subtracted, not added. The larger contribution is positive, making the result $+0.8\ \mathrm{cm}$ rather than $-1.8\ \mathrm{cm}$.
 ```
 
 ---
@@ -206,28 +206,28 @@ options:
   content: |-
     $0.4\ \mathrm{cm}$
   feedback: |-
-    This is the difference of the peak heights, which would describe opposite-signed overlap.
+    Taking the difference would model one crest and one trough. Both peaks are upward, so complete overlap produces constructive addition: $1.1+1.5=2.6\ \mathrm{cm}$.
 - id: b
   content: |-
     $1.5\ \mathrm{cm}$
   feedback: |-
-    This keeps only the larger pulse instead of including both overlapping displacements.
+    $1.5\ \mathrm{cm}$ is only the taller pulse's peak. At complete overlap, the string carries both upward displacements, so the maximum is $2.6\ \mathrm{cm}$.
 - id: c
   content: |-
     $1.65\ \mathrm{cm}$
   feedback: |-
-    This multiplies $1.1$ and $1.5$; superposition requires addition.
+    Multiplying pulse heights is not superposition and would produce area units. The vertical displacements add at the overlap, giving $2.6\ \mathrm{cm}$.
 - id: d
   content: |-
     $2.6\ \mathrm{cm}$
   correct: true
   feedback: |-
-    At complete overlap the two upward peaks add: $1.1+1.5=2.6\ \mathrm{cm}$.
+    The maximum occurs when the two upward peaks occupy the same point. Superposition then gives $y_{\max}=1.1+1.5=2.6\ \mathrm{cm}$.
 - id: e
   content: |-
     $0\ \mathrm{cm}$
   feedback: |-
-    Zero would require equal peaks on opposite sides of equilibrium.
+    Complete cancellation requires equal-magnitude displacements with opposite signs. These are two upward peaks, so their complete overlap is constructive, not zero.
 ```
 
 ---
@@ -259,28 +259,28 @@ options:
   content: |-
     $0.9$
   feedback: |-
-    This subtracts the peak heights instead of adding two upward displacements.
+    Subtraction would apply to opposite-signed overlap. Both peaks are upward, so the largest displacement is their sum, $2.5\ \mathrm{cm}$.
 - id: b
   content: |-
     $1.7$
   feedback: |-
-    This reports only the larger peak and ignores the $0.8\ \mathrm{cm}$ contribution.
+    The maximum includes both peaks at complete overlap. Reporting $1.7$ keeps only the taller pulse and omits the other $0.8\ \mathrm{cm}$, so the entry should be $2.5$.
 - id: c
   content: |-
     $2.5$
   correct: true
   feedback: |-
-    The largest displacement is $0.8+1.7=2.5\ \mathrm{cm}$, and a number-only box takes $2.5$.
+    At complete overlap, the two upward peaks add to $2.5\ \mathrm{cm}$. Because the box already specifies centimeters and requests a number only, enter $2.5$.
 - id: d
   content: |-
     $2.5\ \mathrm{cm}$
   feedback: |-
-    The physical value is right, but the requested response format excludes the unit text.
+    $2.5\ \mathrm{cm}$ is the correct physical quantity, but the box asks for a number only and already supplies the unit. Enter $2.5$ without unit text.
 - id: e
   content: |-
     $25$
   feedback: |-
-    This introduces an unsupported factor of ten; the centimeter values already share units.
+    Both heights are already expressed in centimeters, so no conversion factor is needed. Their sum is $2.5\ \mathrm{cm}$, making the number-only entry $2.5$, not $25$.
 ```
 
 ---

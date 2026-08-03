@@ -11,6 +11,10 @@ Use this skill when the user provides a homework problem, assignment problem, qu
 
 ## Required References
 
+Before planning or writing any quiz block, invoke `$quiz-block-factory` at
+`/Users/jake/Developer/study/util/skills/quiz-block-factory`. Its canonical schemas,
+feedback standard, and validator are authoritative for every quiz type.
+
 Read these references before writing a lesson:
 
 - `references/core-move-identification.md`
@@ -18,9 +22,10 @@ Read these references before writing a lesson:
 - `references/step-progression.md`
 - `references/lesson-writing-format.md`
 - `references/practice-question-rules.md`
-- `references/obsidian-quiz-blocks.md`
 
-Read `references/validation-rubric.md` before final verification. Read schemas only when you need a structured planning artifact or need to debug an output-shape issue.
+Read `references/validation-rubric.md` before final verification. Do not maintain a
+second quiz schema in this skill; use the factory references whenever you need field,
+type, feedback-placement, or compatibility details.
 
 ## Workflow
 
@@ -49,6 +54,8 @@ Read `references/validation-rubric.md` before final verification. Read schemas o
    - Use the Markdown shape from `references/lesson-writing-format.md`.
    - Put every practice item in a fenced `quiz` block.
    - Use `type: radio` for multiple-choice practice unless the task genuinely requires another supported quiz type.
+   - Follow `$quiz-block-factory` for canonical fields and feedback placement.
+   - Give every generated radio or checkbox option substantive corrective feedback: explain why the correct response follows, and diagnose the specific error represented by each distractor.
    - Do not leave raw checklist questions such as `- [ ] A.` in final output.
 
 6. Validate quiz blocks.
@@ -56,10 +63,12 @@ Read `references/validation-rubric.md` before final verification. Read schemas o
    - For normal core-move lessons, require quiz blocks, require radio practice, and require ids:
 
 ```bash
-python3 /Users/jake/Developer/study/util/skills/core-move-lesson/scripts/validate_quiz_blocks.py \
+python3 /Users/jake/Developer/study/util/skills/quiz-block-factory/scripts/validate_quiz_blocks.py \
   /path/to/Lessons/Problem-N.md \
   --require-radio-practice \
-  --strict-ids
+  --strict-ids \
+  --require-feedback \
+  --lint-feedback
 ```
 
 7. Fix and revalidate.
@@ -77,6 +86,7 @@ A finished lesson should include:
 - 3-6 focused sections unless the task is unusually small or broad
 - Worked examples with concise explanations
 - Obsidian quiz-block practice immediately after the matching example section
+- Substantive response-specific feedback in the canonical location for every generated practice response
 - Summary that compresses the rule, cue, and main trap
 
 The output should be practical study material, not a discussion of pedagogy or pipeline design.

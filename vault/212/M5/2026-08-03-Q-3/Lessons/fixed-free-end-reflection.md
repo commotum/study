@@ -67,28 +67,28 @@ options:
   content: |-
     It is downward with a $0$-radian phase shift.
   feedback: |-
-    This is the free-end pattern; a fixed end reverses the displacement orientation.
+    A reflected pulse keeps its orientation with zero phase shift only at a free end. A fixed end inverts the downward pulse, so it returns upward with a $\pi$ phase shift.
 - id: q3-ffer-fixed-b
   content: |-
     It is downward with a $\pi$-radian phase shift.
   feedback: |-
-    A $\pi$ phase shift represents inversion, so a downward incident pulse would return upward.
+    The stated phase shift and orientation contradict each other: a $\pi$ reflection shift means inversion. Thus a downward incident pulse must return upward, not downward.
 - id: q3-ffer-fixed-c
   content: |-
     It is upward with a $0$-radian phase shift.
   feedback: |-
-    The upward orientation is right, but that inversion is precisely a phase shift of $\pi$, not $0$.
+    Changing the pulse from downward to upward is an inversion. At a fixed end that inversion corresponds to a $\pi$ phase shift, not a zero phase shift.
 - id: q3-ffer-fixed-d
   content: |-
     It is upward with a $\pi$-radian phase shift.
   correct: true
   feedback: |-
-    Correct. A fixed end inverts the displacement, so downward becomes upward and the reflection adds a phase shift of $\pi$.
+    A fixed end forces the displacement to remain zero, so the reflected pulse is inverted. The downward incident pulse therefore returns upward with a $\pi$ phase shift.
 - id: q3-ffer-fixed-e
   content: |-
     It disappears because a fixed end cannot move.
   feedback: |-
-    The endpoint stays at zero displacement by producing an inverted reflected pulse; it does not simply absorb the pulse.
+    The fixed endpoint stays at zero displacement because the incident and inverted reflected waves cancel there. In the ideal model, the pulse reflects upward rather than disappearing.
 ```
 
 ---
@@ -125,27 +125,27 @@ options:
     It is downward with a $0$-radian phase shift.
   correct: true
   feedback: |-
-    Correct. A free end preserves the displacement orientation and adds no phase reversal.
+    A free end reflects a pulse without inversion. The downward pulse therefore remains downward, corresponding to a zero reflection phase shift.
 - id: q3-ffer-free-b
   content: |-
     It is downward with a $\pi$-radian phase shift.
   feedback: |-
-    Keeping the pulse downward means its orientation is preserved, which corresponds to zero phase reversal.
+    The downward orientation describes a noninverted reflection, but a $\pi$ phase shift describes inversion. At a free end the consistent pair is downward with a zero phase shift.
 - id: q3-ffer-free-c
   content: |-
     It is upward with a $0$-radian phase shift.
   feedback: |-
-    Changing downward to upward is an inversion and therefore cannot be labeled a zero phase shift.
+    Changing downward to upward would invert the pulse. A free end preserves orientation, so a downward incident pulse returns downward with zero phase shift.
 - id: q3-ffer-free-d
   content: |-
     It is upward with a $\pi$-radian phase shift.
   feedback: |-
-    This is the fixed-end result; a free end reflects without inversion.
+    Upward with a $\pi$ shift is the fixed-end result because both indicate inversion. A free end produces neither, so this pulse returns downward with zero phase shift.
 - id: q3-ffer-free-e
   content: |-
     It continues through the end without reflecting.
   feedback: |-
-    At the end of the string there is no continuing medium, so the boundary condition produces a reflected pulse.
+    A free end means the string terminates but its endpoint can move; it does not mean the wave has another string to enter. The boundary still reflects the pulse, without inversion.
 ```
 
 ---
@@ -176,28 +176,28 @@ options:
   content: |-
     A fixed-end reflection with a $\pi$ phase shift
   feedback: |-
-    A fixed end would invert the upward pulse to downward; only its travel direction changed here.
+    Reflection always reverses the direction of travel, but a fixed end also reverses the displacement. Because this pulse remains upward, it shows a free-end reflection with zero phase shift.
 - id: q3-ffer-direction-b
   content: |-
     A free-end reflection with zero phase shift
   correct: true
   feedback: |-
-    Correct. The pulse reverses travel direction but keeps its upward displacement, so it is not inverted.
+    Reflection reverses the pulse's travel direction, while a free end preserves its displacement orientation. The pulse returns rightward but stays upward, so the phase shift is zero.
 - id: q3-ffer-direction-c
   content: |-
     A fixed-end reflection with zero phase shift
   feedback: |-
-    Fixed-end reflection requires inversion and a $\pi$ phase shift, not zero phase shift.
+    A fixed end cannot produce a noninverted zero-shift reflection. The unchanged upward orientation identifies a free end, while the rightward motion simply shows that reflection reversed the travel direction.
 - id: q3-ffer-direction-d
   content: |-
     A free-end reflection with a $\pi$ phase shift
   feedback: |-
-    A free end preserves orientation, so the matching phase shift is $0$, not $\pi$.
+    The preserved upward orientation does identify a free end, but preservation corresponds to a zero phase shift. A $\pi$ shift would invert the pulse to downward.
 - id: q3-ffer-direction-e
   content: |-
     No reflection, because the pulse remains upward
   feedback: |-
-    The reversal from leftward to rightward travel proves reflection occurred; remaining upward only tells you it did not invert.
+    The change from leftward to rightward travel is exactly the evidence that reflection occurred. Remaining upward says the reflection was noninverting, which identifies the free-end rule.
 ```
 
 ---
@@ -229,28 +229,28 @@ options:
   content: |-
     It must invert and acquire a phase shift of $\pi$.
   feedback: |-
-    This treats the heavier string as a fixed end, but a medium junction requires information beyond the fixed/free-end rules.
+    A heavier second string is not an immovable fixed endpoint; it can carry a transmitted wave. Whether and how the reflection inverts must be analyzed with junction rules, not assumed from the fixed-end rule alone.
 - id: q3-ffer-scope-b
   content: |-
     It must remain upright with zero phase shift.
   feedback: |-
-    This treats the junction as a free end; the second string has finite mass and supports transmission.
+    A free end has no continuing medium, whereas this junction connects to another string that supports transmission. The free-end zero-shift rule therefore cannot be applied directly.
 - id: q3-ffer-scope-c
   content: |-
     It cannot reflect because the string continues.
   feedback: |-
-    A change in the string's properties can produce both reflected and transmitted waves even though the string continues.
+    Continuing into a different medium does not prevent reflection. A junction can split the incident wave into reflected and transmitted parts, so “the string continues” is not enough to rule reflection out.
 - id: q3-ffer-scope-d
   content: |-
     Its detailed behavior cannot be determined from the fixed/free-end rules.
   correct: true
   feedback: |-
-    Correct. A change of medium is a separate discontinuity problem, explicitly outside this lesson's scope.
+    Fixed- and free-end rules apply to terminating boundaries. A light-to-heavy junction is a different boundary problem with both reflection and transmission, so those two rules alone do not determine its detailed behavior.
 - id: q3-ffer-scope-e
   content: |-
     Its reflected and transmitted amplitudes must be equal.
   feedback: |-
-    Those amplitudes depend on the properties of both media and are not generally equal.
+    A junction divides the wave according to the two media's properties; no fixed/free-end rule requires equal reflected and transmitted amplitudes. Their values need a junction analysis.
 ```
 
 ---

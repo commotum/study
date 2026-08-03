@@ -1,3 +1,4 @@
+
 # Finding Where a Wave Particle Moves Fastest
 
 <!--
@@ -107,10 +108,10 @@ For a sinusoidal wave, the slope magnitude is greatest at an equilibrium crossin
 
 The graph-reading contrast is
 
-| Feature of the snapshot | Displacement magnitude $|y|$ | Slope magnitude $|\partial y/\partial x|$ | Particle speed |
-| --- | --- | --- | --- |
-| Smooth crest or trough | Greatest | $0$ | $0$ |
-| Steep equilibrium crossing | $0$ | Greatest | Greatest |
+| Feature of the snapshot     | Displacement magnitude $\lvert y\rvert$ | Slope magnitude $\lvert\partial y/\partial x\rvert$ | Particle speed |
+| --------------------------- | ---------------------------------------- | ----------------------------------------------------- | -------------- |
+| Smooth crest or trough      | Greatest                                 | $0$                                                   | $0$            |
+| Steep equilibrium crossing | $0$                                      | Greatest                                              | Greatest       |
 
 **Example:** Compare a particle at a crest with a particle at a steep equilibrium crossing. The crest particle has maximum displacement but zero instantaneous speed. The particle at the steep crossing has zero displacement but maximum speed.
 

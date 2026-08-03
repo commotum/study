@@ -22,19 +22,30 @@ Use this before final response.
 - Every generated quiz block has an `id`.
 - Every generated radio option has an `id`.
 - Distractors represent real mistakes.
+- Every generated radio and checkbox option has nonempty feedback.
+- Correct feedback states the governing idea, applies it to this prompt, and reaches
+  the requested conclusion.
+- Each distractor's feedback repairs the specific misconception encoded by that
+  response instead of repeating generic rejection or the same solution.
+- Feedback uses the canonical location defined by `$quiz-block-factory` for the quiz
+  type.
 
 ## Required Command
 
 For ordinary generated lessons, run:
 
 ```bash
-python3 /Users/jake/Developer/study/util/skills/core-move-lesson/scripts/validate_quiz_blocks.py \
+python3 /Users/jake/Developer/study/util/skills/quiz-block-factory/scripts/validate_quiz_blocks.py \
   /path/to/lesson.md \
   --require-radio-practice \
-  --strict-ids
+  --strict-ids \
+  --require-feedback \
+  --lint-feedback
 ```
 
-Fix every error before reporting completion.
+Fix every error before reporting completion. Then inspect feedback manually: the
+validator can prove presence and flag shallow patterns, but it cannot prove physical,
+mathematical, or misconception-level correctness.
 
 ## Optional Math Academy Comparison
 

@@ -49,4 +49,16 @@ Do not use random-looking wrong answers when a meaningful distractor is availabl
 
 ## Explanations
 
-Each quiz block can include option-level `feedback`, but it is not required. When feedback is included, keep it short and tied to the misconception.
+Follow `$quiz-block-factory` and its `references/feedback-standard.md`; that skill owns
+feedback placement and quality rules. For generated radio and checkbox practice:
+
+- Give every option nonempty, response-specific feedback.
+- For a correct answer, state the governing rule in natural language, apply it to the
+  prompt, and finish with the requested symbolic, numerical, or graphical conclusion.
+- For a distractor, identify the actual misconception or failed step behind that
+  option, clarify the role of the confused quantity or operation, and contrast it with
+  what controls the answer here.
+- Add the boundary condition that would make a tempting claim true when it improves
+  discrimination and transfer.
+- Do not substitute generic praise, rejection, an unexplained formula, or the same
+  answer explanation for every distractor.

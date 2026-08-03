@@ -87,22 +87,22 @@ options:
     $L+r$
   correct: true
   feedback: |-
-    The rod reaches the disk's edge, and one more radius reaches the disk's center.
+    The rod length $L$ reaches the attachment point on the disk's near edge. The disk's center is one additional radius $r$ farther from the pivot, so the center distance is $L+r$.
 - id: b
   content: |-
     $L$
   feedback: |-
-    This reaches the attachment point at the disk's edge, not the disk's center.
+    The distance $L$ ends at the rod–disk attachment point on the disk's edge. The physical-pendulum calculation needs the disk's center of mass, which lies another radius away at $L+r$.
 - id: c
   content: |-
     $L-r$
   feedback: |-
-    The disk's center lies beyond the rod's lower end, so the radius must be added.
+    Subtracting $r$ would place the disk's center above the rod's lower end. In the diagram the disk extends beyond that end, so moving from the pivot to its center requires $L+r$, not $L-r$.
 - id: d
   content: |-
     $\dfrac{L+r}{2}$
   feedback: |-
-    Averaging the two lengths does not locate the disk's center relative to the pivot.
+    This treats $L$ and $r$ like two endpoint coordinates to average. They are consecutive distances along the same pivot-to-center path, so they must be added: $d_d=L+r$.
 ```
 
 ---
@@ -146,22 +146,22 @@ options:
     $\dfrac13m_rL^2+\dfrac12m_dr^2+m_d(L+r)^2$
   correct: true
   feedback: |-
-    Add the rod's end-axis inertia to both the disk's center-axis inertia and its parallel-axis term.
+    Total pivot-axis inertia is the sum of each component's inertia about that pivot. The rod contributes $\frac13m_rL^2$, while the disk contributes its center-axis inertia $\frac12m_dr^2$ plus the parallel-axis shift $m_d(L+r)^2$.
 - id: b
   content: |-
     $\dfrac13m_rL^2+\dfrac12m_dr^2$
   feedback: |-
-    This omits the disk's parallel-axis term $m_d(L+r)^2$.
+    This uses the disk's inertia about its own center as though its center lay at the pendulum pivot. Because the center is $L+r$ away, the parallel-axis theorem requires the additional term $m_d(L+r)^2$.
 - id: c
   content: |-
     $\dfrac13m_rL^2+m_d(L+r)^2$
   feedback: |-
-    Treating the disk only as a point mass omits its own center-axis inertia $\frac12m_dr^2$.
+    The term $m_d(L+r)^2$ accounts for translating the disk's center around the pivot, but the disk also rotates about its own center. Its finite radius therefore adds $I_{\mathrm{cm}}=\frac12m_dr^2$.
 - id: d
   content: |-
     $\dfrac13m_rL^2+\dfrac12m_dr^2+m_d(L-r)^2$
   feedback: |-
-    The disk's center is $L+r$ from the pivot, not $L-r$.
+    The inertia structure is right, but the parallel-axis distance is not. The disk's center lies beyond the rod's lower end, so its pivot distance is $L+r$ and the shift term is $m_d(L+r)^2$.
 ```
 
 ---
@@ -193,22 +193,22 @@ options:
     $g\left[m_r\left(\dfrac{L}{2}\right)+m_d(L+r)\right]$
   correct: true
   feedback: |-
-    Each component contributes $mg$ times the distance from the pivot to that component's center of mass.
+    Gravity acts at each component's center of mass, so the small-angle restoring-torque coefficient adds $m_i g d_i$ for the rod and disk. With $d_r=L/2$ and $d_d=L+r$, the factor is $g[m_r(L/2)+m_d(L+r)]$.
 - id: b
   content: |-
     $g\left[m_rL+m_d(L+r)\right]$
   feedback: |-
-    The uniform rod's center of mass is at $L/2$, not at its lower end.
+    This places all of the rod's weight at its lower end. A uniform rod's weight acts at its midpoint, so its torque contribution uses $m_rg(L/2)$; only the disk center uses the larger distance $L+r$.
 - id: c
   content: |-
     $g\left[m_r\left(\dfrac{L}{2}\right)^2+m_d(L+r)^2\right]$
   feedback: |-
-    Squared distances belong in parallel-axis inertia terms, not in the gravitational torque factor.
+    This confuses the inertia weighting with the gravitational lever arm. Moment of inertia contains squared distances, but torque from each weight is force times the first power of its center-of-mass distance, $m_i g d_i$.
 - id: d
   content: |-
     $g(m_r+m_d)(L+r)$
   feedback: |-
-    The rod and disk have different center-of-mass distances and must contribute separate terms.
+    This locates both component masses at the disk's center. The rod's weight acts at $L/2$, while the disk's weight acts at $L+r$, so their torque contributions must remain $g[m_r(L/2)+m_d(L+r)]$.
 ```
 
 ---
@@ -281,22 +281,22 @@ options:
     $2.1\ \mathrm{s}$
   correct: true
   feedback: |-
-    $T=2\pi\sqrt{0.830/[9.81(0.750)]}=2.110\ldots\ \mathrm{s}$, which rounds to $2.1\ \mathrm{s}$.
+    A composite pendulum's period compares pivot-axis inertia with its gravitational restoring-torque coefficient: $T=2\pi\sqrt{I_{\mathrm{pivot}}/(g\sum m_id_i)}$. Substitution gives $2.110\ldots\ \mathrm s$, which is $2.1\ \mathrm s$ to two significant figures.
 - id: b
   content: |-
     $0.34\ \mathrm{s}$
   feedback: |-
-    This is the square-root factor before multiplying by $2\pi$.
+    This stops after evaluating $\sqrt{I_{\mathrm{pivot}}/(g\sum m_id_i)}=0.336\ldots\ \mathrm s$. That quantity is the period divided by $2\pi$; including the required prefactor gives $T=2.1\ \mathrm s$.
 - id: c
   content: |-
     $7.4\ \mathrm{s}$
   feedback: |-
-    This is the numerical size of $g\sum m_id_i$, not the period.
+    This reports $g\sum m_id_i=9.81(0.750)=7.36$, the restoring-torque coefficient, as though it were a time. The period requires its ratio with inertia inside a square root, giving $2.1\ \mathrm s$.
 - id: d
   content: |-
     $13\ \mathrm{s}$
   feedback: |-
-    This effectively multiplies by $2\pi$ twice.
+    This is approximately the correct period multiplied by another factor of $2\pi$. The square-root time is multiplied by $2\pi$ only once, so the period is $2.1\ \mathrm s$, not about $13\ \mathrm s$.
 ```
 
 ---
@@ -368,36 +368,23 @@ options:
   content: 2.5
   correct: true
   feedback: |-
-    The disk's center is a distance $L+r$ from the pivot. The total moment of inertia is
-
-    $$
-    I=\frac13m_rL^2+\frac12m_dr^2+m_d(L+r)^2.
-    $$
-
-    The gravitational torque factor is $g[m_r(L/2)+m_d(L+r)]$, so
-
-    $$
-    T=2\pi\sqrt{\frac{\frac13m_rL^2+\frac12m_dr^2+m_d(L+r)^2}{g[m_r(L/2)+m_d(L+r)]}}
-    =2.4806\ldots\ \mathrm{s}.
-    $$
-
-    The measured givens have two significant figures, so $T=2.5\ \mathrm{s}$.
+    The disk center is $L+r$ from the pivot, so include both its center-axis inertia and parallel-axis term in $I_{\mathrm{pivot}}$. Using $I=\frac13m_rL^2+\frac12m_dr^2+m_d(L+r)^2$ and the restoring factor $g[m_rL/2+m_d(L+r)]$ gives $T=2.4806\ldots\ \mathrm s$, which rounds to the entry `2.5`.
 - id: b
   content: 0.39
   feedback: |-
-    This omits the leading factor $2\pi$ from the period formula.
+    This is the value of the square-root time factor before the angular cycle is converted to a full period. The physical-pendulum formula includes the prefactor $2\pi$, which changes $0.39\ldots\ \mathrm s$ to $2.5\ \mathrm s$.
 - id: c
   content: 2.4
   feedback: |-
-    This is close to the result obtained by omitting the disk's center-axis inertia $\frac12m_dr^2$.
+    This treats the disk as a point mass at its center by omitting its own rotational inertia $\frac12m_dr^2$. A solid disk has finite radius, so that term must be included; doing so raises the rounded period from `2.4` to `2.5`.
 - id: d
   content: 2.2
   feedback: |-
-    This is close to the result obtained by using $L$ instead of $L+r$ for the disk's center distance.
+    This places the disk's center at the rod's attachment point by using $L$ instead of $L+r$ in its inertia and torque terms. The center lies one radius farther from the pivot, and the corrected geometry gives `2.5` rather than `2.2`.
 - id: e
   content: 0.85
   feedback: |-
-    This is close to the result obtained by omitting the disk's parallel-axis term $m_d(L+r)^2$.
+    This includes the disk's spin about its center but omits the much larger inertia from carrying that center around the pivot. The parallel-axis term $m_d(L+r)^2$ is required; including it changes the result from about `0.85` to `2.5`.
 ```
 
 ---

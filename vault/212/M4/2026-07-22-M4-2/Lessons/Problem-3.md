@@ -69,22 +69,22 @@ options:
     $I=\frac13mL^2$ and $d=\frac L2$
   correct: true
   feedback: |-
-    The center of mass is $L/2$ from the end, and the moment of inertia must be about that end: $I=\frac13mL^2$. The value $\frac1{12}mL^2$ belongs to an axis through the rod's center.
+    A physical pendulum uses the center-of-mass lever arm and the moment of inertia about the actual pivot. For a uniform rod pivoted at one end, the center of mass is $L/2$ away and $I_{\mathrm{end}}=\frac13mL^2$.
 - id: p3-rod-quantities-b
   content: |-
     $I=\frac1{12}mL^2$ and $d=\frac L2$
   feedback: |-
-    The distance is correct, but $\frac1{12}mL^2$ is the inertia about the rod's center, not about the end pivot.
+    The distance $d=L/2$ is correct, but the inertia is about the wrong axis. $\frac1{12}mL^2$ applies through the rod's center; shifting to the end pivot gives $I=\frac13mL^2$.
 - id: p3-rod-quantities-c
   content: |-
     $I=\frac13mL^2$ and $d=L$
   feedback: |-
-    The inertia is about the correct axis, but a uniform rod's center of mass is only $L/2$ from the end pivot.
+    The end-pivot inertia is correct, but $d$ is the distance from the pivot to the center of mass, not to the rod's far end. A uniform rod balances at its midpoint, so $d=L/2$ rather than $L$.
 - id: p3-rod-quantities-d
   content: |-
     $I=mL^2$ and $d=L$
   feedback: |-
-    These values treat the whole rod like a point mass at its far end instead of using its distributed mass and midpoint center of mass.
+    This replaces the distributed rod with a point mass at its far end. The actual rod has its center of mass at $L/2$ and its mass spread along its length, giving $d=L/2$ and $I_{\mathrm{end}}=\frac13mL^2$.
 ```
 
 ---
@@ -132,23 +132,23 @@ options:
   content: |-
     Rod 2 has three times the period.
   feedback: |-
-    This assumes a direct mass dependence, but the factor of $m$ in $I$ cancels the $m$ in $mgd$.
+    This assumes that greater mass directly makes the oscillation slower. For geometrically identical rods, both rotational inertia and gravitational restoring torque grow by the same mass factor, so $m$ cancels from $I/(mgd)$ and the periods remain equal.
 - id: p3-mass-cancels-b
   content: |-
     Rod 2 has $\sqrt{3}$ times the period.
   feedback: |-
-    This leaves mass under the square root instead of canceling it from the ratio $I/(mgd)$.
+    This keeps a factor of $3$ from the heavier rod under the square root. But $I$ and $mgd$ each acquire that same factor, so their ratio—and therefore the period—does not gain a factor of $\sqrt3$.
 - id: p3-mass-cancels-c
   content: |-
     The rods have equal periods.
   correct: true
   feedback: |-
-    In $I/(mgd)$, the factor $m$ in $I=\frac13mL^2$ cancels the factor $m$ in the denominator. Rods with the same $L$ and pivot geometry therefore have the same small-angle period regardless of mass.
+    For the same rod shape and pivot, increasing mass increases both rotational inertia and gravitational restoring torque proportionally. Thus $m$ cancels from $T=2\pi\sqrt{I/(mgd)}$, so the two rods have equal periods.
 - id: p3-mass-cancels-d
   content: |-
     Rod 2 has one-third the period.
   feedback: |-
-    This invents an inverse mass dependence; both inertia and gravitational torque scale by the same mass factor.
+    This assumes the heavier rod swings three times faster because its weight is larger. Its rotational inertia is also three times larger, so the restoring effect and resistance to angular acceleration scale together; the period stays the same.
 ```
 
 ---
@@ -200,22 +200,22 @@ options:
     $1.42\ \mathrm s$
   correct: true
   feedback: |-
-    Substitute with parentheses: $T=2\pi\sqrt{2(0.75)/(3(9.81))}=1.418\ldots\ \mathrm s$. The value $1.74\ \mathrm s$ comes from using the simple-pendulum formula $2\pi\sqrt{L/g}$ instead of the rod formula.
+    A uniform rod about an end has $I=\frac13mL^2$ and $d=L/2$, so its period reduces to $T=2\pi\sqrt{2L/(3g)}$. With $L=0.75\ \mathrm m$, this gives $T=1.418\ldots\ \mathrm s\approx1.42\ \mathrm s$.
 - id: p3-evaluate-period-b
   content: |-
     $1.74\ \mathrm s$
   feedback: |-
-    This uses the point-mass formula $2\pi\sqrt{L/g}$ and ignores the rod's distributed moment of inertia.
+    This treats the rod as a point bob located a full length $L$ from the pivot. A rod is an extended object, so its end-pivot inertia and midpoint center of mass give $T=2\pi\sqrt{2L/(3g)}=1.42\ \mathrm s$.
 - id: p3-evaluate-period-c
   content: |-
     $0.71\ \mathrm s$
   feedback: |-
-    This is half the correct period, indicating that the factor $2$ in the required prefactor $2\pi$ was dropped.
+    This is exactly half the rod's period and results from using $\pi$ instead of the required prefactor $2\pi$. The physical-pendulum formula gives $2\pi\sqrt{2(0.75)/(3(9.81))}=1.42\ \mathrm s$.
 - id: p3-evaluate-period-d
   content: |-
     $4.02\ \mathrm s$
   feedback: |-
-    Correct grouping gives $2L/(3g)=0.05097\ \mathrm{s^2}$ and its square root is $0.2258\ \mathrm s$; this value comes from a numerical or parenthesis error in that step.
+    This reflects a numerical or grouping error in the physical-pendulum calculation. Keeping the denominator grouped gives $2L/(3g)=0.05097\ \mathrm{s^2}$; its square root is $0.2258\ \mathrm s$, and multiplying by $2\pi$ gives $1.42\ \mathrm s$, not $4.02\ \mathrm s$.
 ```
 
 ---
@@ -274,38 +274,22 @@ options:
     1.6
   correct: true
   feedback: |-
-    For a physical pendulum,
-
-    $$
-    T=2\pi\sqrt{\frac{I}{mgd}}.
-    $$
-
-    A uniform rod pivoted at one end has $I=\frac13mL^2$ and $d=L/2$, so
-
-    $$
-    T=2\pi\sqrt{\frac{2L}{3g}}
-    =2\pi\sqrt{\frac{2(0.92\ \mathrm{m})}{3(9.81\ \mathrm{m/s^2})}}
-    =1.5711\ldots\ \mathrm{s}.
-    $$
-
-    The measured length has two significant figures, so $T=1.6\ \mathrm{s}$. The rod's mass cancels.
-
-    The other values reflect nearby formula errors: `1.9` uses the point-mass simple-pendulum formula with length $L$; `1.4` treats the rod as a point mass at $L/2$; and `0.79` uses the rod's center-axis moment of inertia instead of its end-pivot moment of inertia.
+    A swinging rod is a physical pendulum, so its end-pivot inertia $I=\frac13mL^2$ and center-of-mass distance $d=L/2$ give $T=2\pi\sqrt{2L/(3g)}$. Substituting $L=0.92\ \mathrm m$ gives $1.5711\ldots\ \mathrm s$, which rounds to the number-only entry `1.6`.
 - id: p3-source-check-b
   content: |-
     1.9
   feedback: |-
-    This treats the rod as a point bob a distance $L$ from the pivot by using $2\pi\sqrt{L/g}$.
+    This uses the simple-pendulum formula with a point bob at the rod's far end. Because the rod's mass is distributed, its end-pivot inertia must be included; $T=2\pi\sqrt{2L/(3g)}$ gives the entry `1.6`, not `1.9`.
 - id: p3-source-check-c
   content: |-
     1.4
   feedback: |-
-    This treats all of the rod's mass as a point at its center of mass, using the simple-pendulum length $L/2$ instead of the rod's pivot inertia.
+    This locates the center of mass correctly but concentrates the entire rod there as a point bob. The rod's distributed mass gives $I_{\mathrm{end}}=\frac13mL^2$, so the physical-pendulum period rounds to `1.6` rather than `1.4`.
 - id: p3-source-check-d
   content: |-
     0.79
   feedback: |-
-    This uses the center-axis inertia $I=\frac1{12}mL^2$ without shifting it to the end pivot, making the calculated period too small.
+    This uses the rod's center-axis inertia even though the actual pivot is at an end. The parallel-axis shift changes $I$ from $\frac1{12}mL^2$ to $\frac13mL^2$; using the correct pivot axis gives `1.6`, not `0.79`.
 ```
 
 ---

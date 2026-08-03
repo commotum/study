@@ -56,19 +56,29 @@ options:
 - id: a
   content: |-
     $\mathrm{m}$
+  feedback: |-
+    Choosing $\mathrm{m}$ ignores the time multiplying $A$: it would give $[At]=\mathrm{m}\cdot\mathrm{s}$, not velocity. Because $At$ must have units $\mathrm{m}/\mathrm{s}$, divide by $[t]=\mathrm{s}$ to get $[A]=\mathrm{m}/\mathrm{s}^2$.
 - id: b
   content: |-
     $\mathrm{m}/\mathrm{s}$
+  feedback: |-
+    This assigns $A$ the units of $v$ even though $At$, not $A$, is the term added to $v_0$. It would give $[At]=\mathrm{m}$; dividing the required velocity units by $\mathrm{s}$ gives $[A]=\mathrm{m}/\mathrm{s}^2$.
 - id: c
   content: |-
     $\mathrm{m}/\mathrm{s}^2$
   correct: true
+  feedback: |-
+    Added terms must share units, so $At$ must have the velocity units $\mathrm{m}/\mathrm{s}$. With $[t]=\mathrm{s}$, $[A]=(\mathrm{m}/\mathrm{s})/\mathrm{s}=\mathrm{m}/\mathrm{s}^2$.
 - id: d
   content: |-
     $\mathrm{m}/\mathrm{s}^3$
+  feedback: |-
+    This divides by one extra second. It makes $At$ have units $\mathrm{m}/\mathrm{s}^2$ (acceleration) instead of $\mathrm{m}/\mathrm{s}$ (velocity); because the term contains $t^1$, $[A]=(\mathrm{m}/\mathrm{s})/\mathrm{s}=\mathrm{m}/\mathrm{s}^2$.
 - id: e
   content: |-
     $\mathrm{s}/\mathrm{m}$
+  feedback: |-
+    This reverses the required quotient. From $[A][t]=[v]$, $[A]=[v]/[t]=(\mathrm{m}/\mathrm{s})/\mathrm{s}=\mathrm{m}/\mathrm{s}^2$; $\mathrm{s}/\mathrm{m}$ would instead make $At$ have units $\mathrm{s}^2/\mathrm{m}$.
 ```
 
 ---
@@ -101,19 +111,29 @@ options:
 - id: a
   content: |-
     $\mathrm{rad}$
+  feedback: |-
+    This assigns $E$ the angle units and ignores $t^2$, making $Et^2$ have $\mathrm{rad}\cdot\mathrm{s}^2$ rather than $\mathrm{rad}$. Since $Et^2$ must match $\theta$, $[E]=\mathrm{rad}/\mathrm{s}^2$.
 - id: b
   content: |-
     $\mathrm{rad}/\mathrm{s}$
+  feedback: |-
+    This divides out only one time factor, as though the term were $Et$. For $Et^2$, it gives $\mathrm{rad}\cdot\mathrm{s}$ rather than $\mathrm{rad}$; dividing by the full $\mathrm{s}^2$ gives $[E]=\mathrm{rad}/\mathrm{s}^2$.
 - id: c
   content: |-
     $\mathrm{rad}/\mathrm{s}^2$
   correct: true
+  feedback: |-
+    Added terms must share units, so $Et^2$ must match $\theta$ in radians. With $[t^2]=\mathrm{s}^2$, $[E]=\mathrm{rad}/\mathrm{s}^2$.
 - id: d
   content: |-
     $\mathrm{rad}/\mathrm{s}^3$
+  feedback: |-
+    This divides by one extra second, making $Et^2$ have $\mathrm{rad}/\mathrm{s}$ (angular velocity) instead of $\mathrm{rad}$ (angle). Canceling exactly the $t^2$ factor gives $[E]=\mathrm{rad}/\mathrm{s}^2$.
 - id: e
   content: |-
     $\mathrm{rad}\cdot\mathrm{s}^2$
+  feedback: |-
+    This multiplies by $\mathrm{s}^2$ instead of canceling the time factor, so $Et^2$ would have $\mathrm{rad}\cdot\mathrm{s}^4$. Because $Et^2$ must match the angle $\theta$, $[E]=\mathrm{rad}/\mathrm{s}^2$.
 ```
 
 ---
@@ -146,22 +166,34 @@ options:
 - id: a
   content: |-
     $\mathrm{m}/\mathrm{s}^2$
+  feedback: |-
+    This treats $B$ as a linear acceleration and ignores $t^2$, making $Bt^2$ a length in meters. Because $Bt^2$ must be angular acceleration, $[B]=(\mathrm{rad}/\mathrm{s}^2)/\mathrm{s}^2=\mathrm{rad}/\mathrm{s}^4$.
 - id: b
   content: |-
     $\mathrm{m}/\mathrm{s}^3$
+  feedback: |-
+    This mixes a linear numerator with only one additional inverse second, so $Bt^2$ would have $\mathrm{m}/\mathrm{s}$ (linear speed). The term must be angular acceleration, so $[B]=(\mathrm{rad}/\mathrm{s}^2)/\mathrm{s}^2=\mathrm{rad}/\mathrm{s}^4$.
 - id: c
   content: |-
     $\mathrm{m}/\mathrm{s}^4$
+  feedback: |-
+    The time exponent is correct, but meters make $Bt^2$ a linear acceleration in $\mathrm{m}/\mathrm{s}^2$. The prompt requires angular acceleration, so the numerator must be radians: $[B]=\mathrm{rad}/\mathrm{s}^4$.
 - id: d
   content: |-
     $\mathrm{rad}/\mathrm{s}^2$
+  feedback: |-
+    This gives $B$ the units of $\alpha_z$ or $C$ and ignores $t^2$, so $Bt^2$ would have $\mathrm{rad}$ (angle). Dividing the angular-acceleration units by $\mathrm{s}^2$ gives $[B]=\mathrm{rad}/\mathrm{s}^4$.
 - id: e
   content: |-
     $\mathrm{rad}/\mathrm{s}^3$
+  feedback: |-
+    This removes only one of the two seconds contributed by $t^2$, so $Bt^2$ would have $\mathrm{rad}/\mathrm{s}$ (angular velocity). Dividing by the full $\mathrm{s}^2$ gives $[B]=\mathrm{rad}/\mathrm{s}^4$.
 - id: f
   content: |-
     $\mathrm{rad}/\mathrm{s}^4$
   correct: true
+  feedback: |-
+    Added terms must share units, so $Bt^2$ must match $\alpha_z$ in $\mathrm{rad}/\mathrm{s}^2$. With $[t^2]=\mathrm{s}^2$, $[B]=(\mathrm{rad}/\mathrm{s}^2)/\mathrm{s}^2=\mathrm{rad}/\mathrm{s}^4$.
 ```
 
 ## Summary

@@ -72,29 +72,28 @@ options:
     $a>0$
   correct: true
   feedback: |-
-    Since $a=-\omega^2x$ and $x<0$, the acceleration is positive.
+    An SHM acceleration always points back toward equilibrium. Here the oscillator is left of equilibrium because $x<0$, so "back" is the positive direction. Therefore, $a>0$.
 - id: q3-shm-speed-acceleration-sign-b
   content: |-
     $a<0$
   feedback: |-
-    Acceleration has the sign opposite displacement in SHM.
+    This copies the displacement sign instead of using the restoring direction. A negative acceleration would point left and is correct when $x>0$; here $x<0$, so equilibrium lies to the right and $a=-\omega^2x>0$.
 - id: q3-shm-speed-acceleration-sign-c
   content: |-
     $a=0$
   feedback: |-
-    Acceleration is zero at equilibrium, not at a nonzero displacement.
+    Zero restoring acceleration occurs only at equilibrium, where $x=0$. The oscillator is displaced by $0.20\ \mathrm{m}$, so the restoring force is nonzero and $a=-\omega^2(-0.20\ \mathrm{m})>0$.
 - id: q3-shm-speed-acceleration-sign-d
   content: |-
     The sign of $a$ depends on the sign of $v$.
   feedback: |-
-    The relation $a=-\omega^2x$ fixes the acceleration sign from $x$ alone.
+    Velocity tells which way the oscillator is moving; displacement tells which way the restoring acceleration points. The oscillator can pass this same $x$ with either sign of $v$, but in both cases $a=-\omega^2x>0$ because $x<0$.
 - id: q3-shm-speed-acceleration-sign-e
   content: |-
     The sign of $a$ depends on the amplitude.
   feedback: |-
-    Amplitude can affect the possible magnitude of $x$, but not the restoring direction at a given $x$.
+    Amplitude $A$ sets the turning points and the maximum acceleration $\omega^2A$; it does not choose the restoring direction at a given position. Once $x<0$ is known, $a=-\omega^2x$ is positive for any allowed $A\ge |x|$.
 ```
-
 ---
 
 <a id="same-signs-mean-speeding-up"></a>
@@ -125,27 +124,27 @@ options:
     Speeding up, because $a<0$ and $v<0$
   correct: true
   feedback: |-
-    Positive $x$ gives negative $a$. Velocity and acceleration are both negative, so speed increases.
+    A restoring acceleration points toward equilibrium. From $x>0$, that direction is left, so $a=-\omega^2x<0$; the given $v<0$ is also leftward. Because $v$ and $a$ have the same sign, $va>0$ and the oscillator is speeding up.
 - id: q3-shm-speed-same-signs-b
   content: |-
     Slowing down, because $x$ and $v$ have opposite signs
   feedback: |-
-    Opposite signs of $x$ and $v$ mean motion toward equilibrium. Compare $v$ with $a$, not $v$ with $x$.
+    Opposite signs of $x$ and $v$ mean the oscillator is moving toward equilibrium, where its speed is greatest. Here $x>0$ makes $a<0$, matching the given $v<0$, so it speeds up. Slowing would require $v$ and $a$ to have opposite signs.
 - id: q3-shm-speed-same-signs-c
   content: |-
     Slowing down, because $a>0$ and $v<0$
   feedback: |-
-    For $x>0$, the restoring acceleration is negative, not positive.
+    The stated sign of acceleration is the failed step. Positive acceleration would point right and applies on the $x<0$ side; at $x>0$, the restoring direction is left, so $a=-\omega^2x<0$. Thus $a$ and $v$ agree and the oscillator speeds up.
 - id: q3-shm-speed-same-signs-d
   content: |-
     Moving at constant speed, because $x$ is fixed at this instant
   feedback: |-
-    An instantaneous position does not imply constant speed; here the nonzero acceleration changes the speed.
+    A position given at one instant is a snapshot, not a statement that $x$ remains fixed. Because $x\ne0$, the restoring acceleration is nonzero; here $a<0$ acts with $v<0$, so the speed is increasing. Constant speed over an interval would require zero acceleration throughout that interval.
 - id: q3-shm-speed-same-signs-e
   content: |-
     There is not enough information without knowing $\omega$
   feedback: |-
-    The value of $\omega$ affects magnitude, but $\omega^2>0$ is enough to determine the acceleration sign.
+    The value of $\omega$ is needed for the magnitude $|a|=\omega^2|x|$, but not for the direction test. For any nonzero angular frequency, $\omega^2>0$; therefore $x>0\Rightarrow a<0$, and with $v<0$ the oscillator is speeding up.
 ```
 
 ---
@@ -178,27 +177,27 @@ options:
     It is slowing down because $a>0$ points opposite $v<0$.
   correct: true
   feedback: |-
-    Negative $x$ gives positive $a$. Opposite signs of $v$ and $a$ mean decreasing speed.
+    The restoring acceleration points toward equilibrium. From $x<0$, equilibrium is to the right, so $a=-\omega^2x>0$ while the given $v<0$ points left. Because $va<0$, acceleration opposes the motion and the oscillator is slowing down.
 - id: q3-shm-speed-opposite-signs-b
   content: |-
     It is speeding up because both $x$ and $v$ are negative.
   feedback: |-
-    Compare velocity with acceleration. Here $a$ is positive, opposite the negative velocity.
+    Matching signs of $x$ and $v$ mean the oscillator is moving away from equilibrium; they do not mean velocity and acceleration match. Since acceleration has the sign opposite $x$, here $a>0$ opposes $v<0$, so the speed decreases. At this same $x<0$, it would speed up if $v>0$ toward equilibrium.
 - id: q3-shm-speed-opposite-signs-c
   content: |-
     It is speeding up because $a<0$ points with $v<0$.
   feedback: |-
-    The acceleration is positive when the displacement is negative.
+    The misconception is assigning acceleration the same sign as displacement. A restoring acceleration points right when the oscillator is left of equilibrium: $x<0\Rightarrow a=-\omega^2x>0$. Therefore $a$ opposes the negative velocity and the oscillator slows.
 - id: q3-shm-speed-opposite-signs-d
   content: |-
     It moves at constant speed because $x$ and $v$ have the same sign.
   feedback: |-
-    Same signs of $x$ and $v$ mean motion away from equilibrium, not constant speed.
+    Same signs of $x$ and $v$ diagnose motion away from equilibrium, not constant speed. Here the nonzero restoring acceleration points opposite the motion, $a>0$ while $v<0$, so speed decreases. Constant speed would require $a=0$, which occurs only at $x=0$ for SHM.
 - id: q3-shm-speed-opposite-signs-e
   content: |-
     It is stopped because its displacement is negative.
   feedback: |-
-    The given velocity is nonzero, so the oscillator is moving.
+    Displacement tells location, while velocity tells motion; a negative $x$ does not mean stopped. The problem explicitly gives $v=-0.40\ \mathrm{m/s}\ne0$. An SHM oscillator stops only at a turning point, where $v=0$ and $x=\pm A$.
 ```
 
 ---
@@ -233,27 +232,27 @@ options:
     $a=0$ and the speed is maximum; the oscillator is at the transition from speeding up to slowing down.
   correct: true
   feedback: |-
-    At $x=0$, $a=-\omega^2x=0$. An ideal SHM oscillator has maximum speed at equilibrium.
+    At equilibrium the restoring force has no preferred direction, so the instantaneous acceleration is zero: $x=0\Rightarrow a=-\omega^2x=0$. The oscillator's energy is then entirely kinetic, so $|v|$ is maximum. With $v<0$, this is the instant between speeding up on the $x>0$ side and slowing down on the $x<0$ side.
 - id: q3-shm-speed-zero-case-b
   content: |-
     $a<0$, so it is speeding up.
   feedback: |-
-    At equilibrium, displacement and acceleration are both zero.
+    A negative restoring acceleration applies just before this crossing, while the oscillator is still on the $x>0$ side. At the exact boundary $x=0$, however, $a=-\omega^2x=0$. The speed is maximum there, so this instant separates speeding up from slowing down.
 - id: q3-shm-speed-zero-case-c
   content: |-
     $a>0$, so it is slowing down.
   feedback: |-
-    The acceleration is zero when $x=0$.
+    A positive restoring acceleration applies just after the oscillator enters the $x<0$ side. At the exact equilibrium crossing, $x=0$ makes $a=0$. The oscillator is at maximum speed and only begins slowing immediately after the crossing.
 - id: q3-shm-speed-zero-case-d
   content: |-
     $v=0$ because every oscillator stops at equilibrium.
   feedback: |-
-    An SHM oscillator stops at its turning points and reaches maximum speed at equilibrium.
+    This swaps the roles of equilibrium and a turning point. The oscillator stops where all energy is potential, at $x=\pm A$; at $x=0$, spring potential is minimum and speed is maximum. The stated $v<0$ also confirms motion through equilibrium.
 - id: q3-shm-speed-zero-case-e
   content: |-
     Both $v$ and $a$ are zero.
   feedback: |-
-    The velocity is explicitly nonzero, while the acceleration is zero at equilibrium.
+    Equilibrium makes the acceleration zero, but it does not make the velocity zero: here $x=0\Rightarrow a=0$ while the prompt gives $v<0$. Both $x$ and $v$ can be zero only for the trivial no-oscillation state $A=0$, not for an oscillator passing through equilibrium.
 ```
 
 ---

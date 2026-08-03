@@ -9,11 +9,9 @@ Polish one study document in place without changing its academic substance. Norm
 
 ## Required references
 
-Before editing quiz blocks, read the complete current quiz catalog:
+Before editing any quiz block, invoke `$quiz-block-factory` and read its complete `SKILL.md` plus both required references. Quiz Block Factory is authoritative for supported quiz types, canonical fields, correctness encoding, feedback placement and quality, and quiz validation.
 
-- `/Users/jake/Developer/study/vault/Old/admin/quiz-test.md`
-
-Then read [references/cleanup-standard.md](references/cleanup-standard.md). The catalog is authoritative for supported syntax; the bundled reference supplies the selection and layout policy.
+Then read [references/cleanup-standard.md](references/cleanup-standard.md) for cleanup-specific policy: source fidelity, Markdown layout, multipart structure, images, typed-input conventions, and significant figures. Do not duplicate or override Quiz Block Factory's representation rules here.
 
 ## Workflow
 
@@ -99,11 +97,13 @@ python3 util/skills/lesson-cleanup/scripts/normalize_lecture_folder.py path/to/d
 ```
 
 7. Choose and build quiz blocks.
-   - Select the type from the decision policy in `references/cleanup-standard.md`; any documented type is allowed.
-   - Use stable document-wide block IDs: `q-1`, `q-2`, and multipart forms such as `q-4a`.
-   - Use stable option IDs where the type supports them.
+   - Follow `$quiz-block-factory` for type selection, canonical fields, IDs, correctness encoding, and feedback placement. Any type documented there is allowed.
+   - Within cleanup scope, prefer document-wide block IDs such as `q-1`, `q-2`, and multipart forms such as `q-4a` while satisfying the factory's stable-ID requirements.
    - Set `shuffle: true` only for `radio` or `checkbox` choices whose order carries no meaning.
-   - Encode correctness in the block. Do not expose the answer in prose immediately before a graded choice.
+   - Encode correctness only when the answer key is established from the source or reliable local context. Do not infer correctness from option order, prior shuffle order, or a plausible guess. Do not expose the answer in prose immediately before a graded choice.
+   - When the answer key is known, apply the factory's corrective-feedback standard at the renderer-supported level. In particular, every `radio` or `checkbox` option needs option-specific feedback; select-style and noodle items need question-level feedback; and `free` or `blank` uses root feedback.
+   - For supplied distractors, diagnose a misconception only when the option itself or source context supports that diagnosis. Otherwise explain the option's objective failure, state the governing distinction, and apply it here without inventing a student's psychology.
+   - If the answer key is genuinely unknown, preserve the prompt and choices without invented correct flags, explanations, or distractor psychology. Run structural validation anyway, leave any resulting correctness failure visible, and report the unknown-key exception explicitly rather than claiming the block is complete.
    - Create separate blocks only for parts that require independently answerable responses.
    - If a prompt has one answerable result plus a required supporting drawing, derivation, or explanation, keep one block using the answerable result's type and include the supporting-work requirements in its feedback or reference answer.
    - Use `free` when the drawing, proof, or explanation is itself the answerable response; provide a useful reference answer.
@@ -123,8 +123,22 @@ python3 util/skills/lesson-cleanup/scripts/normalize_lecture_folder.py path/to/d
    - Validate all quiz types without forcing radio:
 
 ```bash
-python3 util/skills/core-move-lesson/scripts/validate_quiz_blocks.py path/to/Assignment.md --strict-ids
+python3 util/skills/quiz-block-factory/scripts/validate_quiz_blocks.py \
+  path/to/Assignment.md \
+  --strict-ids
 ```
+
+   - Require and lint feedback for every block whose answer key is known. When all keys in the document are known, this command must pass:
+
+```bash
+python3 util/skills/quiz-block-factory/scripts/validate_quiz_blocks.py \
+  path/to/Assignment.md \
+  --strict-ids \
+  --require-feedback \
+  --lint-feedback
+```
+
+   - For a mixed document, run the feedback command after completing all known-key feedback and report failures confined to genuinely unknown-key blocks as explicit exceptions; do not weaken feedback on the known-key blocks. If every key is unknown, do not use feedback requirements to pressure a guess. In all cases, report every unresolved structural-validation issue, including a missing canonical correctness marker.
 
    - Scan for raw checklist MCQs, unfinished skeleton text inside problem sections, duplicate quiz IDs, and trailing whitespace.
    - Confirm every Markdown file created or modified in scope starts with exactly one empty line, including otherwise empty placeholders.
@@ -136,8 +150,8 @@ python3 util/skills/core-move-lesson/scripts/validate_quiz_blocks.py path/to/Ass
 - Never delete based only on a similar filename.
 - Never alter protected lesson-source images to deduplicate an assignment image.
 - Never invent missing questions, choices, diagrams, or answer keys.
-- If answer correctness cannot be established from the supplied material or reliable local context, preserve the content, omit unsupported correctness claims when the schema permits, and report the uncertainty.
+- If answer correctness cannot be established from the supplied material or reliable local context, preserve the content, omit unsupported correctness claims, and report the uncertainty and any consequent validation failure explicitly.
 
 ## Reporting
 
-Report the documents processed, quiz types used, images moved or renamed, duplicates removed or reused, root-note embeds created, significant-figure corrections or unresolved precision ambiguities, and validation results. Keep the report concise.
+Report the documents processed, quiz types used, images moved or renamed, duplicates removed or reused, root-note embeds created, significant-figure corrections or unresolved precision ambiguities, feedback validation, and structural validation results. Name any unknown-key exception and its unresolved validator issue. Keep the report concise.

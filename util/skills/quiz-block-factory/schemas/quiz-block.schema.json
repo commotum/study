@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Obsidian Quiz Block Subset",
+  "title": "Canonical Obsidian Quiz Block Authoring Schema",
   "description": "Canonical lesson-authoring subset. It intentionally rejects legacy input aliases and applies stronger content/cardinality rules than the plugin runtime.",
   "oneOf": [
     { "$ref": "#/$defs/radio" },
@@ -14,14 +14,20 @@
   "$defs": {
     "text": {
       "type": ["string", "number", "boolean"],
-      "minLength": 1
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
     },
     "option": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["content"],
+      "required": ["id", "content"],
       "properties": {
-        "id": { "type": "string" },
+        "id": { "$ref": "#/$defs/id" },
         "content": { "$ref": "#/$defs/text" },
         "correct": { "type": "boolean" },
         "feedback": { "$ref": "#/$defs/text" }
@@ -30,26 +36,26 @@
     "question": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["content", "correct_option"],
+      "required": ["id", "content", "correct_option"],
       "properties": {
-        "id": { "type": "string" },
+        "id": { "$ref": "#/$defs/id" },
         "content": { "$ref": "#/$defs/text" },
-        "correct_option": { "type": "string" },
+        "correct_option": { "$ref": "#/$defs/id" },
         "feedback": { "$ref": "#/$defs/text" }
       }
     },
     "multiQuestion": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["content", "correct_option", "options"],
+      "required": ["id", "content", "correct_option", "options"],
       "properties": {
-        "id": { "type": "string" },
+        "id": { "$ref": "#/$defs/id" },
         "content": { "$ref": "#/$defs/text" },
-        "correct_option": { "type": "string" },
+        "correct_option": { "$ref": "#/$defs/id" },
         "feedback": { "$ref": "#/$defs/text" },
         "options": {
           "type": "array",
-          "minItems": 1,
+          "minItems": 2,
           "items": { "$ref": "#/$defs/option" }
         }
       }
@@ -57,44 +63,57 @@
     "radio": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["type", "content", "options"],
+      "required": ["type", "id", "content", "options"],
       "properties": {
         "type": { "const": "radio" },
-        "id": { "type": "string" },
+        "id": { "$ref": "#/$defs/id" },
         "content": { "$ref": "#/$defs/text" },
         "gated": { "type": "boolean" },
         "shuffle": { "type": "boolean" },
         "options": {
           "type": "array",
           "minItems": 2,
-          "items": { "$ref": "#/$defs/option" }
+          "items": { "$ref": "#/$defs/option" },
+          "contains": {
+            "type": "object",
+            "required": ["correct"],
+            "properties": { "correct": { "const": true } }
+          },
+          "minContains": 1,
+          "maxContains": 1
         }
       }
     },
     "checkbox": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["type", "content", "options"],
+      "required": ["type", "id", "content", "options"],
       "properties": {
         "type": { "const": "checkbox" },
-        "id": { "type": "string" },
+        "id": { "$ref": "#/$defs/id" },
         "content": { "$ref": "#/$defs/text" },
         "gated": { "type": "boolean" },
         "shuffle": { "type": "boolean" },
         "options": {
           "type": "array",
           "minItems": 2,
-          "items": { "$ref": "#/$defs/option" }
+          "items": { "$ref": "#/$defs/option" },
+          "contains": {
+            "type": "object",
+            "required": ["correct"],
+            "properties": { "correct": { "const": true } }
+          },
+          "minContains": 1
         }
       }
     },
     "blank": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["type", "content"],
+      "required": ["type", "id", "content"],
       "properties": {
         "type": { "const": "blank" },
-        "id": { "type": "string" },
+        "id": { "$ref": "#/$defs/id" },
         "require_exact": { "type": "boolean" },
         "content": { "$ref": "#/$defs/text" },
         "gated": { "type": "boolean" },
@@ -105,10 +124,10 @@
     "free": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["type", "content"],
+      "required": ["type", "id", "content"],
       "properties": {
         "type": { "const": "free" },
-        "id": { "type": "string" },
+        "id": { "$ref": "#/$defs/id" },
         "content": { "$ref": "#/$defs/text" },
         "gated": { "type": "boolean" },
         "shuffle": { "type": "boolean" },
@@ -119,16 +138,16 @@
     "select": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["type", "content", "options", "questions"],
+      "required": ["type", "id", "content", "options", "questions"],
       "properties": {
         "type": { "const": "select" },
-        "id": { "type": "string" },
+        "id": { "$ref": "#/$defs/id" },
         "content": { "$ref": "#/$defs/text" },
         "gated": { "type": "boolean" },
         "shuffle": { "type": "boolean" },
         "options": {
           "type": "array",
-          "minItems": 1,
+          "minItems": 2,
           "items": { "$ref": "#/$defs/option" }
         },
         "questions": {
@@ -141,10 +160,10 @@
     "multiSelect": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["type", "content", "questions"],
+      "required": ["type", "id", "content", "questions"],
       "properties": {
         "type": { "const": "multi-select" },
-        "id": { "type": "string" },
+        "id": { "$ref": "#/$defs/id" },
         "content": { "$ref": "#/$defs/text" },
         "gated": { "type": "boolean" },
         "shuffle": { "type": "boolean" },
@@ -158,21 +177,21 @@
     "noodle": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["type", "content", "options", "questions"],
+      "required": ["type", "id", "content", "options", "questions"],
       "properties": {
         "type": { "const": "noodle" },
-        "id": { "type": "string" },
+        "id": { "$ref": "#/$defs/id" },
         "content": { "$ref": "#/$defs/text" },
         "gated": { "type": "boolean" },
         "shuffle": { "type": "boolean" },
         "options": {
           "type": "array",
-          "minItems": 1,
+          "minItems": 2,
           "items": { "$ref": "#/$defs/option" }
         },
         "questions": {
           "type": "array",
-          "minItems": 1,
+          "minItems": 2,
           "items": { "$ref": "#/$defs/question" }
         }
       }

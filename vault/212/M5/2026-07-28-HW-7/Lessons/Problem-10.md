@@ -101,27 +101,27 @@ options:
     $k=6\ \mathrm{rad/m}$ and $\omega=15\ \mathrm{rad/s}$
   correct: true
   feedback: |-
-    Inside the phase, $6\ \mathrm{rad/m}$ multiplies $x$ and is $k$, while $15\ \mathrm{rad/s}$ multiplies $t$ and is $\omega$.
+    In a traveling-wave phase, $k$ measures phase change per distance and therefore multiplies $x$, while $\omega$ measures phase change per time and multiplies $t$. Thus $k=6\ \mathrm{rad/m}$ and $\omega=15\ \mathrm{rad/s}$.
 - id: p10-coefficients-q1-b
   content: |-
     $k=15\ \mathrm{rad/m}$ and $\omega=6\ \mathrm{rad/s}$
   feedback: |-
-    This swaps the coefficients: $k$ must multiply position $x$, and $\omega$ must multiply time $t$.
+    This swaps the spatial and temporal roles. The coefficient of position $x$ is the wave number $k=6\ \mathrm{rad/m}$, while the coefficient of time $t$ is the angular frequency $\omega=15\ \mathrm{rad/s}$.
 - id: p10-coefficients-q1-c
   content: |-
     $k=0.08\ \mathrm{rad/m}$ and $\omega=15\ \mathrm{rad/s}$
   feedback: |-
-    The value $0.08\ \mathrm m$ is outside the cosine and is the amplitude, not the coefficient of $x$.
+    This mistakes the maximum displacement for a phase coefficient. The outside factor $0.08\ \mathrm m$ is the amplitude $A$; $k$ is read from the coefficient multiplying $x$ inside the cosine, so $k=6\ \mathrm{rad/m}$.
 - id: p10-coefficients-q1-d
   content: |-
     $k=6\ \mathrm{rad/m}$ and $\omega=0.08\ \mathrm{rad/s}$
   feedback: |-
-    The amplitude $0.08\ \mathrm m$ does not multiply $t$; the time coefficient inside the phase is $15\ \mathrm{rad/s}$.
+    This assigns the displacement amplitude to angular frequency. Amplitude sits outside the trigonometric function, while $\omega$ is the coefficient of $t$ inside the phase: $\omega=15\ \mathrm{rad/s}$.
 - id: p10-coefficients-q1-e
   content: |-
     $k=21\ \mathrm{rad/m}$ and $\omega=9\ \mathrm{rad/s}$
   feedback: |-
-    Wave number and angular frequency are read directly from their separate variable coefficients; they are not formed by adding or subtracting $6$ and $15$.
+    This combines coefficients with different physical roles and units. Wave number and angular frequency are read separately from the multipliers of $x$ and $t$, giving $k=6\ \mathrm{rad/m}$ and $\omega=15\ \mathrm{rad/s}$ without addition or subtraction.
 ```
 
 ---
@@ -171,28 +171,28 @@ options:
   content: |-
     $\dfrac{1}{3}\ \mathrm{m/s}$
   feedback: |-
-    This reverses the quotient to $k/\omega=6/18$. Speed requires $\omega/k$.
+    This takes the reciprocal of the propagation speed. Holding the phase $kx-\omega t$ constant gives $dx/dt=\omega/k$; $k/\omega$ has units of time per distance, not speed.
 - id: p10-speed-q1-b
   content: |-
     $3\ \mathrm{m/s}$
   correct: true
   feedback: |-
-    The phase gives $\omega=18\ \mathrm{rad/s}$ and $k=6\ \mathrm{rad/m}$, so $v=\omega/k=3\ \mathrm{m/s}$.
+    A point of constant phase satisfies $kx-\omega t=\text{constant}$, so the pattern speed is $v=\omega/k$. Here $\omega=18\ \mathrm{rad/s}$ and $k=6\ \mathrm{rad/m}$, giving $v=3\ \mathrm{m/s}$.
 - id: p10-speed-q1-c
   content: |-
     $12\ \mathrm{m/s}$
   feedback: |-
-    This subtracts the phase coefficients, $18-6$, but wave speed is their quotient, not their difference.
+    This subtracts angular frequency and wave number, quantities with different units that cannot be subtracted. Constant phase relates distance traveled to elapsed time through the quotient $\omega/k=3\ \mathrm{m/s}$.
 - id: p10-speed-q1-d
   content: |-
     $24\ \mathrm{m/s}$
   feedback: |-
-    This adds $18+6$ instead of dividing angular frequency by wave number.
+    This adds coefficients with incompatible units, $\mathrm{rad/s}$ and $\mathrm{rad/m}$. Wave speed is the rate at which constant phase moves, so the needed operation is $\omega/k=18/6=3\ \mathrm{m/s}$.
 - id: p10-speed-q1-e
   content: |-
     $108\ \mathrm{m/s}$
   feedback: |-
-    This multiplies $18$ by $6$; the constant-phase relation gives $v=\omega/k$, not $\omega k$.
+    Multiplication produces units that are not velocity and does not follow the constant-phase condition. Dividing angular frequency by wave number cancels radians and gives $v=18/6=3\ \mathrm{m/s}$.
 ```
 
 ---
@@ -230,28 +230,28 @@ options:
   content: |-
     $\mathrm{s/m}$
   feedback: |-
-    These are the units of the reversed quotient $k/\omega$, not of $\omega/k$.
+    This reverses the quotient. Seconds per meter would describe the reciprocal of a speed, $k/\omega$; the stated expression is $\omega/k$ and therefore has units of meters per second.
 - id: p10-units-q1-b
   content: |-
     $\mathrm{m/s}$
   correct: true
   feedback: |-
-    Dividing gives $(\mathrm{rad/s})(\mathrm{m/rad})$, so radians cancel and leave meters per second.
+    Dividing by $5\ \mathrm{rad/m}$ means multiplying by $\mathrm{m/rad}$. The radians cancel in $(\mathrm{rad/s})(\mathrm{m/rad})$, leaving the speed unit $\mathrm{m/s}$.
 - id: p10-units-q1-c
   content: |-
     $\mathrm{rad/s}$
   feedback: |-
-    These are the units of $\omega$ alone; dividing by $k$ must also cancel the radians and introduce meters.
+    These are only the numerator's units. Division by wave number multiplies by $\mathrm{m/rad}$, canceling radians and introducing meters, so the final unit is $\mathrm{m/s}$ rather than $\mathrm{rad/s}$.
 - id: p10-units-q1-d
   content: |-
     $\mathrm{rad/m}$
   feedback: |-
-    These are the units of the denominator $k$, not the units after dividing $\omega$ by $k$.
+    These are the denominator's units copied unchanged. In the quotient, $\mathrm{rad/m}$ is inverted to $\mathrm{m/rad}$; combining it with $\mathrm{rad/s}$ leaves $\mathrm{m/s}$.
 - id: p10-units-q1-e
   content: |-
     $\mathrm{m}\cdot\mathrm{s}$
   feedback: |-
-    Dividing by $\mathrm{rad/m}$ multiplies by $\mathrm{m/rad}$, but the numerator still contains $1/\mathrm s$, leaving $\mathrm{m/s}$ rather than $\mathrm{m\,s}$.
+    This inverts the spatial unit correctly but also moves seconds out of the denominator. The numerator remains per second, so $(\mathrm{rad/s})(\mathrm{m/rad})=\mathrm{m/s}$, not $\mathrm{m\,s}$.
 ```
 
 ---
@@ -298,28 +298,28 @@ options:
   content: |-
     $0.20\ \mathrm{m/s}$
   feedback: |-
-    This reuses the amplitude as a speed. Amplitude lies outside the phase and does not enter $v=\omega/k$.
+    This mistakes the displacement amplitude for a propagation speed. The outside factor $0.20\ \mathrm m$ controls the wave's vertical size; speed comes from the spatial and temporal phase coefficients, $v=\omega/k$.
 - id: p10-features-q1-b
   content: |-
     $0.40\ \mathrm{m/s}$
   feedback: |-
-    This manipulates the $0.20\ \mathrm m$ amplitude, but wave speed is determined only by the $x$- and $t$-coefficients inside the phase.
+    This builds a speed from the amplitude, which only sets maximum displacement. Neither the leading minus sign nor $0.20\ \mathrm m$ changes how quickly a constant phase moves; $k=4\ \mathrm{rad/m}$ and $\omega=10\ \mathrm{rad/s}$ control the speed.
 - id: p10-features-q1-c
   content: |-
     $2.5\ \mathrm{m/s}$
   correct: true
   feedback: |-
-    The phase gives $k=4\ \mathrm{rad/m}$ and $\omega=10\ \mathrm{rad/s}$, so $v=10/4=2.5\ \mathrm{m/s}$.
+    Wave speed is set by the rate at which a fixed phase moves, so its magnitude is $v=\omega/k$. The phase gives $\omega=10\ \mathrm{rad/s}$ and $k=4\ \mathrm{rad/m}$, hence $v=2.5\ \mathrm{m/s}$.
 - id: p10-features-q1-d
   content: |-
     $6\ \mathrm{m/s}$
   feedback: |-
-    This subtracts the coefficients, $10-4$. The plus sign sets travel direction, while speed magnitude is the quotient $10/4$.
+    This subtracts coefficients with incompatible units. The plus sign in $kx+\omega t$ sets the propagation direction, while the requested speed magnitude comes from the quotient $\omega/k=10/4=2.5\ \mathrm{m/s}$.
 - id: p10-features-q1-e
   content: |-
     $14\ \mathrm{m/s}$
   feedback: |-
-    This adds the phase coefficients, $10+4$, instead of using the constant-phase result $v=\omega/k$.
+    This adds a temporal rate to a spatial rate, so the operation is not physically meaningful. Holding $4x+10t-\pi/3$ constant gives a speed magnitude $|dx/dt|=\omega/k=2.5\ \mathrm{m/s}$.
 ```
 
 ---

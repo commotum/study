@@ -88,28 +88,28 @@ options:
   content: |-
     $1/9$
   feedback: |-
-    This reverses the comparison. Wave 2 has the larger amplitude, so $I_2/I_1$ must exceed $1$, and the new-to-old ratio is $3^2$.
+    This reverses the new-to-old comparison. Wave 2 has the larger amplitude, and intensity grows with amplitude squared, so $I_2/I_1=3^2=9>1$.
 - id: q3-wpis-amplitude-b
   content: |-
     $1/3$
   feedback: |-
-    This both reverses the ratio and leaves it unsquared. Intensity scales with the square of wave amplitude.
+    This both reverses the ratio and treats amplitude linearly. For equal frequency and area, intensity scales as $A^2$, so tripling amplitude makes $I_2/I_1=9$.
 - id: q3-wpis-amplitude-c
   content: |-
     $3$
   feedback: |-
-    This uses a linear amplitude scaling. The factor must be squared: $(A_2/A_1)^2=3^2$.
+    This treats intensity as proportional to amplitude. Wave energy, and therefore fixed-area intensity, scales with amplitude squared, so the factor is $3^2=9$.
 - id: q3-wpis-amplitude-d
   content: |-
     $6$
   feedback: |-
-    This doubles the amplitude factor rather than squaring it. A factor of $3$ in amplitude produces a factor of $9$ in intensity.
+    This doubles the amplitude factor, but the dependence is quadratic rather than “twice the factor.” With $A_2/A_1=3$, the intensity ratio is $3^2=9$.
 - id: q3-wpis-amplitude-e
   content: |-
     $9$
   correct: true
   feedback: |-
-    Correct. At fixed frequency and area, $I_2/I_1=(A_2/A_1)^2=3^2=9$.
+    At fixed frequency and comparison area, intensity scales with the square of wave amplitude. Since $A_2/A_1=3$, $I_2/I_1=3^2=9$.
 ```
 
 ---
@@ -145,28 +145,28 @@ options:
   content: |-
     $1/4$
   feedback: |-
-    This includes only the squared amplitude decrease, $(1/2)^2$. The doubled frequency contributes the compensating factor $2^2=4$.
+    This includes only the halved amplitude's factor, $(1/2)^2=1/4$. The doubled frequency independently contributes $2^2=4$, so the two effects cancel and the full ratio is $1$.
 - id: q3-wpis-two-b
   content: |-
     $1/2$
   feedback: |-
-    This treats the amplitude change linearly and ignores the squared frequency increase. Both new-to-old ratios must be squared.
+    This keeps only a linear amplitude factor. Average power scales as $f^2A^2$, so the new-to-old factors are $2^2$ and $(1/2)^2$; their product is $1$.
 - id: q3-wpis-two-c
   content: |-
     $1$
   correct: true
   feedback: |-
-    Correct. The factors cancel after squaring: $2^2(1/2)^2=1$.
+    Average power scales as $f^2A^2$. Doubling frequency contributes $2^2=4$, while halving amplitude contributes $(1/2)^2=1/4$, so $P_{\mathrm{avg},2}/P_{\mathrm{avg},1}=1$.
 - id: q3-wpis-two-d
   content: |-
     $2$
   feedback: |-
-    This does not apply both square-law factors. The frequency contributes $4$ while the amplitude contributes $1/4$, so their product is $1$.
+    This does not combine both quadratic effects. Frequency raises the ratio by $2^2=4$, but amplitude lowers it by $(1/2)^2=1/4$; multiplying gives $1$, not $2$.
 - id: q3-wpis-two-e
   content: |-
     $4$
   feedback: |-
-    This keeps only the doubled frequency's squared effect. The halved amplitude also contributes $(1/2)^2=1/4$ and cancels it.
+    This keeps the doubled frequency's $2^2=4$ effect but omits the amplitude change. Halving amplitude supplies $(1/2)^2=1/4$, which exactly cancels that increase.
 ```
 
 ---
@@ -202,28 +202,28 @@ options:
   content: |-
     $1/81$
   feedback: |-
-    This squares the intensity ratio again. To undo $I\propto f^2$, take the positive square root of $1/9$.
+    This squares the already-squared effect again. Because $I_2/I_1=(f_2/f_1)^2$, recovering the positive frequency ratio requires a square root: $f_2/f_1=\sqrt{1/9}=1/3$.
 - id: q3-wpis-reverse-b
   content: |-
     $1/9$
   feedback: |-
-    This reports the intensity ratio as though frequency scaled linearly. Since the frequency ratio is squared, solve it with a square root.
+    This copies the intensity ratio as though intensity scaled linearly with frequency. The frequency ratio is squared in intensity, so $f_2/f_1=\sqrt{1/9}=1/3$.
 - id: q3-wpis-reverse-c
   content: |-
     $1/3$
   correct: true
   feedback: |-
-    Correct. Since $I_2/I_1=(f_2/f_1)^2$, the positive frequency ratio is $\sqrt{1/9}=1/3$.
+    With amplitude, medium, and area unchanged, intensity scales as $f^2$. Therefore the positive frequency ratio is $f_2/f_1=\sqrt{I_2/I_1}=\sqrt{1/9}=1/3$.
 - id: q3-wpis-reverse-d
   content: |-
     $3$
   feedback: |-
-    This takes the square root but reverses the ratio. Because $I_2<I_1$, the corresponding positive frequency ratio must be less than $1$.
+    This takes the square root after reversing the comparison. Since $I_2/I_1=1/9<1$, wave 2 must also have the smaller frequency, so $f_2/f_1=1/3$, not $3$.
 - id: q3-wpis-reverse-e
   content: |-
     $9$
   feedback: |-
-    This reverses the given ratio and also fails to undo the square. The required ratio is $\sqrt{1/9}=1/3$.
+    This reverses $I_2/I_1$ and does not undo the square-law relation. Keep the new-to-old order and take the positive square root: $f_2/f_1=\sqrt{1/9}=1/3$.
 ```
 
 ---
@@ -265,28 +265,28 @@ options:
   content: |-
     $2/25$
   feedback: |-
-    This incorrectly squares the surface-area factor. Surface area appears to the first power in $I=P_{\mathrm{avg}}/A_s$.
+    This treats surface area like wave amplitude and squares its factor. Surface area appears only to the first power in $I=P_{\mathrm{avg}}/A_s$, so the ratio is $2/5$, not $2/25$.
 - id: q3-wpis-area-b
   content: |-
     $2/5$
   correct: true
   feedback: |-
-    Correct. Use $I=P_{\mathrm{avg}}/A_s$: the power contributes a factor of $2$ and the area contributes a factor of $1/5$.
+    Intensity is power distributed per unit area. Doubling the power contributes a factor of $2$, while spreading it over five times the area contributes $1/5$, so $I_2/I_1=2/5$.
 - id: q3-wpis-area-c
   content: |-
     $1/2$
   feedback: |-
-    This reverses the power change and ignores the fivefold area increase. Use the new-to-old power factor $2$ and area factor $1/5$ together.
+    This uses the reciprocal of the power factor and omits the area factor. The power doubles while the area grows fivefold, so $I_2/I_1=2(1/5)=2/5$.
 - id: q3-wpis-area-d
   content: |-
     $5/2$
   feedback: |-
-    This puts the area ratio in the numerator. A larger carrying area spreads the power out, so the factor is $A_{s,1}/A_{s,2}=1/5$.
+    This puts the fivefold area increase in the numerator, as though spreading power over more area increased intensity. Area divides power, so $I_2/I_1=2/5$.
 - id: q3-wpis-area-e
   content: |-
     $10$
   feedback: |-
-    This multiplies by the area increase as though larger area concentrated the power. Intensity divides power by surface area, giving $2/5$.
+    This multiplies the power and area factors, but a larger area spreads the power out. Since $I=P_{\mathrm{avg}}/A_s$, the correct new-to-old ratio is $2/5$.
 ```
 
 ---

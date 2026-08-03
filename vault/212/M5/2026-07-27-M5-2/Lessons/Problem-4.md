@@ -87,27 +87,27 @@ options:
     $x_s=-1\ \mathrm{m}$ and $r=4\ \mathrm{m}$
   correct: true
   feedback: |-
-    The midpoint is $(-5+3)/2=-1$, and each listener is $4\ \mathrm{m}$ from that point.
+    Simultaneous detection of the same circular wavefront means both listeners are equally far from the source, so the source is their midpoint: $x_s=(-5+3)/2=-1\ \mathrm{m}$. Each listener is then $4\ \mathrm{m}$ away, so $r=4\ \mathrm{m}$.
 - id: b
   content: |-
     $x_s=-2\ \mathrm{m}$ and $r=8\ \mathrm{m}$
   feedback: |-
-    The source is the midpoint, and $8\ \mathrm{m}$ is the full listener separation rather than the radius.
+    The source must be the midpoint, $x_s=-1\ \mathrm{m}$, not $-2\ \mathrm{m}$. Also, $8\ \mathrm{m}$ is the diameter between the two listeners; the source-to-listener radius is half of that, $4\ \mathrm{m}$.
 - id: c
   content: |-
     $x_s=+1\ \mathrm{m}$ and $r=4\ \mathrm{m}$
   feedback: |-
-    Keep the sign when averaging: $(-5+3)/2=-1$, not $+1$.
+    The radius is right, but the midpoint sign is not. The negative coordinate has the larger magnitude, so $(-5+3)/2=-1\ \mathrm{m}$, placing the source left of the origin.
 - id: d
   content: |-
     $x_s=-1\ \mathrm{m}$ and $r=8\ \mathrm{m}$
   feedback: |-
-    The midpoint is correct, but the radius is half the endpoint separation.
+    The source coordinate is correct, but $8\ \mathrm{m}$ is the full distance from one listener to the other. Since they are opposite points on the wavefront, the radius is half that distance: $r=4\ \mathrm{m}$.
 - id: e
   content: |-
     $x_s=+4\ \mathrm{m}$ and $r=2\ \mathrm{m}$
   feedback: |-
-    Neither value is the midpoint-and-radius pair for the two listener coordinates.
+    Equal source-to-listener distances place the source at the midpoint, not at either half-separation: $x_s=(-5+3)/2=-1\ \mathrm{m}$. Its distance to either listener is $4\ \mathrm{m}$, so neither $+4\ \mathrm{m}$ nor $2\ \mathrm{m}$ has the required role.
 ```
 
 ---
@@ -158,28 +158,28 @@ options:
   content: |-
     $5\ \mathrm{m}$
   feedback: |-
-    This is the horizontal leg, not the vertical coordinate.
+    The $5\ \mathrm{m}$ is the horizontal distance from the center at $x=-5\ \mathrm{m}$ to the $y$-axis. It is one leg; the requested vertical leg is $y=\sqrt{13^2-5^2}=12\ \mathrm{m}$.
 - id: b
   content: |-
     $8\ \mathrm{m}$
   feedback: |-
-    A leg must be found from $y=\sqrt{r^2-(\Delta x)^2}$.
+    The radius $13\ \mathrm{m}$ is the hypotenuse and the horizontal leg is $5\ \mathrm{m}$. The Pythagorean theorem therefore gives $y=\sqrt{13^2-5^2}=12\ \mathrm{m}$, not $8\ \mathrm{m}$.
 - id: c
   content: |-
     $12\ \mathrm{m}$
   correct: true
   feedback: |-
-    $y=\sqrt{13^2-5^2}=\sqrt{169-25}=\sqrt{144}=12\ \mathrm{m}$.
+    The source-to-listener radius is the hypotenuse, and the center is $5\ \mathrm{m}$ horizontally from the $y$-axis. Thus $5^2+y^2=13^2$, giving the positive-axis coordinate $y=12\ \mathrm{m}$.
 - id: d
   content: |-
     $13\ \mathrm{m}$
   feedback: |-
-    This is the radius, or hypotenuse, not the vertical leg.
+    The $13\ \mathrm{m}$ radius is the hypotenuse, not the requested vertical leg. Because the center is horizontally offset from the $y$-axis, that leg is shorter: $y=\sqrt{13^2-5^2}=12\ \mathrm{m}$.
 - id: e
   content: |-
     $18\ \mathrm{m}$
   feedback: |-
-    A triangle leg cannot exceed its $13\ \mathrm{m}$ hypotenuse.
+    The requested coordinate is a leg of a right triangle whose hypotenuse is the $13\ \mathrm{m}$ radius, so it cannot be $18\ \mathrm{m}$. Subtract the known leg in quadrature to obtain $y=12\ \mathrm{m}$.
 ```
 
 ---
@@ -226,27 +226,27 @@ options:
     $\displaystyle \sqrt{6^2-3^2}=\sqrt{27}\ \mathrm{m}$
   correct: true
   feedback: |-
-    The source is at $x_s=(-9+3)/2=-3$, the radius is $6$, and the horizontal leg to the $y$-axis is $3$.
+    The same wavefront puts the source at the listeners' midpoint, $x_s=-3\ \mathrm{m}$, with radius $6\ \mathrm{m}$. Its horizontal offset from the $y$-axis is $3\ \mathrm{m}$, so the positive coordinate is $y=\sqrt{6^2-3^2}=\sqrt{27}\ \mathrm{m}$.
 - id: b
   content: |-
     $\displaystyle \sqrt{6^2+3^2}=\sqrt{45}\ \mathrm{m}$
   feedback: |-
-    The radius is the hypotenuse, so solve for the missing leg by subtracting, not adding.
+    This treats the radius as a leg. The $6\ \mathrm{m}$ radius is the hypotenuse, so $3^2+y^2=6^2$ and the known leg must be subtracted: $y=\sqrt{27}\ \mathrm{m}$.
 - id: c
   content: |-
     $\displaystyle 6-3=3\ \mathrm{m}$
   feedback: |-
-    The Pythagorean relation uses squared lengths before taking a square root.
+    This subtracts leg lengths directly, but perpendicular distances combine through their squares. The required relation is $y=\sqrt{6^2-3^2}=\sqrt{27}\ \mathrm{m}$, not $6-3$.
 - id: d
   content: |-
     $\displaystyle \sqrt{12^2-3^2}=\sqrt{135}\ \mathrm{m}$
   feedback: |-
-    $12\ \mathrm{m}$ is the full listener separation; the radius is $6\ \mathrm{m}$.
+    This uses the $12\ \mathrm{m}$ listener separation as the hypotenuse. That separation is the wavefront diameter, so the source-to-listener radius is $6\ \mathrm{m}$ and the correct expression is $\sqrt{6^2-3^2}$.
 - id: e
   content: |-
     $6\ \mathrm{m}$
   feedback: |-
-    This is the radius. Because the source is not on the $y$-axis, the vertical leg must be shorter.
+    This reports the $6\ \mathrm{m}$ radius rather than the vertical coordinate. Since the source is $3\ \mathrm{m}$ horizontally from the $y$-axis, the vertical leg must be shorter than the hypotenuse: $y=\sqrt{27}\ \mathrm{m}$.
 ```
 
 ---
@@ -293,28 +293,28 @@ options:
   content: |-
     $2.0$
   feedback: |-
-    This is the horizontal distance from the source at $x_s=-2.0$ to the $y$-axis, not the listener's vertical coordinate.
+    The $2.0\ \mathrm{m}$ is the source's horizontal offset from the $y$-axis, not the requested vertical coordinate. With radius $4.0\ \mathrm{m}$, the vertical leg is $y=\sqrt{4.0^2-2.0^2}=3.464\ldots\ \mathrm{m}$, which rounds to $3.5$.
 - id: b
   content: |-
     $3.5$
   correct: true
   feedback: |-
-    The source is at $x_s=-2.0$, the radius is $4.0$, and $y=\sqrt{4.0^2-2.0^2}=\sqrt{12}=3.464\ldots\ \mathrm{m}$, which rounds to $3.5$.
+    Equal distance places the source at $x_s=-2.0\ \mathrm{m}$ and makes the radius $4.0\ \mathrm{m}$. The right triangle gives $y=\sqrt{4.0^2-2.0^2}=3.464\ldots\ \mathrm{m}$, so the requested two-significant-figure entry is $3.5$.
 - id: c
   content: |-
     $4.0$
   feedback: |-
-    This is the wavefront radius. Because the source is not on the $y$-axis, the vertical leg must be shorter than the $4.0\ \mathrm{m}$ hypotenuse.
+    The $4.0\ \mathrm{m}$ is the wavefront radius, or hypotenuse. Because the source is $2.0\ \mathrm{m}$ from the $y$-axis, the requested vertical leg is shorter: $y=3.464\ldots\ \mathrm{m}$, entered as $3.5$.
 - id: d
   content: |-
     $4.5$
   feedback: |-
-    This comes from an incorrect triangle calculation or rounding. Use $y=\sqrt{4.0^2-2.0^2}=3.464\ldots$ before rounding to two significant figures.
+    Rounding cannot turn $3.464\ldots$ into $4.5$. The radius is the hypotenuse, so $y=\sqrt{4.0^2-2.0^2}=3.464\ldots\ \mathrm{m}$ and the two-significant-figure entry is $3.5$.
 - id: e
   content: |-
     $8.0$
   feedback: |-
-    This is the full separation between the two $x$-axis listeners, which is the diameter. The source-to-listener radius is only $4.0\ \mathrm{m}$.
+    The $8.0\ \mathrm{m}$ is the full listener separation, so it is the diameter rather than the requested $y$-coordinate. The radius is $4.0\ \mathrm{m}$, and the source's horizontal offset makes $y=3.464\ldots\ \mathrm{m}$, entered as $3.5$.
 ```
 
 ---

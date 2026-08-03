@@ -9,6 +9,10 @@ description: Refine an existing core-move lesson by comparing it against lessons
 
 Improve a generated core-move lesson by studying real Math Academy lesson patterns, identifying transferable pedagogy, and editing the generated lesson accordingly. The skill should produce a better lesson, not just a critique.
 
+Before creating or changing any quiz block, invoke `$quiz-block-factory` at
+`/Users/jake/Developer/study/util/skills/quiz-block-factory`. Its schema, feedback
+standard, and validator are authoritative.
+
 Primary comparison folder:
 
 ```text
@@ -61,16 +65,22 @@ rg -n -i "keyword|synonym|notation" vault/MA/Mathematical-Foundations
    - Put every practice item in a fenced `quiz` block.
    - Use `type: radio` for ordinary multiple-choice practice.
    - Keep quiz ids and option ids unique and stable within the file.
+   - Preserve or improve substantive corrective feedback for every generated radio or
+     checkbox option, following `$quiz-block-factory`; correct responses need a
+     rule-to-conclusion explanation, while distractors need option-specific diagnosis
+     and repair.
    - Do not introduce unrelated downstream topics just because a sampled lesson is broader.
 
 6. Validate.
    - If the lesson contains quiz blocks, run the quiz validator:
 
 ```bash
-python3 /Users/jake/Developer/study/util/skills/core-move-lesson/scripts/validate_quiz_blocks.py \
+python3 /Users/jake/Developer/study/util/skills/quiz-block-factory/scripts/validate_quiz_blocks.py \
   /path/to/lesson.md \
   --require-radio-practice \
-  --strict-ids
+  --strict-ids \
+  --require-feedback \
+  --lint-feedback
 ```
 
    - Run `git diff --check -- /path/to/lesson.md`.

@@ -264,6 +264,6 @@
         - [ ] [[M5/2026-08-02-PQ-3/Lessons/Problem-4|M5.48. Deriving Wave Speed on a Load-Bearing Wire]]
         - [ ] [[M5/2026-08-02-PQ-3/Lessons/Problem-5|M5.49. Extreme Doppler Frequencies from a Rotating Source]]
     - **2026-08-03-Q-3**
-        - [ ] [[M5/2026-08-03-Q-3/Lessons/shm-speeding-up-or-slowing-down|M5.50. Deciding Whether an SHM Oscillator Is Speeding Up or Slowing Down]]
+        - [x] [[M5/2026-08-03-Q-3/Lessons/shm-speeding-up-or-slowing-down|M5.50. Deciding Whether an SHM Oscillator Is Speeding Up or Slowing Down]]
         - [ ] [[M5/2026-08-03-Q-3/Lessons/wave-power-intensity-scaling|M5.51. Scaling Wave Power and Intensity with Frequency and Amplitude]]
         - [ ] [[M5/2026-08-03-Q-3/Lessons/fixed-free-end-reflection|M5.52. Reflections at Fixed and Free Ends]]

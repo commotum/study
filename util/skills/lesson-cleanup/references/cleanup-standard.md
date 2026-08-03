@@ -9,19 +9,9 @@
 
 ## Quiz type selection
 
-Read `/Users/jake/Developer/study/vault/Old/admin/quiz-test.md` first for the current canonical syntax.
+Invoke `$quiz-block-factory` before creating or changing a quiz block. Its schema reference is the single authority for supported types, canonical fields, answer encoding, feedback placement, and validation. Do not maintain a second field or type table in this cleanup reference.
 
-| Type | Use for | Do not use when |
-|---|---|---|
-| `radio` | One correct choice from fixed options | Several options are independently correct |
-| `checkbox` | Two or more independently correct choices | The answer is a single combined choice such as “B and D only” |
-| `select` | Several subprompts share one exact option bank | Each subprompt needs different choices |
-| `multi-select` | Several subprompts each need their own dropdown choices | A short typed result or matching layout is clearer |
-| `noodle` | Matching two sets of concepts, labels, quantities, or definitions | Pairings are not one-to-one or order matters |
-| `free` | Drawings, diagrams, derivations, proofs, explanations, or work shown on paper | A short determinate response fits a blank |
-| `blank` | One or more concise determinate values, expressions, labels, or statements | Multiple-choice options are part of the source task |
-
-Use the task's response shape, not the number of sentences in its stem, to choose the quiz type.
+For cleanup, preserve the source response shape and supplied choices. Choose among the factory-supported types from the task's response shape, not the number of sentences in its stem. Never change a fixed-choice source question into a different assessment merely to avoid an unknown answer key.
 
 ## Multipart problems
 
@@ -36,12 +26,13 @@ Use the task's response shape, not the number of sentences in its stem, to choos
 ## Correctness and source fidelity
 
 - Preserve supplied option wording and academic meaning.
-- Mark exactly one `correct: true` option in `radio`.
-- Mark every correct option in `checkbox`.
+- Follow `$quiz-block-factory` for canonical correctness fields and cardinality once the answer key is established.
 - Do not change a source question into checkbox merely because the correct radio option says “B and D only.”
 - Repeated option text is not an image duplicate. Preserve it when it is present in the source, and report ambiguity if it creates more than one equivalent answer.
 - Do not infer a missing answer key from option position or prior shuffle order.
-- For `free`, make `correct` a reference answer or checklist of required features, not a claim that wording must match exactly.
+- When the key is known, use the factory's feedback standard. Explain each supplied distractor's objective error and the controlling rule; attribute a specific misconception only when the option or source context supports it.
+- When the key is genuinely unknown, do not invent correct flags, answer explanations, or a student's reasoning. Preserve the source question, run structural validation, and report both the exception and any consequent correctness-validation failure. In a mixed document, still require and lint feedback for the known-key blocks; treat only failures confined to unknown-key blocks as explicit exceptions.
+- For `free`, follow the factory's reference-answer and feedback policy; do not imply that wording must match exactly.
 - For `blank`, put the literal response the student should type inside `==...==`, not a typeset representation of that response.
 - Keep hidden answers plain and keyboard-enterable. Never wrap them in `$...$` or include LaTeX such as `\frac`, `\times`, `\sqrt`, `\mathrm`, or spacing commands. Do not include an equation label such as `f_5=` or a unit when the prompt requests a number only.
 - Prefer `require_exact: true` when an authoritative answer has one canonical typed form. Use `require_exact: false` only for an intentional answer-reveal field or when multiple equivalent typed forms make exact string grading inappropriate.

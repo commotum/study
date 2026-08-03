@@ -65,18 +65,18 @@ options:
   content: |-
     Only motion to the right
   feedback: |-
-    Rightward motion describes the propagation of the wave pattern, not the transverse motion of the marked string particle.
+    This assigns the wave pattern's propagation to the material point. “Travels right” tells how the shape advances along the string; a particle in a transverse wave moves vertically and may be moving up, moving down, or momentarily at rest.
 - id: b
   content: |-
     Vertical motion or momentary rest
   correct: true
   feedback: |-
-    A string particle moves transversely, so it can move up, move down, or be momentarily at rest.
+    In a transverse wave, each marked string particle moves perpendicular to the horizontal propagation direction. It can therefore move up or down, and at a vertical turning point it can be momentarily at rest.
 - id: c
   content: |-
     Only motion to the left
   feedback: |-
-    A transverse string particle does not have to move opposite the propagation direction; its motion is vertical.
+    This treats the particle as moving horizontally opposite the wave pattern. Propagation direction and particle motion are different: the pattern moves right, while the marked particle's allowed motion is vertical or momentary rest.
 ```
 
 ---
@@ -113,17 +113,17 @@ options:
     The slightly lower part just to the left
   correct: true
   feedback: |-
-    A rightward shift brings the old value from just left of the fixed position. Positive slope makes that neighboring value lower, so the particle moves down.
+    A right-moving profile carries the old shape from left to right, so the new height at a fixed $x$ comes from just to its left. On a positive slope that left-neighbor value is lower, so the marked particle's height decreases and it moves down.
 - id: b
   content: |-
     The slightly higher part just to the right
   feedback: |-
-    That would correspond to shifting the profile left. A right-moving profile brings values from the left.
+    This samples the profile from the wrong side. A value just to the right would arrive at the fixed point only for a left-moving wave; a right-moving wave brings the slightly lower value from the left.
 - id: c
   content: |-
     The same part, because no particle can move
   feedback: |-
-    The particle stays at the same horizontal position, but it can move vertically as the profile passes.
+    This confuses fixed horizontal position with complete rest. The marked particle does remain at the same $x$, but the passing profile changes its vertical displacement; here the incoming lower value makes it move downward.
 ```
 
 ---
@@ -168,18 +168,18 @@ options:
   content: |-
     Moving up
   feedback: |-
-    Upward motion requires negative spatial slope for a right-moving wave.
+    For a right-moving profile, vertical velocity has the opposite sign from spatial slope: $\partial y/\partial t=-v\,\partial y/\partial x$. Upward motion requires negative slope, whereas the stated zero slope gives zero vertical velocity.
 - id: b
   content: |-
     Moving down
   feedback: |-
-    Downward motion requires positive spatial slope for a right-moving wave.
+    Downward motion occurs where a right-moving wave has positive spatial slope. At the stated point the slope is zero, so $\partial y/\partial t=-v(0)=0$ and the particle is momentarily at rest vertically.
 - id: c
   content: |-
     Momentarily not moving vertically
   correct: true
   feedback: |-
-    Since \(\partial y/\partial t=-v\,\partial y/\partial x\), zero spatial slope gives zero vertical velocity at that instant.
+    A right-moving wave has vertical particle velocity opposite in sign to its spatial slope. Since the local slope is zero, $\partial y/\partial t=-v(0)=0$, so the particle is momentarily not moving vertically.
 ```
 
 ---
@@ -222,40 +222,40 @@ options:
 - id: a
   content: Up
   feedback: |-
-    Upward motion would require a negative local slope. The marked point has positive slope, so a right-moving profile gives downward velocity.
+    This reverses the slope rule. For a right-moving wave, particle velocity is opposite the local spatial slope; upward motion requires negative slope, but the marked point has positive slope and therefore moves down.
 - id: b
   content: Down
   correct: true
   feedback: |-
-    For a right-moving wave, $\partial y/\partial t=-v\,\partial y/\partial x$. The string has positive slope at the marked point, so its vertical velocity is negative: downward.
+    As a right-moving profile shifts past a fixed particle, the particle's vertical motion is opposite the profile's local slope. The marked point lies on a positive slope, so $\partial y/\partial t<0$ and the particle moves down.
 - id: c
   content: Right
   feedback: |-
-    Right is the propagation direction of the wave pattern; a particle of the transverse string does not travel horizontally with it.
+    This gives the marked particle the wave pattern's propagation velocity. The shape moves right along the string, but a transverse string particle stays at its horizontal coordinate and moves vertically; here it moves down.
 - id: d
   content: Left
   feedback: |-
-    Reversing the wave's propagation arrow does not give the particle direction. The particle moves transversely, not along the string.
+    This assumes the material particle travels opposite the pattern. A transverse particle does not move along the string in either horizontal direction; its motion is vertical, and the positive slope makes that motion downward here.
 - id: e
   content: Up and to the right
   feedback: |-
-    This both assigns the pattern's rightward motion to the particle and misses the sign rule: positive slope means downward motion here.
+    This combines two distinct errors. Right describes the pattern's propagation, not the particle's motion, and a positive slope on a right-moving wave gives downward—not upward—vertical velocity.
 - id: f
   content: Up and to the left
   feedback: |-
-    The particle has no horizontal motion, and positive slope on a right-moving wave gives downward rather than upward velocity.
+    Neither component matches the particle's motion. A transverse string particle has no leftward horizontal velocity, and for a right-moving profile the marked positive slope corresponds to downward vertical velocity.
 - id: g
   content: Down and to the right
   feedback: |-
-    Down is the correct transverse direction, but rightward motion belongs to the traveling profile, not to the marked string particle.
+    The downward component correctly follows from the marked point's positive slope. The added rightward component belongs only to the traveling wave shape; the material particle remains at the same horizontal coordinate.
 - id: h
   content: Down and to the left
   feedback: |-
-    Down is correct, but the marked particle remains at its horizontal coordinate rather than moving left along the string.
+    The downward component is correct, but the leftward component is not. The particle moves transversely while staying at its fixed $x$; it does not travel horizontally with or against the wave pattern.
 - id: i
   content: It is not moving
   feedback: |-
-    Momentary vertical rest requires zero local slope. The marked point has positive slope, so its vertical velocity is nonzero and downward.
+    A particle of a traveling wave is momentarily at rest only where the profile's local slope is zero. The marked point has positive slope, so its vertical velocity is nonzero and, for rightward propagation, directed downward.
 ```
 
 ---

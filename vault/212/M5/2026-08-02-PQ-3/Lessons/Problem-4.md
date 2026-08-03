@@ -96,23 +96,23 @@ options:
   content: |-
     An upward force $mg$ at the shelf's end
   feedback: |-
-    This reverses the interaction force. The string pulls upward on the hanging block, so by Newton's third law it pulls downward on the shelf.
+    This reverses the Newton's-third-law pair. The string pulls upward on the block, but the force asked for is the string's force on the shelf, which points downward at the attachment point.
 - id: q1-b
   content: |-
     A downward force $mg$ at the shelf's end
   correct: true
   feedback: |-
-    The stationary block has string tension $T_s=mg$. The same string therefore pulls downward on the shelf with magnitude $mg$ at the attachment point.
+    Because the block is stationary, the string tension balances its weight, so $T_s=mg$. That same string pulls downward on the shelf at its end with magnitude $mg$.
 - id: q1-c
   content: |-
     A downward force $mg/2$ at the shelf's center
   feedback: |-
-    The block's full weight is transmitted through the string, and the force acts where the string attaches at the shelf's end. The shelf's own weight is the force that acts at its center.
+    The block's full weight is transmitted as string tension, not halved. This force acts where the string attaches at the end; the force at the shelf's center is the shelf's own weight.
 - id: q1-d
   content: |-
     No force, because the block is stationary
   feedback: |-
-    Stationary means the block's forces balance, not that they vanish. Its weight is balanced by string tension, and that tension acts on the shelf.
+    Stationary means the block's net force is zero, not that each force is zero. Its weight is balanced by a nonzero string tension, and the string therefore exerts a downward force on the shelf.
 ```
 
 ---
@@ -155,22 +155,22 @@ options:
     $\dfrac{(M+2m)g}{2\sin\alpha}$
   correct: true
   feedback: |-
-    About the hinge, $TL\sin\alpha=Mg(L/2)+mgL$. Canceling $L$ and solving gives $T=(M+2m)g/(2\sin\alpha)$.
+    About the hinge, only the wire's perpendicular component $T\sin\alpha$ produces its counterclockwise torque. Balancing it against the shelf weight at $L/2$ and the hanging weight at $L$ gives $TL\sin\alpha=Mg(L/2)+mgL$, so $T=(M+2m)g/(2\sin\alpha)$.
 - id: q2-b
   content: |-
     $\dfrac{(M+m)g}{\sin\alpha}$
   feedback: |-
-    This treats the shelf's weight as though it acted at the end. Its lever arm is $L/2$, while the hanging mass acts at $L$.
+    This gives both weights the full lever arm $L$. A uniform shelf's weight acts at its center, so its torque uses $L/2$; only the hanging mass uses $L$.
 - id: q2-c
   content: |-
     $\dfrac{(M+2m)g}{2\cos\alpha}$
   feedback: |-
-    This uses the wire component parallel to the shelf. The torque-producing component is perpendicular to the shelf, $T\sin\alpha$.
+    This uses the component of tension parallel to the shelf. A parallel force has no torque about the hinge; the perpendicular component is $T\sin\alpha$, so the denominator must contain $\sin\alpha$.
 - id: q2-d
   content: |-
     $\dfrac{(2M+m)g}{2\sin\alpha}$
   feedback: |-
-    This assigns the half-length lever arm to the hanging mass instead of the shelf. The correct torque weights are $M/2$ and $m$.
+    This gives the half-length lever arm to the wrong mass. The shelf's weight $Mg$ acts at $L/2$, while the hanging weight $mg$ acts at $L$, producing the mass combination $M/2+m$, not $M+m/2$.
 ```
 
 ---
@@ -210,23 +210,23 @@ options:
   content: |-
     $\dfrac{m}{d}$
   feedback: |-
-    This mistakes the horizontal span for the wire length. Because the wire is the hypotenuse, its length is $d/\cos\beta$.
+    This treats the horizontal span $d$ as the wire's full length. The slanted wire is the hypotenuse, $L_w=d/\cos\beta>d$, so its density is smaller than $m/d$.
 - id: q3-b
   content: |-
     $\dfrac{m}{d\cos\beta}$
   feedback: |-
-    This inverts the geometry factor. Dividing $m$ by the actual length $d/\cos\beta$ multiplies by $\cos\beta$ rather than dividing by it.
+    This divides by $d\cos\beta$, which would make the wire shorter than its horizontal span. The wire length is $d/\cos\beta$, so dividing $m$ by that length multiplies by $\cos\beta$.
 - id: q3-c
   content: |-
     $\dfrac{m\cos\beta}{d}$
   correct: true
   feedback: |-
-    Since $L_w=d/\cos\beta$, the linear density is $\mu=m/L_w=m\cos\beta/d$.
+    The wire is the hypotenuse, so its length is $L_w=d/\cos\beta$. Linear density is mass per actual wire length; therefore $\mu=m/L_w=m\cos\beta/d$.
 - id: q3-d
   content: |-
     $\dfrac{m\sin\beta}{d}$
   feedback: |-
-    The given span $d$ is adjacent to $\beta$, so the relevant relation uses cosine. Sine would connect the wire length to the vertical rise.
+    The known horizontal span $d$ is adjacent to $\beta$, so it is related to the hypotenuse by cosine. Sine would be appropriate if the vertical rise, rather than the horizontal span, were given.
 ```
 
 ---
@@ -292,23 +292,23 @@ options:
   content: |-
     $6.7\ \mathrm{m/s}$
   feedback: |-
-    This is too small because it does not combine the full shelf-and-block torque with the actual wire density. Use both $T=(M+2m)g/(2\sin\theta)$ and $\mu=m_w\cos\theta/L$.
+    This value does not follow from the tension and density of the given wire. Torque balance gives $T=78.4\ \mathrm{N}$ and the slanted length gives $\mu=0.433\ \mathrm{kg/m}$; their ratio must then be square-rooted, giving $13.5\ \mathrm{m/s}$.
 - id: q4-b
   content: |-
     $9.8\ \mathrm{m/s}$
   feedback: |-
-    Matching the numerical value of $g$ is not a wave-speed calculation. Gravity first sets the tension; then compute $v=\sqrt{T/\mu}$.
+    This reuses the numerical value of $g$, but acceleration due to gravity is not the wave speed. Gravity helps determine the wire tension; the requested speed is then $v=\sqrt{T/\mu}=13.5\ \mathrm{m/s}$.
 - id: q4-c
   content: |-
     $13.5\ \mathrm{m/s}$
   correct: true
   feedback: |-
-    The torque balance gives $T=78.4\ \mathrm{N}$, and the wire geometry gives $\mu=(1.5\cos30^\circ)/3.0=0.433\ \mathrm{kg/m}$. Thus $v=\sqrt{78.4/0.433}=13.5\ \mathrm{m/s}$.
+    The shelf and block set the support tension: $T=78.4\ \mathrm{N}$. The wire's actual slanted length sets $\mu=(1.5\cos30^\circ)/3.0=0.433\ \mathrm{kg/m}$, so $v=\sqrt{T/\mu}=13.5\ \mathrm{m/s}$.
 - id: q4-d
   content: |-
     $19.6\ \mathrm{m/s}$
   feedback: |-
-    This overestimates the speed by mishandling a geometric or square-root factor. The wire is longer than the shelf, so $\mu=m_w\cos30^\circ/L$, and the final ratio must be square-rooted.
+    This is larger than $\sqrt{T/\mu}$ for the stated wire. The wire is longer than the shelf, so $\mu=m_w\cos30^\circ/L=0.433\ \mathrm{kg/m}$; using $T=78.4\ \mathrm{N}$ gives $13.5\ \mathrm{m/s}$, not $19.6\ \mathrm{m/s}$.
 ```
 
 ---
@@ -340,23 +340,23 @@ options:
   content: |-
     Doubling the wave amplitude
   feedback: |-
-    In the ideal small-amplitude model, amplitude changes the wave's energy and power, not the medium-controlled speed $\sqrt{T/\mu}$.
+    Amplitude controls the wave's displacement scale and, in the ideal model, its energy and power. Speed is controlled by the medium through $v=\sqrt{T/\mu}$, so doubling amplitude leaves it unchanged.
 - id: q5-b
   content: |-
     Doubling the wavelength while leaving the medium unchanged
   feedback: |-
-    Wavelength and frequency adjust together so that $v=f\lambda$ remains fixed for the unchanged medium. Wavelength alone does not set this speed.
+    Wavelength does not set the speed of an unchanged nondispersive wire. Its frequency adjusts so that $f\lambda=\sqrt{T/\mu}$, so doubling $\lambda$ alone does not increase $v$.
 - id: q5-c
   content: |-
     Doubling the wire tension
   correct: true
   feedback: |-
-    With $\mu$ fixed, $v=\sqrt{T/\mu}$, so doubling $T$ increases the speed by a factor of $\sqrt{2}$.
+    Wave speed on a wire grows with the square root of tension. With $\mu$ fixed, doubling $T$ makes $v'=\sqrt{2T/\mu}=\sqrt2\,v$, so the speed increases.
 - id: q5-d
   content: |-
     Shifting the wave's phase by $\pi$
   feedback: |-
-    A phase shift changes where the waveform is in its cycle, not the wire's tension or linear density, so it cannot change the propagation speed.
+    Phase identifies where the oscillation is in its cycle; it does not change the wire's tension or linear density. Shifting phase by $\pi$ therefore leaves $v=\sqrt{T/\mu}$ unchanged.
 ```
 
 ---

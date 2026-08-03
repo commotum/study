@@ -77,22 +77,22 @@ options:
     $300\ \mathrm{nm}$
   correct: true
   feedback: |-
-    Divide the air wavelength by the index: $540\ \mathrm{nm}/1.8=300\ \mathrm{nm}$. The wavelength must decrease because $n>1$. The choice $540\ \mathrm{nm}$ leaves the wavelength unchanged, while $972\ \mathrm{nm}$ multiplies by $n$ and changes it in the wrong direction.
+    Frequency stays fixed at the boundary while the wave slows, so the wavelength decreases by the index factor. Thus $\lambda_{\mathrm{material}}=540\ \mathrm{nm}/1.8=300\ \mathrm{nm}$.
 - id: p6-glass-wavelength-b
   content: |-
     $540\ \mathrm{nm}$
   feedback: |-
-    This leaves the wavelength unchanged. The frequency stays fixed at the boundary, but the lower speed in the material makes $\lambda$ decrease to $\lambda_{\mathrm{air}}/n$.
+    This leaves the wavelength unchanged along with the frequency. Only frequency stays fixed at the boundary; the lower speed in the $n=1.8$ material shortens the wavelength to $540/1.8=300\ \mathrm{nm}$.
 - id: p6-glass-wavelength-c
   content: |-
     $972\ \mathrm{nm}$
   feedback: |-
-    This multiplies by the index instead of dividing. For $n>1$, the in-material wavelength must be shorter than $540\ \mathrm{nm}$, not longer.
+    This multiplies the air wavelength by $n$, making it longer. Since the frequency is unchanged and the material slows the wave, $n>1$ must shorten the wavelength: $\lambda_{\mathrm{material}}=540/1.8=300\ \mathrm{nm}$.
 - id: p6-glass-wavelength-d
   content: |-
     $3.33\ \mathrm{nm}$
   feedback: |-
-    This does not evaluate $540/1.8$ and loses two orders of magnitude. A dimensionless index of $1.8$ reduces the wavelength moderately, to $300\ \mathrm{nm}$.
+    An index of $1.8$ changes the wavelength only by a factor of $1.8$, not by two orders of magnitude. Dividing $540\ \mathrm{nm}$ by $1.8$ gives $300\ \mathrm{nm}$.
 ```
 
 ## Count Wavelengths Using Matching Units
@@ -154,22 +154,22 @@ options:
     $3000$
   correct: true
   feedback: |-
-    Convert $0.90\ \mathrm{mm}$ to $9.0\times10^5\ \mathrm{nm}$, then divide by $300\ \mathrm{nm}$. The units cancel and give $N=3000$. A result with a remaining length unit would not be a wavelength count.
+    A wavelength count is total distance divided by wavelength, using matching units. Since $0.90\ \mathrm{mm}=9.0\times10^5\ \mathrm{nm}$, $N=(9.0\times10^5\ \mathrm{nm})/(300\ \mathrm{nm})=3000$.
 - id: p6-count-wavelengths-b
   content: |-
     $0.003$
   feedback: |-
-    This divides $0.90$ by $300$ before matching units. Convert $0.90\ \mathrm{mm}$ to $9.0\times10^5\ \mathrm{nm}$ first.
+    This divides the numerical values while leaving millimeters and nanometers unmatched. Convert $0.90\ \mathrm{mm}$ to $9.0\times10^5\ \mathrm{nm}$ first; then $d/\lambda=3000$.
 - id: p6-count-wavelengths-c
   content: |-
     $300$
   feedback: |-
-    This repeats the wavelength's numerical value instead of counting how many wavelengths fit. The required ratio is total thickness divided by wavelength.
+    The $300$ labels the length of one wavelength in nanometers; it is not a count. The number that fits is the total thickness divided by that length: $(9.0\times10^5)/300=3000$.
 - id: p6-count-wavelengths-d
   content: |-
     $270$
   feedback: |-
-    This multiplies the unmatched numbers $0.90$ and $300$. A wavelength count comes from division after both lengths use the same unit.
+    Multiplying a thickness by a wavelength does not count repeated lengths and leaves squared-length units. A dimensionless count requires $N=d/\lambda$ after matching units, which gives $3000$.
 ```
 
 ## Combine the Two Steps
@@ -200,22 +200,22 @@ options:
     $1500$
   correct: true
   feedback: |-
-    Convert $0.60\ \mathrm{mm}$ to $6.0\times10^5\ \mathrm{nm}$ and use $N=nd/\lambda_{\text{air}}$. This gives $N=(1.5)(6.0\times10^5)/600=1500$. The choice $1000$ comes from using the air wavelength without accounting for the material.
+    The material shortens the wavelength by $n$, so the number fitting in a fixed thickness grows by $n$. With $0.60\ \mathrm{mm}=6.0\times10^5\ \mathrm{nm}$, $N=nd/\lambda_{\mathrm{air}}=(1.5)(6.0\times10^5)/600=1500$.
 - id: p6-combined-formula-b
   content: |-
     $1000$
   feedback: |-
-    This uses the air wavelength directly: $(6.0\times10^5)/600=1000$. In the material the wavelength is shorter by $n$, so the count is larger by $n$.
+    This counts $600\ \mathrm{nm}$ air wavelengths across the slab. Inside the material each wavelength is shorter by $n=1.5$, so the count is larger by that factor: $1000(1.5)=1500$.
 - id: p6-combined-formula-c
   content: |-
     $667$
   feedback: |-
-    This divides the air-based count by $n$ instead of multiplying it. Since $\lambda_{\mathrm{material}}=\lambda_{\mathrm{air}}/n$, the count is $N=nd/\lambda_{\mathrm{air}}$.
+    This divides the air-based count by $n$, as though the material made each wavelength longer. Since $\lambda_{\mathrm{material}}=\lambda_{\mathrm{air}}/n$, shorter wavelengths increase the count to $N=nd/\lambda_{\mathrm{air}}=1500$.
 - id: p6-combined-formula-d
   content: |-
     $400$
   feedback: |-
-    This is the wavelength inside the material, $600/1.5=400\ \mathrm{nm}$, not the number of those wavelengths across the slab.
+    This is the in-material wavelength, $600/1.5=400\ \mathrm{nm}$, so it has units of length. The question asks for the dimensionless count across the slab: $(6.0\times10^5\ \mathrm{nm})/(400\ \mathrm{nm})=1500$.
 ```
 
 ## Apply the Move to Problem 6
@@ -285,22 +285,22 @@ options:
     2800
   correct: true
   feedback: |-
-    The glass wavelength is $650/1.5=433.3\ldots\ \mathrm{nm}$, but the question asks how many of those wavelengths fit into the slide. Converting $1.2\ \mathrm{mm}$ to $1.2\times10^6\ \mathrm{nm}$ and dividing gives $2769.2\ldots$, which rounds to two significant figures as $2800$. The choice $1800$ uses the air wavelength; $1200$ changes the wavelength in the wrong direction; and $433$ reports the glass wavelength instead of the count.
+    Glass shortens the wavelength to $650/1.5=433.3\ldots\ \mathrm{nm}$. The $1.2\ \mathrm{mm}=1.2\times10^6\ \mathrm{nm}$ thickness therefore contains $1.2\times10^6/433.3\ldots=2769.2\ldots$ wavelengths, which rounds to the requested entry $2800$.
 - id: p6-source-check-b
   content: |-
     1800
   feedback: |-
-    This counts with the unchanged air wavelength: $(1.2\times10^6)/650\approx1800$. The wavelength shortens in glass, so more wavelengths fit.
+    This counts unchanged $650\ \mathrm{nm}$ air wavelengths. Frequency stays fixed but the glass slows the light, so each glass wavelength is only $433.3\ldots\ \mathrm{nm}$ and about $2800$ fit.
 - id: p6-source-check-c
   content: |-
     1200
   feedback: |-
-    This effectively lengthens the wavelength by multiplying by $n$. The correct boundary relation divides the air wavelength by $1.5$.
+    This changes the count in the wrong direction, as though glass lengthened the wavelength. Since $n=1.5>1$, glass shortens it to $650/1.5=433.3\ldots\ \mathrm{nm}$, increasing the count to about $2800$.
 - id: p6-source-check-d
   content: |-
     433
   feedback: |-
-    This reports $\lambda_{\mathrm{glass}}=650/1.5\approx433\ \mathrm{nm}$. The question asks for the count $d/\lambda_{\mathrm{glass}}$, not the wavelength itself.
+    This reports the length of one glass wavelength, $\lambda_{\mathrm{glass}}\approx433\ \mathrm{nm}$. The requested quantity is how many such lengths span the slide: $N=d/\lambda_{\mathrm{glass}}\approx2769$, entered as $2800$.
 ```
 
 ## Summary
