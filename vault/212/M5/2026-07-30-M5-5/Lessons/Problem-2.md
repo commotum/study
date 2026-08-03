@@ -66,22 +66,22 @@ options:
     A position occupied by a crest from that circle's source
   correct: true
   feedback: |-
-    Each blue circumference is a crest wavefront, so every point on it has crest phase from that source.
+    Each blue circle is a crest wavefront centered on one source. A point on its circumference therefore has crest phase from that source.
 - id: b
   content: |-
     A position that must be a trough from that source
   feedback: |-
-    The diagram explicitly assigns the blue circles to crests; troughs lie between adjacent crest circles.
+    The diagram defines the blue circles as crests, not troughs. A trough from that source lies halfway between two adjacent blue crest circles.
 - id: c
   content: |-
     A position where two sources must already interfere constructively
   feedback: |-
-    One crest circle identifies only one source's phase; the phase arriving from the second source must also be checked.
+    Being on one circle tells you only that one source contributes a crest. Interference depends on both arrivals, so the other source's phase must be identified before calling the point constructive.
 - id: d
   content: |-
     The location of the wave source
   feedback: |-
-    The source is at the common center of its circular wavefronts, not at every point on a circumference.
+    The source sits at the common center from which its circular wavefronts expand. A point on a circumference is a location reached by that crest, not the source location.
 ```
 
 ---
@@ -106,22 +106,22 @@ options:
     Crest–crest or trough–trough
   correct: true
   feedback: |-
-    Equal phases add: two positive crest displacements reinforce, and two negative trough displacements reinforce.
+    Constructive interference occurs when the arrivals have the same phase. Crest–crest reinforces upward and trough–trough reinforces downward, so both pairs are completely constructive.
 - id: b
   content: |-
     Crest–trough only
   feedback: |-
-    A crest and trough have opposite displacement signs, so their overlap is destructive rather than constructive.
+    A crest and trough have opposite phases and opposite displacement signs. They cancel rather than reinforce, so crest–trough is destructive; constructive pairs are crest–crest and trough–trough.
 - id: c
   content: |-
     Crest–crest only; trough–trough is destructive
   feedback: |-
-    Two troughs are also in phase; their negative displacements add to a deeper trough.
+    Constructive means same phase, not necessarily positive displacement. Two troughs are in phase, so their negative displacements add to make a deeper trough just as two crests make a taller crest.
 - id: d
   content: |-
     Any point lying on one visible crest circle
   feedback: |-
-    Complete interference depends on both arrivals, so one source's crest phase is insufficient.
+    One visible circle identifies a crest from only one source. Complete constructive interference requires the other source to arrive in the same phase, so its wavefront family must also be checked.
 ```
 
 ---
@@ -145,23 +145,23 @@ options:
   content: |-
     Complete constructive interference because one crest reaches $X$
   feedback: |-
-    One crest does not determine the result; halfway between source 1's crests corresponds to a trough from source 1.
+    A point's interference type depends on both sources, not on the presence of one crest. At $X$, source 1 contributes the trough halfway between its crest circles, so that trough cancels source 2's crest.
 - id: b
   content: |-
     Complete constructive interference because $X$ lies between two other crests
   feedback: |-
-    Halfway between adjacent crests is trough phase, not another crest.
+    The halfway location between successive crests is a trough, not an additional crest. Thus $X$ receives a trough from source 1 and a crest from source 2, producing destructive interference.
 - id: c
   content: |-
     Complete destructive interference because a crest meets a trough
   correct: true
   feedback: |-
-    Source 2 supplies a crest while source 1 supplies the trough halfway between its crest circles, so the arrivals are opposite in phase.
+    A crest arrives from source 2, while the midpoint between source 1's adjacent crest circles marks its trough. Those arrivals differ in phase by $\pi$, so they interfere completely destructively.
 - id: d
   content: |-
     Neither, because the drawn circles do not cross at $X$
   feedback: |-
-    Crest-circle crossings mark crest–crest points, but an implied trough between circles can still meet a crest and produce complete destruction.
+    Drawn-line crossings are not required for interference; both waves exist throughout the region. At $X$, a visible crest from one source meets an implied trough from the other, so the result is complete destruction.
 ```
 
 ---
@@ -203,28 +203,34 @@ options:
 - id: p
   content: |-
     $P$ only
-  feedback: P is constructive, but R is also constructive because two troughs meet there.
+  feedback: |-
+    $P$ is correctly included because it is crest–crest, but the set is incomplete. At $R$, two troughs meet in phase and also interfere constructively, so the complete selection is $P$ and $R$.
 - id: q
   content: |-
     $Q$ only
-  feedback: Q is destructive because a crest meets a trough there.
+  feedback: |-
+    At $Q$, one source contributes a crest and the other a trough. Those opposite phases interfere destructively, while the constructive points are $P$ and $R$.
 - id: r
   content: |-
     $R$ only
-  feedback: R is constructive, but P is also constructive because two crests meet there.
+  feedback: |-
+    $R$ is correctly included because it is trough–trough, but the set omits $P$. Two crests meet at $P$ in phase, so the complete selection is $P$ and $R$.
 - id: pq
   content: |-
     $P$ and $Q$
-  feedback: P is constructive, but Q is destructive; this choice also omits constructive point R.
+  feedback: |-
+    $P$ is crest–crest and therefore constructive, but $Q$ is crest–trough and destructive. The choice also misses $R$, where trough–trough is constructive, so the correct pair is $P$ and $R$.
 - id: pr
   content: |-
     $P$ and $R$
   correct: true
-  feedback: P is crest–crest and R is trough–trough, so the two waves arrive in phase at both points.
+  feedback: |-
+    Complete constructive interference requires matching phases. $P$ is crest–crest and $R$ is trough–trough, so both are constructive; $Q$ is crest–trough and is excluded.
 - id: pqr
   content: |-
     $P$, $Q$, and $R$
-  feedback: P and R are constructive, but Q is destructive because a crest meets a trough there.
+  feedback: |-
+    $P$ and $R$ are constructive because their arrivals match in phase. Including $Q$ is the error: a crest meets a trough there, so the arrivals are opposite in phase and interfere destructively.
 ```
 
 ---

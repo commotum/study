@@ -292,7 +292,7 @@ options:
   content: |-
     $6.7\ \mathrm{m/s}$
   feedback: |-
-    This value does not follow from the tension and density of the given wire. Torque balance gives $T=78.4\ \mathrm{N}$ and the slanted length gives $\mu=0.433\ \mathrm{kg/m}$; their ratio must then be square-rooted, giving $13.5\ \mathrm{m/s}$.
+    This results if the support-wire tension is replaced by the hanging block's weight, $19.6\ \mathrm{N}$. That is the tension in the block's vertical string, not in the diagonal wire; shelf torque balance gives $T=78.4\ \mathrm{N}$ and hence $v=13.5\ \mathrm{m/s}$.
 - id: q4-b
   content: |-
     $9.8\ \mathrm{m/s}$
@@ -308,7 +308,7 @@ options:
   content: |-
     $19.6\ \mathrm{m/s}$
   feedback: |-
-    This is larger than $\sqrt{T/\mu}$ for the stated wire. The wire is longer than the shelf, so $\mu=m_w\cos30^\circ/L=0.433\ \mathrm{kg/m}$; using $T=78.4\ \mathrm{N}$ gives $13.5\ \mathrm{m/s}$, not $19.6\ \mathrm{m/s}$.
+    This copies the numerical value of the block's weight, $mg=19.6\ \mathrm{N}$, into a speed answer. A force is not a wave speed; use the diagonal-wire tension $78.4\ \mathrm{N}$ and density $0.433\ \mathrm{kg/m}$ in $\sqrt{T/\mu}$ to get $13.5\ \mathrm{m/s}$.
 ```
 
 ---

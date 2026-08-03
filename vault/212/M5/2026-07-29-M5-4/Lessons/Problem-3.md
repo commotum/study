@@ -75,27 +75,27 @@ options:
     $T=29.4\ \mathrm{N}$ and $\mu=0.0050\ \mathrm{kg/m}$
   correct: true
   feedback: |-
-    Correct. The hanging mass gives $T=Mg$, while the wire mass divided by length gives $\mu=m_w/L$.
+    The two masses have different roles: the hanging mass sets $T=Mg$, while the wire's own mass sets $\mu=m_w/L$. Thus $T=(3.0)(9.8)=29.4\ \mathrm{N}$ and $\mu=0.010/2.0=0.0050\ \mathrm{kg/m}$.
 - id: b
   content: |-
     $T=3.0\ \mathrm{N}$ and $\mu=0.0050\ \mathrm{kg/m}$
   feedback: |-
-    The hanging mass is not itself the tension; multiply it by $g$.
+    $3.0\ \mathrm{kg}$ is the hanging mass, not a force. Because the mass is stationary, its weight sets the tension: $T=Mg=29.4\ \mathrm{N}$; the stated $\mu$ is correct.
 - id: c
   content: |-
     $T=29.4\ \mathrm{N}$ and $\mu=0.020\ \mathrm{kg/m}$
   feedback: |-
-    Linear mass density is wire mass divided by wire length, not their product.
+    Linear mass density means mass per unit length, so divide the wire mass by its length. The tension is correct, but $\mu=0.010/2.0=0.0050\ \mathrm{kg/m}$, not $0.020\ \mathrm{kg/m}$.
 - id: d
   content: |-
     $T=0.098\ \mathrm{N}$ and $\mu=1.5\ \mathrm{kg/m}$
   feedback: |-
-    This uses the wire's weight for $T$ and the hanging mass divided by wire length for $\mu$; the two masses have been swapped.
+    This swaps the masses' physical roles. The $3.0\ \mathrm{kg}$ hanging mass supplies $T=29.4\ \mathrm{N}$, while the $0.010\ \mathrm{kg}$ wire supplies $\mu=0.0050\ \mathrm{kg/m}$.
 - id: e
   content: |-
     $T=29.4\ \mathrm{N}$ and $\mu=1.5\ \mathrm{kg/m}$
   feedback: |-
-    The tension is right, but $\mu$ must use the wire's mass, not the hanging mass.
+    The hanging mass correctly gives $T=29.4\ \mathrm{N}$, but it does not give the wire's linear density. Use the wire mass: $\mu=0.010\ \mathrm{kg}/2.0\ \mathrm{m}=0.0050\ \mathrm{kg/m}$.
 ```
 
 ---
@@ -153,28 +153,28 @@ options:
   content: |-
     $20.8\ \mathrm{Hz}$
   feedback: |-
-    This is the fundamental frequency; the requested third harmonic needs the factor $3$.
+    $20.8\ \mathrm{Hz}=v/(2L)$ is the fundamental. On a fixed-end wire, $f_n=nf_1$, so the third harmonic is $3(20.8\ldots)=62.5\ \mathrm{Hz}$.
 - id: b
   content: |-
     $31.3\ \mathrm{Hz}$
   feedback: |-
-    This introduces an extra factor of $2$ in the denominator.
+    This is half the required result, as if the fixed-end factor of $2$ were applied twice. With $v=100\ \mathrm{m/s}$, use $f_3=3v/(2L)=62.5\ \mathrm{Hz}$.
 - id: c
   content: |-
     $62.5\ \mathrm{Hz}$
   correct: true
   feedback: |-
-    Correct. Here $v=100\ \mathrm{m/s}$, so $f_3=3v/(2L)=62.5\ \mathrm{Hz}$.
+    Tension and linear density set the wave speed: $v=\sqrt{T/\mu}=100\ \mathrm{m/s}$. A fixed-end wire's third harmonic has $f_3=3v/(2L)=62.5\ \mathrm{Hz}$.
 - id: d
   content: |-
     $125\ \mathrm{Hz}$
   feedback: |-
-    This omits the factor $2$ in the fixed-end formula's denominator.
+    A fixed-end fundamental fits half a wavelength, which produces the denominator $2L$. Omitting that $2$ doubles $62.5\ \mathrm{Hz}$ to $125\ \mathrm{Hz}$.
 - id: e
   content: |-
     $6.25\ \mathrm{Hz}$
   feedback: |-
-    This is smaller by a factor of $10$; recheck the decimal placement after substitution.
+    The third harmonic must be three times the fundamental, which is $100/(2\cdot2.4)=20.8\ldots\ \mathrm{Hz}$. Therefore $6.25\ \mathrm{Hz}$ cannot be the third harmonic; the correct value is $62.5\ \mathrm{Hz}$.
 ```
 
 ---
@@ -210,28 +210,28 @@ options:
   content: |-
     $14\ \mathrm{Hz}$
   feedback: |-
-    Dividing the fundamental by $3$ moves in the wrong direction.
+    Harmonic number multiplies the fundamental: $f_n=nf_1$. Dividing $42\ \mathrm{Hz}$ by $3$ produces a subharmonic, whereas the third harmonic is $126\ \mathrm{Hz}$.
 - id: b
   content: |-
     $42\ \mathrm{Hz}$
   feedback: |-
-    This is still the fundamental frequency, so the harmonic factor was omitted.
+    $42\ \mathrm{Hz}$ is $f_1$. The third harmonic has three times that frequency, so retaining $42\ \mathrm{Hz}$ omits $n=3$ and the answer should be $126\ \mathrm{Hz}$.
 - id: c
   content: |-
     $84\ \mathrm{Hz}$
   feedback: |-
-    This is the second harmonic, not the third.
+    $84\ \mathrm{Hz}=2f_1$, so it corresponds to the second harmonic. The requested third harmonic is $3f_1=126\ \mathrm{Hz}$.
 - id: d
   content: |-
     $126\ \mathrm{Hz}$
   correct: true
   feedback: |-
-    Correct. For the same wire, $f_3=3f_1=3(42\ \mathrm{Hz})$.
+    On the same fixed-end wire, harmonic frequencies are integer multiples of the fundamental. Thus $f_3=3f_1=3(42\ \mathrm{Hz})=126\ \mathrm{Hz}$.
 - id: e
   content: |-
     $378\ \mathrm{Hz}$
   feedback: |-
-    This multiplies by the harmonic number twice.
+    $378\ \mathrm{Hz}=9f_1$, so the factor $3$ has been applied twice. Apply the harmonic number once: $f_3=3(42\ \mathrm{Hz})=126\ \mathrm{Hz}$.
 ```
 
 ---
@@ -304,28 +304,28 @@ options:
   content: |-
     $43$
   feedback: |-
-    This is the fundamental frequency; the factor $n=3$ was omitted.
+    $43\ \mathrm{Hz}$ is the wire's fundamental, $f_1=v/(2L)$. The question asks for $f_3=3f_1\approx129\ \mathrm{Hz}$, which rounds to the number-only entry $130$.
 - id: b
   content: |-
     $80$
   feedback: |-
-    This is close to the tension in newtons, not the frequency in hertz.
+    The value near $80$ comes from $T=Mg=80.442\ \mathrm{N}$, so it is a force rather than a frequency. Tension first determines $v$, and the resulting third-harmonic frequency rounds to $130\ \mathrm{Hz}$.
 - id: c
   content: |-
     $130$
   correct: true
   feedback: |-
-    Correct. The unrounded result is $129.156\ldots\ \mathrm{Hz}$, which becomes the number-only entry $130$ at two significant figures.
+    The hanging mass sets $T$, the wire mass sets $\mu$, and $f_3=\dfrac{3}{2L}\sqrt{T/\mu}=129.156\ldots\ \mathrm{Hz}$. At two significant figures in a number-only field, enter $130$.
 - id: d
   content: |-
     $260$
   feedback: |-
-    This omits the factor $2$ in the denominator of $f_n=nv/(2L)$.
+    A wire fixed at both ends uses $f_n=nv/(2L)$ because its fundamental contains half a wavelength. Omitting the $2$ doubles the correct value from about $130\ \mathrm{Hz}$ to about $260\ \mathrm{Hz}$.
 - id: e
   content: |-
     $390$
   feedback: |-
-    This applies the third-harmonic factor twice.
+    $390$ is about $3(130)$, so it treats the already computed third harmonic as though it were the fundamental and multiplies by $3$ again. The single factor $n=3$ gives the entry $130$.
 ```
 
 ---

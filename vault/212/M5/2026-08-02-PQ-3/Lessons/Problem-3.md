@@ -95,23 +95,23 @@ options:
   content: |-
     $4\ \mathrm{m}$
   feedback: |-
-    This is only P's distance from source A, not the difference between the two path lengths.
+    $4\ \mathrm{m}$ is one path length, $r_A$, not the path difference. Since $r_B=14-4=10\ \mathrm{m}$, compare the two paths to get $\Delta r=|10-4|=6\ \mathrm{m}$.
 - id: q1-b
   content: |-
     $6\ \mathrm{m}$
   correct: true
   feedback: |-
-    P is $14-4=10\ \mathrm{m}$ from B, so $\Delta r=|10-4|=6\ \mathrm{m}$.
+    Path difference is the absolute difference between the distances traveled. Point P is $4\ \mathrm{m}$ from A and $10\ \mathrm{m}$ from B, so $\Delta r=|10-4|=6\ \mathrm{m}$.
 - id: q1-c
   content: |-
     $10\ \mathrm{m}$
   feedback: |-
-    This is P's distance from source B; path difference still requires subtracting the $4\ \mathrm{m}$ path.
+    $10\ \mathrm{m}=14-4$ is the path from B to P, not the difference between paths. Subtract the $4\ \mathrm{m}$ path from A to obtain $\Delta r=6\ \mathrm{m}$.
 - id: q1-d
   content: |-
     $14\ \mathrm{m}$
   feedback: |-
-    This is the source separation, not the difference between their distances to P.
+    $14\ \mathrm{m}$ is the distance between the sources. Interference at P depends on the difference between the $4\ \mathrm{m}$ and $10\ \mathrm{m}$ travel distances, which is $6\ \mathrm{m}$.
 ```
 
 ---
@@ -152,23 +152,23 @@ options:
   content: |-
     $\pi$
   feedback: |-
-    $\pi$ is what $3\pi$ becomes after removing one full $2\pi$ cycle, but the question asks for the unreduced value.
+    $\pi$ is the phase-equivalent remainder after reducing by one full $2\pi$ cycle. The question asks for the value before reduction, and $2\pi(4.5/3.0)=3\pi$.
 - id: q2-b
   content: |-
     $2\pi$
   feedback: |-
-    This would require $\Delta r/\lambda=1$, whereas here the path difference is $1.5$ wavelengths.
+    A $2\pi$ path phase corresponds to a path difference of exactly one wavelength. Here $\Delta r/\lambda=1.5$, so the unreduced phase is $2\pi(1.5)=3\pi$.
 - id: q2-c
   content: |-
     $3\pi$
   correct: true
   feedback: |-
-    Since $\Delta r/\lambda=4.5/3.0=1.5$, the path phase is $2\pi(1.5)=3\pi$.
+    Each wavelength of path difference contributes one $2\pi$ phase cycle. The paths differ by $4.5/3.0=1.5$ wavelengths, so the unreduced propagation phase is $3\pi$.
 - id: q2-d
   content: |-
     $4.5\pi$
   feedback: |-
-    This uses the distance value directly and does not form the dimensionless ratio $\Delta r/\lambda$ correctly.
+    Phase depends on the number of wavelengths in the path difference, so the distance must first be divided by $\lambda$. Using $4.5$ directly ignores the $3.0\ \mathrm{m}$ wavelength; the correct ratio is $1.5$ and the phase is $3\pi$.
 ```
 
 ---
@@ -254,17 +254,17 @@ options:
     Completely constructive interference
   correct: true
   feedback: |-
-    The paths are $5$ and $11\ \mathrm{m}$, so $\Delta r=6\ \mathrm{m}=1.5\lambda$ adds $3\pi$; with the initial $\pi$, the total is $4\pi\equiv0$.
+    The $5\ \mathrm{m}$ and $11\ \mathrm{m}$ paths differ by $1.5\lambda$, which contributes an odd-$\pi$ phase reversal. That reversal cancels the sources' initial out-of-phase relation, so they arrive in phase and interfere completely constructively.
 - id: q3-b
   content: |-
     Completely destructive interference
   feedback: |-
-    This considers one $\pi$ offset alone; the initial and path phase differences must be added before classification.
+    The initial $\pi$ offset alone would be destructive, but the half-integer path difference adds another odd-$\pi$ reversal. Together they give $4\pi\equiv0$, so the signals arrive constructively.
 - id: q3-c
   content: |-
     Neither
   feedback: |-
-    The total phase is exactly $4\pi$, a whole number of cycles, so the waves arrive completely in phase.
+    “Neither” would require a total phase other than $0$ or $\pi$ modulo $2\pi$. Here the initial $\pi$ plus the $3\pi$ path phase equals $4\pi\equiv0$, so the interference is completely constructive.
 ```
 
 ---
@@ -301,18 +301,18 @@ options:
   content: |-
     Completely constructive interference
   feedback: |-
-    Constructive interference requires total phase $0$ modulo $2\pi$, but the total here reduces to $\pi/2$.
+    Complete construction requires the arrivals to be in phase, $\Delta\phi\equiv0$. Here $\pi+2\pi(3/4)=5\pi/2\equiv\pi/2$, so the waves are not completely aligned.
 - id: q4-b
   content: |-
     Completely destructive interference
   feedback: |-
-    The initial $\pi$ offset is altered by the path phase $3\pi/2$; their sum is not $\pi$ modulo $2\pi$.
+    Complete destruction requires $\Delta\phi\equiv\pi$, but the $3\pi/2$ path phase changes the initial $\pi$ relation. The total reduces to $\pi/2$, not $\pi$.
 - id: q4-c
   content: |-
     Neither
   correct: true
   feedback: |-
-    The total phase is $\pi+2\pi(3/4)=5\pi/2\equiv\pi/2$, which is neither $0$ nor $\pi$ modulo $2\pi$.
+    The sources begin with a $\pi$ offset, and the $3/4$-wavelength path difference contributes $3\pi/2$. Their total is $5\pi/2\equiv\pi/2$, which is neither the $0$ for complete construction nor the $\pi$ for complete destruction.
 ```
 
 ---

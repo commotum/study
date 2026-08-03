@@ -78,22 +78,22 @@ options:
     Node at $0$, antinode at $L/3$, node at $2L/3$, antinode at $L$
   correct: true
   feedback: |-
-    Correct. Displacement is zero at the closed end and maximum at the open end, with alternating node and antinode points.
+    A closed end is a displacement node and an open end is a displacement antinode. The third harmonic fits three alternating quarter-wavelength intervals, giving N at $0$, A at $L/3$, N at $2L/3$, and A at $L$.
 - id: b
   content: |-
     Antinode at $0$, node at $L/3$, antinode at $2L/3$, node at $L$
   feedback: |-
-    This reverses the required displacement conditions at both ends.
+    This is the mirror endpoint pattern for a pipe open at $x=0$ and closed at $x=L$. Here $x=0$ is closed and must be a displacement node, while $x=L$ is open and must be an antinode.
 - id: c
   content: |-
     Node at $0$, antinode at $L/2$, node at $L$
   feedback: |-
-    This ends with a node, so it cannot satisfy the open-end displacement condition.
+    Nodes at both ends describe a fixed-fixed displacement pattern. The end at $x=L$ is open, so it must be an antinode; the third-harmonic pattern is N–A–N–A.
 - id: d
   content: |-
     Antinode at $0$, node at $L/2$, antinode at $L$
   feedback: |-
-    The closed end must be a displacement node, not an antinode.
+    An antinode at $x=0$ violates the closed-end displacement condition. The air displacement must be zero there, so the pattern must begin with a node and end with an antinode.
 ```
 
 ---
@@ -134,22 +134,22 @@ options:
     $1.20\ \mathrm{m}$
   correct: true
   feedback: |-
-    Correct. $\lambda_3=4L/3=4(0.90\ \mathrm{m})/3=1.20\ \mathrm{m}$.
+    The third-harmonic pattern places three quarter wavelengths in the pipe: $L=3\lambda_3/4$. Therefore $\lambda_3=4L/3=1.20\ \mathrm{m}$.
 - id: b
   content: |-
     $0.675\ \mathrm{m}$
   feedback: |-
-    This multiplies by $3/4$ instead of solving $L=3\lambda_3/4$ for $\lambda_3$.
+    $0.675\ \mathrm{m}=3L/4$ leaves the wavelength factor on the wrong side of the relation. Since $L$ contains three quarters of a wavelength, the full wavelength is larger than $L$: $\lambda_3=4L/3=1.20\ \mathrm{m}$.
 - id: c
   content: |-
     $0.30\ \mathrm{m}$
   feedback: |-
-    This divides the pipe into three pieces but treats each quarter wavelength as a full wavelength.
+    $L/3=0.30\ \mathrm{m}$ is the length of one node-to-antinode interval. That interval is only $\lambda_3/4$, so multiplying it by $4$ gives $\lambda_3=1.20\ \mathrm{m}$.
 - id: d
   content: |-
     $3.60\ \mathrm{m}$
   feedback: |-
-    This treats the pipe length as one quarter wavelength, which describes the fundamental rather than the third harmonic.
+    $3.60\ \mathrm{m}=4L$ uses the open-closed fundamental pattern, where the pipe holds one quarter wavelength. The third harmonic holds three quarters, so $\lambda_3=4L/3=1.20\ \mathrm{m}$.
 ```
 
 ---
@@ -197,22 +197,22 @@ options:
     $344\ \mathrm{Hz}$
   correct: true
   feedback: |-
-    Correct. $f_3=3v/(4L)=3(344)/(4(0.75))=344\ \mathrm{Hz}$.
+    Three quarter wavelengths fit in an open-closed pipe's third harmonic, so $f_3=3v/(4L)$. With these values, $f_3=3(344)/[4(0.75)]=344\ \mathrm{Hz}$.
 - id: b
   content: |-
     $115\ \mathrm{Hz}$
   feedback: |-
-    This is near the fundamental frequency; the question asks for the third harmonic.
+    $115\ \mathrm{Hz}$ is the fundamental $f_1=v/(4L)$. Only odd harmonics occur, and the requested third harmonic is $f_3=3f_1=344\ \mathrm{Hz}$.
 - id: c
   content: |-
     $459\ \mathrm{Hz}$
   feedback: |-
-    This uses $v/L$ and ignores the three-quarter-wavelength geometry.
+    $459\ \mathrm{Hz}$ comes from $v/L$, which would make one full wavelength fit inside the pipe. The third-harmonic open-closed pattern fits $3\lambda/4$, so the required factor is $3/4$ and $f_3=344\ \mathrm{Hz}$.
 - id: d
   content: |-
     $258\ \mathrm{Hz}$
   feedback: |-
-    This multiplies by $3/4$ when the length belongs in the denominator of $3v/(4L)$.
+    $258\ \mathrm{Hz}=3v/4$ omits division by the pipe length. Because $L=3\lambda/4$, the frequency is $f_3=3v/(4L)=344\ \mathrm{Hz}$.
 ```
 
 ---
@@ -267,22 +267,22 @@ options:
     $400$
   correct: true
   feedback: |-
-    Correct. The unrounded result is $395.769\ldots\ \mathrm{Hz}$, which is $4.0\times10^2\ \mathrm{Hz}$ to two significant figures.
+    The open-closed third harmonic uses $f_3=3v/(4L)$, giving $395.769\ldots\ \mathrm{Hz}$. The two-significant-figure result is $4.0\times10^2\ \mathrm{Hz}$, so the number-only entry is $400$.
 - id: b
   content: |-
     $396$
   feedback: |-
-    This keeps three significant figures even though the length supplies only two.
+    $396\ \mathrm{Hz}$ is a sensible three-significant-figure rounding of the calculation, but the measured length has only two significant figures. The reported value must be $4.0\times10^2\ \mathrm{Hz}$, entered as $400$.
 - id: c
   content: |-
     $132$
   feedback: |-
-    This is close to the fundamental frequency rather than the third-harmonic frequency.
+    $132\ \mathrm{Hz}$ is the fundamental $v/(4L)$. The requested third harmonic is three times the fundamental, $395.769\ldots\ \mathrm{Hz}$, which rounds to $400$.
 - id: d
   content: |-
     $528$
   feedback: |-
-    This uses $v/L$ and omits the factor $3/4$ from the standing-wave geometry.
+    $528\ \mathrm{Hz}$ comes from $v/L$, as though one full wavelength occupied the pipe. The third-harmonic pattern contains $3\lambda/4$, so $f_3=3v/(4L)$ and the rounded entry is $400$.
 ```
 
 ---

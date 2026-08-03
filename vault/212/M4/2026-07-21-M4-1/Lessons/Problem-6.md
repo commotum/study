@@ -93,17 +93,17 @@ options:
     $4.0\ \mathrm{cm}$
   correct: true
   feedback: |-
-    Amplitude is the distance from equilibrium to either extreme.
+    Amplitude is the distance from equilibrium to either turning point. The graph reaches $4.0\ \mathrm{cm}$ on either side of $x=0$, so $A=4.0\ \mathrm{cm}$.
 - id: b
   content: |-
     $8.0\ \mathrm{cm}$
   feedback: |-
-    This is the full peak-to-peak displacement, which equals $2A$.
+    This uses the full distance from $-4.0\ \mathrm{cm}$ to $+4.0\ \mathrm{cm}$. That peak-to-peak distance is $2A=8.0\ \mathrm{cm}$, so the amplitude is half of it: $A=4.0\ \mathrm{cm}$.
 - id: c
   content: |-
     $2.0\ \mathrm{cm}$
   feedback: |-
-    The graph's extreme is $4.0\ \mathrm{cm}$ from equilibrium, not $2.0\ \mathrm{cm}$.
+    Halving is needed only when you start with the full peak-to-peak distance. Here the distance from equilibrium at $0$ to either extreme is already $4.0\ \mathrm{cm}$, so $A=4.0\ \mathrm{cm}$.
 ```
 
 ---
@@ -135,18 +135,18 @@ options:
   content: |-
     $2.5\ \mathrm{s}$
   feedback: |-
-    This is half of the full trough-to-trough interval.
+    Consecutive troughs are one full cycle apart, not half a cycle apart. A half-period would separate a trough from the next peak; the trough-to-trough interval here is $7.0-2.0=5.0\ \mathrm{s}$.
 - id: b
   content: |-
     $5.0\ \mathrm{s}$
   correct: true
   feedback: |-
-    Consecutive troughs have the same phase, so $T=7.0-2.0=5.0\ \mathrm{s}$.
+    A period is the time between consecutive points in the same phase. The two troughs are one full cycle apart, so $T=7.0\ \mathrm{s}-2.0\ \mathrm{s}=5.0\ \mathrm{s}$.
 - id: c
   content: |-
     $9.0\ \mathrm{s}$
   feedback: |-
-    Period is the difference between the two time coordinates, not their sum.
+    The graph coordinates mark when the troughs occur; elapsed time is final time minus initial time, not their sum. Thus $T=7.0\ \mathrm{s}-2.0\ \mathrm{s}=5.0\ \mathrm{s}$.
 ```
 
 ---
@@ -196,18 +196,18 @@ options:
   content: |-
     $1.5\ \mathrm{cm/s}$
   feedback: |-
-    This uses $A/T$ and omits the factor $2\pi$.
+    This treats one cycle as one radian by using only $A/T$. One complete SHM cycle spans $2\pi$ radians, so $v_{\max}=2\pi A/T=9.4\ \mathrm{cm/s}$.
 - id: b
   content: |-
     $9.4\ \mathrm{cm/s}$
   correct: true
   feedback: |-
-    $v_{\max}=2\pi A/T=2\pi(3.0)/2.0=9.424\ldots\ \mathrm{cm/s}$.
+    Maximum speed is the amplitude times the angular frequency. With $A=3.0\ \mathrm{cm}$ and $\omega=2\pi/T$, $v_{\max}=2\pi(3.0\ \mathrm{cm})/(2.0\ \mathrm{s})=9.4\ \mathrm{cm/s}$.
 - id: c
   content: |-
     $19\ \mathrm{cm/s}$
   feedback: |-
-    This effectively uses the full peak-to-peak displacement $2A$ instead of the amplitude.
+    This doubles the result by using the peak-to-peak distance $2A$ as the amplitude. Maximum speed uses the one-sided displacement $A=3.0\ \mathrm{cm}$, which gives $v_{\max}=9.4\ \mathrm{cm/s}$.
 ```
 
 ---
@@ -269,28 +269,19 @@ options:
   content: 3.9
   correct: true
   feedback: |-
-    The graph gives $A=2.5\ \mathrm{cm}$ and $T=4.0\ \mathrm{s}$. Therefore,
-
-    $$
-    v_{\max}=A\omega
-    =A\frac{2\pi}{T}
-    =(2.5\ \mathrm{cm})\frac{2\pi}{4.0\ \mathrm{s}}
-    =3.927\ldots\ \mathrm{cm/s}.
-    $$
-
-    The graph values support two significant figures, so $v_{\max}=3.9\ \mathrm{cm/s}$.
+    Maximum SHM speed is $v_{\max}=2\pi A/T$. The graph shows a one-sided amplitude of $2.5\ \mathrm{cm}$ and a peak-to-peak period of $4.0\ \mathrm{s}$, so $v_{\max}=3.927\ldots\ \mathrm{cm/s}=3.9\ \mathrm{cm/s}$.
 - id: b
   content: 0.63
   feedback: |-
-    This is $A/T=2.5/4.0=0.625$, which omits the factor $2\pi$ that converts cycles to radians.
+    This is $A/T=2.5/4.0=0.625$, which treats one cycle as one radian. The velocity formula needs angular frequency $\omega=2\pi/T$, so including $2\pi$ gives $v_{\max}=3.9\ \mathrm{cm/s}$.
 - id: c
   content: 7.9
   feedback: |-
-    This uses the full $5.0\ \mathrm{cm}$ peak-to-peak distance as the amplitude. The amplitude is only $2.5\ \mathrm{cm}$.
+    This uses the full $5.0\ \mathrm{cm}$ trough-to-peak distance as $A$. That distance is $2A$; the graph's one-sided amplitude is $2.5\ \mathrm{cm}$, so the speed is half this value: $3.9\ \mathrm{cm/s}$.
 - id: d
   content: 1.6
   feedback: |-
-    This is approximately the angular frequency $\omega=2\pi/T=1.57\ \mathrm{s^{-1}}$, not a speed. Multiply by $A$ to obtain $v_{\max}$.
+    This is the angular frequency $\omega=2\pi/T\approx1.6\ \mathrm{s^{-1}}$, which is a rate rather than a linear speed. Maximum speed also depends on the amplitude: $v_{\max}=A\omega=(2.5\ \mathrm{cm})(1.57\ \mathrm{s^{-1}})=3.9\ \mathrm{cm/s}$.
 ```
 
 ---

@@ -303,7 +303,7 @@ options:
   content: |-
     $0.40\ \mathrm{m/s}$
   feedback: |-
-    This builds a speed from the amplitude, which only sets maximum displacement. Neither the leading minus sign nor $0.20\ \mathrm m$ changes how quickly a constant phase moves; $k=4\ \mathrm{rad/m}$ and $\omega=10\ \mathrm{rad/s}$ control the speed.
+    This reverses the phase-coefficient quotient: $k/\omega=4/10=0.40$, but $k/\omega$ has units of $\mathrm{s/m}$, not speed. A fixed phase instead gives $v=\omega/k=10/4=2.5\ \mathrm{m/s}$.
 - id: p10-features-q1-c
   content: |-
     $2.5\ \mathrm{m/s}$

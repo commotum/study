@@ -96,28 +96,28 @@ options:
   content: |-
     $1.5\ \mathrm{m/s}$
   feedback: |-
-    This uses $Lf_{\mathrm{rot}}=(0.50)(3.0)$ and omits the circumference factor $2\pi$. Each revolution covers $2\pi L$, not just $L$.
+    This treats the radius $L$ as the distance traveled per revolution. One revolution covers the full circumference $2\pi L$, so omitting $2\pi$ gives too small a speed; the correct value is $9.4\ \mathrm{m/s}$.
 - id: pq3-p5-source-speed-b
   content: |-
     $3.0\ \mathrm{m/s}$
   feedback: |-
-    This is the converted rotation frequency, $180/60=3.0\ \mathrm{rev/s}$, mislabeled as a linear speed. Multiply by $2\pi L$ to obtain meters per second.
+    This is the rotation rate $180/60=3.0\ \mathrm{rev/s}$, not a tangential speed. Multiplying by the circumference $2\pi(0.50\ \mathrm{m})$ converts revolutions per second to $9.4\ \mathrm{m/s}$.
 - id: pq3-p5-source-speed-c
   content: |-
     $9.4\ \mathrm{m/s}$
   correct: true
   feedback: |-
-    $180\ \mathrm{rpm}=3.0\ \mathrm{Hz}$, so $v_s=2\pi(0.50)(3.0)=9.4\ \mathrm{m/s}$.
+    Tangential speed is circumference traveled per revolution times revolutions per second. Since $180\ \mathrm{rpm}=3.0\ \mathrm{Hz}$, $v_s=2\pi(0.50\ \mathrm{m})(3.0\ \mathrm{s^{-1}})=9.4\ \mathrm{m/s}$.
 - id: pq3-p5-source-speed-d
   content: |-
     $19\ \mathrm{m/s}$
   feedback: |-
-    This doubles the correct circumference, effectively using the diameter as though it were the radius. The orbit radius is the given $0.50\ \mathrm{m}$.
+    This doubles the radius that was already given. In $v_s=2\pi rf_{\mathrm{rot}}$, $0.50\ \mathrm m$ is already $r$, so use it directly: $v_s=2\pi(0.50)(3.0)=9.4\ \mathrm{m/s}$.
 - id: pq3-p5-source-speed-e
   content: |-
     $570\ \mathrm{m/s}$
   feedback: |-
-    This inserts $180\ \mathrm{rpm}$ as though it were $180\ \mathrm{rev/s}$. Divide by $60$ before using $v_s=2\pi Lf_{\mathrm{rot}}$.
+    This treats $180\ \mathrm{rev/min}$ as $180\ \mathrm{rev/s}$ and makes the speed $60$ times too large. Convert first: $180\ \mathrm{rpm}=3.0\ \mathrm{Hz}$, then obtain $v_s=9.4\ \mathrm{m/s}$.
 ```
 
 ---
@@ -153,28 +153,28 @@ options:
   content: |-
     $f_{\mathrm{high}}=f_0\dfrac{v+v_s}{v}$ and $f_{\mathrm{low}}=f_0\dfrac{v-v_s}{v}$
   feedback: |-
-    This puts the motion term in the numerator, which is the moving-observer structure. For a moving source, $v_s$ changes the wavefront spacing through the denominator.
+    This uses the moving-observer structure. A moving source changes the spacing between emitted wavefronts, so $v_s$ belongs in the denominator: $v-v_s$ for the compressed, high-frequency side and $v+v_s$ for the stretched, low-frequency side.
 - id: pq3-p5-sign-choice-b
   content: |-
     $f_{\mathrm{high}}=f_0\dfrac{v}{v+v_s}$ and $f_{\mathrm{low}}=f_0\dfrac{v}{v-v_s}$
   feedback: |-
-    This swaps the toward and away denominators. The high frequency needs the smaller denominator $v-v_s$.
+    This swaps the two source directions. Toward motion compresses wavefront spacing, so the high frequency uses the smaller denominator $v-v_s$; away motion uses the larger $v+v_s$.
 - id: pq3-p5-sign-choice-c
   content: |-
     $f_{\mathrm{high}}=f_0\dfrac{v}{v-v_s}$ and $f_{\mathrm{low}}=f_0\dfrac{v}{v+v_s}$
   correct: true
   feedback: |-
-    Toward motion uses the smaller denominator $v-v_s$; away motion uses the larger denominator $v+v_s$.
+    Toward motion compresses the wavefronts, so the smaller denominator $v-v_s$ raises the observed frequency. Away motion spreads them out, so the larger denominator $v+v_s$ lowers it.
 - id: pq3-p5-sign-choice-d
   content: |-
     $f_{\mathrm{high}}=f_0\dfrac{v}{v-v_s}$ and $f_{\mathrm{low}}=f_0\dfrac{v}{v-v_s}$
   feedback: |-
-    This uses the toward-motion formula at both extremes. When the source moves away, the denominator changes to $v+v_s$.
+    This uses compressed wavefront spacing at both extremes. At the away point the source stretches the spacing, so the low-frequency denominator must switch to $v+v_s$.
 - id: pq3-p5-sign-choice-e
   content: |-
     $f_{\mathrm{high}}=f_{\mathrm{low}}=f_0$
   feedback: |-
-    This ignores the radial component of source motion. At the toward and away points, the wavefront spacing changes maximally, so the observed frequencies differ from $f_0$.
+    Equality with $f_0$ occurs when the source has no radial velocity relative to the listener. At the toward and away points its radial speed has maximum magnitude, so the wavefronts are compressed or stretched and the two frequencies differ from $f_0$.
 ```
 
 ---
@@ -224,28 +224,28 @@ options:
   content: |-
     $f_{\mathrm{high}}=481\ \mathrm{Hz}$ and $f_{\mathrm{low}}=521\ \mathrm{Hz}$
   feedback: |-
-    These are the two calculated magnitudes in reverse order. Toward motion produces $521\ \mathrm{Hz}$, while away motion produces $481\ \mathrm{Hz}$.
+    The numerical values are reversed. Toward motion compresses wavefronts and must give the value above $500\ \mathrm{Hz}$, $521\ \mathrm{Hz}$; away motion gives the value below it, $481\ \mathrm{Hz}$.
 - id: pq3-p5-numerical-extremes-b
   content: |-
     $f_{\mathrm{high}}=500\ \mathrm{Hz}$ and $f_{\mathrm{low}}=500\ \mathrm{Hz}$
   feedback: |-
-    This ignores the source's $14\ \mathrm{m/s}$ motion. A moving source gives one frequency above and one below the emitted $500\ \mathrm{Hz}$.
+    This assumes zero radial source speed at both extremes. At the toward and away points, the moving source produces one frequency above and one below $500\ \mathrm{Hz}$: $521\ \mathrm{Hz}$ and $481\ \mathrm{Hz}$.
 - id: pq3-p5-numerical-extremes-c
   content: |-
     $f_{\mathrm{high}}=520\ \mathrm{Hz}$ and $f_{\mathrm{low}}=480\ \mathrm{Hz}$
   feedback: |-
-    These values are rounded incorrectly for the requested nearest hertz. $520.8$ rounds to $521$, and $480.8$ rounds to $481$.
+    These are truncated rather than rounded to the nearest hertz. The unrounded extremes are $520.8\ldots\ \mathrm{Hz}$ and $480.8\ldots\ \mathrm{Hz}$, so both ones digits round up to $521\ \mathrm{Hz}$ and $481\ \mathrm{Hz}$.
 - id: pq3-p5-numerical-extremes-d
   content: |-
     $f_{\mathrm{high}}=521\ \mathrm{Hz}$ and $f_{\mathrm{low}}=481\ \mathrm{Hz}$
   correct: true
   feedback: |-
-    $500(350)/(350-14)=520.8\ \mathrm{Hz}$ and $500(350)/(350+14)=480.8\ \mathrm{Hz}$.
+    Toward motion uses $v-v_s$ and must raise the frequency; away motion uses $v+v_s$ and must lower it. The results are $500(350)/(350-14)=520.8\ldots\ \mathrm{Hz}$ and $500(350)/(350+14)=480.8\ldots\ \mathrm{Hz}$, which round to $521\ \mathrm{Hz}$ and $481\ \mathrm{Hz}$.
 - id: pq3-p5-numerical-extremes-e
   content: |-
     $f_{\mathrm{high}}=514\ \mathrm{Hz}$ and $f_{\mathrm{low}}=486\ \mathrm{Hz}$
   feedback: |-
-    This adds and subtracts the source speed directly from the frequency, mixing $\mathrm{m/s}$ with $\mathrm{Hz}$. Source speed belongs inside the Doppler denominator.
+    This adds and subtracts $14\ \mathrm{m/s}$ directly from $500\ \mathrm{Hz}$, combining unlike units. Source speed must instead modify the wavefront-spacing denominator, yielding $521\ \mathrm{Hz}$ and $481\ \mathrm{Hz}$.
 ```
 
 ---
@@ -294,27 +294,27 @@ options:
     $774\ \mathrm{Hz},\ 709\ \mathrm{Hz}$
   correct: true
   feedback: |-
-    Convert $120\ \mathrm{rpm}$ to $2.0\ \mathrm{Hz}$, use $v_s=2\pi Lf_{\mathrm{rot}}$, then use $v-v_s$ for the high frequency and $v+v_s$ for the low frequency.
+    The rotation rate gives the source speed: $120\ \mathrm{rpm}=2.0\ \mathrm{Hz}$ and $v_s=2\pi(1.2)(2.0)=15.08\ldots\ \mathrm{m/s}$. Compressed wavefronts use $v-v_s$ and stretched wavefronts use $v+v_s$, giving $774\ \mathrm{Hz}$ and $709\ \mathrm{Hz}$.
 - id: pq3-p5-original-check-b
   content: |-
     $709\ \mathrm{Hz},\ 774\ \mathrm{Hz}$
   feedback: |-
-    This reverses the high and low results; toward motion must produce the larger frequency.
+    This lists the extremes in reverse order. Toward motion compresses wavefronts and produces the larger $774\ \mathrm{Hz}$ value; away motion produces $709\ \mathrm{Hz}$.
 - id: pq3-p5-original-check-c
   content: |-
     $740\ \mathrm{Hz},\ 740\ \mathrm{Hz}$
   feedback: |-
-    This ignores the source motion and predicts no Doppler shift.
+    This treats the source as radially stationary at both extremes. Its $15.08\ldots\ \mathrm{m/s}$ tangential speed points toward or away at the extreme-pitch points, shifting the frequencies to $774\ \mathrm{Hz}$ and $709\ \mathrm{Hz}$.
 - id: pq3-p5-original-check-d
   content: |-
     $745\ \mathrm{Hz},\ 735\ \mathrm{Hz}$
   feedback: |-
-    This comes from using $Lf_{\mathrm{rot}}$ and omitting the circumference factor $2\pi$.
+    This uses $Lf_{\mathrm{rot}}$ as the source speed and omits the distance $2\pi L$ traveled each revolution. Including the circumference gives $v_s=15.08\ldots\ \mathrm{m/s}$ and the wider pair $774\ \mathrm{Hz},\ 709\ \mathrm{Hz}$.
 - id: pq3-p5-original-check-e
   content: |-
     $773\ \mathrm{Hz},\ 707\ \mathrm{Hz}$
   feedback: |-
-    This treats the source-speed correction as a numerator change, which is the wrong Doppler structure for a moving source and stationary listener.
+    This uses the moving-observer numerator structure. Here the source moves, changing wavefront spacing through the denominators $v-v_s$ and $v+v_s$; those give $774\ \mathrm{Hz}$ and $709\ \mathrm{Hz}$.
 ```
 
 ---

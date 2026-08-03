@@ -76,22 +76,22 @@ options:
     $a_R<a_S<a_T$
   correct: true
   feedback: |-
-    Since $|a|=\omega^2|x|$, compare $0.20<0.75<1.25$. Multiplying by the same positive $\omega^2$ gives $a_R<a_S<a_T$.
+    For one oscillator, acceleration magnitude grows with distance from equilibrium: $|a|=\omega^2|x|$. The distances are $0.20\ \mathrm{m}<0.75\ \mathrm{m}<1.25\ \mathrm{m}$, so $a_R<a_S<a_T$.
 - id: p5-distance-q1-b
   content: |-
     $a_S<a_R<a_T$
   feedback: |-
-    The negative sign of $x_S$ does not make its acceleration magnitude smaller: $|x_S|=0.75\ \mathrm{m}>|x_R|=0.20\ \mathrm{m}$.
+    This lets the negative sign of $x_S$ make its magnitude seem smaller. Magnitude uses distance from equilibrium: $|x_S|=0.75\ \mathrm{m}>|x_R|=0.20\ \mathrm{m}$, so $a_S>a_R$, while $T$ remains greatest.
 - id: p5-distance-q1-c
   content: |-
     $a_T<a_S<a_R$
   feedback: |-
-    This reverses the distance-from-equilibrium order. Point $T$ is farthest from equilibrium, so it has the greatest acceleration magnitude.
+    This reverses the distance-from-equilibrium ranking. Since $|a|=\omega^2|x|$, the farthest point $T$ has the greatest magnitude and the nearest point $R$ has the least: $a_R<a_S<a_T$.
 - id: p5-distance-q1-d
   content: |-
     $a_R<a_T<a_S$
   feedback: |-
-    Although $R$ is correctly least, $|x_T|=1.25\ \mathrm{m}$ is greater than $|x_S|=0.75\ \mathrm{m}$, so $a_T$ must be greatest.
+    This correctly places $R$ first but swaps $S$ and $T$. Point $T$ is farther from equilibrium because $|x_T|=1.25\ \mathrm{m}>|x_S|=0.75\ \mathrm{m}$, so $a_T>a_S$.
 ```
 
 ---
@@ -122,28 +122,28 @@ options:
   content: |-
     $a_L<a_M<a_N$
   feedback: |-
-    This treats the sign of position as though it set acceleration magnitude. Use absolute position: $|x_M|=0.20\ \mathrm{m}$ while $|x_L|=|x_N|=0.60\ \mathrm{m}$.
+    This copies the order of the signed positions instead of comparing magnitudes. Acceleration magnitude depends on $|x|$: $M$ is only $0.20\ \mathrm{m}$ from equilibrium, while $L$ and $N$ are both $0.60\ \mathrm{m}$ away, so $a_M<a_L=a_N$.
 - id: p5-sign-q1-b
   content: |-
     $a_M<a_L=a_N$
   correct: true
   feedback: |-
-    Acceleration magnitude follows $|x|$. Point $M$ is closest to equilibrium, and $L$ and $N$ are equally far from it on opposite sides.
+    Acceleration magnitude depends on distance from equilibrium, not side: $|a|=\omega^2|x|$. Point $M$ is closest, while $L$ and $N$ are equally far away on opposite sides, so $a_M<a_L=a_N$.
 - id: p5-sign-q1-c
   content: |-
     $a_L=a_M<a_N$
   feedback: |-
-    Points $L$ and $M$ do not tie: their distances from equilibrium are $0.60\ \mathrm{m}$ and $0.20\ \mathrm{m}$. The equal-magnitude pair is $L$ and $N$.
+    A tie requires equal distances from equilibrium. Points $L$ and $M$ are $0.60\ \mathrm{m}$ and $0.20\ \mathrm{m}$ away, so they do not tie; the equal-distance pair is $L$ and $N$, giving $a_M<a_L=a_N$.
 - id: p5-sign-q1-d
   content: |-
     $a_N<a_M<a_L$
   feedback: |-
-    Being on the positive side does not make $a_N$ smaller. Because $|x_N|=|x_L|$, their acceleration magnitudes are equal.
+    This ranks signed accelerations rather than their magnitudes. Although the accelerations at $L$ and $N$ point in opposite directions, both positions are $0.60\ \mathrm{m}$ from equilibrium, so $a_L=a_N$; point $M$ has the smaller magnitude.
 - id: p5-sign-q1-e
   content: |-
     $a_L<a_N<a_M$
   feedback: |-
-    Point $M$ is nearest equilibrium, so its acceleration magnitude is the smallest, not the largest. Points $L$ and $N$ tie.
+    This makes the nearest point largest and separates two equal distances. Point $M$ is closest to equilibrium, so its acceleration magnitude is smallest; $|x_L|=|x_N|$, so the corrected ranking is $a_M<a_L=a_N$.
 ```
 
 ---
@@ -185,28 +185,28 @@ options:
   content: |-
     $a_J<a_H<a_E$
   feedback: |-
-    This reverses the SHM rule. Acceleration magnitude is zero at equilibrium and greatest at a turning point.
+    This is the ranking of speed magnitudes inferred from the graph's slope: speed is greatest at equilibrium and zero at a turning point. Acceleration magnitude instead follows the graph's vertical distance from $x=0$, so $a_E<a_H<a_J$.
 - id: p5-slope-q1-b
   content: |-
     $a_E<a_J<a_H$
   feedback: |-
-    Equilibrium is correctly least, but the turning point has $|x|=A$, greater than $0.4A$, so $a_J>a_H$.
+    This correctly makes the equilibrium crossing least but swaps $H$ and $J$. The turning point is $A$ from equilibrium, farther than $H$ at $0.4A$, so $a_J>a_H$.
 - id: p5-slope-q1-c
   content: |-
     $a_E<a_H<a_J$
   correct: true
   feedback: |-
-    Use $|a|=\omega^2|x|$: the three distances are $0$, $0.4A$, and $A$, so their acceleration magnitudes have the same order.
+    On a position graph, acceleration magnitude follows vertical distance from equilibrium, not slope. The distances at $E$, $H$, and $J$ are $0$, $0.4A$, and $A$, so $a_E<a_H<a_J$.
 - id: p5-slope-q1-d
   content: |-
     $a_H<a_E<a_J$
   feedback: |-
-    At equilibrium $x=0$, so $a_E=0$. Any point with nonzero displacement, including $H$, must have a larger acceleration magnitude.
+    This fails to make the equilibrium crossing the minimum. At $E$, the graph's value is $x=0$, so $a_E=0$ even though the graph's slope—and therefore speed—is greatest there; thus $a_E<a_H<a_J$.
 - id: p5-slope-q1-e
   content: |-
     $a_E=a_H=a_J$
   feedback: |-
-    Acceleration magnitude is not constant in SHM; it grows in direct proportion to the distance $|x|$ from equilibrium.
+    Angular frequency is constant, but acceleration magnitude is not. Since $|a|=\omega^2|x|$, the different vertical distances $0$, $0.4A$, and $A$ produce $a_E<a_H<a_J$, not a tie.
 ```
 
 ---
@@ -258,32 +258,32 @@ options:
     $a_2<a_5<a_8$
   correct: true
   feedback: |-
-    From the graph, $|x(2)|<|x(5)|<|x(8)|$. Since $|a|=\omega^2|x|$ for the same oscillator, $a_2<a_5<a_8$.
+    Acceleration magnitude follows the graph's vertical distance from the equilibrium line: $|a|=\omega^2|x|$. The curve is closest to $x=0$ at $2\ \mathrm{s}$, farther away at $5\ \mathrm{s}$, and farthest away at $8\ \mathrm{s}$, so $a_2<a_5<a_8$.
 - id: p5-homework-q1-b
   content: |-
     $a_2<a_8<a_5$
   feedback: |-
-    Time $8\ \mathrm{s}$ is farther from equilibrium than time $5\ \mathrm{s}$, so $a_8$ must be greater than $a_5$.
+    This correctly places $2\ \mathrm{s}$ first but swaps the other two times. The graph's value at $8\ \mathrm{s}$ is farther from $x=0$ than its value at $5\ \mathrm{s}$, so $a_8>a_5$.
 - id: p5-homework-q1-c
   content: |-
     $a_5<a_2<a_8$
   feedback: |-
-    Time $2\ \mathrm{s}$ is closest to the $x=0$ line, so $a_2$ is the smallest acceleration magnitude, not $a_5$.
+    This swaps the first two times. The graph's value at $2\ \mathrm{s}$ is closer to the $x=0$ line than its value at $5\ \mathrm{s}$, so $a_2<a_5$; time $8\ \mathrm{s}$ is still greatest.
 - id: p5-homework-q1-d
   content: |-
     $a_5<a_8<a_2$
   feedback: |-
-    This puts the time closest to equilibrium, $2\ \mathrm{s}$, last. Acceleration magnitude follows vertical distance from $x=0$.
+    This places $2\ \mathrm{s}$ last even though the curve is closest to equilibrium there. Because acceleration magnitude follows vertical distance from $x=0$, $a_2$ must be least; the full ranking is $a_2<a_5<a_8$.
 - id: p5-homework-q1-e
   content: |-
     $a_8<a_2<a_5$
   feedback: |-
-    Time $8\ \mathrm{s}$ is farthest from equilibrium and therefore has the greatest, not the least, acceleration magnitude.
+    This copies the order of the signed graph values, $x(8)<x(2)<x(5)$, instead of comparing magnitudes. Acceleration magnitudes ignore which side of equilibrium a point lies on and use $|x|$, giving $a_2<a_5<a_8$.
 - id: p5-homework-q1-f
   content: |-
     $a_8<a_5<a_2$
   feedback: |-
-    This is the reverse of the graph's distance-from-equilibrium order. The correct distance order is $|x(2)|<|x(5)|<|x(8)|$.
+    This reverses the graph's distance-from-equilibrium order. The curve is closest to $x=0$ at $2\ \mathrm{s}$ and farthest away at $8\ \mathrm{s}$, so acceleration magnitude must increase as $a_2<a_5<a_8$.
 ```
 
 ---

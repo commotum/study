@@ -197,7 +197,7 @@
         - [ ] [[M4/2026-07-23-HW-6/Lessons/Problem-4|M4.19. Maximum Kinetic Energy from an SHM Position–Time Graph]]
         - [x] [[M4/2026-07-23-HW-6/Lessons/Problem-5|M4.20. Ranking Acceleration Magnitudes from an SHM Position Graph]]
         - [ ] [[M4/2026-07-23-HW-6/Lessons/Problem-6|M4.21. Period of an Oscillator Before Its Mass Changes]]
-        - [ ] [[M4/2026-07-23-HW-6/Lessons/Problem-7|M4.22. Speed of a Spring Oscillator at a Given Position]]
+        - [x] [[M4/2026-07-23-HW-6/Lessons/Problem-7|M4.22. Speed of a Spring Oscillator at a Given Position]]
         - [ ] [[M4/2026-07-23-HW-6/Lessons/Problem-8|M4.23. Speed Immediately After a Mass Sticks to a Moving Block]]
         - [ ] [[M4/2026-07-23-HW-6/Lessons/Problem-9|M4.24. Mechanical-Energy Change During a Sticking Collision]]
         - [ ] [[M4/2026-07-23-HW-6/Lessons/Problem-10|M4.25. Finding a New Spring-Oscillation Amplitude After an Energy Change]]

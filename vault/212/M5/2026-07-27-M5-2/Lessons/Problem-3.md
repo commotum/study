@@ -105,12 +105,12 @@ options:
   content: |-
     $49.0\ \mathrm{m/s}$
   feedback: |-
-    This reflects an arithmetic error in evaluating the tension-to-density ratio. The inputs give $T=4.9\ \mathrm N$ and $\mu=0.0050\ \mathrm{kg/m}$, so $T/\mu=980\ \mathrm{m^2/s^2}$ and its square root is $31.3\ \mathrm{m/s}$, not $49.0\ \mathrm{m/s}$.
+    Wave speed must satisfy $v^2=T/\mu$. Here $T=4.9\ \mathrm N$ and $\mu=0.0050\ \mathrm{kg/m}$ give $T/\mu=980\ \mathrm{m^2/s^2}$, whereas $(49.0\ \mathrm{m/s})^2=2401\ \mathrm{m^2/s^2}$. Thus $v=\sqrt{980}=31.3\ \mathrm{m/s}$.
 - id: e
   content: |-
     $98.0\ \mathrm{m/s}$
   feedback: |-
-    This uses the wrong value beneath the radical or fails to complete the wire-density substitution. Since $\mu=m_w/L$, the full radicand is $MgL/m_w=980\ \mathrm{m^2/s^2}$, whose square root is $31.3\ \mathrm{m/s}$.
+    This value does not satisfy $v^2=T/\mu$: $(98.0\ \mathrm{m/s})^2=9604\ \mathrm{m^2/s^2}$, while the stated tension and density give $T/\mu=980\ \mathrm{m^2/s^2}$. Taking that square root gives $31.3\ \mathrm{m/s}$.
 ```
 
 ---
@@ -304,7 +304,7 @@ options:
   content: |-
     $2.0$
   feedback: |-
-    This never combines the transverse oscillation scale with the wave's propagation speed. First $v_{\mathrm{wave}}=\sqrt{MgL/m_w}=24.26\ldots\ \mathrm{m/s}$, then the factor $2\pi A/\lambda=8.216\ldots$ gives about $200\ \mathrm{m/s}$.
+    This is the factor-of-100 result from mixing $A=0.0085\ \mathrm m$ with $\lambda=0.65\ \mathrm{cm}$ in the same ratio. Use one unit system: $A/\lambda=0.85/0.65$, so $(2\pi A/\lambda)(24.26\ldots\ \mathrm{m/s})=199.3\ldots\ \mathrm{m/s}$, entered as `200`.
 - id: b
   content: |-
     $24$

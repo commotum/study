@@ -78,27 +78,27 @@ options:
     $0.45\ \mathrm{m}$
   correct: true
   feedback: |-
-    $\lambda=v/f=360/800=0.45\ \mathrm{m}$.
+    Wave speed equals frequency times wavelength, so $\lambda=v/f$. Substituting gives $\lambda=360/800=0.45\ \mathrm{m}$.
 - id: problem-5-q1-b
   content: |-
     $2.22\ \mathrm{m}$
   feedback: |-
-    This reverses the ratio and computes $f/v$.
+    This reverses $\lambda=v/f$ and computes $f/v$, whose units are not length. Speed divided by frequency gives $360/800=0.45\ \mathrm{m}$.
 - id: problem-5-q1-c
   content: |-
     $1.25\ \mathrm{m}$
   feedback: |-
-    The number $1.25$ comes from the period in milliseconds: $1/f=0.00125\ \mathrm{s}=1.25\ \mathrm{ms}$. A period is not a wavelength, and labeling it meters omits the wave speed in $\lambda=v/f$.
+    $1.25$ is the period expressed in milliseconds because $1/f=1.25\ \mathrm{ms}$. Period measures time, while wavelength measures distance traveled in one period; multiplying by $v$ gives $\lambda=v/f=0.45\ \mathrm{m}$.
 - id: problem-5-q1-d
   content: |-
     $800\ \mathrm{m}$
   feedback: |-
-    Frequency is not wavelength.
+    $800$ is the frequency in hertz, which counts cycles per second; it is not a distance. The distance per cycle is $v/f=0.45\ \mathrm{m}$.
 - id: problem-5-q1-e
   content: |-
     $288{,}000\ \mathrm{m}$
   feedback: |-
-    This multiplies $v$ and $f$ instead of dividing.
+    Multiplying speed by frequency gives units of $\mathrm{m/s^2}$, not meters. Solving $v=f\lambda$ requires division, so $\lambda=360/800=0.45\ \mathrm{m}$.
 ```
 
 ---
@@ -133,27 +133,27 @@ options:
     $\sqrt{x^2+(2.6\ \mathrm{m})^2}-x$
   correct: true
   feedback: |-
-    The farther path is the hypotenuse; subtract the direct path $x$.
+    The path from B is the hypotenuse $\sqrt{x^2+(2.6\ \mathrm{m})^2}$, while the direct path from A is $x$. Because B's path is longer, their difference is the hypotenuse minus $x$.
 - id: problem-5-q2-b
   content: |-
     $\sqrt{x^2+(2.6\ \mathrm{m})^2}+x$
   feedback: |-
-    This adds the path lengths instead of taking their difference.
+    Interference depends on how much farther one wave travels, not the total distance traveled by both. Subtract the direct path $x$ from the diagonal path instead of adding them.
 - id: problem-5-q2-c
   content: |-
     $x-\sqrt{x^2+(2.6\ \mathrm{m})^2}$
   feedback: |-
-    This reverses $r_B-r_A$ and gives a negative value.
+    The diagonal path $r_B$ is always longer than the direct path $r_A=x$. Reversing the requested $r_B-r_A$ makes the expression negative; the path difference is $\sqrt{x^2+2.6^2}-x$.
 - id: problem-5-q2-d
   content: |-
     $\sqrt{x^2+2.6\ \mathrm{m}}-x$
   feedback: |-
-    Both legs must be squared inside the distance formula.
+    The Pythagorean distance uses the sum of the squares of both leg lengths. Since the vertical leg is $2.6\ \mathrm{m}$, the diagonal is $\sqrt{x^2+(2.6\ \mathrm{m})^2}$ before subtracting $x$.
 - id: problem-5-q2-e
   content: |-
     $2.6\ \mathrm{m}-x$
   feedback: |-
-    The diagonal path from B must be found with the Pythagorean theorem.
+    $2.6\ \mathrm{m}-x$ subtracts the horizontal distance from the vertical separation, but neither is B's travel distance. B reaches the listener along the diagonal $\sqrt{x^2+2.6^2}$.
 ```
 
 ---
@@ -186,27 +186,27 @@ options:
     $1.60\ \mathrm{m}$
   correct: true
   feedback: |-
-    Since $1.85/0.400=4.625$, the next lower integer order is $m=4$, giving $4\lambda=1.60\ \mathrm{m}$.
+    Constructive path differences are integer multiples of $\lambda$. Starting from $1.85\ \mathrm{m}=4.625\lambda$ and decreasing, the first such value reached is $4\lambda=1.60\ \mathrm{m}$.
 - id: problem-5-q3-b
   content: |-
     $2.00\ \mathrm{m}$
   feedback: |-
-    This is $5\lambda$, which is above the starting path difference and cannot be reached as $\Delta r$ decreases.
+    $2.00\ \mathrm{m}=5\lambda$ is greater than the starting $1.85\ \mathrm{m}$ path difference. Because $\Delta r$ decreases as $x$ increases, that order is unreachable; the first reachable order is $4\lambda=1.60\ \mathrm{m}$.
 - id: problem-5-q3-c
   content: |-
     $1.85\ \mathrm{m}$
   feedback: |-
-    The source separation is the starting path difference, but it is not an integer multiple of $\lambda$.
+    At $x=0$, the source separation does equal the path difference, but $1.85\ \mathrm{m}=4.625\lambda$ is not constructive. The first lower integer multiple reached for $x>0$ is $4\lambda=1.60\ \mathrm{m}$.
 - id: problem-5-q3-d
   content: |-
     $1.20\ \mathrm{m}$
   feedback: |-
-    This is a later maximum at $3\lambda$, not the first one.
+    $1.20\ \mathrm{m}=3\lambda$ is constructive, but the decreasing path difference reaches $4\lambda=1.60\ \mathrm{m}$ first. Thus $3\lambda$ is a later maximum farther along the axis.
 - id: problem-5-q3-e
   content: |-
     $0.400\ \mathrm{m}$
   feedback: |-
-    This is $1\lambda$, a much later constructive point.
+    $0.400\ \mathrm{m}=1\lambda$ is constructive, but the path difference must pass through $4\lambda$, $3\lambda$, and $2\lambda$ before reaching it. The first maximum occurs at $4\lambda=1.60\ \mathrm{m}$.
 ```
 
 ---
@@ -256,27 +256,27 @@ options:
     $0.21\ \mathrm{m}$
   correct: true
   feedback: |-
-    $x=(d^2-L^2)/(2L)=(2.6^2-2.4^2)/(4.8)=0.208\ldots\ \mathrm{m}$.
+    Isolating and squaring the radical gives $x=(d^2-L^2)/(2L)$. With $d=2.6\ \mathrm{m}$ and $L=2.4\ \mathrm{m}$, $x=0.208\ldots\ \mathrm{m}$, which rounds to $0.21\ \mathrm{m}$.
 - id: problem-5-q4-b
   content: |-
     $0.42\ \mathrm{m}$
   feedback: |-
-    This omits the factor of $2$ in the denominator.
+    Squaring $(x+L)^2$ produces the cross term $2Lx$, so the denominator must be $2L$. Omitting that $2$ doubles the solution; the checked coordinate is $0.21\ \mathrm{m}$.
 - id: problem-5-q4-c
   content: |-
     $2.40\ \mathrm{m}$
   feedback: |-
-    This reports the required path difference rather than the coordinate.
+    $2.40\ \mathrm{m}$ is the required difference between the two travel distances, denoted $L$ here. The question asks for the listener coordinate $x$, found from the geometry as $0.21\ \mathrm{m}$.
 - id: problem-5-q4-d
   content: |-
     $0.20\ \mathrm{m}$
   feedback: |-
-    This uses $d-L$ rather than solving the radical equation.
+    $d-L=0.20\ \mathrm{m}$ compares the source separation with the target path difference, but that gap is not exactly the listener coordinate. The diagonal geometry gives $x=(d^2-L^2)/(2L)=0.208\ldots\ \mathrm{m}$, which rounds to $0.21\ \mathrm{m}$.
 - id: problem-5-q4-e
   content: |-
     $2.81\ \mathrm{m}$
   feedback: |-
-    This comes from adding rather than subtracting the squared lengths.
+    This value does not satisfy the original geometry: substituting $x=2.81\ \mathrm{m}$ gives a path difference of about $1.02\ \mathrm{m}$, not $2.4\ \mathrm{m}$. Solving and checking the radical equation gives $x=0.21\ \mathrm{m}$.
 ```
 
 ---
@@ -335,27 +335,27 @@ options:
     $0.10\ \mathrm{m}$
   correct: true
   feedback: |-
-    $\lambda=0.500\ \mathrm{m}$, the first order is $L=5\lambda=2.50\ \mathrm{m}$, and $x=(2.6^2-2.5^2)/(2\cdot2.5)=0.102\ \mathrm{m}$.
+    The wavelength is $v/f=0.500\ \mathrm{m}$. Since the path difference starts at $2.6\ \mathrm{m}=5.2\lambda$ and decreases, the first maximum has $L=5\lambda=2.50\ \mathrm{m}$; the geometry then gives $x=0.102\ \mathrm{m}\approx0.10\ \mathrm{m}$.
 - id: problem-5-q5-b
   content: |-
     $0.05\ \mathrm{m}$
   feedback: |-
-    This uses the gap $d-L$ as the coordinate.
+    $0.05\ \mathrm{m}$ is half the gap $d-L=0.10\ \mathrm{m}$, but the listener coordinate is set by a diagonal path, not that simple gap. Solving $\sqrt{x^2+d^2}-x=L$ gives $x=0.102\ \mathrm{m}\approx0.10\ \mathrm{m}$.
 - id: problem-5-q5-c
   content: |-
     $0.50\ \mathrm{m}$
   feedback: |-
-    This reports the wavelength instead of solving for $x$.
+    $0.50\ \mathrm{m}$ is the wavelength found from $v/f$. It is used to select the $5\lambda=2.50\ \mathrm{m}$ path difference, but the requested coordinate must still be solved from the geometry and is $0.10\ \mathrm{m}$.
 - id: problem-5-q5-d
   content: |-
     $2.50\ \mathrm{m}$
   feedback: |-
-    This reports the constructive path difference instead of the coordinate.
+    $2.50\ \mathrm{m}=5\lambda$ is the path-length difference at the first maximum, not the listener's $x$-coordinate. Substituting that target into the path-difference equation gives $x\approx0.10\ \mathrm{m}$.
 - id: problem-5-q5-e
   content: |-
     $0.55\ \mathrm{m}$
   feedback: |-
-    This fails the geometry check: at $x=0.55\ \mathrm{m}$, $\sqrt{x^2+2.6^2}-x\approx2.11\ \mathrm{m}$, not the required $2.50\ \mathrm{m}$.
+    Any candidate coordinate must reproduce the first constructive path difference $5\lambda=2.50\ \mathrm{m}$. At $x=0.55\ \mathrm{m}$ the difference is only about $2.11\ \mathrm{m}$, so this point is not that maximum; the solution is $x\approx0.10\ \mathrm{m}$.
 ```
 
 ---

@@ -109,33 +109,33 @@ options:
   content: |-
     It doubles.
   feedback: |-
-    Intensity level is logarithmic, so an intensity multiplier does not multiply the decibel value.
+    This treats the decibel scale as linear. Intensity level is logarithmic, so doubling physical intensity adds $10\log_{10}2\approx3\ \mathrm{dB}$ rather than doubling the level.
 - id: b
   content: |-
     It increases by a factor of ten.
   feedback: |-
-    The factor $10$ belongs outside the logarithm; it is not the level change for every ratio.
+    This confuses the coefficient in the definition with the effect of doubling. The change is additive and equals $(10\ \mathrm{dB})\log_{10}2\approx3\ \mathrm{dB}$, not a factor of ten.
 - id: c
   content: |-
     It decreases by a factor of ten.
   feedback: |-
-    Doubling gives a ratio greater than $1$, so the logarithm and the level change are positive.
+    This reverses the direction and treats a decibel change as a multiplicative factor. Decibel changes are additive: doubling gives $I_2/I_1=2$, so $\Delta\beta=10\log_{10}2\approx+3\ \mathrm{dB}$.
 - id: d
   content: |-
     It increases by $2\ \mathrm{dB}$.
   feedback: |-
-    The intensity multiplier $2$ goes inside the logarithm; it is not added directly as decibels.
+    This copies the intensity multiplier directly into decibels. The multiplier belongs inside the logarithm: $\Delta\beta=(10\ \mathrm{dB})\log_{10}2=3.01\ldots\ \mathrm{dB}$.
 - id: e
   content: |-
     It increases by $3\ \mathrm{dB}$.
   correct: true
   feedback: |-
-    Correct. $(10\ \mathrm{dB})\log_{10}(2)=3.01\ldots\ \mathrm{dB}$.
+    A multiplicative intensity change becomes an additive decibel change. For a doubling, $\Delta\beta=(10\ \mathrm{dB})\log_{10}2=3.01\ldots\ \mathrm{dB}$, or about $3\ \mathrm{dB}$.
 - id: f
   content: |-
     It increases by $10\ \mathrm{dB}$.
   feedback: |-
-    A $10\ \mathrm{dB}$ increase corresponds to ten times the intensity, not twice the intensity.
+    A $10\ \mathrm{dB}$ increase requires $I_2/I_1=10$ because $\log_{10}10=1$. Here the ratio is only $2$, which produces an increase of about $3\ \mathrm{dB}$.
 ```
 
 ---
@@ -178,28 +178,28 @@ options:
   content: |-
     $67\ \mathrm{dB}$
   feedback: |-
-    Doubling intensity increases the level; it does not decrease it.
+    Doubling makes $I_2/I_1>1$, so the decibel change is positive, not negative. It adds about $3\ \mathrm{dB}$ to $70\ \mathrm{dB}$, giving $73\ \mathrm{dB}$.
 - id: b
   content: |-
     $70\ \mathrm{dB}$
   feedback: |-
-    This ignores the change in physical intensity.
+    This assumes the level is unchanged even though the physical intensity doubled. A doubling adds $10\log_{10}2\approx3\ \mathrm{dB}$, so the new level is about $73\ \mathrm{dB}$.
 - id: c
   content: |-
     $72\ \mathrm{dB}$
   feedback: |-
-    The multiplier $2$ is placed inside $10\log_{10}(2)$; it is not added directly.
+    This adds the intensity multiplier $2$ directly to the decibel value. Because the scale is logarithmic, doubling adds $10\log_{10}2=3.01\ldots\ \mathrm{dB}$, which rounds the new level to $73\ \mathrm{dB}$.
 - id: d
   content: |-
     $73\ \mathrm{dB}$
   correct: true
   feedback: |-
-    Correct. Doubling adds $3.01\ldots\ \mathrm{dB}$, so the new level is approximately $73\ \mathrm{dB}$.
+    Doubling physical intensity always adds $10\log_{10}2=3.01\ldots\ \mathrm{dB}$ to the intensity level. Starting from $70\ \mathrm{dB}$ therefore gives $73.01\ldots\ \mathrm{dB}$, or $73\ \mathrm{dB}$.
 - id: e
   content: |-
     $140\ \mathrm{dB}$
   feedback: |-
-    This incorrectly doubles the logarithmic decibel level.
+    This doubles the decibel number as though intensity level were linear. The physical intensity doubles, so the logarithmic level increases by only about $3\ \mathrm{dB}$, from $70$ to $73\ \mathrm{dB}$.
 ```
 
 ---
@@ -240,27 +240,27 @@ options:
     $-10\ \mathrm{dB}$
   correct: true
   feedback: |-
-    Correct. $(10\ \mathrm{dB})\log_{10}(1/10)=-10\ \mathrm{dB}$.
+    A tenfold intensity decrease gives the final-to-initial ratio $I_2/I_1=1/10$. Therefore $\Delta\beta=(10\ \mathrm{dB})\log_{10}(1/10)=-10\ \mathrm{dB}$.
 - id: b
   content: |-
     $-3\ \mathrm{dB}$
   feedback: |-
-    A $-3\ \mathrm{dB}$ change corresponds to halving the intensity, not reducing it by a factor of ten.
+    A change near $-3\ \mathrm{dB}$ corresponds to $I_2/I_1=1/2$. Here the ratio is $1/10$, whose base-$10$ logarithm is $-1$, so the change is $-10\ \mathrm{dB}$.
 - id: c
   content: |-
     $-1\ \mathrm{dB}$
   feedback: |-
-    The ratio $1/10$ is not used as a decibel change directly.
+    This turns the exponent $-1$ in $1/10=10^{-1}$ directly into decibels and omits the $10\ \mathrm{dB}$ coefficient. The full change is $(10\ \mathrm{dB})(-1)=-10\ \mathrm{dB}$.
 - id: d
   content: |-
     $+3\ \mathrm{dB}$
   feedback: |-
-    The sign must be negative because the final intensity is smaller than the initial intensity.
+    The magnitude $3\ \mathrm{dB}$ describes a factor-of-two change, not a factor of ten, and the sign is also wrong. Since $I_2/I_1=1/10$, the correct change is $-10\ \mathrm{dB}$.
 - id: e
   content: |-
     $+10\ \mathrm{dB}$
   feedback: |-
-    This results from reversing the ratio to $I_1/I_2$.
+    This uses the reciprocal ratio $I_1/I_2=10$, which describes a tenfold increase. The requested final-to-initial ratio is $I_2/I_1=1/10$, so the level change is $-10\ \mathrm{dB}$.
 ```
 
 ---

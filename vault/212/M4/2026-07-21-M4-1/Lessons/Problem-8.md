@@ -98,17 +98,17 @@ options:
     $0.15\ \mathrm{m}$
   correct: true
   feedback: |-
-    The amplitude is the distance from equilibrium to release: $A=0.56-0.41=0.15\ \mathrm{m}$.
+    Amplitude is measured from equilibrium, not from the coordinate origin. The release point is $0.56\ \mathrm{m}-0.41\ \mathrm{m}=0.15\ \mathrm{m}$ to the right of equilibrium, so $A=0.15\ \mathrm{m}$.
 - id: b
   content: |-
     $0.56\ \mathrm{m}$
   feedback: |-
-    This is the release coordinate measured from the diagram's origin, not displacement from equilibrium.
+    This is the release coordinate measured from the diagram's origin. Amplitude is the block's displacement from the equilibrium coordinate $x_0=0.41\ \mathrm{m}$, so $A=|0.56-0.41|=0.15\ \mathrm{m}$.
 - id: c
   content: |-
     $0.97\ \mathrm{m}$
   feedback: |-
-    The two coordinates must be subtracted, not added.
+    Adding the two coordinates measures neither a separation nor a displacement from equilibrium. The distance between the equilibrium and release positions is their absolute difference: $A=|0.56-0.41|=0.15\ \mathrm{m}$.
 ```
 
 ---
@@ -159,18 +159,18 @@ options:
   content: |-
     $1.25\ \mathrm{rad/s}$
   feedback: |-
-    This is the numerical frequency in cycles per second, not angular frequency.
+    The value $5/4.0=1.25$ is the frequency in cycles per second. Angular frequency counts radians per second, so multiply by $2\pi\ \mathrm{rad/cycle}$ to obtain $\omega=2.5\pi\ \mathrm{rad/s}$.
 - id: b
   content: |-
     $2.5\pi\ \mathrm{rad/s}$
   correct: true
   feedback: |-
-    $f=5/4.0=1.25\ \mathrm{Hz}$, so $\omega=2\pi f=2.5\pi\ \mathrm{rad/s}$.
+    Frequency is cycles divided by elapsed time, so $f=5/(4.0\ \mathrm{s})=1.25\ \mathrm{Hz}$. Each cycle is $2\pi$ radians, giving $\omega=2\pi f=2.5\pi\ \mathrm{rad/s}$.
 - id: c
   content: |-
     $8\pi\ \mathrm{rad/s}$
   feedback: |-
-    The cycle rate is count divided by time, not time divided by count.
+    This treats the elapsed time $4.0\ \mathrm{s}$ as though it were the frequency in cycles per second. The relevant rate is the cycle count divided by time, $f=5/4.0=1.25\ \mathrm{Hz}$, so $\omega=2.5\pi\ \mathrm{rad/s}$.
 ```
 
 ---
@@ -218,17 +218,17 @@ options:
     $v(t)=-A\omega\sin(\omega t)$
   correct: true
   feedback: |-
-    Differentiating cosine gives negative sine, and the chain rule supplies the factor $\omega$.
+    Velocity is the time derivative of position. Differentiating $A\cos(\omega t)$ gives negative sine and a chain-rule factor of $\omega$, so $v(t)=-A\omega\sin(\omega t)$.
 - id: b
   content: |-
     $v(t)=A\cos(\omega t)$
   feedback: |-
-    This is the position function, not its time derivative.
+    This copies the position function instead of finding its rate of change. It also predicts $v(0)=A$ even though the block is released from rest; differentiating gives $v(t)=-A\omega\sin(\omega t)$ and $v(0)=0$.
 - id: c
   content: |-
     $v(t)=-A\sin(\omega t)$
   feedback: |-
-    This omits the chain-rule factor $\omega$.
+    This has the correct sine phase and sign but omits the chain-rule factor from differentiating $\omega t$. Without $\omega$, the expression has units of length rather than speed; the velocity is $-A\omega\sin(\omega t)$.
 ```
 
 ---
@@ -278,18 +278,18 @@ options:
   content: |-
     The block is to the right of equilibrium.
   feedback: |-
-    Velocity sign gives direction of motion, not which side of equilibrium contains the block.
+    Positive velocity describes the direction of motion, not the side of equilibrium. A block can move right while it is on either side of equilibrium, so $v>0$ means moving right, not necessarily being right of equilibrium.
 - id: b
   content: |-
     The block is moving right.
   correct: true
   feedback: |-
-    Positive velocity points in the defined positive direction, which is right.
+    The sign of velocity gives the direction of motion. Since right is defined as positive, $v=+0.62\ \mathrm{m/s}$ means the block is moving right.
 - id: c
   content: |-
     The block's speed is negative.
   feedback: |-
-    Speed is a magnitude and cannot be negative.
+    Speed is the magnitude $|v|$ and is never negative. The positive sign belongs to velocity and indicates direction, so the block moves right with speed $0.62\ \mathrm{m/s}$.
 ```
 
 ---
@@ -355,33 +355,19 @@ options:
   content: 1.3
   correct: true
   feedback: |-
-    With $A=0.13\ \mathrm{m}$ and $\omega=2\pi(12/7.0\ \mathrm{s})$,
-
-    $$
-    v(t)=-A\omega\sin(\omega t).
-    $$
-
-    Therefore,
-
-    $$
-    v(3.9\ \mathrm{s})
-    =-(0.13\ \mathrm{m})\omega\sin[\omega(3.9\ \mathrm{s})]
-    =1.2876\ldots\ \mathrm{m/s}.
-    $$
-
-    The measured givens support two significant figures, so $v=1.3\ \mathrm{m/s}$. The positive sign means the block is moving right.
+    The release displacement gives $A=0.48-0.35=0.13\ \mathrm{m}$, and the cycle rate gives $\omega=2\pi\frac{12}{7.0\ \mathrm{s}}$. Because the block starts at $+A$, $v=-A\omega\sin(\omega t)$; at $t=3.9\ \mathrm{s}$ this is $+1.2876\ldots\ \mathrm{m/s}$, or $+1.3\ \mathrm{m/s}$ to two significant figures. The positive sign means motion to the right.
 - id: b
   content: -1.3
   feedback: |-
-    This has the correct magnitude but the wrong direction. At $t=3.9\ \mathrm{s}$, the sine value and the leading minus sign in $v=-A\omega\sin(\omega t)$ make the velocity positive.
+    This has the correct speed but reverses the direction. At $t=3.9\ \mathrm{s}$, $\sin(\omega t)<0$, and the leading minus sign in $v=-A\omega\sin(\omega t)$ therefore makes $v$ positive: $+1.3\ \mathrm{m/s}$, toward the right.
 - id: c
   content: 1.4
   feedback: |-
-    This is the maximum speed $A\omega\approx1.4\ \mathrm{m/s}$. The instantaneous velocity must also include the phase factor $-\sin(\omega t)$.
+    This is the maximum speed $A\omega\approx1.4\ \mathrm{m/s}$, which occurs only when $|\sin(\omega t)|=1$. The question asks for the velocity at a particular phase, so the factor $-\sin(\omega t)$ is required and gives $v=+1.3\ \mathrm{m/s}$.
 - id: d
   content: -0.051
   feedback: |-
-    This is approximately the displacement $x=A\cos(\omega t)$ at that instant, not the velocity. Use the derivative $v=-A\omega\sin(\omega t)$.
+    This comes from the position function $x=A\cos(\omega t)$, so it describes where the block is and has units of meters. Velocity is the slope of position, $v=-A\omega\sin(\omega t)$, which gives $+1.3\ \mathrm{m/s}$ here.
 ```
 
 ---

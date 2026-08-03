@@ -73,27 +73,27 @@ options:
     $\displaystyle 680\left(\frac{340+20}{340}\right)$
   correct: true
   feedback: |-
-    The observer moves toward a stationary source, so use $f'=f(v+v_o)/v$.
+    A moving observer changes how quickly stationary-source wavefronts arrive. Because the observer moves toward the source, use the plus sign in the numerator: $f'=680(340+20)/340$.
 - id: b
   content: |-
     $\displaystyle 680\left(\frac{340-20}{340}\right)$
   feedback: |-
-    The minus sign describes an observer moving away, not toward.
+    The minus sign lowers the wavefront arrival rate and applies when the observer moves away. Here the observer approaches, so the numerator must be $v+v_o=340+20$.
 - id: c
   content: |-
     $\displaystyle 680\left(\frac{340}{340-20}\right)$
   feedback: |-
-    Putting the motion term in the denominator is the structure for a moving source. Here the source is stationary.
+    This puts the motion term in the denominator, which changes the wavefront spacing and is the moving-source structure. The source is stationary; observer motion changes the arrival rate through the numerator $(v+v_o)/v$.
 - id: d
   content: |-
     $\displaystyle 680\left(\frac{340}{340+20}\right)$
   feedback: |-
-    This is a moving-source structure and also predicts a lower frequency for approaching motion.
+    This uses a moving-source denominator even though the tuning fork is stationary. It also makes the factor less than $1$, contradicting the higher frequency heard by an approaching observer.
 - id: e
   content: |-
     $\displaystyle 680\left(\frac{20}{340}\right)$
   feedback: |-
-    The observer-speed fraction modifies $1$; the required factor is $1+v_o/v$.
+    This keeps only the fractional Doppler increase $v_o/v$ and discards the original emitted frequency contribution. The full observer factor is $1+v_o/v=(v+v_o)/v$.
 ```
 
 ---
@@ -146,28 +146,28 @@ options:
   content: |-
     $30\ \mathrm{Hz}$
   feedback: |-
-    This is only the size of the frequency increase, not the total observed frequency.
+    This is only the added frequency, $480(20/320)=30\ \mathrm{Hz}$. The observer also hears the original $480\ \mathrm{Hz}$ contribution, so the total is $480+30=510\ \mathrm{Hz}$.
 - id: b
   content: |-
     $450\ \mathrm{Hz}$
   feedback: |-
-    This is below the emitted frequency and therefore contradicts approaching motion.
+    This is the result for the minus sign: it predicts fewer wavefront arrivals than the source emits. An approaching observer meets wavefronts more quickly, so the frequency must exceed $480\ \mathrm{Hz}$ and equals $510\ \mathrm{Hz}$.
 - id: c
   content: |-
     $480\ \mathrm{Hz}$
   feedback: |-
-    The observer hears the emitted frequency only when $v_o=0$.
+    This ignores the observer's motion. The observed and emitted frequencies match only when the radial observer speed is zero; here approaching motion raises the factor to $(320+20)/320$ and gives $510\ \mathrm{Hz}$.
 - id: d
   content: |-
     $510\ \mathrm{Hz}$
   correct: true
   feedback: |-
-    $f'=480(320+20)/320=480(1.0625)=510\ \mathrm{Hz}$.
+    An approaching observer encounters wavefronts faster, so the observed frequency must exceed $480\ \mathrm{Hz}$. Using the moving-observer factor gives $f'=480(320+20)/320=510\ \mathrm{Hz}$.
 - id: e
   content: |-
     $544\ \mathrm{Hz}$
   feedback: |-
-    This does not result from the grouped factor $(v+v_o)/v$.
+    The moving-observer factor is fixed by the given speeds: $(v+v_o)/v=(320+20)/320=1.0625$. Multiplying $480\ \mathrm{Hz}$ by that factor gives $510\ \mathrm{Hz}$, so $544\ \mathrm{Hz}$ does not satisfy the Doppler relation.
 ```
 
 ---
@@ -220,28 +220,28 @@ options:
   content: |-
     $50\ \mathrm{Hz}$
   feedback: |-
-    This is only the Doppler increase, $750(22/330)=50\ \mathrm{Hz}$. The observed frequency is the emitted $750\ \mathrm{Hz}$ plus that increase.
+    This is only the extra wavefront-arrival rate, $750(22/330)=50\ \mathrm{Hz}$. The observed frequency includes the original $750\ \mathrm{Hz}$ plus that increase, giving $800\ \mathrm{Hz}$.
 - id: b
   content: |-
     $700\ \mathrm{Hz}$
   feedback: |-
-    This uses the minus sign, $750(330-22)/330$, which describes a listener moving away. An approaching listener must hear a frequency above $750\ \mathrm{Hz}$.
+    This uses $v-v_o$, which lowers the frequency for a listener moving away. Here the listener approaches and encounters wavefronts faster, so $f'$ must exceed $750\ \mathrm{Hz}$ and equals $800\ \mathrm{Hz}$.
 - id: c
   content: |-
     $750\ \mathrm{Hz}$
   feedback: |-
-    This assumes no observer motion. Since the listener approaches at $22\ \mathrm{m/s}$, the arrival rate of wavefronts increases.
+    This is the no-radial-motion result. Since the listener approaches at $22\ \mathrm{m/s}$, wavefronts arrive more frequently and the observed frequency rises to $750(330+22)/330=800\ \mathrm{Hz}$.
 - id: d
   content: |-
     $800\ \mathrm{Hz}$
   correct: true
   feedback: |-
-    $f'=750(330+22)/330=800\ \mathrm{Hz}$, which is greater than the emitted frequency as an approaching observer requires.
+    An approaching observer meets the source's wavefronts more rapidly, so the observed frequency must be higher than $750\ \mathrm{Hz}$. The factor $(330+22)/330$ gives $f'=800\ \mathrm{Hz}$.
 - id: e
   content: |-
     $11\,250\ \mathrm{Hz}$
   feedback: |-
-    This inverts the speed ratio and multiplies by $v/v_o=15$. Observer motion modifies the frequency by the near-unity factor $(v+v_o)/v$, not by $v/v_o$.
+    This multiplies by $v/v_o=15$, but that ratio is not the wavefront-arrival factor. Observer motion modifies the emitted frequency by the near-unity factor $(v+v_o)/v=352/330$, giving $800\ \mathrm{Hz}$.
 ```
 
 ---
@@ -281,28 +281,28 @@ options:
   content: |-
     $60$
   feedback: |-
-    This is only the increase $600(34/340)=60\ \mathrm{Hz}$. Add it to the emitted frequency, or evaluate the full factor $(340+34)/340$.
+    This is only the Doppler increase $600(34/340)=60\ \mathrm{Hz}$. The full observed frequency includes the emitted $600\ \mathrm{Hz}$, so it is $660\ \mathrm{Hz}$.
 - id: b
   content: |-
     $540$
   feedback: |-
-    This uses $v-v_o$ and therefore models an observer moving away. Toward motion requires the plus sign and a result above $600\ \mathrm{Hz}$.
+    This uses $v-v_o$, which describes an observer moving away and produces a lower frequency. The observer moves toward the source, so wavefronts arrive faster and the result must be above $600\ \mathrm{Hz}$: $660\ \mathrm{Hz}$.
 - id: c
   content: |-
     $600$
   feedback: |-
-    This ignores the observer's motion. A nonzero approaching speed makes the multiplier greater than $1$.
+    This assumes zero radial observer speed. Here the observer approaches, so the multiplier is $(340+34)/340=1.10>1$ and the observed frequency is $660\ \mathrm{Hz}$.
 - id: d
   content: |-
     $660$
   correct: true
   feedback: |-
-    $f'=600(340+34)/340=660\ \mathrm{Hz}$, so enter $660$.
+    Approaching motion increases the wavefront arrival rate, so use the plus sign: $f'=600(340+34)/340=660\ \mathrm{Hz}$. Because the field requests a number only, enter $660$.
 - id: e
   content: |-
     $6000$
   feedback: |-
-    This multiplies by the inverted ratio $v/v_o=10$. The correct dimensionless factor is $(v+v_o)/v=1.10$.
+    This multiplies by $v/v_o=10$, which is not the moving-observer factor. The correct near-unity factor is $(v+v_o)/v=(340+34)/340=1.10$, giving the entry $660$.
 ```
 
 ---

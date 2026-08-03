@@ -94,6 +94,7 @@ options:
   feedback: |-
     Amplitude $A$ sets the turning points and the maximum acceleration $\omega^2A$; it does not choose the restoring direction at a given position. Once $x<0$ is known, $a=-\omega^2x$ is positive for any allowed $A\ge |x|$.
 ```
+
 ---
 
 <a id="same-signs-mean-speeding-up"></a>
@@ -192,7 +193,7 @@ options:
   content: |-
     It moves at constant speed because $x$ and $v$ have the same sign.
   feedback: |-
-    Same signs of $x$ and $v$ diagnose motion away from equilibrium, not constant speed. Here the nonzero restoring acceleration points opposite the motion, $a>0$ while $v<0$, so speed decreases. Constant speed would require $a=0$, which occurs only at $x=0$ for SHM.
+    Same signs of $x$ and $v$ diagnose motion away from equilibrium, not constant speed. Here $a>0$ opposes $v<0$, so speed decreases. Constant speed over an interval would require $a=0$ throughout; a nontrivial SHM oscillator has $a=0$ only momentarily as it crosses $x=0$.
 - id: q3-shm-speed-opposite-signs-e
   content: |-
     It is stopped because its displacement is negative.
@@ -232,7 +233,7 @@ options:
     $a=0$ and the speed is maximum; the oscillator is at the transition from speeding up to slowing down.
   correct: true
   feedback: |-
-    At equilibrium the restoring force has no preferred direction, so the instantaneous acceleration is zero: $x=0\Rightarrow a=-\omega^2x=0$. The oscillator's energy is then entirely kinetic, so $|v|$ is maximum. With $v<0$, this is the instant between speeding up on the $x>0$ side and slowing down on the $x<0$ side.
+    At equilibrium $x=0$, so the restoring force and acceleration are zero. The oscillator's potential energy is minimum and its speed is maximum. With $v<0$, this is the instant between speeding up on the $x>0$ side and slowing down on the $x<0$ side.
 - id: q3-shm-speed-zero-case-b
   content: |-
     $a<0$, so it is speeding up.
@@ -252,7 +253,7 @@ options:
   content: |-
     Both $v$ and $a$ are zero.
   feedback: |-
-    Equilibrium makes the acceleration zero, but it does not make the velocity zero: here $x=0\Rightarrow a=0$ while the prompt gives $v<0$. Both $x$ and $v$ can be zero only for the trivial no-oscillation state $A=0$, not for an oscillator passing through equilibrium.
+    Equilibrium makes $a=0$, but the prompt explicitly gives $v<0$, so both quantities are not zero. If $v=0$ and $a=0$ simultaneously, then $a=-\omega^2x$ also forces $x=0$; that is the trivial $A=0$ state, not an oscillator passing through equilibrium.
 ```
 
 ---

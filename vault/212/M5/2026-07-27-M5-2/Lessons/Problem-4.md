@@ -163,7 +163,7 @@ options:
   content: |-
     $8\ \mathrm{m}$
   feedback: |-
-    The radius $13\ \mathrm{m}$ is the hypotenuse and the horizontal leg is $5\ \mathrm{m}$. The Pythagorean theorem therefore gives $y=\sqrt{13^2-5^2}=12\ \mathrm{m}$, not $8\ \mathrm{m}$.
+    The $8\ \mathrm m$ comes from subtracting lengths linearly, $13-5$, but perpendicular legs combine through their squares. With radius $13\ \mathrm m$ as the hypotenuse and horizontal leg $5\ \mathrm m$, $y=\sqrt{13^2-5^2}=12\ \mathrm m$.
 - id: c
   content: |-
     $12\ \mathrm{m}$
