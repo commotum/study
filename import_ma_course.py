@@ -39,6 +39,22 @@ DEFAULT_TARGET_ROOT = Path("/Users/jake/Developer/study/vault/MA")
 QUEUE_SIZE = 5
 DEFAULT_QUEUE_PREREQUISITE_SCOPE = "course"
 COURSE_CATEGORIES = {
+    "4GM": "Elementary-&-Middle-School-Mathematics",
+    "5GM": "Elementary-&-Middle-School-Mathematics",
+    "6GM": "Elementary-&-Middle-School-Mathematics",
+    "PAL": "Elementary-&-Middle-School-Mathematics",
+    "AG1": "Traditional-High-School-Mathematics",
+    "GEO": "Traditional-High-School-Mathematics",
+    "AG2": "Traditional-High-School-Mathematics",
+    "PCL": "Traditional-High-School-Mathematics",
+    "IM1": "Integrated-High-School-Mathematics",
+    "IM2": "Integrated-High-School-Mathematics",
+    "IM3": "Integrated-High-School-Mathematics",
+    "HI1": "Integrated-High-School-Mathematics",
+    "HI2": "Integrated-High-School-Mathematics",
+    "HI3": "Integrated-High-School-Mathematics",
+    "SMF": "Test-Preparation",
+    "SMP": "Test-Preparation",
     "MF1": "Mathematical-Foundations",
     "MF2": "Mathematical-Foundations",
     "MF3": "Mathematical-Foundations",
@@ -200,6 +216,14 @@ def parse_args() -> argparse.Namespace:
         help=(
             "Prerequisite scope for the generated Home queue. "
             "Default: course, which ignores prerequisites not present in the course."
+        ),
+    )
+    parser.add_argument(
+        "--allow-missing-sources",
+        action="store_true",
+        help=(
+            "Import courses with incomplete source data by creating explicit placeholder lessons. "
+            "Missing source files are recorded in the course manifest."
         ),
     )
     parser.add_argument("--dry-run", action="store_true", help="Validate and print the plan without writing files.")
@@ -886,9 +910,9 @@ def write_course_topics(
     return target_path
 
 
-def validate_sources(ma_data_root: Path, topics: list[Topic]) -> None:
+def find_missing_sources(ma_data_root: Path, topics: list[Topic]) -> dict[str, list[Path]]:
     lessons_root = ma_data_root / "Lessons"
-    missing: list[str] = []
+    missing: dict[str, list[Path]] = {}
     for topic in topics:
         raw_lesson_dir = lessons_root / topic.topic_id
         required = [
@@ -896,9 +920,70 @@ def validate_sources(ma_data_root: Path, topics: list[Topic]) -> None:
             raw_lesson_dir / "Source" / f"{topic.topic_id}.html",
             raw_lesson_dir / "Source" / f"{topic.topic_id}.json",
         ]
-        missing.extend(path.as_posix() for path in required if not path.exists())
+        missing_paths = [path for path in required if not path.exists()]
+        if missing_paths:
+            missing[topic.topic_id] = missing_paths
+    return missing
+
+
+def validate_sources(missing: dict[str, list[Path]]) -> None:
     if missing:
-        raise FileNotFoundError("Missing required lesson files:\n" + "\n".join(f"- {path}" for path in missing))
+        paths = [path for missing_paths in missing.values() for path in missing_paths]
+        raise FileNotFoundError(
+            "Missing required lesson files:\n" + "\n".join(f"- {path}" for path in paths)
+        )
+
+
+def write_missing_source_placeholder(
+    *,
+    topic: Topic,
+    missing_paths: list[Path],
+    target_lesson_path: Path,
+    target_source_dir: Path,
+    course: CourseInfo,
+    target_root: Path,
+    course_dir: Path,
+) -> list[Path]:
+    lesson_text = "\n".join(
+        [
+            f"# {topic.name}",
+            "",
+            "<!--",
+            f"lesson-id: {topic.topic_id}",
+            f"topic-code: {topic.topic_code}",
+            "source-status: missing",
+            "-->",
+            "",
+            "> [!warning] Source lesson unavailable",
+            "> The canonical Math Academy lesson files were not present when this course was imported.",
+            "> No replacement lesson content was synthesized.",
+            "",
+        ]
+    )
+    target_lesson_path.parent.mkdir(parents=True, exist_ok=True)
+    target_lesson_path.write_text(
+        ensure_lesson_nav_footer(lesson_text, course, target_root, course_dir),
+        encoding="utf-8",
+    )
+
+    source_note = target_source_dir / "MISSING_SOURCE.md"
+    source_note.parent.mkdir(parents=True, exist_ok=True)
+    source_note.write_text(
+        "\n".join(
+            [
+                f"# Missing source for {topic.topic_code}",
+                "",
+                f"Math Academy topic ID: `{topic.topic_id}`",
+                "",
+                "The following canonical files were unavailable during import:",
+                "",
+                *[f"- `{path}`" for path in missing_paths],
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+    return [target_lesson_path, source_note]
 
 
 def validate_unique_paths(topics: list[Topic]) -> None:
@@ -934,6 +1019,7 @@ def import_course(
     overwrite: bool,
     indexes_only: bool,
     refresh_lesson_nav: bool,
+    allow_missing_sources: bool,
     queue_prerequisite_scope: str,
     dry_run: bool,
 ) -> dict[str, object]:
@@ -942,8 +1028,9 @@ def import_course(
     course_map = find_course_map(ma_data_root, course.name)
     units, topics = parse_course_map(course.code, course_map, catalog)
     validate_unique_paths(topics)
-    if not indexes_only:
-        validate_sources(ma_data_root, topics)
+    missing_sources = find_missing_sources(ma_data_root, topics)
+    if not indexes_only and not allow_missing_sources:
+        validate_sources(missing_sources)
     placements = build_all_placements(
         ma_data_root=ma_data_root,
         courses=load_courses(ma_data_root),
@@ -976,6 +1063,17 @@ def import_course(
         "min_layer": min(course_layers),
         "max_layer": max(course_layers),
         "initial_available_count": len(initial_available),
+        "missing_source_topic_count": len(missing_sources),
+        "missing_source_topics": [
+            {
+                "topic_id": topic.topic_id,
+                "topic_code": topic.topic_code,
+                "topic_name": topic.name,
+                "missing_files": [path.as_posix() for path in missing_sources[topic.topic_id]],
+            }
+            for topic in topics
+            if topic.topic_id in missing_sources
+        ],
         "refresh_lesson_nav": refresh_lesson_nav,
         "queue_prerequisite_scope": queue_prerequisite_scope,
     }
@@ -996,6 +1094,19 @@ def import_course(
             target_lesson_path = course_dir / topic_lesson_relpath(topic)
             target_source_dir = course_dir / topic_source_relpath(topic)
             target_lesson_path.parent.mkdir(parents=True, exist_ok=True)
+
+            if topic.topic_id in missing_sources:
+                placeholder_files = write_missing_source_placeholder(
+                    topic=topic,
+                    missing_paths=missing_sources[topic.topic_id],
+                    target_lesson_path=target_lesson_path,
+                    target_source_dir=target_source_dir,
+                    course=course,
+                    target_root=target_root,
+                    course_dir=course_dir,
+                )
+                copied_files.extend(path.as_posix() for path in placeholder_files)
+                continue
 
             raw_text = (raw_lesson_dir / f"{topic.topic_id}.md").read_text(encoding="utf-8")
             rewritten = rewrite_markdown(
@@ -1119,6 +1230,7 @@ def main() -> int:
                 overwrite=args.overwrite,
                 indexes_only=args.indexes_only,
                 refresh_lesson_nav=args.refresh_lesson_nav,
+                allow_missing_sources=args.allow_missing_sources,
                 queue_prerequisite_scope=args.queue_prerequisite_scope,
                 dry_run=args.dry_run,
             )

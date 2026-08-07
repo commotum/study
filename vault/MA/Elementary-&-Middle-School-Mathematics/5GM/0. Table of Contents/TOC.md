@@ -1,0 +1,168 @@
+# 5th Grade Math
+
+```check-progress
+```
+
+## Course Content
+
+- [ ] 1. The Number System
+	- [ ] 1.1. Whole Number Expressions
+		- [ ] [[1. The Number System/1.1. Whole Number Expressions/Lessons/1.1.1. Evaluating Whole Number Expressions|1.1.1. Evaluating Whole Number Expressions]]
+		- [ ] [[1. The Number System/1.1. Whole Number Expressions/Lessons/1.1.2. Evaluating Whole Number Expressions With Parentheses|1.1.2. Evaluating Whole Number Expressions With Parentheses]]
+		- [ ] [[1. The Number System/1.1. Whole Number Expressions/Lessons/1.1.3. Creating and Interpreting Whole Number Expressions|1.1.3. Creating and Interpreting Whole Number Expressions]]
+		- [ ] [[1. The Number System/1.1. Whole Number Expressions/Lessons/1.1.4. Creating Whole Number Expressions From Terminology|1.1.4. Creating Whole Number Expressions From Terminology]]
+		- [ ] [[1. The Number System/1.1. Whole Number Expressions/Lessons/1.1.5. Additive Comparisons of Whole Number Expressions|1.1.5. Additive Comparisons of Whole Number Expressions]]
+		- [ ] [[1. The Number System/1.1. Whole Number Expressions/Lessons/1.1.6. Multiplicative Comparisons of Whole Number Expressions|1.1.6. Multiplicative Comparisons of Whole Number Expressions]]
+	- [ ] 1.2. Introduction to Negative Numbers
+		- [ ] [[1. The Number System/1.2. Introduction to Negative Numbers/Lessons/1.2.1. Negative Numbers|1.2.1. Negative Numbers]]
+		- [ ] [[1. The Number System/1.2. Introduction to Negative Numbers/Lessons/1.2.2. Comparing Negative Numbers|1.2.2. Comparing Negative Numbers]]
+		- [ ] [[1. The Number System/1.2. Introduction to Negative Numbers/Lessons/1.2.3. Absolute Value|1.2.3. Absolute Value]]
+- [ ] 2. Multiplying & Dividing Whole Numbers
+	- [ ] 2.1. Multiplying Whole Numbers
+		- [ ] [[2. Multiplying & Dividing Whole Numbers/2.1. Multiplying Whole Numbers/Lessons/2.1.1. Multiplying Numbers by Powers of Ten Using Place Value|2.1.1. Multiplying Numbers by Powers of Ten Using Place Value]]
+		- [ ] [[2. Multiplying & Dividing Whole Numbers/2.1. Multiplying Whole Numbers/Lessons/2.1.2. Two-Digit by One-Digit Multiplication|2.1.2. Two-Digit by One-Digit Multiplication]]
+		- [ ] [[2. Multiplying & Dividing Whole Numbers/2.1. Multiplying Whole Numbers/Lessons/2.1.3. Three- and Four-Digit by One-Digit Multiplication|2.1.3. Three- and Four-Digit by One-Digit Multiplication]]
+		- [ ] [[2. Multiplying & Dividing Whole Numbers/2.1. Multiplying Whole Numbers/Lessons/2.1.4. Five- and Six-Digit by One-Digit Multiplication|2.1.4. Five- and Six-Digit by One-Digit Multiplication]]
+		- [ ] [[2. Multiplying & Dividing Whole Numbers/2.1. Multiplying Whole Numbers/Lessons/2.1.5. Two-Digit by Two-Digit Multiplication|2.1.5. Two-Digit by Two-Digit Multiplication]]
+		- [ ] [[2. Multiplying & Dividing Whole Numbers/2.1. Multiplying Whole Numbers/Lessons/2.1.6. Multi-Digit by Two-Digit Multiplication|2.1.6. Multi-Digit by Two-Digit Multiplication]]
+		- [ ] [[2. Multiplying & Dividing Whole Numbers/2.1. Multiplying Whole Numbers/Lessons/2.1.7. Three-Digit by Three-Digit Multiplication|2.1.7. Three-Digit by Three-Digit Multiplication]]
+	- [ ] 2.2. Dividing Whole Numbers
+		- [ ] [[2. Multiplying & Dividing Whole Numbers/2.2. Dividing Whole Numbers/Lessons/2.2.1. Two-Digit by One-Digit Division|2.2.1. Two-Digit by One-Digit Division]]
+		- [ ] [[2. Multiplying & Dividing Whole Numbers/2.2. Dividing Whole Numbers/Lessons/2.2.2. Three-Digit by One-Digit Division|2.2.2. Three-Digit by One-Digit Division]]
+		- [ ] [[2. Multiplying & Dividing Whole Numbers/2.2. Dividing Whole Numbers/Lessons/2.2.3. Four-Digit by One-Digit Division|2.2.3. Four-Digit by One-Digit Division]]
+		- [ ] [[2. Multiplying & Dividing Whole Numbers/2.2. Dividing Whole Numbers/Lessons/2.2.4. Using Fractions to Represent Division of Whole Numbers|2.2.4. Using Fractions to Represent Division of Whole Numbers]]
+		- [ ] [[2. Multiplying & Dividing Whole Numbers/2.2. Dividing Whole Numbers/Lessons/2.2.5. Dividing Numbers by One-Digit Numbers With Rounding|2.2.5. Dividing Numbers by One-Digit Numbers With Rounding]]
+		- [ ] [[2. Multiplying & Dividing Whole Numbers/2.2. Dividing Whole Numbers/Lessons/2.2.6. Dividing Numbers by One-Digit Numbers- Interpreting the Remainder|2.2.6. Dividing Numbers by One-Digit Numbers: Interpreting the Remainder]]
+		- [ ] [[2. Multiplying & Dividing Whole Numbers/2.2. Dividing Whole Numbers/Lessons/2.2.7. Dividing by Two-Digit Numbers by Connecting Multiplication and Division|2.2.7. Dividing by Two-Digit Numbers by Connecting Multiplication and Division]]
+		- [ ] [[2. Multiplying & Dividing Whole Numbers/2.2. Dividing Whole Numbers/Lessons/2.2.8. Dividing by Two-Digit Numbers With Remainders by Connecting Multiplication and Division|2.2.8. Dividing by Two-Digit Numbers With Remainders by Connecting Multiplication and Division]]
+		- [ ] [[2. Multiplying & Dividing Whole Numbers/2.2. Dividing Whole Numbers/Lessons/2.2.9. Multi-Digit by Two-Digit Division Using Partial Quotients|2.2.9. Multi-Digit by Two-Digit Division Using Partial Quotients]]
+		- [ ] [[2. Multiplying & Dividing Whole Numbers/2.2. Dividing Whole Numbers/Lessons/2.2.10. Three-Digit by Two-Digit Division|2.2.10. Three-Digit by Two-Digit Division]]
+		- [ ] [[2. Multiplying & Dividing Whole Numbers/2.2. Dividing Whole Numbers/Lessons/2.2.11. Four-Digit by Two-Digit Division|2.2.11. Four-Digit by Two-Digit Division]]
+- [ ] 3. Adding & Subtracting Fractions
+	- [ ] 3.1. Adding and Subtracting Fractions and Whole Numbers
+		- [ ] [[3. Adding & Subtracting Fractions/3.1. Adding and Subtracting Fractions and Whole Numbers/Lessons/3.1.1. Adding Fractions and Whole Numbers Using Models|3.1.1. Adding Fractions and Whole Numbers Using Models]]
+		- [ ] [[3. Adding & Subtracting Fractions/3.1. Adding and Subtracting Fractions and Whole Numbers/Lessons/3.1.2. Adding Fractions and Whole Numbers|3.1.2. Adding Fractions and Whole Numbers]]
+		- [ ] [[3. Adding & Subtracting Fractions/3.1. Adding and Subtracting Fractions and Whole Numbers/Lessons/3.1.3. Subtracting Fractions and Whole Numbers Using Models|3.1.3. Subtracting Fractions and Whole Numbers Using Models]]
+		- [ ] [[3. Adding & Subtracting Fractions/3.1. Adding and Subtracting Fractions and Whole Numbers/Lessons/3.1.4. Subtracting Fractions and Whole Numbers|3.1.4. Subtracting Fractions and Whole Numbers]]
+	- [ ] 3.2. Adding and Subtracting Fractions
+		- [ ] [[3. Adding & Subtracting Fractions/3.2. Adding and Subtracting Fractions/Lessons/3.2.1. Estimating Sums and Differences of Fractions|3.2.1. Estimating Sums and Differences of Fractions]]
+		- [ ] [[3. Adding & Subtracting Fractions/3.2. Adding and Subtracting Fractions/Lessons/3.2.2. Adding Fractions With Unlike Denominators Using Models|3.2.2. Adding Fractions With Unlike Denominators Using Models]]
+		- [ ] [[3. Adding & Subtracting Fractions/3.2. Adding and Subtracting Fractions/Lessons/3.2.3. Subtracting Fractions With Unlike Denominators Using Models|3.2.3. Subtracting Fractions With Unlike Denominators Using Models]]
+		- [ ] [[3. Adding & Subtracting Fractions/3.2. Adding and Subtracting Fractions/Lessons/3.2.4. Adding Fractions With Unlike Denominators|3.2.4. Adding Fractions With Unlike Denominators]]
+		- [ ] [[3. Adding & Subtracting Fractions/3.2. Adding and Subtracting Fractions/Lessons/3.2.5. Subtracting Fractions With Unlike Denominators|3.2.5. Subtracting Fractions With Unlike Denominators]]
+		- [ ] [[3. Adding & Subtracting Fractions/3.2. Adding and Subtracting Fractions/Lessons/3.2.6. Adding and Subtracting Fractions With Unlike Denominators- Word Problems|3.2.6. Adding and Subtracting Fractions With Unlike Denominators: Word Problems]]
+	- [ ] 3.3. Adding and Subtracting Mixed Numbers
+		- [ ] [[3. Adding & Subtracting Fractions/3.3. Adding and Subtracting Mixed Numbers/Lessons/3.3.1. Adding Mixed Numbers With Unlike Denominators|3.3.1. Adding Mixed Numbers With Unlike Denominators]]
+		- [ ] [[3. Adding & Subtracting Fractions/3.3. Adding and Subtracting Mixed Numbers/Lessons/3.3.2. Subtracting Mixed Numbers With Unlike Denominators|3.3.2. Subtracting Mixed Numbers With Unlike Denominators]]
+		- [ ] [[3. Adding & Subtracting Fractions/3.3. Adding and Subtracting Mixed Numbers/Lessons/3.3.3. Subtracting Mixed Numbers With Unlike Denominators Using Improper Fractions|3.3.3. Subtracting Mixed Numbers With Unlike Denominators Using Improper Fractions]]
+		- [ ] [[3. Adding & Subtracting Fractions/3.3. Adding and Subtracting Mixed Numbers/Lessons/3.3.4. Adding and Subtracting Mixed Numbers With Unlike Denominators- Word Problems|3.3.4. Adding and Subtracting Mixed Numbers With Unlike Denominators: Word Problems]]
+- [ ] 4. Multiplying & Dividing Fractions
+	- [ ] 4.1. Multiplying Fractions
+		- [ ] [[4. Multiplying & Dividing Fractions/4.1. Multiplying Fractions/Lessons/4.1.1. Multiplying Fractions by Unit Fractions Using Models|4.1.1. Multiplying Fractions by Unit Fractions Using Models]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.1. Multiplying Fractions/Lessons/4.1.2. Multiplying Fractions Using Models|4.1.2. Multiplying Fractions Using Models]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.1. Multiplying Fractions/Lessons/4.1.3. Multiplying Fractions|4.1.3. Multiplying Fractions]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.1. Multiplying Fractions/Lessons/4.1.4. Multiplying Fractions- Word Problems|4.1.4. Multiplying Fractions: Word Problems]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.1. Multiplying Fractions/Lessons/4.1.5. Multiplying Fractions by Swapping Denominators|4.1.5. Multiplying Fractions by Swapping Denominators]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.1. Multiplying Fractions/Lessons/4.1.6. Multiplying Mixed Numbers by Whole Numbers|4.1.6. Multiplying Mixed Numbers by Whole Numbers]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.1. Multiplying Fractions/Lessons/4.1.7. Multiplying Mixed Numbers by Fractions|4.1.7. Multiplying Mixed Numbers by Fractions]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.1. Multiplying Fractions/Lessons/4.1.8. Multiplying Mixed Numbers|4.1.8. Multiplying Mixed Numbers]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.1. Multiplying Fractions/Lessons/4.1.9. Multiplying Mixed Numbers- Word Problems|4.1.9. Multiplying Mixed Numbers: Word Problems]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.1. Multiplying Fractions/Lessons/4.1.10. Connecting Fraction Multiplication and Area|4.1.10. Connecting Fraction Multiplication and Area]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.1. Multiplying Fractions/Lessons/4.1.11. Finding Areas Using Fraction Multiplication|4.1.11. Finding Areas Using Fraction Multiplication]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.1. Multiplying Fractions/Lessons/4.1.12. Fraction Multiplication Number Sense|4.1.12. Fraction Multiplication Number Sense]]
+	- [ ] 4.2. Dividing Fractions
+		- [ ] [[4. Multiplying & Dividing Fractions/4.2. Dividing Fractions/Lessons/4.2.1. Interpreting Fraction Division Using Area Models|4.2.1. Interpreting Fraction Division Using Area Models]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.2. Dividing Fractions/Lessons/4.2.2. Dividing Whole Numbers by Unit Fractions Using Models|4.2.2. Dividing Whole Numbers by Unit Fractions Using Models]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.2. Dividing Fractions/Lessons/4.2.3. Dividing Whole Numbers by Unit Fractions|4.2.3. Dividing Whole Numbers by Unit Fractions]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.2. Dividing Fractions/Lessons/4.2.4. Dividing Unit Fractions by Whole Numbers Using Models|4.2.4. Dividing Unit Fractions by Whole Numbers Using Models]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.2. Dividing Fractions/Lessons/4.2.5. Dividing Unit Fractions by Whole Numbers|4.2.5. Dividing Unit Fractions by Whole Numbers]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.2. Dividing Fractions/Lessons/4.2.6. Reciprocals|4.2.6. Reciprocals]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.2. Dividing Fractions/Lessons/4.2.7. Dividing Whole Numbers by Fractions Using Models- Whole Number Results|4.2.7. Dividing Whole Numbers by Fractions Using Models: Whole Number Results]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.2. Dividing Fractions/Lessons/4.2.8. Dividing Whole Numbers by Fractions Using Models- Fractional Results|4.2.8. Dividing Whole Numbers by Fractions Using Models: Fractional Results]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.2. Dividing Fractions/Lessons/4.2.9. Dividing Whole Numbers by Fractions|4.2.9. Dividing Whole Numbers by Fractions]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.2. Dividing Fractions/Lessons/4.2.10. Dividing Fractions by Whole Numbers Using Models|4.2.10. Dividing Fractions by Whole Numbers Using Models]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.2. Dividing Fractions/Lessons/4.2.11. Dividing Fractions by Whole Numbers|4.2.11. Dividing Fractions by Whole Numbers]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.2. Dividing Fractions/Lessons/4.2.12. Dividing Fractions and Whole Numbers- Word Problems|4.2.12. Dividing Fractions and Whole Numbers: Word Problems]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.2. Dividing Fractions/Lessons/4.2.13. Dividing Fractions Using Models|4.2.13. Dividing Fractions Using Models]]
+		- [ ] [[4. Multiplying & Dividing Fractions/4.2. Dividing Fractions/Lessons/4.2.14. Dividing Fractions|4.2.14. Dividing Fractions]]
+- [ ] 5. Decimals
+	- [ ] 5.1. Decimals
+		- [ ] [[5. Decimals/5.1. Decimals/Lessons/5.1.1. The Place Value System With Decimals|5.1.1. The Place Value System With Decimals]]
+		- [ ] [[5. Decimals/5.1. Decimals/Lessons/5.1.2. Comparing Place Values With Decimals|5.1.2. Comparing Place Values With Decimals]]
+		- [ ] [[5. Decimals/5.1. Decimals/Lessons/5.1.3. Reading and Writing Decimals Written in Words|5.1.3. Reading and Writing Decimals Written in Words]]
+		- [ ] [[5. Decimals/5.1. Decimals/Lessons/5.1.4. Converting Decimals From Standard to Expanded Form|5.1.4. Converting Decimals From Standard to Expanded Form]]
+		- [ ] [[5. Decimals/5.1. Decimals/Lessons/5.1.5. Converting Decimals From Expanded to Standard Form|5.1.5. Converting Decimals From Expanded to Standard Form]]
+		- [ ] [[5. Decimals/5.1. Decimals/Lessons/5.1.6. Equivalent Decimals|5.1.6. Equivalent Decimals]]
+		- [ ] [[5. Decimals/5.1. Decimals/Lessons/5.1.7. Comparing Decimals|5.1.7. Comparing Decimals]]
+		- [ ] [[5. Decimals/5.1. Decimals/Lessons/5.1.8. Rounding Down Decimals|5.1.8. Rounding Down Decimals]]
+		- [ ] [[5. Decimals/5.1. Decimals/Lessons/5.1.9. Rounding Up Decimals|5.1.9. Rounding Up Decimals]]
+		- [ ] [[5. Decimals/5.1. Decimals/Lessons/5.1.10. Significant Figures|5.1.10. Significant Figures]]
+		- [ ] [[5. Decimals/5.1. Decimals/Lessons/5.1.11. Significant Figures With Decimals|5.1.11. Significant Figures With Decimals]]
+	- [ ] 5.2. Adding and Subtracting Decimals
+		- [ ] [[5. Decimals/5.2. Adding and Subtracting Decimals/Lessons/5.2.1. Estimating Decimal Addition and Subtraction|5.2.1. Estimating Decimal Addition and Subtraction]]
+		- [ ] [[5. Decimals/5.2. Adding and Subtracting Decimals/Lessons/5.2.2. Adding Decimals|5.2.2. Adding Decimals]]
+		- [ ] [[5. Decimals/5.2. Adding and Subtracting Decimals/Lessons/5.2.3. Addition With Unequal Numbers of Decimals|5.2.3. Addition With Unequal Numbers of Decimals]]
+		- [ ] [[5. Decimals/5.2. Adding and Subtracting Decimals/Lessons/5.2.4. Subtracting Decimals|5.2.4. Subtracting Decimals]]
+		- [ ] [[5. Decimals/5.2. Adding and Subtracting Decimals/Lessons/5.2.5. Subtraction With Unequal Numbers of Decimals|5.2.5. Subtraction With Unequal Numbers of Decimals]]
+		- [ ] [[5. Decimals/5.2. Adding and Subtracting Decimals/Lessons/5.2.6. Estimating Decimal Addition With Benchmarks|5.2.6. Estimating Decimal Addition With Benchmarks]]
+		- [ ] [[5. Decimals/5.2. Adding and Subtracting Decimals/Lessons/5.2.7. Estimating Decimal Subtraction With Benchmarks|5.2.7. Estimating Decimal Subtraction With Benchmarks]]
+- [ ] 6. Multiplying & Dividing Decimals
+	- [ ] 6.1. Multiplying Decimals
+		- [ ] [[6. Multiplying & Dividing Decimals/6.1. Multiplying Decimals/Lessons/6.1.1. Multiplying Decimals by Powers of Ten Using Place Value|6.1.1. Multiplying Decimals by Powers of Ten Using Place Value]]
+		- [ ] [[6. Multiplying & Dividing Decimals/6.1. Multiplying Decimals/Lessons/6.1.2. Multiplying Decimals by Powers of Ten Using Decimal Point Placement|6.1.2. Multiplying Decimals by Powers of Ten Using Decimal Point Placement]]
+		- [ ] [[6. Multiplying & Dividing Decimals/6.1. Multiplying Decimals/Lessons/6.1.3. Estimating Decimal Multiplication|6.1.3. Estimating Decimal Multiplication]]
+		- [ ] [[6. Multiplying & Dividing Decimals/6.1. Multiplying Decimals/Lessons/6.1.4. Multiplying a Decimal by a One-Digit Whole Number|6.1.4. Multiplying a Decimal by a One-Digit Whole Number]]
+		- [ ] [[6. Multiplying & Dividing Decimals/6.1. Multiplying Decimals/Lessons/6.1.5. Multiplying a Decimal by a Multi-Digit Whole Number|6.1.5. Multiplying a Decimal by a Multi-Digit Whole Number]]
+		- [ ] [[6. Multiplying & Dividing Decimals/6.1. Multiplying Decimals/Lessons/6.1.6. Multiplying Two-Digit Decimals|6.1.6. Multiplying Two-Digit Decimals]]
+		- [ ] [[6. Multiplying & Dividing Decimals/6.1. Multiplying Decimals/Lessons/6.1.7. Multiplying Two-Digit Decimals by Three-Digit Decimals|6.1.7. Multiplying Two-Digit Decimals by Three-Digit Decimals]]
+		- [ ] [[6. Multiplying & Dividing Decimals/6.1. Multiplying Decimals/Lessons/6.1.8. Multiplying Three-Digit Decimals|6.1.8. Multiplying Three-Digit Decimals]]
+	- [ ] 6.2. Dividing Decimals
+		- [ ] [[6. Multiplying & Dividing Decimals/6.2. Dividing Decimals/Lessons/6.2.1. Dividing Decimals by Powers of Ten Using Place Value|6.2.1. Dividing Decimals by Powers of Ten Using Place Value]]
+		- [ ] [[6. Multiplying & Dividing Decimals/6.2. Dividing Decimals/Lessons/6.2.2. Dividing Decimals by Powers of Ten Using Decimal Point Placement|6.2.2. Dividing Decimals by Powers of Ten Using Decimal Point Placement]]
+		- [ ] [[6. Multiplying & Dividing Decimals/6.2. Dividing Decimals/Lessons/6.2.3. Estimating Decimal Division|6.2.3. Estimating Decimal Division]]
+		- [ ] [[6. Multiplying & Dividing Decimals/6.2. Dividing Decimals/Lessons/6.2.4. Dividing Decimals Using Place Value Strategies|6.2.4. Dividing Decimals Using Place Value Strategies]]
+		- [ ] [[6. Multiplying & Dividing Decimals/6.2. Dividing Decimals/Lessons/6.2.5. Division of Whole Numbers With Decimal Quotients|6.2.5. Division of Whole Numbers With Decimal Quotients]]
+		- [ ] [[6. Multiplying & Dividing Decimals/6.2. Dividing Decimals/Lessons/6.2.6. Division of Whole Numbers With Decimal Quotients and Rounding|6.2.6. Division of Whole Numbers With Decimal Quotients and Rounding]]
+		- [ ] [[6. Multiplying & Dividing Decimals/6.2. Dividing Decimals/Lessons/6.2.7. Dividing Decimals Using the Standard Algorithm|6.2.7. Dividing Decimals Using the Standard Algorithm]]
+		- [ ] [[6. Multiplying & Dividing Decimals/6.2. Dividing Decimals/Lessons/6.2.8. Dividing Three-Digit Decimals by Two-Digit Decimals|6.2.8. Dividing Three-Digit Decimals by Two-Digit Decimals]]
+		- [ ] [[6. Multiplying & Dividing Decimals/6.2. Dividing Decimals/Lessons/6.2.9. Dividing Four-Digit and Five-Digit Decimals|6.2.9. Dividing Four-Digit and Five-Digit Decimals]]
+- [ ] 7. Exponents
+	- [ ] 7.1. Exponents
+		- [ ] [[7. Exponents/7.1. Exponents/Lessons/7.1.1. Powers of Ten|7.1.1. Powers of Ten]]
+		- [ ] [[7. Exponents/7.1. Exponents/Lessons/7.1.2. Multiplying Numbers by Powers of Ten With Exponents|7.1.2. Multiplying Numbers by Powers of Ten With Exponents]]
+		- [ ] [[7. Exponents/7.1. Exponents/Lessons/7.1.3. Multiplying Decimals by Powers of Ten With Exponents|7.1.3. Multiplying Decimals by Powers of Ten With Exponents]]
+		- [ ] [[7. Exponents/7.1. Exponents/Lessons/7.1.4. Introduction to Exponents|7.1.4. Introduction to Exponents]]
+		- [ ] [[7. Exponents/7.1. Exponents/Lessons/7.1.5. Evaluating Exponents|7.1.5. Evaluating Exponents]]
+		- [ ] [[7. Exponents/7.1. Exponents/Lessons/7.1.6. Evaluating Larger Exponents|7.1.6. Evaluating Larger Exponents]]
+		- [ ] [[7. Exponents/7.1. Exponents/Lessons/7.1.7. Evaluating Exponents With Fractional Bases|7.1.7. Evaluating Exponents With Fractional Bases]]
+		- [ ] [[7. Exponents/7.1. Exponents/Lessons/7.1.8. Evaluating Exponents With Decimal Bases|7.1.8. Evaluating Exponents With Decimal Bases]]
+		- [ ] [[7. Exponents/7.1. Exponents/Lessons/7.1.9. Comparing Exponents|7.1.9. Comparing Exponents]]
+		- [ ] [[7. Exponents/7.1. Exponents/Lessons/7.1.10. Evaluating Whole Number Expressions Containing Exponents|7.1.10. Evaluating Whole Number Expressions Containing Exponents]]
+- [ ] 8. Measurement & Data
+	- [ ] 8.1. Units and Data
+		- [ ] [[8. Measurement & Data/8.1. Units and Data/Lessons/8.1.1. Converting Metric Units of Length to Larger Units|8.1.1. Converting Metric Units of Length to Larger Units]]
+		- [ ] [[8. Measurement & Data/8.1. Units and Data/Lessons/8.1.2. Converting Customary Units of Length to Larger Units|8.1.2. Converting Customary Units of Length to Larger Units]]
+		- [ ] [[8. Measurement & Data/8.1. Units and Data/Lessons/8.1.3. Converting Units of Volume to Larger Units|8.1.3. Converting Units of Volume to Larger Units]]
+		- [ ] [[8. Measurement & Data/8.1. Units and Data/Lessons/8.1.4. Converting Units of Mass to Larger Units|8.1.4. Converting Units of Mass to Larger Units]]
+		- [ ] [[8. Measurement & Data/8.1. Units and Data/Lessons/8.1.5. Converting Units of Time to Larger Units|8.1.5. Converting Units of Time to Larger Units]]
+		- [ ] [[8. Measurement & Data/8.1. Units and Data/Lessons/8.1.6. Operations on Fractions With Line Plots|8.1.6. Operations on Fractions With Line Plots]]
+	- [ ] 8.2. Coordinates
+		- [ ] [[8. Measurement & Data/8.2. Coordinates/Lessons/8.2.1. Describing the Coordinate Plane|8.2.1. Describing the Coordinate Plane]]
+		- [ ] [[8. Measurement & Data/8.2. Coordinates/Lessons/8.2.2. Solving Real World Problems Using Coordinates|8.2.2. Solving Real World Problems Using Coordinates]]
+		- [ ] [[8. Measurement & Data/8.2. Coordinates/Lessons/8.2.3. Coordinate Planes as Maps|8.2.3. Coordinate Planes as Maps]]
+	- [ ] 8.3. Patterns and Relationships
+		- [ ] [[8. Measurement & Data/8.3. Patterns and Relationships/Lessons/8.3.1. Connecting Patterns|8.3.1. Connecting Patterns]]
+		- [ ] [[8. Measurement & Data/8.3. Patterns and Relationships/Lessons/8.3.2. Comparing Patterns|8.3.2. Comparing Patterns]]
+		- [ ] [[8. Measurement & Data/8.3. Patterns and Relationships/Lessons/8.3.3. Graphing Patterns|8.3.3. Graphing Patterns]]
+- [ ] 9. Geometry
+	- [ ] 9.1. Volume
+		- [ ] [[9. Geometry/9.1. Volume/Lessons/9.1.1. Understanding Volume Using Unit Cubes|9.1.1. Understanding Volume Using Unit Cubes]]
+		- [ ] [[9. Geometry/9.1. Volume/Lessons/9.1.2. Units of Area and Volume|9.1.2. Units of Area and Volume]]
+		- [ ] [[9. Geometry/9.1. Volume/Lessons/9.1.3. Volumes of Right Rectangular Prisms|9.1.3. Volumes of Right Rectangular Prisms]]
+		- [ ] [[9. Geometry/9.1. Volume/Lessons/9.1.4. Volumes of Right Rectangular Prisms- Word Problems|9.1.4. Volumes of Right Rectangular Prisms: Word Problems]]
+	- [ ] 9.2. 2D Shapes
+		- [ ] [[9. Geometry/9.2. 2D Shapes/Lessons/9.2.1. Polygons|9.2.1. Polygons]]
+		- [ ] [[9. Geometry/9.2. 2D Shapes/Lessons/9.2.2. Quadrilaterals|9.2.2. Quadrilaterals]]
+		- [ ] [[9. Geometry/9.2. 2D Shapes/Lessons/9.2.3. Rectangles, Rhombuses, and Squares|9.2.3. Rectangles, Rhombuses, and Squares]]
+		- [ ] [[9. Geometry/9.2. 2D Shapes/Lessons/9.2.4. Perimeters of Shapes|9.2.4. Perimeters of Shapes]]
+		- [ ] [[9. Geometry/9.2. 2D Shapes/Lessons/9.2.5. Classifying Quadrilaterals|9.2.5. Classifying Quadrilaterals]]

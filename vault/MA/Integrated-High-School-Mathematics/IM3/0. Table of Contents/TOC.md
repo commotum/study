@@ -1,0 +1,219 @@
+# Integrated Math III
+
+```check-progress
+```
+
+## Course Content
+
+- [ ] 1. Polynomials
+	- [ ] 1.1. Factoring Polynomials
+		- [ ] [[1. Polynomials/1.1. Factoring Polynomials/Lessons/1.1.1. Further Factoring of Polynomials Using GCFs|1.1.1. Further Factoring of Polynomials Using GCFs]]
+		- [ ] [[1. Polynomials/1.1. Factoring Polynomials/Lessons/1.1.2. Factoring Higher-Order Polynomials as a Difference of Squares|1.1.2. Factoring Higher-Order Polynomials as a Difference of Squares]]
+		- [ ] [[1. Polynomials/1.1. Factoring Polynomials/Lessons/1.1.3. Factoring Cubic Expressions by Grouping|1.1.3. Factoring Cubic Expressions by Grouping]]
+		- [ ] [[1. Polynomials/1.1. Factoring Polynomials/Lessons/1.1.4. Factoring Sums and Differences of Cubes|1.1.4. Factoring Sums and Differences of Cubes]]
+		- [ ] [[1. Polynomials/1.1. Factoring Polynomials/Lessons/1.1.5. Factoring Biquadratic Expressions|1.1.5. Factoring Biquadratic Expressions]]
+	- [ ] 1.2. Polynomial Equations
+		- [ ] [[1. Polynomials/1.2. Polynomial Equations/Lessons/1.2.1. Determining the Roots of Polynomials|1.2.1. Determining the Roots of Polynomials]]
+		- [ ] [[1. Polynomials/1.2. Polynomial Equations/Lessons/1.2.2. Solving Polynomial Equations Using the GCF|1.2.2. Solving Polynomial Equations Using the GCF]]
+		- [ ] [[1. Polynomials/1.2. Polynomial Equations/Lessons/1.2.3. Solving Cubic Equations by Grouping|1.2.3. Solving Cubic Equations by Grouping]]
+		- [ ] [[1. Polynomials/1.2. Polynomial Equations/Lessons/1.2.4. Solving Biquadratic Equations|1.2.4. Solving Biquadratic Equations]]
+	- [ ] 1.3. Dividing Polynomials
+		- [ ] [[1. Polynomials/1.3. Dividing Polynomials/Lessons/1.3.1. Dividing Polynomials Using Synthetic Division|1.3.1. Dividing Polynomials Using Synthetic Division]]
+		- [ ] [[1. Polynomials/1.3. Dividing Polynomials/Lessons/1.3.2. Dividing Polynomials by Linear Binomials Using Long Division|1.3.2. Dividing Polynomials by Linear Binomials Using Long Division]]
+		- [ ] [[1. Polynomials/1.3. Dividing Polynomials/Lessons/1.3.3. Dividing Polynomials Using Long Division|1.3.3. Dividing Polynomials Using Long Division]]
+		- [ ] [[1. Polynomials/1.3. Dividing Polynomials/Lessons/1.3.4. Dividing Polynomials by Manipulating Rational Expressions|1.3.4. Dividing Polynomials by Manipulating Rational Expressions]]
+	- [ ] 1.4. Polynomial Theorems
+		- [ ] [[1. Polynomials/1.4. Polynomial Theorems/Lessons/1.4.1. The Factor Theorem|1.4.1. The Factor Theorem]]
+		- [ ] [[1. Polynomials/1.4. Polynomial Theorems/Lessons/1.4.2. Determining Polynomial Coefficients Using the Factor Theorem|1.4.2. Determining Polynomial Coefficients Using the Factor Theorem]]
+		- [ ] [[1. Polynomials/1.4. Polynomial Theorems/Lessons/1.4.3. Factoring Cubic Polynomials Using the Factor Theorem|1.4.3. Factoring Cubic Polynomials Using the Factor Theorem]]
+		- [ ] [[1. Polynomials/1.4. Polynomial Theorems/Lessons/1.4.4. Factoring Quartic Polynomials Using the Factor Theorem|1.4.4. Factoring Quartic Polynomials Using the Factor Theorem]]
+		- [ ] [[1. Polynomials/1.4. Polynomial Theorems/Lessons/1.4.5. Multiplicities of the Roots of Polynomials|1.4.5. Multiplicities of the Roots of Polynomials]]
+		- [ ] [[1. Polynomials/1.4. Polynomial Theorems/Lessons/1.4.6. Finding Multiplicities of the Roots of Quartic Polynomials by Factoring|1.4.6. Finding Multiplicities of the Roots of Quartic Polynomials by Factoring]]
+		- [ ] [[1. Polynomials/1.4. Polynomial Theorems/Lessons/1.4.7. The Remainder Theorem|1.4.7. The Remainder Theorem]]
+		- [ ] [[1. Polynomials/1.4. Polynomial Theorems/Lessons/1.4.8. The Rational Roots Theorem|1.4.8. The Rational Roots Theorem]]
+	- [ ] 1.5. Graphs of Polynomials
+		- [ ] [[1. Polynomials/1.5. Graphs of Polynomials/Lessons/1.5.1. Graphing Elementary Cubic Functions|1.5.1. Graphing Elementary Cubic Functions]]
+		- [ ] [[1. Polynomials/1.5. Graphs of Polynomials/Lessons/1.5.2. Graphing Cubic Curves Containing Three Distinct Real Roots|1.5.2. Graphing Cubic Curves Containing Three Distinct Real Roots]]
+		- [ ] [[1. Polynomials/1.5. Graphs of Polynomials/Lessons/1.5.3. Graphing Cubic Curves Containing a Double Root|1.5.3. Graphing Cubic Curves Containing a Double Root]]
+		- [ ] [[1. Polynomials/1.5. Graphs of Polynomials/Lessons/1.5.4. Graphing Cubic Curves Containing One Distinct Real Root|1.5.4. Graphing Cubic Curves Containing One Distinct Real Root]]
+		- [ ] [[1. Polynomials/1.5. Graphs of Polynomials/Lessons/1.5.5. End Behavior of Polynomials|1.5.5. End Behavior of Polynomials]]
+		- [ ] [[1. Polynomials/1.5. Graphs of Polynomials/Lessons/1.5.6. Graphing General Polynomials|1.5.6. Graphing General Polynomials]]
+	- [ ] 1.6. Properties of Polynomials
+		- [ ] [[1. Polynomials/1.6. Properties of Polynomials/Lessons/1.6.1. The Least Common Multiple of Two Monomials|1.6.1. The Least Common Multiple of Two Monomials]]
+		- [ ] [[1. Polynomials/1.6. Properties of Polynomials/Lessons/1.6.2. The Least Common Multiple of Two Polynomials|1.6.2. The Least Common Multiple of Two Polynomials]]
+		- [ ] [[1. Polynomials/1.6. Properties of Polynomials/Lessons/1.6.3. Describing Relationships Using Polynomial Identities|1.6.3. Describing Relationships Using Polynomial Identities]]
+- [ ] 2. Rationals and Radicals
+	- [ ] 2.1. Rational Expressions
+		- [ ] [[2. Rationals and Radicals/2.1. Rational Expressions/Lessons/2.1.1. Simplifying Rational Expressions Using Polynomial Factorization|2.1.1. Simplifying Rational Expressions Using Polynomial Factorization]]
+		- [ ] [[2. Rationals and Radicals/2.1. Rational Expressions/Lessons/2.1.2. Adding and Subtracting Rational Expressions|2.1.2. Adding and Subtracting Rational Expressions]]
+		- [ ] [[2. Rationals and Radicals/2.1. Rational Expressions/Lessons/2.1.3. Adding Rational Expressions With No Common Factors in the Denominator|2.1.3. Adding Rational Expressions With No Common Factors in the Denominator]]
+		- [ ] [[2. Rationals and Radicals/2.1. Rational Expressions/Lessons/2.1.4. Multiplying Rational Expressions|2.1.4. Multiplying Rational Expressions]]
+		- [ ] [[2. Rationals and Radicals/2.1. Rational Expressions/Lessons/2.1.5. Dividing Rational Expressions|2.1.5. Dividing Rational Expressions]]
+	- [ ] 2.2. Reciprocal Functions
+		- [ ] [[2. Rationals and Radicals/2.2. Reciprocal Functions/Lessons/2.2.1. Graphing Reciprocal Functions|2.2.1. Graphing Reciprocal Functions]]
+		- [ ] [[2. Rationals and Radicals/2.2. Reciprocal Functions/Lessons/2.2.2. Graph Transformations of Reciprocal Functions|2.2.2. Graph Transformations of Reciprocal Functions]]
+		- [ ] [[2. Rationals and Radicals/2.2. Reciprocal Functions/Lessons/2.2.3. Combining Graph Transformations of Reciprocal Functions|2.2.3. Combining Graph Transformations of Reciprocal Functions]]
+		- [ ] [[2. Rationals and Radicals/2.2. Reciprocal Functions/Lessons/2.2.4. Domain and Range of Transformed Reciprocal Functions|2.2.4. Domain and Range of Transformed Reciprocal Functions]]
+		- [ ] [[2. Rationals and Radicals/2.2. Reciprocal Functions/Lessons/2.2.5. Inverses of Reciprocal Functions|2.2.5. Inverses of Reciprocal Functions]]
+		- [ ] [[2. Rationals and Radicals/2.2. Reciprocal Functions/Lessons/2.2.6. Finding Intersections of Lines and Reciprocal Functions|2.2.6. Finding Intersections of Lines and Reciprocal Functions]]
+	- [ ] 2.3. Radical Expressions
+		- [ ] [[2. Rationals and Radicals/2.3. Radical Expressions/Lessons/2.3.1. Simplifying Square Root Expressions Using Polynomial Factorization|2.3.1. Simplifying Square Root Expressions Using Polynomial Factorization]]
+		- [ ] [[2. Rationals and Radicals/2.3. Radical Expressions/Lessons/2.3.2. Rationalizing Denominators of Algebraic Expressions|2.3.2. Rationalizing Denominators of Algebraic Expressions]]
+		- [ ] [[2. Rationals and Radicals/2.3. Radical Expressions/Lessons/2.3.3. Rationalizing Denominators With Two Terms|2.3.3. Rationalizing Denominators With Two Terms]]
+		- [ ] [[2. Rationals and Radicals/2.3. Radical Expressions/Lessons/2.3.4. Further Rationalizing Denominators of Algebraic Expressions|2.3.4. Further Rationalizing Denominators of Algebraic Expressions]]
+	- [ ] 2.4. Radical Functions
+		- [ ] [[2. Rationals and Radicals/2.4. Radical Functions/Lessons/2.4.1. Graphing the Square Root Function|2.4.1. Graphing the Square Root Function]]
+		- [ ] [[2. Rationals and Radicals/2.4. Radical Functions/Lessons/2.4.2. Graph Transformations of Square Root Functions|2.4.2. Graph Transformations of Square Root Functions]]
+		- [ ] [[2. Rationals and Radicals/2.4. Radical Functions/Lessons/2.4.3. Graphing the Cube Root Function|2.4.3. Graphing the Cube Root Function]]
+		- [ ] [[2. Rationals and Radicals/2.4. Radical Functions/Lessons/2.4.4. Properties of Transformed Square Root Functions|2.4.4. Properties of Transformed Square Root Functions]]
+		- [ ] [[2. Rationals and Radicals/2.4. Radical Functions/Lessons/2.4.5. The Domain of a Transformed Radical Function|2.4.5. The Domain of a Transformed Radical Function]]
+		- [ ] [[2. Rationals and Radicals/2.4. Radical Functions/Lessons/2.4.6. The Range of a Transformed Radical Function|2.4.6. The Range of a Transformed Radical Function]]
+		- [ ] [[2. Rationals and Radicals/2.4. Radical Functions/Lessons/2.4.7. Roots of Transformed Radical Functions|2.4.7. Roots of Transformed Radical Functions]]
+		- [ ] [[2. Rationals and Radicals/2.4. Radical Functions/Lessons/2.4.8. Inverses of Radical Functions|2.4.8. Inverses of Radical Functions]]
+		- [ ] [[2. Rationals and Radicals/2.4. Radical Functions/Lessons/2.4.9. Finding Intersections of Lines and Radical Functions|2.4.9. Finding Intersections of Lines and Radical Functions]]
+		- [ ] [[2. Rationals and Radicals/2.4. Radical Functions/Lessons/2.4.10. Solving Advanced Radical Equations|2.4.10. Solving Advanced Radical Equations]]
+- [ ] 3. Exponentials & Logarithms
+	- [ ] 3.1. Exponential Equations
+		- [ ] [[3. Exponentials & Logarithms/3.1. Exponential Equations/Lessons/3.1.1. Solving Exponential Equations Using Logarithms|3.1.1. Solving Exponential Equations Using Logarithms]]
+		- [ ] [[3. Exponentials & Logarithms/3.1. Exponential Equations/Lessons/3.1.2. Solving Equations Containing the Exponential Function|3.1.2. Solving Equations Containing the Exponential Function]]
+		- [ ] [[3. Exponentials & Logarithms/3.1. Exponential Equations/Lessons/3.1.3. Solving Exponential Equations With Different Bases|3.1.3. Solving Exponential Equations With Different Bases]]
+		- [ ] [[3. Exponentials & Logarithms/3.1. Exponential Equations/Lessons/3.1.4. Solving Exponential Equations With Different Bases Using Logarithms|3.1.4. Solving Exponential Equations With Different Bases Using Logarithms]]
+		- [ ] [[3. Exponentials & Logarithms/3.1. Exponential Equations/Lessons/3.1.5. Solving Exponential Equations Using the Zero-Product Property|3.1.5. Solving Exponential Equations Using the Zero-Product Property]]
+	- [ ] 3.2. Logarithmic Equations
+		- [ ] [[3. Exponentials & Logarithms/3.2. Logarithmic Equations/Lessons/3.2.1. Solving Logarithmic Equations|3.2.1. Solving Logarithmic Equations]]
+		- [ ] [[3. Exponentials & Logarithms/3.2. Logarithmic Equations/Lessons/3.2.2. Solving Logarithmic Equations Containing the Natural Logarithm|3.2.2. Solving Logarithmic Equations Containing the Natural Logarithm]]
+		- [ ] [[3. Exponentials & Logarithms/3.2. Logarithmic Equations/Lessons/3.2.3. Solving Logarithmic Equations Using the Laws of Logarithms|3.2.3. Solving Logarithmic Equations Using the Laws of Logarithms]]
+		- [ ] [[3. Exponentials & Logarithms/3.2. Logarithmic Equations/Lessons/3.2.4. Solving Logarithmic Equations by Combining the Laws of Logarithms|3.2.4. Solving Logarithmic Equations by Combining the Laws of Logarithms]]
+		- [ ] [[3. Exponentials & Logarithms/3.2. Logarithmic Equations/Lessons/3.2.5. Solving Logarithmic Equations With Logarithms on Both Sides|3.2.5. Solving Logarithmic Equations With Logarithms on Both Sides]]
+		- [ ] [[3. Exponentials & Logarithms/3.2. Logarithmic Equations/Lessons/3.2.6. Solving Logarithmic Equations Using the Zero-Product Property|3.2.6. Solving Logarithmic Equations Using the Zero-Product Property]]
+	- [ ] 3.3. Graphs of Logarithmic Functions
+		- [ ] [[3. Exponentials & Logarithms/3.3. Graphs of Logarithmic Functions/Lessons/3.3.1. Graphing Logarithmic Functions|3.3.1. Graphing Logarithmic Functions]]
+		- [ ] [[3. Exponentials & Logarithms/3.3. Graphs of Logarithmic Functions/Lessons/3.3.2. Combining Graph Transformations of Logarithmic Functions|3.3.2. Combining Graph Transformations of Logarithmic Functions]]
+		- [ ] [[3. Exponentials & Logarithms/3.3. Graphs of Logarithmic Functions/Lessons/3.3.3. Properties of Transformed Logarithmic Functions|3.3.3. Properties of Transformed Logarithmic Functions]]
+		- [ ] [[3. Exponentials & Logarithms/3.3. Graphs of Logarithmic Functions/Lessons/3.3.4. Inverses of Exponential and Logarithmic Functions|3.3.4. Inverses of Exponential and Logarithmic Functions]]
+	- [ ] 3.4. Modeling with Exponential Functions
+		- [ ] [[3. Exponentials & Logarithms/3.4. Modeling with Exponential Functions/Lessons/3.4.1. Modeling With Compound Interest|3.4.1. Modeling With Compound Interest]]
+		- [ ] [[3. Exponentials & Logarithms/3.4. Modeling with Exponential Functions/Lessons/3.4.2. Continuously Compounded Interest|3.4.2. Continuously Compounded Interest]]
+		- [ ] [[3. Exponentials & Logarithms/3.4. Modeling with Exponential Functions/Lessons/3.4.3. Converting Between Exponents|3.4.3. Converting Between Exponents]]
+- [ ] 4. Number Systems
+	- [ ] 4.1. Real Numbers
+		- [ ] [[4. Number Systems/4.1. Real Numbers/Lessons/4.1.1. The Real Number System|4.1.1. The Real Number System]]
+		- [ ] [[4. Number Systems/4.1. Real Numbers/Lessons/4.1.2. Writing Repeating Decimals as Fractions|4.1.2. Writing Repeating Decimals as Fractions]]
+		- [ ] [[4. Number Systems/4.1. Real Numbers/Lessons/4.1.3. Sums and Products of Rational and Irrational Numbers|4.1.3. Sums and Products of Rational and Irrational Numbers]]
+	- [ ] 4.2. Complex Numbers
+		- [ ] [[4. Number Systems/4.2. Complex Numbers/Lessons/4.2.1. Imaginary Numbers|4.2.1. Imaginary Numbers]]
+		- [ ] [[4. Number Systems/4.2. Complex Numbers/Lessons/4.2.2. Quadratic Equations with Purely Imaginary Solutions|4.2.2. Quadratic Equations with Purely Imaginary Solutions]]
+		- [ ] [[4. Number Systems/4.2. Complex Numbers/Lessons/4.2.3. Complex Numbers|4.2.3. Complex Numbers]]
+		- [ ] [[4. Number Systems/4.2. Complex Numbers/Lessons/4.2.4. Adding and Subtracting Complex Numbers|4.2.4. Adding and Subtracting Complex Numbers]]
+		- [ ] [[4. Number Systems/4.2. Complex Numbers/Lessons/4.2.5. Multiplying Complex Numbers|4.2.5. Multiplying Complex Numbers]]
+		- [ ] [[4. Number Systems/4.2. Complex Numbers/Lessons/4.2.6. Solving Quadratic Equations With Complex Roots|4.2.6. Solving Quadratic Equations With Complex Roots]]
+		- [ ] [[4. Number Systems/4.2. Complex Numbers/Lessons/4.2.7. The Cyclic Property of the Imaginary Unit|4.2.7. The Cyclic Property of the Imaginary Unit]]
+- [ ] 5. Sequences
+	- [ ] 5.1. Arithmetic Sequences
+		- [ ] [[5. Sequences/5.1. Arithmetic Sequences/Lessons/5.1.1. Arithmetic Sequences|5.1.1. Arithmetic Sequences]]
+		- [ ] [[5. Sequences/5.1. Arithmetic Sequences/Lessons/5.1.2. Recursive Formulas for Arithmetic Sequences|5.1.2. Recursive Formulas for Arithmetic Sequences]]
+		- [ ] [[5. Sequences/5.1. Arithmetic Sequences/Lessons/5.1.3. The Nth Term of an Arithmetic Sequence|5.1.3. The Nth Term of an Arithmetic Sequence]]
+		- [ ] [[5. Sequences/5.1. Arithmetic Sequences/Lessons/5.1.4. Translating Between Explicit and Recursive Formulas for Arithmetic Sequences|5.1.4. Translating Between Explicit and Recursive Formulas for Arithmetic Sequences]]
+		- [ ] [[5. Sequences/5.1. Arithmetic Sequences/Lessons/5.1.5. Finding the Common Difference of an Arithmetic Sequence|5.1.5. Finding the Common Difference of an Arithmetic Sequence]]
+		- [ ] [[5. Sequences/5.1. Arithmetic Sequences/Lessons/5.1.6. Finding the Nth Term of an Arithmetic Sequence Given Two Terms|5.1.6. Finding the Nth Term of an Arithmetic Sequence Given Two Terms]]
+		- [ ] [[5. Sequences/5.1. Arithmetic Sequences/Lessons/5.1.7. Determining Indexes of Terms in Arithmetic Sequences|5.1.7. Determining Indexes of Terms in Arithmetic Sequences]]
+		- [ ] [[5. Sequences/5.1. Arithmetic Sequences/Lessons/5.1.8. Solving for Variables in Arithmetic Sequences|5.1.8. Solving for Variables in Arithmetic Sequences]]
+		- [ ] [[5. Sequences/5.1. Arithmetic Sequences/Lessons/5.1.9. Modeling With Arithmetic Sequences|5.1.9. Modeling With Arithmetic Sequences]]
+	- [ ] 5.2. Geometric Sequences
+		- [ ] [[5. Sequences/5.2. Geometric Sequences/Lessons/5.2.1. Introduction to Geometric Sequences|5.2.1. Introduction to Geometric Sequences]]
+		- [ ] [[5. Sequences/5.2. Geometric Sequences/Lessons/5.2.2. The Recursive Formula for a Geometric Sequence|5.2.2. The Recursive Formula for a Geometric Sequence]]
+		- [ ] [[5. Sequences/5.2. Geometric Sequences/Lessons/5.2.3. The Nth Term of a Geometric Sequence|5.2.3. The Nth Term of a Geometric Sequence]]
+		- [ ] [[5. Sequences/5.2. Geometric Sequences/Lessons/5.2.4. Translating Between Explicit and Recursive Formulas for Geometric Sequences|5.2.4. Translating Between Explicit and Recursive Formulas for Geometric Sequences]]
+		- [ ] [[5. Sequences/5.2. Geometric Sequences/Lessons/5.2.5. Finding the Common Ratio of a Geometric Sequence Given Two Terms|5.2.5. Finding the Common Ratio of a Geometric Sequence Given Two Terms]]
+		- [ ] [[5. Sequences/5.2. Geometric Sequences/Lessons/5.2.6. Determining Indexes of Terms in Geometric Sequences|5.2.6. Determining Indexes of Terms in Geometric Sequences]]
+- [ ] 6. Geometry
+	- [ ] 6.1. Proof
+		- [ ] [[6. Geometry/6.1. Proof/Lessons/6.1.1. Proofs Involving Isosceles Triangles|6.1.1. Proofs Involving Isosceles Triangles]]
+		- [ ] [[6. Geometry/6.1. Proof/Lessons/6.1.2. Proofs Involving Medians and Centroids|6.1.2. Proofs Involving Medians and Centroids]]
+		- [ ] [[6. Geometry/6.1. Proof/Lessons/6.1.3. Properties of Parallelograms|6.1.3. Properties of Parallelograms]]
+		- [ ] [[6. Geometry/6.1. Proof/Lessons/6.1.4. Proving Properties of Parallelograms|6.1.4. Proving Properties of Parallelograms]]
+		- [ ] [[6. Geometry/6.1. Proof/Lessons/6.1.5. Proving Criteria for Parallelograms and Rectangles|6.1.5. Proving Criteria for Parallelograms and Rectangles]]
+	- [ ] 6.2. Circles
+		- [ ] [[6. Geometry/6.2. Circles/Lessons/6.2.1. Circles in the Coordinate Plane|6.2.1. Circles in the Coordinate Plane]]
+		- [ ] [[6. Geometry/6.2. Circles/Lessons/6.2.2. Equations of Circles Centered at the Origin|6.2.2. Equations of Circles Centered at the Origin]]
+		- [ ] [[6. Geometry/6.2. Circles/Lessons/6.2.3. Equations of Circles|6.2.3. Equations of Circles]]
+		- [ ] [[6. Geometry/6.2. Circles/Lessons/6.2.4. Determining Circle Properties by Completing the Square|6.2.4. Determining Circle Properties by Completing the Square]]
+		- [ ] [[6. Geometry/6.2. Circles/Lessons/6.2.5. Calculating Circle Intercepts|6.2.5. Calculating Circle Intercepts]]
+		- [ ] [[6. Geometry/6.2. Circles/Lessons/6.2.6. Intersections of Circles with Lines|6.2.6. Intersections of Circles with Lines]]
+		- [ ] [[6. Geometry/6.2. Circles/Lessons/6.2.7. Equations of Tangent Lines to Circles|6.2.7. Equations of Tangent Lines to Circles]]
+		- [ ] [[6. Geometry/6.2. Circles/Lessons/6.2.8. Perpendicular Bisectors of Diameters in the Coordinate Plane|6.2.8. Perpendicular Bisectors of Diameters in the Coordinate Plane]]
+		- [ ] [[6. Geometry/6.2. Circles/Lessons/6.2.9. Perpendicular Bisectors of Chords|6.2.9. Perpendicular Bisectors of Chords]]
+		- [ ] [[6. Geometry/6.2. Circles/Lessons/6.2.10. Perpendicular Bisectors of Chords in the Coordinate Plane|6.2.10. Perpendicular Bisectors of Chords in the Coordinate Plane]]
+		- [ ] [[6. Geometry/6.2. Circles/Lessons/6.2.11. Thales' Theorem in the Coordinate Plane|6.2.11. Thales' Theorem in the Coordinate Plane]]
+	- [ ] 6.3. Parabolas
+		- [ ] [[6. Geometry/6.3. Parabolas/Lessons/6.3.1. Upward and Downward Opening Parabolas|6.3.1. Upward and Downward Opening Parabolas]]
+		- [ ] [[6. Geometry/6.3. Parabolas/Lessons/6.3.2. Left and Right Opening Parabolas|6.3.2. Left and Right Opening Parabolas]]
+		- [ ] [[6. Geometry/6.3. Parabolas/Lessons/6.3.3. The Vertex of a Parabola|6.3.3. The Vertex of a Parabola]]
+		- [ ] [[6. Geometry/6.3. Parabolas/Lessons/6.3.4. Calculating the Vertex of a Parabola by Completing the Square|6.3.4. Calculating the Vertex of a Parabola by Completing the Square]]
+		- [ ] [[6. Geometry/6.3. Parabolas/Lessons/6.3.5. The Focus-Directrix Property of a Parabola|6.3.5. The Focus-Directrix Property of a Parabola]]
+		- [ ] [[6. Geometry/6.3. Parabolas/Lessons/6.3.6. Calculating the Focus of a Parabola|6.3.6. Calculating the Focus of a Parabola]]
+		- [ ] [[6. Geometry/6.3. Parabolas/Lessons/6.3.7. Calculating the Directrix of a Parabola|6.3.7. Calculating the Directrix of a Parabola]]
+		- [ ] [[6. Geometry/6.3. Parabolas/Lessons/6.3.8. Calculating Intercepts of Parabolas|6.3.8. Calculating Intercepts of Parabolas]]
+		- [ ] [[6. Geometry/6.3. Parabolas/Lessons/6.3.9. Intersections of Parabolas With Lines|6.3.9. Intersections of Parabolas With Lines]]
+- [ ] 7. Trigonometry
+	- [ ] 7.1. Trigonometry with General Triangles
+		- [ ] [[7. Trigonometry/7.1. Trigonometry with General Triangles/Lessons/7.1.1. The Law of Sines|7.1.1. The Law of Sines]]
+		- [ ] [[7. Trigonometry/7.1. Trigonometry with General Triangles/Lessons/7.1.2. The Law of Cosines|7.1.2. The Law of Cosines]]
+		- [ ] [[7. Trigonometry/7.1. Trigonometry with General Triangles/Lessons/7.1.3. The Area of a General Triangle|7.1.3. The Area of a General Triangle]]
+		- [ ] [[7. Trigonometry/7.1. Trigonometry with General Triangles/Lessons/7.1.4. Modeling Using the Law of Sines|7.1.4. Modeling Using the Law of Sines]]
+		- [ ] [[7. Trigonometry/7.1. Trigonometry with General Triangles/Lessons/7.1.5. Modeling Using the Law of Cosines|7.1.5. Modeling Using the Law of Cosines]]
+	- [ ] 7.2. Trigonometric Functions
+		- [ ] [[7. Trigonometry/7.2. Trigonometric Functions/Lessons/7.2.1. Graphing Sine and Cosine|7.2.1. Graphing Sine and Cosine]]
+		- [ ] [[7. Trigonometry/7.2. Trigonometric Functions/Lessons/7.2.2. Graphing Tangent and Cotangent|7.2.2. Graphing Tangent and Cotangent]]
+		- [ ] [[7. Trigonometry/7.2. Trigonometric Functions/Lessons/7.2.3. Graphing Secant and Cosecant|7.2.3. Graphing Secant and Cosecant]]
+		- [ ] [[7. Trigonometry/7.2. Trigonometric Functions/Lessons/7.2.4. Describing Properties of the Sine Function|7.2.4. Describing Properties of the Sine Function]]
+		- [ ] [[7. Trigonometry/7.2. Trigonometric Functions/Lessons/7.2.5. Describing Properties of the Cosine Function|7.2.5. Describing Properties of the Cosine Function]]
+		- [ ] [[7. Trigonometry/7.2. Trigonometric Functions/Lessons/7.2.6. Describing Properties of the Tangent Function|7.2.6. Describing Properties of the Tangent Function]]
+		- [ ] [[7. Trigonometry/7.2. Trigonometric Functions/Lessons/7.2.7. Describing Properties of the Secant Function|7.2.7. Describing Properties of the Secant Function]]
+		- [ ] [[7. Trigonometry/7.2. Trigonometric Functions/Lessons/7.2.8. Describing Properties of the Cosecant Function|7.2.8. Describing Properties of the Cosecant Function]]
+		- [ ] [[7. Trigonometry/7.2. Trigonometric Functions/Lessons/7.2.9. Describing Properties of the Cotangent Function|7.2.9. Describing Properties of the Cotangent Function]]
+		- [ ] [[7. Trigonometry/7.2. Trigonometric Functions/Lessons/7.2.10. Products of Even and Odd Functions|7.2.10. Products of Even and Odd Functions]]
+	- [ ] 7.3. Graph Transformations of Trigonometric Functions
+		- [ ] [[7. Trigonometry/7.3. Graph Transformations of Trigonometric Functions/Lessons/7.3.1. Vertical Translations of Trigonometric Functions|7.3.1. Vertical Translations of Trigonometric Functions]]
+		- [ ] [[7. Trigonometry/7.3. Graph Transformations of Trigonometric Functions/Lessons/7.3.2. Vertical Stretches of Trigonometric Functions|7.3.2. Vertical Stretches of Trigonometric Functions]]
+		- [ ] [[7. Trigonometry/7.3. Graph Transformations of Trigonometric Functions/Lessons/7.3.3. Horizontal Translations of Trigonometric Functions|7.3.3. Horizontal Translations of Trigonometric Functions]]
+		- [ ] [[7. Trigonometry/7.3. Graph Transformations of Trigonometric Functions/Lessons/7.3.4. Horizontal Stretches of Trigonometric Functions|7.3.4. Horizontal Stretches of Trigonometric Functions]]
+		- [ ] [[7. Trigonometry/7.3. Graph Transformations of Trigonometric Functions/Lessons/7.3.5. Combining Graph Transformations of Sine and Cosine|7.3.5. Combining Graph Transformations of Sine and Cosine]]
+		- [ ] [[7. Trigonometry/7.3. Graph Transformations of Trigonometric Functions/Lessons/7.3.6. Graph Transformations of Tangent and Cotangent|7.3.6. Graph Transformations of Tangent and Cotangent]]
+		- [ ] [[7. Trigonometry/7.3. Graph Transformations of Trigonometric Functions/Lessons/7.3.7. Combining Graph Transformations of Tangent and Cotangent|7.3.7. Combining Graph Transformations of Tangent and Cotangent]]
+		- [ ] [[7. Trigonometry/7.3. Graph Transformations of Trigonometric Functions/Lessons/7.3.8. Combining Graph Transformations of Secant and Cosecant|7.3.8. Combining Graph Transformations of Secant and Cosecant]]
+		- [ ] [[7. Trigonometry/7.3. Graph Transformations of Trigonometric Functions/Lessons/7.3.9. Graphing Reflections of Trigonometric Functions|7.3.9. Graphing Reflections of Trigonometric Functions]]
+		- [ ] [[7. Trigonometry/7.3. Graph Transformations of Trigonometric Functions/Lessons/7.3.10. Graphing Reflections of Trigonometric Functions- Three or More Transformations|7.3.10. Graphing Reflections of Trigonometric Functions: Three or More Transformations]]
+	- [ ] 7.4. Properties of Transformed Trigonometric Functions
+		- [ ] [[7. Trigonometry/7.4. Properties of Transformed Trigonometric Functions/Lessons/7.4.1. Properties of Transformed Sine and Cosine Functions|7.4.1. Properties of Transformed Sine and Cosine Functions]]
+		- [ ] [[7. Trigonometry/7.4. Properties of Transformed Trigonometric Functions/Lessons/7.4.2. Finding Zeros and Extrema of Transformed Sine and Cosine Functions|7.4.2. Finding Zeros and Extrema of Transformed Sine and Cosine Functions]]
+		- [ ] [[7. Trigonometry/7.4. Properties of Transformed Trigonometric Functions/Lessons/7.4.3. Properties of Transformed Tangent and Cotangent Functions|7.4.3. Properties of Transformed Tangent and Cotangent Functions]]
+		- [ ] [[7. Trigonometry/7.4. Properties of Transformed Trigonometric Functions/Lessons/7.4.4. Properties of Transformed Secant and Cosecant Functions|7.4.4. Properties of Transformed Secant and Cosecant Functions]]
+		- [ ] [[7. Trigonometry/7.4. Properties of Transformed Trigonometric Functions/Lessons/7.4.5. Interpreting Trigonometric Models|7.4.5. Interpreting Trigonometric Models]]
+		- [ ] [[7. Trigonometry/7.4. Properties of Transformed Trigonometric Functions/Lessons/7.4.6. Modeling With Trigonometric Functions|7.4.6. Modeling With Trigonometric Functions]]
+- [ ] 8. Probability & Statistics
+	- [ ] 8.1. Conditional Probability
+		- [ ] [[8. Probability & Statistics/8.1. Conditional Probability/Lessons/8.1.1. Conditional Probabilities From Venn Diagrams|8.1.1. Conditional Probabilities From Venn Diagrams]]
+		- [ ] [[8. Probability & Statistics/8.1. Conditional Probability/Lessons/8.1.2. Conditional Probabilities From Tables|8.1.2. Conditional Probabilities From Tables]]
+		- [ ] [[8. Probability & Statistics/8.1. Conditional Probability/Lessons/8.1.3. The Multiplication Law for Conditional Probability|8.1.3. The Multiplication Law for Conditional Probability]]
+		- [ ] [[8. Probability & Statistics/8.1. Conditional Probability/Lessons/8.1.4. The Law of Total Probability|8.1.4. The Law of Total Probability]]
+		- [ ] [[8. Probability & Statistics/8.1. Conditional Probability/Lessons/8.1.5. Tree Diagrams for Dependent Events|8.1.5. Tree Diagrams for Dependent Events]]
+		- [ ] [[8. Probability & Statistics/8.1. Conditional Probability/Lessons/8.1.6. Tree Diagrams for Dependent Events- Applications|8.1.6. Tree Diagrams for Dependent Events: Applications]]
+		- [ ] [[8. Probability & Statistics/8.1. Conditional Probability/Lessons/8.1.7. Independent Events|8.1.7. Independent Events]]
+		- [ ] [[8. Probability & Statistics/8.1. Conditional Probability/Lessons/8.1.8. Tree Diagrams for Independent Events|8.1.8. Tree Diagrams for Independent Events]]
+		- [ ] [[8. Probability & Statistics/8.1. Conditional Probability/Lessons/8.1.9. The Addition Law of Probability|8.1.9. The Addition Law of Probability]]
+		- [ ] [[8. Probability & Statistics/8.1. Conditional Probability/Lessons/8.1.10. Applying the Addition Law With Event Complements|8.1.10. Applying the Addition Law With Event Complements]]
+		- [ ] [[8. Probability & Statistics/8.1. Conditional Probability/Lessons/8.1.11. Mutually Exclusive Events|8.1.11. Mutually Exclusive Events]]
+	- [ ] 8.2. Combinatorics
+		- [ ] [[8. Probability & Statistics/8.2. Combinatorics/Lessons/8.2.1. The Rules of Sum and Product|8.2.1. The Rules of Sum and Product]]
+		- [ ] [[8. Probability & Statistics/8.2. Combinatorics/Lessons/8.2.2. Factorials|8.2.2. Factorials]]
+		- [ ] [[8. Probability & Statistics/8.2. Combinatorics/Lessons/8.2.3. Factorials in Variable Expressions|8.2.3. Factorials in Variable Expressions]]
+		- [ ] [[8. Probability & Statistics/8.2. Combinatorics/Lessons/8.2.4. Ordering Objects|8.2.4. Ordering Objects]]
+		- [ ] [[8. Probability & Statistics/8.2. Combinatorics/Lessons/8.2.5. Permutations|8.2.5. Permutations]]
+		- [ ] [[8. Probability & Statistics/8.2. Combinatorics/Lessons/8.2.6. Combinations|8.2.6. Combinations]]
+		- [ ] [[8. Probability & Statistics/8.2. Combinatorics/Lessons/8.2.7. Computing Probabilities Using Combinatorics|8.2.7. Computing Probabilities Using Combinatorics]]
+	- [ ] 8.3. Analyzing Data
+		- [ ] [[8. Probability & Statistics/8.3. Analyzing Data/Lessons/8.3.1. Sampling|8.3.1. Sampling]]
+		- [ ] [[8. Probability & Statistics/8.3. Analyzing Data/Lessons/8.3.2. Sigma Notation|8.3.2. Sigma Notation]]
+		- [ ] [[8. Probability & Statistics/8.3. Analyzing Data/Lessons/8.3.3. The Mean of a Data Set|8.3.3. The Mean of a Data Set]]
+		- [ ] [[8. Probability & Statistics/8.3. Analyzing Data/Lessons/8.3.4. Variance and Standard Deviation|8.3.4. Variance and Standard Deviation]]
