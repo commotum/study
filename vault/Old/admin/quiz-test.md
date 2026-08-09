@@ -166,6 +166,86 @@ content: |-
   The simplified form of $\frac{x^2}{x}$ is ==$x$==, assuming $x \ne 0$.
 ```
 
+## `blank` + `input_mode: math` - Exact Visual Math
+
+Type ordinary keyboard forms such as `2/3`, `x^2`, `x_1`, `sqrt(x+1)`, and `2pi/5`. The editable field should restructure them into visual math as you type.
+
+```quiz
+type: blank
+input_mode: math
+require_exact: true
+content: |-
+  Enter the reduced fraction: ==2/3==
+
+  Enter the power: ==x^2==
+
+  Enter the subscripted variable: ==x_1==
+
+  Enter the square root: ==sqrt(x+1)==
+
+  Enter the fraction containing pi: ==2pi/5==
+
+  Enter the mixed number: ==1 1/2==
+feedback: >-
+  Exact math mode compares the entered math structure with the answer structure. It does not simplify algebraically equivalent answers.
+```
+
+## `blank` + `input_mode: math` - Exact Structure Checks
+
+For the first blank, `2/3` should pass while `4/6` and `0.666...` should fail. The standalone comparison symbols exercise answers that are operators rather than full expressions.
+
+```quiz
+type: blank
+input_mode: math
+require_exact: true
+content: |-
+  Enter the fraction exactly as shown: $\frac{2}{3} =$ ==2/3==
+
+  Complete the comparison: $7$ ==>== $3$
+
+  Complete the comparison: $2$ ==<== $5$
+feedback: >-
+  Structural exact matching preserves the fraction's numerator and denominator and distinguishes the two comparison operators.
+```
+
+## `blank` + `input_mode: math` - Reveal Without Grading
+
+Enter any equivalent form. Pressing **Reveal** should keep the visual field neutral and show the expected answer beside it.
+
+```quiz
+type: blank
+input_mode: math
+require_exact: false
+content: |-
+  Enter an equivalent form of $x^2-1$: ==(x-1)(x+1)==
+
+  Enter an equivalent form of $\frac{1}{2}$: ==1/2==
+feedback: >-
+  Reveal-only math mode intentionally does not decide whether the learner's expression is algebraically equivalent.
+```
+
+## `blank` + `input_mode: math` - Display Math With Multiple Blanks
+
+Tab should move through the visual fields in order. Check, feedback, reset, and re-entry should operate independently for every blank.
+
+```quiz
+type: blank
+input_mode: math
+require_exact: true
+content: |-
+  Fill all three values.
+
+  $$
+  \begin{aligned}
+  x &= ==2/3== \\
+  y &= ==sqrt(5)== \\
+  z_1 &= ==x_1==
+  \end{aligned}
+  $$
+feedback: >-
+  Each display-math row uses its own visual editor while sharing the block's Check and Reset controls.
+```
+
 ## Notes
 
 ### `radio`
@@ -211,6 +291,7 @@ content: |-
 - Resolution: The quiz type was renamed to `blank`. The old `prompt` type is no longer kept as an alias, so quiz blocks should use `type: blank`.
 - Issue: Blanks originally rendered as hidden highlighted text instead of editable fields.
 - Resolution: Text wrapped in `==double equals==` now renders as an inline input field. After pressing **Check**, each blank is marked green or red, and incorrect blanks show the expected answer in red.
+- New optional mode: `input_mode: math` replaces the block's text blanks with live visual math fields. Keyboard-friendly answers remain inside `==...==`; the field stores live LaTeX and exact grading compares math structure without algebraic simplification.
 
 ### Helpful Obsidian documentation
 
