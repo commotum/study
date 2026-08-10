@@ -11,6 +11,7 @@ topic-code: MTH212.M6.05
 - [Use the Bright-Fringe Order](#use-the-bright-fringe-order)
 - [Combine the Geometry and Grating Equation](#combine-the-geometry-and-grating-equation)
 - [Know When the Small-Angle Shortcut Fails](#know-when-the-small-angle-shortcut-fails)
+- [Variant: First-Order Grating Data](#variant-first-order-grating-data)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -320,6 +321,24 @@ options:
     $1500\ \mathrm{nm}$
   feedback: |-
     The value $d\sin\theta=(3.9\ \mu\mathrm{m})(5/13)=1.5\ \mu\mathrm{m}$ equals $m\lambda$, not $\lambda$. Divide by the third-order value $m=3$ to obtain $500\ \mathrm{nm}$.
+```
+
+---
+
+<a id="variant-first-order-grating-data"></a>
+## Variant: First-Order Grating Data
+
+For a first-order maximum, set $m=1$ rather than dividing by a higher order. The screen geometry still determines the exact sine of the angle.
+
+```quiz
+type: blank
+id: khadley-wave-optics-q3
+input_mode: math
+require_exact: true
+content: |-
+  A grating with line spacing $3.0\ \mathrm{\mu m}$ produces a first-order bright fringe $32\ \mathrm{cm}$ from the center on a screen $1.8\ \mathrm m$ away. Find the wavelength in nanometers: ==530==
+feedback: |-
+  The angle is $\theta=\tan^{-1}(0.32/1.8)$. The exact grating relation gives $\lambda=d\sin\theta=5.25\times10^{-7}\ \mathrm m$, or $5.3\times10^2\ \mathrm{nm}$ to two significant figures.
 ```
 
 ---

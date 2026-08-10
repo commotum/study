@@ -100,7 +100,7 @@ content: |-
 
   Two completely out-of-phase antennas at $x=\pm300\ \mathrm m$ emit $3.0\ \mathrm{MHz}$ waves. Classify the interference at $(300\ \mathrm m,800\ \mathrm m)$.
 
-  ![[Images/antennas.jpg]]
+  ![[Images/out-of-phase-antennas-path-difference.png]]
 options:
 - id: constructive
   content: Completely constructive

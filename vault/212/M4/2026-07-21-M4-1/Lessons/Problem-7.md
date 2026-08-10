@@ -13,6 +13,7 @@ topic-code: MTH212.M4.07
 - [Convert Cycle Count to Angular Frequency](#convert-cycle-count-to-angular-frequency)
 - [Evaluate the Phase and Interpret the Sign](#evaluate-the-phase-and-interpret-the-sign)
 - [Apply the Model to the Given Spring–Block System](#apply-the-model-to-the-given-spring-block-system)
+- [Variant: Return to the Release Coordinate](#variant-return-to-the-release-coordinate)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -395,6 +396,28 @@ options:
   content: 0.097
   feedback: |-
     This is close to a degree-mode calculator result. The phase \(\omega t\) is in radians.
+```
+
+---
+
+<a id="variant-return-to-the-release-coordinate"></a>
+## Variant: Return to the Release Coordinate
+
+At an integer number of periods, the displacement repeats its initial value. When the problem reports the laboratory coordinate rather than displacement from equilibrium, convert back with $x_{\text{coordinate}}=x_0+x$.
+
+```quiz
+type: blank
+id: khadley-oscillations-q1
+input_mode: math
+require_exact: true
+content: |-
+  A $0.18\ \mathrm{kg}$ block on a frictionless surface is attached to an ideal spring. The spring is unstretched at coordinate $x_0=0.35\ \mathrm m$. The block is pulled right to $x_f=0.48\ \mathrm m$, released from rest, and completes $12$ oscillations in $7.0\ \mathrm s$.
+
+  ![](<../Source/Images/spring-block-displacement-setup.png>)
+
+  What is the block's coordinate at $t=3.5\ \mathrm s$? Enter meters: ==0.48==
+feedback: |-
+  The block completes six full periods in $3.5\ \mathrm s$, so it returns to its release position. Its displacement is again $A=0.13\ \mathrm m$, and its laboratory coordinate is $x_0+A=0.48\ \mathrm m$.
 ```
 
 ---

@@ -23,6 +23,8 @@
         - [ ] [[M1/2026-06-25-M1-2/Lessons/Problem-4|M1.40. Placing Angular Separation in a Speed Formula]]
         - [ ] [[M1/2026-06-25-M1-2/Lessons/Problem-5|M1.41. Bullet Speed from Rotating Disk Alignment]]
         - [ ] [[M1/2026-06-25-M1-2/Lessons/Problem-7|M1.42. Angle Turned Before Reversal]]
+        - [ ] [[M1/2026-06-25-M1-2/Lessons/velocity-change-direction-in-circular-motion|M1.72. Direction of a Velocity Change in Circular Motion]]
+        - [ ] [[M1/2026-06-25-M1-2/Lessons/radial-direction-of-successive-velocity-changes|M1.73. Radial Direction of Successive Velocity Changes]]
     - **2026-06-28-HW-1**
         - [x] [[M1/2026-06-28-HW-1/Lessons/Problem-8|M1.01. Relating Tangential Speed to Angular Speed]]
         - [x] [[M1/2026-06-28-HW-1/Lessons/Problem-9|M1.04. Checking the Magnitude of Centripetal Acceleration]]
@@ -61,6 +63,7 @@
         - [ ] [[M1/2026-07-02-M1-5/Lessons/Problem-4|M1.56. Finding Tangential Acceleration in a Vertical Circle]]
         - [ ] [[M1/2026-07-02-M1-5/Lessons/Problem-5|M1.57. Total Acceleration From Radial and Tangential Components]]
         - [ ] [[M1/2026-07-02-M1-5/Lessons/Problem-6|M1.58. Release Height from a Vertical Circle]]
+        - [ ] [[M1/2026-07-02-M1-5/Lessons/minimum-speed-and-tension-in-a-vertical-circle|M1.74. Minimum Speed and Tension in a Vertical Circle]]
     - **2026-07-03-HW-2**
         - [ ] [[M1/2026-07-03-HW-2/Lessons/Problem-1|M1.05. Recognizing Uniform Circular Motion]]
         - [x] [[M1/2026-07-03-HW-2/Lessons/Problem-4|M1.11. Finding the Net-Force Direction in Circular Motion]]
@@ -123,12 +126,19 @@
         - [ ] [[M2/2026-07-13-M2-4/Lessons/Problem-2|M2.28. Finding the Load Position at the Tipping Point]]
         - [ ] [[M2/2026-07-13-M2-4/Lessons/Problem-3|M2.29. Minimum Friction for a Ladder Against a Smooth Wall]]
         - [ ] [[M2/2026-07-13-M2-4/Lessons/Problem-4|M2.30. Finding Atwood-Machine Acceleration With a Massive Pulley]]
+        - [ ] [[M2/2026-07-13-M2-4/Lessons/flywheel-descent-speed-from-energy|M2.50. Flywheel Descent Speed from Energy]]
+        - [ ] [[M2/2026-07-13-M2-4/Lessons/atwood-machine-acceleration-with-a-massless-pulley|M2.51. Atwood-Machine Acceleration With a Massless Pulley]]
     - **2026-07-14-M2-5**
         - [ ] [[M2/2026-07-14-M2-5/Lessons/Problem-1|M2.31. Comparing Atwood-Machine Accelerations With Pulley Inertia]]
         - [ ] [[M2/2026-07-14-M2-5/Lessons/Problem-2|M2.32. Speed of a Rolling Hollow Sphere From Energy]]
         - [ ] [[M2/2026-07-14-M2-5/Lessons/Problem-3|M2.33. Angular Speed After Rotating Cups Collect Rain]]
         - [ ] [[M2/2026-07-14-M2-5/Lessons/Problem-4|M2.34. Mechanical Energy Lost When Rotating Cups Capture Rain]]
         - [ ] [[M2/2026-07-14-M2-5/Lessons/Problem-5|M2.35. Finding Angular Speed After a Bullet Embeds in a Rotor]]
+        - [ ] [[M2/2026-07-14-M2-5/Lessons/angular-speed-after-radial-mass-change|M2.52. Angular Speed After a Radial Mass Change]]
+        - [ ] [[M2/2026-07-14-M2-5/Lessons/inelastic-rotational-coupling|M2.53. Shared Angular Speed After Inelastic Rotational Coupling]]
+        - [ ] [[M2/2026-07-14-M2-5/Lessons/ranking-rolling-objects-down-an-incline|M2.54. Ranking Rolling Objects Down an Incline]]
+        - [ ] [[M2/2026-07-14-M2-5/Lessons/rolling-hoop-speed-from-energy|M2.55. Finding a Rolling Hoop's Speed From Energy]]
+        - [ ] [[M2/2026-07-14-M2-5/Lessons/falling-unwinding-cylinder-speed|M2.56. Finding a Falling Unwinding Cylinder's Speed]]
     - **2026-07-14-M2-6**
         - [ ] [[M2/2026-07-14-M2-6/Lessons/Problem-1|M2.36. Predicting Angular Speed When Mass Is Added]]
     - **2026-07-15-HW-4**
@@ -151,6 +161,8 @@
         - [ ] [[M3/2026-07-15-M3-1/Lessons/Problem-2|M3.02. Gravity at Altitude as a Fraction of Surface Gravity]]
         - [ ] [[M3/2026-07-15-M3-1/Lessons/Problem-3|M3.03. Finding a Geostationary Satellite's Altitude]]
         - [ ] [[M3/2026-07-15-M3-1/Lessons/Problem-4|M3.04. Finding Orbital Distance From Orbital Period]]
+        - [ ] [[M3/2026-07-15-M3-1/Lessons/deriving-keplers-third-law|M3.34. Deriving Kepler's Third Law]]
+        - [ ] [[M3/2026-07-15-M3-1/Lessons/two-planets-opposite-a-star|M3.35. Two Planets Orbiting Opposite Sides of a Star]]
     - **2026-07-16-M3-2**
         - [ ] [[M3/2026-07-16-M3-2/Lessons/Problem-1|M3.05. Finding Orbital Distance From Orbital Period]]
         - [ ] [[M3/2026-07-16-M3-2/Lessons/Problem-2|M3.06. Finding a Two-Body Center of Mass as a Fraction of Separation]]
@@ -158,6 +170,7 @@
         - [ ] [[M3/2026-07-16-M3-2/Lessons/Problem-4|M3.08. Combining Equal Gravitational Forces in an Equilateral Triangle]]
         - [ ] [[M3/2026-07-16-M3-2/Lessons/Problem-5|M3.09. Finding the Speed in a Three-Mass Equilateral Orbit]]
         - [ ] [[M3/2026-07-16-M3-2/Lessons/Problem-6|M3.10. Total Mechanical Energy of a Three-Body Orbit]]
+        - [ ] [[M3/2026-07-16-M3-2/Lessons/escape-speed-from-energy|M3.36. Escape Speed from Energy]]
     - **2026-07-17-HW-5**
         - [ ] [[M3/2026-07-17-HW-5/Lessons/Problem-1|M3.11. Testing Statements About Gravity and Orbits]]
         - [ ] [[M3/2026-07-17-HW-5/Lessons/Problem-2|M3.12. Balancing Opposing Inverse-Square Forces]]
@@ -195,6 +208,7 @@
         - [ ] [[M4/2026-07-21-M4-1/Lessons/Problem-7|M4.07. Finding SHM Displacement From Release Data]]
         - [x] [[M4/2026-07-21-M4-1/Lessons/Problem-8|M4.08. Finding Instantaneous SHM Velocity From Cycle Data]]
         - [ ] [[M4/2026-07-21-M4-1/Lessons/Problem-9|M4.09. Finding Maximum Speed in a Spring Oscillation]]
+        - [ ] [[M4/2026-07-21-M4-1/Lessons/how-mass-and-stiffness-affect-shm-frequency|M4.31. How Mass and Stiffness Affect SHM Frequency]]
     - **2026-07-22-M4-2**
         - [ ] [[M4/2026-07-22-M4-2/Lessons/Problem-1|M4.10. Comparing Pendulum Periods When Bob Mass Changes]]
         - [ ] [[M4/2026-07-22-M4-2/Lessons/Problem-2|M4.11. Calculating the Frequency of a Simple Pendulum]]
@@ -218,6 +232,7 @@
         - [ ] [[M4/2026-07-23-HW-6/Lessons/Problem-12|M4.27. Period of an Ideal Simple Pendulum]]
         - [ ] [[M4/2026-07-23-HW-6/Lessons/Problem-13|M4.28. Finding a Decay Constant from Period Counts]]
         - [ ] [[M4/2026-07-23-HW-6/Lessons/Problem-14|M4.29. Finding the Period of a Rod-and-Sphere Physical Pendulum]]
+        - [ ] [[M4/2026-07-23-HW-6/Lessons/amplitude-decay-per-cycle|M4.32. Calculating Amplitude Decay per Cycle]]
 - **M5**
     - **2026-07-23-M5-1**
         - [ ] [[M5/2026-07-23-M5-1/Lessons/Problem-1|M5.01. Reading Particle Motion From a Displacement-Time Graph]]
@@ -234,6 +249,7 @@
         - [ ] [[M5/2026-07-27-M5-2/Lessons/Problem-4|M5.11. Locate a Listener on a Circular Wavefront]]
         - [ ] [[M5/2026-07-27-M5-2/Lessons/Problem-5|M5.12. Ranking Index of Refraction From Wavelength]]
         - [ ] [[M5/2026-07-27-M5-2/Lessons/Problem-6|M5.13. Counting Wavelengths Inside a Material]]
+        - [ ] [[M5/2026-07-27-M5-2/Lessons/wavelength-from-sound-frequency|M5.53. Wavelength from Sound Frequency]]
     - **2026-07-28-HW-7**
         - [ ] [[M5/2026-07-28-HW-7/Lessons/Problem-1|M5.14. Changing Frequency on the Same Taut String]]
         - [ ] [[M5/2026-07-28-HW-7/Lessons/Problem-2|M5.15. Wave Speed on a String Supporting a Hanging Mass]]
@@ -253,18 +269,23 @@
         - [ ] [[M5/2026-07-28-M5-3/Lessons/Problem-5|M5.28. Doppler Shift for a Moving Observer]]
         - [ ] [[M5/2026-07-28-M5-3/Lessons/Problem-6|M5.29. Choosing Source Motion for a Doppler Shift]]
         - [ ] [[M5/2026-07-28-M5-3/Lessons/Problem-7|M5.30. Solving for the Speed of a Receding Sound Source]]
+        - [ ] [[M5/2026-07-28-M5-3/Lessons/doppler-shift-from-wavelength|M5.54. Doppler Shift from Wavelength]]
+        - [ ] [[M5/2026-07-28-M5-3/Lessons/intensity-scaling-with-amplitude|M5.55. Scaling Wave Intensity With Amplitude]]
+        - [ ] [[M5/2026-07-28-M5-3/Lessons/converting-decibels-to-intensity|M5.56. Converting Decibels to Intensity]]
     - **2026-07-29-M5-4**
         - [ ] [[M5/2026-07-29-M5-4/Lessons/Problem-1|M5.31. Comparing Heard Frequencies for a Moving Sound Source]]
         - [ ] [[M5/2026-07-29-M5-4/Lessons/Problem-2|M5.32. Fundamental Frequency of a Tensioned Wire]]
         - [ ] [[M5/2026-07-29-M5-4/Lessons/Problem-3|M5.33. Third-Harmonic Frequency of a Wire Tensioned by a Hanging Mass]]
         - [ ] [[M5/2026-07-29-M5-4/Lessons/Problem-4|M5.34. Third Harmonic of an Open–Closed Pipe]]
         - [ ] [[M5/2026-07-29-M5-4/Lessons/Problem-5|M5.35. Fifth Harmonic of an Open–Closed Pipe]]
+        - [ ] [[M5/2026-07-29-M5-4/Lessons/tuning-resonance-with-water-glasses|M5.57. Tuning Resonance with Water Glasses]]
     - **2026-07-30-M5-5**
         - [ ] [[M5/2026-07-30-M5-5/Lessons/Problem-1|M5.36. Largest Displacement When Two Pulses Overlap]]
         - [x] [[M5/2026-07-30-M5-5/Lessons/Problem-2|M5.37. Finding Complete Constructive Interference in a Crest Diagram]]
         - [ ] [[M5/2026-07-30-M5-5/Lessons/Problem-3|M5.38. Classifying Interference from Completely Out-of-Phase Sources]]
         - [ ] [[M5/2026-07-30-M5-5/Lessons/Problem-4|M5.39. Combining Path and Starting Phase Differences]]
         - [ ] [[M5/2026-07-30-M5-5/Lessons/Problem-5|M5.40. Finding the First Constructive-Interference Point]]
+        - [ ] [[M5/2026-07-30-M5-5/Lessons/changing-source-position-for-constructive-interference|M5.58. Changing a Source Position for Constructive Interference]]
     - **2026-07-31-HW-8**
         - [ ] [[M5/2026-07-31-HW-8/Lessons/Problem-1|M5.41. Finding the Fundamental Frequency from a Harmonic]]
         - [ ] [[M5/2026-07-31-HW-8/Lessons/Problem-2|M5.42. Matching Fundamental Frequencies of Open and Closed Tubes]]
@@ -287,6 +308,7 @@
         - [ ] [[M6/2026-08-05-M6-1/Lessons/Problem-3|M6.03. Reading Path Difference from a Double-Slit Pattern]]
         - [ ] [[M6/2026-08-05-M6-1/Lessons/Problem-4|M6.04. Finding Wavelength From a Double-Slit Intensity Graph]]
         - [ ] [[M6/2026-08-05-M6-1/Lessons/Problem-5|M6.05. Finding Wavelength from a Diffraction-Grating Pattern]]
+        - [ ] [[M6/2026-08-05-M6-1/Lessons/diffraction-grating-higher-order-angle|M6.18. Finding Higher-Order Diffraction Angles]]
     - **2026-08-06-M6-2**
         - [ ] [[M6/2026-08-06-M6-2/Lessons/Problem-1|M6.06. Finding Slit Width from Adjacent Single-Slit Minima]]
         - [ ] [[M6/2026-08-06-M6-2/Lessons/Problem-2|M6.07. Finding Diffraction-Grating Line Density from Symmetric Fringes]]
@@ -302,6 +324,12 @@
         - [ ] [[M6/2026-08-09-HW-9/Lessons/Problem-6|M6.16. Changing Slit Separation at a Fixed Fringe Angle]]
         - [ ] [[M6/2026-08-09-HW-9/Lessons/Problem-7|M6.17. Exact Diffraction-Grating Positions on a Screen]]
 - **M7**
+    - **2026-08-10-M7-1**
+        - [ ] [[M7/2026-08-10-M7-1/Lessons/refraction-invariants-across-a-boundary|M7.12. Refraction Invariants Across a Boundary]]
+        - [ ] [[M7/2026-08-10-M7-1/Lessons/comparing-indices-from-ray-bending|M7.13. Comparing Refractive Indices From Ray Bending]]
+        - [ ] [[M7/2026-08-10-M7-1/Lessons/comparing-indices-across-multiple-media|M7.14. Comparing Refractive Indices Across Multiple Media]]
+        - [ ] [[M7/2026-08-10-M7-1/Lessons/critical-angle-from-snells-law|M7.15. Critical Angle from Snell's Law]]
+        - [ ] [[M7/2026-08-10-M7-1/Lessons/refraction-between-air-and-water|M7.16. Calculating Refraction Between Air and Water]]
     - **2026-08-12-HW-10**
         - [ ] [[M7/2026-08-12-HW-10/Lessons/Problem-1|M7.01. Auditing Qualitative Optics Claims]]
         - [ ] [[M7/2026-08-12-HW-10/Lessons/Problem-2|M7.02. Identifying a Material from Refraction]]

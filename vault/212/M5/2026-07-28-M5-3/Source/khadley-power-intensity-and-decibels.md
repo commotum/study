@@ -90,5 +90,3 @@ content: |-
 feedback: |-
   Equal independent sources add intensities, not decibel values. Doubling intensity adds $10\log_{10}2=3.01\ \mathrm{dB}$, giving about $63\ \mathrm{dB}$.
 ```
-
-![[starlogo_jk-icon_fix 5.png|J&K logo]] [![[osu-tag 5.svg]]](http://ecampus.oregonstate.edu/soc/ecatalog/ecourselist.htm?termcode=all&subject=PH)

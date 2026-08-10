@@ -79,5 +79,3 @@ feedback: |-
 ![[Images/12-21-figurea.jpg]] ![[Images/torqueeqn1.jpg]] ![[Images/12-21-figureb.jpg]] ![[Images/torqueeqn2.jpg]]
 
 ![[Images/trigid.jpg]]
-
-![[starlogo_jk-icon_fix.png]] [![[osu-tag.svg]]](http://ecampus.oregonstate.edu/soc/ecatalog/ecourselist.htm?termcode=all&subject=PH)

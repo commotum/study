@@ -119,5 +119,3 @@ correct: |-
 feedback: |-
   First determine direction from the wavelength shift, then compute the fractional shift before multiplying by $c$. Preserve the sign convention through the calculation.
 ```
-
-![[starlogo_jk-icon_fix 7.png|J&K logo]] [![[osu-tag 7.svg]]](http://ecampus.oregonstate.edu/soc/ecatalog/ecourselist.htm?termcode=all&subject=PH)

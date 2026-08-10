@@ -55,5 +55,3 @@ When you do push the child at the same frequency as the natural frequency, she g
 fext = f0 resonance condition
 
 Because of this relationship between the driving frequency and the natural frequency, the natural frequency is often called the resonance frequency.
-
-![[starlogo_jk-icon_nd 2.svg]] ![[osu-tag 13.svg]]

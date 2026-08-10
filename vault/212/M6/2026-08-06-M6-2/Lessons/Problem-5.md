@@ -11,6 +11,7 @@ topic-code: MTH212.M6.10
 - [Estimate the Midpoint](#estimate-the-midpoint)
 - [Use the Compact Bright-Fringe Formula](#use-the-compact-bright-fringe-formula)
 - [Convert Units and Report the Distance](#convert-units-and-report-the-distance)
+- [Variant: Solve the Bright-Fringe Relation Backward](#variant-solve-the-bright-fringe-relation-backward)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -285,6 +286,24 @@ options:
     $91.5\ \mathrm{cm}$
   feedback: |-
     The calculated position is $0.00915\ \mathrm{m}$. Converting meters to centimeters requires one factor of $100$, producing $0.915\ \mathrm{cm}$; this choice applies that conversion factor twice.
+```
+
+---
+
+<a id="variant-solve-the-bright-fringe-relation-backward"></a>
+## Variant: Solve the Bright-Fringe Relation Backward
+
+If the bright-fringe position is measured and the wavelength is unknown, rearrange the same midpoint approximation instead of changing the fringe index.
+
+```quiz
+type: blank
+id: khadley-single-slit-q2
+input_mode: math
+require_exact: true
+content: |-
+  A single slit of width $0.15\ \mathrm{mm}$ is $5.3\ \mathrm m$ from a screen. The second secondary bright fringe is $6.2\ \mathrm{cm}$ from center. Using the midpoint approximation, find the wavelength in nanometers: ==700==
+feedback: |-
+  The second secondary maximum lies approximately halfway between minima $p=2$ and $p=3$, so $y\approx2.5\lambda L/a$. Thus $\lambda=ya/(2.5L)=7.0\times10^{-7}\ \mathrm m=7.0\times10^2\ \mathrm{nm}$.
 ```
 
 ---

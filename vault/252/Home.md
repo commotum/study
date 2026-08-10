@@ -4,10 +4,10 @@
 
 ## Next Topics
 
-1. [Simplifying Expressions Using the Pythagorean Identity](<M-4/WHW-4/Lessons/Simplifying Expressions Using the Pythagorean Identity - 207.md>)
-2. [Defining Definite Integrals Using Left and Right Riemann Sums](<M-2/OHW-2/Lessons/Defining Definite Integrals Using Left and Right Riemann Sums - 1086.md>)
-3. [The Antiderivative](<M-4/WHW-4/Lessons/The Antiderivative - 308.md>)
-4. [The Sum Rule for Indefinite Integrals](<M-4/WHW-4/Lessons/The Sum Rule for Indefinite Integrals - 3769.md>)
+1. [Simplifying Expressions Using the Pythagorean Identity](<M4/WHW-4/Lessons/Simplifying Expressions Using the Pythagorean Identity - 207.md>)
+2. [Defining Definite Integrals Using Left and Right Riemann Sums](<M2/OHW-2/Lessons/Defining Definite Integrals Using Left and Right Riemann Sums - 1086.md>)
+3. [The Antiderivative](<M4/WHW-4/Lessons/The Antiderivative - 308.md>)
+4. [The Sum Rule for Indefinite Integrals](<M4/WHW-4/Lessons/The Sum Rule for Indefinite Integrals - 3769.md>)
 5. [Integration Using Substitution](<E-2/Lessons/Integration Using Substitution - 443.md>)
 
 ## Progress
@@ -15,11 +15,11 @@
 - Course: 14% (5/35 unique lessons)
 
 - E-2: 6% (1/16)
-- M-1: 100% (3/3)
-- M-2: 0% (0/5)
-- M-3: 100% (1/1)
-- M-4: 0% (0/5)
-- M-5: 0% (0/5)
+- M1: 100% (3/3)
+- M2: 0% (0/5)
+- M3: 100% (1/1)
+- M4: 0% (0/5)
+- M5: 0% (0/5)
 
 <!-- update-progress:home-collections:start -->
 
@@ -27,11 +27,11 @@
 
 ## History
 
-- [Applying the Fundamental Theorem of Calculus to Exponential and Trigonometric Functions](<M-3/WHW-3/Lessons/Applying the Fundamental Theorem of Calculus to Exponential and Trigonometric Functions - 3575.md>) - 2026-07-23 21:01
+- [Applying the Fundamental Theorem of Calculus to Exponential and Trigonometric Functions](<M3/WHW-3/Lessons/Applying the Fundamental Theorem of Calculus to Exponential and Trigonometric Functions - 3575.md>) - 2026-07-23 21:01
 - [Calculating the Position Function of a Particle Using Integration](<E-2/Lessons/Calculating the Position Function of a Particle Using Integration - 335.md>) - 2026-07-08 23:31
-- [Left and Right Riemann Sums in Sigma Notation](<M-1/OHW-1/Lessons/Left and Right Riemann Sums in Sigma Notation - 1042.md>) - 2026-07-08 21:02
-- [Approximating Areas With the Right Riemann Sum](<M-1/OHW-1/Lessons/Approximating Areas With the Right Riemann Sum - 1281.md>) - 2026-07-08 17:21
-- [Approximating Areas With the Left Riemann Sum](<M-1/OHW-1/Lessons/Approximating Areas With the Left Riemann Sum - 477.md>) - 2026-07-08 16:29
+- [Left and Right Riemann Sums in Sigma Notation](<M1/OHW-1/Lessons/Left and Right Riemann Sums in Sigma Notation - 1042.md>) - 2026-07-08 21:02
+- [Approximating Areas With the Right Riemann Sum](<M1/OHW-1/Lessons/Approximating Areas With the Right Riemann Sum - 1281.md>) - 2026-07-08 17:21
+- [Approximating Areas With the Left Riemann Sum](<M1/OHW-1/Lessons/Approximating Areas With the Left Riemann Sum - 477.md>) - 2026-07-08 16:29
 
 ## Summary
 

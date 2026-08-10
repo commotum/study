@@ -13,6 +13,7 @@ topic-code: MTH212.M5.13
 - [Count Wavelengths Using Matching Units](#count-wavelengths-using-matching-units)
 - [Combine the Two Steps](#combine-the-two-steps)
 - [Apply the Move to Problem 6](#apply-the-move-to-problem-6)
+- [Variant: A 600 nm Glass Slide](#variant-a-600-nm-glass-slide)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -302,6 +303,24 @@ options:
   feedback: |-
     This reports the length of one glass wavelength, $\lambda_{\mathrm{glass}}\approx433\ \mathrm{nm}$. The requested quantity is how many such lengths span the slide: $N=d/\lambda_{\mathrm{glass}}\approx2769$, entered as $2800$.
 ```
+
+<a id="variant-a-600-nm-glass-slide"></a>
+## Variant: A 600 nm Glass Slide
+
+This variant changes both the vacuum wavelength and slide thickness while preserving the same two-step calculation.
+
+```quiz
+type: blank
+id: khadley-light-waves-q2
+input_mode: math
+require_exact: true
+content: |-
+  Orange light of vacuum wavelength $600\ \mathrm{nm}$ enters normally into a $1.00\ \mathrm{mm}$ glass slide with $n=1.5$. How many wavelengths fit inside the glass? ==2500==
+feedback: |-
+  Frequency stays constant, so $\lambda_{\mathrm{glass}}=\lambda_0/n=400\ \mathrm{nm}$. The count is $(1.00\ \mathrm{mm})/(400\ \mathrm{nm})=2.5\times10^3$ wavelengths.
+```
+
+---
 
 ## Summary
 

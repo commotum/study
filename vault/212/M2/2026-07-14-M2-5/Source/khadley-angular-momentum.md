@@ -5,7 +5,7 @@ source: "http://khadley.com/Courses/Physics/ph_212/topics/rigidRotation/angular-
 author:
 published:
 created: 2026-08-10
-description: "Introduction to anguar momentum"
+description: "Introduction to angular momentum"
 tags:
   - "clippings"
 ---
@@ -101,7 +101,7 @@ content: |-
 
   A projectile of mass $m$ and speed $v$ sticks to the rim of an initially stationary uniform solid cylinder of mass $M$ and radius $r$. Find the final angular speed; assume no final translational motion.
 
-  ![[Images/bulletdisk.jpg]]
+  ![[Images/bullet-embedding-solid-cylinder.png]]
 correct: |-
   About the cylinder axis, the incoming angular momentum is $mvr$. The final moment of inertia is $Mr^2/2+mr^2$, so
   $$\omega_f=\frac{mv}{r(m+M/2)}.$$
@@ -141,5 +141,3 @@ A conservation of angular momentum approach may be used for systems involving ro
 Kinematic equations for constant linear and rotational acceleration are shown here. For more general equations, refer to the previous chapter.
 
 Often, a problem can be solved in multiple ways, or with a combination of approaches. Taking advantage of symmetries in the system may make one approach easier than another. Also, be careful to recognize the external forces or torques in a problem when deciding which approach to take.
-
-![[starlogo_jk-icon_fix 10.png]] [![[osu-tag 14.svg]]](http://ecampus.oregonstate.edu/soc/ecatalog/ecourselist.htm?termcode=all&subject=PH)

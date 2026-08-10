@@ -89,5 +89,3 @@ content: |-
 feedback: |-
   Frequency stays constant, so $\lambda_{\mathrm{glass}}=\lambda_0/n=400\ \mathrm{nm}$. The count is $(1.00\ \mathrm{mm})/(400\ \mathrm{nm})=2.5\times10^3$ wavelengths.
 ```
-
-![[starlogo_jk-icon_fix 6.png|J&K logo]] [![[osu-tag 6.svg]]](http://ecampus.oregonstate.edu/soc/ecatalog/ecourselist.htm?termcode=all&subject=PH)

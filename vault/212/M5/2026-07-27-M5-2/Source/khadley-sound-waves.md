@@ -81,5 +81,3 @@ content: |-
 feedback: |-
   The wavefront radius is $5.0\ \mathrm m$. With source $(-2.0,0)$ and listener $(0,y)$, $2.0^2+y^2=5.0^2$, so $y=\sqrt{21}=4.6\ \mathrm m$.
 ```
-
-![[starlogo_jk-icon_fix 4.png|J&K logo]] [![[osu-tag 4.svg]]](http://ecampus.oregonstate.edu/soc/ecatalog/ecourselist.htm?termcode=all&subject=PH)

@@ -98,5 +98,3 @@ options:
   feedback: |-
     Position D lies between a zero crossing and a crest. Its slope magnitude—and therefore particle speed—is nonzero but not maximal.
 ```
-
-![[starlogo_jk-icon_fix 3.png|J&K logo]] [![[osu-tag 3.svg]]](http://ecampus.oregonstate.edu/soc/ecatalog/ecourselist.htm?termcode=all&subject=PH)

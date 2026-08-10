@@ -82,19 +82,44 @@ A laser shining through a double-slit produces a diffraction pattern on a screen
 
 ![[Images/clicker1.jpg]] ![[Images/clicker2.jpg]]
 
-Light of wavelength λ1 illuminates a double slit and interference fringes are seen on a screen. When light of a second wavelength λ2 illuminates the same double slit, with the same screen at the same distance, the fringes are closer together. Which statement is true?
+```quiz
+type: radio
+id: khadley-wave-optics-q1
+shuffle: true
+content: |-
+  **Question 1**
 
-A. λ2 is shorter than λ1
+  Light of wavelength $\lambda_1$ produces double-slit fringes. Under otherwise identical conditions, wavelength $\lambda_2$ produces closer fringes. Which statement is true?
+options:
+- id: shorter
+  content: $\lambda_2<\lambda_1$
+  correct: true
+  feedback: |-
+    Double-slit spacing is $\Delta y=\lambda L/d$. With $L$ and $d$ unchanged, closer fringes require the shorter wavelength $\lambda_2$.
+- id: longer
+  content: $\lambda_2>\lambda_1$
+  feedback: |-
+    A longer wavelength increases $\Delta y=\lambda L/d$, so it would spread the fringes farther apart rather than bring them closer.
+- id: indeterminate
+  content: It cannot be determined.
+  feedback: |-
+    The slit spacing and screen distance are fixed, leaving wavelength as the only changing factor in the fringe-spacing equation.
+```
 
-B. λ2 is longer than λ1
+```quiz
+type: blank
+id: khadley-wave-optics-q2
+input_mode: math
+require_exact: true
+content: |-
+  **Question 2**
 
-C. Cannot be determined from this information
+  The double-slit pattern has adjacent bright fringes $1.0\ \mathrm{cm}$ apart. The slit separation is $0.062\ \mathrm{mm}$ and the screen distance is $0.85\ \mathrm m$. Find the wavelength in nanometers: ==730==
 
-![[Images/doubleslitpattern.jpg]]
-
-A laser produced a double slit diffraction pattern on a screen. The graph above shows the intensity of the signal as a function of x (in cm). Assume that the distance between the centers of the slits is 0.062 mm, and that the slits are located 0.85 m from the screen.
-
-What is the wavelength (in nm) of the laser?
+  ![[Images/doubleslitpattern.jpg]]
+feedback: |-
+  The graph gives $\Delta y=1.0\times10^{-2}\ \mathrm m$. Using $\lambda=d\Delta y/L$ gives $7.3\times10^{-7}\ \mathrm m=730\ \mathrm{nm}$.
+```
 
 Intensity of double-slit interference
 
@@ -118,7 +143,44 @@ Each slit increases the amplitude of the light, so for N slits, the intensity go
 
 ## Practice Problems
 
-![[Images/u45032-19.png|1. A laser with wavelength l illuminates a diffraction grating, producing a diffraction pattern on a screen 1.8 m away. The first bright fringe is seen to be 32 cm above the central maximum. Spacing between lines on the diffraction grating is 3.0 mm. What is the wavelength of the laser? 2. A Helium-Neon laser (l = 633 nm) illuminates a diffraction grating. On a screen 2.4 m away, the distance between two m = 1 bright fringes is 170 cm. How many slits per mm are in the diffraction grating? 2. A diffraction grating produces a first-order maximum at an angle of 18.5°. What is the angle of the third-order maximum?]]
+```quiz
+type: blank
+id: khadley-wave-optics-q3
+input_mode: math
+require_exact: true
+content: |-
+  **Question 3**
+
+  A grating with line spacing $3.0\ \mathrm{\mu m}$ produces a first-order bright fringe $32\ \mathrm{cm}$ from the center on a screen $1.8\ \mathrm m$ away. Find the wavelength in nanometers: ==530==
+feedback: |-
+  The angle is $\theta=\tan^{-1}(0.32/1.8)$. The exact grating relation gives $\lambda=d\sin\theta=5.25\times10^{-7}\ \mathrm m$, or $5.3\times10^2\ \mathrm{nm}$ to two significant figures.
+```
+
+```quiz
+type: blank
+id: khadley-wave-optics-q4
+input_mode: math
+require_exact: true
+content: |-
+  **Question 4**
+
+  A $633\ \mathrm{nm}$ laser produces two first-order fringes separated by $170\ \mathrm{cm}$ on a screen $2.4\ \mathrm m$ away. How many grating lines are there per millimeter? ==530==
+feedback: |-
+  Each first-order fringe is $0.85\ \mathrm m$ from center, so $\theta=\tan^{-1}(0.85/2.4)$. Then $d=\lambda/\sin\theta=1.90\ \mathrm{\mu m}$ and the density is $1/d=5.3\times10^2$ lines per millimeter.
+```
+
+```quiz
+type: blank
+id: khadley-wave-optics-q5
+input_mode: math
+require_exact: true
+content: |-
+  **Question 5**
+
+  A diffraction grating has a first-order maximum at $18.5^\circ$. Find the third-order angle in degrees: ==72.2==
+feedback: |-
+  Since $d\sin\theta_m=m\lambda$, $\sin\theta_3=3\sin18.5^\circ=0.952\ldots$. Therefore $\theta_3=72.2^\circ$.
+```
 
 ## Spectral analysis using diffraction gratings
 
@@ -137,8 +199,3 @@ Diffraction gratings are commonly used by astronomers to identify the elements t
 ![[Images/slide31.png]]
 
 The separation of light reflecting from a DVD arises from the light being diffracted by the many grooves on its surface.
-
-![[blank.gif|Interference increases intensity of bright fringes by a factor of N. Energy is conserved, so the bright fringes tend to become very narrow. Also, the brightness of the fringes means we can use a diffraction grating to analyze a much dimmer signal. It is important to note that the slit spacing in a diffraction grating is so small that l/d is not a small number. This means we cannot use the small angle approximation and that the fringes are not evenly spaced on the screen.]] ![[blank.gif|1. A laser with wavelength l illuminates a diffraction grating, producing a diffraction pattern on a screen 1.8 m away. The first bright fringe is seen to be 32 cm above the central maximum. Spacing between lines on the diffraction grating is 3.0 mm. What is the wavelength of the laser? 2. A Helium-Neon laser (l = 633 nm) illuminates a diffraction grating. On a screen 2.4 m away, the distance between two m = 1 bright fringes is 170 cm. How many slits per mm are in the diffraction grating? 2. A diffraction grating produces a first-order maximum at an angle of 18.5°. What is the angle of the third-order maximum?]] ![[blank.gif|Interference increases intensity of bright fringes by a factor of N. Energy is conserved, so the bright fringes tend to become very narrow. Also, the brightness of the fringes means we can use a diffraction grating to analyze a much dimmer signal. It is important to note that the slit spacing in a diffraction grating is so small that l/d is not a small number. This means we cannot use the small angle approximation and that the fringes are not evenly spaced on the screen.]] ![[blank.gif|1. A laser with wavelength l illuminates a diffraction grating, producing a diffraction pattern on a screen 1.8 m away. The first bright fringe is seen to be 32 cm above the central maximum. Spacing between lines on the diffraction grating is 3.0 mm. What is the wavelength of the laser? 2. A Helium-Neon laser (l = 633 nm) illuminates a diffraction grating. On a screen 2.4 m away, the distance between two m = 1 bright fringes is 170 cm. How many slits per mm are in the diffraction grating? 2. A diffraction grating produces a first-order maximum at an angle of 18.5°. What is the angle of the third-order maximum?]]
-
-- Menu
-![[blank.gif|Interference increases intensity of bright fringes by a factor of N. Energy is conserved, so the bright fringes tend to become very narrow. Also, the brightness of the fringes means we can use a diffraction grating to analyze a much dimmer signal. It is important to note that the slit spacing in a diffraction grating is so small that l/d is not a small number. This means we cannot use the small angle approximation and that the fringes are not evenly spaced on the screen.]] ![[blank.gif|1. A laser with wavelength l illuminates a diffraction grating, producing a diffraction pattern on a screen 1.8 m away. The first bright fringe is seen to be 32 cm above the central maximum. Spacing between lines on the diffraction grating is 3.0 mm. What is the wavelength of the laser? 2. A Helium-Neon laser (l = 633 nm) illuminates a diffraction grating. On a screen 2.4 m away, the distance between two m = 1 bright fringes is 170 cm. How many slits per mm are in the diffraction grating? 2. A diffraction grating produces a first-order maximum at an angle of 18.5°. What is the angle of the third-order maximum?]]

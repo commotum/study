@@ -104,5 +104,3 @@ correct: |-
 feedback: |-
   A massive pulley requires separate tensions. Combine both translational force equations with $(T_2-T_1)r=I\alpha$ and the no-slip condition.
 ```
-
-![[starlogo_jk-icon_fix 1.png]] [![[osu-tag 1.svg]]](http://ecampus.oregonstate.edu/soc/ecatalog/ecourselist.htm?termcode=all&subject=PH)

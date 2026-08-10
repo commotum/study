@@ -154,12 +154,3 @@ correct: |-
 feedback: |-
   The planets are separated by $2r$. Include both star–planet interactions and count the planet–planet interaction only once.
 ```
-
-- ![[starlogo_jk-icon_old.svg]] ![[osu-tag 8.svg]]
-[
-
-To Top
-
-](http://khadley.com/Courses/Physics/ph_212/topics/gravity/index.html#top)
-
-- Menu

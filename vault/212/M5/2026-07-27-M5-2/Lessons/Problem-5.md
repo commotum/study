@@ -13,6 +13,7 @@ topic-code: MTH212.M5.12
 - [Combine the Two Relationships](#combine-the-two-relationships)
 - [Read Wavelength From a Snapshot](#read-wavelength-from-a-snapshot)
 - [Apply the Chain to Media A, B, and C](#apply-the-chain-to-media-a-b-and-c)
+- [Variant: A Different Medium Order](#variant-a-different-medium-order)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -303,6 +304,37 @@ options:
 - id: c
   content: Medium $C$
   feedback: Medium $C$ has the longest wavelength, so it has the greatest wave speed and the smallest index of refraction.
+```
+
+---
+
+<a id="variant-a-different-medium-order"></a>
+## Variant: A Different Medium Order
+
+The letter attached to the shortest wavelength can change from diagram to diagram. Re-read the spacing instead of memorizing the answer from the preceding example.
+
+```quiz
+type: radio
+id: khadley-light-waves-q1
+shuffle: true
+content: |-
+  The same-frequency light wave travels through three media. Which medium has the largest index of refraction?
+
+  ![](<../../2026-07-23-M5-1/Source/Images/figure-stt20-5.jpg>)
+options:
+- id: a
+  content: Medium $a$
+  feedback: |-
+    Frequency remains constant across the boundaries. Medium $a$ has an intermediate wavelength, so it also has an intermediate speed and index.
+- id: b
+  content: Medium $b$
+  feedback: |-
+    Medium $b$ has the longest wavelength. Since $v=f\lambda$ and $n=c/v$, that corresponds to the highest speed and smallest index.
+- id: c
+  content: Medium $c$
+  correct: true
+  feedback: |-
+    Medium $c$ has the shortest wavelength. With constant frequency, it has the smallest wave speed and therefore the largest index of refraction.
 ```
 
 ---

@@ -39,11 +39,33 @@ Note that the width of the central bright fringe is inversely proportional to th
 
 ## Sample Problems
 
-1\. A laser of wavelength 633 nm is incident on a single slit of width 0.15 mm, producing a diffraction pattern on a screen, shown in the graph below.
+```quiz
+type: blank
+id: khadley-single-slit-q1
+input_mode: math
+require_exact: true
+content: |-
+  **Question 1**
 
-What is the distance between the slit and the screen (in meters)?
+  A $633\ \mathrm{nm}$ laser illuminates a single slit of width $0.15\ \mathrm{mm}$. The graph shows the first minima $2.0\ \mathrm{cm}$ from the central maximum. Find the screen distance in meters: ==4.7==
 
-![[Images/singleslit.jpg]] ![[Images/u45605-6.png|2. A laser of wavelength l is incident on a single slit of width 0.15 mm, producing a diffraction pattern on a screen 5.3 m away. The distance from the central maximum to the second bright fringe is measured to be 6.2 cm. What is the wavelength of the laser in nanometers?]]
+  ![[Images/single-slit-intensity-position-graph.png]]
+feedback: |-
+  For the first minimum, $a\sin\theta=\lambda$ and $\tan\theta=y/L$. The small-angle form gives $L=ya/\lambda=4.74\ldots\ \mathrm m$, which rounds to $4.7\ \mathrm m$.
+```
+
+```quiz
+type: blank
+id: khadley-single-slit-q2
+input_mode: math
+require_exact: true
+content: |-
+  **Question 2**
+
+  A single slit of width $0.15\ \mathrm{mm}$ is $5.3\ \mathrm m$ from a screen. The second secondary bright fringe is $6.2\ \mathrm{cm}$ from center. Using the midpoint approximation, find the wavelength in nanometers: ==700==
+feedback: |-
+  The second secondary maximum lies approximately halfway between minima $p=2$ and $p=3$, so $y\approx2.5\lambda L/a$. Thus $\lambda=ya/(2.5L)=7.0\times10^{-7}\ \mathrm m=7.0\times10^2\ \mathrm{nm}$.
+```
 
 ## Double slits and single slits
 
@@ -60,5 +82,3 @@ If double slits have width that is slightly smaller than the slit spacing, the f
 [![[Images/pinhole2.jpg|circular aperture diffraction image]]](http://www2.oberlin.edu/physics/catalog/demonstrations/optics/pinhole.html)
 
 This image was produced by shining a laser through a pinhole. Light passing through the tiny hole diffracted around the edges, producing the superposition pattern shown here. The bright center is called an Airy disk, and the whole pattern with the concentric rings is called an Airy pattern, after George Biddell Airy. The Airy pattern is important in that it represents the smallest possible size to which light can be focused by a lens or mirror.
-
-![[blank 3.gif|2. A laser of wavelength l is incident on a single slit of width 0.15 mm, producing a diffraction pattern on a screen 5.3 m away. The distance from the central maximum to the second bright fringe is measured to be 6.2 cm. What is the wavelength of the laser in nanometers?]]

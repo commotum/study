@@ -11,6 +11,7 @@ topic-code: MTH212.M6.01
 - [Compare Two Screen Distances](#compare-two-screen-distances)
 - [Keep Angle and Position Separate](#keep-angle-and-position-separate)
 - [Apply the Screen-Distance Cue](#apply-the-screen-distance-cue)
+- [Variant: Change Wavelength Instead](#variant-change-wavelength-instead)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -241,6 +242,35 @@ options:
     The spacing between the fringes does not change
   feedback: |-
     The bright-fringe angles remain fixed, but their linear screen positions satisfy $y_m=L\tan\theta_m$. A smaller $L$ brings each noncentral fringe closer to the center, so the linear spacing decreases.
+```
+
+---
+
+<a id="variant-change-wavelength-instead"></a>
+## Variant: Change Wavelength Instead
+
+The same fringe-spacing law also compares wavelengths. With $L$ and $d$ fixed, closer fringes require a smaller $\lambda$.
+
+```quiz
+type: radio
+id: khadley-wave-optics-q1
+shuffle: true
+content: |-
+  Light of wavelength $\lambda_1$ produces double-slit fringes. Under otherwise identical conditions, wavelength $\lambda_2$ produces closer fringes. Which statement is true?
+options:
+- id: shorter
+  content: $\lambda_2<\lambda_1$
+  correct: true
+  feedback: |-
+    Double-slit spacing is $\Delta y=\lambda L/d$. With $L$ and $d$ unchanged, closer fringes require the shorter wavelength $\lambda_2$.
+- id: longer
+  content: $\lambda_2>\lambda_1$
+  feedback: |-
+    A longer wavelength increases $\Delta y=\lambda L/d$, so it would spread the fringes farther apart rather than bring them closer.
+- id: indeterminate
+  content: It cannot be determined.
+  feedback: |-
+    The slit spacing and screen distance are fixed, leaving wavelength as the only changing factor in the fringe-spacing equation.
 ```
 
 ---

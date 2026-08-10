@@ -137,5 +137,3 @@ In this case, the larger g is, the larger the speed. This makes sense, since gra
 The larger L is, the larger the speed. For larger L, there is a bigger change in potential energy from the bottom of the circle to the top. The higher the ball is swung, the faster it must be moving. If L goes to zero, the ball would not be moving at all, so it makes sense that decreasing L would agree with decreasing v.
 
 For part b, it makes sense that a larger mass would have a larger tension at the bottom, since a larger mass would be harder to lift. As mass goes to zero, the tension also goes to zero, by the same logic. It also makes sense that stronger gravitational acceleration would give larger tension. The tension would be larger in this case even if the ball were not swinging. Also, if the gravitational acceleration was smaller, it would make sense that the tension would decrease.
-
-![[starlogo_jk-icon_fix 8.png]] ![[osu_logo_poster_.png]]

@@ -14,6 +14,7 @@ topic-code: MTH212.M4.08
 - [Build the Velocity Function From the Release Condition](#build-the-velocity-function-from-the-release-condition)
 - [Evaluate Velocity and Interpret Its Sign](#evaluate-velocity-and-interpret-its-sign)
 - [Apply the Procedure to the Spring-Block System](#apply-the-procedure-to-the-spring-block-system)
+- [Variant: Velocity After Whole Cycles](#variant-velocity-after-whole-cycles)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -368,6 +369,28 @@ options:
   content: -0.051
   feedback: |-
     This comes from the position function $x=A\cos(\omega t)$, so it describes where the block is and has units of meters. Velocity is the slope of position, $v=-A\omega\sin(\omega t)$, which gives $+1.3\ \mathrm{m/s}$ here.
+```
+
+---
+
+<a id="variant-velocity-after-whole-cycles"></a>
+## Variant: Velocity After Whole Cycles
+
+A block released from a turning point returns to a turning point after every whole number of cycles. That makes the sine factor in $v(t)=-A\omega\sin(\omega t)$ vanish.
+
+```quiz
+type: blank
+id: khadley-oscillations-q2
+input_mode: math
+require_exact: true
+content: |-
+  A $0.18\ \mathrm{kg}$ block on a frictionless surface is attached to an ideal spring. The spring is unstretched at coordinate $x_0=0.35\ \mathrm m$. The block is pulled right to $x_f=0.48\ \mathrm m$, released from rest, and completes $12$ oscillations in $7.0\ \mathrm s$.
+
+  ![](<../Source/Images/spring-block-displacement-setup.png>)
+
+  What is the block's velocity at $t=3.5\ \mathrm s$? Enter meters per second: ==0==
+feedback: |-
+  The time $3.5\ \mathrm s$ contains exactly six periods. The block has returned to its positive turning point, where $\sin(\omega t)=0$ and therefore $v=0\ \mathrm{m/s}$.
 ```
 
 ---

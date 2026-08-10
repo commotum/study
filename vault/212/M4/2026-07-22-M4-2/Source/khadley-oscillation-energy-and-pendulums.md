@@ -69,5 +69,3 @@ correct: |-
 feedback: |-
   Add the component moments of inertia and their small-angle gravitational restoring torques about the pivot.
 ```
-
-![[starlogo_jk-icon_nd 1.svg]] ![[osu-tag 11.svg]]

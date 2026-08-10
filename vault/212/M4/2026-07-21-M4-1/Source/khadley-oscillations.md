@@ -35,7 +35,7 @@ A block of mass m is on a frictionless surface as shown, attached to an ideal sp
 
 Consider the case where m = 0.18 kg, x0 = 0.35 m and xf = 0.48 m.
 
-![[Images/blockspring-crop-u1065.jpg]]
+![[Images/spring-block-displacement-setup.png]]
 
 ```quiz
 type: blank
@@ -112,5 +112,3 @@ questions:
   feedback: |-
     Gravity changes the support force but does not appear in the horizontal oscillator frequency $f=(1/2\pi)\sqrt{k/m}$.
 ```
-
-![[starlogo_jk-icon_nd.svg]] ![[osu-tag 9.svg]]

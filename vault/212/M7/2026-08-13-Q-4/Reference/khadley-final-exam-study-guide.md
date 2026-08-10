@@ -27,76 +27,55 @@ A better way to navigate the landscape is by getting a birds-eye view of it, and
 
 To get a birds-eye view of physics entails gaining a conceptual understanding of each problem along the way. The concepts build and mesh together to form a coherent landscape.
 
-The material we have studied falls into these main categories:
+## Course Topic Map
 
 - Motion in a plane
+  - Circular-motion kinematics
+    - Uniform and nonuniform circular motion
+  - Circular orbits
+  - Fictitious forces and centrifugal force
 - Gravity
+  - Newton's law of gravitation
+  - Gravitational force and energy
+  - Kepler's laws and orbital motion
 - Rotation
-- Waves
+  - Center of mass and moment of inertia
+  - Torque and static equilibrium
+  - Rolling motion
+  - Angular momentum
+- Oscillations and waves
+  - Simple harmonic motion
+    - Springs
+    - Simple and physical pendulums
+  - Traveling and sound waves
+  - Standing waves and harmonics
+  - Light waves
+  - Power, intensity, and decibels
+  - Doppler shift
+  - Superposition, interference, and beats
+- Wave optics
+  - Double-slit interference
+  - Diffraction gratings
+  - Single-slit diffraction
 - Ray optics
+  - Reflection and refraction
+  - Index of refraction and Snell's law
+  - Converging and diverging lenses
+  - Ray diagrams, the thin-lens equation, and magnification
 
-The categories can be broken down further into related topics
+This sounds like a lot of topics and starts to feel overwhelming. The goal is to get a feel for the lay of the land and recognize the frameworks that connect those topics.
 
-- Motion in a plane
-	- dynamics of circular motion
-		- kinematics
-				- uniform and nonuniform circular motion
-		- circular orbits
-		- fictitious forces - centrifugal force
-- Gravity
-	- Newton's law
-	- gravitational force
-	- Kepler's laws
-		- gravitational energy
-		- orbits
-- Rotation
-	- rolling
-		- moment of inertia
-		- center of mass
-		- torque
-		- static equilibrium
-		- angular momentum
-- Waves
-	- oscillations
-		- simple harmonic oscillations
-			- springs
-						- pendulums
-				- simple
-								- physical
-		- traveling waves
-		- sound waves
-- - - standing waves
-			- harmonics
-		- light waves
-		- power, intensity, decibels
-		- Doppler shift
-- superposition
-	- constructive and destructive interference
-		- beats
-- wave optics
-	- single slit, double slit, diffraction gratings
-- Ray optics
-	- reflection
-		- refraction
-		- index of refraction
-				- Snell's law
-				- lenses
-			- converging and diverging
-				- ray diagrams
-								- thin lens formula
-								- magnification
+## Problem-Solving Frameworks
 
-This sounds like a lot of topics and starts to feel overwhelming. Here's where you want to get a feel for the lay of the land. For the various topics, what kinds of frameworks are helpful?
-
-- kinematics
-- sum of forces
-	- linear motion
-		- circular motion
-- conservation
-	- energy
-		- angular momentum
-- geometry
-- moments
+- Kinematics
+- Sum of forces
+  - Linear motion
+  - Circular motion
+- Conservation
+  - Energy
+  - Angular momentum
+- Geometry
+- Moments and torque
 
 A good test question often utilizes two or more approaches in finding the solution. Break down the problem into concepts and think about what approach to use for each conceptual part.
 
@@ -106,22 +85,20 @@ This means that you need another equation. Often, you need to consider another a
 
 Solving physics problems is a layered process. Frameworks are layered into the landscape, along with conceptual areas.
 
-If you are having trouble understanding what to to, draw a picture. Often, more than one picture or diagram is needed to fully understand how to proceed.
+If you are having trouble understanding what to do, draw a picture. Often, more than one picture or diagram is needed to fully understand how to proceed.
 
-- Think about the physical situation
-- identify given variables
-- identify the variable you need to solve for
-- draw a diagram (at least one)
-- connect the diagram to events in space or time
-- think about what frameworks apply to the problem at hand
-- apply the mathematical formula to your diagram(s)
-- work the math
-	- solve completely algebraically
-- check your solution
-	- it is in terms of given variables?
-		- do the units check?
-		- is the answer reasonable?
+## Exam Problem-Solving Checklist
+
+- Think about the physical situation.
+- Identify the given variables and the unknown.
+- Draw at least one diagram.
+- Connect the diagram to events in space or time.
+- Decide which physical frameworks apply.
+- Translate those frameworks into equations that match the diagram.
+- Solve algebraically before substituting numbers.
+- Check the result:
+  - Is it expressed in terms of the given variables?
+  - Do the units agree?
+  - Is the magnitude and limiting behavior reasonable?
 
 If you apply this method that you have been practicing in your daily work, it will help you to analyze a test question, even if you have not seen exactly that question before.
-
-- ![[starlogo_jk-icon_old 1.svg]] ![[osu-tag 10.svg]]

@@ -31,11 +31,7 @@ If two waves are exactly out of phase, they undergo completely destructive inter
 
 These two waves have the same wavelength. As one wave travels past the other, the superposition of the waves becomes completely constructive when they are in phase, and completely destructive when they are out of phase.
 
-![[Images/slide9.png]][
-
-http://webphysics.davidson.edu/applets/superposition/intro.html
-
-](http://webphysics.davidson.edu/applets/superposition/intro.html)![](http://khadley.com/Courses/Physics/ph_212/topics/superposition/images/slide10.png?crc=4197517310)
+[![[Images/slide9.png]]](http://webphysics.davidson.edu/applets/superposition/intro.html)
 
 Red has 1.25 cycles, green is about 1.75 cycles, yellow is about 1.5 cycles
 

@@ -83,5 +83,3 @@ correct: |-
 feedback: |-
   The falling cylinder has both translational and rotational kinetic energy. The string constraint connects them through $v=r\omega$.
 ```
-
-![[starlogo_jk-icon_fix 2.png]] [![[osu-tag 2.svg]]](http://ecampus.oregonstate.edu/soc/ecatalog/ecourselist.htm?termcode=all&subject=PH)

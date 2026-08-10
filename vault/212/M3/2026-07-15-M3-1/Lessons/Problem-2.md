@@ -12,6 +12,7 @@ topic-code: MTH212.M3.02
 - [Build the Inverse-Square Ratio](#build-the-inverse-square-ratio)
 - [Use a Radius Factor and Check the Result](#use-a-radius-factor-and-check-the-result)
 - [Apply the Method to the Satellite](#apply-the-method-to-the-satellite)
+- [Variant: Half an Earth Radius](#variant-half-an-earth-radius)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -178,7 +179,7 @@ options:
   content: |-
     $\dfrac23$
   feedback: |-
-    This does not follow from the inverse-square ratio.
+    The fraction $2/3$ describes the gap between $r_E$ and $3r_E$ relative to the larger radius, but gravity is not proportional to that gap. It follows $(r_E/r)^2$, which gives $(1/3)^2=1/9$.
 ```
 
 ---
@@ -349,6 +350,25 @@ options:
     $9.0$
   feedback: |-
     This takes the inverse square of the altitude fraction rather than the full center-distance factor.
+```
+
+---
+
+<a id="variant-half-an-earth-radius"></a>
+## Variant: Half an Earth Radius
+
+The same ratio works for any altitude written in terms of Earth's radius. Here $h=R_E/2$, so the center distance is $R_E+h=3R_E/2$.
+
+```quiz
+type: free
+id: khadley-gravity-q2
+content: |-
+  Find the gravitational acceleration $g_h$ at altitude $h$ above Earth. Evaluate $g_h/g$ when $h=R_E/2$.
+correct: |-
+  $$g_h=\frac{GM_E}{(R_E+h)^2},\qquad \frac{g_h}{g}=\left(\frac{R_E}{R_E+h}\right)^2.$$
+  At $h=R_E/2$, $g_h/g=4/9$.
+feedback: |-
+  Altitude is measured from the surface, but the inverse-square law uses distance from Earth's center. Substitute $R_E+h=3R_E/2$ before simplifying the squared ratio.
 ```
 
 ---

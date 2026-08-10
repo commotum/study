@@ -13,6 +13,7 @@ topic-code: MTH212.M5.05
 - [Advance the Wave While Holding the Particle Position Fixed](#advance-the-wave-while-holding-the-particle-position-fixed)
 - [Use the Local-Slope Rule](#use-the-local-slope-rule)
 - [Apply the Move to the Marked Particle](#apply-the-move-to-the-marked-particle)
+- [Variant: A Negative-Slope Point](#variant-a-negative-slope-point)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -257,6 +258,37 @@ options:
   content: It is not moving
   feedback: |-
     A particle of a traveling wave is momentarily at rest only where the profile's local slope is zero. The marked point has positive slope, so its vertical velocity is nonzero and, for rightward propagation, directed downward.
+```
+
+---
+
+<a id="variant-a-negative-slope-point"></a>
+## Variant: A Negative-Slope Point
+
+The propagation direction remains rightward, but this diagram places the marked point on a negative slope. The sign reversal therefore makes the particle move upward.
+
+```quiz
+type: radio
+id: khadley-waves-q1
+shuffle: true
+content: |-
+  A transverse wave travels to the right. At the marked point, which direction is the string particle moving?
+
+  ![](<../Source/Images/wave1.jpg>)
+options:
+- id: up
+  content: Upward
+  correct: true
+  feedback: |-
+    For a right-moving profile $y(x,t)=f(x-vt)$, particle velocity satisfies $\partial y/\partial t=-v\,\partial y/\partial x$. The profile slopes downward at the dot, so the particle moves upward.
+- id: down
+  content: Downward
+  feedback: |-
+    A right-moving wave reverses the sign between spatial slope and particle velocity. A downward spatial slope therefore produces upward, not downward, particle motion.
+- id: stationary
+  content: It is instantaneously stationary.
+  feedback: |-
+    Particles are instantaneously stationary at crests and troughs, where the spatial slope is zero. The marked point is a zero crossing with nonzero slope.
 ```
 
 ---

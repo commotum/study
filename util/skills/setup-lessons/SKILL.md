@@ -20,13 +20,13 @@ Use this skill to set up lesson context for an assignment markdown file. Process
    - Use the bundled script to list problem blocks:
 
 ```bash
-python3 util/skills/setup-lessons/scripts/list_problems.py vault/252/M-1/WHW-1/WHW-1.md
+python3 util/skills/setup-lessons/scripts/list_problems.py vault/252/M1/WHW-1/2026-07-06-WHW-1.md
 ```
 
    - For a targeted pass, print one problem:
 
 ```bash
-python3 util/skills/setup-lessons/scripts/list_problems.py vault/252/M-1/WHW-1/WHW-1.md --problem 1
+python3 util/skills/setup-lessons/scripts/list_problems.py vault/252/M1/WHW-1/2026-07-06-WHW-1.md --problem 1
 ```
 
 3. Match lessons one problem at a time.
@@ -51,14 +51,14 @@ python3 util/skills/setup-lessons/scripts/list_problems.py vault/252/M-1/WHW-1/W
 
 ```bash
 python3 util/skills/setup-lessons/scripts/copy_ma_lesson.py \
-  vault/252/M-1/WHW-1/WHW-1.md \
+  vault/252/M1/WHW-1/2026-07-06-WHW-1.md \
   --kind lesson \
   --lesson-md 'vault/MA/Mathematical-Foundations/MF3/9. Definite Integrals/9.1. Approximating Areas with Riemann Sums/Lessons/9.1.2. Approximating Areas With the Right Riemann Sum.md'
 ```
 
 ```bash
 python3 util/skills/setup-lessons/scripts/copy_ma_lesson.py \
-  vault/252/M-1/WHW-1/WHW-1.md \
+  vault/252/M1/WHW-1/2026-07-06-WHW-1.md \
   --kind prerequisite \
   --lesson-md 'vault/MA/Mathematical-Foundations/MF2/9. Trigonometry/9.4. Special Trigonometric Ratios/Lessons/9.4.3. Finding Trigonometric Ratios of Special Angles Using the Unit Circle.md'
 ```
@@ -83,7 +83,7 @@ python3 util/skills/setup-lessons/scripts/copy_ma_lesson.py \
 
 ```bash
 python3 util/skills/setup-lessons/scripts/copy_ma_lesson.py \
-  vault/252/M-1/WHW-1/WHW-1.md \
+  vault/252/M1/WHW-1/2026-07-06-WHW-1.md \
   --refresh-only
 ```
 
@@ -95,9 +95,9 @@ python3 util/skills/setup-lessons/scripts/copy_ma_lesson.py \
    - List copied files:
 
 ```bash
-find vault/252/M-1/WHW-1/Lessons vault/252/M-1/WHW-1/Prerequisites -maxdepth 1 -type f -name '*.md' -print | sort
-find vault/252/M-1/WHW-1/Source -maxdepth 2 -type d -print | sort
-cat vault/252/M-1/WHW-1/Source/topics.csv
+find vault/252/M1/WHW-1/Lessons vault/252/M1/WHW-1/Prerequisites -maxdepth 1 -type f -name '*.md' -print | sort
+find vault/252/M1/WHW-1/Source -maxdepth 2 -type d -print | sort
+cat vault/252/M1/WHW-1/Source/topics.csv
 ```
 
    - Spot-check that copied lesson image links such as `../Source/<lesson>/Images/...` resolve under the assignment folder.

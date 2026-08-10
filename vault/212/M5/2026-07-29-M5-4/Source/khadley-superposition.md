@@ -36,8 +36,3 @@ A water drop filmed at 10,000 frames per second reveals complicated behavior cal
 [Animation courtesy of Dr. Dan Russell, Grad. Prog. Acoustics, Penn State](http://www.acs.psu.edu/drussell/Demos/superposition/superposition.html)
 
 These wave pulses illustrate the principle of superposition. When they pass through each other, their displacements add.
-
-![[blank 1.gif]]
-
-- Menu
-![[blank 1.gif]]

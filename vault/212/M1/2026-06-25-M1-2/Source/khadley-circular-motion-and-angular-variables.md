@@ -121,5 +121,3 @@ We define the direction of omega as perpendicular to the plane and choose the di
 The direction of angular acceleration is related to the direction of angular velocity similarly to the way translational acceleration (in 1-D) is related to translational velocity.
 
 The angular velocity defines the direction as out of the plane or into the plane. If the angular speed is increasing, the angular acceleration has the same direction. If the angular speed is decreasing, the angular acceleration has the opposite direction.
-
-![[starlogo_jk-icon_fix 9.png]] ![[osu_logo_poster_ 1.png]]

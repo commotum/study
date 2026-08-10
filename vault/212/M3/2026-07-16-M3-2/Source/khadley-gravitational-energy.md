@@ -69,5 +69,3 @@ correct: |-
 feedback: |-
   Use the full star-to-star separation in the two-body period formula. Center-of-mass distances divide that separation inversely to the masses.
 ```
-
-- ![[starlogo_jk-icon_old 2.svg]] ![[osu-tag 12.svg]]

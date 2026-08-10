@@ -12,15 +12,15 @@
 
 ## Progress
 
-- Course: 11% (30/263 unique lessons)
+- Course: 10% (30/290 unique lessons)
 
-- M1: 23% (16/71)
-- M2: 0% (0/49)
-- M3: 0% (0/33)
-- M4: 20% (6/30)
-- M5: 15% (8/52)
-- M6: 0% (0/17)
-- M7: 0% (0/11)
+- M1: 22% (16/74)
+- M2: 0% (0/56)
+- M3: 0% (0/36)
+- M4: 19% (6/32)
+- M5: 14% (8/58)
+- M6: 0% (0/18)
+- M7: 0% (0/16)
 
 <!-- update-progress:home-collections:start -->
 
@@ -32,7 +32,7 @@
   - Next: [Finding the Center of Mass of Two Point Masses](M2/2026-07-07-M2-1/Lessons/Problem-1.md)
 - [Quiz 3 Study Guide](M5/2026-08-03-Q-3/Study-Guide.md): 50% (14/28)
   - Next: [Deriving Wave Speed on a Load-Bearing Wire](M5/2026-08-02-PQ-3/Lessons/Problem-4.md)
-- [Quiz 4 Study Guide](M7/2026-08-13-Q-4/Study-Guide.md): 0% (0/11)
+- [Quiz 4 Study Guide](M7/2026-08-13-Q-4/Study-Guide.md): 0% (0/16)
   - Next: [Auditing Qualitative Optics Claims](M7/2026-08-12-HW-10/Lessons/Problem-1.md)
 
 <!-- update-progress:home-collections:end -->
@@ -72,8 +72,8 @@
 
 ## Summary
 
-- Completed unique lessons: 30 / 263
-- Assignment placements: 263
+- Completed unique lessons: 30 / 290
+- Assignment placements: 290
 - Queue size: 5 / 5
 
 <!--

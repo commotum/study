@@ -14,6 +14,7 @@ topic-code: MTH212.M5.06
 - [Separate Height From Speed](#separate-height-from-speed)
 - [Separate Direction From Speed](#separate-direction-from-speed)
 - [Apply the Slope Test to Problem 6](#apply-the-slope-test-to-problem-6)
+- [Variant: Two Fastest Points](#variant-two-fastest-points)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -75,9 +76,13 @@ options:
 - id: p6-largest-slope-a
   content: |-
     The point with slope $-1$
+  feedback: |-
+    Particle speed depends on slope magnitude, not on the negative sign. This point has magnitude $1$, smaller than the magnitude $4$ at the fastest point.
 - id: p6-largest-slope-b
   content: |-
     The point with slope $0$
+  feedback: |-
+    A zero slope makes $|v_y|=v_{\mathrm{wave}}|\partial y/\partial x|=0$, so this particle is instantaneously at rest rather than moving fastest.
 - id: p6-largest-slope-c
   content: |-
     The point with slope $+4$
@@ -87,6 +92,8 @@ options:
 - id: p6-largest-slope-d
   content: |-
     The point with slope $-3$
+  feedback: |-
+    Its slope magnitude is $3$, so it moves faster than the points with magnitudes $0$ and $1$ but slower than the point with magnitude $4$.
 ```
 
 ---
@@ -134,12 +141,18 @@ options:
 - id: p6-height-trap-b
   content: |-
     A point at a steep equilibrium crossing
+  feedback: |-
+    An equilibrium crossing has zero displacement, but a steep tangent gives a large particle speed. It is a crest or trough, where the tangent is horizontal, that is momentarily at rest.
 - id: p6-height-trap-c
   content: |-
     Every point below the equilibrium line
+  feedback: |-
+    Being below equilibrium identifies negative displacement, not zero velocity. A below-equilibrium particle is at rest only at a trough where the local slope is zero.
 - id: p6-height-trap-d
   content: |-
     Every point where the displacement is zero
+  feedback: |-
+    Zero displacement does not mean zero speed. On a sinusoidal snapshot, equilibrium crossings are the steepest points and therefore have the greatest particle-speed magnitude.
 ```
 
 ---
@@ -194,12 +207,18 @@ options:
 - id: p6-direction-versus-speed-b
   content: |-
     $Q$ has the greater particle speed because its slope is negative.
+  feedback: |-
+    The slope sign controls vertical direction, while its absolute value controls speed. Since $|+2|=|-2|$, the speeds are equal even though the velocities point oppositely.
 - id: p6-direction-versus-speed-c
   content: |-
     $P$ has the greater particle speed because its slope is positive.
+  feedback: |-
+    A positive slope does not make a particle faster than an equally steep negative slope. Equal slope magnitudes give equal speeds; the signs only reverse the vertical directions.
 - id: p6-direction-versus-speed-d
   content: |-
     Both particles are instantaneously at rest.
+  feedback: |-
+    Particles are instantaneously at rest only where the local slope is zero. Both slopes have magnitude $2$, so both particles are moving with equal nonzero speeds.
 ```
 
 ---
@@ -236,14 +255,56 @@ content: |-
 options:
 - id: p6-source-check-a
   content: A
+  feedback: |-
+    Point A has a nonzero local slope, so its particle is moving, but its tangent is less steep than the tangent at C. Its particle speed is therefore smaller than C's.
 - id: p6-source-check-b
   content: B
+  feedback: |-
+    Point B is at a crest, where the tangent is horizontal. Its local slope and instantaneous particle speed are both zero.
 - id: p6-source-check-c
   content: C
   correct: true
   feedback: For a right-moving wave, $|v_y|=v_{\mathrm{wave}}|\partial y/\partial x|$. Point C lies where the magnitude of the slope is greatest, so its particle speed is greatest.
 - id: p6-source-check-d
   content: D
+  feedback: |-
+    Point D has a nonzero local slope, but its slope magnitude is smaller than C's. The particle at D moves more slowly than the particle at C.
+```
+
+---
+
+<a id="variant-two-fastest-points"></a>
+## Variant: Two Fastest Points
+
+More than one labeled point can have the same maximum slope magnitude. Judge each point independently rather than assuming the question has only one answer.
+
+```quiz
+type: checkbox
+id: khadley-waves-q2
+shuffle: true
+content: |-
+  At which labeled positions is the magnitude of the particle velocity greatest? Select all that apply.
+
+  ![](<../Source/Images/wave2.jpg>)
+options:
+- id: a
+  content: Position A
+  correct: true
+  feedback: |-
+    Position A is at a zero crossing where the profile's slope magnitude is maximal, so the transverse particle speed is maximal.
+- id: b
+  content: Position B
+  feedback: |-
+    Position B is at a crest, where the spatial slope and instantaneous particle speed are zero.
+- id: c
+  content: Position C
+  correct: true
+  feedback: |-
+    Position C is a zero crossing with maximal slope magnitude, so it also has maximal particle speed.
+- id: d
+  content: Position D
+  feedback: |-
+    Position D lies between a zero crossing and a crest. Its slope magnitude—and therefore particle speed—is nonzero but not maximal.
 ```
 
 ---
