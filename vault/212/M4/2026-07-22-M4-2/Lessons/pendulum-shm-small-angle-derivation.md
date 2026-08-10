@@ -371,3 +371,17 @@ When a pendulum problem asks why the motion is SHM or asks you to derive its fre
 5. Convert only after matching: $\omega=\sqrt{Mg\ell/I}$ and $T=2\pi\sqrt{I/(Mg\ell)}$.
 
 For a simple pendulum, $I=mL^2$ and $\ell=L$, so $T=2\pi\sqrt{L/g}$. The main trap is treating this result as exact at large angles; without the small-angle linearization, the exact sine torque is nonlinear and the motion is not ideal SHM.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

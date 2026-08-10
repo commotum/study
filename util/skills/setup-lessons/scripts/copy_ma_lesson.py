@@ -1301,6 +1301,8 @@ def course_relative_path(path: Path, course_root: Path) -> str:
 
 
 def course_name(course_root: Path) -> str:
+    if course_root.name == "212":
+        return "PHY 212"
     return f"MTH {course_root.name}" if course_root.name.isdigit() else course_root.name
 
 

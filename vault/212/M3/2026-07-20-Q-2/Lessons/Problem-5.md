@@ -1,5 +1,9 @@
 # Solving Circular Binary-Star Systems from Their Separation
 
+<!--
+lesson-id: 212-M3-033
+topic-code: MTH212.M3.33
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -391,3 +395,17 @@ For two masses $M$ and $m$ in a circular orbit with separation $d$:
 5. Check that the center lies between the masses, the period has units of time, and the energy of the bound circular system is negative.
 
 The main trap is treating one star's center-of-mass radius as though it were the separation between the stars.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

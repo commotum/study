@@ -1,5 +1,9 @@
 # Counting Visible Diffraction-Grating Maxima on a Finite Screen
 
+<!--
+lesson-id: 212-M6-008
+topic-code: MTH212.M6.08
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -447,3 +451,22 @@ For a finite screen centered on the grating axis:
 6. Count negative orders, the center, and positive orders with $N=m_{\max}+1+m_{\max}=2m_{\max}+1$.
 
 The main traps are using the full screen width instead of its half-width, counting every physically possible order without checking the screen, rounding an order bound upward, and forgetting the central maximum.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 4 Study Guide](../../../M7/2026-08-13-Q-4/Study-Guide.md)
+Next: [Finding Slit Width from Adjacent Single-Slit Minima](Problem-1.md)
+
+Study guide index: 09/11
+
+---
+
+<!-- lesson-nav:end -->

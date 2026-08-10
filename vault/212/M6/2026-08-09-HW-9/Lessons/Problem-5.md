@@ -1,5 +1,9 @@
 # Fitting More Double-Slit Fringes on a Fixed Screen
 
+<!--
+lesson-id: 212-M6-015
+topic-code: MTH212.M6.15
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -259,3 +263,17 @@ When a fixed-width screen must fit more bright fringes:
 3. If frequency changes, use $\lambda=c/f$ before deciding the direction.
 4. Under fixed-medium conditions, remember $N\propto fd/L$: increasing $f$ or $d$ increases the count, while increasing $L$ decreases it.
 5. When several changes are proposed, test every one independently before choosing the complete set.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

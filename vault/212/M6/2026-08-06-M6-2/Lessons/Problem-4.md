@@ -1,5 +1,9 @@
 # Finding Screen Distance from a Single-Slit Diffraction Graph
 
+<!--
+lesson-id: 212-M6-009
+topic-code: MTH212.M6.09
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -345,3 +349,17 @@ When a single-slit intensity graph is used to find the screen distance, use **re
 5. Calculate $L\approx ay_1/\lambda$, confirm $y_1/L\ll1$, and report the requested precision and units.
 
 The main trap is confusing a coordinate or the full central width with $y_1$. The formula uses the distance from the central peak to **one** neighboring minimum.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

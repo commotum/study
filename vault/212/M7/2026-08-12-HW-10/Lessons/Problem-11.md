@@ -1,5 +1,9 @@
 # Solving the Thin-Lens Equation for Image Distance
 
+<!--
+lesson-id: 212-M7-011
+topic-code: MTH212.M7.11
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -341,3 +345,17 @@ When a thin-lens question asks for image distance:
 4. Invert the entire fraction: $d_i=d_of/(d_o-f)$.
 5. Keep the subtraction order and parentheses. Reversing $d_o-f$ reverses the sign of the image distance.
 6. Check the physics: $d_o>f>0$ gives a positive real-image distance, $d_o=f$ gives no finite image, and $d_o\gg f$ gives $d_i\approx f$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

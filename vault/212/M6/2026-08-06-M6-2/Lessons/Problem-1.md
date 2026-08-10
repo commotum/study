@@ -1,5 +1,9 @@
 # Finding Slit Width from Adjacent Single-Slit Minima
 
+<!--
+lesson-id: 212-M6-006
+topic-code: MTH212.M6.06
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -311,3 +315,22 @@ options:
 - Check dimensions: length times length divided by length must leave a length for $a$.
 - Check the trend: wider fringe spacing means a narrower slit.
 - Main trap: the full central-maximum width is $2\Delta y$, but the spacing between the first and second minima on one side is already $\Delta y$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 4 Study Guide](../../../M7/2026-08-13-Q-4/Study-Guide.md)
+Next: [Finding Slit Width from the Central Diffraction Maximum](../../2026-08-09-HW-9/Lessons/Problem-2.md)
+
+Study guide index: 10/11
+
+---
+
+<!-- lesson-nav:end -->

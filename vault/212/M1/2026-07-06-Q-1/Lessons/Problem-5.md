@@ -1,5 +1,9 @@
 # From Linear Velocity to Spool Revolutions
 
+<!--
+lesson-id: 212-M1-071
+topic-code: MTH212.M1.71
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -338,3 +342,17 @@ For a rope unwinding without slipping from a fixed-radius spool:
    $$
 
 The main traps are substituting the final time into velocity instead of integrating, stopping at radians instead of converting to revolutions, using something other than the full circumference, and rounding before the final step.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

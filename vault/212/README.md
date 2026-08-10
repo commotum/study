@@ -15,7 +15,7 @@ guides.
 ├── topics.csv
 ├── prerequisites.csv
 ├── Lecture-Files/
-└── M1/ ... M6/
+└── M1/ ... M7/
     └── YYYY-MM-DD-UNIT-NAME/
         ├── YYYY-MM-DD-UNIT-NAME.md
         ├── Lessons/
@@ -70,7 +70,7 @@ notes before they are placed in a dated lecture unit.
 
 ## Modules and dated units
 
-`M1` through `M6` are course modules. Within each module, folders are dated so
+`M1` through `M7` are course modules. Within each module, folders are dated so
 that the original course sequence remains visible.
 
 | Pattern | Meaning |
@@ -218,10 +218,10 @@ imported assignment and images
 
 ## Current scaffolding
 
-- `M6/` is ready for future course material.
+- `M6/` and `M7/` contain registered progress lessons. Current M7 lecture-file
+  scaffolds remain ready for additional lecture content as it arrives.
 - The prerequisite registry and local `Prerequisites/` folders are ready for a
   future dependency workflow.
 - Some homework main notes still contain skeleton lesson-link placeholders;
   lesson files and the central topic registry are the authoritative references
   until those indexes are filled.
-

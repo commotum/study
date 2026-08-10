@@ -1,5 +1,9 @@
 # Reading Thin-Lens Magnification to Identify the Image and Lens
 
+<!--
+lesson-id: 212-M7-005
+topic-code: MTH212.M7.05
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -255,3 +259,17 @@ Use **sign, size, lens condition**:
 3. Apply the position condition: a converging lens gives a virtual, upright image only when $d_o<f$; a diverging lens gives a virtual, upright, reduced image for a real object.
 
 The main trap is using only one clue. Positive magnification identifies a virtual, upright image, while the object-position condition distinguishes the lens type.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

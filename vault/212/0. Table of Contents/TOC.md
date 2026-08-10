@@ -9,6 +9,7 @@
     - **2026-06-23-M1-00**
         - [ ] [[M1/2026-06-23-M1-00/Lessons/Problem-1|M1.31. Finding When Angular Velocity Reverses Direction]]
         - [ ] [[M1/2026-06-23-M1-00/Lessons/Problem-2|M1.32. Angular Displacement Before Reversal]]
+        - [ ] [[M1/2026-06-23-M1-00/Lessons/tangential-acceleration-from-angular-acceleration|M1.66. Converting Angular Acceleration to Tangential Acceleration]]
     - **2026-06-24-M1-1**
         - [ ] [[M1/2026-06-24-M1-1/Lessons/Problem-1|M1.33. Convert Revolutions Per Second to Angular Frequency]]
         - [ ] [[M1/2026-06-24-M1-1/Lessons/Problem-2|M1.34. Magnitude of Constant Angular Acceleration]]
@@ -80,6 +81,12 @@
         - [ ] [[M1/2026-07-05-PQ-1/Lessons/Problem-3|M1.19. Comparing Normal Force and Weight at the Top of a Hill]]
         - [ ] [[M1/2026-07-05-PQ-1/Lessons/Problem-1|M1.64. Comparing Centripetal Acceleration At Fixed Speed]]
         - [ ] [[M1/2026-07-05-PQ-1/Lessons/Problem-5|M1.65. Bead on a Frictionless Cone]]
+    - **2026-07-06-Q-1**
+        - [ ] [[M1/2026-07-06-Q-1/Lessons/Problem-1|M1.67. Acceleration in Constant-Speed Circular Motion]]
+        - [ ] [[M1/2026-07-06-Q-1/Lessons/Problem-2|M1.68. Choosing the Net-Force Vector in Constant-Speed Circular Motion]]
+        - [ ] [[M1/2026-07-06-Q-1/Lessons/Problem-3|M1.69. Choosing a Free-Body Diagram for a Rotating Bead]]
+        - [ ] [[M1/2026-07-06-Q-1/Lessons/Problem-4|M1.70. Resolving Vertical-Circle Motion with r-t Axes]]
+        - [ ] [[M1/2026-07-06-Q-1/Lessons/Problem-5|M1.71. From Linear Velocity to Spool Revolutions]]
 - **M2**
     - **2026-07-07-M2-1**
         - [ ] [[M2/2026-07-07-M2-1/Lessons/Problem-1|M2.01. Finding the Center of Mass of Two Point Masses]]
@@ -172,6 +179,11 @@
         - [ ] [[M3/2026-07-20-Q-2/Lessons/Group-3-Torque-and-Rotational-Dynamics|M3.26. Turn Applied Forces into Angular Acceleration]]
         - [ ] [[M3/2026-07-20-Q-2/Lessons/Group-4-Equilibrium-and-Massive-Pulleys|M3.27. Solve Coupled Equilibrium and Massive-Pulley Systems]]
         - [ ] [[M3/2026-07-20-Q-2/Lessons/Group-5-Rolling-and-Angular-Momentum|M3.28. Connect Rolling Motion to Angular-Momentum Conservation]]
+        - [ ] [[M3/2026-07-20-Q-2/Lessons/Problem-1|M3.29. Ranking Forces in a Massive-Pulley Atwood Machine]]
+        - [ ] [[M3/2026-07-20-Q-2/Lessons/Problem-2|M3.30. Comparing the Speeds of Rolling Objects]]
+        - [ ] [[M3/2026-07-20-Q-2/Lessons/Problem-3|M3.31. Total Gravitational Potential Energy: Sum Every Pair Once]]
+        - [ ] [[M3/2026-07-20-Q-2/Lessons/Problem-4|M3.32. From Composite Center of Mass to Tangential Speed]]
+        - [ ] [[M3/2026-07-20-Q-2/Lessons/Problem-5|M3.33. Solving Circular Binary-Star Systems from Their Separation]]
 - **M4**
     - **2026-07-21-M4-1**
         - [ ] [[M4/2026-07-21-M4-1/Lessons/Problem-1|M4.01. Finding Maximum Speed From a Cosine Position Function]]
@@ -190,6 +202,7 @@
         - [ ] [[M4/2026-07-22-M4-2/Lessons/Problem-4|M4.13. Finding the Period of a Uniform Rod About an Offset Pivot]]
         - [ ] [[M4/2026-07-22-M4-2/Lessons/Problem-5|M4.14. Period of a Rod-and-Point-Mass Pendulum]]
         - [x] [[M4/2026-07-22-M4-2/Lessons/Problem-6|M4.15. Finding the Period of a Rod–Disk Physical Pendulum]]
+        - [ ] [[M4/2026-07-22-M4-2/Lessons/pendulum-shm-small-angle-derivation|M4.30. Why a Pendulum Becomes Simple Harmonic Motion]]
     - **2026-07-23-HW-6**
         - [ ] [[M4/2026-07-23-HW-6/Lessons/Problem-1|M4.16. Amplitude and the Period of a Spring Oscillator]]
         - [ ] [[M4/2026-07-23-HW-6/Lessons/Problem-2|M4.17. Scaling Maximum Kinetic Energy with Amplitude]]
@@ -267,3 +280,37 @@
         - [x] [[M5/2026-08-03-Q-3/Lessons/shm-speeding-up-or-slowing-down|M5.50. Deciding Whether an SHM Oscillator Is Speeding Up or Slowing Down]]
         - [ ] [[M5/2026-08-03-Q-3/Lessons/wave-power-intensity-scaling|M5.51. Scaling Wave Power and Intensity with Frequency and Amplitude]]
         - [ ] [[M5/2026-08-03-Q-3/Lessons/fixed-free-end-reflection|M5.52. Reflections at Fixed and Free Ends]]
+- **M6**
+    - **2026-08-05-M6-1**
+        - [ ] [[M6/2026-08-05-M6-1/Lessons/Problem-1|M6.01. Screen Distance and Double-Slit Fringe Spacing]]
+        - [ ] [[M6/2026-08-05-M6-1/Lessons/Problem-2|M6.02. How Screen Distance Changes Double-Slit Fringe Spacing]]
+        - [ ] [[M6/2026-08-05-M6-1/Lessons/Problem-3|M6.03. Reading Path Difference from a Double-Slit Pattern]]
+        - [ ] [[M6/2026-08-05-M6-1/Lessons/Problem-4|M6.04. Finding Wavelength From a Double-Slit Intensity Graph]]
+        - [ ] [[M6/2026-08-05-M6-1/Lessons/Problem-5|M6.05. Finding Wavelength from a Diffraction-Grating Pattern]]
+    - **2026-08-06-M6-2**
+        - [ ] [[M6/2026-08-06-M6-2/Lessons/Problem-1|M6.06. Finding Slit Width from Adjacent Single-Slit Minima]]
+        - [ ] [[M6/2026-08-06-M6-2/Lessons/Problem-2|M6.07. Finding Diffraction-Grating Line Density from Symmetric Fringes]]
+        - [ ] [[M6/2026-08-06-M6-2/Lessons/Problem-3|M6.08. Counting Visible Diffraction-Grating Maxima on a Finite Screen]]
+        - [ ] [[M6/2026-08-06-M6-2/Lessons/Problem-4|M6.09. Finding Screen Distance from a Single-Slit Diffraction Graph]]
+        - [ ] [[M6/2026-08-06-M6-2/Lessons/Problem-5|M6.10. Estimating Secondary Bright Fringes in Single-Slit Diffraction]]
+    - **2026-08-09-HW-9**
+        - [ ] [[M6/2026-08-09-HW-9/Lessons/Problem-1|M6.11. Choosing a Slit Width for Clear Single-Slit Diffraction]]
+        - [ ] [[M6/2026-08-09-HW-9/Lessons/Problem-2|M6.12. Finding Slit Width from the Central Diffraction Maximum]]
+        - [ ] [[M6/2026-08-09-HW-9/Lessons/Problem-3|M6.13. Comparing Same-Side Single-Slit Minima]]
+        - [ ] [[M6/2026-08-09-HW-9/Lessons/Problem-4|M6.14. Predicting Changes in Double-Slit Fringe Spacing]]
+        - [ ] [[M6/2026-08-09-HW-9/Lessons/Problem-5|M6.15. Fitting More Double-Slit Fringes on a Fixed Screen]]
+        - [ ] [[M6/2026-08-09-HW-9/Lessons/Problem-6|M6.16. Changing Slit Separation at a Fixed Fringe Angle]]
+        - [ ] [[M6/2026-08-09-HW-9/Lessons/Problem-7|M6.17. Exact Diffraction-Grating Positions on a Screen]]
+- **M7**
+    - **2026-08-12-HW-10**
+        - [ ] [[M7/2026-08-12-HW-10/Lessons/Problem-1|M7.01. Auditing Qualitative Optics Claims]]
+        - [ ] [[M7/2026-08-12-HW-10/Lessons/Problem-2|M7.02. Identifying a Material from Refraction]]
+        - [ ] [[M7/2026-08-12-HW-10/Lessons/Problem-3|M7.03. Choosing a Refracted Ray at a Boundary]]
+        - [ ] [[M7/2026-08-12-HW-10/Lessons/Problem-4|M7.04. Classifying a Plane-Mirror Image]]
+        - [ ] [[M7/2026-08-12-HW-10/Lessons/Problem-5|M7.05. Reading Thin-Lens Magnification to Identify the Image and Lens]]
+        - [ ] [[M7/2026-08-12-HW-10/Lessons/Problem-6|M7.06. Inferring Lens Type from a Magnified Image]]
+        - [ ] [[M7/2026-08-12-HW-10/Lessons/Problem-7|M7.07. Tracing a Parallel Ray Through a Converging Lens]]
+        - [ ] [[M7/2026-08-12-HW-10/Lessons/Problem-8|M7.08. Classifying Images Formed by Thin Lenses]]
+        - [ ] [[M7/2026-08-12-HW-10/Lessons/Problem-9|M7.09. Why Convex-Mirror Images Are Always Virtual]]
+        - [ ] [[M7/2026-08-12-HW-10/Lessons/Problem-10|M7.10. Classifying a Lens from a Ray Diagram]]
+        - [ ] [[M7/2026-08-12-HW-10/Lessons/Problem-11|M7.11. Solving the Thin-Lens Equation for Image Distance]]

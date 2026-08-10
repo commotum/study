@@ -1,5 +1,9 @@
 # Comparing Same-Side Single-Slit Minima
 
+<!--
+lesson-id: 212-M6-013
+topic-code: MTH212.M6.13
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -336,3 +340,17 @@ When two wavelengths pass through the same slit and the question compares minima
 3. Convert wavelength and slit width to matching length units before dividing.
 4. Use a difference for same-side positions; reserve a sum for opposite-side positions and $2y_1$ for one wavelength's central-maximum width.
 5. Check the trend: greater $L$ or wavelength gap increases the spacing, while a wider slit decreases it.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

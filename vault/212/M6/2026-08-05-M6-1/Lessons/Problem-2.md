@@ -1,5 +1,9 @@
 # How Screen Distance Changes Double-Slit Fringe Spacing
 
+<!--
+lesson-id: 212-M6-002
+topic-code: MTH212.M6.02
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -249,3 +253,17 @@ When only the screen distance changes in a double-slit experiment:
 4. Scale the spacing by $L_2/L_1$.
 
 The main trap is confusing angle with screen position. The fringe angles stay fixed when $\lambda$ and $d$ stay fixed, but a farther screen turns those same angles into larger distances, so the fringes spread farther apart.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

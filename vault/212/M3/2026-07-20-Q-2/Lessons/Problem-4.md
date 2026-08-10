@@ -1,5 +1,9 @@
 # From Composite Center of Mass to Tangential Speed
 
+<!--
+lesson-id: 212-M3-032
+topic-code: MTH212.M3.32
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -330,3 +334,17 @@ v_2=\frac{\omega L(m_p/2+m_1/3)}{m_p+m_1+m_2}.
 $$
 
 The main trap is to confuse a coordinate measured from the left end with a rotation radius measured from the center-of-mass axis.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

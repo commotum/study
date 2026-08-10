@@ -1,5 +1,9 @@
 # Inferring Lens Type from a Magnified Image
 
+<!--
+lesson-id: 212-M7-006
+topic-code: MTH212.M7.06
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -301,3 +305,17 @@ When a single thin lens makes a larger image of a real object:
    - $f<d_o<2f$: real, inverted, magnified.
 
 The main trap is treating **magnified** as a synonym for **real**. Size comes from $|m|$; real versus virtual comes from the sign of $m$ or $d_i$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

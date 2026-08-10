@@ -1,5 +1,9 @@
 # Finding Wavelength from a Diffraction-Grating Pattern
 
+<!--
+lesson-id: 212-M6-005
+topic-code: MTH212.M6.05
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -332,3 +336,22 @@ When a grating problem locates a bright fringe on a screen:
 5. Convert the wavelength to the requested unit and round only at the end.
 
 Check that $\lambda\leq d/m$. The main trap is replacing $\sin\theta$ with $y/L$: that is only a small-angle approximation, so for a visibly displaced fringe, use the exact triangle.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 4 Study Guide](../../../M7/2026-08-13-Q-4/Study-Guide.md)
+Next: [Finding Diffraction-Grating Line Density from Symmetric Fringes](../../2026-08-06-M6-2/Lessons/Problem-2.md)
+
+Study guide index: 07/11
+
+---
+
+<!-- lesson-nav:end -->

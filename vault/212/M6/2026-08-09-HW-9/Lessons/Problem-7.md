@@ -1,5 +1,9 @@
 # Exact Diffraction-Grating Positions on a Screen
 
+<!--
+lesson-id: 212-M6-017
+topic-code: MTH212.M6.17
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -303,3 +307,17 @@ For an order-$m$ diffraction maximum on a flat screen:
 4. Check that $m\lambda<d$ for a maximum at a finite location on the screen.
 
 The main trap is using $L\sin\theta$. That is a small-angle approximation, not the exact flat-screen geometry.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

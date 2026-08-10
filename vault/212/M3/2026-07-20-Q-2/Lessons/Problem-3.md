@@ -1,5 +1,9 @@
 # Total Gravitational Potential Energy: Sum Every Pair Once
 
+<!--
+lesson-id: 212-M3-031
+topic-code: MTH212.M3.31
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -265,3 +269,17 @@ When a system contains several gravitating bodies:
 5. Compare the signed totals on the number line, or subtract them: if $U_A-U_B>0$, then $U_A>U_B$.
 
 The main trap is counting only the star–planet interactions. Planets also interact with one another, and each missing pair means a missing negative term.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

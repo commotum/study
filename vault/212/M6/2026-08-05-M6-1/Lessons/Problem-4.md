@@ -1,5 +1,9 @@
 # Finding Wavelength From a Double-Slit Intensity Graph
 
+<!--
+lesson-id: 212-M6-004
+topic-code: MTH212.M6.04
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -282,3 +286,22 @@ When a double-slit intensity graph and the distances $d$ and $L$ are given:
 3. Convert $\Delta x$, $d$, and $L$ to compatible units.
 4. Compute $\lambda=\Delta x d/L$ and check that the units reduce to a length.
 5. Convert meters to nanometers with $1\ \mathrm{m}=10^9\ \mathrm{nm}$, then round to the precision supported by the data.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 4 Study Guide](../../../M7/2026-08-13-Q-4/Study-Guide.md)
+Next: [Finding Wavelength from a Diffraction-Grating Pattern](Problem-5.md)
+
+Study guide index: 06/11
+
+---
+
+<!-- lesson-nav:end -->

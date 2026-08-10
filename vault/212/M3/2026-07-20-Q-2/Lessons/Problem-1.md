@@ -1,5 +1,9 @@
 # Ranking Forces in a Massive-Pulley Atwood Machine
 
+<!--
+lesson-id: 212-M3-029
+topic-code: MTH212.M3.29
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -336,3 +340,17 @@ For a two-block system with $m_2$ descending and $m_1$ rising:
 4. Link the shared quantities: $m_2g>T_2>T_1>m_1g$.
 
 The main trap is carrying over $T_1=T_2$ from an ideal massless pulley. A frictionless axle removes resisting axle torque; it does not remove the rotational inertia of a massive pulley.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

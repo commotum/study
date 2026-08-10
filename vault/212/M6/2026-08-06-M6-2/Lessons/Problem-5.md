@@ -1,5 +1,9 @@
 # Estimating Secondary Bright Fringes in Single-Slit Diffraction
 
+<!--
+lesson-id: 212-M6-010
+topic-code: MTH212.M6.10
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -302,3 +306,17 @@ When a problem asks for the $n$th secondary bright fringe in the midpoint approx
 5. Check that the result is a positive length between $n\lambda L/a$ and $(n+1)\lambda L/a$.
 
 The main indexing trap is using $n$ or $n+1$, which gives a dark minimum rather than the bright fringe between them.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

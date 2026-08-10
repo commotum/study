@@ -1,5 +1,9 @@
 # Classifying Images Formed by Thin Lenses
 
+<!--
+lesson-id: 212-M7-008
+topic-code: MTH212.M7.08
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -309,3 +313,17 @@ For a real object, use this checklist:
 3. **Use $2f$ only to refine size and location.** In particular, $f<s<2f$ gives a magnified real image beyond $2f$.
 4. **Respect the boundary.** At $s=f$, the image is at infinity rather than at a finite location.
 5. **On select-all questions, test every statement independently.** One true statement does not rule out another.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

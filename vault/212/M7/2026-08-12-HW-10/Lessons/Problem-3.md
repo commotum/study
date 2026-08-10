@@ -1,5 +1,9 @@
 # Choosing a Refracted Ray at a Boundary
 
+<!--
+lesson-id: 212-M7-003
+topic-code: MTH212.M7.03
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -173,3 +177,22 @@ options:
 - Larger refractive index: bend toward the normal, so the angle decreases.
 - Smaller refractive index: bend away from the normal, so the angle increases.
 - For an oblique air-to-glass ray, choose the path inside the sector between the straight-ahead extension and the inward normal; reject either boundary of that sector and any path outside it.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 4 Study Guide](../../2026-08-13-Q-4/Study-Guide.md)
+Next: [Identifying a Material from Refraction](Problem-2.md)
+
+Study guide index: 02/11
+
+---
+
+<!-- lesson-nav:end -->

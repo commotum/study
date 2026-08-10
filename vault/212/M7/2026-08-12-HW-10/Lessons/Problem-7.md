@@ -1,5 +1,9 @@
 # Tracing a Parallel Ray Through a Converging Lens
 
+<!--
+lesson-id: 212-M7-007
+topic-code: MTH212.M7.07
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -273,3 +277,17 @@ When a ray reaches a converging lens parallel to the optical axis, use **paralle
 3. Draw from that contact point through the focal point on the outgoing side.
 
 The main trap is reversing the paired principal-ray rules. **Parallel in** gives **far focus out**; **near focus in** gives **parallel out**.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

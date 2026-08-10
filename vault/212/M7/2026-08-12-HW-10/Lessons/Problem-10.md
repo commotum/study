@@ -1,5 +1,9 @@
 # Classifying a Lens from a Ray Diagram
 
+<!--
+lesson-id: 212-M7-010
+topic-code: MTH212.M7.10
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -182,3 +186,17 @@ To classify a thin lens from a ray diagram:
 4. Use the ray intersection as a check: actual rays meeting form a real image; only backward extensions meeting form a virtual image.
 
 Do not classify the lens from the ray's slope, the presence of focal-point labels, or the distance labels alone. Follow what the lens actually does to the ray.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

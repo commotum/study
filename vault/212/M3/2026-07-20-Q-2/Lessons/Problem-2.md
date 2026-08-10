@@ -1,5 +1,9 @@
 # Comparing the Speeds of Rolling Objects
 
+<!--
+lesson-id: 212-M3-030
+topic-code: MTH212.M3.30
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -286,3 +290,17 @@ Use this checklist:
 5. Do not confuse equal center-of-mass speed with equal angular speed: $\omega=v/R$ still depends on radius.
 
 The main trap is comparing radii directly. Radius changes both $I$ and $\omega$ in opposite ways, so it cancels from the center-of-mass speed for geometrically similar rolling objects.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

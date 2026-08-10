@@ -1,5 +1,9 @@
 # Choosing a Slit Width for Clear Single-Slit Diffraction
 
+<!--
+lesson-id: 212-M6-011
+topic-code: MTH212.M6.11
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -256,3 +260,17 @@ options:
 **Main trap:** do not reverse the ratio. It is wavelength divided by slit width, $\lambda/a$.
 
 For the given choices, $a=10\lambda$ is the only width with a clear, non-boundary diffraction pattern.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

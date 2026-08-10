@@ -1,5 +1,9 @@
 # Resolving Vertical-Circle Motion with r-t Axes
 
+<!--
+lesson-id: 212-M1-070
+topic-code: MTH212.M1.70
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -388,3 +392,17 @@ $$
 $$
 
 The main traps are inventing a separate centripetal force, swapping the sine and cosine projections, losing the component signs, or inserting total acceleration into the radial circular-motion relation.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

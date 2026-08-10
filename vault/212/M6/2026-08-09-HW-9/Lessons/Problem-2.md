@@ -1,5 +1,9 @@
 # Finding Slit Width from the Central Diffraction Maximum
 
+<!--
+lesson-id: 212-M6-012
+topic-code: MTH212.M6.12
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -296,3 +300,22 @@ options:
 - Procedure: compute $c=W/L$, then use $a/\lambda=2/c$.
 - Check: verify $(W/L)(a/\lambda)\approx2$ and confirm that a wider slit gives a narrower pattern.
 - Main trap: $L\lambda/a$ is only the center-to-first-minimum distance; omitting the factor of $2$ halves the slit-width answer.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 4 Study Guide](../../../M7/2026-08-13-Q-4/Study-Guide.md)
+Next: End of Quiz 4 Study Guide.
+
+Study guide index: 11/11
+
+---
+
+<!-- lesson-nav:end -->

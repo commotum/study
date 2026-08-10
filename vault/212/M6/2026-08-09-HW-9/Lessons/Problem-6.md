@@ -1,5 +1,9 @@
 # Changing Slit Separation at a Fixed Fringe Angle
 
+<!--
+lesson-id: 212-M6-016
+topic-code: MTH212.M6.16
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -310,3 +314,17 @@ When a fringe must stay at the same angle after the slit separation changes:
 This ratio shortcut assumes the wavelength is unchanged and the shared angle is nonzero.
 
 The main trap is dark-fringe indexing: the first dark fringe is at $\lambda/2$, so the third dark fringe is at $5\lambda/2$, not $3\lambda$ or $7\lambda/2$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

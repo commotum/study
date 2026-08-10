@@ -1,5 +1,9 @@
 # Why Convex-Mirror Images Are Always Virtual
 
+<!--
+lesson-id: 212-M7-009
+topic-code: MTH212.M7.09
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -300,3 +304,17 @@ The reusable conclusion is:
 $$
 \boxed{\text{A convex mirror always forms a virtual image of a real object.}}
 $$
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

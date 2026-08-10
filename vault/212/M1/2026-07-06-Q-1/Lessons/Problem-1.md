@@ -1,5 +1,9 @@
 # Acceleration in Constant-Speed Circular Motion
 
+<!--
+lesson-id: 212-M1-067
+topic-code: MTH212.M1.67
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -191,3 +195,17 @@ When an object moves at constant speed on a circular path, ask **curve, speed, c
 3. **Center:** The remaining acceleration points inward while velocity is tangent, so they are perpendicular.
 
 The main trap is choosing a direction along the velocity. Along would speed the object up, and opposite would slow it down; neither fits constant-speed motion.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

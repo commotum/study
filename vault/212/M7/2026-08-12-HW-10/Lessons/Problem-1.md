@@ -1,5 +1,9 @@
 # Auditing Qualitative Optics Claims
 
+<!--
+lesson-id: 212-M7-001
+topic-code: MTH212.M7.01
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -288,3 +292,22 @@ options:
 - **Snell angles:** In $n_1\sin\theta_1=n_2\sin\theta_2$, measure both angles from the normal.
 - **Diverging lens:** For a real object, $f<0$ gives a virtual, upright, reduced image with $0<m<1$.
 - **Main trap:** Do not treat a familiar phrase as sufficient; a changed angle reference or an omitted physical condition can change whether a statement is true.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 4 Study Guide](../../2026-08-13-Q-4/Study-Guide.md)
+Next: [Choosing a Refracted Ray at a Boundary](Problem-3.md)
+
+Study guide index: 01/11
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,5 +1,9 @@
 # Reading Path Difference from a Double-Slit Pattern
 
+<!--
+lesson-id: 212-M6-003
+topic-code: MTH212.M6.03
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -280,3 +284,22 @@ When a double-slit pattern marks a point, use this procedure:
 5. **Name:** use the side of the pattern to identify the longer path—on the right, the left-slit path is longer; on the left, the right-slit path is longer.
 
 The main trap is mixing the two counting systems: bright fringes use whole wavelengths, while dark fringes lie halfway between them.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 4 Study Guide](../../../M7/2026-08-13-Q-4/Study-Guide.md)
+Next: [Predicting Changes in Double-Slit Fringe Spacing](../../2026-08-09-HW-9/Lessons/Problem-4.md)
+
+Study guide index: 04/11
+
+---
+
+<!-- lesson-nav:end -->

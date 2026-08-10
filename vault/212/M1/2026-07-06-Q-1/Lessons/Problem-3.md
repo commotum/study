@@ -1,5 +1,9 @@
 # Choosing a Free-Body Diagram for a Rotating Bead
 
+<!--
+lesson-id: 212-M1-069
+topic-code: MTH212.M1.69
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -219,3 +223,17 @@ For an object held at fixed height while circling a vertical axis, use **interac
 3. **Contact:** if weight is the only other force, the contact force must point upward to balance weight and inward to turn the object.
 
 The main trap is drawing the required inward net force as an extra arrow. Instead, let the components of the real contact force produce that inward resultant.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->

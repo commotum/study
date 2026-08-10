@@ -1,5 +1,9 @@
 # Finding Diffraction-Grating Line Density from Symmetric Fringes
 
+<!--
+lesson-id: 212-M6-007
+topic-code: MTH212.M6.07
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -304,3 +308,22 @@ When the measurement runs from the $-m$ fringe to the $+m$ fringe, use this chec
 6. Keep guard digits through the trigonometry and round only the final requested density.
 
 The main trap is using the full symmetric separation as $y$. A second common trap is reporting the slit spacing $d$ when the question asks for its reciprocal, the line density $N$.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 4 Study Guide](../../../M7/2026-08-13-Q-4/Study-Guide.md)
+Next: [Counting Visible Diffraction-Grating Maxima on a Finite Screen](Problem-3.md)
+
+Study guide index: 08/11
+
+---
+
+<!-- lesson-nav:end -->

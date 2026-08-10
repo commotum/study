@@ -1,5 +1,9 @@
 # Predicting Changes in Double-Slit Fringe Spacing
 
+<!--
+lesson-id: 212-M6-014
+topic-code: MTH212.M6.14
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -348,3 +352,22 @@ $$
 $$
 
 The main trap is reversing an inverse relationship: frequency is inverse to wavelength, and slit separation is inverse to fringe spacing.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 4 Study Guide](../../../M7/2026-08-13-Q-4/Study-Guide.md)
+Next: [Finding Wavelength From a Double-Slit Intensity Graph](../../2026-08-05-M6-1/Lessons/Problem-4.md)
+
+Study guide index: 05/11
+
+---
+
+<!-- lesson-nav:end -->

@@ -1,5 +1,9 @@
 # Classifying a Plane-Mirror Image
 
+<!--
+lesson-id: 212-M7-004
+topic-code: MTH212.M7.04
+-->
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -179,3 +183,17 @@ For a plane mirror, use the checklist **V-U-S-E**:
 - **E**qual perpendicular distance on the opposite side: object in front, image behind.
 
 For a compound answer choice, test type, orientation, and location separately. Select a description only if every part passes; otherwise, “none of the above” may be the correct choice.
+
+<!-- lesson-nav:start -->
+
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+
+<!-- lesson-nav:end -->
