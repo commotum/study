@@ -43,7 +43,7 @@ Every type accepts these root fields:
 | `gated` | Optional boolean | Plugin gating behavior; default `false` |
 | `shuffle` | Optional boolean | Shuffle choices; default `false` |
 
-Root objects are strict. Do not place `feedback`, `correct`, `options`, `questions`, or `require_exact` on a type that does not list them.
+Root objects are strict. Do not place `feedback`, `correct`, `options`, `questions`, `input_mode`, or `require_exact` on a type that does not list them.
 
 Use `shuffle: true` only when order carries no meaning. It is structurally accepted as a common field, but it is useful only for types with choices.
 
@@ -242,22 +242,32 @@ feedback: |-
 
 ## `blank`
 
-Additional root fields: `require_exact`, `feedback`.
+Additional root fields: `input_mode`, `require_exact`, `feedback`.
 
 - Put at least one nonempty answer inside `==...==` in `content`.
+- Match blank granularity to the source response shape. Preserve multiple source answer slots even when their entries combine into one mathematical expression. If the source provides one response slot, keep one blank rather than inventing separately labeled component blanks.
+- `input_mode` is optional, accepts `text` or `math`, and defaults to `text`.
+- Use `input_mode: math` for symbolic or numerical mathematics that should appear as live visual notation while the learner types. Keep the authored answer keyboard-friendly, such as `(x+3)^2-2`, `x_1`, `sqrt(x+1)`, or `2pi/5`; the runtime converts it to the math field's internal LaTeX.
+- Display math supports multiple live blanks on the same LaTeX row and across `\\` row breaks. The fixed math fragments surrounding each field render independently, so keep blank markers outside LaTeX brace groups that must remain syntactically indivisible.
 - `require_exact` is optional and defaults to `true`. The runtime trims surrounding whitespace and compares case-insensitively despite the field name.
-- With exact grading enabled, hidden answers must be literal keyboard-enterable responses, not Markdown or LaTeX.
+- With exact text grading enabled, the runtime compares the normalized typed text. With exact math grading enabled, it compares math structure without algebraic simplification, so an algebraically equivalent expression with a different structure may not pass.
+- With exact grading enabled in either mode, hidden answers must be literal keyboard-enterable responses, not Markdown or LaTeX.
 - With `require_exact: false`, the control reveals answers without grading, so a hidden answer may use display markup such as Markdown or LaTeX.
 - Put polished notation, derivation, units, and precision in root `feedback`.
 
 ```quiz
 type: blank
 id: q-7
+input_mode: math
 require_exact: true
 content: |-
-  Enter a number only: ==42==
+  Complete the two answer slots.
+
+  $$
+  (x^2+6x+9)-2=(==x+3==)^2-==2==
+  $$
 feedback: |-
-  Show the governing equation, calculation, units, and rounding here.
+  Since $x^2+6x+9=(x+3)^2$, the expression is $(x+3)^2-2$.
 ```
 
 ## Runtime compatibility aliases

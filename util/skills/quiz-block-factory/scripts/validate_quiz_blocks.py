@@ -33,7 +33,7 @@ TYPE_ROOT_FIELDS = {
     "multi-select": {"questions"},
     "noodle": {"options", "questions"},
     "free": {"correct", "feedback"},
-    "blank": {"require_exact", "feedback"},
+    "blank": {"input_mode", "require_exact", "feedback"},
 }
 OPTION_FIELDS = {"id", "content", "correct", "feedback"}
 QUESTION_FIELDS = {"id", "content", "correct_option", "feedback"}
@@ -907,6 +907,9 @@ def validate_block(
         if not root_field_has_content(block.lines, "feedback"):
             issues.append(Issue(path, block.start_line, "free quiz is missing nonempty feedback"))
     elif quiz_type == "blank":
+        input_mode = root_field_text(block.lines, "input_mode")
+        if input_mode is not None and input_mode not in {"text", "math"}:
+            issues.append(Issue(path, block.start_line, "input_mode must be text or math"))
         raw_require_exact = root_inline_value(block.lines, "require_exact")
         if raw_require_exact is not None and yaml_boolean_value(raw_require_exact) is None:
             issues.append(Issue(path, block.start_line, "require_exact must be true or false"))

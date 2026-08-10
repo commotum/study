@@ -34,8 +34,12 @@ For cleanup, preserve the source response shape and supplied choices. Choose amo
 - When the key is genuinely unknown, do not invent correct flags, answer explanations, or a student's reasoning. Preserve the source question, run structural validation, and report both the exception and any consequent correctness-validation failure. In a mixed document, still require and lint feedback for the known-key blocks; treat only failures confined to unknown-key blocks as explicit exceptions.
 - For `free`, follow the factory's reference-answer and feedback policy; do not imply that wording must match exactly.
 - For `blank`, put the literal response the student should type inside `==...==`, not a typeset representation of that response.
+- Match the number of blanks to the source response slots. Preserve multiple source blanks even when their entries combine into one mathematical expression. If the source provides one response slot, keep one blank rather than inventing separately labeled component blanks.
 - Keep hidden answers plain and keyboard-enterable. Never wrap them in `$...$` or include LaTeX such as `\frac`, `\times`, `\sqrt`, `\mathrm`, or spacing commands. Do not include an equation label such as `f_5=` or a unit when the prompt requests a number only.
+- Use `input_mode: math` when a symbolic or numerical answer should render as live visual math. Author its answer in keyboard form, such as `(x+3)^2-2`, `sqrt(x+1)`, or `2pi/5`; do not put LaTeX commands inside `==...==`.
+- Display math may contain multiple live blanks on one row or across `\\` row breaks. Keep markers outside LaTeX brace groups that must remain syntactically intact.
 - Prefer `require_exact: true` when an authoritative answer has one canonical typed form. Use `require_exact: false` only for an intentional answer-reveal field or when multiple equivalent typed forms make exact string grading inappropriate.
+- In `input_mode: math`, exact grading compares math structure without algebraic simplification. Use reveal-only grading when algebraically equivalent alternate structures should be accepted conceptually.
 - Use ordinary typed forms for nonnumeric answers too, such as `increases`, `pi/3`, or `x^2 + 1`. Put polished LaTeX in the prompt or feedback instead.
 
 ## Typed blank answers
@@ -44,6 +48,7 @@ For cleanup, preserve the source response shape and supplied choices. Choose amo
 - Match the source response format. If it says “Enter your answer in Hz,” store `500`, not `500 Hz`, `$500\ \mathrm{Hz}$`, or `$f_5=5.0\times10^2\ \mathrm{Hz}$`.
 - Preserve meaningful decimal zeros when the typed answer requires them, such as `0.40`. When an integer entry such as `500` represents two significant figures, document the precise form $5.0\times10^2$ in feedback rather than encoding it in the input answer.
 - For a symbolic or textual response, choose a natural ASCII form that can be typed without LaTeX knowledge. If several forms are equally valid, do not force exact string grading.
+- For a live-math response, add `input_mode: math` and use the same natural keyboard form. The plugin restructures the entry visually as the learner types.
 - State the expected input convention in the prompt when ambiguity is possible: “Enter a number only,” “Do not include units,” or “Use `pi` for $\pi$.”
 
 ## Numerical answers and significant figures

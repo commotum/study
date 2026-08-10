@@ -146,6 +146,62 @@ require_exact: false
         )
         self.assertEqual([], issues)
 
+    def test_blank_accepts_math_input_mode(self) -> None:
+        issues = self.validate(
+            """```quiz
+type: blank
+id: q-math
+input_mode: math
+require_exact: true
+content: Rewrite the expression: ==(x+3)^2-2==
+feedback: Complete the square before combining the outside constant.
+```
+"""
+        )
+        self.assertEqual([], issues)
+
+    def test_blank_rejects_unknown_input_mode(self) -> None:
+        issues = self.validate(
+            """```quiz
+type: blank
+content: The answer is ==42==.
+input_mode: latex
+```
+"""
+        )
+        self.assertIn("input_mode must be text or math", issues)
+
+    def test_blank_accepts_two_display_math_gaps_on_one_row(self) -> None:
+        issues = self.validate(
+            r"""```quiz
+type: blank
+input_mode: math
+content: |-
+  $$
+  x=(==a==)^2+==b==
+  $$
+```
+"""
+        )
+        self.assertEqual([], issues)
+
+    def test_blank_accepts_display_math_gaps_on_separate_rows(self) -> None:
+        issues = self.validate(
+            r"""```quiz
+type: blank
+input_mode: math
+content: |-
+  $$
+  \begin{aligned}
+  a &= ==1== \\
+  b &= ==2==
+  \end{aligned}
+  $$
+```
+"""
+        )
+        self.assertEqual([], issues)
+
     def test_radio_rejects_blank_only_require_exact(self) -> None:
         issues = self.validate(
             """```quiz

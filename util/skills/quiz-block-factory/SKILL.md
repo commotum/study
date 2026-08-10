@@ -29,7 +29,7 @@ The references distinguish plugin runtime compatibility from the stricter canoni
    - `multi-select`: several prompts with separate option banks.
    - `noodle`: one-to-one matching.
    - `free`: a drawing, derivation, proof, explanation, or other open response.
-   - `blank`: one or more short determinate typed responses.
+   - `blank`: one or more short determinate typed responses. Preserve the source response shape: keep distinct source answer slots distinct, and do not invent extra slots or merge them into one.
 
 3. Build only canonical fields.
    - Use `content`, never legacy aliases such as `text`, `question`, `answer`, or `option`.
@@ -46,6 +46,9 @@ The references distinguish plugin runtime compatibility from the stricter canoni
    - Point each `correct_option` to an option ID in the applicable bank.
    - Put a useful reference answer in `free.correct`.
    - Put answers inside `==...==`. With exact grading enabled, use literal keyboard-enterable text; `require_exact: false` may reveal display markup without grading it.
+   - For symbolic or numerical mathematics that benefits from live notation, set `input_mode: math`. Keep its hidden answers keyboard-friendly, such as `(x+3)^2-2`, `sqrt(x+1)`, or `2pi/5`; the field converts them to visual math while the learner types.
+   - Display math may contain multiple live blanks on the same LaTeX row or across `\\` row breaks. Keep each `==...==` marker outside LaTeX brace groups that must remain syntactically indivisible.
+   - Treat exact math grading as structural, not algebraic: equivalent but differently structured expressions need not pass. Use `require_exact: false` when the task permits many equivalent forms and should reveal rather than grade.
 
 5. Write corrective feedback.
    - For generated radio and checkbox practice, give every option nonempty feedback.
