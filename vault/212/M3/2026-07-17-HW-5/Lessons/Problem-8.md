@@ -28,7 +28,7 @@ topic-code: MTH212.M3.18
 When a problem asks for the gravitational potential energy of several point masses, look for all the **pairs** of masses. For each pair, use the separation between those two masses—not a squared distance—and add the resulting negative energies:
 
 $$
-U_{\text{system}}=\sum_{i<j}-\frac{Gm_im_j}{r_{ij}}.
+U_{\mathrm{system}}=\sum_{i<j}-\frac{Gm_im_j}{r_{ij}}.
 $$
 
 The condition $i<j$ means that each unordered pair is counted exactly once. For three masses, the pairs are $(1,2)$, $(1,3)$, and $(2,3)$.

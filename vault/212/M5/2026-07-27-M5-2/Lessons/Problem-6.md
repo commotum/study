@@ -18,7 +18,7 @@ topic-code: MTH212.M5.13
 
 ## Prerequisites
 
-- Use the wave relation $v=f\lambda$.
+- Use the wave relation $v_{\mathrm{wave}}=f\lambda$.
 - Convert metric units with conversion factors.
 - Interpret a ratio of two lengths as a dimensionless count.
 - Round a result to the significant figures supported by the givens.
@@ -33,11 +33,11 @@ When a problem gives a wavelength in air, an index of refraction, and a distance
 Equivalently,
 
 $$
-N=\frac{d}{\lambda_{\text{material}}}
-=\frac{nd}{\lambda_{\text{air}}},
+N=\frac{d}{\lambda_{\mathrm{material}}}
+=\frac{nd}{\lambda_{\mathrm{air}}},
 $$
 
-provided $d$ and $\lambda_{\text{air}}$ are expressed in matching length units.
+provided $d$ and $\lambda_{\mathrm{air}}$ are expressed in matching length units.
 
 ---
 
@@ -48,7 +48,7 @@ provided $d$ and $\lambda_{\text{air}}$ are expressed in matching length units.
 When light enters a material, its **frequency stays constant**. Its speed and wavelength change. If air is treated as having index $1$, then
 
 $$
-\lambda_{\text{material}}=\frac{\lambda_{\text{air}}}{n}.
+\lambda_{\mathrm{material}}=\frac{\lambda_{\mathrm{air}}}{n}.
 $$
 
 Because ordinary glass has $n>1$, the wavelength in glass must be shorter than the wavelength in air.
@@ -56,7 +56,7 @@ Because ordinary glass has $n>1$, the wavelength in glass must be shorter than t
 The index tells you the direction immediately:
 
 $$
-n\uparrow \quad\Longrightarrow\quad \lambda_{\text{material}}\downarrow
+n\uparrow \quad\Longrightarrow\quad \lambda_{\mathrm{material}}\downarrow
 \quad\Longrightarrow\quad
 \text{more wavelengths fit in the same thickness}.
 $$
@@ -64,7 +64,7 @@ $$
 **Example:** Light with wavelength $600\ \mathrm{nm}$ in air enters glass with $n=1.5$. Then
 
 $$
-\lambda_{\text{glass}}=\frac{600\ \mathrm{nm}}{1.5}=400\ \mathrm{nm}.
+\lambda_{\mathrm{glass}}=\frac{600\ \mathrm{nm}}{1.5}=400\ \mathrm{nm}.
 $$
 
 ```quiz
@@ -101,7 +101,7 @@ options:
 The number of wavelengths that fit across a thickness $d$ is
 
 $$
-N=\frac{d}{\lambda_{\text{material}}}.
+N=\frac{d}{\lambda_{\mathrm{material}}}.
 $$
 
 The numerator and denominator must use the same length unit. When they do, the length units cancel and $N$ is a pure count.
@@ -175,14 +175,14 @@ options:
 
 ## Combine the Two Steps
 
-Substituting $\lambda_{\text{material}}=\lambda_{\text{air}}/n$ into the counting formula gives
+Substituting $\lambda_{\mathrm{material}}=\lambda_{\mathrm{air}}/n$ into the counting formula gives
 
 $$
-N=\frac{d}{\lambda_{\text{air}}/n}
-=\frac{nd}{\lambda_{\text{air}}}.
+N=\frac{d}{\lambda_{\mathrm{air}}/n}
+=\frac{nd}{\lambda_{\mathrm{air}}}.
 $$
 
-This one-line form is useful after $d$ and $\lambda_{\text{air}}$ have been put in the same unit. It also gives a direction check: at a fixed thickness and air wavelength, a larger $n$ produces more wavelengths inside the material.
+This one-line form is useful after $d$ and $\lambda_{\mathrm{air}}$ have been put in the same unit. It also gives a direction check: at a fixed thickness and air wavelength, a larger $n$ produces more wavelengths inside the material.
 
 **Example:** A $0.50\ \mathrm{mm}$ slab has $n=1.4$, and the light's air wavelength is $500\ \mathrm{nm}$. Since $0.50\ \mathrm{mm}=5.0\times10^5\ \mathrm{nm}$,
 
@@ -332,9 +332,9 @@ $$
 
 In symbols:
 
-1. Find $\lambda_{\text{material}}=\lambda_{\text{air}}/n$.
+1. Find $\lambda_{\mathrm{material}}=\lambda_{\mathrm{air}}/n$.
 2. Convert the thickness and wavelength to the same length unit.
-3. Count with $N=d/\lambda_{\text{material}}$, or equivalently $N=nd/\lambda_{\text{air}}$.
+3. Count with $N=d/\lambda_{\mathrm{material}}$, or equivalently $N=nd/\lambda_{\mathrm{air}}$.
 4. Confirm that the length units cancel and that $n>1$ makes the in-material wavelength shorter.
 5. Round only at the end and use the requested answer form.
 

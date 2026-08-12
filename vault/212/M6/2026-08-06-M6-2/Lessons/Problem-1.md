@@ -27,27 +27,27 @@ topic-code: MTH212.M6.06
 For a slit of width $a$, dark single-slit minima obey
 
 $$
-a\sin\theta_m=m\lambda,
+a\sin\theta_p=p\lambda,
 $$
 
-where $m=1,2,3,\ldots$. When the diffraction angles are small,
-$y_m\approx L\sin\theta_m$, so the position of the $m$th minimum is
+where $p=1,2,3,\ldots$. When the diffraction angles are small,
+$y_p\approx L\sin\theta_p$, so the position of the $p$th minimum is
 
 $$
-y_m\approx \frac{m\lambda L}{a}.
+y_p\approx \frac{p\lambda L}{a}.
 $$
 
 The recognition cue is a measured distance between neighboring dark minima. Subtracting their positions cancels the order number:
 
 $$
-\Delta y=y_{m+1}-y_m\approx\frac{\lambda L}{a}.
+\Delta y=y_{p+1}-y_p\approx\frac{\lambda L}{a}.
 $$
 
-More generally, minima $m$ and $n$ on the same side span $|n-m|$ equal gaps. The spacing of one gap is
+More generally, minima $p$ and $q$ on the same side span $|q-p|$ equal gaps. The spacing of one gap is
 
 $$
 \Delta y
-=\frac{|y_n-y_m|}{|n-m|}
+=\frac{|y_q-y_p|}{|q-p|}
 \approx\frac{\lambda L}{a}.
 $$
 
@@ -76,7 +76,7 @@ $$
 \Delta y=y_2-y_1=12.3\ \mathrm{mm}-8.2\ \mathrm{mm}=4.1\ \mathrm{mm}.
 $$
 
-Before using a separation as $\Delta y$, count the order gaps. These minima are adjacent, so $m$ changes by exactly $1$ and no extra divisor remains. If the first and third minima had been measured instead, their total separation would span two equal gaps and would need to be divided by $2$.
+Before using a separation as $\Delta y$, count the order gaps. These minima are adjacent, so $p$ changes by exactly $1$ and no extra divisor remains. If the first and third minima had been measured instead, their total separation would span two equal gaps and would need to be divided by $2$.
 
 ```quiz
 type: radio
@@ -253,7 +253,7 @@ options:
 The measured $10.0\ \mathrm{mm}$ spans the whole central maximum. It is twice the one-sided first-minimum distance and twice an adjacent-minimum spacing:
 
 $$
-W_{\text{central}}=2\Delta y.
+W_{\mathrm{central}}=2\Delta y.
 $$
 
 This is another gap-counting problem: traveling from the left first minimum to the right first minimum crosses two one-sided gaps, one on each side of the center.
@@ -261,8 +261,8 @@ This is another gap-counting problem: traveling from the left first minimum to t
 Therefore,
 
 $$
-a=\frac{\lambda L}{W_{\text{central}}/2}
-=\frac{2\lambda L}{W_{\text{central}}}
+a=\frac{\lambda L}{W_{\mathrm{central}}/2}
+=\frac{2\lambda L}{W_{\mathrm{central}}}
 =0.100\ \mathrm{mm}.
 $$
 
@@ -279,7 +279,7 @@ options:
     $0.300\ \mathrm{mm}$
   correct: true
   feedback: |-
-    The given distance is the full central width, so $\Delta y=6.50/2=3.25\ \mathrm{mm}$. Thus $a=\lambda L/\Delta y=2\lambda L/W_{\text{central}}=0.300\ \mathrm{mm}$.
+    The given distance is the full central width, so $\Delta y=6.50/2=3.25\ \mathrm{mm}$. Thus $a=\lambda L/\Delta y=2\lambda L/W_{\mathrm{central}}=0.300\ \mathrm{mm}$.
 - id: m6-2-p1-central-width-b
   content: |-
     $0.150\ \mathrm{mm}$
@@ -289,7 +289,7 @@ options:
   content: |-
     $0.600\ \mathrm{mm}$
   feedback: |-
-    This applies the central-width factor twice. Either halve $W_{\text{central}}$ and use $a=\lambda L/\Delta y$, or use $a=2\lambda L/W_{\text{central}}$, but not both.
+    This applies the central-width factor twice. Either halve $W_{\mathrm{central}}$ and use $a=\lambda L/\Delta y$, or use $a=2\lambda L/W_{\mathrm{central}}$, but not both.
 - id: m6-2-p1-central-width-d
   content: |-
     $3.00\times10^{-4}\ \mathrm{mm}$
@@ -299,7 +299,7 @@ options:
   content: |-
     $3.33\ \mathrm{mm}$
   feedback: |-
-    This inverts the calculated slit width. Width follows $a=2\lambda L/W_{\text{central}}$; taking the reciprocal changes both the dimensions and the physical inverse relationship.
+    This inverts the calculated slit width. Width follows $a=2\lambda L/W_{\mathrm{central}}$; taking the reciprocal changes both the dimensions and the physical inverse relationship.
 ```
 
 ---
@@ -308,8 +308,8 @@ options:
 ## Summary
 
 - Cue: the prompt gives two neighboring dark minima in a small-angle single-slit pattern.
-- If positions are given, compute $\Delta y=|y_{m+1}-y_m|$.
-- If the minima are not adjacent, divide their total separation by the number of order gaps, $|n-m|$.
+- If positions are given, compute $\Delta y=|y_{p+1}-y_p|$.
+- If the minima are not adjacent, divide their total separation by the number of order gaps, $|q-p|$.
 - Use $\Delta y\approx\lambda L/a$, then isolate $a\approx\lambda L/\Delta y$.
 - Convert $\lambda$, $L$, and $\Delta y$ to one length unit before substituting, orienting each conversion factor so unwanted units cancel.
 - Check dimensions: length times length divided by length must leave a length for $a$.

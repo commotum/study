@@ -28,12 +28,12 @@ topic-code: MTH212.M2.12
 The torque magnitude produced by a force is
 
 $$
-\tau=rF\sin\phi,
+\tau=rF\sin\theta,
 $$
 
-where $r$ is the distance from the pivot to the force's application point and $\phi$ is the angle between the position vector $\vec r$ and the force $\vec F$.
+where $r$ is the distance from the pivot to the force's application point and $\theta$ is the angle between the position vector $\vec{r}$ and the force $\vec{F}$.
 
-To identify $\phi$, imagine the tails of $\vec r$ and $\vec F$ placed at the force's application point. Use the angle between their directions.
+To identify $\theta$, imagine the tails of $\vec{r}$ and $\vec{F}$ placed at the force's application point. Use the angle between their directions.
 
 An equivalent form is
 
@@ -45,10 +45,10 @@ where $r_\perp$ is the shortest perpendicular distance from the pivot to the for
 
 | Geometry | Sine factor | Torque magnitude |
 |---|---:|---:|
-| Parallel, $\phi=0^\circ$ | $0$ | $0$ |
-| Oblique, $0^\circ<\phi<180^\circ$ | Between $0$ and $1$ | Between $0$ and $rF$ |
-| Perpendicular, $\phi=90^\circ$ | $1$ | $rF$ |
-| Antiparallel, $\phi=180^\circ$ | $0$ | $0$ |
+| Parallel, $\theta=0^\circ$ | $0$ | $0$ |
+| Oblique, $0^\circ<\theta<180^\circ$ | Between $0$ and $1$ | Between $0$ and $rF$ |
+| Perpendicular, $\theta=90^\circ$ | $1$ | $rF$ |
+| Antiparallel, $\theta=180^\circ$ | $0$ | $0$ |
 
 **Recognition cue:** When equal forces act on a rigid object and the question asks for the smallest torque magnitude, compare their perpendicular lever arms first. Any force whose line of action passes through the pivot produces zero torque and must be the minimum.
 
@@ -56,7 +56,7 @@ where $r_\perp$ is the shortest perpendicular distance from the pivot to the for
 
 ## Use the Angle Between Position and Force
 
-**Example:** A $12\ \mathrm{N}$ force acts $0.50\ \mathrm{m}$ from a pivot at angle $\phi=30^\circ$ to the position vector. Find its torque magnitude.
+**Example:** A $12\ \mathrm{N}$ force acts $0.50\ \mathrm{m}$ from a pivot at angle $\theta=30^\circ$ to the position vector. Find its torque magnitude.
 
 **Explanation**
 
@@ -65,13 +65,13 @@ Substitute into the magnitude formula:
 $$
 \begin{aligned}
 \tau
-&=rF\sin\phi\\
+&=rF\sin\theta\\
 &=(0.50)(12)\sin30^\circ\\
-&=3.0\ \mathrm{N\,m}.
+&=3.0\ \mathrm{N}\,\mathrm{m}.
 \end{aligned}
 $$
 
-Only the component of force perpendicular to $\vec r$ contributes. For fixed $r$ and $F$, the torque is largest at $90^\circ$ and decreases as $\sin\phi$ decreases.
+Only the component of force perpendicular to $\vec{r}$ contributes. For fixed $r$ and $F$, the torque is largest at $90^\circ$ and decreases as $\sin\theta$ decreases.
 
 ```quiz
 type: radio
@@ -81,28 +81,28 @@ content: |-
 options:
 - id: a
   content: |-
-    $4.0\ \mathrm{N\,m}$
+    $4.0\ \mathrm{N}\,\mathrm{m}$
   correct: true
   feedback: |-
-    $\tau=rF\sin90^\circ=(0.40)(10)(1)=4.0\ \mathrm{N\,m}$.
+    $\tau=rF\sin90^\circ=(0.40)(10)(1)=4.0\ \mathrm{N}\,\mathrm{m}$.
 - id: b
   content: |-
-    $0\ \mathrm{N\,m}$
+    $0\ \mathrm{N}\,\mathrm{m}$
   feedback: |-
     A perpendicular force has the maximum sine factor, not a zero sine factor.
 - id: c
   content: |-
-    $2.0\ \mathrm{N\,m}$
+    $2.0\ \mathrm{N}\,\mathrm{m}$
   feedback: |-
     This incorrectly inserts an extra factor of $\frac12$.
 - id: d
   content: |-
-    $10\ \mathrm{N\,m}$
+    $10\ \mathrm{N}\,\mathrm{m}$
   feedback: |-
     This omits the $0.40\ \mathrm{m}$ lever arm.
 - id: e
   content: |-
-    $25\ \mathrm{N\,m}$
+    $25\ \mathrm{N}\,\mathrm{m}$
   feedback: |-
     This divides by the lever arm instead of multiplying by it.
 ```
@@ -115,7 +115,7 @@ options:
 
 **Explanation**
 
-The force is antiparallel to the position vector, so $\phi=180^\circ$. Therefore,
+The force is antiparallel to the position vector, so $\theta=180^\circ$. Therefore,
 
 $$
 \tau=rF\sin180^\circ=0.
@@ -274,7 +274,7 @@ To find the smallest torque magnitude in a force diagram:
 1. Mark the pivot.
 2. For each force, identify the position vector from the pivot to the application point.
 3. Trace the force's line of action.
-4. Compare either $\tau=rF\sin\phi$ or $\tau=F r_\perp$.
+4. Compare either $\tau=rF\sin\theta$ or $\tau=F r_\perp$.
 5. Check first for a line of action through the pivot; it gives $\tau=0$.
 
 For equal forces, the smallest perpendicular lever arm produces the smallest torque. The main trap is choosing the force closest to the hinge or most nearly horizontal without checking whether its line of action actually passes through the pivot.

@@ -162,7 +162,7 @@ Its velocity is not constant because the direction of the velocity continually c
 
 In **nonuniform circular motion**, the object travels around a circle while its speed also changes.
 
-The acceleration may be separated into radial and tangential components:
+Choose $\hat{r}$ to point inward and $\hat{t}$ to point along the motion. The acceleration may then be separated into radial and tangential components:
 
 $$
 \vec{a}=a_r\hat{r}+a_t\hat{t}.
@@ -196,7 +196,7 @@ we obtain
 
 $$
 \boxed{
-v=\omega r
+v=r\omega
 }.
 $$
 
@@ -210,7 +210,7 @@ For a constant radius,
 
 $$
 \boxed{
-a_t=\alpha r
+a_t=r\alpha
 },
 $$
 
@@ -228,11 +228,11 @@ a_r=\frac{v^2}{r}
 }.
 $$
 
-Using $v=\omega r$, this may also be written as
+Using $v=r\omega$, this may also be written as
 
 $$
 \boxed{
-a_r=\omega^2r
+a_r=r\omega^2
 }.
 $$
 
@@ -267,15 +267,15 @@ $$
 When angular acceleration is constant, the rotational kinematic equations are analogous to the ordinary constant-acceleration equations:
 
 $$
-\omega_f=\omega_i+\alpha\Delta t,
+\omega_f=\omega_0+\alpha\Delta t,
 $$
 
 $$
 \theta_f
 =
-\theta_i
+\theta_0
 +
-\omega_i\Delta t
+\omega_0\Delta t
 +
 \frac{1}{2}\alpha(\Delta t)^2,
 $$
@@ -285,9 +285,9 @@ and
 $$
 \omega_f^2
 =
-\omega_i^2
+\omega_0^2
 +
-2\alpha(\theta_f-\theta_i).
+2\alpha(\theta_f-\theta_0).
 $$
 
 # Worked Example 1: Speed of a Ferris-Wheel Rider
@@ -301,7 +301,7 @@ $$
 rotating at a constant angular speed
 
 $$
-\omega=0.16\ \mathrm{rad/s}.
+\omega=0.16\ \mathrm{rad}/\mathrm{s}.
 $$
 
 We want to determine the speed of a person riding on the rim.
@@ -309,7 +309,7 @@ We want to determine the speed of a person riding on the rim.
 The relationship between tangential speed and angular speed is
 
 $$
-v=\omega r.
+v=r\omega.
 $$
 
 Substituting the given values,
@@ -317,21 +317,21 @@ Substituting the given values,
 $$
 v
 =
-(0.16\ \mathrm{rad/s})
+(0.16\ \mathrm{rad}/\mathrm{s})
 (42\ \mathrm{m}).
 $$
 
 Because radians are dimensionless,
 
 $$
-v=6.72\ \mathrm{m/s}.
+v=6.72\ \mathrm{m}/\mathrm{s}.
 $$
 
 Using two significant figures,
 
 $$
 \boxed{
-v=6.7\ \mathrm{m/s}
+v=6.7\ \mathrm{m}/\mathrm{s}
 }.
 $$
 
@@ -380,7 +380,7 @@ Choose the inward direction as positive.
 Newton’s second law in the radial direction is
 
 $$
-\sum F_r=ma_r.
+\sum F_r=m a_r.
 $$
 
 Therefore,
@@ -402,7 +402,7 @@ $$
 Using
 
 $$
-v=\omega r,
+v=r\omega,
 $$
 
 we have
@@ -410,9 +410,9 @@ we have
 $$
 \frac{v^2}{r}
 =
-\frac{\omega^2r^2}{r}
+\frac{\omega^2 r^2}{r}
 =
-\omega^2r.
+\omega^2 r.
 $$
 
 Thus,
@@ -421,7 +421,7 @@ $$
 \boxed{
 N_{\mathrm{bottom}}
 =
-m(g+\omega^2r)
+m(g+\omega^2 r)
 }.
 $$
 
@@ -438,9 +438,9 @@ N_{\mathrm{bottom}}
 =
 (68\ \mathrm{kg})
 \left[
-9.81\ \mathrm{m/s^2}
+9.81\ \mathrm{m}/\mathrm{s}^2
 +
-(0.16\ \mathrm{rad/s})^2
+(0.16\ \mathrm{rad}/\mathrm{s})^2
 (42\ \mathrm{m})
 \right].
 $$
@@ -489,13 +489,13 @@ N_{\mathrm{top}}
 mg-m\frac{v^2}{r}.
 $$
 
-Using $v=\omega r$,
+Using $v=r\omega$,
 
 $$
 \boxed{
 N_{\mathrm{top}}
 =
-m(g-\omega^2r)
+m(g-\omega^2 r)
 }.
 $$
 
@@ -506,9 +506,9 @@ N_{\mathrm{top}}
 =
 (68\ \mathrm{kg})
 \left[
-9.81\ \mathrm{m/s^2}
+9.81\ \mathrm{m}/\mathrm{s}^2
 -
-(0.16\ \mathrm{rad/s})^2
+(0.16\ \mathrm{rad}/\mathrm{s})^2
 (42\ \mathrm{m})
 \right].
 $$
@@ -530,7 +530,7 @@ The results are
 $$
 N_{\mathrm{bottom}}
 =
-m(g+\omega^2r)
+m(g+\omega^2 r)
 $$
 
 and
@@ -538,7 +538,7 @@ and
 $$
 N_{\mathrm{top}}
 =
-m(g-\omega^2r).
+m(g-\omega^2 r).
 $$
 
 Therefore,
@@ -562,7 +562,7 @@ For example, the bottom normal force should first be written as
 $$
 N_{\mathrm{bottom}}
 =
-m(g+\omega^2r).
+m(g+\omega^2 r).
 $$
 
 Only after obtaining this symbolic expression should the numerical values be substituted.
@@ -630,27 +630,27 @@ $$
 Because
 
 $$
-v=\omega r,
+v=r\omega,
 $$
 
 we may also write
 
 $$
-a_r=\omega^2r.
+a_r=r\omega^2.
 $$
 
 Static friction is the only radial force, so
 
 $$
-f_s=m\omega^2r.
+\sum F_r=m a_r=m\frac{v^2}{r}=m\omega^2 r=f_s.
 $$
 
 This equation gives the actual static-friction force required at any angular speed below the slipping threshold.
 
-Static friction is not automatically equal to $\mu_sN$. In general,
+Static friction is not automatically equal to $\mu_s N$. In general,
 
 $$
-f_s\leq\mu_sN.
+f_s\leq\mu_s N.
 $$
 
 The equality applies only when the coin is just about to slip.
@@ -660,38 +660,38 @@ The equality applies only when the coin is just about to slip.
 At the threshold of slipping,
 
 $$
-f_s=f_{s,\max}=\mu_sN.
+f_s=f_{s,\max}=\mu_s N.
 $$
 
 Using $N=mg$,
 
 $$
-f_{s,\max}=\mu_smg.
+f_{s,\max}=\mu_s mg.
 $$
 
 Set this equal to the required radial force:
 
 $$
-m\omega_{\max}^2r
+m\omega_{\max,\mathrm{turntable}}^2 r
 =
-\mu_smg.
+\mu_s mg.
 $$
 
 The mass cancels:
 
 $$
-\omega_{\max}^2r
+\omega_{\max,\mathrm{turntable}}^2 r
 =
-\mu_sg.
+\mu_s g.
 $$
 
 Solving for the angular speed,
 
 $$
 \boxed{
-\omega_{\max}
+\omega_{\max,\mathrm{turntable}}
 =
-\sqrt{\frac{\mu_sg}{r}}
+\sqrt{\frac{\mu_s g}{r}}
 }.
 $$
 
@@ -704,7 +704,7 @@ $$
 the result may be written as
 
 $$
-\omega_{\max}
+\omega_{\max,\mathrm{turntable}}
 =
 \sqrt{\frac{(0.24)g}{r}}.
 $$
@@ -716,9 +716,9 @@ The coin’s mass does not affect the maximum angular speed.
 The symbolic result is
 
 $$
-\omega_{\max}
+\omega_{\max,\mathrm{turntable}}
 =
-\sqrt{\frac{\mu_sg}{r}}.
+\sqrt{\frac{\mu_s g}{r}}.
 $$
 
 This immediately reveals several physical relationships.
@@ -730,7 +730,7 @@ If $\mu_s$ increases, the turntable can rotate more rapidly before the coin slip
 $$
 \mu_s\uparrow
 \quad\Longrightarrow\quad
-\omega_{\max}\uparrow.
+\omega_{\max,\mathrm{turntable}}\uparrow.
 $$
 
 A larger coefficient of static friction allows a greater inward force.
@@ -742,13 +742,13 @@ If the coin is moved farther from the center, the maximum angular speed decrease
 $$
 r\uparrow
 \quad\Longrightarrow\quad
-\omega_{\max}\downarrow.
+\omega_{\max,\mathrm{turntable}}\downarrow.
 $$
 
 At a larger radius, the required radial acceleration
 
 $$
-a_r=\omega^2r
+a_r=r\omega^2
 $$
 
 is greater for the same angular speed.
@@ -760,7 +760,7 @@ If $g$ increases, the normal force increases, which increases the maximum availa
 $$
 g\uparrow
 \quad\Longrightarrow\quad
-\omega_{\max}\uparrow.
+\omega_{\max,\mathrm{turntable}}\uparrow.
 $$
 
 # General Strategy for Circular-Motion Force Problems
@@ -795,7 +795,7 @@ It is usually convenient to choose the inward radial direction as positive.
 The radial acceleration can then be written as the positive magnitude
 
 $$
-a_r=\frac{v^2}{r}=\omega^2r.
+a_r=\frac{v^2}{r}=r\omega^2.
 $$
 
 ## 4. Apply Newton’s Second Law
@@ -805,13 +805,13 @@ Write a separate equation for each relevant direction.
 For example,
 
 $$
-\sum F_r=m\frac{v^2}{r}
+\sum F_r=m a_r=m\frac{v^2}{r}
 $$
 
 and
 
 $$
-\sum F_y=ma_y.
+\sum F_y=m a_y.
 $$
 
 ## 5. Use Friction Conditions Carefully
@@ -819,13 +819,13 @@ $$
 For static friction,
 
 $$
-f_s\leq\mu_sN.
+f_s\leq\mu_s N.
 $$
 
 Use
 
 $$
-f_s=\mu_sN
+f_{s,\max}=\mu_s N
 $$
 
 only when the object is at the threshold of slipping.
@@ -852,7 +852,7 @@ The relationships among tangential and rotational quantities are
 
 $$
 \boxed{
-v=\omega r
+v=r\omega
 }
 $$
 
@@ -860,7 +860,7 @@ and
 
 $$
 \boxed{
-a_t=\alpha r
+a_t=r\alpha
 }.
 $$
 
@@ -868,7 +868,7 @@ The radial acceleration is
 
 $$
 \boxed{
-a_r=\frac{v^2}{r}=\omega^2r
+a_r=\frac{v^2}{r}=r\omega^2
 }.
 $$
 
@@ -876,7 +876,7 @@ For a Ferris wheel with angular speed $\omega$ and radius $r$, the rider’s spe
 
 $$
 \boxed{
-v=\omega r
+v=r\omega
 }.
 $$
 
@@ -884,7 +884,7 @@ For the values used in the lecture,
 
 $$
 \boxed{
-v=6.7\ \mathrm{m/s}
+v=6.7\ \mathrm{m}/\mathrm{s}
 }.
 $$
 
@@ -894,7 +894,7 @@ $$
 \boxed{
 N_{\mathrm{bottom}}
 =
-m(g+\omega^2r)
+m(g+\omega^2 r)
 }.
 $$
 
@@ -912,7 +912,7 @@ $$
 \boxed{
 N_{\mathrm{top}}
 =
-m(g-\omega^2r)
+m(g-\omega^2 r)
 }.
 $$
 
@@ -935,22 +935,22 @@ $$
 For a coin on a horizontal rotating turntable, static friction supplies the radial force:
 
 $$
-f_s=m\omega^2r.
+\sum F_r=m a_r=m\frac{v^2}{r}=m\omega^2 r=f_s.
 $$
 
 At the threshold of slipping,
 
 $$
-\mu_smg=m\omega_{\max}^2r.
+\mu_s mg=m\omega_{\max,\mathrm{turntable}}^2 r.
 $$
 
 Therefore,
 
 $$
 \boxed{
-\omega_{\max}
+\omega_{\max,\mathrm{turntable}}
 =
-\sqrt{\frac{\mu_sg}{r}}
+\sqrt{\frac{\mu_s g}{r}}
 }.
 $$
 

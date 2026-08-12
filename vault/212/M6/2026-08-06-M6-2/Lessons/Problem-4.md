@@ -28,16 +28,16 @@ topic-code: MTH212.M6.09
 For a single slit of width $a$, the dark minima satisfy
 
 $$
-a\sin\theta_m=m\lambda,
+a\sin\theta_p=p\lambda,
 $$
 
-where $m=1,2,3,\ldots$. For a distant screen and small diffraction angles, $y_m\approx L\sin\theta_m$, so
+where $p=1,2,3,\ldots$. For a distant screen and small diffraction angles, $y_p\approx L\sin\theta_p$, so
 
 $$
-y_m\approx\frac{m\lambda L}{a}.
+y_p\approx\frac{p\lambda L}{a}.
 $$
 
-For the first minimum, $m=1$:
+For the first minimum, $p=1$:
 
 $$
 y_1\approx\frac{\lambda L}{a}
@@ -344,7 +344,7 @@ When a single-slit intensity graph is used to find the screen distance, use **re
 
 1. Locate the center $x_c$ of the broad central maximum.
 2. Locate either adjacent zero-intensity minimum $x_{\min}$.
-3. Compute the one-sided distance $y_1=|x_{\min}-x_c|$. If the full central width is given, use $y_1=W_{\text{central}}/2$.
+3. Compute the one-sided distance $y_1=|x_{\min}-x_c|$. If the full central width is given, use $y_1=W_{\mathrm{central}}/2$.
 4. Convert $a$, $y_1$, and $\lambda$ to one unit system.
 5. Calculate $L\approx ay_1/\lambda$, confirm $y_1/L\ll1$, and report the requested precision and units.
 

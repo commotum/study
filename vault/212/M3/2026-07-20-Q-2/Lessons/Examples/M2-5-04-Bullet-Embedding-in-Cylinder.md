@@ -23,7 +23,7 @@ A uniform solid cylinder of mass $M$ and radius $R$ is initially at rest and rot
 - Particle angular momentum:
 
   $$
-  \vec L=\vec r\times m\vec v,
+  \vec{L}=\vec{r}\times m\vec{v},
   \qquad
   L=mrv\sin\phi.
   $$
@@ -91,9 +91,9 @@ A uniform solid cylinder of mass $M$ and radius $R$ is initially at rest and rot
 6. The units are
 
    $$
-   \frac{(\text{kg})(\text{m/s})}
-        {(\text{m})(\text{kg})}
-   =\text{s}^{-1},
+   \frac{(\mathrm{kg})(\mathrm{m}/\mathrm{s})}
+        {(\mathrm{m})(\mathrm{kg})}
+   =\mathrm{s}^{-1},
    $$
 
    equivalent to $\text{rad/s}$. As $m\to0$, $\omega_f\to0$, as expected.

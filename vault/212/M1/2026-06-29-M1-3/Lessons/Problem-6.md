@@ -18,7 +18,7 @@ topic-code: MTH212.M1.14
 
 - Static friction can adjust up to a maximum value $f_{s,\max}=\mu_s N$.
 - On a horizontal surface, the normal force is $N=mg$.
-- Circular motion at angular speed $\omega$ requires centripetal force $\sum F_r=m\omega^2 r$.
+- Circular motion at angular speed $\omega$ requires inward net force $\sum F_r=m a_r=m\frac{v^2}{r}=m\omega^2 r$.
 - To solve $x^2=A$ for a positive physical quantity, use $x=\sqrt{A}$.
 
 ---
@@ -30,16 +30,16 @@ A $1.3\ \mathrm{g}$ coin sits $0.35\ \mathrm{m}$ from the center of a horizontal
 
 While the coin rotates with the turntable, it continually accelerates toward the center. Static friction supplies that inward force. At a low angular speed, friction adjusts to whatever value the circular motion requires. Spinning the table faster increases the required force until static friction reaches its limit; any faster, and the coin can no longer follow the same circular path.
 
-On the horizontal surface, $N=mg$, so the greatest available static friction is $\mu_smg$. At the instant the coin is about to slip,
+On the horizontal surface, $N=mg$, so the greatest available static friction is $\mu_s mg$. At the instant the coin is about to slip,
 
 $$
-\mu_s mg=m\omega^2 r
+\mu_s mg=m a_r=m\omega^2 r
 $$
 
 The coin's mass appears on both sides and cancels, leaving the threshold angular speed
 
 $$
-\omega=\sqrt{\frac{\mu_s g}{r}}
+\omega_{\max,\mathrm{turntable}}=\sqrt{\frac{\mu_s g}{r}}
 $$
 
 ---
@@ -57,19 +57,19 @@ $$
 f_{s,\max}=\mu_s N=\mu_s mg
 $$
 
-That friction force points inward and supplies the centripetal force:
+That friction force points inward and supplies the required inward net force:
 
 $$
-\sum F_r=m\omega^2r
+\sum F_r=m a_r=m\frac{v^2}{r}=m\omega^2 r
 $$
 
 So the threshold equation is
 
 $$
-\mu_smg=m\omega^2r
+\mu_s mg=m a_r=m\omega^2 r
 $$
 
-The weight $mg$ itself is not the centripetal force; it is used only to find the normal force and therefore the maximum static friction.
+The weight $mg$ itself is not the radial force on this horizontal surface; it is used only to find the normal force and therefore the maximum static friction.
 
 ```quiz
 type: radio
@@ -80,20 +80,20 @@ content: |-
 options:
 - id: q6-1-a
   content: |-
-    $\mu_smg=m\omega^2r$
+    $\mu_s mg=m a_r=m\omega^2 r$
   correct: true
 - id: q6-1-b
   content: |-
-    $\mu_smg=m\omega r$
+    $\mu_s mg=mr\omega$
 - id: q6-1-c
   content: |-
-    $mg=m\omega^2r$
+    $mg=m\omega^2 r$
 - id: q6-1-d
   content: |-
-    $\mu_smg=\dfrac{m\omega^2}{r}$
+    $\mu_s mg=\dfrac{m\omega^2}{r}$
 - id: q6-1-e
   content: |-
-    $\mu_smgr=m\omega^2$
+    $\mu_s mg r=m\omega^2$
 ```
 
 ---
@@ -108,33 +108,33 @@ options:
 Start with the threshold equation:
 
 $$
-\mu_smg=m\omega^2r
+\mu_s mg=m a_r=m\omega^2 r
 $$
 
 The mass appears on both sides, so it cancels:
 
 $$
-\mu_sg=\omega^2r
+\mu_s g=r\omega^2
 $$
 
 Divide by $r$:
 
 $$
-\omega^2=\frac{\mu_sg}{r}
+\omega_{\max,\mathrm{turntable}}^2=\frac{\mu_s g}{r}
 $$
 
 Angular speed is positive here, so take the positive square root:
 
 $$
-\omega=\sqrt{\frac{\mu_sg}{r}}
+\omega_{\max,\mathrm{turntable}}=\sqrt{\frac{\mu_s g}{r}}
 $$
 
-The symbolic form should also pass a physical-behavior check. Increasing $\mu_s$ increases the available inward force, so the threshold speed rises. Moving the coin farther outward increases the required $a_r=\omega^2r$, so the threshold speed falls. Increasing $g$ raises $N$ and therefore the maximum available static friction, so the threshold speed rises.
+The symbolic form should also pass a physical-behavior check. Increasing $\mu_s$ increases the available inward force, so the threshold speed rises. Moving the coin farther outward increases the required $a_r=r\omega^2$, so the threshold speed falls. Increasing $g$ raises $N$ and therefore the maximum available static friction, so the threshold speed rises.
 
 For this object,
 
 $$
-\omega=\sqrt{\frac{(0.50)(9.8)}{0.25}}
+\omega_{\max,\mathrm{turntable}}=\sqrt{\frac{(0.50)(9.8)}{0.25}}
 $$
 
 This result assumes $r>0$. It also shows why the object's mass does not belong in the final expression.
@@ -176,13 +176,13 @@ options:
 Use the threshold formula:
 
 $$
-\omega=\sqrt{\frac{\mu_sg}{r}}
+\omega_{\max,\mathrm{turntable}}=\sqrt{\frac{\mu_s g}{r}}
 $$
 
 Substitute the values:
 
 $$
-\omega=\sqrt{\frac{(0.35)(9.8)}{0.70}}
+\omega_{\max,\mathrm{turntable}}=\sqrt{\frac{(0.35)(9.8)}{0.70}}
 $$
 
 Compute inside the square root first:
@@ -194,7 +194,7 @@ $$
 Then take the square root:
 
 $$
-\omega=\sqrt{4.9}\approx 2.2\ \mathrm{rad}/\mathrm{s}
+\omega_{\max,\mathrm{turntable}}=\sqrt{4.9}\approx 2.2\ \mathrm{rad}/\mathrm{s}
 $$
 
 The units also check:
@@ -242,25 +242,25 @@ options:
 The mass is extra information for this specific question because it cancels:
 
 $$
-\mu_smg=m\omega^2r
+\mu_s mg=m a_r=m\omega^2 r
 $$
 
 After cancellation,
 
 $$
-\omega=\sqrt{\frac{\mu_sg}{r}}
+\omega_{\max,\mathrm{turntable}}=\sqrt{\frac{\mu_s g}{r}}
 $$
 
 Now substitute only $\mu_s$, $g$, and $r$:
 
 $$
-\omega=\sqrt{\frac{(0.15)(9.8)}{0.45}}
+\omega_{\max,\mathrm{turntable}}=\sqrt{\frac{(0.15)(9.8)}{0.45}}
 $$
 
 So
 
 $$
-\omega=\sqrt{3.27}\approx 1.8\ \mathrm{rad}/\mathrm{s}
+\omega_{\max,\mathrm{turntable}}=\sqrt{3.27}\approx 1.8\ \mathrm{rad}/\mathrm{s}
 $$
 
 ```quiz
@@ -270,7 +270,7 @@ shuffle: true
 content: |-
   A $1.3\ \mathrm{g}$ coin on a turntable at radius $0.35\ \mathrm{m}$ has maximum static friction coefficient $\mu_s=0.18$ between the coin and the surface.
 
-  Find $\omega$ in $\mathrm{rad}/\mathrm{s}$ such that the coin just starts to slip.
+  Find $\omega_{\max,\mathrm{turntable}}$ in $\mathrm{rad}/\mathrm{s}$ such that the coin just starts to slip.
 options:
 - id: q6-4-a
   content: |-
@@ -297,13 +297,13 @@ options:
 At the slipping threshold, the required inward force has grown to the largest force static friction can supply:
 
 $$
-\mu_smg=m\omega^2r.
+\mu_s mg=m a_r=m\omega^2 r.
 $$
 
 The mass cancels because a heavier coin needs proportionally more inward force but also has proportionally more maximum friction. Solving for the positive angular speed gives
 
 $$
-\omega=\sqrt{\frac{\mu_sg}{r}}.
+\omega_{\max,\mathrm{turntable}}=\sqrt{\frac{\mu_s g}{r}}.
 $$
 
 <!-- lesson-nav:start -->

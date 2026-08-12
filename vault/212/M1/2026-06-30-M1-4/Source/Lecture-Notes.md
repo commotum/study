@@ -56,8 +56,8 @@
 ### 5. Why Friction Points Toward the Center
 - The car needs an inward radial force to move in a circle.
 - On a flat road, the only horizontal force available is friction.
-- Therefore, static friction provides the centripetal force:
-  $$ f_s = m\frac{v^2}{r} $$
+- Therefore, static friction provides the net inward force:
+  $$ f_s=m a_r=m\frac{v^2}{r} $$
 - Friction points toward the center of the circle, not outward.
 
 ---
@@ -84,11 +84,11 @@
 
 ### 8. Radial Force Equation
 - In the radial direction:
-  $$ \sum F_r=ma_r $$
+  $$ \sum F_r=m a_r $$
 - Since friction is the radial force:
-  $$ f_s=m\frac{v^2}{r} $$
+  $$ f_s=m a_r=m\frac{v^2}{r} $$
 - At the slipping threshold:
-  $$ \mu_s N=m\frac{v^2}{r} $$
+  $$ f_s=f_{s,\max}=\mu_s N=m a_r=m\frac{v^2}{r} $$
 
 ---
 
@@ -106,9 +106,9 @@
 
 ### 10. Numerical Result for the Flat Curve
 - Given:
-  $$ v=16\text{ m/s} $$
-  $$ r=49\text{ m} $$
-  $$ g=9.81\text{ m/s}^2 $$
+  $$ v=16\ \mathrm{m}/\mathrm{s} $$
+  $$ r=49\ \mathrm{m} $$
+  $$ g=9.81\ \mathrm{m}/\mathrm{s}^2 $$
 - Compute:
   $$ \mu_s=\frac{16^2}{(49)(9.81)} $$
 - Result:
@@ -177,9 +177,9 @@
 - Radial acceleration:
   $$ a_r=\frac{v^2}{r} $$
 - Radial force equation:
-  $$ \sum F_r=m\frac{v^2}{r} $$
+  $$ \sum F_r=m a_r $$
 - The inward component of the normal force provides the radial force:
-  $$ N\sin\theta=m\frac{v^2}{r} $$
+  $$ N\sin\theta=m a_r=m\frac{v^2}{r} $$
 
 ---
 
@@ -197,13 +197,13 @@
 
 ### 18. Numerical Result for the Icy Banked Curve
 - Given:
-  $$ r=48\text{ m} $$
+  $$ r=48\ \mathrm{m} $$
   $$ \theta=6.2^\circ $$
-  $$ g=9.81\text{ m/s}^2 $$
+  $$ g=9.81\ \mathrm{m}/\mathrm{s}^2 $$
 - Compute:
   $$ v=\sqrt{(48)(9.81)\tan(6.2^\circ)} $$
 - Result:
-  $$ v\approx 7.2\text{ m/s} $$
+  $$ v\approx 7.2\ \mathrm{m}/\mathrm{s} $$
 
 ---
 
@@ -249,7 +249,7 @@
   - normal force:
     $$ N $$
   - static friction:
-    $$ f_s=\mu_s N $$
+    $$ f_s=f_{s,\max}=\mu_s N $$
 
 ---
 
@@ -268,7 +268,7 @@
 - Therefore:
   $$ N\cos\theta - f_s\sin\theta - mg=0 $$
 - Substitute:
-  $$ f_s=\mu_s N $$
+  $$ f_s=f_{s,\max}=\mu_s N $$
 - Then:
   $$ N\cos\theta-\mu_s N\sin\theta=mg $$
 - Factor:
@@ -278,11 +278,11 @@
 
 ### 26. Radial Force Equation With Friction
 - Radial equation:
-  $$ \sum F_r=m\frac{v^2}{r} $$
+  $$ \sum F_r=m a_r $$
 - Inward components:
-  $$ N\sin\theta+f_s\cos\theta=m\frac{v^2}{r} $$
+  $$ N\sin\theta+f_s\cos\theta=m a_r=m\frac{v^2}{r} $$
 - Substitute:
-  $$ f_s=\mu_s N $$
+  $$ f_s=f_{s,\max}=\mu_s N $$
 - Then:
   $$ N\sin\theta+\mu_s N\cos\theta=m\frac{v^2}{r} $$
 - Factor:
@@ -303,7 +303,7 @@
      \frac{v^2}{r} $$
 - Solve:
   $$
-  v_{\max}
+  v_{\max,\mathrm{banked}}
   =
   \sqrt{
   rg
@@ -316,9 +316,9 @@
 
 ### 28. Numerical Result for Maximum Speed
 - Using the values from the lecture, the result is:
-  $$ v_{\max}\approx 25\text{ m/s} $$
+  $$ v_{\max,\mathrm{banked}}\approx 25\ \mathrm{m}/\mathrm{s} $$
 - This is approximately:
-  $$ 55\text{ mph} $$
+  $$ 55\ \mathrm{mi}/\mathrm{h} $$
 
 ---
 
@@ -346,7 +346,7 @@
   - gravitational force downward:
     $$ mg $$
   - tension along the string:
-    $$ T $$
+    $$ T_{\mathrm{tens}} $$
 - There is no separate “centripetal force” vector.
 
 ---
@@ -363,9 +363,9 @@
   - vertical component balancing weight
   - horizontal component providing radial acceleration
 - Vertical:
-  $$ T\cos\theta=mg $$
+  $$ T_{\mathrm{tens}}\cos\theta=mg $$
 - Radial:
-  $$ T\sin\theta=m\frac{v^2}{r} $$
+  $$ T_{\mathrm{tens}}\sin\theta=m a_r=m\frac{v^2}{r} $$
 
 ---
 
@@ -378,7 +378,7 @@
   $$ N $$
   plays the role of the angled force.
 - For the conical pendulum:
-  $$ T $$
+  $$ T_{\mathrm{tens}} $$
   plays the role of the angled force.
 
 ---
@@ -386,16 +386,16 @@
 ### 35. Main Conceptual Warning
 - “Centripetal force” is not an extra force.
 - It is the name for the net inward radial force:
-  $$ \sum F_r=m\frac{v^2}{r} $$
+  $$ \sum F_r=m a_r $$
 - Real forces such as tension, friction, gravity, or normal force may contribute to this net radial force.
 
 ---
 
 ### 36. Main Physics Takeaways
 - For a flat curve, static friction provides the radial force:
-  $$ f_s=m\frac{v^2}{r} $$
+  $$ f_s=m a_r=m\frac{v^2}{r} $$
 - For a frictionless banked curve, the inward component of the normal force provides the radial force:
-  $$ N\sin\theta=m\frac{v^2}{r} $$
+  $$ N\sin\theta=m a_r=m\frac{v^2}{r} $$
 - For a banked curve with friction, both normal force and friction can contribute to radial force.
 - For a conical pendulum, the horizontal component of tension provides the radial force.
 - Always identify the real forces first, then determine which components point radially inward.
@@ -412,6 +412,6 @@
   $$ \sum F_y=0 $$
   when there is no vertical acceleration.
 - Use:
-  $$ \sum F_r=m\frac{v^2}{r} $$
+  $$ \sum F_r=m a_r $$
   for circular motion.
 - Solve symbolically before substituting numbers.

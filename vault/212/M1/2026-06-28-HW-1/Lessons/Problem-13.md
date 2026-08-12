@@ -17,7 +17,7 @@ topic-code: MTH212.M1.08
 ## Prerequisites
 
 - Velocity in circular motion is tangent to the circle.
-- Centripetal acceleration points toward the center of the circle.
+- Radial acceleration points toward the center of the circle.
 - If an object is speeding up, its tangential acceleration points in the same direction as its velocity.
 - The sum of two direction vectors points between the two directions being added.
 
@@ -30,21 +30,21 @@ The diagram below shows an object at the upper-left part of a circular path, mov
 
 ![](<../Source/Images/problem-13-acceleration-arrows.png>)
 
-The object's velocity is changing in two ways at once: its direction is turning around the circle, and its magnitude is increasing. Its acceleration therefore has two parts:
+The object's velocity is changing in two ways at once: its direction is turning around the circle, and its magnitude is increasing. Choose $+\hat{r}$ inward and $+\hat{t}$ along the direction of motion. Its acceleration therefore has two parts:
 
 $$
-\vec{a}=\vec{a}_r+\vec{a}_t.
+\vec{a}=a_r\hat{r}+a_t\hat{t}.
 $$
 
 For an object that is speeding up:
 
-- the centripetal part points toward the center of the circle;
+- the radial part points toward the center of the circle;
 - the tangential part points along the direction of motion;
 - the total acceleration points between those two directions.
 
 If the speed were constant, there would be no tangential part. If the object were slowing down, the tangential part would point opposite the motion. Here the correct arrow must include both the inward turn and the forward change in speed.
 
-A useful functional test is that $a_r$ changes the direction of $\vec v$, while
+A useful functional test is that $a_r$ changes the direction of $\vec{v}$, while
 
 $$
 a_t=\frac{dv}{dt}
@@ -68,7 +68,7 @@ Second, the speed is increasing, so there is also a tangential acceleration comp
 So the full acceleration is not just inward and not just tangent. It is the vector sum:
 
 $$
-\vec{a}=\vec{a}_r+\vec{a}_t.
+\vec{a}=a_r\hat{r}+a_t\hat{t}.
 $$
 
 ```quiz

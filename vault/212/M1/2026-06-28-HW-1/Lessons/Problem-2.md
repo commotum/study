@@ -107,21 +107,21 @@ type: radio
 id: q-1
 shuffle: true
 content: |-
-  An object moves once around a circle of radius $R$. What distance does it travel?
+  An object moves once around a circle of radius $r$. What distance does it travel?
 options:
 - id: a
   content: |-
-    $\pi R$
+    $\pi r$
 - id: b
   content: |-
-    $2\pi R$
+    $2\pi r$
   correct: true
 - id: c
   content: |-
-    $\dfrac{R}{2\pi}$
+    $\dfrac{r}{2\pi}$
 - id: d
   content: |-
-    $\dfrac{2\pi}{R}$
+    $\dfrac{2\pi}{r}$
 ```
 
 ---

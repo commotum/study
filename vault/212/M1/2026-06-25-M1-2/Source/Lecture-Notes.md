@@ -37,7 +37,7 @@
 ### 4. Physical Setup
 - A bullet passes through two rotating disks or plates.
 - The disks are separated by distance:
-  $$ d $$
+  $$ D $$
 - The system rotates with period:
   $$ T $$
 - The holes in the two disks are separated by angular displacement:
@@ -66,11 +66,11 @@
 
 ---
 
-### 7. Effect of Disk Separation $d$
-- If the disk separation $d$ increases while everything else stays the same, the bullet must travel farther in the same timing condition.
+### 7. Effect of Disk Separation $D$
+- If the disk separation $D$ increases while everything else stays the same, the bullet must travel farther in the same timing condition.
 - Therefore, the bullet must move faster.
-- So $d$ should appear in the numerator:
-  $$ v \propto d $$
+- So $D$ should appear in the numerator:
+  $$ v \propto D $$
 
 ---
 
@@ -93,22 +93,22 @@
 
 ### 10. Expected Form from Reasoning
 - Covariational reasoning suggests:
-  $$ v \sim \frac{d}{T\theta} $$
+  $$ v \sim \frac{D}{T\theta} $$
 - A unit check confirms the basic form:
-  $$ \frac{\text{m}}{\text{s}\cdot \text{rad}} $$
+  $$ \mathrm{m}/(\mathrm{s}\cdot\mathrm{rad}) $$
 - Since radians are dimensionless:
-  $$ \frac{\text{m}}{\text{s}} $$
+  $$ \mathrm{m}/\mathrm{s} $$
 - The missing factor will come from rotational motion:
   $$ 2\pi $$
 
 ---
 
 ### 11. Translational Motion of the Bullet
-- The bullet travels distance $d$ between the two disks.
+- The bullet travels distance $D$ between the two disks.
 - Since velocity is constant:
-  $$ d=v\Delta t $$
+  $$ D=v\Delta t $$
 - Therefore:
-  $$ \Delta t=\frac{d}{v} $$
+  $$ \Delta t=\frac{D}{v} $$
 
 ---
 
@@ -131,31 +131,31 @@
 
 ### 14. Solve for Bullet Speed
 - From:
-  $$ d=v\Delta t $$
+  $$ D=v\Delta t $$
   and
   $$ \theta=\omega\Delta t $$
 - Divide the first equation by the second:
-  $$ \frac{d}{\theta}=\frac{v\Delta t}{\omega\Delta t} $$
+  $$ \frac{D}{\theta}=\frac{v\Delta t}{\omega\Delta t} $$
 - Cancel $\Delta t$:
-  $$ \frac{d}{\theta}=\frac{v}{\omega} $$
+  $$ \frac{D}{\theta}=\frac{v}{\omega} $$
 - Solve for $v$:
-  $$ v=\frac{d\omega}{\theta} $$
+  $$ v=\frac{D\omega}{\theta} $$
 - Substitute:
   $$ \omega=\frac{2\pi}{T} $$
 - Final expression:
-  $$ v=\frac{2\pi d}{T\theta} $$
+  $$ v=\frac{2\pi D}{T\theta} $$
 
 ---
 
 ### 15. Numerical Example
 - Given:
-  $$ d=0.86\ \text{m} $$
-  $$ \theta=\frac{\pi}{6} $$
-  $$ T=0.22\ \text{s} $$
+  $$ D=0.86\ \mathrm{m} $$
+  $$ \theta=\frac{\pi}{6}\ \mathrm{rad} $$
+  $$ T=0.22\ \mathrm{s} $$
 - Substitute:
   $$ v=\frac{2\pi(0.86)}{(0.22)(\pi/6)} $$
 - Result:
-  $$ v\approx 47\ \text{m/s} $$
+  $$ v\approx 47\ \mathrm{m}/\mathrm{s} $$
 
 ---
 
@@ -181,9 +181,9 @@
 
 ### 18. Arc Length and Angular Displacement
 - Arc length is related to radius and angular displacement by:
-  $$ \Delta L = r\Delta\theta $$
+  $$ \Delta s=r\Delta\theta $$
 - Here:
-  - $\Delta L$ is a small arc length
+  - $\Delta s$ is a small arc length
   - $r$ is radius
   - $\Delta\theta$ is the angular displacement
 
@@ -197,41 +197,41 @@
   $$ \vec{v}_2 $$
   have the same magnitude but different directions.
 - The change in velocity is:
-  $$ \Delta \vec{v}=\vec{v}_2-\vec{v}_1 $$
+  $$ \Delta\vec{v}=\vec{v}_2-\vec{v}_1 $$
 
 ---
 
 ### 20. Similar-Triangle Argument
 - The triangle formed by:
-  $$ r,\ r,\ \Delta L $$
+  $$ r,\ r,\ \Delta s $$
   is similar to the triangle formed by:
-  $$ v,\ v,\ \Delta v $$
+  $$ v,\ v,\ |\Delta\vec{v}| $$
 - Therefore:
-  $$ \frac{\Delta v}{v}=\frac{\Delta L}{r} $$
+  $$ \frac{|\Delta\vec{v}|}{v}=\frac{\Delta s}{r} $$
 
 ---
 
-### 21. Solve for $\Delta v$
+### 21. Solve for $|\Delta\vec{v}|$
 - From:
-  $$ \frac{\Delta v}{v}=\frac{\Delta L}{r} $$
+  $$ \frac{|\Delta\vec{v}|}{v}=\frac{\Delta s}{r} $$
 - Rearranging:
-  $$ \Delta v=\frac{v\Delta L}{r} $$
+  $$ |\Delta\vec{v}|=\frac{v\Delta s}{r} $$
 
 ---
 
 ### 22. Radial Acceleration Definition
 - Radial acceleration is:
-  $$ a_r=\lim_{\Delta t\to 0}\frac{\Delta v}{\Delta t} $$
+  $$ a_r=\lim_{\Delta t\to 0}\frac{|\Delta\vec{v}|}{\Delta t} $$
 - Substitute:
-  $$ \Delta v=\frac{v\Delta L}{r} $$
+  $$ |\Delta\vec{v}|=\frac{v\Delta s}{r} $$
 - Then:
-  $$ a_r=\lim_{\Delta t\to 0}\frac{v\Delta L}{r\Delta t} $$
+  $$ a_r=\lim_{\Delta t\to 0}\frac{v\Delta s}{r\Delta t} $$
 
 ---
 
 ### 23. Derive the Magnitude of Radial Acceleration
 - Since:
-  $$ \lim_{\Delta t\to 0}\frac{\Delta L}{\Delta t}=v $$
+  $$ \lim_{\Delta t\to 0}\frac{\Delta s}{\Delta t}=v $$
 - We get:
   $$ a_r=\frac{v}{r}v $$
 - Therefore:
@@ -241,9 +241,8 @@
 
 ### 24. Direction of Radial Acceleration
 - The direction of $\Delta\vec{v}$ points toward the center of the circle.
-- Therefore, for uniform circular motion:
-  $$ \vec{a}_r \text{ points toward the center} $$
-- Radial acceleration is also called centripetal acceleration.
+- Therefore, for uniform circular motion, the radial component $a_r$ is directed toward the center.
+- This inward acceleration is sometimes called centripetal acceleration; here it is denoted by $a_r$ and called radial acceleration.
 
 ---
 
@@ -272,8 +271,9 @@
 ---
 
 ### 27. Total Acceleration in Nonuniform Circular Motion
+- Choose $\hat{r}$ inward and $\hat{t}$ tangent to the path.
 - For nonuniform circular motion:
-  $$ \vec{a}=\vec{a}_r+\vec{a}_t $$
+  $$ \vec{a}=a_r\hat{r}+a_t\hat{t} $$
 - The total acceleration generally does not point directly toward the center.
 - Its magnitude is:
   $$ |\vec{a}|=\sqrt{a_r^2+a_t^2} $$
@@ -292,25 +292,25 @@
 
 ### 29. Given Values
 - Case A:
-  $$ v=1\ \text{m/s}, \quad r=1\ \text{m} $$
+  $$ v=1\ \mathrm{m}/\mathrm{s}, \quad r=1\ \mathrm{m} $$
 - Case B:
-  $$ v=2\ \text{m/s}, \quad r=1\ \text{m} $$
+  $$ v=2\ \mathrm{m}/\mathrm{s}, \quad r=1\ \mathrm{m} $$
 - Case C:
-  $$ v=2\ \text{m/s}, \quad r=2\ \text{m} $$
+  $$ v=2\ \mathrm{m}/\mathrm{s}, \quad r=2\ \mathrm{m} $$
 - Case D:
-  $$ v=1\ \text{m/s}, \quad r=2\ \text{m} $$
+  $$ v=1\ \mathrm{m}/\mathrm{s}, \quad r=2\ \mathrm{m} $$
 
 ---
 
 ### 30. Compute Each Radial Acceleration
 - Case A:
-  $$ a_{r,A}=\frac{1^2}{1}=1\ \text{m/s}^2 $$
+  $$ a_{r,A}=\frac{1^2}{1}=1\ \mathrm{m}/\mathrm{s}^2 $$
 - Case B:
-  $$ a_{r,B}=\frac{2^2}{1}=4\ \text{m/s}^2 $$
+  $$ a_{r,B}=\frac{2^2}{1}=4\ \mathrm{m}/\mathrm{s}^2 $$
 - Case C:
-  $$ a_{r,C}=\frac{2^2}{2}=2\ \text{m/s}^2 $$
+  $$ a_{r,C}=\frac{2^2}{2}=2\ \mathrm{m}/\mathrm{s}^2 $$
 - Case D:
-  $$ a_{r,D}=\frac{1^2}{2}=0.5\ \text{m/s}^2 $$
+  $$ a_{r,D}=\frac{1^2}{2}=0.5\ \mathrm{m}/\mathrm{s}^2 $$
 
 ---
 
@@ -332,7 +332,7 @@
 ### 33. Preview of Next Class
 - The next lecture will apply radial acceleration to physical systems using forces.
 - This means moving from kinematics to dynamics:
-  $$ \sum F = ma $$
+  $$ \sum \vec{F}=m\vec{a} $$
 - For circular motion, radial acceleration will connect to the net inward force.
 
 ---
@@ -346,5 +346,5 @@
   $$ a_r=r\omega^2 $$
 - The direction of radial acceleration is toward the center of the circle.
 - For nonuniform circular motion, total acceleration includes both radial and tangential components:
-  $$ \vec{a}=\vec{a}_r+\vec{a}_t $$
+  $$ \vec{a}=a_r\hat{r}+a_t\hat{t} $$
 - Ranking radial accelerations requires careful attention to both speed and radius.

@@ -135,7 +135,7 @@ v&=\frac{c}{n}.
 \end{aligned}
 $$
 
-Because refractive index is dimensionless, dividing $c$ by $n$ preserves the speed unit $\mathrm{m/s}$.
+Because refractive index is dimensionless, dividing $c$ by $n$ preserves the speed unit $\mathrm{m}/\mathrm{s}$.
 
 The speed ratio is
 

@@ -28,7 +28,7 @@ topic-code: MTH212.M5.48
 - Use $\tau=rF\sin\phi$ and place the center of mass of a uniform shelf at $L/2$.
 - Use $\cos\theta=(\text{adjacent})/(\text{hypotenuse})$.
 - Divide by a fraction by multiplying by its reciprocal.
-- Recognize $\mu=(\text{mass})/(\text{length})$ and $v=\sqrt{T/\mu}$.
+- Recognize $\mu=(\text{mass})/(\text{length})$ and $v_{\mathrm{wave}}=\sqrt{F_T/\mu}$.
 
 ---
 
@@ -44,12 +44,12 @@ A block of mass $m_2$ hangs from the end of a uniform shelf of mass $m_1$ and le
 The final wave model is familiar:
 
 $$
-v=\sqrt{\frac{T}{\mu}}.
+v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}}.
 $$
 
 The difficulty is that neither input is given directly:
 
-- The two static objects determine the support-wire tension $T$.
+- The two static objects determine the support-wire tension $F_T$.
 - The right-triangle geometry determines the support-wire length $L_w$.
 - The wire mass and actual wire length determine $\mu$.
 
@@ -58,10 +58,10 @@ The complete dependency chain is
 $$
 \boxed{
 \text{block equilibrium}
-\longrightarrow T_s
+\longrightarrow F_{T_s}
 \longrightarrow
 \text{shelf torque balance}
-\longrightarrow T
+\longrightarrow F_T
 }
 $$
 
@@ -71,7 +71,7 @@ $$
 \longrightarrow L_w
 \longrightarrow \mu
 \longrightarrow
-v=\sqrt{T/\mu}
+v_{\mathrm{wave}}=\sqrt{F_T/\mu}
 }.
 $$
 
@@ -79,12 +79,12 @@ There are also two different tensions:
 
 | Symbol | Meaning |
 | --- | --- |
-| $T_s$ | Tension in the vertical string holding the block |
-| $T$ | Tension in the diagonal support wire carrying the wave |
+| $F_{T_s}$ | Tension in the vertical string holding the block |
+| $F_T$ | Tension in the diagonal support wire carrying the wave |
 
-Do not set these equal. The block determines $T_s$; the shelf's torque balance determines $T$.
+Do not set these equal. The block determines $F_{T_s}$; the shelf's torque balance determines $F_T$.
 
-This lesson follows the supplied idealized model: the support wire is straight, has one uniform tension $T$, and contributes its mass only through $\mu$. Modeling the wire's distributed weight would require a different analysis with tension varying along the wire.
+This lesson follows the supplied idealized model: the support wire is straight, has one uniform tension $F_T$, and contributes its mass only through $\mu$. Modeling the wire's distributed weight would require a different analysis with tension varying along the wire.
 
 ---
 
@@ -96,8 +96,8 @@ The word **static** does not mean that no forces act. It means the motion is not
 For any object whose center of mass is not accelerating,
 
 $$
-\sum\vec F_{\mathrm{ext}}
-=M\vec a_{\mathrm{cm}}
+\sum\vec{F}_{\mathrm{ext}}
+=M\vec{a}_{\mathrm{cm}}
 =0.
 $$
 
@@ -113,10 +113,10 @@ Apply those statements separately:
 
 | Object | What static tells us | Equation used here |
 | --- | --- | --- |
-| Hanging block | $\vec a=0$ | $\sum F_y=0$ |
-| Shelf | $\vec a_{\mathrm{cm}}=0$ and $\alpha=0$ | $\sum\vec F=0$ and $\sum\tau=0$ |
+| Hanging block | $\vec{a}=0$ | $\sum F_y=0$ |
+| Shelf | $\vec{a}_{\mathrm{cm}}=0$ and $\alpha=0$ | $\sum\vec{F}=0$ and $\sum\tau=0$ |
 
-Both shelf equations are true. To find $T$, however, torque balance is the useful one: choosing the hinge as the pivot makes the unknown hinge forces contribute zero torque. Shelf force balance would instead be useful if the hinge reactions were requested.
+Both shelf equations are true. To find $F_T$, however, torque balance is the useful one: choosing the hinge as the pivot makes the unknown hinge forces contribute zero torque. Shelf force balance would instead be useful if the hinge reactions were requested.
 
 These are equations for **different systems**. The block's force equation comes from the block's FBD; the shelf's torque equation comes from the shelf's extended FBD.
 
@@ -133,7 +133,7 @@ options:
     Static means the net force and net torque vanish, not that every individual force vanishes. Weight, tension, and hinge forces can all be nonzero while balancing one another.
 - id: pq3-p4-static-meaning-b
   content: |-
-    The block satisfies $\sum F_y=0$, while the shelf satisfies both $\sum\vec F=0$ and $\sum\tau=0$.
+    The block satisfies $\sum F_y=0$, while the shelf satisfies both $\sum\vec{F}=0$ and $\sum\tau=0$.
   correct: true
   feedback: |-
     The block has zero translational acceleration, so its forces balance. The rigid shelf has zero translational and angular acceleration, so both its net force and net torque are zero.
@@ -161,7 +161,7 @@ options:
 This is the first isolated system. Work only with the hanging block:
 
 1. Choose upward as positive.
-2. Draw the two forces on the block: upward $T_s$ and downward $m_2g$.
+2. Draw the two forces on the block: upward $F_{T_s}$ and downward $m_2g$.
 3. Use the block's zero acceleration.
 
 Newton's second law gives
@@ -173,13 +173,13 @@ $$
 Because the block is static, $a_y=0$, so
 
 $$
-0=T_s-m_2g.
+0=F_{T_s}-m_2g.
 $$
 
 Add $m_2g$ to both sides:
 
 $$
-\boxed{T_s=m_2g}.
+\boxed{F_{T_s}=m_2g}.
 $$
 
 This is the first equation you asked about. It belongs only to the hanging block and means that two nonzero forces balance; it does not mean the block has no forces.
@@ -187,12 +187,12 @@ This is the first equation you asked about. It belongs only to the hanging block
 Now transfer the result to the shelf. A massless string has the same tension throughout. At its upper attachment, the vertical string pulls **downward** on the shelf with magnitude
 
 $$
-T_s=m_2g.
+F_{T_s}=m_2g.
 $$
 
 The corresponding Newton's-third-law partner is the shelf's upward force on the string.
 
-Keep $T_s$ distinct from the diagonal support-wire tension $T$.
+Keep $F_{T_s}$ distinct from the diagonal support-wire tension $F_T$.
 
 ```quiz
 type: radio
@@ -210,7 +210,7 @@ options:
     A downward force $mg$ at the shelf's end
   correct: true
   feedback: |-
-    Because the block is stationary, the massless-string tension is $T_s=mg$. At the upper attachment, that string pulls downward on the shelf at its end with the same tension magnitude.
+    Because the block is stationary, the massless-string tension is $F_{T_s}=mg$. At the upper attachment, that string pulls downward on the shelf at its end with the same tension magnitude.
 - id: q1-c
   content: |-
     A downward force $mg/2$ at the shelf's center
@@ -232,7 +232,7 @@ Now isolate the shelf as the second system. An ordinary FBD records force direct
 
 ![700](<../Source/PQ3/Images/shelf-block-free-body-diagrams-labeled.svg>)
 
-The solid blue arrows are forces. The dashed blue arrows at the outer end show the parallel and perpendicular components of the same support-wire tension $T$; they are not additional forces.
+The solid blue arrows are forces. The dashed blue arrows at the outer end show the parallel and perpendicular components of the same support-wire tension $F_T$; they are not additional forces.
 
 The image follows the supplied solution by drawing the hinge reaction as one resultant force $F_p$. Its magnitude and its angle $\gamma$ above the shelf are initially unknown. The optional section after Core Move 5 shows how to recover both. The graded diagram should show the following information:
 
@@ -240,8 +240,8 @@ The image follows the supplied solution by drawing the hinge reaction as one res
 | --- | --- | --- |
 | Hinge reaction, $F_p$ | Wall hinge, $r=0$ | Up and right at an initially unknown angle $\gamma$ |
 | Shelf weight, $m_1g$ | Shelf's center of mass, $r=L/2$ | Downward |
-| Vertical-string force, $T_s=m_2g$ | Outer end, $r=L$ | Downward |
-| Support-wire tension, $T$ | Outer end, $r=L$ | Along the wire, angle $\theta$ above the shelf |
+| Vertical-string force, $F_{T_s}=m_2g$ | Outer end, $r=L$ | Downward |
+| Support-wire tension, $F_T$ | Outer end, $r=L$ | Along the wire, angle $\theta$ above the shelf |
 
 Two distinctions matter:
 
@@ -258,23 +258,23 @@ content: |-
 options:
 - id: pq3-p4-shelf-fbd-a
   content: |-
-    Hinge reaction at $r=0$; $m_1g$ downward at $L/2$; $T_s=m_2g$ downward at $L$; and $T$ along the support wire at $L$.
+    Hinge reaction at $r=0$; $m_1g$ downward at $L/2$; $F_{T_s}=m_2g$ downward at $L$; and $F_T$ along the support wire at $L$.
   correct: true
   feedback: |-
     An extended FBD records both forces and application points. The uniform shelf's weight acts at its center, both string forces act at the outer end, and the hinge reaction acts at the pivot.
 - id: pq3-p4-shelf-fbd-b
   content: |-
-    Hinge reaction at $r=0$; both $m_1g$ and $m_2g$ downward at $L/2$; and $T$ vertically upward at $L$.
+    Hinge reaction at $r=0$; both $m_1g$ and $m_2g$ downward at $L/2$; and $F_T$ vertically upward at $L$.
   feedback: |-
-    This moves the hanging load to the shelf's center and changes the direction of the diagonal tension. The block's string pulls at the outer end, while $T$ must point along the support wire.
+    This moves the hanging load to the shelf's center and changes the direction of the diagonal tension. The block's string pulls at the outer end, while $F_T$ must point along the support wire.
 - id: pq3-p4-shelf-fbd-c
   content: |-
-    $m_1g$ downward at $L$; $T_s=m_2g$ upward at $L$; and $T$ along the support wire at $L$.
+    $m_1g$ downward at $L$; $F_{T_s}=m_2g$ upward at $L$; and $F_T$ along the support wire at $L$.
   feedback: |-
     The shelf's weight belongs at its center, $L/2$, and the vertical string pulls downward on the shelf. The upward string force belongs on the block's FBD, not the shelf's.
 - id: pq3-p4-shelf-fbd-d
   content: |-
-    Only $m_1g$, $m_2g$, and $T$ should be shown because the hinge force produces no torque.
+    Only $m_1g$, $m_2g$, and $F_T$ should be shown because the hinge force produces no torque.
   feedback: |-
     The hinge reaction still acts on the shelf and belongs on a complete FBD. Choosing the hinge as the torque pivot later makes its torque zero; that does not make the force itself disappear.
 ```
@@ -287,7 +287,7 @@ options:
 The shelf is not rotating, so
 
 $$
-\sum\tau_{\text{hinge}}=I\alpha=0.
+\sum\tau_{\mathrm{hinge}}=I\alpha=0.
 $$
 
 Choose the hinge as the pivot. This is strategic: the unknown hinge reaction acts at $r=0$, so its torque is automatically zero.
@@ -303,19 +303,19 @@ where $F_{\perp}$ is the force component perpendicular to the shelf.
 The diagonal tension has a component parallel to the shelf and a component perpendicular to it:
 
 $$
-T_{\parallel}=T\cos\theta,
+F_T_{\parallel}=F_T\cos\theta,
 \qquad
-T_{\perp}=T\sin\theta.
+F_T_{\perp}=F_T\sin\theta.
 $$
 
-$T_{\parallel}$ points toward the hinge, so its line of action passes through the pivot and it produces no torque. $T_{\perp}$ points upward and turns the shelf counterclockwise.
+$F_T_{\parallel}$ points toward the hinge, so its line of action passes through the pivot and it produces no torque. $F_T_{\perp}$ points upward and turns the shelf counterclockwise.
 
 | Force | Lever arm and perpendicular component | Rotation | Torque term |
 | --- | --- | --- | ---: |
 | Hinge reaction | $r=0$ | None | $0$ |
-| Support wire | $r=L$, $F_\perp=T\sin\theta$ | Counterclockwise | $+LT\sin\theta$ |
+| Support wire | $r=L$, $F_\perp=F_T\sin\theta$ | Counterclockwise | $+LT\sin\theta$ |
 | Shelf weight | $r=L/2$, $F_\perp=m_1g$ | Clockwise | $-m_1g(L/2)$ |
-| Vertical string | $r=L$, $F_\perp=T_s$ | Clockwise | $-T_sL$ |
+| Vertical string | $r=L$, $F_\perp=F_{T_s}$ | Clockwise | $-F_{T_s}L$ |
 
 Write one term for every force in the table:
 
@@ -323,10 +323,10 @@ $$
 0
 =LT\sin\theta
 -m_1g\frac{L}{2}
--T_sL.
+-F_{T_s}L.
 $$
 
-Now substitute the result from the block, $T_s=m_2g$:
+Now substitute the result from the block, $F_{T_s}=m_2g$:
 
 $$
 \boxed{
@@ -353,7 +353,7 @@ These are the same physical equation multiplied by $-1$.
 The other form you encountered,
 
 $$
-0=m_1g+2m_2g-2T\sin\theta,
+0=m_1g+2m_2g-2F_T\sin\theta,
 $$
 
 comes from multiplying the clockwise-positive equation by $2/L$. No new force or new physics has been introduced; the equation has only been rescaled.
@@ -369,12 +369,12 @@ options:
     $0=LT\sin\theta-m_1g\dfrac{L}{2}-m_2gL$
   correct: true
   feedback: |-
-    The wire's vertical component $T\sin\theta$ acts at $L$ and turns counterclockwise. The shelf weight acts at $L/2$ and the hanging load acts at $L$; both turn clockwise.
+    The wire's vertical component $F_T\sin\theta$ acts at $L$ and turns counterclockwise. The shelf weight acts at $L/2$ and the hanging load acts at $L$; both turn clockwise.
 - id: pq3-p4-torque-equation-b
   content: |-
     $0=LT\cos\theta-m_1g\dfrac{L}{2}-m_2gL$
   feedback: |-
-    $T\cos\theta$ is parallel to the shelf, so its line of action produces no torque about the hinge. The perpendicular component is $T\sin\theta$.
+    $F_T\cos\theta$ is parallel to the shelf, so its line of action produces no torque about the hinge. The perpendicular component is $F_T\sin\theta$.
 - id: pq3-p4-torque-equation-c
   content: |-
     $0=LT\sin\theta-m_1gL-m_2gL$
@@ -382,7 +382,7 @@ options:
     This assigns the full lever arm $L$ to the shelf's weight. A uniform shelf's center of mass is at $L/2$, so its torque magnitude is $m_1g(L/2)$.
 - id: pq3-p4-torque-equation-d
   content: |-
-    $0=T\sin\theta-m_1g\dfrac{L}{2}-m_2gL$
+    $0=F_T\sin\theta-m_1g\dfrac{L}{2}-m_2gL$
   feedback: |-
     Every term in a torque equation must have force-times-distance units. The tension term is missing its lever arm $L$, so it has force units and cannot be added to the two torque terms.
 ```
@@ -392,7 +392,7 @@ options:
 <a id="solve-for-support-wire-tension"></a>
 ## Core Move 5: Solve Symbolically for the Support-Wire Tension
 
-The target in this stage is the diagonal tension $T$. Treat $m_1$, $m_2$, $g$, $L$, and $\theta$ as known while isolating it.
+The target in this stage is the diagonal tension $F_T$. Treat $m_1$, $m_2$, $g$, $L$, and $\theta$ as known while isolating it.
 
 Start from the torque equation:
 
@@ -413,14 +413,14 @@ $$
 Every term contains $L$, so divide by $L$:
 
 $$
-T\sin\theta
+F_T\sin\theta
 =\frac{m_1g}{2}+m_2g.
 $$
 
 Factor out $g$:
 
 $$
-T\sin\theta
+F_T\sin\theta
 =\left(\frac{m_1}{2}+m_2\right)g.
 $$
 
@@ -436,7 +436,7 @@ Finally, divide by $\sin\theta$:
 
 $$
 \boxed{
-T
+F_T
 =\frac{\left(\dfrac{m_1}{2}+m_2\right)g}{\sin\theta}
 =\frac{(m_1+2m_2)g}{2\sin\theta}
 }.
@@ -450,14 +450,14 @@ A physical check supports the result: as $\theta$ becomes smaller, the support w
 type: radio
 id: pq3-p4-q2
 content: |-
-  Torque balance for a shelf and hanging load has been simplified to $T\sin\alpha=\left(\dfrac{M}{2}+m\right)g$. Which expression correctly isolates $T$?
+  Torque balance for a shelf and hanging load has been simplified to $F_T\sin\alpha=\left(\dfrac{M}{2}+m\right)g$. Which expression correctly isolates $F_T$?
 options:
 - id: q2-a
   content: |-
     $\dfrac{(M+2m)g}{2\sin\alpha}$
   correct: true
   feedback: |-
-    Divide both sides by $\sin\alpha$, then combine $M/2+m=(M+2m)/2$. This gives $T=(M+2m)g/(2\sin\alpha)$.
+    Divide both sides by $\sin\alpha$, then combine $M/2+m=(M+2m)/2$. This gives $F_T=(M+2m)g/(2\sin\alpha)$.
 - id: q2-b
   content: |-
     $\dfrac{(M+m)g}{\sin\alpha}$
@@ -467,7 +467,7 @@ options:
   content: |-
     $\dfrac{(M+2m)g}{2\cos\alpha}$
   feedback: |-
-    The equation being solved contains $T\sin\alpha$, so isolating $T$ requires division by $\sin\alpha$. Replacing it with cosine changes the given equation rather than solving it.
+    The equation being solved contains $F_T\sin\alpha$, so isolating $F_T$ requires division by $\sin\alpha$. Replacing it with cosine changes the given equation rather than solving it.
 - id: q2-d
   content: |-
     $\dfrac{(2M+m)g}{2\sin\alpha}$
@@ -480,7 +480,7 @@ options:
 <a id="recover-the-hinge-force"></a>
 ## Optional: Recover the Single Hinge Force
 
-Choosing the hinge as the torque pivot made the torque from $F_p$ vanish because its lever arm is zero. It did **not** make the hinge force itself zero. Once torque balance has determined $T$, the shelf's two force-balance equations can determine the magnitude and direction of $F_p$.
+Choosing the hinge as the torque pivot made the torque from $F_p$ vanish because its lever arm is zero. It did **not** make the hinge force itself zero. Once torque balance has determined $F_T$, the shelf's two force-balance equations can determine the magnitude and direction of $F_p$.
 
 Choose $+x$ to the right and $+y$ upward. Let $\gamma$ be the angle that the single hinge force $F_p$ makes above the horizontal shelf. Its projections are
 
@@ -494,20 +494,20 @@ These are components of the **one** force $F_p$, not additional forces on the FB
 
 ### Step 1: Find the Horizontal Component
 
-The support wire pulls left with horizontal component $T\cos\theta$, while the hinge pushes right. Horizontal equilibrium gives
+The support wire pulls left with horizontal component $F_T\cos\theta$, while the hinge pushes right. Horizontal equilibrium gives
 
 $$
 \sum F_x=0,
 $$
 
 $$
-0=F_p\cos\gamma-T\cos\theta.
+0=F_p\cos\gamma-F_T\cos\theta.
 $$
 
 Therefore,
 
 $$
-F_{p,x}=F_p\cos\gamma=T\cos\theta.
+F_{p,x}=F_p\cos\gamma=F_T\cos\theta.
 $$
 
 Substitute the tension already found from torque balance:
@@ -522,7 +522,7 @@ $$
 
 ### Step 2: Find the Vertical Component
 
-The upward forces on the shelf are $F_p\sin\gamma$ and $T\sin\theta$. The downward forces are the shelf's weight $m_1g$ and the vertical-string force $T_s=m_2g$. Thus,
+The upward forces on the shelf are $F_p\sin\gamma$ and $F_T\sin\theta$. The downward forces are the shelf's weight $m_1g$ and the vertical-string force $F_{T_s}=m_2g$. Thus,
 
 $$
 \sum F_y=0,
@@ -531,7 +531,7 @@ $$
 $$
 0
 =F_p\sin\gamma
-+T\sin\theta
++F_T\sin\theta
 -m_1g
 -m_2g.
 $$
@@ -540,13 +540,13 @@ Solve for the vertical hinge-force component:
 
 $$
 F_{p,y}=F_p\sin\gamma
-=(m_1+m_2)g-T\sin\theta.
+=(m_1+m_2)g-F_T\sin\theta.
 $$
 
 The torque calculation already established that
 
 $$
-T\sin\theta
+F_T\sin\theta
 =\left(\frac{m_1}{2}+m_2\right)g.
 $$
 
@@ -723,7 +723,7 @@ $$
 \boxed{\mu=\frac{m_w\cos\theta}{L}}.
 $$
 
-The units are $\mathrm{kg/m}$. The geometry also gives a useful check: because $L_w>L$, the actual density $m_w/L_w$ must be smaller than the incorrect value $m_w/L$ obtained by treating the shelf as the wire.
+The units are $\mathrm{kg}/\mathrm{m}$. The geometry also gives a useful check: because $L_w>L$, the actual density $m_w/L_w$ must be smaller than the incorrect value $m_w/L$ obtained by treating the shelf as the wire.
 
 ```quiz
 type: radio
@@ -768,13 +768,13 @@ options:
 At this stage, the wave equation has two input slots:
 
 $$
-v=\sqrt{\frac{\boxed{T}}{\boxed{\mu}}}.
+v_{\mathrm{wave}}=\sqrt{\frac{\boxed{F_T}}{\boxed{\mu}}}.
 $$
 
 Earlier stages produced one expression for each slot:
 
 $$
-T=\frac{(m_1+2m_2)g}{2\sin\theta},
+F_T=\frac{(m_1+2m_2)g}{2\sin\theta},
 $$
 
 $$
@@ -784,7 +784,7 @@ $$
 Substitute both expressions without skipping the compound fraction:
 
 $$
-v
+v_{\mathrm{wave}}
 =\sqrt{
 \frac{
 \dfrac{(m_1+2m_2)g}{2\sin\theta}
@@ -797,7 +797,7 @@ $$
 Dividing by $m_w\cos\theta/L$ means multiplying by its reciprocal:
 
 $$
-v
+v_{\mathrm{wave}}
 =\sqrt{
 \frac{(m_1+2m_2)g}{2\sin\theta}
 \left(\frac{L}{m_w\cos\theta}\right)
@@ -808,7 +808,7 @@ Now multiply the numerators and denominators:
 
 $$
 \boxed{
-v=\sqrt{
+v_{\mathrm{wave}}=\sqrt{
 \frac{(m_1+2m_2)gL}
 {2m_w\sin\theta\cos\theta}
 }
@@ -822,46 +822,46 @@ Every factor has a traceable source:
 | $m_1+2m_2$ and $\sin\theta$ | Shelf torque balance |
 | $L$ and $\cos\theta$ | Actual wire length and linear density |
 | $m_w$ | Wire mass in $\mu$ |
-| Square root | Traveling-wave model $v=\sqrt{T/\mu}$ |
+| Square root | Traveling-wave model $v_{\mathrm{wave}}=\sqrt{F_T/\mu}$ |
 
 For the unit check, the trigonometric factors and $2$ are dimensionless:
 
 $$
 \frac{
-(\mathrm{kg})(\mathrm{m/s^2})(\mathrm{m})
+(\mathrm{kg})(\mathrm{m}/\mathrm{s}^2)(\mathrm{m})
 }{
 \mathrm{kg}
 }
 =\frac{\mathrm{m^2}}{\mathrm{s^2}}.
 $$
 
-Taking the square root gives $\mathrm{m/s}$, as required for speed.
+Taking the square root gives $\mathrm{m}/\mathrm{s}$, as required for speed.
 
 ```quiz
 type: radio
 id: pq3-p4-substitute-t-mu
 content: |-
-  After deriving $T=\dfrac{(m_1+2m_2)g}{2\sin\theta}$ and $\mu=\dfrac{m_w\cos\theta}{L}$, which is the correct unsimplified substitution into $v=\sqrt{T/\mu}$?
+  After deriving $F_T=\dfrac{(m_1+2m_2)g}{2\sin\theta}$ and $\mu=\dfrac{m_w\cos\theta}{L}$, which is the correct unsimplified substitution into $v_{\mathrm{wave}}=\sqrt{F_T/\mu}$?
 options:
 - id: pq3-p4-substitute-t-mu-a
   content: |-
-    $\displaystyle v=\sqrt{\frac{\dfrac{(m_1+2m_2)g}{2\sin\theta}}{\dfrac{m_w\cos\theta}{L}}}$
+    $\displaystyle v_{\mathrm{wave}}=\sqrt{\frac{\dfrac{(m_1+2m_2)g}{2\sin\theta}}{\dfrac{m_w\cos\theta}{L}}}$
   correct: true
   feedback: |-
     The entire derived tension belongs in the numerator and the entire linear density belongs in the denominator. Dividing by $m_w\cos\theta/L$ then introduces its reciprocal, $L/(m_w\cos\theta)$.
 - id: pq3-p4-substitute-t-mu-b
   content: |-
-    $\displaystyle v=\sqrt{\frac{(m_1+2m_2)g}{2\sin\theta}\frac{m_w\cos\theta}{L}}$
+    $\displaystyle v_{\mathrm{wave}}=\sqrt{\frac{(m_1+2m_2)g}{2\sin\theta}\frac{m_w\cos\theta}{L}}$
   feedback: |-
-    This multiplies by $\mu$ instead of dividing by it. Because $v=\sqrt{T/\mu}$, the density factor must be inverted to $L/(m_w\cos\theta)$.
+    This multiplies by $\mu$ instead of dividing by it. Because $v_{\mathrm{wave}}=\sqrt{F_T/\mu}$, the density factor must be inverted to $L/(m_w\cos\theta)$.
 - id: pq3-p4-substitute-t-mu-c
   content: |-
-    $\displaystyle v=\sqrt{\frac{\dfrac{m_w\cos\theta}{L}}{\dfrac{(m_1+2m_2)g}{2\sin\theta}}}$
+    $\displaystyle v_{\mathrm{wave}}=\sqrt{\frac{\dfrac{m_w\cos\theta}{L}}{\dfrac{(m_1+2m_2)g}{2\sin\theta}}}$
   feedback: |-
-    This reverses the wave-speed ratio and computes $\sqrt{\mu/T}$. Tension belongs above density in $v=\sqrt{T/\mu}$.
+    This reverses the wave-speed ratio and computes $\sqrt{\mu/F_T}$. Tension belongs above density in $v_{\mathrm{wave}}=\sqrt{F_T/\mu}$.
 - id: pq3-p4-substitute-t-mu-d
   content: |-
-    $\displaystyle v=\sqrt{\frac{\dfrac{(m_1+2m_2)g}{2\sin\theta}}{\dfrac{m_wL}{\cos\theta}}}$
+    $\displaystyle v_{\mathrm{wave}}=\sqrt{\frac{\dfrac{(m_1+2m_2)g}{2\sin\theta}}{\dfrac{m_wL}{\cos\theta}}}$
   feedback: |-
     This uses the wrong linear density. Since the actual wire length is $L/\cos\theta$, $\mu=m_w/(L/\cos\theta)=m_w\cos\theta/L$.
 ```
@@ -874,29 +874,29 @@ The original practice-quiz problem itself asks for a symbolic result. Use this n
 type: radio
 id: pq3-p4-q4
 content: |-
-  A $4.00\ \mathrm{kg}$ uniform shelf is $3.00\ \mathrm{m}$ long and supports a $2.00\ \mathrm{kg}$ block at its end. A $1.50\ \mathrm{kg}$ support wire makes a $30.0^\circ$ angle with the shelf. Using $g=9.80\ \mathrm{m/s^2}$, what is the traveling-wave speed on the wire?
+  A $4.00\ \mathrm{kg}$ uniform shelf is $3.00\ \mathrm{m}$ long and supports a $2.00\ \mathrm{kg}$ block at its end. A $1.50\ \mathrm{kg}$ support wire makes a $30.0^\circ$ angle with the shelf. Using $g=9.80\ \mathrm{m}/\mathrm{s}^2$, what is the traveling-wave speed on the wire?
 options:
 - id: q4-a
   content: |-
-    $6.73\ \mathrm{m/s}$
+    $6.73\ \mathrm{m}/\mathrm{s}$
   feedback: |-
-    This results if the support-wire tension is replaced by the hanging block's weight, $19.6\ \mathrm{N}$. That is the tension in the block's vertical string, not in the diagonal wire; shelf torque balance gives $T=78.4\ \mathrm{N}$ and hence $v=13.5\ \mathrm{m/s}$.
+    This results if the support-wire tension is replaced by the hanging block's weight, $19.6\ \mathrm{N}$. That is the tension in the block's vertical string, not in the diagonal wire; shelf torque balance gives $F_T=78.4\ \mathrm{N}$ and hence $v_{\mathrm{wave}}=13.5\ \mathrm{m}/\mathrm{s}$.
 - id: q4-b
   content: |-
-    $9.80\ \mathrm{m/s}$
+    $9.80\ \mathrm{m}/\mathrm{s}$
   feedback: |-
-    This reuses the numerical value of $g$, but acceleration due to gravity is not the wave speed. Gravity helps determine the wire tension; the requested speed is then $v=\sqrt{T/\mu}=13.5\ \mathrm{m/s}$.
+    This reuses the numerical value of $g$, but acceleration due to gravity is not the wave speed. Gravity helps determine the wire tension; the requested speed is then $v_{\mathrm{wave}}=\sqrt{F_T/\mu}=13.5\ \mathrm{m}/\mathrm{s}$.
 - id: q4-c
   content: |-
-    $13.5\ \mathrm{m/s}$
+    $13.5\ \mathrm{m}/\mathrm{s}$
   correct: true
   feedback: |-
-    The shelf and block set the support tension: $T=78.4\ \mathrm{N}$. The wire's actual slanted length sets $\mu=(1.5\cos30^\circ)/3.0=0.433\ \mathrm{kg/m}$, so $v=\sqrt{T/\mu}=13.5\ \mathrm{m/s}$.
+    The shelf and block set the support tension: $F_T=78.4\ \mathrm{N}$. The wire's actual slanted length sets $\mu=(1.5\cos30^\circ)/3.0=0.433\ \mathrm{kg}/\mathrm{m}$, so $v_{\mathrm{wave}}=\sqrt{F_T/\mu}=13.5\ \mathrm{m}/\mathrm{s}$.
 - id: q4-d
   content: |-
-    $19.6\ \mathrm{m/s}$
+    $19.6\ \mathrm{m}/\mathrm{s}$
   feedback: |-
-    This copies the numerical value of the block's weight, $mg=19.6\ \mathrm{N}$, into a speed answer. A force is not a wave speed; use the diagonal-wire tension $78.4\ \mathrm{N}$ and density $0.433\ \mathrm{kg/m}$ in $\sqrt{T/\mu}$ to get $13.5\ \mathrm{m/s}$.
+    This copies the numerical value of the block's weight, $mg=19.6\ \mathrm{N}$, into a speed answer. A force is not a wave speed; use the diagonal-wire tension $78.4\ \mathrm{N}$ and density $0.433\ \mathrm{kg}/\mathrm{m}$ in $\sqrt{F_T/\mu}$ to get $13.5\ \mathrm{m}/\mathrm{s}$.
 ```
 
 ---
@@ -904,18 +904,18 @@ options:
 <a id="separate-medium-data-from-wave-data"></a>
 ## Separate Medium Data from Wave Data
 
-**Example:** The support wire is plucked with amplitude $A$ and wavelength $\lambda$. Are either needed to determine the speed once $T$ and $\mu$ are known?
+**Example:** The support wire is plucked with amplitude $A$ and wavelength $\lambda$. Are either needed to determine the speed once $F_T$ and $\mu$ are known?
 
 **Explanation**
 
 The problem gives amplitude $A$ and wavelength $\lambda$, but the requested propagation speed is already determined by the medium:
 
 $$
-v=\sqrt{\frac{T}{\mu}}.
+v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}}.
 $$
 
-- Amplitude $A$ describes the size of the wire's transverse displacement. It does not change $T$ or $\mu$ in the ideal linear model.
-- Wavelength $\lambda$ could be paired with frequency through $v=f\lambda$, but $f$ is not given and is unnecessary once $T$ and $\mu$ are known.
+- Amplitude $A$ describes the size of the wire's transverse displacement. It does not change $F_T$ or $\mu$ in the ideal linear model.
+- Wavelength $\lambda$ could be paired with frequency through $v_{\mathrm{wave}}=f\lambda$, but $f$ is not given and is unnecessary once $F_T$ and $\mu$ are known.
 - "No reflections" means the problem describes one traveling wave. Do not impose a standing-wave condition such as $L_w=n\lambda/2$.
 
 The data are not meaningless in every possible question. For example, $A$ would matter for wave energy or maximum transverse particle speed, and $\lambda$ would matter if frequency were requested. They simply do not control the propagation speed asked for here.
@@ -928,25 +928,25 @@ content: |-
 options:
 - id: q5-a
   content: |-
-    Use $A$ to increase the tension, then calculate $v=\sqrt{T/\mu}$.
+    Use $A$ to increase the tension, then calculate $v_{\mathrm{wave}}=\sqrt{F_T/\mu}$.
   feedback: |-
-    In the ideal linear-wave model, amplitude describes transverse displacement and does not change the wire's static support tension. The speed is determined by the separately derived $T$ and $\mu$.
+    In the ideal linear-wave model, amplitude describes transverse displacement and does not change the wire's static support tension. The speed is determined by the separately derived $F_T$ and $\mu$.
 - id: q5-b
   content: |-
     Use $L_w=n\lambda/2$ because the endpoints fix a standing-wave pattern.
   feedback: |-
-    The problem explicitly removes reflections, so no standing wave is formed and no harmonic condition applies. Use the traveling-wave relation $v=\sqrt{T/\mu}$ instead.
+    The problem explicitly removes reflections, so no standing wave is formed and no harmonic condition applies. Use the traveling-wave relation $v_{\mathrm{wave}}=\sqrt{F_T/\mu}$ instead.
 - id: q5-c
   content: |-
-    Neither $A$ nor $\lambda$ is needed; "no reflections" rules out standing-wave conditions, so use $v=\sqrt{T/\mu}$.
+    Neither $A$ nor $\lambda$ is needed; "no reflections" rules out standing-wave conditions, so use $v_{\mathrm{wave}}=\sqrt{F_T/\mu}$.
   correct: true
   feedback: |-
     Propagation speed on the ideal wire is fixed by its tension and linear density. Amplitude and wavelength describe the wave, while "no reflections" confirms that no standing-wave boundary condition should be imposed.
 - id: q5-d
   content: |-
-    First calculate $f=v/\lambda$, then use that frequency to determine $v$.
+    First calculate $f=v_{\mathrm{wave}}/\lambda$, then use that frequency to determine $v_{\mathrm{wave}}$.
   feedback: |-
-    This is circular because it uses the unknown speed to calculate a frequency and then tries to recover the same speed. The medium properties $T$ and $\mu$ determine $v$ directly; $f$ would adjust to satisfy $v=f\lambda$.
+    This is circular because it uses the unknown speed to calculate a frequency and then tries to recover the same speed. The medium properties $F_T$ and $\mu$ determine $v_{\mathrm{wave}}$ directly; $f$ would adjust to satisfy $v_{\mathrm{wave}}=f\lambda$.
 ```
 
 ---
@@ -970,9 +970,9 @@ Draw a free-body diagram of the hanging block and a completely labeled extended 
 >
 > ![](<../Source/PQ3/Images/shelf-block-free-body-diagrams-labeled.svg>)
 >
-> The block FBD must show $T_s$ upward and $m_2g$ downward.
+> The block FBD must show $F_{T_s}$ upward and $m_2g$ downward.
 >
-> The shelf's extended FBD must show the hinge or pivot; the single hinge reaction $F_p$ at $r=0$, directed up and right at an initially unknown angle $\gamma$; $m_1g$ downward at $L/2$; $T_s=m_2g$ downward at $L$; and $T$ at $L$, directed along the support wire at angle $\theta$ above the shelf.
+> The shelf's extended FBD must show the hinge or pivot; the single hinge reaction $F_p$ at $r=0$, directed up and right at an initially unknown angle $\gamma$; $m_1g$ downward at $L/2$; $F_{T_s}=m_2g$ downward at $L$; and $F_T$ at $L$, directed along the support wire at angle $\theta$ above the shelf.
 >
 > Label the lever arms $L/2$ and $L$ and state a torque-sign convention. Do not omit the hinge reaction merely because its torque about the hinge will later be zero.
 
@@ -989,9 +989,9 @@ Starting from Newton's laws, derive the wave speed completely symbolically in te
 > $$
 > \sum F_y=0
 > \quad\Longrightarrow\quad
-> 0=T_s-m_2g
+> 0=F_{T_s}-m_2g
 > \quad\Longrightarrow\quad
-> T_s=m_2g.
+> F_{T_s}=m_2g.
 > $$
 >
 > For the static shelf, take counterclockwise torque as positive and choose the hinge as the pivot:
@@ -1006,10 +1006,10 @@ Starting from Newton's laws, derive the wave speed completely symbolically in te
 > 0
 > =LT\sin\theta
 > -m_1g\frac{L}{2}
-> -T_sL.
+> -F_{T_s}L.
 > $$
 >
-> Substitute $T_s=m_2g$ and solve for $T$:
+> Substitute $F_{T_s}=m_2g$ and solve for $F_T$:
 >
 > $$
 > LT\sin\theta
@@ -1017,7 +1017,7 @@ Starting from Newton's laws, derive the wave speed completely symbolically in te
 > $$
 >
 > $$
-> T
+> F_T
 > =\frac{\left(\dfrac{m_1}{2}+m_2\right)g}{\sin\theta}
 > =\frac{(m_1+2m_2)g}{2\sin\theta}.
 > $$
@@ -1043,8 +1043,8 @@ Starting from Newton's laws, derive the wave speed completely symbolically in te
 >
 > $$
 > \begin{aligned}
-> v
-> &=\sqrt{\frac{T}{\mu}}\\
+> v_{\mathrm{wave}}
+> &=\sqrt{\frac{F_T}{\mu}}\\
 > &=\sqrt{
 > \frac{
 > \dfrac{(m_1+2m_2)g}{2\sin\theta}
@@ -1061,7 +1061,7 @@ Starting from Newton's laws, derive the wave speed completely symbolically in te
 > \end{aligned}
 > $$
 >
-> The result has units $\mathrm{m/s}$. Neither $A$ nor $\lambda$ is required, and "no reflections" rules out standing-wave boundary conditions.
+> The result has units $\mathrm{m}/\mathrm{s}$. Neither $A$ nor $\lambda$ is required, and "no reflections" rules out standing-wave boundary conditions.
 
 ---
 
@@ -1070,15 +1070,15 @@ Starting from Newton's laws, derive the wave speed completely symbolically in te
 
 This synthesis contains eight core moves:
 
-1. Translate static into $\sum\vec F=0$ and, for the shelf, $\sum\tau=0$.
-2. Isolate the block and derive $T_s=m_2g$.
-3. Transfer the downward force $T_s$ to the shelf's extended FBD.
+1. Translate static into $\sum\vec{F}=0$ and, for the shelf, $\sum\tau=0$.
+2. Isolate the block and derive $F_{T_s}=m_2g$.
+3. Transfer the downward force $F_{T_s}$ to the shelf's extended FBD.
 4. Choose the hinge as pivot and build every signed torque term.
 5. Solve the torque equation for
    $$
-   T=\frac{(m_1+2m_2)g}{2\sin\theta}.
+   F_T=\frac{(m_1+2m_2)g}{2\sin\theta}.
    $$
-   If the hinge reaction is requested, return to $\sum F_x=0$ and $\sum F_y=0$ after finding $T$; these give the components needed to reconstruct the single force $F_p$ and its direction.
+   If the hinge reaction is requested, return to $\sum F_x=0$ and $\sum F_y=0$ after finding $F_T$; these give the components needed to reconstruct the single force $F_p$ and its direction.
 6. Use the right triangle to derive
    $$
    L_w=\frac{L}{\cos\theta}.
@@ -1087,13 +1087,13 @@ This synthesis contains eight core moves:
    $$
    \mu=\frac{m_w\cos\theta}{L}.
    $$
-8. Substitute both derived inputs into $v=\sqrt{T/\mu}$.
+8. Substitute both derived inputs into $v_{\mathrm{wave}}=\sqrt{F_T/\mu}$.
 
 The final result is
 
 $$
 \boxed{
-v=\sqrt{
+v_{\mathrm{wave}}=\sqrt{
 \frac{(m_1+2m_2)gL}
 {2m_w\sin\theta\cos\theta}
 }
@@ -1103,14 +1103,14 @@ $$
 On a graded page, show the following rather than writing only the boxed result:
 
 - the block FBD and the shelf's labeled extended FBD;
-- $0=T_s-m_2g$;
+- $0=F_{T_s}-m_2g$;
 - the complete hinge-torque equation;
-- the symbolic algebra leading to $T$;
+- the symbolic algebra leading to $F_T$;
 - $\cos\theta=L/L_w$ and the derivation of $\mu$;
-- the unsimplified substitution into $v=\sqrt{T/\mu}$;
+- the unsimplified substitution into $v_{\mathrm{wave}}=\sqrt{F_T/\mu}$;
 - a unit check and numbers only at the end.
 
-The main traps are confusing $T_s$ with $T$, forgetting that static means both force and torque balance for the shelf, putting $m_1g$ at $L$ instead of $L/2$, using $T\cos\theta$ instead of $T\sin\theta$ in the torque, and using shelf length instead of actual wire length in $\mu$.
+The main traps are confusing $F_{T_s}$ with $F_T$, forgetting that static means both force and torque balance for the shelf, putting $m_1g$ at $L$ instead of $L/2$, using $F_T\cos\theta$ instead of $F_T\sin\theta$ in the torque, and using shelf length instead of actual wire length in $\mu$.
 
 <!-- lesson-nav:start -->
 ---

@@ -44,7 +44,7 @@
 - The gravitational constant is:
   $$
   G=6.67\times10^{-11}
-  \frac{\text{N}\cdot\text{m}^2}{\text{kg}^2}
+  \mathrm{N}\,\mathrm{m}^2/\mathrm{kg}^2
   $$
 - Unlike the local gravitational acceleration $g$, the value of $G$ is the same everywhere.
 
@@ -74,15 +74,15 @@
 ### 6. Earth Data
 - Approximate mass of Earth:
   $$
-  M_E=5.97\times10^{24}\text{ kg}
+  M_E=5.97\times10^{24}\ \mathrm{kg}
   $$
 - Approximate mean radius of Earth:
   $$
-  R_E=6.37\times10^6\text{ m}
+  R_E=6.37\times10^6\ \mathrm{m}
   $$
 - Equivalently:
   $$
-  R_E\approx6370\text{ km}
+  R_E\approx6370\ \mathrm{km}
   $$
 
 ---
@@ -94,7 +94,7 @@
   $$
 - Substituting the Earth data gives:
   $$
-  g\approx9.81\text{ m/s}^2
+  g\approx9.81\ \mathrm{m}/\mathrm{s}^2
   $$
 
 ---
@@ -121,7 +121,7 @@
   $$
 - Find its gravitational acceleration as a fraction of the surface value:
   $$
-  \frac{g_h}{g}
+  \frac{g_h}{g_0}
   $$
 
 ---
@@ -133,17 +133,17 @@
   $$
   and:
   $$
-  g=\frac{GM_E}{R_E^2}
+  g_0=\frac{GM_E}{R_E^2}
   $$
 - Divide:
   $$
-  \frac{g_h}{g}
+  \frac{g_h}{g_0}
   =
   \frac{GM_E/(R_E+h)^2}{GM_E/R_E^2}
   $$
 - Cancel $GM_E$:
   $$
-  \frac{g_h}{g}
+  \frac{g_h}{g_0}
   =
   \frac{R_E^2}{(R_E+h)^2}
   $$
@@ -165,7 +165,7 @@
   $$
 - Therefore:
   $$
-  \frac{g_h}{g}
+  \frac{g_h}{g_0}
   =
   \frac{R_E^2}{(4R_E/3)^2}
   =
@@ -173,7 +173,7 @@
   $$
 - Result:
   $$
-  \frac{g_h}{g}
+  \frac{g_h}{g_0}
   =
   \frac{9}{16}
   \approx0.56
@@ -189,15 +189,15 @@
 ### 12. Two Electrons
 - For two electrons separated by distance $r$, the electric-force magnitude is:
   $$
-  F_E=\frac{k_e e^2}{r^2}
+  F_e=\frac{k_e e^2}{r^2}
   $$
 - Their gravitational-force magnitude is:
   $$
-  F_G=\frac{Gm_e^2}{r^2}
+  F_g=\frac{Gm_e^2}{r^2}
   $$
 - The ratio is:
   $$
-  \frac{F_E}{F_G}
+  \frac{F_e}{F_g}
   =
   \frac{k_e e^2}{Gm_e^2}
   $$
@@ -207,7 +207,7 @@
 ### 13. Relative Strength
 - The lecture gives approximately:
   $$
-  \frac{F_E}{F_G}\approx4\times10^{42}
+  \frac{F_e}{F_g}\approx4\times10^{42}
   $$
 - The electric force between two electrons is enormously stronger than their gravitational attraction.
 - Gravity dominates astronomical systems because:
@@ -267,11 +267,9 @@
 ## Circular Orbits
 
 ### 17. Force Balance for a Circular Orbit
-- For a satellite of mass $m$ orbiting a much larger mass $M$, gravity provides the radial force:
+- For a satellite of mass $m$ orbiting a much larger mass $M$, take inward as positive. Gravity provides the radial net force:
   $$
-  \frac{GMm}{r^2}
-  =
-  m\frac{v^2}{r}
+  \sum F_r=m a_r=m\frac{v^2}{r}=F_g=\frac{GMm}{r^2}
   $$
 - Cancel $m$ and one factor of $r$:
   $$
@@ -392,11 +390,9 @@
 ## Derivation of Kepler’s Third Law for a Circular Orbit
 
 ### 27. Begin with Radial Force Balance
-- Gravity supplies the radial force:
+- Take inward as positive. Gravity supplies the radial net force:
   $$
-  \frac{GMm}{r^2}
-  =
-  m\frac{v^2}{r}
+  \sum F_r=m a_r=m\frac{v^2}{r}=F_g=\frac{GMm}{r^2}
   $$
 - Cancel $m$:
   $$
@@ -507,9 +503,9 @@
   $$
   r_p=4r_E
   $$
-- If Earth’s orbital radius is $1\text{ AU}$:
+- If Earth’s orbital radius is $1\ \mathrm{AU}$:
   $$
-  r_p=4.0\text{ AU}
+  r_p=4.0\ \mathrm{AU}
   $$
 
 ---
@@ -529,14 +525,14 @@
 ### 35. Geostationary Period
 - The lecture uses:
   $$
-  T=24\text{ h}
+  T=24\ \mathrm{h}
   $$
 - Convert to seconds:
   $$
   T=(24)(60)(60)
   $$
   $$
-  T=86{,}400\text{ s}
+  T=86{,}400\ \mathrm{s}
   $$
 
 ---
@@ -547,11 +543,9 @@
   $$
   r=R_E+h
   $$
-- Gravitational force supplies the radial force:
+- Take inward as positive. Gravitational force supplies the radial net force:
   $$
-  \frac{GM_Em}{(R_E+h)^2}
-  =
-  m\frac{v^2}{R_E+h}
+  \sum F_r=m a_r=m\frac{v^2}{R_E+h}=F_g=\frac{GM_Em}{(R_E+h)^2}
   $$
 
 ---
@@ -616,15 +610,15 @@
 ### 41. Numerical Result
 - Using the Earth data and:
   $$
-  T=86{,}400\text{ s}
+  T=86{,}400\ \mathrm{s}
   $$
 - The geostationary altitude is approximately:
   $$
-  h\approx3.58\times10^7\text{ m}
+  h\approx3.58\times10^7\ \mathrm{m}
   $$
 - Equivalently:
   $$
-  h\approx35{,}800\text{ km}
+  h\approx35{,}800\ \mathrm{km}
   $$
 
 ---
@@ -632,15 +626,15 @@
 ### 42. Orbital Radius vs. Altitude
 - The orbital radius from Earth’s center is approximately:
   $$
-  r_{\text{geo}}\approx4.22\times10^7\text{ m}
+  r_{\mathrm{geo}}\approx4.22\times10^7\ \mathrm{m}
   $$
 - Equivalently:
   $$
-  r_{\text{geo}}\approx42{,}200\text{ km}
+  r_{\mathrm{geo}}\approx42{,}200\ \mathrm{km}
   $$
 - The altitude is found by subtracting Earth’s radius:
   $$
-  h=r_{\text{geo}}-R_E
+  h=r_{\mathrm{geo}}-R_E
   $$
 
 ---
@@ -648,11 +642,11 @@
 ### 43. Comparison with Low Earth Orbit
 - The International Space Station orbits at an altitude of roughly:
   $$
-  400\text{ km}
+  400\ \mathrm{km}
   $$
 - A geostationary satellite is much farther away:
   $$
-  h\approx35{,}800\text{ km}
+  h\approx35{,}800\ \mathrm{km}
   $$
 
 ---
@@ -695,10 +689,10 @@
 ### 45. Main Problem-Solving Strategy
 1. Draw the orbit and identify the distance from the central body’s center.
 2. Distinguish altitude $h$ from orbital radius:
-   $$ r=R+h $$
+   $$ r=R_E+h $$
 3. Draw a free-body diagram.
-4. Set gravitational force equal to radial-force requirement:
-   $$ \frac{GMm}{r^2}=m\frac{v^2}{r} $$
+4. Take inward as positive and set the radial net force equal to the radial-acceleration requirement:
+   $$ \sum F_r=m a_r=m\frac{v^2}{r}=F_g=\frac{GMm}{r^2} $$
 5. Use:
    $$ v=\frac{2\pi r}{T} $$
    when the orbital period is known.

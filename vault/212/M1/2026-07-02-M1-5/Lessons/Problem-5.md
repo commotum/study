@@ -29,7 +29,7 @@ topic-code: MTH212.M1.57
 When a circular-motion problem asks for the **magnitude of the acceleration** using $r$-$t$ axes, look for two perpendicular components:
 
 $$
-\vec a = a_r\hat r + a_t\hat t
+\vec{a} = a_r\hat{r} + a_t\hat{t}
 $$
 
 The radial component points along the string or radius, and the tangential component is perpendicular to it. The cue is the word **magnitude**: the answer should be the length of the acceleration vector, not just one component.
@@ -37,7 +37,7 @@ The radial component points along the string or radius, and the tangential compo
 Because the $r$ and $t$ directions are perpendicular, the total acceleration magnitude is
 
 $$
-|\vec a|=\sqrt{a_r^2+a_t^2}
+|\vec{a}|=\sqrt{a_r^2+a_t^2}
 $$
 
 Use the positive square root and keep the acceleration unit, usually $\mathrm{m}/\mathrm{s}^2$. Do not add $a_r+a_t$ unless the accelerations point along the same line.
@@ -55,7 +55,7 @@ The radial and tangential directions are perpendicular, so treat the two acceler
 
 $$
 \begin{aligned}
-|\vec a| &= \sqrt{a_r^2+a_t^2} \\
+|\vec{a}| &= \sqrt{a_r^2+a_t^2} \\
 &= \sqrt{(12)^2+(5)^2} \\
 &= \sqrt{144+25} \\
 &= \sqrt{169} \\
@@ -68,7 +68,7 @@ type: radio
 id: problem-5-q1
 shuffle: true
 content: |-
-  A particle has $a_r=8\ \mathrm{m}/\mathrm{s}^2$ and $a_t=6\ \mathrm{m}/\mathrm{s}^2$. What is $|\vec a|$?
+  A particle has $a_r=8\ \mathrm{m}/\mathrm{s}^2$ and $a_t=6\ \mathrm{m}/\mathrm{s}^2$. What is $|\vec{a}|$?
 options:
 - id: a
   content: |-
@@ -97,7 +97,7 @@ options:
 <a id="find-the-components-first"></a>
 ## Find the Components First
 
-**Example:** A ball on a string has $T=2.0\ \mathrm{N}$, $m=0.50\ \mathrm{kg}$, and $\theta=30^\circ$. With the $r$-axis inward and the $t$-axis perpendicular to the string, find the total acceleration magnitude.
+**Example:** A ball on a string has $T_{\mathrm{tens}}=2.0\ \mathrm{N}$, $m=0.50\ \mathrm{kg}$, and $\theta=30^\circ$. With the $r$-axis inward and the $t$-axis perpendicular to the string, find the total acceleration magnitude.
 
 **Explanation**
 
@@ -105,7 +105,7 @@ First write the component accelerations from the force equations:
 
 $$
 \begin{aligned}
-a_r &= \frac{T}{m}+g\cos\theta \\
+a_r &= \frac{T_{\mathrm{tens}}}{m}+g\cos\theta \\
 a_t &= g\sin\theta
 \end{aligned}
 $$
@@ -131,19 +131,19 @@ Then combine the perpendicular components:
 
 $$
 \begin{aligned}
-|\vec a| &= \sqrt{(12.49)^2+(4.90)^2} \\
+|\vec{a}| &= \sqrt{(12.49)^2+(4.90)^2} \\
 &= 13.42\ \mathrm{m}/\mathrm{s}^2
 \end{aligned}
 $$
 
-To two significant figures, $|\vec a|=13\ \mathrm{m}/\mathrm{s}^2$.
+To two significant figures, $|\vec{a}|=13\ \mathrm{m}/\mathrm{s}^2$.
 
 ```quiz
 type: radio
 id: problem-5-q2
 shuffle: true
 content: |-
-  A ball on a string has $T=1.8\ \mathrm{N}$, $m=0.60\ \mathrm{kg}$, and $\theta=20^\circ$. Use $a_r=\frac{T}{m}+g\cos\theta$ and $a_t=g\sin\theta$.
+  A ball on a string has $T_{\mathrm{tens}}=1.8\ \mathrm{N}$, $m=0.60\ \mathrm{kg}$, and $\theta=20^\circ$. Use $a_r=\frac{T_{\mathrm{tens}}}{m}+g\cos\theta$ and $a_t=g\sin\theta$.
 
   What is the total acceleration magnitude to two significant figures?
 options:
@@ -158,7 +158,7 @@ options:
     $13\ \mathrm{m}/\mathrm{s}^2$
   correct: true
   feedback: |-
-    $a_r=1.8/0.60+9.8\cos20^\circ=12.21$, $a_t=9.8\sin20^\circ=3.35$, so $|\vec a|=12.66\approx13$.
+    $a_r=1.8/0.60+9.8\cos20^\circ=12.21$, $a_t=9.8\sin20^\circ=3.35$, so $|\vec{a}|=12.66\approx13$.
 - id: d
   content: |-
     $16\ \mathrm{m}/\mathrm{s}^2$
@@ -182,7 +182,7 @@ The sign of $a_t$ tells which way the tangential component points. The magnitude
 
 $$
 \begin{aligned}
-|\vec a| &= \sqrt{a_r^2+a_t^2} \\
+|\vec{a}| &= \sqrt{a_r^2+a_t^2} \\
 &= \sqrt{(10)^2+(-3)^2} \\
 &= \sqrt{109} \\
 &= 10.4\ \mathrm{m}/\mathrm{s}^2
@@ -225,7 +225,7 @@ options:
 <a id="apply-the-assignment-values"></a>
 ## Apply the Assignment Values
 
-**Example:** A ball of mass $0.56\ \mathrm{kg}$ is tied to a string of length $0.88\ \mathrm{m}$ and swung in a vertical clockwise circle. At the instant shown, $T=1.2\ \mathrm{N}$ and $\theta=14^\circ$. Find the magnitude of the acceleration.
+**Example:** A ball of mass $0.56\ \mathrm{kg}$ is tied to a string of length $0.88\ \mathrm{m}$ and swung in a vertical clockwise circle. At the instant shown, $T_{\mathrm{tens}}=1.2\ \mathrm{N}$ and $\theta=14^\circ$. Find the magnitude of the acceleration.
 
 ![](<../Source/Images/vertical-circle-ball-string-diagram.png>)
 
@@ -235,7 +235,7 @@ Use the component equations first:
 
 $$
 \begin{aligned}
-a_r &= \frac{T}{m}+g\cos\theta \\
+a_r &= \frac{T_{\mathrm{tens}}}{m}+g\cos\theta \\
 &= \frac{1.2}{0.56}+9.8\cos(14^\circ) \\
 &= 11.65\ \mathrm{m}/\mathrm{s}^2
 \end{aligned}
@@ -249,13 +249,13 @@ a_t &= g\sin\theta \\
 \end{aligned}
 $$
 
-The string length $L$ is not needed here because the force equations already give $a_r$ and $a_t$. It would matter in a different step if you needed to use $a_r=v^2/L$ to find a speed.
+The string length $L$ is not needed here because the force equations already give $a_r$ and $a_t$. It would matter in a different step if you needed to use $r=L$ in $a_r=v^2/r$ to find a speed.
 
 Now combine them as perpendicular components:
 
 $$
 \begin{aligned}
-|\vec a| &= \sqrt{a_r^2+a_t^2} \\
+|\vec{a}| &= \sqrt{a_r^2+a_t^2} \\
 &= \sqrt{(11.65)^2+(2.37)^2} \\
 &= 11.89\ \mathrm{m}/\mathrm{s}^2
 \end{aligned}
@@ -272,7 +272,7 @@ type: radio
 id: problem-5-q4
 shuffle: true
 content: |-
-  A ball on a string has $L=0.88\ \mathrm{m}$, $T=1.2\ \mathrm{N}$, $m=0.56\ \mathrm{kg}$, and $\theta=14^\circ$. Use $a_r=\frac{T}{m}+g\cos\theta$ and $a_t=g\sin\theta$.
+  A ball on a string has $L=0.88\ \mathrm{m}$, $T_{\mathrm{tens}}=1.2\ \mathrm{N}$, $m=0.56\ \mathrm{kg}$, and $\theta=14^\circ$. Use $a_r=\frac{T_{\mathrm{tens}}}{m}+g\cos\theta$ and $a_t=g\sin\theta$.
 
   What total acceleration magnitude should be reported to two significant figures?
 options:
@@ -306,13 +306,13 @@ options:
 When the problem asks for total acceleration magnitude in $r$-$t$ axes, use the perpendicular-component formula
 
 $$
-|\vec a|=\sqrt{a_r^2+a_t^2}
+|\vec{a}|=\sqrt{a_r^2+a_t^2}
 $$
 
 For this vertical-circle setup:
 
 $$
-a_r=\frac{T}{m}+g\cos\theta
+a_r=\frac{T_{\mathrm{tens}}}{m}+g\cos\theta
 $$
 
 and

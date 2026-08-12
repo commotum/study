@@ -16,9 +16,9 @@
 
 ### 2. Energy of an Oscillating Particle
 - The kinetic energy of a particle is:
-  $$ K=\frac{1}{2}mv^2 $$
+  $$ K=\frac{1}{2}mu^2 $$
 - For sinusoidal motion, the maximum particle speed is:
-  $$ v_{\max}=\omega A=2\pi fA $$
+  $$ u_{\max}=\omega A=2\pi fA $$
 - Therefore, the energy scale is proportional to:
   $$ K\propto f^2A^2 $$
 
@@ -35,16 +35,16 @@
 
 ### 4. Intensity
 - Intensity is power divided by the area through which the power travels:
-  $$ I=\frac{P}{A_{\text{surface}}} $$
+  $$ I=\frac{P}{A_s} $$
 - SI units:
-  $$ [I]=\frac{\text{W}}{\text{m}^2} $$
+  $$ [I]=\mathrm{W}/\mathrm{m}^2 $$
 
 ---
 
 ### 5. Intensity from an Isotropic Point Source
 - A point source produces approximately spherical wavefronts.
 - The surface area of a sphere is:
-  $$ A_{\text{sphere}}=4\pi r^2 $$
+  $$ A_s=4\pi r^2 $$
 - Therefore:
   $$ I=\frac{P}{4\pi r^2} $$
 
@@ -91,9 +91,9 @@
 - Therefore:
   $$ I_2=\frac{I_1}{4} $$
 - Using the value applied in the lecture solution:
-  $$ I_1=240\frac{\text{W}}{\text{m}^2} $$
+  $$ I_1=240\ \mathrm{W}/\mathrm{m}^2 $$
 - Then:
-  $$ I_2=60\frac{\text{W}}{\text{m}^2} $$
+  $$ I_2=60\ \mathrm{W}/\mathrm{m}^2 $$
 - Doubling the distance reduces the intensity to one-fourth of its original value.
 
 ---
@@ -104,7 +104,7 @@
 - Sound intensity level is:
   $$ \beta
   =
-  10\log_{10}\left(\frac{I}{I_0}\right)\text{ dB} $$
+  10\log_{10}\left(\frac{I}{I_0}\right)\ \mathrm{dB} $$
 - Here:
   - $\beta$ is the intensity level in decibels
   - $I$ is the sound intensity
@@ -114,7 +114,7 @@
 
 ### 11. Reference Intensity
 - The standard reference intensity is approximately the threshold of human hearing:
-  $$ I_0=10^{-12}\frac{\text{W}}{\text{m}^2} $$
+  $$ I_0=10^{-12}\ \mathrm{W}/\mathrm{m}^2 $$
 
 ---
 
@@ -129,7 +129,7 @@
 
 ### 13. Given Intensity Level
 - Normal conversation has an intensity level of approximately:
-  $$ \beta=60\text{ dB} $$
+  $$ \beta=60\ \mathrm{dB} $$
 - Find the corresponding intensity $I$.
 
 ---
@@ -138,36 +138,36 @@
 - Begin with:
   $$ \beta
   =
-  10\log_{10}\left(\frac{I}{I_0}\right)\text{ dB} $$
-- Divide by $10\text{ dB}$:
-  $$ \frac{\beta}{10\text{ dB}}
+  10\log_{10}\left(\frac{I}{I_0}\right)\ \mathrm{dB} $$
+- Divide by $10\ \mathrm{dB}$:
+  $$ \frac{\beta}{10\ \mathrm{dB}}
   =
   \log_{10}\left(\frac{I}{I_0}\right) $$
 - Raise $10$ to both sides:
-  $$ 10^{\beta/(10\text{ dB})}
+  $$ 10^{\beta/(10\ \mathrm{dB})}
   =
   \frac{I}{I_0} $$
 - Therefore:
-  $$ I=I_0\,10^{\beta/(10\text{ dB})} $$
+  $$ I=I_0\,10^{\beta/(10\ \mathrm{dB})} $$
 
 ---
 
 ### 15. Numerical Result
 - Substitute:
-  $$ I_0=10^{-12}\frac{\text{W}}{\text{m}^2} $$
-  $$ \beta=60\text{ dB} $$
+  $$ I_0=10^{-12}\ \mathrm{W}/\mathrm{m}^2 $$
+  $$ \beta=60\ \mathrm{dB} $$
 - Then:
   $$
   I
   =
   10^{-12}
   10^{60/10}
-  \frac{\text{W}}{\text{m}^2}
+  \mathrm{W}/\mathrm{m}^2
   $$
 - Therefore:
-  $$ I=10^{-6}\frac{\text{W}}{\text{m}^2} $$
+  $$ I=10^{-6}\ \mathrm{W}/\mathrm{m}^2 $$
 - In milliwatts per square meter:
-  $$ I=0.0010\frac{\text{mW}}{\text{m}^2} $$
+  $$ I=0.0010\ \mathrm{mW}/\mathrm{m}^2 $$
 
 ---
 
@@ -175,7 +175,7 @@
 
 ### 16. Intensity Addition
 - Suppose one person produces a sound level:
-  $$ \beta_1=60\text{ dB} $$
+  $$ \beta_1=60\ \mathrm{dB} $$
 - If two similar people speak simultaneously, their powers add:
   $$ P_2=2P_1 $$
 - At the same distance, their intensities also add:
@@ -195,7 +195,7 @@
 - Then:
   $$ \beta_2-\beta_1
   =
-  10\log_{10}\left(\frac{I_2}{I_1}\right)\text{ dB} $$
+  10\log_{10}\left(\frac{I_2}{I_1}\right)\ \mathrm{dB} $$
 
 ---
 
@@ -205,28 +205,28 @@
 - We get:
   $$ \beta_2-\beta_1
   =
-  10\log_{10}(2)\text{ dB} $$
+  10\log_{10}(2)\ \mathrm{dB} $$
 - Since:
   $$ \log_{10}(2)\approx0.301 $$
 - The increase is:
-  $$ \Delta\beta\approx3.0\text{ dB} $$
+  $$ \Delta\beta\approx3.0\ \mathrm{dB} $$
 
 ---
 
 ### 19. Final Sound Level
 - Therefore:
-  $$ \beta_2=\beta_1+3.0\text{ dB} $$
-- With $\beta_1=60\text{ dB}$:
-  $$ \beta_2\approx63\text{ dB} $$
+  $$ \beta_2=\beta_1+3.0\ \mathrm{dB} $$
+- With $\beta_1=60\ \mathrm{dB}$:
+  $$ \beta_2\approx63\ \mathrm{dB} $$
 
 ---
 
 ### 20. Important Decibel Lesson
 - Two equal sound sources do not produce twice the decibel level.
 - The intensities add:
-  $$ I_{\text{total}}=I_1+I_2 $$
+  $$ I_{\mathrm{total}}=I_1+I_2 $$
 - Doubling intensity increases the sound level by only:
-  $$ 3\text{ dB} $$
+  $$ 3\ \mathrm{dB} $$
 
 ---
 
@@ -270,11 +270,12 @@
 ### 26. Doppler-Effect Notation
 - Let:
   - $f_0$ be the frequency emitted in the source’s rest frame
+  - $f_{\mathrm{obs}}$ be the frequency measured by the observer
   - $v_o$ be the observer’s speed
   - $v_s$ be the source’s speed
   - $v$ be the wave speed in the medium
 - For sound in air near ordinary conditions:
-  $$ v\approx343\text{ m/s} $$
+  $$ v\approx343\ \mathrm{m}/\mathrm{s} $$
 
 ---
 
@@ -282,21 +283,21 @@
 
 ### 27. Observer Moving Toward a Stationary Source
 - The observed frequency is:
-  $$ f_+
+  $$ f_{\mathrm{obs}}
   =
   f_0\left(1+\frac{v_o}{v}\right) $$
 - This produces a higher frequency:
-  $$ f_+>f_0 $$
+  $$ f_{\mathrm{obs}}>f_0 $$
 
 ---
 
 ### 28. Observer Moving Away from a Stationary Source
 - The observed frequency is:
-  $$ f_-
+  $$ f_{\mathrm{obs}}
   =
   f_0\left(1-\frac{v_o}{v}\right) $$
 - This produces a lower frequency:
-  $$ f_-<f_0 $$
+  $$ f_{\mathrm{obs}}<f_0 $$
 
 ---
 
@@ -304,21 +305,21 @@
 
 ### 29. Source Moving Toward a Stationary Observer
 - The observed frequency is:
-  $$ f_+
+  $$ f_{\mathrm{obs}}
   =
   \frac{f_0}{1-\frac{v_s}{v}} $$
 - The denominator becomes smaller, so:
-  $$ f_+>f_0 $$
+  $$ f_{\mathrm{obs}}>f_0 $$
 
 ---
 
 ### 30. Source Moving Away from a Stationary Observer
 - The observed frequency is:
-  $$ f_-
+  $$ f_{\mathrm{obs}}
   =
   \frac{f_0}{1+\frac{v_s}{v}} $$
 - The denominator becomes larger, so:
-  $$ f_-<f_0 $$
+  $$ f_{\mathrm{obs}}<f_0 $$
 
 ---
 
@@ -334,9 +335,9 @@
 
 ### 32. Problem Setup
 - A singer emits:
-  $$ f_0=880\text{ Hz} $$
+  $$ f_0=880\ \mathrm{Hz} $$
 - A bat flies toward the singer at:
-  $$ v_o=35\text{ m/s} $$
+  $$ v_o=35\ \mathrm{m}/\mathrm{s} $$
 - The bat is the moving observer.
 - Find the frequency heard by the bat.
 
@@ -344,7 +345,7 @@
 
 ### 33. Select the Correct Equation
 - Since the observer moves toward the stationary source:
-  $$ f_+
+  $$ f_{\mathrm{obs}}
   =
   f_0\left(1+\frac{v_o}{v}\right) $$
 
@@ -352,14 +353,14 @@
 
 ### 34. Numerical Calculation
 - Substitute:
-  $$ f_+
+  $$ f_{\mathrm{obs}}
   =
   880
   \left(
   1+\frac{35}{343}
-  \right)\text{ Hz} $$
+  \right)\ \mathrm{Hz} $$
 - Result:
-  $$ f_+\approx970\text{ Hz} $$
+  $$ f_{\mathrm{obs}}\approx970\ \mathrm{Hz} $$
 - The bat hears a higher frequency because it moves toward the singer.
 
 ---
@@ -368,18 +369,18 @@
 
 ### 35. Problem Setup
 - A bat emits an echolocation chirp at:
-  $$ f_0=25\text{ kHz} $$
+  $$ f_0=25\ \mathrm{kHz} $$
 - The approximate upper limit of human hearing is:
-  $$ f_-=20\text{ kHz} $$
+  $$ f_{\mathrm{obs}}=20\ \mathrm{kHz} $$
 - Find how fast the bat would need to fly for the chirp to be shifted into the audible range.
 
 ---
 
 ### 36. Determine the Direction of Motion
 - The emitted frequency must decrease from:
-  $$ 25\text{ kHz} $$
+  $$ 25\ \mathrm{kHz} $$
   to:
-  $$ 20\text{ kHz} $$
+  $$ 20\ \mathrm{kHz} $$
 - Therefore, the bat must move **away** from the observer.
 - The bat is the moving source.
 
@@ -387,29 +388,29 @@
 
 ### 37. Use the Moving-Source Equation
 - For a source moving away:
-  $$ f_-
+  $$ f_{\mathrm{obs}}
   =
   \frac{f_0}{1+\frac{v_s}{v}} $$
 - Rearrange:
   $$ 1+\frac{v_s}{v}
   =
-  \frac{f_0}{f_-} $$
+  \frac{f_0}{f_{\mathrm{obs}}} $$
 - Therefore:
   $$ \frac{v_s}{v}
   =
-  \frac{f_0}{f_-}-1 $$
+  \frac{f_0}{f_{\mathrm{obs}}}-1 $$
 - Solve:
   $$ v_s
   =
-  v\left(\frac{f_0}{f_-}-1\right) $$
+  v\left(\frac{f_0}{f_{\mathrm{obs}}}-1\right) $$
 
 ---
 
 ### 38. Numerical Calculation
 - Substitute:
-  $$ v=343\text{ m/s} $$
-  $$ f_0=25\text{ kHz} $$
-  $$ f_-=20\text{ kHz} $$
+  $$ v=343\ \mathrm{m}/\mathrm{s} $$
+  $$ f_0=25\ \mathrm{kHz} $$
+  $$ f_{\mathrm{obs}}=20\ \mathrm{kHz} $$
 - Then:
   $$
   v_s
@@ -417,22 +418,22 @@
   343
   \left(
   \frac{25}{20}-1
-  \right)\text{ m/s}
+  \right)\ \mathrm{m}/\mathrm{s}
   $$
 - Since:
   $$ \frac{25}{20}-1=\frac{1}{4} $$
 - We get:
-  $$ v_s\approx86\text{ m/s} $$
+  $$ v_s\approx86\ \mathrm{m}/\mathrm{s} $$
 
 ---
 
 ### 39. Interpretation of the Bat Result
 - The required speed is approximately:
-  $$ 86\text{ m/s} $$
+  $$ 86\ \mathrm{m}/\mathrm{s} $$
 - This is about:
-  $$ 190\text{ mph} $$
+  $$ 190\ \mathrm{mph} $$
 - That is too fast for an ordinary bat.
-- Therefore, a bat cannot normally make a $25\text{ kHz}$ chirp audible to humans simply by flying away.
+- Therefore, a bat cannot normally make a $25\ \mathrm{kHz}$ chirp audible to humans simply by flying away.
 
 ---
 
@@ -442,13 +443,13 @@
 - Sound intensity level:
   $$ \beta
   =
-  10\log_{10}\left(\frac{I}{I_0}\right)\text{ dB} $$
+  10\log_{10}\left(\frac{I}{I_0}\right)\ \mathrm{dB} $$
 - Reference intensity:
-  $$ I_0=10^{-12}\frac{\text{W}}{\text{m}^2} $$
+  $$ I_0=10^{-12}\ \mathrm{W}/\mathrm{m}^2 $$
 - Doubling distance reduces intensity by:
   $$ \frac{1}{4} $$
 - Doubling intensity increases sound level by:
-  $$ 3\text{ dB} $$
+  $$ 3\ \mathrm{dB} $$
 - Motion toward the other object increases observed frequency.
 - Motion away decreases observed frequency.
 

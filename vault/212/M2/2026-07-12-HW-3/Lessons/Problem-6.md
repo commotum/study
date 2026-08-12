@@ -28,7 +28,7 @@ topic-code: MTH212.M2.22
 When a problem gives the moment of inertia about an axis through the center of mass and asks about a **parallel** axis, use the parallel-axis theorem:
 
 $$
-I_{\text{new}}=I_{\text{cm}}+Md^2.
+I_{\mathrm{new}}=I_{\mathrm{cm}}+Md^2.
 $$
 
 Here, $d$ is the perpendicular distance between the two axes. Before substituting, check both conditions: the known axis passes through the center of mass, and the requested axis is parallel to it. Then identify $d$ from the geometry, square it, and add $Md^2$ to the known moment of inertia.
@@ -87,7 +87,7 @@ options:
 **Example:** A thin hoop of mass $M$ and radius $R$ has
 
 $$
-I_{\text{cm}}=MR^2
+I_{\mathrm{cm}}=MR^2
 $$
 
 about the axis through its center and perpendicular to its plane. Find its moment of inertia about a parallel axis through the rim.
@@ -98,8 +98,8 @@ The new axis is one radius from the center axis, so $d=R$. Substitute both known
 
 $$
 \begin{aligned}
-I_{\text{rim}}
-&=I_{\text{cm}}+Md^2\\
+I_{\mathrm{rim}}
+&=I_{\mathrm{cm}}+Md^2\\
 &=MR^2+M(R)^2\\
 &=MR^2+MR^2\\
 &=2MR^2.
@@ -136,7 +136,7 @@ options:
 <a id="avoid-the-main-traps"></a>
 ## Avoid the Main Traps
 
-**Example:** An object has $I_{\text{cm}}=kML^2$. Find its moment of inertia about a parallel axis a distance $L/2$ away.
+**Example:** An object has $I_{\mathrm{cm}}=kML^2$. Find its moment of inertia about a parallel axis a distance $L/2$ away.
 
 **Explanation**
 
@@ -144,20 +144,20 @@ Use the separation itself for $d$, and square it inside the added term:
 
 $$
 \begin{aligned}
-I_{\text{new}}
+I_{\mathrm{new}}
 &=kML^2+M\left(\frac{L}{2}\right)^2\\
 &=kML^2+\frac14ML^2\\
 &=\left(k+\frac14\right)ML^2.
 \end{aligned}
 $$
 
-Do not replace $I_{\text{cm}}$ with $Md^2$, and do not forget that the entire distance is squared.
+Do not replace $I_{\mathrm{cm}}$ with $Md^2$, and do not forget that the entire distance is squared.
 
 ```quiz
 type: radio
 id: p6-fractional-shift
 content: |-
-  A rigid object has $I_{\text{cm}}=\dfrac{2}{5}ML^2$. What is its moment of inertia about a parallel axis a distance $L/2$ from the center-of-mass axis?
+  A rigid object has $I_{\mathrm{cm}}=\dfrac{2}{5}ML^2$. What is its moment of inertia about a parallel axis a distance $L/2$ from the center-of-mass axis?
 options:
 - id: a
   content: |-
@@ -179,36 +179,36 @@ options:
 <a id="check-the-result"></a>
 ## Check the Result
 
-**Example:** Decide whether $I_{\text{new}}=\frac14MR^2$ can be the result of shifting a disk away from a center-of-mass axis for which $I_{\text{cm}}=\frac12MR^2$.
+**Example:** Decide whether $I_{\mathrm{new}}=\frac14MR^2$ can be the result of shifting a disk away from a center-of-mass axis for which $I_{\mathrm{cm}}=\frac12MR^2$.
 
 **Explanation**
 
 No. The parallel-axis theorem adds the nonnegative quantity $Md^2$:
 
 $$
-I_{\text{new}}-I_{\text{cm}}=Md^2\ge 0.
+I_{\mathrm{new}}-I_{\mathrm{cm}}=Md^2\ge 0.
 $$
 
-For a genuine shift with $d>0$, the new moment of inertia must be strictly greater than $I_{\text{cm}}$. Units provide another check: both $I_{\text{cm}}$ and $Md^2$ have units of mass times length squared.
+For a genuine shift with $d>0$, the new moment of inertia must be strictly greater than $I_{\mathrm{cm}}$. Units provide another check: both $I_{\mathrm{cm}}$ and $Md^2$ have units of mass times length squared.
 
 ```quiz
 type: radio
 id: p6-magnitude-check
 content: |-
-  An object's moment of inertia about its center-of-mass axis is $6\,\mathrm{kg\,m^2}$. Which value could be its moment of inertia about a distinct parallel axis?
+  An object's moment of inertia about its center-of-mass axis is $6\,\mathrm{kg}\,\mathrm{m}^2$. Which value could be its moment of inertia about a distinct parallel axis?
 options:
 - id: a
   content: |-
-    $2\,\mathrm{kg\,m^2}$
+    $2\,\mathrm{kg}\,\mathrm{m}^2$
 - id: b
   content: |-
-    $5\,\mathrm{kg\,m^2}$
+    $5\,\mathrm{kg}\,\mathrm{m}^2$
 - id: c
   content: |-
-    $6\,\mathrm{kg\,m^2}$
+    $6\,\mathrm{kg}\,\mathrm{m}^2$
 - id: d
   content: |-
-    $9\,\mathrm{kg\,m^2}$
+    $9\,\mathrm{kg}\,\mathrm{m}^2$
   correct: true
 ```
 
@@ -221,14 +221,14 @@ When the requested axis is parallel to a known center-of-mass axis:
 
 1. Verify that the known axis passes through the center of mass and the new axis is parallel to it.
 2. Find the perpendicular separation $d$ between the axes.
-3. Use $I_{\text{new}}=I_{\text{cm}}+Md^2$.
+3. Use $I_{\mathrm{new}}=I_{\mathrm{cm}}+Md^2$.
 4. Square the full distance before simplifying.
-5. Check that the answer has units of mass times length squared and is no smaller than $I_{\text{cm}}$.
+5. Check that the answer has units of mass times length squared and is no smaller than $I_{\mathrm{cm}}$.
 
 For a disk shifted from its central perpendicular axis to a parallel axis through the rim, $d=R$, not $2R$. Thus
 
 $$
-I_{\text{rim}}=\frac12MR^2+MR^2=\frac32MR^2.
+I_{\mathrm{rim}}=\frac12MR^2+MR^2=\frac32MR^2.
 $$
 
 <!-- lesson-nav:start -->

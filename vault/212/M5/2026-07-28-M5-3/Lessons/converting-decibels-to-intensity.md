@@ -180,12 +180,12 @@ $$
 I=I_0\,10^{\beta/10}.
 $$
 
-**Example:** Let $I_0=10^{-12}\ \mathrm{W/m^2}$ and $\beta=70\ \mathrm{dB}$. Then
+**Example:** Let $I_0=10^{-12}\ \mathrm{W}/\mathrm{m}^2$ and $\beta=70\ \mathrm{dB}$. Then
 
 $$
 I=10^{-12}\,10^{70/10}
 =10^{-12}\,10^7
-=10^{-5}\ \mathrm{W/m^2}.
+=10^{-5}\ \mathrm{W}/\mathrm{m}^2.
 $$
 
 The exponent check is $-12+7=-5$. Also, every increase of $10\ \mathrm{dB}$ multiplies intensity by $10$.
@@ -196,29 +196,29 @@ Two boundary checks help catch sign errors. At $0\ \mathrm{dB}$, the ratio is $1
 type: radio
 id: decibels-reference-intensity
 content: |-
-  Use $I_0=10^{-12}\ \mathrm{W/m^2}$. What intensity corresponds to $80\ \mathrm{dB}$?
+  Use $I_0=10^{-12}\ \mathrm{W}/\mathrm{m}^2$. What intensity corresponds to $80\ \mathrm{dB}$?
 options:
 - id: decibels-reference-one-e-minus-four
   content: |-
-    $1.0\times10^{-4}\ \mathrm{W/m^2}$
+    $1.0\times10^{-4}\ \mathrm{W}/\mathrm{m}^2$
   correct: true
   feedback: |-
-    Converting from level to intensity gives $I=I_0 10^{\beta/10}$. Here $I=10^{-12}10^8=10^{-4}\ \mathrm{W/m^2}$.
+    Converting from level to intensity gives $I=I_0 10^{\beta/10}$. Here $I=10^{-12}10^8=10^{-4}\ \mathrm{W}/\mathrm{m}^2$.
 - id: decibels-reference-one-e-eight
   content: |-
-    $1.0\times10^8\ \mathrm{W/m^2}$
+    $1.0\times10^8\ \mathrm{W}/\mathrm{m}^2$
   feedback: |-
-    The factor $10^8$ is the dimensionless ratio $I/I_0$, not the intensity. Multiplying it by $I_0=10^{-12}\ \mathrm{W/m^2}$ gives $10^{-4}\ \mathrm{W/m^2}$.
+    The factor $10^8$ is the dimensionless ratio $I/I_0$, not the intensity. Multiplying it by $I_0=10^{-12}\ \mathrm{W}/\mathrm{m}^2$ gives $10^{-4}\ \mathrm{W}/\mathrm{m}^2$.
 - id: decibels-reference-one-e-minus-twenty
   content: |-
-    $1.0\times10^{-20}\ \mathrm{W/m^2}$
+    $1.0\times10^{-20}\ \mathrm{W}/\mathrm{m}^2$
   feedback: |-
-    This divides by $10^8$ instead of multiplying by the intensity ratio. A positive $80\ \mathrm{dB}$ level is above the reference, so use $10^{-12}10^8=10^{-4}\ \mathrm{W/m^2}$.
+    This divides by $10^8$ instead of multiplying by the intensity ratio. A positive $80\ \mathrm{dB}$ level is above the reference, so use $10^{-12}10^8=10^{-4}\ \mathrm{W}/\mathrm{m}^2$.
 - id: decibels-reference-eight-e-minus-twelve
   content: |-
-    $8.0\times10^{-12}\ \mathrm{W/m^2}$
+    $8.0\times10^{-12}\ \mathrm{W}/\mathrm{m}^2$
   feedback: |-
-    The exponent $8=80/10$ is not itself the intensity ratio. The ratio is $10^8$, so multiply $10^{-12}$ by $10^8$ and add exponents to obtain $10^{-4}\ \mathrm{W/m^2}$.
+    The exponent $8=80/10$ is not itself the intensity ratio. The ratio is $10^8$, so multiply $10^{-12}$ by $10^8$ and add exponents to obtain $10^{-4}\ \mathrm{W}/\mathrm{m}^2$.
 ```
 
 ---
@@ -234,19 +234,19 @@ id: khadley-intensity-q3
 content: |-
   **Question 3**
 
-  What intensity corresponds to a sound level of $60\ \mathrm{dB}$? Use $I_0=10^{-12}\ \mathrm{W/m^2}$ and enter $\mathrm{W/m^2}$:
+  What intensity corresponds to a sound level of $60\ \mathrm{dB}$? Use $I_0=10^{-12}\ \mathrm{W}/\mathrm{m}^2$ and enter $\mathrm{W}/\mathrm{m}^2$:
 options:
 - id: khadley-intensity-q3-one-e-minus-six
   content: |-
     `1.0e-6`
   correct: true
   feedback: |-
-    From $\beta=10\log_{10}(I/I_0)$, $I=I_0 10^{\beta/10}=10^{-12}10^6=1.0\times10^{-6}\ \mathrm{W/m^2}$, so the requested entry is `1.0e-6`.
+    From $\beta=10\log_{10}(I/I_0)$, $I=I_0 10^{\beta/10}=10^{-12}10^6=1.0\times10^{-6}\ \mathrm{W}/\mathrm{m}^2$, so the requested entry is `1.0e-6`.
 - id: khadley-intensity-q3-one-e-six
   content: |-
     `1.0e6`
   feedback: |-
-    This is the ratio $I/I_0=10^6$, not the intensity. Multiply that dimensionless ratio by $I_0=10^{-12}\ \mathrm{W/m^2}$ to obtain `1.0e-6` $\mathrm{W/m^2}$.
+    This is the ratio $I/I_0=10^6$, not the intensity. Multiply that dimensionless ratio by $I_0=10^{-12}\ \mathrm{W}/\mathrm{m}^2$ to obtain `1.0e-6` $\mathrm{W}/\mathrm{m}^2$.
 - id: khadley-intensity-q3-one-e-minus-eighteen
   content: |-
     `1.0e-18`

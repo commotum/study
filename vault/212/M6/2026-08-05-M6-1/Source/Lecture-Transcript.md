@@ -795,15 +795,23 @@ With many slits, destructive interference suppresses most of the intensity betwe
 
 ## Grating Spacing
 
-If a diffraction grating contains $N$ lines per unit length, the spacing between adjacent lines is
+If a diffraction grating contains $N$ lines across a width $W$, the spacing between adjacent lines is
 
 $$
 \boxed{
-d=\frac{1}{N}
+d=\frac{W}{N}
 }.
 $$
 
-The units must be handled consistently. For example, if $N$ is given in lines per millimeter, the calculated spacing is initially in millimeters.
+Equivalently, the line density is
+
+$$
+\boxed{
+\frac{N}{W}=\frac{1}{d}
+}.
+$$
+
+The units must be handled consistently. For example, if $N/W$ is given in lines per millimeter, the calculated spacing is initially in millimeters.
 
 # Diffraction-Grating Maxima
 

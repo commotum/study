@@ -55,13 +55,13 @@ where $I$ is the moment of inertia about the chosen rotation axis and $\omega$ i
 For a collection of point masses,
 
 $$
-I=\sum_i m_ir_i^2.
+I=\sum_i m_ir_{\perp,i}^2.
 $$
 
 For a continuous object,
 
 $$
-I=\int r^2\,dm.
+I=\int r_\perp^2\,dm.
 $$
 
 The standard moments of inertia for common objects are important enough to include on your Quiz 2 note sheet.
@@ -96,10 +96,10 @@ Its magnitude is
 $$
 \tau
 =
-rF\sin\phi,
+rF\sin\theta,
 $$
 
-where $\phi$ is the angle between the position vector $\vec{r}$ and the force vector $\vec{F}$.
+where $\theta$ is the angle between the position vector $\vec{r}$ and the force vector $\vec{F}$.
 
 The rotational form of Newton’s second law is
 
@@ -877,7 +877,7 @@ Using the numerical values supplied in the problem gives
 
 $$
 \boxed{
-a=2.5\ \mathrm{m/s^2}
+a=2.5\ \mathrm{m}/\mathrm{s}^2
 }.
 $$
 
@@ -1055,7 +1055,7 @@ with magnitude
 
 $$
 \boxed{
-\tau=rF\sin\phi
+\tau=rF\sin\theta
 }.
 $$
 
@@ -1153,7 +1153,7 @@ For the numerical values supplied in the problem,
 
 $$
 \boxed{
-a=2.5\ \mathrm{m/s^2}
+a=2.5\ \mathrm{m}/\mathrm{s}^2
 }.
 $$
 

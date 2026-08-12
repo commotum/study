@@ -29,7 +29,7 @@ topic-code: MTH212.M2.10
 When a rigid body's rotation axis is parallel to an axis through its center of mass, use the parallel-axis theorem:
 
 $$
-I_{\text{pivot}}=I_{\mathrm{cm}}+md^2,
+I_{\mathrm{pivot}}=I_{\mathrm{cm}}+md^2,
 $$
 
 where $d$ is the distance **between the center of mass and the new pivot**.
@@ -102,7 +102,7 @@ Substitute the rod's center-of-mass inertia and the offset into the theorem:
 
 $$
 \begin{aligned}
-I_{\text{pivot}}
+I_{\mathrm{pivot}}
 &=I_{\mathrm{cm}}+md^2\\
 &=\frac{1}{12}mL^2+m\left(\frac L4\right)^2\\
 &=\frac{1}{12}mL^2+\frac{1}{16}mL^2.
@@ -126,7 +126,7 @@ options:
     $\dfrac{1}{12}mL^2+m\left(\dfrac L6\right)^2$
   correct: true
   feedback: |-
-    The parallel-axis theorem is $I_{\text{pivot}}=I_{\mathrm{cm}}+md^2$, so the offset term is added.
+    The parallel-axis theorem is $I_{\mathrm{pivot}}=I_{\mathrm{cm}}+md^2$, so the offset term is added.
 - id: c
   content: |-
     $\dfrac{1}{12}mL^2+m\left(\dfrac L6\right)$
@@ -157,7 +157,7 @@ Then combine the coefficients using a common denominator:
 
 $$
 \begin{aligned}
-I_{\text{pivot}}
+I_{\mathrm{pivot}}
 &=\left(\frac{1}{12}+\frac{1}{16}\right)mL^2\\
 &=\left(\frac{4}{48}+\frac{3}{48}\right)mL^2\\
 &=\frac{7}{48}mL^2.
@@ -290,7 +290,7 @@ options:
 
 - Locate the uniform rod's center at $L/2$ from an endpoint.
 - Compute $d$ as the distance from that center to the pivot, not from the endpoint to the pivot.
-- Use $I_{\text{pivot}}=I_{\mathrm{cm}}+md^2$ and always add the nonnegative shift term.
+- Use $I_{\mathrm{pivot}}=I_{\mathrm{cm}}+md^2$ and always add the nonnegative shift term.
 - Square the entire fractional offset before combining coefficients.
 - Factor out $mL^2$, use a common denominator, and report only the requested coefficient.
 

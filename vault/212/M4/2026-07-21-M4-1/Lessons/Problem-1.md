@@ -86,7 +86,7 @@ Therefore,
 
 $$
 v(t)=-0.30(4)\sin(4t)
-=-1.2\sin(4t)\ \mathrm{m/s}.
+=-1.2\sin(4t)\ \mathrm{m}/\mathrm{s}.
 $$
 
 This is an outer-rule/inner-rule calculation:
@@ -107,18 +107,18 @@ content: |-
 options:
 - id: a
   content: |-
-    $v(t)=-\sin(5t)\ \mathrm{m/s}$
+    $v(t)=-\sin(5t)\ \mathrm{m}/\mathrm{s}$
   feedback: |-
     This omits both the position amplitude and the chain-rule factor.
 - id: b
   content: |-
-    $v(t)=-1.0\sin(5t)\ \mathrm{m/s}$
+    $v(t)=-1.0\sin(5t)\ \mathrm{m}/\mathrm{s}$
   correct: true
   feedback: |-
     Differentiation gives $v(t)=-A\omega\sin(\omega t)=-0.20(5)\sin(5t)$.
 - id: c
   content: |-
-    $v(t)=1.0\cos(5t)\ \mathrm{m/s}$
+    $v(t)=1.0\cos(5t)\ \mathrm{m}/\mathrm{s}$
   feedback: |-
     The derivative of cosine is negative sine, not cosine.
 ```
@@ -164,22 +164,22 @@ At $t=0$, the oscillator is at $x=A$ and its speed is zero. The maximum speed oc
 type: radio
 id: problem-1-maximum-q1
 content: |-
-  An oscillator has velocity $v(t)=-0.72\sin(3t)\ \mathrm{m/s}$. What is its maximum speed?
+  An oscillator has velocity $v(t)=-0.72\sin(3t)\ \mathrm{m}/\mathrm{s}$. What is its maximum speed?
 options:
 - id: a
   content: |-
-    $0\ \mathrm{m/s}$
+    $0\ \mathrm{m}/\mathrm{s}$
   feedback: |-
     The speed is zero at some instants, but the question asks for its largest value.
 - id: b
   content: |-
-    $0.72\ \mathrm{m/s}$
+    $0.72\ \mathrm{m}/\mathrm{s}$
   correct: true
   feedback: |-
-    The maximum of $|\sin(3t)|$ is $1$, so the speed amplitude is $0.72\ \mathrm{m/s}$.
+    The maximum of $|\sin(3t)|$ is $1$, so the speed amplitude is $0.72\ \mathrm{m}/\mathrm{s}$.
 - id: c
   content: |-
-    $2.16\ \mathrm{m/s}$
+    $2.16\ \mathrm{m}/\mathrm{s}$
   feedback: |-
     The coefficient $0.72$ already includes the derivative's angular-frequency factor.
 ```
@@ -189,7 +189,7 @@ options:
 <a id="evaluate-the-formula-with-units"></a>
 ## Evaluate the Formula With Units
 
-**Example:** Find the maximum speed for $A=0.12\ \mathrm{m}$ and $\omega=3.5\ \mathrm{rad/s}$.
+**Example:** Find the maximum speed for $A=0.12\ \mathrm{m}$ and $\omega=3.5\ \mathrm{rad}/\mathrm{s}$.
 
 **Explanation**
 
@@ -203,14 +203,14 @@ Then
 
 $$
 v_{\max}
-=(0.12\ \mathrm{m})(3.5\ \mathrm{rad/s})
-=0.42\ \mathrm{m/s}.
+=(0.12\ \mathrm{m})(3.5\ \mathrm{rad}/\mathrm{s})
+=0.42\ \mathrm{m}/\mathrm{s}.
 $$
 
 Radians are dimensionless, so the units reduce to meters per second:
 
 $$
-(\mathrm{m})(\mathrm{rad/s})=\mathrm{m/s}.
+(\mathrm{m})(\mathrm{rad}/\mathrm{s})=\mathrm{m}/\mathrm{s}.
 $$
 
 Both measured inputs have two significant figures, so the result is reported with two significant figures.
@@ -219,22 +219,22 @@ Both measured inputs have two significant figures, so the result is reported wit
 type: radio
 id: problem-1-evaluate-q1
 content: |-
-  A simple harmonic oscillator has $A=0.16\ \mathrm{m}$ and $\omega=2.5\ \mathrm{rad/s}$. What is its maximum speed?
+  A simple harmonic oscillator has $A=0.16\ \mathrm{m}$ and $\omega=2.5\ \mathrm{rad}/\mathrm{s}$. What is its maximum speed?
 options:
 - id: a
   content: |-
-    $0.40\ \mathrm{m/s}$
+    $0.40\ \mathrm{m}/\mathrm{s}$
   correct: true
   feedback: |-
-    $v_{\max}=A\omega=(0.16)(2.5)=0.40\ \mathrm{m/s}$.
+    $v_{\max}=A\omega=(0.16)(2.5)=0.40\ \mathrm{m}/\mathrm{s}$.
 - id: b
   content: |-
-    $0.064\ \mathrm{m/s}$
+    $0.064\ \mathrm{m}/\mathrm{s}$
   feedback: |-
     This divides $A$ by $\omega$ instead of multiplying.
 - id: c
   content: |-
-    $2.7\ \mathrm{m/s}$
+    $2.7\ \mathrm{m}/\mathrm{s}$
   feedback: |-
     The position amplitude and angular frequency are multiplied, not added.
 ```
@@ -260,12 +260,12 @@ $$
 v_{\max}=A\omega.
 $$
 
-Substitute $A=0.25\ \mathrm{m}$ and $\omega=1.8\ \mathrm{rad/s}$:
+Substitute $A=0.25\ \mathrm{m}$ and $\omega=1.8\ \mathrm{rad}/\mathrm{s}$:
 
 $$
 v_{\max}
-=(0.25\ \mathrm{m})(1.8\ \mathrm{rad/s})
-=0.45\ \mathrm{m/s}.
+=(0.25\ \mathrm{m})(1.8\ \mathrm{rad}/\mathrm{s})
+=0.45\ \mathrm{m}/\mathrm{s}.
 $$
 
 ```quiz
@@ -274,7 +274,7 @@ id: m4-1pre-q1
 content: |-
   **Question 1**
 
-  A simple harmonic oscillator moves according to $x(t)=A\cos(\omega t)$, where $A=0.25\ \mathrm{m}$ and $\omega=1.8\ \mathrm{rad/s}$. What is its maximum speed?
+  A simple harmonic oscillator moves according to $x(t)=A\cos(\omega t)$, where $A=0.25\ \mathrm{m}$ and $\omega=1.8\ \mathrm{rad}/\mathrm{s}$. What is its maximum speed?
 
   Enter the maximum speed in meters per second as a number only:
 options:
@@ -291,10 +291,10 @@ options:
     The maximum speed is therefore
 
     $$
-    v_{\max}=A\omega=(0.25\ \mathrm{m})(1.8\ \mathrm{rad/s})=0.45\ \mathrm{m/s}.
+    v_{\max}=A\omega=(0.25\ \mathrm{m})(1.8\ \mathrm{rad}/\mathrm{s})=0.45\ \mathrm{m}/\mathrm{s}.
     $$
 
-    Both measured givens have two significant figures, so the result is $0.45\ \mathrm{m/s}$.
+    Both measured givens have two significant figures, so the result is $0.45\ \mathrm{m}/\mathrm{s}$.
 - id: b
   content: 0.14
 - id: c

@@ -16,7 +16,7 @@ topic-code: MTH212.M6.11
 ## Prerequisites
 
 - Recognize that $0\leq \sin\theta\leq 1$ for angles from $0^\circ$ to $90^\circ$.
-- Use the single-slit minimum condition $a\sin\theta=m\lambda$.
+- Use the single-slit minimum condition $a\sin\theta_p=p\lambda$.
 - Evaluate a simple inverse sine in degrees.
 
 ---
@@ -24,10 +24,10 @@ topic-code: MTH212.M6.11
 <a id="introduction"></a>
 ## Introduction
 
-When a problem compares a slit width $a$ with a wavelength $\lambda$ and asks whether a clear single-slit diffraction pattern appears, test the location of the **first minimum**. Set $m=1$ in
+When a problem compares a slit width $a$ with a wavelength $\lambda$ and asks whether a clear single-slit diffraction pattern appears, test the location of the **first minimum**. Set $p=1$ in
 
 $$
-a\sin\theta=m\lambda
+a\sin\theta_p=p\lambda
 $$
 
 to obtain
@@ -79,7 +79,7 @@ options:
     Set $\sin\theta_1=\dfrac14$.
   correct: true
   feedback: |-
-    The first minimum uses $m=1$, so $\sin\theta_1=\lambda/a=\lambda/(4\lambda)=1/4$. This is physical and gives $\theta_1\approx14.5^\circ$.
+    The first minimum uses $p=1$, so $\sin\theta_1=\lambda/a=\lambda/(4\lambda)=1/4$. This is physical and gives $\theta_1\approx14.5^\circ$.
 - id: problem-1-q1-b
   content: |-
     Set $\sin\theta_1=4$.
@@ -230,7 +230,7 @@ options:
     $10\lambda$
   correct: true
   feedback: |-
-    Single-slit minima satisfy $a\sin\theta=m\lambda$. With $a=10\lambda$, the first minimum has $\sin\theta_1=0.1$, so it occurs at about $5.7^\circ$ and visibly bounds the central maximum.
+    Single-slit minima satisfy $a\sin\theta_p=p\lambda$. With $a=10\lambda$, the first minimum has $\sin\theta_1=0.1$, so it occurs at about $5.7^\circ$ and visibly bounds the central maximum.
 - id: problem-1-q4-b
   content: |-
     $\lambda$
@@ -252,7 +252,7 @@ options:
 
 **Procedure:**
 
-1. Set $m=1$ and compute $\sin\theta_1=\lambda/a$.
+1. Set $p=1$ and compute $\sin\theta_1=\lambda/a$.
 2. Reject $\lambda/a>1$: no physical first minimum exists.
 3. Treat $\lambda/a=1$ as a boundary case: the first minimum is at $90^\circ$.
 4. For $0<\lambda/a<1$, use the angle to judge spread; a smaller slit gives a wider pattern.

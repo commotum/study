@@ -16,7 +16,7 @@ topic-code: MTH212.M6.10
 
 ## Prerequisites
 
-- Use the small-angle location of the $m$th single-slit dark minimum: $y_m\approx m\lambda L/a$.
+- Use the small-angle location of the $p$th single-slit dark minimum: $y_p\approx p\lambda L/a$.
 - Convert nanometers and millimeters to meters: $1\ \mathrm{nm}=10^{-9}\ \mathrm{m}$ and $1\ \mathrm{mm}=10^{-3}\ \mathrm{m}$.
 - Find the midpoint of two positions by averaging them.
 - Round a calculated measurement to a requested number of significant figures.
@@ -28,7 +28,7 @@ topic-code: MTH212.M6.10
 
 When a single-slit problem asks for a **secondary bright fringe** rather than a dark minimum, first identify the two neighboring dark minima. In the approximation used here, the bright fringe lies halfway between them.
 
-For the $n$th secondary bright fringe, count $n=1,2,3,\ldots$ outward from the central maximum. It lies between dark minima $m=n$ and $m=n+1$. Therefore,
+For the $n$th secondary bright fringe, count $n=1,2,3,\ldots$ outward from the central maximum. It lies between dark minima $p=n$ and $p=n+1$. Therefore,
 
 $$
 y_{\text{bright},n}
@@ -47,7 +47,7 @@ This is a midpoint approximation for small diffraction angles; secondary maxima 
 
 **Explanation**
 
-The $n$th secondary bright fringe lies between dark minima $m=n$ and $m=n+1$. Setting $n=3$ gives the pair $m=3$ and $m=4$, so the third secondary bright fringe lies between $y_3$ and $y_4$.
+The $n$th secondary bright fringe lies between dark minima $p=n$ and $p=n+1$. Setting $n=3$ gives the pair $p=3$ and $p=4$, so the third secondary bright fringe lies between $y_3$ and $y_4$.
 
 The central maximum is not the first secondary bright fringe. The secondary-fringe count starts after the first dark minimum.
 
@@ -159,7 +159,7 @@ Because the third secondary bright fringe lies halfway between $y_3$ and $y_4$, 
 
 $$
 \begin{aligned}
-\Delta y_{\text{dark}}
+\Delta y_{\mathrm{dark}}
 &=\frac{\lambda L}{a} \\
 &=\frac{(500\times10^{-9}\ \mathrm{m})(2.00\ \mathrm{m})}
 {0.250\times10^{-3}\ \mathrm{m}} \\
@@ -171,7 +171,7 @@ Then apply the bright-fringe multiplier:
 
 $$
 y_{\text{bright},3}
-\approx 3.5\Delta y_{\text{dark}}
+\approx 3.5\Delta y_{\mathrm{dark}}
 =3.5(0.400\ \mathrm{cm})
 =1.40\ \mathrm{cm}.
 $$
@@ -188,7 +188,7 @@ options:
   content: |-
     $0.200\ \mathrm{cm}$
   feedback: |-
-    This is the one-minimum spacing $\lambda L/a$. The second secondary bright fringe is farther out, between minima $m=2$ and $m=3$, so this spacing must be multiplied by $2.5$.
+    This is the one-minimum spacing $\lambda L/a$. The second secondary bright fringe is farther out, between minima $p=2$ and $p=3$, so this spacing must be multiplied by $2.5$.
 - id: p5-formula-q1-b
   content: |-
     $0.400\ \mathrm{cm}$
@@ -275,7 +275,7 @@ options:
     $0.915\ \mathrm{cm}$
   correct: true
   feedback: |-
-    The second secondary bright fringe uses $y\approx2.5\lambda L/a$. Substitution gives $0.00915\ \mathrm{m}$, and multiplying by $100\ \mathrm{cm/m}$ gives $0.915\ \mathrm{cm}$ to three significant figures.
+    The second secondary bright fringe uses $y\approx2.5\lambda L/a$. Substitution gives $0.00915\ \mathrm{m}$, and multiplying by $100\ \mathrm{cm}/\mathrm{m}$ gives $0.915\ \mathrm{cm}$ to three significant figures.
 - id: p5-reporting-q1-d
   content: |-
     $1.10\ \mathrm{cm}$

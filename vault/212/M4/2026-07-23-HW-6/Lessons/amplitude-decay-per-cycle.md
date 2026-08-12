@@ -116,7 +116,7 @@ options:
 <a id="apply-the-factor-once-per-cycle"></a>
 ## Apply the Factor Once per Cycle
 
-**Example:** An oscillator starts with amplitude $0.40\ \mathrm m$ and loses $5.0\%$ per cycle. Write and evaluate its amplitude after $4$ cycles.
+**Example:** An oscillator starts with amplitude $0.40\ \mathrm{m}$ and loses $5.0\%$ per cycle. Write and evaluate its amplitude after $4$ cycles.
 
 **Explanation**
 
@@ -124,10 +124,10 @@ The retention factor is $1-0.050=0.950$. Apply that factor once for every comple
 
 $$
 \begin{aligned}
-A(1)&=(0.40\ \mathrm m)(0.950),\\
-A(2)&=(0.40\ \mathrm m)(0.950)(0.950)
-     =(0.40\ \mathrm m)(0.950)^2,\\
-A(3)&=(0.40\ \mathrm m)(0.950)^3.
+A(1)&=(0.40\ \mathrm{m})(0.950),\\
+A(2)&=(0.40\ \mathrm{m})(0.950)(0.950)
+     =(0.40\ \mathrm{m})(0.950)^2,\\
+A(3)&=(0.40\ \mathrm{m})(0.950)^3.
 \end{aligned}
 $$
 
@@ -136,8 +136,8 @@ The pattern compresses one repeated factor per cycle into the exponent. Therefor
 $$
 \begin{aligned}
 A(4)
-&=(0.40\ \mathrm m)(0.950)^4\\
-&=0.3258\ldots\ \mathrm m.
+&=(0.40\ \mathrm{m})(0.950)^4\\
+&=0.3258\ldots\ \mathrm{m}.
 \end{aligned}
 $$
 
@@ -185,57 +185,57 @@ options:
 <a id="avoid-the-linear-decay-trap"></a>
 ## Avoid the Linear-Decay Trap
 
-**Example:** An oscillator begins at $1.00\ \mathrm m$ and loses $10\%$ of its amplitude per cycle. Compare the correct amplitude after two cycles with a linear subtraction.
+**Example:** An oscillator begins at $1.00\ \mathrm{m}$ and loses $10\%$ of its amplitude per cycle. Compare the correct amplitude after two cycles with a linear subtraction.
 
 **Explanation**
 
 After the first cycle, the amplitude is
 
 $$
-A_1=(1.00)(0.90)=0.90\ \mathrm m.
+A_1=(1.00)(0.90)=0.90\ \mathrm{m}.
 $$
 
 The second cycle loses $10\%$ of the new amplitude, not $10\%$ of the original amplitude:
 
 $$
-A_2=(0.90)(0.90)=1.00(0.90)^2=0.81\ \mathrm m.
+A_2=(0.90)(0.90)=1.00(0.90)^2=0.81\ \mathrm{m}.
 $$
 
-Subtracting $0.10\ \mathrm m$ twice would give $0.80\ \mathrm m$, but that is a fixed amount lost per cycle. The stated process is a fixed percentage lost per cycle, so the amount removed becomes smaller as the amplitude decreases.
+Subtracting $0.10\ \mathrm{m}$ twice would give $0.80\ \mathrm{m}$, but that is a fixed amount lost per cycle. The stated process is a fixed percentage lost per cycle, so the amount removed becomes smaller as the amplitude decreases.
 
 ```quiz
 type: radio
 id: amplitude-decay-not-linear
 shuffle: true
 content: |-
-  An oscillator starts with amplitude $0.50\ \mathrm m$ and loses $20\%$ of its amplitude per cycle. What is its amplitude after $2$ cycles?
+  An oscillator starts with amplitude $0.50\ \mathrm{m}$ and loses $20\%$ of its amplitude per cycle. What is its amplitude after $2$ cycles?
 options:
 - id: amplitude-032
   content: |-
-    $0.32\ \mathrm m$
+    $0.32\ \mathrm{m}$
   correct: true
   feedback: |-
-    A $20\%$ loss leaves $0.80$ of the current amplitude each cycle. Therefore $A_2=(0.50)(0.80)^2=0.32\ \mathrm m$.
+    A $20\%$ loss leaves $0.80$ of the current amplitude each cycle. Therefore $A_2=(0.50)(0.80)^2=0.32\ \mathrm{m}$.
 - id: amplitude-030
   content: |-
-    $0.30\ \mathrm m$
+    $0.30\ \mathrm{m}$
   feedback: |-
-    This subtracts $0.10\ \mathrm m$, which is $20\%$ of the initial amplitude, in both cycles. The second loss is instead $20\%$ of the reduced amplitude, so repeated multiplication gives $0.32\ \mathrm m$.
+    This subtracts $0.10\ \mathrm{m}$, which is $20\%$ of the initial amplitude, in both cycles. The second loss is instead $20\%$ of the reduced amplitude, so repeated multiplication gives $0.32\ \mathrm{m}$.
 - id: amplitude-002
   content: |-
-    $0.02\ \mathrm m$
+    $0.02\ \mathrm{m}$
   feedback: |-
     This uses the loss fraction as the repeated multiplier: $(0.50)(0.20)^2$. The oscillator retains $0.80$ per cycle, so the correct multiplier is $0.80^2$.
 - id: amplitude-048
   content: |-
-    $0.48\ \mathrm m$
+    $0.48\ \mathrm{m}$
   feedback: |-
-    Subtracting $0.20^2=0.04$ from the initial amplitude does not model successive percentage changes. Apply the retained fraction twice: $(0.50)(0.80)^2=0.32\ \mathrm m$.
+    Subtracting $0.20^2=0.04$ from the initial amplitude does not model successive percentage changes. Apply the retained fraction twice: $(0.50)(0.80)^2=0.32\ \mathrm{m}$.
 - id: amplitude-072
   content: |-
-    $0.72\ \mathrm m$
+    $0.72\ \mathrm{m}$
   feedback: |-
-    This value is larger than the initial $0.50\ \mathrm m$, so it cannot result from amplitude loss. A retention factor below $1$ must reduce the amplitude to $0.32\ \mathrm m$.
+    This value is larger than the initial $0.50\ \mathrm{m}$, so it cannot result from amplitude loss. A retention factor below $1$ must reduce the amplitude to $0.32\ \mathrm{m}$.
 ```
 
 ---
@@ -243,7 +243,7 @@ options:
 <a id="evaluate-and-round-the-amplitude"></a>
 ## Evaluate and Round the Amplitude
 
-**Example:** An oscillator begins with amplitude $0.40\ \mathrm m$ and loses $2.0\%$ per cycle. Find its amplitude after $25$ cycles and report it to two significant figures.
+**Example:** An oscillator begins with amplitude $0.40\ \mathrm{m}$ and loses $2.0\%$ per cycle. Find its amplitude after $25$ cycles and report it to two significant figures.
 
 **Explanation**
 
@@ -252,16 +252,16 @@ Keep the full calculator value until the last step:
 $$
 \begin{aligned}
 A_{25}
-&=(0.40\ \mathrm m)(1-0.020)^{25}\\
-&=(0.40\ \mathrm m)(0.980)^{25}\\
-&=0.2413\ldots\ \mathrm m.
+&=(0.40\ \mathrm{m})(1-0.020)^{25}\\
+&=(0.40\ \mathrm{m})(0.980)^{25}\\
+&=0.2413\ldots\ \mathrm{m}.
 \end{aligned}
 $$
 
 Rounded to two significant figures,
 
 $$
-\boxed{A_{25}=0.24\ \mathrm m}.
+\boxed{A_{25}=0.24\ \mathrm{m}}.
 $$
 
 Do not round the retention factor more coarsely than the stated percentage before raising it to a large power. Repeated multiplication can magnify premature rounding error.
@@ -271,34 +271,34 @@ type: radio
 id: amplitude-decay-rounding
 shuffle: true
 content: |-
-  An oscillator starts with amplitude $0.60\ \mathrm m$ and loses $4.0\%$ per cycle. What is its amplitude after $20$ cycles, reported to two significant figures?
+  An oscillator starts with amplitude $0.60\ \mathrm{m}$ and loses $4.0\%$ per cycle. What is its amplitude after $20$ cycles, reported to two significant figures?
 options:
 - id: rounded-027
   content: |-
-    $0.27\ \mathrm m$
+    $0.27\ \mathrm{m}$
   correct: true
   feedback: |-
-    The retained factor is $0.960$, so $A_{20}=(0.60)(0.960)^{20}=0.2652\ldots\ \mathrm m$. Rounding once at the end to two significant figures gives $0.27\ \mathrm m$.
+    The retained factor is $0.960$, so $A_{20}=(0.60)(0.960)^{20}=0.2652\ldots\ \mathrm{m}$. Rounding once at the end to two significant figures gives $0.27\ \mathrm{m}$.
 - id: truncated-026
   content: |-
-    $0.26\ \mathrm m$
+    $0.26\ \mathrm{m}$
   feedback: |-
-    The unrounded value is $0.2652\ldots\ \mathrm m$. The next digit is $5$, so two-significant-figure rounding raises the hundredths digit and gives $0.27\ \mathrm m$ rather than truncating to $0.26\ \mathrm m$.
+    The unrounded value is $0.2652\ldots\ \mathrm{m}$. The next digit is $5$, so two-significant-figure rounding raises the hundredths digit and gives $0.27\ \mathrm{m}$ rather than truncating to $0.26\ \mathrm{m}$.
 - id: unrounded-02652
   content: |-
-    $0.2652\ \mathrm m$
+    $0.2652\ \mathrm{m}$
   feedback: |-
-    This retains more precision than the two-significant-figure answer form requests. The calculation is useful as a guard-digit value, but the reported result is $0.27\ \mathrm m$.
+    This retains more precision than the two-significant-figure answer form requests. The calculation is useful as a guard-digit value, but the reported result is $0.27\ \mathrm{m}$.
 - id: linear-012
   content: |-
-    $0.12\ \mathrm m$
+    $0.12\ \mathrm{m}$
   feedback: |-
-    This applies the total $80\%$ loss linearly as $1-20(0.040)$. Each cycle instead retains $0.960$ of the current amplitude, producing $0.2652\ldots\ \mathrm m$ before rounding.
+    This applies the total $80\%$ loss linearly as $1-20(0.040)$. Each cycle instead retains $0.960$ of the current amplitude, producing $0.2652\ldots\ \mathrm{m}$ before rounding.
 - id: loss-factor-near-zero
   content: |-
-    Approximately $0\ \mathrm m$
+    Approximately $0\ \mathrm{m}$
   feedback: |-
-    This results from repeatedly multiplying by the lost fraction $0.040$. The oscillator retains $0.960$ each cycle, so a substantial amplitude, $0.27\ \mathrm m$, remains after $20$ cycles.
+    This results from repeatedly multiplying by the lost fraction $0.040$. The oscillator retains $0.960$ each cycle, so a substantial amplitude, $0.27\ \mathrm{m}$, remains after $20$ cycles.
 ```
 
 ---
@@ -312,20 +312,20 @@ options:
 
 > **Question 1**
 >
-> A lightly damped oscillator loses $3.0\%$ of its amplitude during each cycle. If its initial amplitude is $0.25\ \mathrm m$, what is the amplitude after $30$ cycles? Enter meters: ______
+> A lightly damped oscillator loses $3.0\%$ of its amplitude during each cycle. If its initial amplitude is $0.25\ \mathrm{m}$, what is the amplitude after $30$ cycles? Enter meters: ______
 
 The source asks for one numerical entry in meters. Use $p=0.030$, retain the factor $0.970$ per cycle, keep guard digits through the power, and then report the result to the two significant figures supported by the givens.
 
 Map the givens into the decay model before evaluating:
 
 $$
-A_0=0.25\ \mathrm m,\qquad
+A_0=0.25\ \mathrm{m},\qquad
 p=0.030,\qquad
 r=1-p=0.970,\qquad
 n=30.
 $$
 
-Thus the model is $A(n)=(0.25\ \mathrm m)(0.970)^n$, and the requested quantity is its output at $n=30$.
+Thus the model is $A(n)=(0.25\ \mathrm{m})(0.970)^n$, and the requested quantity is its output at $n=30$.
 
 ```quiz
 type: radio
@@ -339,17 +339,17 @@ options:
     $0.10$
   correct: true
   feedback: |-
-    Each cycle retains $1-0.030=0.970$ of the current amplitude. Thus $A_{30}=(0.25)(0.970)^{30}=0.1003\ldots\ \mathrm m$, which rounds to the requested entry $0.10$.
+    Each cycle retains $1-0.030=0.970$ of the current amplitude. Thus $A_{30}=(0.25)(0.970)^{30}=0.1003\ldots\ \mathrm{m}$, which rounds to the requested entry $0.10$.
 - id: original-01003
   content: |-
     $0.1003$
   feedback: |-
-    This is a useful guard-digit value, but it reports more precision than the $3.0\%$ and $0.25\ \mathrm m$ givens support. Rounded to two significant figures, the blank should contain $0.10$.
+    This is a useful guard-digit value, but it reports more precision than the $3.0\%$ and $0.25\ \mathrm{m}$ givens support. Rounded to two significant figures, the blank should contain $0.10$.
 - id: original-0025
   content: |-
     $0.025$
   feedback: |-
-    This subtracts a total of $30(3.0\%)=90\%$ from the initial amplitude as though the same fixed amount were lost each cycle. The loss is a percentage of the current amplitude, so it compounds to $0.1003\ldots\ \mathrm m$.
+    This subtracts a total of $30(3.0\%)=90\%$ from the initial amplitude as though the same fixed amount were lost each cycle. The loss is a percentage of the current amplitude, so it compounds to $0.1003\ldots\ \mathrm{m}$.
 - id: original-024
   content: |-
     $0.24$
@@ -359,7 +359,7 @@ options:
   content: |-
     Approximately $0$
   feedback: |-
-    This follows from using the lost fraction $0.030$ as the repeated multiplier. The oscillator retains $0.970$ each cycle, leaving $0.10\ \mathrm m$ to two significant figures after $30$ cycles.
+    This follows from using the lost fraction $0.030$ as the repeated multiplier. The oscillator retains $0.970$ each cycle, leaving $0.10\ \mathrm{m}$ to two significant figures after $30$ cycles.
 ```
 
 ---

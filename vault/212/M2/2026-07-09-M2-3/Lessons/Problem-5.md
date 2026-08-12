@@ -32,7 +32,7 @@ When a cord is pulled tangent to a solid-cylinder spool, find the torque about t
 $$
 \sum\tau=I\alpha,
 \qquad
-\tau_T=Tr,
+\tau_T=F_T r,
 \qquad
 I=\frac12mr^2.
 $$
@@ -41,8 +41,8 @@ These equations give the reusable result
 
 $$
 \alpha=\frac{\tau_T}{I}
-=\frac{Tr}{\frac12mr^2}
-=\frac{2T}{mr}.
+=\frac{F_T r}{\frac12mr^2}
+=\frac{2F_T}{mr}.
 $$
 
 The important recognition cue is a tangential force applied at the rim while the other forces act through the axle. Only the tangential tension contributes torque about that axle.
@@ -58,7 +58,7 @@ The important recognition cue is a tangential force applied at the rim while the
 
 The ordinary free-body diagram contains:
 
-- the cord tension $T$, tangent to the spool;
+- the cord tension $F_T$, tangent to the spool;
 - the weight $mg$, acting through the center; and
 - the axle or support force, acting through the center.
 
@@ -66,7 +66,7 @@ The extended free-body diagram records each force's line of action and perpendic
 
 | Force | Lever arm about axle | Torque about axle |
 |---|---:|---:|
-| Tension $T$ | $r$ | $Tr$ |
+| Tension $F_T$ | $r$ | $F_T r$ |
 | Weight $mg$ | $0$ | $0$ |
 | Axle/support force | $0$ | $0$ |
 
@@ -104,14 +104,14 @@ options:
 <a id="combine-torque-with-rotational-inertia"></a>
 ## Combine Torque With Rotational Inertia
 
-**Example:** Derive the angular acceleration of a solid-cylinder spool of mass $m$ and radius $r$ pulled by a tangential cord tension $T$.
+**Example:** Derive the angular acceleration of a solid-cylinder spool of mass $m$ and radius $r$ pulled by a tangential cord tension $F_T$.
 
 **Explanation**
 
 Start from rotational Newton's second law and substitute the expressions for torque and inertia:
 
 $$
-Tr=\left(\frac12mr^2\right)\alpha.
+F_T r=\left(\frac12mr^2\right)\alpha.
 $$
 
 Solve for $\alpha$ and expose the common radius factor:
@@ -119,9 +119,9 @@ Solve for $\alpha$ and expose the common radius factor:
 $$
 \begin{aligned}
 \alpha
-&=\frac{Tr}{\frac12mr^2}\\
-&=\frac{2Tr}{mr^2}\\
-&=\frac{2T}{mr}.
+&=\frac{F_T r}{\frac12mr^2}\\
+&=\frac{2F_T r}{mr^2}\\
+&=\frac{2F_T}{mr}.
 \end{aligned}
 $$
 
@@ -132,26 +132,26 @@ type: radio
 id: m2-3-p5-derive
 shuffle: true
 content: |-
-  A tangential tension $T$ pulls a solid-cylinder spool of mass $m$ and radius $r$. Which expression gives the spool's angular acceleration magnitude?
+  A tangential tension $F_T$ pulls a solid-cylinder spool of mass $m$ and radius $r$. Which expression gives the spool's angular acceleration magnitude?
 options:
 - id: a
   content: |-
-    $\dfrac{Tr}{m}$
+    $\dfrac{F_T r}{m}$
 - id: b
   content: |-
-    $\dfrac{2T}{mr}$
+    $\dfrac{2F_T}{mr}$
   correct: true
   feedback: |-
-    Use $Tr=(\frac12mr^2)\alpha$. Dividing by $\frac12mr^2$ and canceling one factor of $r$ gives $\alpha=2T/(mr)$.
+    Use $F_T r=(\frac12mr^2)\alpha$. Dividing by $\frac12mr^2$ and canceling one factor of $r$ gives $\alpha=2F_T/(mr)$.
 - id: c
   content: |-
-    $\dfrac{T}{2mr}$
+    $\dfrac{F_T}{2mr}$
 - id: d
   content: |-
-    $\dfrac{2T}{m}$
+    $\dfrac{2F_T}{m}$
 - id: e
   content: |-
-    $\dfrac{T}{mr^2}$
+    $\dfrac{F_T}{mr^2}$
 ```
 
 ---
@@ -171,14 +171,14 @@ $$
 =0.024\ \mathrm{m}.
 $$
 
-The formula $\alpha=2T/(mr)$ produces SI units only when the radius is in meters. Dividing by $100$ changes centimeters to meters.
+The formula $\alpha=2F_T/(mr)$ produces SI units only when the radius is in meters. Dividing by $100$ changes centimeters to meters.
 
 ```quiz
 type: radio
 id: m2-3-p5-radius-conversion
 shuffle: true
 content: |-
-  What value should replace $r=3.5\ \mathrm{cm}$ when using $\alpha=2T/(mr)$ with force in newtons and mass in kilograms?
+  What value should replace $r=3.5\ \mathrm{cm}$ when using $\alpha=2F_T/(mr)$ with force in newtons and mass in kilograms?
 options:
 - id: a
   content: |-
@@ -214,9 +214,9 @@ First convert $r=0.020\ \mathrm{m}$, then substitute into the simplified formula
 $$
 \begin{aligned}
 \alpha
-&=\frac{2T}{mr}\\
+&=\frac{2F_T}{mr}\\
 &=\frac{2(0.48\ \mathrm{N})}{(3.0\ \mathrm{kg})(0.020\ \mathrm{m})}\\
-&=16\ \mathrm{rad/s^2}.
+&=16\ \mathrm{rad}/\mathrm{s}^2.
 \end{aligned}
 $$
 
@@ -228,43 +228,43 @@ $$
 =\mathrm{s^{-2}},
 $$
 
-which is written as $\mathrm{rad/s^2}$ for angular acceleration. Determine the rotation direction separately with the right-hand rule. A rightward pull at the top of the spool produces clockwise rotation, with angular acceleration into the page.
+which is written as $\mathrm{rad}/\mathrm{s}^2$ for angular acceleration. Determine the rotation direction separately with the right-hand rule. A rightward pull at the top of the spool produces clockwise rotation, with angular acceleration into the page.
 
 The simplified formula also gives a fast reasonableness check:
 
-| Change, with other quantities fixed | Prediction from $\alpha=2T/(mr)$ |
+| Change, with other quantities fixed | Prediction from $\alpha=2F_T/(mr)$ |
 |---|---|
-| Increase $T$ | $\alpha$ increases in direct proportion |
+| Increase $F_T$ | $\alpha$ increases in direct proportion |
 | Increase $m$ | $\alpha$ decreases in inverse proportion |
 | Increase $r$ | $\alpha$ decreases in inverse proportion |
 
-The last row may seem surprising because the torque $Tr$ grows with radius. However, the solid cylinder's inertia grows as $r^2$, so inertia grows faster than torque and the net result is $\alpha\propto1/r$.
+The last row may seem surprising because the torque $F_T r$ grows with radius. However, the solid cylinder's inertia grows as $r^2$, so inertia grows faster than torque and the net result is $\alpha\propto1/r$.
 
 ```quiz
 type: radio
 id: m2-3-p5-calculate
 shuffle: true
 content: |-
-  A cord is pulled to the right at the top of a solid-cylinder spool. If $T=0.60\ \mathrm{N}$, $m=4.0\ \mathrm{kg}$, and $r=2.5\ \mathrm{cm}$, what are the angular acceleration magnitude and direction?
+  A cord is pulled to the right at the top of a solid-cylinder spool. If $F_T=0.60\ \mathrm{N}$, $m=4.0\ \mathrm{kg}$, and $r=2.5\ \mathrm{cm}$, what are the angular acceleration magnitude and direction?
 options:
 - id: a
   content: |-
-    $12\ \mathrm{rad/s^2}$, clockwise into the page
+    $12\ \mathrm{rad}/\mathrm{s}^2$, clockwise into the page
   correct: true
   feedback: |-
-    Convert $r=0.025\ \mathrm{m}$. Then $\alpha=2(0.60)/[(4.0)(0.025)]=12\ \mathrm{rad/s^2}$. The rightward tangential pull at the top produces clockwise rotation, into the page.
+    Convert $r=0.025\ \mathrm{m}$. Then $\alpha=2(0.60)/[(4.0)(0.025)]=12\ \mathrm{rad}/\mathrm{s}^2$. The rightward tangential pull at the top produces clockwise rotation, into the page.
 - id: b
   content: |-
-    $12\ \mathrm{rad/s^2}$, counterclockwise out of the page
+    $12\ \mathrm{rad}/\mathrm{s}^2$, counterclockwise out of the page
 - id: c
   content: |-
-    $6.0\ \mathrm{rad/s^2}$, clockwise into the page
+    $6.0\ \mathrm{rad}/\mathrm{s}^2$, clockwise into the page
 - id: d
   content: |-
-    $1200\ \mathrm{rad/s^2}$, clockwise into the page
+    $1200\ \mathrm{rad}/\mathrm{s}^2$, clockwise into the page
 - id: e
   content: |-
-    $0.030\ \mathrm{rad/s^2}$, counterclockwise out of the page
+    $0.030\ \mathrm{rad}/\mathrm{s}^2$, counterclockwise out of the page
 ```
 
 ---
@@ -276,10 +276,10 @@ options:
 
 **Explanation**
 
-The tension is tangent to the rim, so its lever arm is $r$ and its torque magnitude is $Tr$. The weight and axle/support force act through the center and contribute no torque about the axle. For a solid cylinder,
+The tension is tangent to the rim, so its lever arm is $r$ and its torque magnitude is $F_T r$. The weight and axle/support force act through the center and contribute no torque about the axle. For a solid cylinder,
 
 $$
-\alpha=\frac{Tr}{\frac12mr^2}=\frac{2T}{mr}.
+\alpha=\frac{F_T r}{\frac12mr^2}=\frac{2F_T}{mr}.
 $$
 
 Convert the radius before substitution:
@@ -294,8 +294,8 @@ $$
 \begin{aligned}
 \alpha
 &=\frac{2(0.35\ \mathrm{N})}{(2.8\ \mathrm{kg})(0.016\ \mathrm{m})}\\
-&=15.625\ \mathrm{rad/s^2}\\
-&\approx16\ \mathrm{rad/s^2}.
+&=15.625\ \mathrm{rad}/\mathrm{s}^2\\
+&\approx16\ \mathrm{rad}/\mathrm{s}^2.
 \end{aligned}
 $$
 
@@ -303,10 +303,10 @@ Keep the calculation value and the reported value distinct:
 
 | Stage | Value |
 |---|---:|
-| Calculator result | $15.625\ \mathrm{rad/s^2}$ |
-| Reported to two significant figures | $16\ \mathrm{rad/s^2}$ |
+| Calculator result | $15.625\ \mathrm{rad}/\mathrm{s}^2$ |
+| Reported to two significant figures | $16\ \mathrm{rad}/\mathrm{s}^2$ |
 
-The final answer is $16\ \mathrm{rad/s^2}$, clockwise and into the page. This is consistent with the formula: a modest force acting on a very small radius can produce a sizable angular acceleration.
+The final answer is $16\ \mathrm{rad}/\mathrm{s}^2$, clockwise and into the page. This is consistent with the formula: a modest force acting on a very small radius can produce a sizable angular acceleration.
 
 ```quiz
 type: radio
@@ -315,9 +315,9 @@ shuffle: true
 content: |-
   **Question 4**
 
-  A person pulls a cord with constant tension $T$. The cord is wrapped around a freely spinning solid-cylinder spool of radius $r$ and mass $m$. Find the spool's angular acceleration. Begin by drawing a free-body diagram and an extended free-body diagram.
+  A person pulls a cord with constant tension $F_T$. The cord is wrapped around a freely spinning solid-cylinder spool of radius $r$ and mass $m$. Find the spool's angular acceleration. Begin by drawing a free-body diagram and an extended free-body diagram.
 
-  Use $T=0.35\ \mathrm{N}$, $r=1.6\ \mathrm{cm}$, and $m=2.8\ \mathrm{kg}$.
+  Use $F_T=0.35\ \mathrm{N}$, $r=1.6\ \mathrm{cm}$, and $m=2.8\ \mathrm{kg}$.
 
   ![](<../Source/Images/cord-pulled-solid-cylinder-spool.png>)
 
@@ -333,21 +333,21 @@ options:
     Thus,
 
     $$
-    \tau=Tr,
+    \tau=F_T r,
     \qquad
     I=\frac12mr^2,
     \qquad
-    \alpha=\frac{\tau}{I}=\frac{2T}{mr}.
+    \alpha=\frac{\tau}{I}=\frac{2F_T}{mr}.
     $$
 
     With $r=0.016\ \mathrm{m}$,
 
     $$
     \alpha=\frac{2(0.35\ \mathrm{N})}{(2.8\ \mathrm{kg})(0.016\ \mathrm{m})}
-    =15.625\ \mathrm{rad/s^2}.
+    =15.625\ \mathrm{rad}/\mathrm{s}^2.
     $$
 
-    The measured givens have two significant figures, so $\alpha=16\ \mathrm{rad/s^2}$. The angular acceleration is clockwise, into the page.
+    The measured givens have two significant figures, so $\alpha=16\ \mathrm{rad}/\mathrm{s}^2$. The angular acceleration is clockwise, into the page.
 - id: b
   content: |-
     `15.625`
@@ -368,8 +368,8 @@ options:
 ## Summary
 
 - Draw both diagrams and take torque about the axle so center-acting forces drop out.
-- For tangential tension, use $\tau=Tr$; for a solid cylinder, use $I=\frac12mr^2$.
-- Simplify to $\alpha=2T/(mr)$ before substituting, canceling only one factor of $r$.
+- For tangential tension, use $\tau=F_T r$; for a solid cylinder, use $I=\frac12mr^2$.
+- Simplify to $\alpha=2F_T/(mr)$ before substituting, canceling only one factor of $r$.
 - Convert the radius from centimeters to meters, carry extra digits, and round only the final result.
 - Use the right-hand rule separately to report clockwise/into-page or counterclockwise/out-of-page direction.
 

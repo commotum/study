@@ -34,8 +34,8 @@ Angular acceleration is a rate of change: change in angular velocity per change 
 Use
 
 $$
-\alpha=\frac{\Delta \omega}{\Delta t}
-=\frac{\omega_f-\omega_i}{\Delta t}.
+\alpha=\frac{\Delta\omega}{\Delta t}
+=\frac{\omega_f-\omega_0}{\Delta t}.
 $$
 
 If the question asks for the magnitude, compute the signed angular acceleration first, then take the absolute value:
@@ -56,7 +56,7 @@ $$
 The initial angular velocity is
 
 $$
-\omega_i=5\ \mathrm{rad}/\mathrm{s},
+\omega_0=5\ \mathrm{rad}/\mathrm{s},
 $$
 
 and the final angular velocity is
@@ -70,7 +70,7 @@ Substitute into the constant-acceleration formula:
 $$
 \begin{aligned}
 \alpha
-&=\frac{\omega_f-\omega_i}{\Delta t} \\
+&=\frac{\omega_f-\omega_0}{\Delta t} \\
 &=\frac{17-5}{4} \\
 &=3.
 \end{aligned}
@@ -115,7 +115,7 @@ options:
 The change in angular velocity is final minus initial:
 
 $$
-\Delta \omega=8-20=-12\ \mathrm{rad}/\mathrm{s}.
+\Delta\omega=8-20=-12\ \mathrm{rad}/\mathrm{s}.
 $$
 
 Now divide by the elapsed time:
@@ -175,7 +175,7 @@ Compute the signed angular acceleration first:
 $$
 \begin{aligned}
 \alpha
-&=\frac{\omega_f-\omega_i}{\Delta t} \\
+&=\frac{\omega_f-\omega_0}{\Delta t} \\
 &=\frac{0-12}{26} \\
 &=-\frac{12}{26} \\
 &\approx -0.4615\ \mathrm{rad}/\mathrm{s}^2.
@@ -289,7 +289,7 @@ For constant angular acceleration, use the cue "initial angular velocity, final 
 2. Compute the signed value with final minus initial:
 
 $$
-\alpha=\frac{\omega_f-\omega_i}{\Delta t}.
+\alpha=\frac{\omega_f-\omega_0}{\Delta t}.
 $$
 
 3. Use units of $\mathrm{rad}/\mathrm{s}^2$.

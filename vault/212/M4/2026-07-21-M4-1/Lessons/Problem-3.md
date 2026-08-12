@@ -49,10 +49,10 @@ Equivalently, imagine sliding the entire graph horizontally. The period is the s
 
 The cleanest matching pairs are usually consecutive maxima or consecutive minima.
 
-**Example:** Consecutive maxima occur at $t=1.5\ \mathrm s$ and $t=6.5\ \mathrm s$. Then
+**Example:** Consecutive maxima occur at $t=1.5\ \mathrm{s}$ and $t=6.5\ \mathrm{s}$. Then
 
 $$
-T=6.5\ \mathrm s-1.5\ \mathrm s=5.0\ \mathrm s.
+T=6.5\ \mathrm{s}-1.5\ \mathrm{s}=5.0\ \mathrm{s}.
 $$
 
 **Explanation**
@@ -63,23 +63,23 @@ Both points represent the same place in the cycle, and there is exactly one comp
 type: radio
 id: p3-consecutive-landmarks
 content: |-
-  Consecutive troughs of an oscillator occur at $t=2.0\ \mathrm s$ and $t=7.0\ \mathrm s$. What is the period?
+  Consecutive troughs of an oscillator occur at $t=2.0\ \mathrm{s}$ and $t=7.0\ \mathrm{s}$. What is the period?
 options:
 - id: p3-consecutive-landmarks-a
   content: |-
-    $5.0\ \mathrm s$
+    $5.0\ \mathrm{s}$
   correct: true
   feedback: |-
-    Consecutive troughs are matching phase points, so subtract their time coordinates: $T=7.0-2.0=5.0\ \mathrm s$. Adding the times or halving their separation does not measure one complete repeat.
+    Consecutive troughs are matching phase points, so subtract their time coordinates: $T=7.0-2.0=5.0\ \mathrm{s}$. Adding the times or halving their separation does not measure one complete repeat.
 - id: p3-consecutive-landmarks-b
   content: |-
-    $9.0\ \mathrm s$
+    $9.0\ \mathrm{s}$
 - id: p3-consecutive-landmarks-c
   content: |-
-    $2.5\ \mathrm s$
+    $2.5\ \mathrm{s}$
 - id: p3-consecutive-landmarks-d
   content: |-
-    $3.5\ \mathrm s$
+    $3.5\ \mathrm{s}$
 ```
 
 ---
@@ -114,10 +114,10 @@ For a sinusoidal position graph, one cycle follows this landmark sequence:
 
 Likewise, an upward crossing and a downward crossing may have the same position, but they do not have the same phase.
 
-**Example:** A maximum occurs at $t=1\ \mathrm s$ and the next minimum occurs at $t=3\ \mathrm s$. The $2\ \mathrm s$ gap is half a cycle, so
+**Example:** A maximum occurs at $t=1\ \mathrm{s}$ and the next minimum occurs at $t=3\ \mathrm{s}$. The $2\ \mathrm{s}$ gap is half a cycle, so
 
 $$
-T=2(2\ \mathrm s)=4\ \mathrm s.
+T=2(2\ \mathrm{s})=4\ \mathrm{s}.
 $$
 
 **Explanation**
@@ -128,23 +128,23 @@ Equal vertical positions alone are not enough; the direction through that positi
 type: radio
 id: p3-phase-match
 content: |-
-  An oscillator crosses equilibrium moving upward at $t=0.5\ \mathrm s$ and again moving upward at $t=3.5\ \mathrm s$. What is its period?
+  An oscillator crosses equilibrium moving upward at $t=0.5\ \mathrm{s}$ and again moving upward at $t=3.5\ \mathrm{s}$. What is its period?
 options:
 - id: p3-phase-match-a
   content: |-
-    $3.0\ \mathrm s$
+    $3.0\ \mathrm{s}$
   correct: true
   feedback: |-
-    The two crossings have the same position and the same direction, so they are one full cycle apart: $T=3.5-0.5=3.0\ \mathrm s$. The value $1.5\ \mathrm s$ incorrectly treats the interval as two cycles.
+    The two crossings have the same position and the same direction, so they are one full cycle apart: $T=3.5-0.5=3.0\ \mathrm{s}$. The value $1.5\ \mathrm{s}$ incorrectly treats the interval as two cycles.
 - id: p3-phase-match-b
   content: |-
-    $1.5\ \mathrm s$
+    $1.5\ \mathrm{s}$
 - id: p3-phase-match-c
   content: |-
-    $4.0\ \mathrm s$
+    $4.0\ \mathrm{s}$
 - id: p3-phase-match-d
   content: |-
-    $0.33\ \mathrm s$
+    $0.33\ \mathrm{s}$
 ```
 
 ---
@@ -160,10 +160,10 @@ $$
 
 Count the **gaps** between matching landmarks, not just the number of landmarks.
 
-**Example:** Maxima occur at $t=1\ \mathrm s$, $5\ \mathrm s$, $9\ \mathrm s$, and $13\ \mathrm s$. The first and last maxima are separated by three cycles, so
+**Example:** Maxima occur at $t=1\ \mathrm{s}$, $5\ \mathrm{s}$, $9\ \mathrm{s}$, and $13\ \mathrm{s}$. The first and last maxima are separated by three cycles, so
 
 $$
-T=\frac{13\ \mathrm s-1\ \mathrm s}{3}=4\ \mathrm s.
+T=\frac{13\ \mathrm{s}-1\ \mathrm{s}}{3}=4\ \mathrm{s}.
 $$
 
 **Explanation**
@@ -174,23 +174,23 @@ Measuring several cycles can reduce the effect of small graph-reading errors.
 type: radio
 id: p3-multiple-cycles
 content: |-
-  Four consecutive maxima occur at $t=2\ \mathrm s$, $7\ \mathrm s$, $12\ \mathrm s$, and $17\ \mathrm s$. Use the first and last maxima to find the period.
+  Four consecutive maxima occur at $t=2\ \mathrm{s}$, $7\ \mathrm{s}$, $12\ \mathrm{s}$, and $17\ \mathrm{s}$. Use the first and last maxima to find the period.
 options:
 - id: p3-multiple-cycles-a
   content: |-
-    $5\ \mathrm s$
+    $5\ \mathrm{s}$
   correct: true
   feedback: |-
-    Four consecutive maxima create three cycle gaps. The total time is $17-2=15\ \mathrm s$, so $T=15/3=5\ \mathrm s$. Dividing by four counts landmarks instead of intervals.
+    Four consecutive maxima create three cycle gaps. The total time is $17-2=15\ \mathrm{s}$, so $T=15/3=5\ \mathrm{s}$. Dividing by four counts landmarks instead of intervals.
 - id: p3-multiple-cycles-b
   content: |-
-    $15\ \mathrm s$
+    $15\ \mathrm{s}$
 - id: p3-multiple-cycles-c
   content: |-
-    $3.75\ \mathrm s$
+    $3.75\ \mathrm{s}$
 - id: p3-multiple-cycles-d
   content: |-
-    $7.5\ \mathrm s$
+    $7.5\ \mathrm{s}$
 ```
 
 ---
@@ -207,21 +207,21 @@ options:
 Consecutive maxima occur at
 
 $$
-t=0,\quad 4.0\ \mathrm s,\quad 8.0\ \mathrm s.
+t=0,\quad 4.0\ \mathrm{s},\quad 8.0\ \mathrm{s}.
 $$
 
-These are horizontal-axis readings. The graph's vertical scale gives position and amplitude, not period. The visible maximum-to-minimum time is $2.0\ \mathrm s=T/2$, which confirms a full period of $4.0\ \mathrm s$.
+These are horizontal-axis readings. The graph's vertical scale gives position and amplitude, not period. The visible maximum-to-minimum time is $2.0\ \mathrm{s}=T/2$, which confirms a full period of $4.0\ \mathrm{s}$.
 
 Using either adjacent pair,
 
 $$
-T=4.0\ \mathrm s-0=4.0\ \mathrm s.
+T=4.0\ \mathrm{s}-0=4.0\ \mathrm{s}.
 $$
 
 The same result comes from the first and third maxima, which span two cycles:
 
 $$
-T=\frac{8.0\ \mathrm s-0}{2}=4.0\ \mathrm s.
+T=\frac{8.0\ \mathrm{s}-0}{2}=4.0\ \mathrm{s}.
 $$
 
 The requested answer form is: **Enter the period in seconds as a number only.** Enter **4.0**.

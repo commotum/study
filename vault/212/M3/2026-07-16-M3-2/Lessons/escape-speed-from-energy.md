@@ -40,12 +40,12 @@ $$
 v_{\mathrm{esc}}=\sqrt{\frac{2GM}{r}}.
 $$
 
-The units confirm the result. Since $[G]=\mathrm{m^3/(kg\,s^2)}$,
+The units confirm the result. Since $[G]=\mathrm{m}^3/(\mathrm{kg}\,\mathrm{s}^2)$,
 
 $$
 \left[\frac{GM}{r}\right]
-=\frac{(\mathrm{m^3/(kg\,s^2)})\,\mathrm{kg}}{\mathrm m}
-=\frac{\mathrm m^2}{\mathrm s^2}.
+=\frac{(\mathrm{m}^3/(\mathrm{kg}\,\mathrm{s}^2))\,\mathrm{kg}}{\mathrm{m}}
+=\frac{\mathrm{m}^2}{\mathrm{s}^2}.
 $$
 
 Thus $2GM/r$ has units of speed squared, and its square root has units of speed.

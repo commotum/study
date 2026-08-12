@@ -17,7 +17,7 @@ topic-code: MTH212.M4.29
 ## Prerequisites
 
 - Locate the center of mass of a uniform rod and a uniform sphere.
-- Use $I_P=I_{\mathrm{cm}}+md^2$ to shift a moment of inertia to a parallel axis.
+- Use $I_p=I_{\mathrm{cm}}+md^2$ to shift a moment of inertia to a parallel axis.
 - Evaluate a formula containing squares and a square root.
 
 ---
@@ -30,18 +30,18 @@ The recognition cue is a pendulum made from extended objects whose masses are no
 For small oscillations of a rigid assembly about a fixed pivot,
 
 $$
-T=2\pi\sqrt{\frac{I_P}{g\sum_i m_i d_i}},
+T=2\pi\sqrt{\frac{I_p}{g\sum_i m_i r_i}},
 $$
 
 where
 
-- $I_P=\sum_i I_{i,P}$ is the total moment of inertia about the pivot, and
-- $d_i$ is the distance from the pivot to component $i$'s center of mass.
+- $I_p=\sum_i I_{i,p}$ is the total moment of inertia about the pivot, and
+- $r_i$ is the distance from the pivot to component $i$'s center of mass.
 
-The denominator uses $\sum_i m_i d_i$ because
+The denominator uses $\sum_i m_i r_i$ because
 
 $$
-M_{\mathrm{tot}}d_{\mathrm{cm}}=\sum_i m_i d_i.
+M_{\mathrm{tot}}\ell=\sum_i m_i r_i.
 $$
 
 Use one component ledger for both sums:
@@ -58,30 +58,30 @@ The sphere's center is at $L+r$, not at $L$: the rod reaches the sphere's surfac
 <a id="locate-each-center-of-mass"></a>
 ## Locate Each Center of Mass
 
-**Example:** A uniform rod has length $L=6.0\ \mathrm{m}$ and mass $M=4.0\ \mathrm{kg}$. A uniform sphere of radius $r=0.50\ \mathrm{m}$ and mass $m=2.0\ \mathrm{kg}$ is attached to its lower end. Find the mass-distance sum $\sum_i m_i d_i$.
+**Example:** A uniform rod has length $L=6.0\ \mathrm{m}$ and mass $M=4.0\ \mathrm{kg}$. A uniform sphere of radius $r=0.50\ \mathrm{m}$ and mass $m=2.0\ \mathrm{kg}$ is attached to its lower end. Find the mass-distance sum $\sum_i m_i r_i$.
 
 **Explanation**
 
 The rod's center is halfway down the rod:
 
 $$
-d_{\mathrm{rod}}=\frac{L}{2}=3.0\ \mathrm{m}.
+r_{\mathrm{rod}}=\frac{L}{2}=3.0\ \mathrm{m}.
 $$
 
 The sphere's center is one radius beyond the rod's lower end:
 
 $$
-d_{\mathrm{sphere}}=L+r=6.5\ \mathrm{m}.
+r_{\mathrm{sphere}}=L+r=6.5\ \mathrm{m}.
 $$
 
 Therefore,
 
 $$
 \begin{aligned}
-\sum_i m_i d_i
+\sum_i m_i r_i
 &=M\frac{L}{2}+m(L+r)\\
 &=(4.0)(3.0)+(2.0)(6.5)\\
-&=25\ \mathrm{kg\,m}.
+&=25\ \mathrm{kg}\,\mathrm{m}.
 \end{aligned}
 $$
 
@@ -89,24 +89,24 @@ $$
 type: radio
 id: p14-q1
 content: |-
-  A uniform rod has $L=4.0\ \mathrm{m}$ and $M=6.0\ \mathrm{kg}$. A uniform sphere with $r=1.0\ \mathrm{m}$ and $m=2.0\ \mathrm{kg}$ is attached to its end. What is $\sum_i m_i d_i$ about the pivot at the rod's top?
+  A uniform rod has $L=4.0\ \mathrm{m}$ and $M=6.0\ \mathrm{kg}$. A uniform sphere with $r=1.0\ \mathrm{m}$ and $m=2.0\ \mathrm{kg}$ is attached to its end. What is $\sum_i m_i r_i$ about the pivot at the rod's top?
 options:
 - id: p14-q1-a
   content: |-
-    $8\ \mathrm{kg\,m}$
+    $8\ \mathrm{kg}\,\mathrm{m}$
 - id: p14-q1-b
   content: |-
-    $14\ \mathrm{kg\,m}$
+    $14\ \mathrm{kg}\,\mathrm{m}$
 - id: p14-q1-c
   content: |-
-    $20\ \mathrm{kg\,m}$
+    $20\ \mathrm{kg}\,\mathrm{m}$
 - id: p14-q1-d
   content: |-
-    $22\ \mathrm{kg\,m}$
+    $22\ \mathrm{kg}\,\mathrm{m}$
   correct: true
 - id: p14-q1-e
   content: |-
-    $34\ \mathrm{kg\,m}$
+    $34\ \mathrm{kg}\,\mathrm{m}$
 ```
 
 ---
@@ -124,12 +124,12 @@ For the rod,
 
 $$
 \begin{aligned}
-I_{\mathrm{rod},P}
-&=I_{\mathrm{rod,cm}}+M\left(\frac L2\right)^2\\
+I_{\mathrm{rod},p}
+&=I_{\mathrm{rod},\mathrm{cm}}+M\left(\frac L2\right)^2\\
 &=\frac{1}{12}ML^2+M\left(\frac L2\right)^2\\
 &=\frac13ML^2\\
 &=\frac13(4.0)(6.0)^2\\
-&=48.0\ \mathrm{kg\,m^2}.
+&=48.0\ \mathrm{kg}\,\mathrm{m}^2.
 \end{aligned}
 $$
 
@@ -137,18 +137,18 @@ For the sphere, shift its center-of-mass moment through the distance $L+r$:
 
 $$
 \begin{aligned}
-I_{\mathrm{sphere},P}
-&=I_{\mathrm{sphere,cm}}+m(L+r)^2\\
+I_{\mathrm{sphere},p}
+&=I_{\mathrm{sphere},\mathrm{cm}}+m(L+r)^2\\
 &=\frac25mr^2+m(L+r)^2\\
 &=\frac25(2.0)(0.50)^2+(2.0)(6.5)^2\\
-&=84.7\ \mathrm{kg\,m^2}.
+&=84.7\ \mathrm{kg}\,\mathrm{m}^2.
 \end{aligned}
 $$
 
 Add the contributions:
 
 $$
-I_P=48.0+84.7=132.7\ \mathrm{kg\,m^2}.
+I_p=48.0+84.7=132.7\ \mathrm{kg}\,\mathrm{m}^2.
 $$
 
 ```quiz
@@ -159,19 +159,19 @@ content: |-
 options:
 - id: p14-q2-a
   content: |-
-    $32.8\ \mathrm{kg\,m^2}$
+    $32.8\ \mathrm{kg}\,\mathrm{m}^2$
 - id: p14-q2-b
   content: |-
-    $58.8\ \mathrm{kg\,m^2}$
+    $58.8\ \mathrm{kg}\,\mathrm{m}^2$
 - id: p14-q2-c
   content: |-
-    $64.8\ \mathrm{kg\,m^2}$
+    $64.8\ \mathrm{kg}\,\mathrm{m}^2$
 - id: p14-q2-d
   content: |-
-    $82.0\ \mathrm{kg\,m^2}$
+    $82.0\ \mathrm{kg}\,\mathrm{m}^2$
 - id: p14-q2-e
   content: |-
-    $82.8\ \mathrm{kg\,m^2}$
+    $82.8\ \mathrm{kg}\,\mathrm{m}^2$
   correct: true
 ```
 
@@ -185,12 +185,12 @@ The nearby answers encode common mistakes: using a center-of-mass moment without
 **Example:** The rod-and-sphere assembly from the first two sections has
 
 $$
-I_P=132.7\ \mathrm{kg\,m^2}
+I_p=132.7\ \mathrm{kg}\,\mathrm{m}^2
 \quad\text{and}\quad
-\sum_i m_i d_i=25\ \mathrm{kg\,m}.
+\sum_i m_i r_i=25\ \mathrm{kg}\,\mathrm{m}.
 $$
 
-Find its small-angle period using $g=9.81\ \mathrm{m/s^2}$.
+Find its small-angle period using $g=9.81\ \mathrm{m}/\mathrm{s}^2$.
 
 **Explanation**
 
@@ -199,7 +199,7 @@ Substitute the two assembled quantities first:
 $$
 \begin{aligned}
 T
-&=2\pi\sqrt{\frac{I_P}{g\sum_i m_i d_i}}\\
+&=2\pi\sqrt{\frac{I_p}{g\sum_i m_i r_i}}\\
 &=2\pi\sqrt{
 \frac{132.7}
 {(9.81)(25)}
@@ -211,9 +211,9 @@ Evaluate from the inside out:
 
 $$
 \begin{aligned}
-\frac{I_P}{g\sum_i m_i d_i}
-&\approx 0.5411\ \mathrm{s^2},\\
-\sqrt{0.5411\ \mathrm{s^2}}
+\frac{I_p}{g\sum_i m_i r_i}
+&\approx 0.5411\ \mathrm{s}^2,\\
+\sqrt{0.5411\ \mathrm{s}^2}
 &\approx 0.7356\ \mathrm{s},\\
 T&=2\pi(0.7356\ \mathrm{s})
 \approx 4.62\ \mathrm{s}.
@@ -223,9 +223,9 @@ $$
 The units provide a quick check:
 
 $$
-\frac{\mathrm{kg\,m^2}}
-{(\mathrm{m/s^2})(\mathrm{kg\,m})}
-=\mathrm{s^2}.
+\frac{\mathrm{kg}\,\mathrm{m}^2}
+{(\mathrm{m}/\mathrm{s}^2)(\mathrm{kg}\,\mathrm{m})}
+=\mathrm{s}^2.
 $$
 
 The square root therefore has units of seconds.
@@ -234,7 +234,7 @@ The square root therefore has units of seconds.
 type: radio
 id: p14-q3
 content: |-
-  A composite physical pendulum has $I_P=72\ \mathrm{kg\,m^2}$ and $\sum_i m_i d_i=18\ \mathrm{kg\,m}$. Using $g=9.81\ \mathrm{m/s^2}$, what is its small-angle period?
+  A composite physical pendulum has $I_p=72\ \mathrm{kg}\,\mathrm{m}^2$ and $\sum_i m_i r_i=18\ \mathrm{kg}\,\mathrm{m}$. Using $g=9.81\ \mathrm{m}/\mathrm{s}^2$, what is its small-angle period?
 options:
 - id: p14-q3-a
   content: |-
@@ -266,19 +266,19 @@ options:
 First inventory the centers:
 
 $$
-d_{\mathrm{rod}}=\frac{L}{2}=13.5\ \mathrm{m},
+r_{\mathrm{rod}}=\frac{L}{2}=13.5\ \mathrm{m},
 \qquad
-d_{\mathrm{sphere}}=L+r=28.5\ \mathrm{m}.
+r_{\mathrm{sphere}}=L+r=28.5\ \mathrm{m}.
 $$
 
 The restoring mass-distance sum is
 
 $$
 \begin{aligned}
-\sum_i m_i d_i
+\sum_i m_i r_i
 &=M\frac L2+m(L+r)\\
 &=(400)(13.5)+(100)(28.5)\\
-&=8250\ \mathrm{kg\,m}.
+&=8250\ \mathrm{kg}\,\mathrm{m}.
 \end{aligned}
 $$
 
@@ -286,22 +286,22 @@ Now calculate both pivot moments:
 
 $$
 \begin{aligned}
-I_{\mathrm{rod},P}
+I_{\mathrm{rod},p}
 &=\frac13ML^2
 =\frac13(400)(27)^2
-=97\,200\ \mathrm{kg\,m^2},\\
-I_{\mathrm{sphere},P}
+=97\,200\ \mathrm{kg}\,\mathrm{m}^2,\\
+I_{\mathrm{sphere},p}
 &=\frac25mr^2+m(L+r)^2\\
 &=\frac25(100)(1.5)^2+(100)(28.5)^2\\
-&=81\,315\ \mathrm{kg\,m^2}.
+&=81\,315\ \mathrm{kg}\,\mathrm{m}^2.
 \end{aligned}
 $$
 
 Thus,
 
 $$
-I_P=97\,200+81\,315
-=178\,515\ \mathrm{kg\,m^2}.
+I_p=97\,200+81\,315
+=178\,515\ \mathrm{kg}\,\mathrm{m}^2.
 $$
 
 Finally,
@@ -352,13 +352,13 @@ The computed value $9.33\ \mathrm{s}$ matches **about 9-10 seconds**.
 
 When a pendulum contains several extended masses:
 
-1. Locate every center of mass: here $d_{\mathrm{rod}}=L/2$ and $d_{\mathrm{sphere}}=L+r$.
+1. Locate every center of mass: here $r_{\mathrm{rod}}=L/2$ and $r_{\mathrm{sphere}}=L+r$.
 2. Put every moment of inertia about the pivot: here
-   $I_{\mathrm{rod},P}=\frac13ML^2$ and
-   $I_{\mathrm{sphere},P}=\frac25mr^2+m(L+r)^2$.
+   $I_{\mathrm{rod},p}=\frac13ML^2$ and
+   $I_{\mathrm{sphere},p}=\frac25mr^2+m(L+r)^2$.
 3. Add the contributions and use
-   $T=2\pi\sqrt{I_P/(g\sum_i m_i d_i)}$.
-4. Check that the expression inside the square root has units of $\mathrm{s^2}$.
+   $T=2\pi\sqrt{I_p/(g\sum_i m_i r_i)}$.
+4. Check that the expression inside the square root has units of $\mathrm{s}^2$.
 
 The main trap is using $L$ as the sphere-center distance or omitting one of the parallel-axis terms.
 

@@ -37,38 +37,38 @@ The slowest successful trip still requires motion at the top. There, at the thre
 <a id="set-the-top-contact-condition"></a>
 ## Set the Top Contact Condition
 
-**Example:** A rider is at the top of a vertical loop of radius $R$ with speed $v_{\text{top}}$. What is the smallest possible $v_{\text{top}}$ that still keeps contact with the track?
+**Example:** A rider is at the top of a vertical loop of radius $r$ with speed $v_{\mathrm{top}}$. What is the smallest possible $v_{\mathrm{top}}$ that still keeps contact with the track?
 
 **Explanation**
 
 At the top of the loop, inward points downward. Both gravity and the normal force point inward if the rider is still in contact with the track:
 
 $$
-mg+N=m\dfrac{v_{\text{top}}^2}{R}.
+\sum F_r=m a_r=m\dfrac{v_{\mathrm{top}}^2}{r}=mg+N_{\mathrm{top}}.
 $$
 
 The track can push on the rider, but it cannot pull. At the exact minimum speed for contact,
 
 $$
-N=0.
+N_{\mathrm{top}}=0.
 $$
 
 So the force equation becomes
 
 $$
-mg=m\dfrac{v_{\text{top}}^2}{R}.
+mg=m\dfrac{v_{\mathrm{top}}^2}{r}.
 $$
 
 Cancel $m$ and solve:
 
 $$
-v_{\text{top}}^2=gR,
+v_{\mathrm{top}}^2=gr,
 $$
 
 so
 
 $$
-v_{\text{top}}=\sqrt{gR}.
+v_{\mathrm{top}}=\sqrt{gr}.
 $$
 
 ```quiz
@@ -80,17 +80,17 @@ content: |-
 options:
 - id: p11q1-a
   content: |-
-    $N=0$ and $mg=m\dfrac{v_{\text{top}}^2}{r}$
+    $N_{\mathrm{top}}=0$ and $mg=m\dfrac{v_{\mathrm{top}}^2}{r}$
   correct: true
 - id: p11q1-b
   content: |-
-    $N=mg$ and $mg=m\dfrac{v_{\text{top}}^2}{r}$
+    $N_{\mathrm{top}}=mg$ and $mg=m\dfrac{v_{\mathrm{top}}^2}{r}$
 - id: p11q1-c
   content: |-
-    $N=0$ and $0=m\dfrac{v_{\text{top}}^2}{r}$
+    $N_{\mathrm{top}}=0$ and $0=m\dfrac{v_{\mathrm{top}}^2}{r}$
 - id: p11q1-d
   content: |-
-    $N$ must point outward and equal $mg$.
+    $N_{\mathrm{top}}$ must point outward and equal $mg$.
 ```
 
 ---
@@ -98,20 +98,20 @@ options:
 <a id="use-energy-from-bottom-to-top"></a>
 ## Use Energy from Bottom to Top
 
-**Example:** A rider enters the bottom of a frictionless vertical loop of radius $R$ with speed $v_0$ and reaches the top with speed $v_{\text{top}}$. Write the energy equation connecting these speeds.
+**Example:** A rider enters the bottom of a frictionless vertical loop of radius $r$ with speed $v_0$ and reaches the top with speed $v_{\mathrm{top}}$. Write the energy equation connecting these speeds.
 
 **Explanation**
 
-Choose gravitational potential energy $0$ at the bottom of the loop. The top of the loop is $2R$ higher than the bottom, so the top has gravitational potential energy
+Choose gravitational potential energy $0$ at the bottom of the loop. The top of the loop is $2r$ higher than the bottom, so the top has gravitational potential energy
 
 $$
-mg(2R).
+mg(2r).
 $$
 
 With rolling friction ignored, mechanical energy is conserved:
 
 $$
-\dfrac12 mv_0^2=\dfrac12 mv_{\text{top}}^2+mg(2R).
+\dfrac12 mv_0^2=\dfrac12 mv_{\mathrm{top}}^2+mg(2r).
 $$
 
 This equation says the entry kinetic energy must supply both the kinetic energy still needed at the top and the gravitational potential energy gained while rising.
@@ -121,21 +121,21 @@ type: radio
 id: p11-q2-energy-equation
 shuffle: true
 content: |-
-  A cart enters a frictionless vertical loop of radius $r$ at the bottom with speed $v_0$ and reaches the top with speed $v_{\text{top}}$. Which energy equation correctly connects the two speeds?
+  A cart enters a frictionless vertical loop of radius $r$ at the bottom with speed $v_0$ and reaches the top with speed $v_{\mathrm{top}}$. Which energy equation correctly connects the two speeds?
 options:
 - id: p11q2-a
   content: |-
-    $\dfrac12 mv_0^2=\dfrac12 mv_{\text{top}}^2+mg(2r)$
+    $\dfrac12 mv_0^2=\dfrac12 mv_{\mathrm{top}}^2+mg(2r)$
   correct: true
 - id: p11q2-b
   content: |-
-    $\dfrac12 mv_0^2=\dfrac12 mv_{\text{top}}^2+mgr$
+    $\dfrac12 mv_0^2=\dfrac12 mv_{\mathrm{top}}^2+mgr$
 - id: p11q2-c
   content: |-
-    $\dfrac12 mv_0^2=\dfrac12 mv_{\text{top}}^2-mg(2r)$
+    $\dfrac12 mv_0^2=\dfrac12 mv_{\mathrm{top}}^2-mg(2r)$
 - id: p11q2-d
   content: |-
-    $v_0=v_{\text{top}}$ because the path is circular.
+    $v_0=v_{\mathrm{top}}$ because the path is circular.
 ```
 
 ---
@@ -143,54 +143,54 @@ options:
 <a id="combine-the-two-conditions"></a>
 ## Combine the Two Conditions
 
-**Example:** A rider enters a frictionless vertical loop of radius $R$ from the bottom. What entry speed gives the minimum speed for completing the loop?
+**Example:** A rider enters a frictionless vertical loop of radius $r$ from the bottom. What entry speed gives the minimum speed for completing the loop?
 
 **Explanation**
 
 Start with the energy equation:
 
 $$
-\dfrac12 mv_0^2=\dfrac12 mv_{\text{top}}^2+mg(2R).
+\dfrac12 mv_0^2=\dfrac12 mv_{\mathrm{top}}^2+mg(2r).
 $$
 
-The unknown is the entry speed $v_0$. Treat $g$ and $R$ as given quantities, and replace $v_{\text{top}}^2$ using the contact condition.
+The unknown is the entry speed $v_0$. Treat $g$ and $r$ as given quantities, and replace $v_{\mathrm{top}}^2$ using the contact condition.
 
-Keep the position labels attached to every speed. The radial equation gives a condition on $v_{\text{top}}$ at one instant; it does not directly give the bottom entry speed $v_0$. Conservation of energy connects those differently located quantities.
+Keep the position labels attached to every speed. The radial equation gives a condition on $v_{\mathrm{top}}$ at one instant; it does not directly give the bottom entry speed $v_0$. Conservation of energy connects those differently located quantities.
 
 At the minimum speed, the top contact condition gives
 
 $$
-v_{\text{top}}^2=gR.
+v_{\mathrm{top}}^2=gr.
 $$
 
 Substitute that into the energy equation:
 
 $$
-\dfrac12 mv_0^2=\dfrac12 m(gR)+2mgR.
+\dfrac12 mv_0^2=\dfrac12 m(gr)+2mgr.
 $$
 
 The right side has
 
 $$
-\dfrac12 mgR+2mgR=\dfrac52 mgR.
+\dfrac12 mgr+2mgr=\dfrac52 mgr.
 $$
 
 So
 
 $$
-\dfrac12 mv_0^2=\dfrac52 mgR.
+\dfrac12 mv_0^2=\dfrac52 mgr.
 $$
 
 Cancel $\dfrac12 m$ from both sides:
 
 $$
-v_0^2=5gR.
+v_0^2=5gr.
 $$
 
 Since speed is nonnegative,
 
 $$
-v_0=\sqrt{5gR}.
+v_0=\sqrt{5gr}.
 $$
 
 ```quiz
@@ -198,7 +198,7 @@ type: radio
 id: p11-q3-combine
 shuffle: true
 content: |-
-  A rider enters the bottom of a frictionless loop of radius $r$. At the minimum entry speed, $v_{\text{top}}^2=gr$. What is $v_0^2$ at the bottom?
+  A rider enters the bottom of a frictionless loop of radius $r$. At the minimum entry speed, $v_{\mathrm{top}}^2=gr$. What is $v_0^2$ at the bottom?
 options:
 - id: p11q3-a
   content: |-
@@ -227,7 +227,7 @@ options:
 The top contact condition gives the minimum top speed:
 
 $$
-v_{\text{top}}^2=gr.
+v_{\mathrm{top}}^2=gr.
 $$
 
 The energy equation from bottom to top is
@@ -277,19 +277,19 @@ options:
 <a id="summary"></a>
 ## Summary
 
-For a minimum-speed loop-the-loop question, test contact at the top first. At the minimum, $N=0$, so
+For a minimum-speed loop-the-loop question, test contact at the top first. At the minimum, $N_{\mathrm{top}}=0$, so
 
 $$
-v_{\text{top}}^2=gr.
+v_{\mathrm{top}}^2=gr.
 $$
 
 Then use energy from the bottom to the top:
 
 $$
-\dfrac12 mv_0^2=\dfrac12 mv_{\text{top}}^2+mg(2r).
+\dfrac12 mv_0^2=\dfrac12 mv_{\mathrm{top}}^2+mg(2r).
 $$
 
-Substituting $v_{\text{top}}^2=gr$ gives
+Substituting $v_{\mathrm{top}}^2=gr$ gives
 
 $$
 v_0=\sqrt{5gr}.

@@ -80,4 +80,4 @@ A uniform thin rod has mass $M$ and length $L$. It rotates about an axis through
    =4.
    $$
 
-6. Thus $I_{\mathrm{end}}=4I_{\mathrm{cm}}$. More of the rod’s mass is far from an end axis, and the distance enters as $r^2$. Both expressions have units $\text{kg}\cdot\text{m}^2$.
+6. Thus $I_{\mathrm{end}}=4I_{\mathrm{cm}}$. More of the rod’s mass is far from an end axis, and the distance enters as $r^2$. Both expressions have units $\mathrm{kg}\cdot\mathrm{m}^2$.

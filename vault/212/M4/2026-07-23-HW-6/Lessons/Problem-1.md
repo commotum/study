@@ -63,9 +63,9 @@ This conclusion assumes the spring continues to obey Hooke's law.
 Compare the period before and after the change:
 
 $$
-T_{\text{old}}=2\pi\sqrt{\frac{m}{k}},
+T_{\mathrm{old}}=2\pi\sqrt{\frac{m}{k}},
 \qquad
-T_{\text{new}}=2\pi\sqrt{\frac{m}{k}}.
+T_{\mathrm{new}}=2\pi\sqrt{\frac{m}{k}}.
 $$
 
 Use a short dependency check:
@@ -77,7 +77,7 @@ Use a short dependency check:
 Therefore,
 
 $$
-T_{\text{new}}=T_{\text{old}}.
+T_{\mathrm{new}}=T_{\mathrm{old}}.
 $$
 
 ```quiz
@@ -109,7 +109,7 @@ options:
 **Example:** A block's position is
 
 $$
-x(t)=(0.10\ \mathrm{m})\cos\left((4\ \mathrm{rad/s})t\right).
+x(t)=(0.10\ \mathrm{m})\cos\left((4\ \mathrm{rad}/\mathrm{s})t\right).
 $$
 
 The amplitude is doubled without changing the block or spring. Find the new position function and compare the periods.
@@ -125,14 +125,14 @@ $$
 $A$ controls the maximum displacement, while $\omega$ controls how quickly a cycle repeats. Doubling only the amplitude gives
 
 $$
-x_{\text{new}}(t)=(0.20\ \mathrm{m})\cos\left((4\ \mathrm{rad/s})t\right).
+x_{\mathrm{new}}(t)=(0.20\ \mathrm{m})\cos\left((4\ \mathrm{rad}/\mathrm{s})t\right).
 $$
 
-The angular frequency is still $4\ \mathrm{rad/s}$, so both motions have
+The angular frequency is still $4\ \mathrm{rad}/\mathrm{s}$, so both motions have
 
 $$
 T=\frac{2\pi}{\omega}
-=\frac{2\pi}{4\ \mathrm{rad/s}}
+=\frac{2\pi}{4\ \mathrm{rad}/\mathrm{s}}
 =\frac{\pi}{2}\ \mathrm{s}.
 $$
 
@@ -144,7 +144,7 @@ id: p1-position-function
 content: |-
   A block moves according to
   $$
-  x(t)=(0.30\ \mathrm{m})\cos\left((5\ \mathrm{rad/s})t+\frac{\pi}{3}\right).
+  x(t)=(0.30\ \mathrm{m})\cos\left((5\ \mathrm{rad}/\mathrm{s})t+\frac{\pi}{3}\right).
   $$
   If only the amplitude is tripled, which quantity remains unchanged?
 options:
@@ -171,17 +171,17 @@ content: |-
 options:
 - id: p1-parameter-location-a
   content: |-
-    $x_{\text{new}}(t)=2A\cos(\omega t+\phi)$
+    $x_{\mathrm{new}}(t)=2A\cos(\omega t+\phi)$
   correct: true
 - id: p1-parameter-location-b
   content: |-
-    $x_{\text{new}}(t)=A\cos(2\omega t+\phi)$
+    $x_{\mathrm{new}}(t)=A\cos(2\omega t+\phi)$
 - id: p1-parameter-location-c
   content: |-
-    $x_{\text{new}}(t)=A\cos(\omega t+2\phi)$
+    $x_{\mathrm{new}}(t)=A\cos(\omega t+2\phi)$
 - id: p1-parameter-location-d
   content: |-
-    $x_{\text{new}}(t)=2A\cos(2\omega t+\phi)$
+    $x_{\mathrm{new}}(t)=2A\cos(2\omega t+\phi)$
 ```
 
 ---
@@ -242,7 +242,7 @@ For an ideal block–spring oscillator:
 2. Separate the parameter roles: $A$ sets motion size, while $\omega$ sets cycle time.
 3. Write $T=2\pi/\omega=2\pi\sqrt{m/k}$.
 4. Check that $m$ and $k$ are unchanged.
-5. Since $A$ does not appear in the period formula, conclude $T_{\text{new}}=T_{\text{old}}$.
+5. Since $A$ does not appear in the period formula, conclude $T_{\mathrm{new}}=T_{\mathrm{old}}$.
 
 The main trap is assuming that a larger travel distance automatically means a longer period. In ideal simple harmonic motion, amplitude changes the size of the motion, not its cycle time.
 

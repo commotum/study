@@ -60,9 +60,9 @@ $$
 Therefore,
 
 $$
-m_{\text{large}}=\rho(2L)^3=8\rho L^3,
+m_{\mathrm{large}}=\rho(2L)^3=8\rho L^3,
 \qquad
-m_{\text{small}}=\rho L^3.
+m_{\mathrm{small}}=\rho L^3.
 $$
 
 The large cube is eight times as massive, not twice as massive. The side-length scale factor must be cubed.
@@ -292,7 +292,7 @@ id: m2-1lec-q3
 content: |-
   **Question 3**
 
-  The cubic blocks shown have constant density $\rho$. Find the center of mass $x_{\mathrm{cm}}$ relative to the origin at the left edge of the large block. Use $\rho=1.5\ \mathrm{kg/m^3}$ and $L=0.75\ \mathrm{m}$, and enter your answer in meters.
+  The cubic blocks shown have constant density $\rho$. Find the center of mass $x_{\mathrm{cm}}$ relative to the origin at the left edge of the large block. Use $\rho=1.5\ \mathrm{kg}/\mathrm{m}^3$ and $L=0.75\ \mathrm{m}$, and enter your answer in meters.
 
   ![](<../Source/Images/composite-cubes.png>)
 

@@ -23,9 +23,9 @@ The **principle of superposition** states that when waves overlap, their displac
 
 $$
 \boxed{
-D_{\mathrm{net}}
+y_{\mathrm{net}}
 =
-D_1+D_2
+y_1+y_2
 }.
 $$
 
@@ -108,7 +108,7 @@ A sinusoidal traveling wave may be written as
 
 $$
 \boxed{
-D(x,t)
+y(x,t)
 =
 A\sin(kx-\omega t+\phi_0)
 },
@@ -150,7 +150,7 @@ Consider two positions $x_1$ and $x_2$ along the same wave.
 The displacements are
 
 $$
-D(x_1,t)
+y(x_1,t)
 =
 A\sin(kx_1-\omega t+\phi_0)
 $$
@@ -158,7 +158,7 @@ $$
 and
 
 $$
-D(x_2,t)
+y(x_2,t)
 =
 A\sin(kx_2-\omega t+\phi_0).
 $$
@@ -264,7 +264,7 @@ Assume the waves have the same frequency and wavelength but may have different i
 The first wave may be written as
 
 $$
-D_1
+y_1
 =
 A\sin(kr_1-\omega t+\phi_{1,0}),
 $$
@@ -272,7 +272,7 @@ $$
 and the second wave as
 
 $$
-D_2
+y_2
 =
 A\sin(kr_2-\omega t+\phi_{2,0}),
 $$
@@ -512,7 +512,7 @@ Radio waves are electromagnetic waves, so they travel at approximately the speed
 
 $$
 \boxed{
-c=3.0\times10^8\ \mathrm{m/s}
+c=3.0\times10^8\ \mathrm{m}/\mathrm{s}
 }.
 $$
 
@@ -575,7 +575,7 @@ $$
 Using
 
 $$
-c=\lambda f,
+c=f\lambda,
 $$
 
 the wavelength is
@@ -590,7 +590,7 @@ $$
 \lambda
 =
 \frac{
-3.0\times10^8\ \mathrm{m/s}
+3.0\times10^8\ \mathrm{m}/\mathrm{s}
 }{
 3.0\times10^6\ \mathrm{s^{-1}}
 }.
@@ -726,7 +726,7 @@ $$
 The wavelength is related to the frequency and sound speed by
 
 $$
-v=\lambda f.
+v_{\mathrm{wave}}=f\lambda.
 $$
 
 Therefore,
@@ -734,7 +734,7 @@ Therefore,
 $$
 \frac{1}{\lambda}
 =
-\frac{f}{v}.
+\frac{f}{v_{\mathrm{wave}}}.
 $$
 
 Because the sources are in phase,
@@ -745,12 +745,12 @@ $$
 \frac{2\pi\Delta r}{\lambda}.
 $$
 
-Substituting $1/\lambda=f/v$ gives
+Substituting $1/\lambda=f/v_{\mathrm{wave}}$ gives
 
 $$
 \Delta\phi
 =
-\frac{2\pi f}{v}\Delta r.
+\frac{2\pi f}{v_{\mathrm{wave}}}\Delta r.
 $$
 
 Therefore,
@@ -759,7 +759,7 @@ $$
 \boxed{
 \Delta\phi
 =
-\frac{2\pi f}{v}
+\frac{2\pi f}{v_{\mathrm{wave}}}
 \left[
 \sqrt{x_2^2+y^2}
 -
@@ -771,7 +771,7 @@ $$
 Using the speed of sound
 
 $$
-v=343\ \mathrm{m/s}
+v_{\mathrm{wave}}=343\ \mathrm{m}/\mathrm{s}
 $$
 
 and the coordinates supplied in the lecture diagram gives
@@ -1063,7 +1063,7 @@ For sound in air under typical conditions,
 
 $$
 \boxed{
-v_{\mathrm{sound}}\approx343\ \mathrm{m/s}
+v_{\mathrm{wave}}\approx343\ \mathrm{m}/\mathrm{s}
 }.
 $$
 
@@ -1071,7 +1071,7 @@ For electromagnetic waves in vacuum or air,
 
 $$
 \boxed{
-c\approx3.0\times10^8\ \mathrm{m/s}
+c\approx3.0\times10^8\ \mathrm{m}/\mathrm{s}
 }.
 $$
 
@@ -1081,7 +1081,7 @@ Use
 
 $$
 \boxed{
-v=\lambda f
+v_{\mathrm{wave}}=f\lambda
 }
 $$
 
@@ -1089,7 +1089,7 @@ or
 
 $$
 \boxed{
-\lambda=\frac{v}{f}
+\lambda=\frac{v_{\mathrm{wave}}}{f}
 }.
 $$
 
@@ -1169,7 +1169,7 @@ For a sinusoidal traveling wave,
 
 $$
 \boxed{
-D(x,t)
+y(x,t)
 =
 A\sin(kx-\omega t+\phi_0)
 }.

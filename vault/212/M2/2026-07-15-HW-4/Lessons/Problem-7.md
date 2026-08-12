@@ -87,10 +87,10 @@ options:
 The incoming angular momentum about the combined center of mass has magnitude
 
 $$
-L_{\mathrm{CM}}=bp.
+L_{\mathrm{cm}}=bp.
 $$
 
-If $b\ne 0$, then $L_{\mathrm{CM}}\ne 0$. With no external torque, that angular momentum remains after the collision, so the combined object rotates. If the momentum line passes exactly through the combined center of mass, then $b=0$, and this test predicts no rotation about the center of mass.
+If $b\ne 0$, then $L_{\mathrm{cm}}\ne 0$. With no external torque, that angular momentum remains after the collision, so the combined object rotates. If the momentum line passes exactly through the combined center of mass, then $b=0$, and this test predicts no rotation about the center of mass.
 
 ```quiz
 type: radio
@@ -129,10 +129,10 @@ The rod's center is at $(0,L/2)$, while the ball's center is at $(-r,0)$. Take t
 
 $$
 \begin{aligned}
-x_{\mathrm{CM}}
+x_{\mathrm{cm}}
 &=\frac{m(0)+(m/2)(-r)}{m+m/2}
 =-\frac{r}{3},\\[4pt]
-y_{\mathrm{CM}}
+y_{\mathrm{cm}}
 &=\frac{m(L/2)+(m/2)(0)}{m+m/2}\\
 &=\frac{L}{3}.
 \end{aligned}
@@ -179,7 +179,7 @@ Use the two-part test:
 2. The ball's horizontal momentum line is at $y=0$, while the combined center of mass is $L/3$ above that line. Thus the perpendicular lever arm is $L/3$, so
 
 $$
-L_{\mathrm{CM}}=\left(\frac{L}{3}\right)\left(\frac{m}{2}v\right)=\frac{mvL}{6}\ne 0.
+L_{\mathrm{cm}}=\left(\frac{L}{3}\right)\left(\frac{m}{2}v\right)=\frac{mvL}{6}\ne 0.
 $$
 
 The object rotates, and its rotational motion is about an axis through the combined center of mass, perpendicular to the page. Its center of mass also translates.
@@ -252,7 +252,7 @@ For an isolated collision in which objects stick:
 
 1. Treat the stuck objects as one combined object.
 2. Locate the center of mass of the combined system, not either object's old center.
-3. Check the incoming momentum's perpendicular lever arm about that point: $L_{\mathrm{CM}}=r_\perp p$.
+3. Check the incoming momentum's perpendicular lever arm about that point: $L_{\mathrm{cm}}=r_\perp p$.
 4. If $r_\perp\ne 0$, the combined object rotates about an axis through its center of mass while that center of mass translates.
 
 The main traps are choosing the rod's original center or the contact point as though either were an external pivot, and assuming that sticking by itself guarantees rotation. The nonzero lever arm is what establishes the rotation.

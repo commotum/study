@@ -26,19 +26,19 @@ topic-code: MTH212.M5.29
 <a id="introduction"></a>
 ## Introduction
 
-When a moving sound source must produce a particular heard frequency, compare the target heard frequency $f'$ with the emitted frequency $f_s$ before choosing a direction.
+When a moving sound source must produce a particular heard frequency, compare the target heard frequency $f_{\mathrm{obs}}$ with the emitted frequency $f_0$ before choosing a direction.
 
-- If $f'>f_s$, the listener needs an **upshift**, so the source must move **toward** the listener.
-- If $f'<f_s$, the listener needs a **downshift**, so the source must move **away from** the listener.
-- If $f'=f_s$, no Doppler shift is required.
+- If $f_{\mathrm{obs}}>f_0$, the listener needs an **upshift**, so the source must move **toward** the listener.
+- If $f_{\mathrm{obs}}<f_0$, the listener needs a **downshift**, so the source must move **away from** the listener.
+- If $f_{\mathrm{obs}}=f_0$, no Doppler shift is required.
 
 This lesson assumes the listener is stationary and the sound source is the object whose direction must be chosen.
 
 | Frequency comparison | Required shift | Source motion |
 |---|---|---|
-| $f'>f_s$ | Upshift | Toward the listener |
-| $f'<f_s$ | Downshift | Away from the listener |
-| $f'=f_s$ | No shift | No relative source motion is needed |
+| $f_{\mathrm{obs}}>f_0$ | Upshift | Toward the listener |
+| $f_{\mathrm{obs}}<f_0$ | Downshift | Away from the listener |
+| $f_{\mathrm{obs}}=f_0$ | No shift | No relative source motion is needed |
 
 ---
 
@@ -52,7 +52,7 @@ This lesson assumes the listener is stationary and the sound source is the objec
 Write the comparison directly:
 
 $$
-f'=15\ \mathrm{kHz}<18\ \mathrm{kHz}=f_s.
+f_{\mathrm{obs}}=15\ \mathrm{kHz}<18\ \mathrm{kHz}=f_0.
 $$
 
 The heard frequency must be lower than the emitted frequency, so a **downshift** is required. Do this comparison before thinking about the direction of motion.
@@ -138,10 +138,10 @@ As the source recedes, each new wavefront is emitted farther from the listener t
 For a fixed sound speed $v$ in the air,
 
 $$
-f'=\frac{v}{\lambda'}.
+f_{\mathrm{obs}}=\frac{v}{\lambda'}.
 $$
 
-A longer observed wavelength $\lambda'$ produces a lower observed frequency $f'$. Thus,
+A longer observed wavelength $\lambda'$ produces a lower observed frequency $f_{\mathrm{obs}}$. Thus,
 
 $$
 \text{source moves away}
@@ -150,7 +150,7 @@ $$
 \longrightarrow
 \lambda'\text{ increases}
 \longrightarrow
-f'\text{ decreases}.
+f_{\mathrm{obs}}\text{ decreases}.
 $$
 
 ```quiz
@@ -227,8 +227,8 @@ First translate the words into labeled quantities:
 
 | Quantity | Value |
 |---|---:|
-| Emitted frequency | $f_s=25\ \mathrm{kHz}$ |
-| Target heard frequency | $f'=20\ \mathrm{kHz}$ |
+| Emitted frequency | $f_0=25\ \mathrm{kHz}$ |
+| Target heard frequency | $f_{\mathrm{obs}}=20\ \mathrm{kHz}$ |
 
 Now compare the target heard frequency with the emitted frequency:
 
@@ -243,7 +243,7 @@ The full decision chain is
 $$
 20\ \mathrm{kHz}<25\ \mathrm{kHz}
 \longrightarrow
-f'<f_s
+f_{\mathrm{obs}}<f_0
 \longrightarrow
 \text{downshift}
 \longrightarrow
@@ -275,10 +275,10 @@ options:
 
 Use this decision routine for a moving source and stationary listener:
 
-1. Label the emitted frequency $f_s$ and target heard frequency $f'$.
+1. Label the emitted frequency $f_0$ and target heard frequency $f_{\mathrm{obs}}$.
 2. Compare them before choosing a direction.
-3. If $f'>f_s$, choose **toward** for an upshift.
-4. If $f'<f_s$, choose **away** for a downshift.
+3. If $f_{\mathrm{obs}}>f_0$, choose **toward** for an upshift.
+4. If $f_{\mathrm{obs}}<f_0$, choose **away** for a downshift.
 5. Explain the choice with wavefront spacing: compressed means higher frequency; spread out means lower frequency.
 
 The main traps are reversing the direction rule and confusing a change in frequency with a change in loudness.

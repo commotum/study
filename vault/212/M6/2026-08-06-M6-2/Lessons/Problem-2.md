@@ -36,10 +36,10 @@ y=\frac{S}{2},
 \qquad
 d=\frac{m\lambda}{\sin\theta},
 \qquad
-N=\frac{1}{d}=\frac{\sin\theta}{m\lambda},
+\frac{N}{W}=\frac{1}{d}=\frac{\sin\theta}{m\lambda},
 $$
 
-where $S$ is the separation between the two opposite-order fringes. The spacing $d$ is a length per slit, while its reciprocal $N$ is a number of slits per unit length. Keeping those reciprocal roles distinct prevents a correct value of $d$ from being reported as the requested density.
+where $S$ is the separation between the two opposite-order fringes. The spacing $d$ is a length per slit, while its reciprocal $N/W$ is the number of slits per unit length. Keeping those reciprocal roles distinct prevents a correct value of $d$ from being reported as the requested density.
 
 ---
 
@@ -154,30 +154,30 @@ $$
 d\sin\theta_m=m\lambda.
 $$
 
-Line density is the reciprocal of slit spacing. Make the requested quantity $N=1/d$ the subject before inserting numbers:
+Line density is the reciprocal of slit spacing. Make the requested quantity $N/W=1/d$ the subject before inserting numbers:
 
 $$
-N=\frac{\sin\theta_m}{m\lambda}.
+\frac{N}{W}=\frac{\sin\theta_m}{m\lambda}.
 $$
 
 Using meters first,
 
 $$
-N
+\frac{N}{W}
 =\frac{\sin 30.0^\circ}{(1)(500\times10^{-9}\ \mathrm{m})}
-=1.00\times10^6\ \mathrm{slits/m}.
+=1.00\times10^6\ \mathrm{slits}/\mathrm{m}.
 $$
 
 Since one meter contains $1000\ \mathrm{mm}$, use a conversion factor whose meter units cancel:
 
 $$
-N
-=(1.00\times10^6\ \mathrm{slits/m})
+\frac{N}{W}
+=(1.00\times10^6\ \mathrm{slits}/\mathrm{m})
 \left(\frac{1\ \mathrm{m}}{1000\ \mathrm{mm}}\right)
-=1.00\times10^3\ \mathrm{slits/mm}.
+=1.00\times10^3\ \mathrm{slits}/\mathrm{mm}.
 $$
 
-The final unit $\mathrm{slits/mm}$ also checks that the reciprocal was taken in the correct direction.
+The final unit $\mathrm{slits}/\mathrm{mm}$ also checks that the reciprocal was taken in the correct direction.
 
 ```quiz
 type: radio
@@ -187,25 +187,25 @@ content: |-
 options:
 - id: p2-density-q1-a
   content: |-
-    $570\ \mathrm{slits/mm}$
+    $570\ \mathrm{slits}/\mathrm{mm}$
   correct: true
   feedback: |-
-    A grating maximum gives $N=1/d=\sin\theta_1/\lambda$. Substitution gives $5.70\times10^5\ \mathrm{slits/m}$, and dividing by $1000\ \mathrm{mm/m}$ gives $570\ \mathrm{slits/mm}$.
+    A grating maximum gives $N/W=1/d=\sin\theta_1/\lambda$. Substitution gives $5.70\times10^5\ \mathrm{slits}/\mathrm{m}$, and dividing by $1000\ \mathrm{mm}/\mathrm{m}$ gives $570\ \mathrm{slits}/\mathrm{mm}$.
 - id: p2-density-q1-b
   content: |-
-    $5.70\times10^5\ \mathrm{slits/mm}$
+    $5.70\times10^5\ \mathrm{slits}/\mathrm{mm}$
   feedback: |-
-    The numerical value $5.70\times10^5$ is the density per meter. A millimeter is a smaller length interval, so the number of slits per millimeter is smaller by a factor of $1000$, giving $570\ \mathrm{slits/mm}$.
+    The numerical value $5.70\times10^5$ is the density per meter. A millimeter is a smaller length interval, so the number of slits per millimeter is smaller by a factor of $1000$, giving $570\ \mathrm{slits}/\mathrm{mm}$.
 - id: p2-density-q1-c
   content: |-
-    $1.75\times10^{-3}\ \mathrm{slits/mm}$
+    $1.75\times10^{-3}\ \mathrm{slits}/\mathrm{mm}$
   feedback: |-
-    The value $1.75\times10^{-3}\ \mathrm{mm}$ is the slit spacing $d=\lambda/\sin\theta_1$, not a line density. Taking its reciprocal gives $N=1/d=570\ \mathrm{slits/mm}$.
+    The value $1.75\times10^{-3}\ \mathrm{mm}$ is the slit spacing $d=\lambda/\sin\theta_1$, not a line density. Taking its reciprocal gives $N/W=1/d=570\ \mathrm{slits}/\mathrm{mm}$.
 - id: p2-density-q1-d
   content: |-
-    $1.67\times10^3\ \mathrm{slits/mm}$
+    $1.67\times10^3\ \mathrm{slits}/\mathrm{mm}$
   feedback: |-
-    This is $1/\lambda$ after expressing the wavelength in millimeters, which would correspond to replacing $\sin20.0^\circ$ by $1$. The measured angle contributes the factor $\sin20.0^\circ=0.342$, reducing the density to $570\ \mathrm{slits/mm}$.
+    This is $1/\lambda$ after expressing the wavelength in millimeters, which would correspond to replacing $\sin20.0^\circ$ by $1$. The measured angle contributes the factor $\sin20.0^\circ=0.342$, reducing the density to $570\ \mathrm{slits}/\mathrm{mm}$.
 ```
 
 ---
@@ -236,25 +236,25 @@ $$
 Then use $m=1$ in the grating equation and solve directly for line density:
 
 $$
-N
+\frac{N}{W}
 =\frac{\sin\theta_1}{m\lambda}
 =\frac{\sin(19.502\ldots^\circ)}{(1)(633\times10^{-9}\ \mathrm{m})}
-=5.274\ldots\times10^5\ \mathrm{slits/m}.
+=5.274\ldots\times10^5\ \mathrm{slits}/\mathrm{m}.
 $$
 
 Convert from slits per meter to slits per millimeter with the units visible:
 
 $$
-N
-=(5.274\ldots\times10^5\ \mathrm{slits/m})
+\frac{N}{W}
+=(5.274\ldots\times10^5\ \mathrm{slits}/\mathrm{m})
 \left(\frac{1\ \mathrm{m}}{1000\ \mathrm{mm}}\right)
-=527.4\ldots\ \mathrm{slits/mm}.
+=527.4\ldots\ \mathrm{slits}/\mathrm{mm}.
 $$
 
 The measured values support two significant figures, so the requested result is
 
 $$
-\boxed{N=5.3\times10^2\ \mathrm{slits/mm}},
+\boxed{\frac{N}{W}=5.3\times10^2\ \mathrm{slits}/\mathrm{mm}},
 $$
 
 entered as `530` when the response requires a number only.
@@ -267,30 +267,30 @@ content: |-
 options:
 - id: p2-full-chain-q1-a
   content: |-
-    $330\ \mathrm{slits/mm}$
+    $330\ \mathrm{slits}/\mathrm{mm}$
   feedback: |-
     This results from halving the already one-sided displacement a second time. The full $1.00\ \mathrm{m}$ separation gives $y_1=0.500\ \mathrm{m}$ after exactly one division by two.
 - id: p2-full-chain-q1-b
   content: |-
-    $630\ \mathrm{slits/mm}$
+    $630\ \mathrm{slits}/\mathrm{mm}$
   correct: true
   feedback: |-
-    Symmetry gives $y_1=0.500\ \mathrm{m}$, so $\theta_1=\tan^{-1}(0.500/1.50)$ and $\sin\theta_1=0.3162$. Thus $N=\sin\theta_1/\lambda=6.32\times10^5\ \mathrm{m}^{-1}=630\ \mathrm{slits/mm}$ to two significant figures.
+    Symmetry gives $y_1=0.500\ \mathrm{m}$, so $\theta_1=\tan^{-1}(0.500/1.50)$ and $\sin\theta_1=0.3162$. Thus $N/W=\sin\theta_1/\lambda=6.32\times10^5\ \mathrm{m}^{-1}=630\ \mathrm{slits}/\mathrm{mm}$ to two significant figures.
 - id: p2-full-chain-q1-c
   content: |-
-    $670\ \mathrm{slits/mm}$
+    $670\ \mathrm{slits}/\mathrm{mm}$
   feedback: |-
-    This uses the small-angle replacement $\sin\theta\approx\tan\theta=y_1/L$. Here the exact geometry gives $\sin\theta_1=0.3162$, not $0.3333$, so the exact density rounds to $630\ \mathrm{slits/mm}$.
+    This uses the small-angle replacement $\sin\theta\approx\tan\theta=y_1/L$. Here the exact geometry gives $\sin\theta_1=0.3162$, not $0.3333$, so the exact density rounds to $630\ \mathrm{slits}/\mathrm{mm}$.
 - id: p2-full-chain-q1-d
   content: |-
-    $1.1\times10^3\ \mathrm{slits/mm}$
+    $1.1\times10^3\ \mathrm{slits}/\mathrm{mm}$
   feedback: |-
-    This treats the full $1.00\ \mathrm{m}$ fringe-to-fringe separation as the one-sided triangle height. The central maximum lies halfway between the two fringes, so using $y_1=0.500\ \mathrm{m}$ gives $630\ \mathrm{slits/mm}$.
+    This treats the full $1.00\ \mathrm{m}$ fringe-to-fringe separation as the one-sided triangle height. The central maximum lies halfway between the two fringes, so using $y_1=0.500\ \mathrm{m}$ gives $630\ \mathrm{slits}/\mathrm{mm}$.
 - id: p2-full-chain-q1-e
   content: |-
-    $6.3\times10^5\ \mathrm{slits/mm}$
+    $6.3\times10^5\ \mathrm{slits}/\mathrm{mm}$
   feedback: |-
-    The value $6.3\times10^5$ is the density in slits per meter. Converting to slits per millimeter requires dividing by $1000$, producing $6.3\times10^2\ \mathrm{slits/mm}$.
+    The value $6.3\times10^5$ is the density in slits per meter. Converting to slits per millimeter requires dividing by $1000$, producing $6.3\times10^2\ \mathrm{slits}/\mathrm{mm}$.
 ```
 
 ---
@@ -303,11 +303,11 @@ When the measurement runs from the $-m$ fringe to the $+m$ fringe, use this chec
 1. Convert the full separation $S$ to a one-sided displacement: $y=S/2$.
 2. Use exact screen geometry: $\theta=\tan^{-1}(y/L)$.
 3. Use the correct fringe order in $d\sin\theta=m\lambda$.
-4. Solve for line density: $N=1/d=\sin\theta/(m\lambda)$.
-5. Convert the rate so the units cancel: $(\mathrm{slits/m})(1\ \mathrm{m}/1000\ \mathrm{mm})=\mathrm{slits/mm}$.
+4. Solve for line density: $N/W=1/d=\sin\theta/(m\lambda)$.
+5. Convert the rate so the units cancel: $(\mathrm{slits}/\mathrm{m})(1\ \mathrm{m}/1000\ \mathrm{mm})=\mathrm{slits}/\mathrm{mm}$.
 6. Keep guard digits through the trigonometry and round only the final requested density.
 
-The main trap is using the full symmetric separation as $y$. A second common trap is reporting the slit spacing $d$ when the question asks for its reciprocal, the line density $N$.
+The main trap is using the full symmetric separation as $y$. A second common trap is reporting the slit spacing $d$ when the question asks for its reciprocal, the line density $N/W$.
 
 <!-- lesson-nav:start -->
 ---

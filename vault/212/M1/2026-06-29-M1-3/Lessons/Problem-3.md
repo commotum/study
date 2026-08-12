@@ -18,8 +18,8 @@ topic-code: MTH212.M1.53
 
 - Weight points downward with magnitude $mg$.
 - The seat's normal force on the rider points upward in this Ferris-wheel model.
-- For circular motion with angular velocity $\omega$ and radius $r$, the inward acceleration has magnitude $\omega^2r$.
-- Newton's second law in the radial direction: $\sum F_{\text{in}}=m\omega^2r$.
+- For circular motion with angular velocity $\omega$ and radius $r$, the inward acceleration has magnitude $a_r=r\omega^2$.
+- Newton's second law in the radial direction: $\sum F_r=m a_r=m\frac{v^2}{r}=m\omega^2 r$.
 
 ---
 
@@ -32,7 +32,7 @@ The reusable procedure is:
 
 1. Choose inward as positive at each position.
 2. Give each real force a sign based on that local inward direction.
-3. Set the signed net force equal to $m\omega^2r$.
+3. Set the signed net force equal to $m a_r=m\omega^2 r$.
 4. Solve for each normal force and compare the two expressions.
 
 Use a separate inward direction at the top and at the bottom:
@@ -89,21 +89,21 @@ options:
 At the top, inward is downward. Weight points inward and the normal force points outward, so
 
 $$
-mg-N_{\text{top}}=m\omega^2r.
+mg-N_{\mathrm{top}}=m a_r=m\omega^2 r.
 $$
 
 At the bottom, inward is upward. The normal force points inward and weight points outward, so
 
 $$
-N_{\text{bottom}}-mg=m\omega^2r.
+N_{\mathrm{bottom}}-mg=m a_r=m\omega^2 r.
 $$
 
 The right-hand side is positive in both equations because it is the required inward net force.
 
 | Position | Inward direction | Force pointing inward | Force pointing outward | Radial equation |
 | --- | --- | --- | --- | --- |
-| Top | Downward | $mg$ | $N_{\text{top}}$ | $mg-N_{\text{top}}=m\omega^2r$ |
-| Bottom | Upward | $N_{\text{bottom}}$ | $mg$ | $N_{\text{bottom}}-mg=m\omega^2r$ |
+| Top | Downward | $mg$ | $N_{\mathrm{top}}$ | $mg-N_{\mathrm{top}}=m a_r=m\omega^2 r$ |
+| Bottom | Upward | $N_{\mathrm{bottom}}$ | $mg$ | $N_{\mathrm{bottom}}-mg=m a_r=m\omega^2 r$ |
 
 ```quiz
 type: radio
@@ -114,17 +114,17 @@ content: |-
 options:
 - id: p3q2-a
   content: |-
-    Top: $mg-N_{\text{top}}=m\omega^2r$; bottom: $N_{\text{bottom}}-mg=m\omega^2r$
+    Top: $mg-N_{\mathrm{top}}=m a_r=m\omega^2 r$; bottom: $N_{\mathrm{bottom}}-mg=m a_r=m\omega^2 r$
   correct: true
 - id: p3q2-b
   content: |-
-    Top: $N_{\text{top}}-mg=m\omega^2r$; bottom: $mg-N_{\text{bottom}}=m\omega^2r$
+    Top: $N_{\mathrm{top}}-mg=m\omega^2 r$; bottom: $mg-N_{\mathrm{bottom}}=m\omega^2 r$
 - id: p3q2-c
   content: |-
-    Top: $mg+N_{\text{top}}=m\omega^2r$; bottom: $mg+N_{\text{bottom}}=m\omega^2r$
+    Top: $mg+N_{\mathrm{top}}=m\omega^2 r$; bottom: $mg+N_{\mathrm{bottom}}=m\omega^2 r$
 - id: p3q2-d
   content: |-
-    Top: $N_{\text{top}}=m\omega^2r$; bottom: $N_{\text{bottom}}=m\omega^2r$
+    Top: $N_{\mathrm{top}}=m\omega^2 r$; bottom: $N_{\mathrm{bottom}}=m\omega^2 r$
 ```
 
 ---
@@ -132,46 +132,46 @@ options:
 <a id="solve-each-equation-for-the-normal-force"></a>
 ## Solve Each Equation for the Normal Force
 
-**Example:** Use the top and bottom equations to solve for $N_{\text{top}}$ and $N_{\text{bottom}}$.
+**Example:** Use the top and bottom equations to solve for $N_{\mathrm{top}}$ and $N_{\mathrm{bottom}}$.
 
 **Explanation**
 
 Start with the top equation:
 
 $$
-mg-N_{\text{top}}=m\omega^2r.
+mg-N_{\mathrm{top}}=m a_r=m\omega^2 r.
 $$
 
-Move $N_{\text{top}}$ to the right and $m\omega^2r$ to the left:
+Move $N_{\mathrm{top}}$ to the right and $m\omega^2 r$ to the left:
 
 $$
-N_{\text{top}}=mg-m\omega^2r.
+N_{\mathrm{top}}=mg-m\omega^2 r.
 $$
 
 Now use the bottom equation:
 
 $$
-N_{\text{bottom}}-mg=m\omega^2r.
+N_{\mathrm{bottom}}-mg=m a_r=m\omega^2 r.
 $$
 
 Add $mg$ to both sides:
 
 $$
-N_{\text{bottom}}=mg+m\omega^2r.
+N_{\mathrm{bottom}}=mg+m\omega^2 r.
 $$
 
-The same centripetal term is subtracted at the top and added at the bottom.
+The same inward net-force term is subtracted at the top and added at the bottom.
 
 You can check both expressions by substituting them back into the original radial equations:
 
 $$
-mg-(mg-m\omega^2r)=m\omega^2r
+mg-(mg-m\omega^2 r)=m\omega^2 r
 $$
 
 and
 
 $$
-(mg+m\omega^2r)-mg=m\omega^2r.
+(mg+m\omega^2 r)-mg=m\omega^2 r.
 $$
 
 ```quiz
@@ -179,21 +179,21 @@ type: radio
 id: p3-q3-solved-normal-forces
 shuffle: true
 content: |-
-  If $mg-N_{\text{top}}=m\omega^2r$ and $N_{\text{bottom}}-mg=m\omega^2r$, which expressions are correct?
+  If $mg-N_{\mathrm{top}}=m a_r=m\omega^2 r$ and $N_{\mathrm{bottom}}-mg=m a_r=m\omega^2 r$, which expressions are correct?
 options:
 - id: p3q3-a
   content: |-
-    $N_{\text{top}}=mg+m\omega^2r$ and $N_{\text{bottom}}=mg-m\omega^2r$
+    $N_{\mathrm{top}}=mg+m\omega^2 r$ and $N_{\mathrm{bottom}}=mg-m\omega^2 r$
 - id: p3q3-b
   content: |-
-    $N_{\text{top}}=mg-m\omega^2r$ and $N_{\text{bottom}}=mg+m\omega^2r$
+    $N_{\mathrm{top}}=mg-m\omega^2 r$ and $N_{\mathrm{bottom}}=mg+m\omega^2 r$
   correct: true
 - id: p3q3-c
   content: |-
-    $N_{\text{top}}=N_{\text{bottom}}=mg$
+    $N_{\mathrm{top}}=N_{\mathrm{bottom}}=mg$
 - id: p3q3-d
   content: |-
-    $N_{\text{top}}=N_{\text{bottom}}=m\omega^2r$
+    $N_{\mathrm{top}}=N_{\mathrm{bottom}}=m\omega^2 r$
 ```
 
 ---
@@ -208,32 +208,32 @@ options:
 The two normal forces are
 
 $$
-N_{\text{top}}=mg-m\omega^2r
+N_{\mathrm{top}}=mg-m\omega^2 r
 $$
 
 and
 
 $$
-N_{\text{bottom}}=mg+m\omega^2r.
+N_{\mathrm{bottom}}=mg+m\omega^2 r.
 $$
 
-For a rotating wheel, $m\omega^2r$ is positive. The top normal force is $mg$ minus that positive term, and the bottom normal force is $mg$ plus that positive term. Therefore,
+For a rotating wheel, $m\omega^2 r$ is positive. The top normal force is $mg$ minus that positive term, and the bottom normal force is $mg$ plus that positive term. Therefore,
 
 $$
-N_{\text{top}}<N_{\text{bottom}}.
+N_{\mathrm{top}}<N_{\mathrm{bottom}}.
 $$
 
 A direct comparison gives the same result:
 
 $$
 \begin{aligned}
-N_{\text{bottom}}-N_{\text{top}}
-&=(mg+m\omega^2r)-(mg-m\omega^2r) \\
-&=2m\omega^2r.
+N_{\mathrm{bottom}}-N_{\mathrm{top}}
+&=(mg+m\omega^2 r)-(mg-m\omega^2 r) \\
+&=2m\omega^2 r.
 \end{aligned}
 $$
 
-For a rotating wheel, $2m\omega^2r>0$, so $N_{\text{bottom}}$ is larger.
+For a rotating wheel, $2m\omega^2 r>0$, so $N_{\mathrm{bottom}}$ is larger.
 
 ```quiz
 type: radio
@@ -244,13 +244,13 @@ content: |-
 options:
 - id: p3q4-a
   content: |-
-    $N_{\text{top}}=N_{\text{bottom}}$
+    $N_{\mathrm{top}}=N_{\mathrm{bottom}}$
 - id: p3q4-b
   content: |-
-    $N_{\text{top}}>N_{\text{bottom}}$
+    $N_{\mathrm{top}}>N_{\mathrm{bottom}}$
 - id: p3q4-c
   content: |-
-    $N_{\text{top}}<N_{\text{bottom}}$
+    $N_{\mathrm{top}}<N_{\mathrm{bottom}}$
   correct: true
 ```
 
@@ -262,16 +262,16 @@ options:
 When comparing Ferris-wheel normal forces, choose the inward direction separately at each position. At the top, inward is downward, so
 
 $$
-mg-N_{\text{top}}=m\omega^2r.
+mg-N_{\mathrm{top}}=m a_r=m\omega^2 r.
 $$
 
 At the bottom, inward is upward, so
 
 $$
-N_{\text{bottom}}-mg=m\omega^2r.
+N_{\mathrm{bottom}}-mg=m a_r=m\omega^2 r.
 $$
 
-Solving gives $N_{\text{top}}=mg-m\omega^2r$ and $N_{\text{bottom}}=mg+m\omega^2r$, so the normal force is smaller at the top. The main trap is using the same sign pattern at both positions instead of changing the inward direction.
+Solving gives $N_{\mathrm{top}}=mg-m\omega^2 r$ and $N_{\mathrm{bottom}}=mg+m\omega^2 r$, so the normal force is smaller at the top. The main trap is using the same sign pattern at both positions instead of changing the inward direction.
 
 <!-- lesson-nav:start -->
 ---

@@ -259,13 +259,13 @@ $$
 $$
 \text{rain collects at nonzero radius}
 \quad\Longrightarrow\quad
-I_f>I_i,
+I_f>I_0,
 $$
 
 and therefore
 
 $$
-\omega_f=\frac{I_i}{I_f}\omega_0<\omega_0.
+\omega_f=\frac{I_0}{I_f}\omega_0<\omega_0.
 $$
 
 The system slows down. Angular speed is not conserved, and rotational kinetic energy is not the correct conserved quantity for the inelastic capture of rain.
@@ -300,10 +300,10 @@ options:
     As rain collects, the system's mass and moment of inertia increase. Therefore,
 
     $$
-    \omega_f=\frac{I_i}{I_f}\omega_0.
+    \omega_f=\frac{I_0}{I_f}\omega_0.
     $$
 
-    Since $I_f>I_i$, it follows that $\omega_f<\omega_0$.
+    Since $I_f>I_0$, it follows that $\omega_f<\omega_0$.
 - id: c
   content: |-
     It continues rotating at the same angular speed.

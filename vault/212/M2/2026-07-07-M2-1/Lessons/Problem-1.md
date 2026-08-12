@@ -29,13 +29,13 @@ topic-code: MTH212.M2.01
 For point masses on the $x$-axis, the center-of-mass position is the mass-weighted average
 
 $$
-x_{\mathrm{cm}}=rac{\sum_i m_i x_i}{\sum_i m_i}.
+x_{\mathrm{cm}}=\frac{\sum_i m_i x_i}{\sum_i m_i}.
 $$
 
 For two masses, this becomes
 
 $$
-x_{\mathrm{cm}}=rac{m_1x_1+m_2x_2}{m_1+m_2}.
+x_{\mathrm{cm}}=\frac{m_1x_1+m_2x_2}{m_1+m_2}.
 $$
 
 The numerator pairs each mass with its own position. The denominator is the total mass. When both masses are positive, the result must lie between their positions and closer to the heavier mass.
@@ -167,7 +167,7 @@ The answer lies between $-d$ and $d$ and is on the negative side, closer to the 
 For masses at $0$ and $d$, it is useful to write
 
 $$
-x_{\mathrm{cm}}=\frac{m_{\text{right}}}{m_{\text{left}}+m_{\text{right}}}d.
+x_{\mathrm{cm}}=\frac{m_{\mathrm{right}}}{m_{\mathrm{left}}+m_{\mathrm{right}}}d.
 $$
 
 The coefficient must be between $0$ and $1$. It is greater than $1/2$ exactly when the right-hand mass is heavier.
@@ -226,7 +226,7 @@ The coefficient has a direct ratio meaning:
 
 $$
 \frac{x_{\mathrm{cm}}}{d}
-=\frac{m_{\text{right}}}{m_{\text{left}}+m_{\text{right}}}
+=\frac{m_{\mathrm{right}}}{m_{\mathrm{left}}+m_{\mathrm{right}}}
 =\frac{1.8}{2.8}
 =\frac{9}{14}.
 $$

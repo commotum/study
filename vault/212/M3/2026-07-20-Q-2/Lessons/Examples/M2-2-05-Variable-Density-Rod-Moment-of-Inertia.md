@@ -18,7 +18,7 @@ It rotates about an axis through its left end and perpendicular to the rod.
 
 **C.** Evaluate the integral and express $I$ only in terms of $M$ and $L$.
 
-**D.** Evaluate the result for $M=0.65\text{ kg}$ and $L=1.8\text{ m}$.
+**D.** Evaluate the result for $M=0.65\ \mathrm{kg}$ and $L=1.8\ \mathrm{m}$.
 
 **E.** Check the units and compare the result with the uniform-rod end value $\frac13ML^2$.
 
@@ -84,9 +84,9 @@ It rotates about an axis through its left end and perpendicular to the rod.
 5. Evaluate numerically:
 
    $$
-   I=\frac12(0.65\text{ kg})(1.8\text{ m})^2
-   \approx1.05\text{ kg}\cdot\text{m}^2
-   \approx1.1\text{ kg}\cdot\text{m}^2.
+   I=\frac12(0.65\ \mathrm{kg})(1.8\ \mathrm{m})^2
+   \approx1.05\ \mathrm{kg}\cdot\mathrm{m}^2
+   \approx1.1\ \mathrm{kg}\cdot\mathrm{m}^2.
    $$
 
 6. The result exceeds $\frac13ML^2$ because the increasing density places more mass near the far end, where the distance from the axis is largest.

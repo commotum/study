@@ -34,7 +34,7 @@ where
 
 - $r$ is the distance from the pivot to the force's point of application,
 - $F$ is the force magnitude, and
-- $\theta$ is the angle between the position vector $\vec r$ and the force vector $\vec F$.
+- $\theta$ is the angle between the position vector $\vec{r}$ and the force vector $\vec{F}$.
 
 The same formula can be written as
 
@@ -56,42 +56,42 @@ The angle factor matters just as much as the distance from the pivot. A large $r
 
 ### Worked example
 
-A $10\text{ N}$ force is applied $0.80\text{ m}$ from a hinge at an angle of $30^\circ$ to the position vector. Its torque magnitude is
+A $10\ \mathrm{N}$ force is applied $0.80\ \mathrm{m}$ from a hinge at an angle of $30^\circ$ to the position vector. Its torque magnitude is
 
 $$
 \tau=(0.80)(10)\sin 30^\circ
 =8(0.5)
-=4.0\text{ N}\cdot\text{m}.
+=4.0\ \mathrm{N}\cdot\mathrm{m}.
 $$
 
-The factor $\sin\theta$ keeps only the component of the force that is perpendicular to $\vec r$.
+The factor $\sin\theta$ keeps only the component of the force that is perpendicular to $\vec{r}$.
 
 ```quiz
 type: radio
 id: m2-3-p1-formula
 shuffle: true
 content: |-
-  A $12\text{ N}$ force is applied $0.50\text{ m}$ from a pivot and perpendicular to the position vector. What is the torque magnitude?
+  A $12\ \mathrm{N}$ force is applied $0.50\ \mathrm{m}$ from a pivot and perpendicular to the position vector. What is the torque magnitude?
 options:
 - id: a
   content: |-
-    $0\text{ N}\cdot\text{m}$
+    $0\ \mathrm{N}\cdot\mathrm{m}$
 - id: b
   content: |-
-    $6.0\text{ N}\cdot\text{m}$
+    $6.0\ \mathrm{N}\cdot\mathrm{m}$
   correct: true
   feedback: |-
     Perpendicular means $\theta=90^\circ$, so
 
     $$
-    \tau=rF\sin\theta=(0.50)(12)(1)=6.0\text{ N}\cdot\text{m}.
+    \tau=rF\sin\theta=(0.50)(12)(1)=6.0\ \mathrm{N}\cdot\mathrm{m}.
     $$
 - id: c
   content: |-
-    $12\text{ N}\cdot\text{m}$
+    $12\ \mathrm{N}\cdot\mathrm{m}$
 - id: d
   content: |-
-    $24\text{ N}\cdot\text{m}$
+    $24\ \mathrm{N}\cdot\mathrm{m}$
 ```
 
 ## Think in Perpendicular Lever Arms
@@ -114,7 +114,7 @@ so the force with the largest score has the largest torque magnitude.
 
 ### Worked example
 
-Two equal forces act about the same pivot. Force A has $r_\perp=0.60\text{ m}$, while Force B has $r_\perp=0.45\text{ m}$. Because the force magnitudes are equal,
+Two equal forces act about the same pivot. Force A has $r_\perp=0.60\ \mathrm{m}$, while Force B has $r_\perp=0.45\ \mathrm{m}$. Because the force magnitudes are equal,
 
 $$
 0.60>0.45
@@ -129,20 +129,20 @@ type: radio
 id: m2-3-p1-lever-arm
 shuffle: true
 content: |-
-  Three forces have the same magnitude. Their perpendicular lever arms are $0.25\text{ m}$, $0.70\text{ m}$, and $0.55\text{ m}$. Which force produces the largest torque magnitude?
+  Three forces have the same magnitude. Their perpendicular lever arms are $0.25\ \mathrm{m}$, $0.70\ \mathrm{m}$, and $0.55\ \mathrm{m}$. Which force produces the largest torque magnitude?
 options:
 - id: a
   content: |-
-    The force with $r_\perp=0.25\text{ m}$
+    The force with $r_\perp=0.25\ \mathrm{m}$
 - id: b
   content: |-
-    The force with $r_\perp=0.70\text{ m}$
+    The force with $r_\perp=0.70\ \mathrm{m}$
   correct: true
   feedback: |-
     For equal force magnitudes, $\tau=Fr_\perp$ is largest when $r_\perp$ is largest.
 - id: c
   content: |-
-    The force with $r_\perp=0.55\text{ m}$
+    The force with $r_\perp=0.55\ \mathrm{m}$
 - id: d
   content: |-
     All three produce the same torque magnitude.
@@ -160,9 +160,9 @@ For fixed $r$ and $F$:
 
 | Force direction | Angle | Torque consequence |
 |---|---:|---|
-| Perpendicular to $\vec r$ | $90^\circ$ | Maximum: $\tau=rF$ |
-| Along $\vec r$ away from the pivot | $0^\circ$ | Zero: $\tau=0$ |
-| Along $\vec r$ toward the pivot | $180^\circ$ | Zero: $\tau=0$ |
+| Perpendicular to $\vec{r}$ | $90^\circ$ | Maximum: $\tau=rF$ |
+| Along $\vec{r}$ away from the pivot | $0^\circ$ | Zero: $\tau=0$ |
+| Along $\vec{r}$ toward the pivot | $180^\circ$ | Zero: $\tau=0$ |
 | At any other angle | between the cases above | Only the perpendicular part contributes |
 
 A force pointing directly toward or away from the hinge has a line of action through the hinge, so its perpendicular lever arm is zero. This remains true even if the force is applied far from the hinge.
@@ -215,10 +215,10 @@ Four equal forces have the following positions and angles:
 
 | Force | $r$ | $\theta$ | Score $S=r\sin\theta$ |
 |---|---:|---:|---:|
-| A | $1.0\text{ m}$ | $90^\circ$ | $1.0\text{ m}$ |
-| B | $1.2\text{ m}$ | $0^\circ$ | $0$ |
-| C | $1.0\text{ m}$ | $30^\circ$ | $0.50\text{ m}$ |
-| D | $0.60\text{ m}$ | $90^\circ$ | $0.60\text{ m}$ |
+| A | $1.0\ \mathrm{m}$ | $90^\circ$ | $1.0\ \mathrm{m}$ |
+| B | $1.2\ \mathrm{m}$ | $0^\circ$ | $0$ |
+| C | $1.0\ \mathrm{m}$ | $30^\circ$ | $0.50\ \mathrm{m}$ |
+| D | $0.60\ \mathrm{m}$ | $90^\circ$ | $0.60\ \mathrm{m}$ |
 
 Force A has the largest score and therefore the largest torque magnitude. Force B is applied farthest away, but its direction makes its torque zero. Force D is perpendicular, but its shorter radius gives it a smaller lever arm than A.
 
@@ -229,10 +229,10 @@ shuffle: true
 content: |-
   Equal-magnitude forces W, X, Y, and Z have the following $(r,\theta)$ values. Which force produces the largest torque magnitude?
 
-  - W: $(0.80\text{ m},90^\circ)$
-  - X: $(1.10\text{ m},0^\circ)$
-  - Y: $(1.00\text{ m},45^\circ)$
-  - Z: $(0.60\text{ m},90^\circ)$
+  - W: $(0.80\ \mathrm{m},90^\circ)$
+  - X: $(1.10\ \mathrm{m},0^\circ)$
+  - Y: $(1.00\ \mathrm{m},45^\circ)$
+  - Z: $(0.60\ \mathrm{m},90^\circ)$
 options:
 - id: a
   content: |-

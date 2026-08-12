@@ -17,7 +17,7 @@ topic-code: MTH212.M5.21
 
 ## Prerequisites
 
-- Recognize coefficients in an expression of the form $A\sin(kx-\omega t+\phi)$.
+- Recognize coefficients in an expression of the form $A\sin(kx-\omega t+\phi_0)$.
 - Know that sine and cosine complete one cycle after a phase change of $2\pi$ radians.
 - Simplify a quotient while keeping track of units.
 
@@ -29,7 +29,7 @@ topic-code: MTH212.M5.21
 A traveling sinusoidal wave is commonly written as
 
 $$
-y(x,t)=A\sin(kx-\omega t+\phi).
+y(x,t)=A\sin(kx-\omega t+\phi_0).
 $$
 
 When a question asks how long the wave takes to travel **one wavelength**, it is asking for the time needed for the entire wave pattern to advance by one full cycle. That time is the **period** $T$.
@@ -54,7 +54,7 @@ This is the shortest route. Computing the wavelength and wave speed is useful as
 Match each part of
 
 $$
-y(x,t)=A\sin(kx-\omega t+\phi)
+y(x,t)=A\sin(kx-\omega t+\phi_0)
 $$
 
 to its job:
@@ -70,7 +70,7 @@ For a time question, focus first on $\omega$.
 **Example:** Identify $k$ and $\omega$ in
 
 $$
-y(x,t)=(0.04\ \mathrm{m})\cos\left[(3\ \mathrm{rad/m})x-(12\ \mathrm{rad/s})t\right].
+y(x,t)=(0.04\ \mathrm{m})\cos\left[(3\ \mathrm{rad}/\mathrm{m})x-(12\ \mathrm{rad}/\mathrm{s})t\right].
 $$
 
 **Explanation**
@@ -78,9 +78,9 @@ $$
 Compare the phase with $kx-\omega t$:
 
 $$
-k=3\ \mathrm{rad/m},
+k=3\ \mathrm{rad}/\mathrm{m},
 \qquad
-\omega=12\ \mathrm{rad/s}.
+\omega=12\ \mathrm{rad}/\mathrm{s}.
 $$
 
 The amplitude $0.04\ \mathrm{m}$ does not determine how long a cycle lasts.
@@ -91,26 +91,26 @@ id: p8-read-omega
 content: |-
   For
   $$
-  y(x,t)=(0.03\ \mathrm{m})\sin\left[(2\ \mathrm{rad/m})x-(18\ \mathrm{rad/s})t\right],
+  y(x,t)=(0.03\ \mathrm{m})\sin\left[(2\ \mathrm{rad}/\mathrm{m})x-(18\ \mathrm{rad}/\mathrm{s})t\right],
   $$
   what is the angular frequency $\omega$?
 options:
 - id: p8-read-omega-a
   content: |-
-    $2\ \mathrm{rad/m}$
+    $2\ \mathrm{rad}/\mathrm{m}$
 - id: p8-read-omega-b
   content: |-
-    $18\ \mathrm{rad/s}$
+    $18\ \mathrm{rad}/\mathrm{s}$
   correct: true
 - id: p8-read-omega-c
   content: |-
     $0.03\ \mathrm{m}$
 - id: p8-read-omega-d
   content: |-
-    $9\ \mathrm{rad/s}$
+    $9\ \mathrm{rad}/\mathrm{s}$
 - id: p8-read-omega-e
   content: |-
-    $-18\ \mathrm{rad/s}$
+    $-18\ \mathrm{rad}/\mathrm{s}$
 ```
 
 ---
@@ -129,7 +129,7 @@ $$
 **Example:** A wave has angular frequency
 
 $$
-\omega=8\ \mathrm{rad/s}.
+\omega=8\ \mathrm{rad}/\mathrm{s}.
 $$
 
 How much time does it take the wave to travel one wavelength?
@@ -150,7 +150,7 @@ The radians cancel, leaving seconds, as a time answer should.
 type: radio
 id: p8-period-direct
 content: |-
-  A traveling wave has angular frequency $\omega=6\ \mathrm{rad/s}$. How long does it take the wave to travel one wavelength?
+  A traveling wave has angular frequency $\omega=6\ \mathrm{rad}/\mathrm{s}$. How long does it take the wave to travel one wavelength?
 options:
 - id: p8-period-direct-a
   content: |-
@@ -197,9 +197,9 @@ This also shows why $k$ cancels from the one-wavelength travel time.
 **Example:** Suppose
 
 $$
-k=4\ \mathrm{rad/m},
+k=4\ \mathrm{rad}/\mathrm{m},
 \qquad
-\omega=10\ \mathrm{rad/s}.
+\omega=10\ \mathrm{rad}/\mathrm{s}.
 $$
 
 **Explanation**
@@ -212,8 +212,8 @@ $$
 $$
 
 $$
-v=\frac{10}{4}\ \mathrm{m/s}
-=\frac{5}{2}\ \mathrm{m/s}.
+v=\frac{10}{4}\ \mathrm{m}/\mathrm{s}
+=\frac{5}{2}\ \mathrm{m}/\mathrm{s}.
 $$
 
 Now divide distance by speed:
@@ -230,7 +230,7 @@ The direct method gives the same value: $2\pi/10=\pi/5$ seconds.
 type: radio
 id: p8-period-check
 content: |-
-  A wave has $k=6\ \mathrm{rad/m}$ and $\omega=9\ \mathrm{rad/s}$. What is the time required to travel one wavelength?
+  A wave has $k=6\ \mathrm{rad}/\mathrm{m}$ and $\omega=9\ \mathrm{rad}/\mathrm{s}$. What is the time required to travel one wavelength?
 options:
 - id: p8-period-check-a
   content: |-
@@ -261,13 +261,13 @@ Keep these roles separate:
 - $k$ controls the wavelength: $\lambda=2\pi/k$.
 - The amplitude $A$ controls maximum displacement, not travel time.
 - The sign between $kx$ and $\omega t$ controls direction of travel, not the period.
-- A constant phase $\phi$ changes the starting point in the cycle, not the period.
+- A constant phase $\phi_0$ changes the starting point in the cycle, not the period.
 - Because $\omega$ is in radians per second, $1/\omega$ is not a full cycle; a full cycle requires $2\pi$ radians.
 
 **Example:** Find the one-wavelength travel time for
 
 $$
-y(x,t)=(0.12\ \mathrm{m})\cos\left[(5\ \mathrm{rad/m})x+(4\ \mathrm{rad/s})t+\frac{\pi}{6}\right].
+y(x,t)=(0.12\ \mathrm{m})\cos\left[(5\ \mathrm{rad}/\mathrm{m})x+(4\ \mathrm{rad}/\mathrm{s})t+\frac{\pi}{6}\right].
 $$
 
 **Explanation**
@@ -275,7 +275,7 @@ $$
 The plus sign indicates the opposite direction from $kx-\omega t$, but the magnitude of the angular frequency is still
 
 $$
-\omega=4\ \mathrm{rad/s}.
+\omega=4\ \mathrm{rad}/\mathrm{s}.
 $$
 
 Therefore,
@@ -293,7 +293,7 @@ id: p8-trap-check
 content: |-
   For
   $$
-  y(x,t)=(0.20\ \mathrm{m})\sin\left[(7\ \mathrm{rad/m})x+(15\ \mathrm{rad/s})t\right],
+  y(x,t)=(0.20\ \mathrm{m})\sin\left[(7\ \mathrm{rad}/\mathrm{m})x+(15\ \mathrm{rad}/\mathrm{s})t\right],
   $$
   how long does the wave take to travel one wavelength?
 options:
@@ -323,7 +323,7 @@ options:
 **Example:** A wave is described by
 
 $$
-y(x,t)=(0.06\ \mathrm{m})\sin\left[(4\ \mathrm{rad/m})x-(10\ \mathrm{rad/s})t\right].
+y(x,t)=(0.06\ \mathrm{m})\sin\left[(4\ \mathrm{rad}/\mathrm{m})x-(10\ \mathrm{rad}/\mathrm{s})t\right].
 $$
 
 How long does it take to travel one wavelength?
@@ -333,7 +333,7 @@ How long does it take to travel one wavelength?
 Read the time coefficient:
 
 $$
-\omega=10\ \mathrm{rad/s}.
+\omega=10\ \mathrm{rad}/\mathrm{s}.
 $$
 
 Then use one wavelength of travel $=$ one period:
@@ -354,7 +354,7 @@ content: |-
 
   The transverse component of the displacement of the string from its resting configuration satisfies
 
-  $y(x,t)=(0.1\ \mathrm{m})\sin\left[(2.5\ \mathrm{rad/m})x-(5\ \mathrm{rad/s})t\right],$
+  $y(x,t)=(0.1\ \mathrm{m})\sin\left[(2.5\ \mathrm{rad}/\mathrm{m})x-(5\ \mathrm{rad}/\mathrm{s})t\right],$
 
   where $x$ is the position along the string when at rest and $t$ is the time relative to some reference time $t=0$.
 
@@ -382,7 +382,7 @@ options:
 
 When a traveling-wave question asks for the time to move one wavelength:
 
-1. Match the phase to $kx\pm\omega t+\phi$.
+1. Match the phase to $kx\pm\omega t+\phi_0$.
 2. Read $\omega$ as the magnitude of the coefficient of $t$.
 3. Compute $T=2\pi/\omega$.
 4. Confirm that the units reduce to seconds.

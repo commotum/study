@@ -1,0 +1,705 @@
+
+[2026-08-12T17:26:06+00:00] attempt 1
+OpenAI Codex v0.147.0
+--------
+workdir: /Users/jake/Developer/study
+model: gpt-5.6-sol
+provider: openai
+approval: on-request
+sandbox: read-only
+reasoning effort: ultra
+reasoning summaries: none
+session id: 019ff702-8bd7-7d43-95e5-2ecf37c54fa2
+--------
+user
+Review the Physics 212 lecture notes at:
+/Users/jake/Developer/study/vault/212/M2/2026-07-08-M2-2/Source/Lecture-Notes.md
+
+Ignore course logistics and other administrative content. Using the video playlist at:
+/Users/jake/Developer/ytdl/playlist-titles.csv
+
+select the smallest set of strong, nonredundant videos that collectively cover this lecture's main ideas, problem-solving strategies, and representative examples. Return them in a sensible learning order with each exact playlist title, exact URL, and a brief reason. Note any important lecture topic without a strong match. Use only these two files, do not browse the web, and do not modify files. Set lecture_id to "2026-07-08-M2-2".
+
+codex
+{"lecture_id":"2026-07-08-M2-2","lecture_summary":"I’m reviewing the lecture for its conceptual and problem-solving spine, then cross-checking exact playlist titles and URLs for the smallest nonredundant learning sequence.","videos":[],"coverage_gaps":[]}
+2026-08-12T17:26:19.038186Z ERROR codex_core::tools::router: error=collab spawn failed: no thread with id: 019ff702-8bd7-7d43-95e5-2ecf37c54fa2
+exec
+/bin/zsh -lc "wc -l /Users/jake/Developer/study/vault/212/M2/2026-07-08-M2-2/Source/Lecture-Notes.md /Users/jake/Developer/ytdl/playlist-titles.csv && sed -n '1,260p' /Users/jake/Developer/study/vault/212/M2/2026-07-08-M2-2/Source/Lecture-Notes.md && sed -n '1,12p' /Users/jake/Developer/ytdl/playlist-titles.csv" in /Users/jake/Developer/study
+ succeeded in 0ms:
+     466 /Users/jake/Developer/study/vault/212/M2/2026-07-08-M2-2/Source/Lecture-Notes.md
+     369 /Users/jake/Developer/ytdl/playlist-titles.csv
+     835 total
+## Lecture Outline (Center of Mass Continued and Introduction to Moment of Inertia)
+
+### 1. Review of Center of Mass
+- The center of mass is a **position**, not a point that divides an object into equal masses.
+- An object supported at its center of mass will balance, assuming a uniform gravitational field.
+- A freely rotating object naturally rotates about its center of mass.
+- The center of mass depends on both:
+  - the amount of mass
+  - where that mass is located
+
+---
+
+### 2. Connection Between Balance and Torque
+- Torque is defined as:
+  $$ \vec{\tau}=\vec{r}\times\vec{F} $$
+- Its magnitude is:
+  $$ \tau=rF\sin\theta $$
+- A balanced object has equal-magnitude clockwise and counterclockwise torques:
+  $$ \sum\tau=0 $$
+- The masses on opposite sides do not need to be equal because their distances from the support point may differ.
+
+---
+
+### 3. Center of Mass for Discrete Masses
+- For a collection of point masses:
+  $$ \vec{r}_{\mathrm{cm}}
+  =
+  \frac{\displaystyle\sum_i m_i\vec{r}_i}
+       {\displaystyle\sum_i m_i} $$
+- In one dimension:
+  $$ x_{\mathrm{cm}}
+  =
+  \frac{\displaystyle\sum_i m_ix_i}
+       {\displaystyle\sum_i m_i} $$
+
+---
+
+### 4. Center of Mass for a Continuous Object
+- For a continuous mass distribution:
+  $$ x_{\mathrm{cm}}=\frac{1}{M}\int x\,dm $$
+- Here:
+  - $M$ is the total mass
+  - $dm$ is an infinitesimal mass element
+  - $x$ is the position of that element
+
+---
+
+## Variable-Density Rod: Center of Mass
+
+### 5. Linear Mass Density
+- Consider a rod of length $L$ whose linear mass density varies with position:
+  $$ \lambda(x)=Cx $$
+- Linear mass density is:
+  $$ \lambda(x)=\frac{dm}{dx} $$
+- Therefore:
+  $$ dm=\lambda(x)\,dx=Cx\,dx $$
+
+---
+
+### 6. Determine the Density Constant $C$
+- The total mass is:
+  $$ M=\int_0^L dm $$
+- Substitute $dm=Cx\,dx$:
+  $$ M=\int_0^L Cx\,dx $$
+- Evaluate:
+  $$ M=C\left[\frac{x^2}{2}\right]_0^L $$
+  $$ M=\frac{CL^2}{2} $$
+- Solve for $C$:
+  $$ C=\frac{2M}{L^2} $$
+
+---
+
+### 7. Center of Mass of the Variable-Density Rod
+- Start with:
+  $$ x_{\mathrm{cm}}=\frac{1}{M}\int_0^L x\,dm $$
+- Substitute:
+  $$ dm=Cx\,dx $$
+- Then:
+  $$ x_{\mathrm{cm}}
+  =
+  \frac{1}{M}\int_0^L x(Cx)\,dx $$
+  $$ x_{\mathrm{cm}}
+  =
+  \frac{C}{M}\int_0^L x^2\,dx $$
+
+---
+
+### 8. Evaluate the Center-of-Mass Integral
+- Integrate:
+  $$ x_{\mathrm{cm}}
+  =
+  \frac{C}{M}
+  \left[\frac{x^3}{3}\right]_0^L $$
+- Therefore:
+  $$ x_{\mathrm{cm}}=\frac{CL^3}{3M} $$
+- Substitute:
+  $$ C=\frac{2M}{L^2} $$
+- Result:
+  $$ x_{\mathrm{cm}}=\frac{2L}{3} $$
+
+---
+
+### 9. Numerical Center-of-Mass Result
+- For:
+  $$ L=1.8\ \mathrm{m} $$
+- The center of mass is:
+  $$ x_{\mathrm{cm}}=\frac{2}{3}(1.8\ \mathrm{m}) $$
+  $$ x_{\mathrm{cm}}=1.2\ \mathrm{m} $$
+- This is physically reasonable because the rod has more mass toward the right side.
+
+---
+
+### 10. Physical-Reasoning Check
+- The center of mass should lie:
+  - within the rod
+  - to the right of the midpoint
+- Since:
+  $$ \lambda(x)=Cx $$
+  increases with $x$, the right side has greater mass density.
+- Therefore:
+  $$ \frac{L}{2}<x_{\mathrm{cm}}<L $$
+
+---
+
+## Introduction to Moment of Inertia
+
+### 11. Rotational Kinetic Energy of Point Masses
+- Consider a rigid object made from many small masses $m_i$.
+- Its rotational kinetic energy is:
+  $$ K_{\mathrm{rot}}
+  =
+  \sum_i \frac{1}{2}m_iv_i^2 $$
+- For rigid rotation:
+  $$ v_i=\omega r_{\perp,i} $$
+- Therefore:
+  $$ K_{\mathrm{rot}}
+  =
+  \sum_i \frac{1}{2}m_i(\omega r_{\perp,i})^2 $$
+
+---
+
+### 12. Define Moment of Inertia
+- Factor out $\omega^2$:
+  $$ K_{\mathrm{rot}}
+  =
+  \frac{1}{2}
+  \left(\sum_i m_ir_{\perp,i}^2\right)\omega^2 $$
+- Define the moment of inertia:
+  $$ I=\sum_i m_ir_{\perp,i}^2 $$
+- Then:
+  $$ K_{\mathrm{rot}}=\frac{1}{2}I\omega^2 $$
+
+---
+
+### 13. Continuous Form of Moment of Inertia
+- For a continuous mass distribution:
+  $$ I=\int r_\perp^2\,dm $$
+- Moment of inertia depends on:
+  - total mass
+  - how far each mass element is from the rotation axis
+- Distance is weighted by:
+  $$ r_\perp^2 $$
+
+---
+
+### 14. Units of Moment of Inertia
+- From:
+  $$ I=\int r_\perp^2\,dm $$
+- The units are:
+  $$ [I]=\mathrm{kg}\,\mathrm{m}^2 $$
+- Moment of inertia has no special named SI unit.
+
+---
+
+### 15. Physical Meaning of Moment of Inertia
+- Moment of inertia measures how difficult it is to change an object’s rotational motion.
+- A larger moment of inertia means:
+  - more energy is stored for the same angular speed
+  - more torque is required to produce the same angular acceleration
+- Moving mass farther from the rotation axis increases $I$ significantly because of the $r^2$ dependence.
+
+---
+
+## Uniform Thin Rod About Its Center
+
+### 16. Rod Setup
+- Consider a uniform thin rod:
+  - mass $M$
+  - length $L$
+  - rotation axis through its center and perpendicular to the rod
+- Linear density:
+  $$ \lambda=\frac{M}{L} $$
+- Mass element:
+  $$ dm=\lambda\,dx=\frac{M}{L}\,dx $$
+
+---
+
+### 17. Moment-of-Inertia Integral About the Center
+- Choose the origin at the center:
+  $$ -\frac{L}{2}\le x\le\frac{L}{2} $$
+- Then:
+  $$ I_{\mathrm{cm}}
+  =
+  \int_{-L/2}^{L/2}x^2\,dm $$
+- Substitute $dm$:
+  $$ I_{\mathrm{cm}}
+  =
+  \frac{M}{L}
+  \int_{-L/2}^{L/2}x^2\,dx $$
+
+---
+
+### 18. Evaluate the Integral
+- Integrate:
+  $$ I_{\mathrm{cm}}
+  =
+  \frac{M}{L}
+  \left[\frac{x^3}{3}\right]_{-L/2}^{L/2} $$
+- Result:
+  $$ I_{\mathrm{cm}}=\frac{1}{12}ML^2 $$
+
+---
+
+## Uniform Thin Rod About One End
+
+### 19. Moment-of-Inertia Integral About the End
+- Move the rotation axis to one end of the rod:
+  $$ 0\le x\le L $$
+- Then:
+  $$ I_{\mathrm{end}}
+  =
+  \frac{M}{L}\int_0^Lx^2\,dx $$
+
+---
+
+### 20. Evaluate the End-Axis Integral
+- Integrate:
+  $$ I_{\mathrm{end}}
+  =
+  \frac{M}{L}
+  \left[\frac{x^3}{3}\right]_0^L $$
+- Result:
+  $$ I_{\mathrm{end}}=\frac{1}{3}ML^2 $$
+
+---
+
+### 21. Comparing the Two Rotation Axes
+- About the center:
+  $$ I_{\mathrm{cm}}=\frac{1}{12}ML^2 $$
+- About the end:
+  $$ I_{\mathrm{end}}=\frac{1}{3}ML^2 $$
+- Therefore:
+  $$ I_{\mathrm{end}}=4I_{\mathrm{cm}} $$
+- Rotating the rod about its end is more difficult because more of its mass lies farther from the axis.
+
+---
+
+## Parallel-Axis Theorem
+
+### 22. General Formula
+title,url,description
+Physics - Basic Introduction,https://www.youtube.com/watch?v=b1t41Q3xRM8,Introduces basic concepts commonly taught in physics.
+Math and Science YouTube Video Tutorials for Online College and High School Students,https://www.youtube.com/watch?v=5Oh1XFXUoQ4,
+How To Calculate Your GPA In College,https://www.youtube.com/watch?v=qYHsThZWydY,Explains how to calculate a college GPA by converting grades and credit hours into quality points and dividing total quality points by total credit hours.
+Physics Videos,https://www.youtube.com/watch?v=P-M5LwUljC8,
+"Greek Alphabet Symbols List - College Math, Chemistry, & Physics",https://www.youtube.com/watch?v=_AWZZP3J5Nw,"Lists Greek alphabet symbols commonly used in chemistry, physics, and college mathematics equations and formulas."
+Significant Figures - A Fast Review!,https://www.youtube.com/watch?v=l2yuDvwYq5g,"Reviews how to identify significant figures and round results correctly for addition, subtraction, multiplication, and division."
+Significant Figures Made Easy!,https://www.youtube.com/watch?v=9WFxkxFXb20,"Explains significant-figure rules, including rounding decimals and identifying certain and uncertain digits."
+How To Round Numbers Using Significant Figures,https://www.youtube.com/watch?v=fxdYta_Olv0,Explains how to round numbers to a specified number of significant figures.
+Physics With Calculus - Basic Introduction,https://www.youtube.com/watch?v=IQ4LGQRBhrc,"Introduces calculus-based physics using derivatives and definite and indefinite integrals in displacement, velocity, acceleration, net force, work, momentum, and impulse."
+Scientific Notation - Basic Introduction,https://www.youtube.com/watch?v=_BtzXojuM1o,"Introduces scientific notation and explains addition, subtraction, multiplication, and division with numbers in scientific notation."
+Percent Uncertainty In Measurement,https://www.youtube.com/watch?v=b881nOem4vg,"Introduces percent uncertainty, estimated uncertainty, absolute uncertainty, and relative uncertainty."
+
+exec
+/bin/zsh -lc "sed -n '220,520p' /Users/jake/Developer/study/vault/212/M2/2026-07-08-M2-2/Source/Lecture-Notes.md" in /Users/jake/Developer/study
+ succeeded in 0ms:
+  $$ I_{\mathrm{cm}}=\frac{1}{12}ML^2 $$
+
+---
+
+## Uniform Thin Rod About One End
+
+### 19. Moment-of-Inertia Integral About the End
+- Move the rotation axis to one end of the rod:
+  $$ 0\le x\le L $$
+- Then:
+  $$ I_{\mathrm{end}}
+  =
+  \frac{M}{L}\int_0^Lx^2\,dx $$
+
+---
+
+### 20. Evaluate the End-Axis Integral
+- Integrate:
+  $$ I_{\mathrm{end}}
+  =
+  \frac{M}{L}
+  \left[\frac{x^3}{3}\right]_0^L $$
+- Result:
+  $$ I_{\mathrm{end}}=\frac{1}{3}ML^2 $$
+
+---
+
+### 21. Comparing the Two Rotation Axes
+- About the center:
+  $$ I_{\mathrm{cm}}=\frac{1}{12}ML^2 $$
+- About the end:
+  $$ I_{\mathrm{end}}=\frac{1}{3}ML^2 $$
+- Therefore:
+  $$ I_{\mathrm{end}}=4I_{\mathrm{cm}} $$
+- Rotating the rod about its end is more difficult because more of its mass lies farther from the axis.
+
+---
+
+## Parallel-Axis Theorem
+
+### 22. General Formula
+- The parallel-axis theorem is:
+  $$ I=I_{\mathrm{cm}}+Md^2 $$
+- Here:
+  - $I_{\mathrm{cm}}$ is the moment of inertia about a parallel axis through the center of mass
+  - $M$ is total mass
+  - $d$ is the distance between the two parallel axes
+
+---
+
+### 23. Apply the Theorem to the Rod About Its End
+- For a rod, the center-to-end distance is:
+  $$ d=\frac{L}{2} $$
+- Therefore:
+  $$ I_{\mathrm{end}}
+  =
+  \frac{1}{12}ML^2
+  +
+  M\left(\frac{L}{2}\right)^2 $$
+- Simplify:
+  $$ I_{\mathrm{end}}
+  =
+  \frac{1}{12}ML^2+\frac{1}{4}ML^2 $$
+  $$ I_{\mathrm{end}}
+  =
+  \frac{4}{12}ML^2 $$
+- Result:
+  $$ I_{\mathrm{end}}=\frac{1}{3}ML^2 $$
+
+---
+
+## Variable-Density Rod: Moment of Inertia
+
+### 24. Moment of Inertia About the Left End
+- Return to the rod with:
+  $$ \lambda(x)=Cx $$
+- Moment of inertia about the origin at the left end:
+  $$ I=\int_0^Lx^2\,dm $$
+- Substitute:
+  $$ dm=Cx\,dx $$
+- Then:
+  $$ I=\int_0^Lx^2(Cx)\,dx $$
+  $$ I=C\int_0^Lx^3\,dx $$
+
+---
+
+### 25. Evaluate the Integral
+- Integrate:
+  $$ I=C\left[\frac{x^4}{4}\right]_0^L $$
+- Therefore:
+  $$ I=\frac{CL^4}{4} $$
+- Substitute:
+  $$ C=\frac{2M}{L^2} $$
+- Result:
+  $$ I=\frac{1}{2}ML^2 $$
+
+---
+
+### 26. Numerical Moment of Inertia
+- Given:
+  $$ M=0.65\ \mathrm{kg} $$
+  $$ L=1.8\ \mathrm{m} $$
+- Compute:
+  $$ I=\frac{1}{2}(0.65)(1.8)^2 $$
+- Result:
+  $$ I\approx1.1\ \mathrm{kg}\,\mathrm{m}^2 $$
+
+---
+
+## Uniform Rod Rotating One-Third of the Way from an End
+
+### 27. Problem Setup
+- A uniform rod of mass $M$ and length $L$ rotates about an axis located:
+  $$ \frac{L}{3} $$
+  from the left end.
+- Relative to the new axis, the rod extends from:
+  $$ -\frac{L}{3} $$
+  to:
+  $$ \frac{2L}{3} $$
+
+---
+
+### 28. Direct Integration
+- Use:
+  $$ I=\frac{M}{L}\int_{-L/3}^{2L/3}x^2\,dx $$
+- Evaluate:
+  $$ I=
+  \frac{M}{L}
+  \left[\frac{x^3}{3}\right]_{-L/3}^{2L/3} $$
+- Therefore:
+  $$
+  I=
+  \frac{M}{3L}
+  \left[
+  \left(\frac{2L}{3}\right)^3
+  -
+  \left(-\frac{L}{3}\right)^3
+  \right]
+  $$
+
+---
+
+### 29. Simplify the Result
+- Compute the powers:
+  $$ \left(\frac{2L}{3}\right)^3=\frac{8L^3}{27} $$
+  $$ \left(-\frac{L}{3}\right)^3=-\frac{L^3}{27} $$
+- Then:
+  $$ I=
+  \frac{M}{3L}
+  \left(\frac{9L^3}{27}\right) $$
+- Result:
+  $$ I=\frac{1}{9}ML^2 $$
+
+---
+
+### 30. Verify with the Parallel-Axis Theorem
+- The rod’s center is at:
+  $$ \frac{L}{2} $$
+- The new axis is at:
+  $$ \frac{L}{3} $$
+- Their separation is:
+  $$ d=\frac{L}{2}-\frac{L}{3}=\frac{L}{6} $$
+- Apply:
+  $$ I=I_{\mathrm{cm}}+Md^2 $$
+- Therefore:
+  $$ I=
+  \frac{1}{12}ML^2
+  +
+  M\left(\frac{L}{6}\right)^2 $$
+- Simplify:
+  $$ I=\frac{1}{12}ML^2+\frac{1}{36}ML^2 $$
+  $$ I=\frac{1}{9}ML^2 $$
+
+---
+
+## Composite Object: Rod and Point Mass
+
+### 31. Problem Setup
+- A uniform rod has:
+  - mass $M$
+  - length $L$
+- A point mass of:
+  $$ 3M $$
+  is attached to the far end.
+- The object rotates about the opposite end of the rod.
+
+---
+
+### 32. Add the Moments of Inertia
+- The total moment of inertia is:
+  $$ I_{\mathrm{total}}=I_{\mathrm{rod}}+I_{\mathrm{point}} $$
+- Rod about one end:
+  $$ I_{\mathrm{rod}}=\frac{1}{3}ML^2 $$
+- Point mass at distance $L$:
+  $$ I_{\mathrm{point}}=(3M)L^2 $$
+
+---
+
+### 33. Final Composite Moment of Inertia
+- Add:
+  $$ I_{\mathrm{total}}
+  =
+  \frac{1}{3}ML^2+3ML^2 $$
+- Therefore:
+  $$ I_{\mathrm{total}}=\frac{10}{3}ML^2 $$
+
+---
+
+### 34. Standard Moments of Inertia
+- The lecture recommends knowing or recording standard results for common shapes.
+- Examples introduced here:
+  - thin rod about its center:
+    $$ I=\frac{1}{12}ML^2 $$
+  - thin rod about one end:
+    $$ I=\frac{1}{3}ML^2 $$
+- More common shapes will include:
+  - disks
+  - cylinders
+  - hoops
+  - solid spheres
+  - spherical shells
+
+---
+
+### 35. Main Physics Takeaways
+- Center of mass is a mass-weighted average position:
+  $$ x_{\mathrm{cm}}=\frac{1}{M}\int x\,dm $$
+- Moment of inertia is a mass-weighted average of squared distance from an axis:
+  $$ I=\int r_\perp^2\,dm $$
+- Rotational kinetic energy is:
+  $$ K_{\mathrm{rot}}=\frac{1}{2}I\omega^2 $$
+- Moving the rotation axis away from the center of mass increases the moment of inertia:
+  $$ I=I_{\mathrm{cm}}+Md^2 $$
+- Composite moments of inertia can be added:
+  $$ I_{\mathrm{total}}=\sum_i I_i $$
+
+---
+
+### 36. Main Problem-Solving Takeaways
+- Clearly identify the rotation axis before calculating $I$.
+- Measure every $r_\perp$ from that axis.
+- Convert mass density into a mass element:
+  $$ dm=\lambda(x)\,dx $$
+- Solve symbolically before inserting numerical values.
+- Check the units:
+  $$ [I]=\mathrm{kg}\,\mathrm{m}^2 $$
+- Use the parallel-axis theorem when the axis is parallel to one through the center of mass.
+
+exec
+/bin/zsh -lc "rg -n -i 'center of mass|centre of mass|moment of inertia|parallel.axis|rotational kinetic|rotational energy|angular kinetic|torque|rod|rigid bod|mass distribution|linear density|angular acceleration|rotation axis|rotational motion|rotational dynamics|rolling' /Users/jake/Developer/ytdl/playlist-titles.csv" in /Users/jake/Developer/study
+ succeeded in 0ms:
+2:Physics - Basic Introduction,https://www.youtube.com/watch?v=b1t41Q3xRM8,Introduces basic concepts commonly taught in physics.
+10:Physics With Calculus - Basic Introduction,https://www.youtube.com/watch?v=IQ4LGQRBhrc,"Introduces calculus-based physics using derivatives and definite and indefinite integrals in displacement, velocity, acceleration, net force, work, momentum, and impulse."
+11:Scientific Notation - Basic Introduction,https://www.youtube.com/watch?v=_BtzXojuM1o,"Introduces scientific notation and explains addition, subtraction, multiplication, and division with numbers in scientific notation."
+12:Percent Uncertainty In Measurement,https://www.youtube.com/watch?v=b881nOem4vg,"Introduces percent uncertainty, estimated uncertainty, absolute uncertainty, and relative uncertainty."
+13:SI Base Units and Derived Units - Physics and Chemistry,https://www.youtube.com/watch?v=8rZRYPoerPw,Introduces SI base units and derived units used in physics and chemistry.
+16:"Distance, Displacement, Average Speed, Average Velocity - Physics",https://www.youtube.com/watch?v=-Py2zI29THg,"Introduces distance, displacement, average speed, and average velocity through examples and practice problems."
+19:Dimensional Analysis,https://www.youtube.com/watch?v=DN2KGkJBq9c,Introduces dimensional analysis through conversions from years to seconds and feet per second to miles per hour.
+22:Kinematics Physics Formulas,https://www.youtube.com/watch?v=ulXdXTkIkAM,"Introduces kinematic formulas for calculating speed, average velocity, acceleration, time, and displacement."
+34:Vectors - Basic Introduction - Physics,https://www.youtube.com/watch?v=EwSHKuSxX_8,"Introduces vectors, distinguishes scalar and vector quantities, and explains component form using standard unit vectors."
+40:Unit Vector Notation - Standard Unit Vectors i j k - Physics,https://www.youtube.com/watch?v=IBNNbzStDLE,"Introduces vector notation using the standard unit vectors i, j, and k."
+41:Position Vectors and Displacement Vectors - Physics,https://www.youtube.com/watch?v=NxAvWfs92U4,Introduces position vectors and explains how to use them to calculate displacement vectors.
+42:Vectors - Precalculus,https://www.youtube.com/watch?v=iXdMpXMuEGI,Introduces vectors in component form and explains how to find their magnitude and direction.
+43:Introduction to Projectile Motion - Formulas and Equations,https://www.youtube.com/watch?v=8NLzuURxFwY,"Introduces the formulas, equations, and three common trajectory types used in projectile-motion problems."
+52:Reference Frames,https://www.youtube.com/watch?v=pdX74x3xiMk,Introduces frames of reference and explains that an object’s speed or velocity must be measured relative to something.
+53:Relative Velocity - Basic Introduction,https://www.youtube.com/watch?v=_39hCnqbNXM,"Explains one-dimensional relative velocity and frames of reference for objects moving in the same or opposite directions, using car and train examples."
+55:Newton's First Law of Motion,https://www.youtube.com/watch?v=Fr5EMXZaujc,Introduces Newton’s first law: an object remains at rest or in uniform motion unless acted on by a nonzero net force.
+56:"Newton's Second Law of Motion - Force, Mass, & Acceleration",https://www.youtube.com/watch?v=Ee6CHn0MRKE,Introduces Newton’s second law and the direct relationship between acceleration and net force and inverse relationship between acceleration and mass.
+61:Physics - What Is a Normal Force?,https://www.youtube.com/watch?v=fRQq4_ry9-Q,Introduces the normal force as a force perpendicular to a surface and explains how it can increase or decrease.
+66:Terminal Velocity,https://www.youtube.com/watch?v=DxnDkDwK3JA,"Introduces terminal velocity and factors that affect it, including air density and projected area."
+71:The Four Fundamental Forces of Nature,https://www.youtube.com/watch?v=k1jaDh97Q_g,"Introduces gravity, electromagnetism, the strong nuclear force, and the weak nuclear force as the four fundamental forces of nature."
+72:Introduction to Inclined Planes,https://www.youtube.com/watch?v=ufgY237M5KQ,"Covers inclined-plane equations and free-body diagrams for normal force, gravity parallel to the incline, kinetic friction, net force, and acceleration."
+74:Simple Machines - The Lever,https://www.youtube.com/watch?v=0HSJx3CHZJ4,Explains how a lever produces force multiplication and defines its mechanical advantage as output force divided by input force.
+75:The Pulley - Simple Machines,https://www.youtube.com/watch?v=GAegAHnfkMs,Introduces the pulley as a simple machine that provides mechanical advantage through tension in a rope.
+79:"Introduction to Centripetal Acceleration - Period, Frequency, & Linear Speed - Physics Problems",https://www.youtube.com/watch?v=ZbLirQuT9uU,"Explains centripetal acceleration in uniform circular motion, including its inward direction and how to calculate radial acceleration from period, frequency, and linear speed."
+89:Gravity and the Universal Law of Gravitation - Physics,https://www.youtube.com/watch?v=8CykJ3NgBQs,"Introduces gravity and Newton's law of universal gravitation, including the relationships among gravitational force, weight, and gravitational acceleration."
+96:Kinetic Energy and Potential Energy,https://www.youtube.com/watch?v=DyaVgHGssos,"Introduces kinetic energy and gravitational, elastic, and other forms of potential energy."
+97:Types of Energy - Basic Introduction,https://www.youtube.com/watch?v=T1xqwVvtcf8,"Introduces kinetic, gravitational, chemical, elastic, electric, light, sound, thermal, pressure, and mechanical energy."
+101:"Work, Energy, and Power - Basic Introduction",https://www.youtube.com/watch?v=_MR1Dp8-F8w,"Introduces work, energy, and power, including the work-energy principle, work from force and displacement, and kinetic and potential energy."
+103:Work Done By a Force - Incline Planes & Dot Product Formula - Physics,https://www.youtube.com/watch?v=p9938IIEhXU,Explains how to calculate the work done by a force on an inclined plane using the dot-product formula.
+106:Hooke's Law and Elastic Potential Energy,https://www.youtube.com/watch?v=OmMIOZtM1ks,Introduces Hooke's law and explains how to calculate elastic potential energy and the work required to stretch a spring.
+112:"Dot Product Formula of Power, Force, and Velocity",https://www.youtube.com/watch?v=WSP07nOjDvo,Explains how to calculate instantaneous power from force and velocity vectors using the dot product.
+113:"Introduction to Momentum, Force, Newton's Second Law, Conservation of Linear Momentum, Physics",https://www.youtube.com/watch?v=NIVNfI0RN2k,"Introduces momentum as mass times velocity, relates force to the rate of momentum change, derives momentum conservation from Newton's laws, and applies these ideas to a fluid jet."
+114:Introduction to Impulse & Momentum - Physics,https://www.youtube.com/watch?v=hODlmGK7pl8,"Introduces impulse and momentum, the impulse-momentum theorem, and Newton's second-law definition of force."
+115:Conservation of Momentum Physics Problems - Basic Introduction,https://www.youtube.com/watch?v=Fp7D5D8Bqjc,"Works through momentum-conservation problems involving an astronaut throwing a ball, an object breaking into fragments, and a load dropped into a railroad car."
+123:Elastic Collisions In One Dimension Physics Problems - Conservation of Momentum & Kinetic Energy,https://www.youtube.com/watch?v=CFbo_nBdBco,Introduces one-dimensional elastic collisions and solves for unknown velocities using conservation of momentum and kinetic energy.
+125:Coefficient of Restitution - Inelastic Collisions and Elastic Collisions - Physics,https://www.youtube.com/watch?v=DyfGzKOwtYU,Introduces the coefficient of restitution and its values for completely inelastic and perfectly elastic collisions.
+130:Center of Mass Physics Problems - Basic Introduction,https://www.youtube.com/watch?v=2uszSnvzBEU,Explains how to find the center of mass of discrete masses in one and two dimensions and where to place a load to center a truck's mass.
+131:"Rotational Motion Physics, Basic Introduction, Angular Velocity & Tangential Acceleration",https://www.youtube.com/watch?v=WQ9AH2S8B6Y,"Introduces rotational motion and its relationship to translation, including angular displacement, angular velocity and acceleration, frequency, period, tangential acceleration, and centripetal acceleration."
+133:"Angular Acceleration Physics Problems, Radial Acceleration, Linear Velocity",https://www.youtube.com/watch?v=a99sO7pogXA,"Calculates angular, radial, tangential, and net acceleration in non-uniform circular motion and relates them to linear velocity."
+134:"Rotational Kinematics Physics Problems, Basic Introduction, Equations & Formulas",https://www.youtube.com/watch?v=0El-DqrCTZM,"Introduces rotational kinematics and solves problems involving angular velocity, angular acceleration, angular displacement, and time."
+135:"Torque, Basic Introduction, Lever Arm, Moment of Force, Simple Machines & Mechanical Advantage",https://www.youtube.com/watch?v=jg4e8W44_E4,"Introduces torque, lever arms, rotational sign conventions, and the mechanical advantage of simple machines such as seesaws and shovels."
+136:Torque Vs Horsepower Explained - Automotive Car Engines & Physics,https://www.youtube.com/watch?v=S23AOeGP_Os,"Distinguishes torque from horsepower and calculates torque, horsepower, and engine speed in revolutions per minute."
+137:"Inertia - Basic Introduction, Torque, Angular Acceleration, Newton's Second Law, Rotational Motion",https://www.youtube.com/watch?v=Ic_wFYu8xVs,"Introduces translational and rotational inertia, relates force and torque laws, and explains how mass distribution determines the moments of inertia of hoops, disks, and point masses."
+138:Parallel Axis Theorem & Moment of Inertia - Physics Practice Problems,https://www.youtube.com/watch?v=JrkimXqnCLw,Introduces the parallel-axis theorem and applies it to moments of inertia for systems of two and four masses.
+139:Rotational Dynamics - Basic Introduction,https://www.youtube.com/watch?v=dbvr-L5rxdg,"Introduces rotational dynamics through hanging masses and rotating pulleys, including Atwood machines and inclined planes with kinetic friction."
+140:Rotational Kinetic Energy and Moment of Inertia Examples & Physics Problems,https://www.youtube.com/watch?v=REIP2mf6sIQ,Uses energy conservation and rotational dynamics to calculate speeds for rolling objects on inclines and falling blocks attached to rotating pulleys.
+141:"Rotational Power, Work, Energy, Torque & Moment of Inertia - Physics Problems",https://www.youtube.com/watch?v=KbYejyiRsFw,"Introduces rotational work, power, and kinetic energy and relates them to torque, angular displacement, angular speed, and moment of inertia."
+142:Work Done By a Constant Torque - Power & Moment of Inertia - Rotational Motion Physics Problems,https://www.youtube.com/watch?v=-DPthKuQGyQ,Calculates work and power from constant torque and relates rotational work to angular displacement and changes in rotational kinetic energy.
+143:"Angular Momentum - Basic Introduction, Torque, Inertia, Conservation of Angular Momentum",https://www.youtube.com/watch?v=WzjIMuf-yuo,"Introduces angular momentum, compares it with linear momentum, relates net torque to its rate of change, and presents conservation of angular momentum."
+144:What Is Angular Momentum?,https://www.youtube.com/watch?v=4GgJ6EgAmFg,Introduces angular momentum as the product of rotational inertia and angular velocity and relates its conservation to torque.
+145:Angular Momentum Physics Practice Problems,https://www.youtube.com/watch?v=QghXDDJtJeQ,"Works through angular-momentum problems involving a disk, a rotating rod, torque, angular speed, work, and a child jumping onto a merry-go-round."
+146:Angular Impulse,https://www.youtube.com/watch?v=RQL_0MMbxkc,"Calculates angular impulse, change in angular momentum, final angular speed, rotational kinetic energy, and work done by torque."
+147:"Torque, Moment of Inertia, Rotational Kinetic Energy, Pulley, Incline, Angular Acceleration, Physics",https://www.youtube.com/watch?v=SPSvosj6Snc,"Reviews angular displacement, velocity and acceleration, torque, moment of inertia, rotational kinetic energy, and the parallel-axis theorem through pulley, incline, and friction problems."
+152:Patreon Membership Program - Introduction,https://www.youtube.com/watch?v=Om1YKafUKyI,
+153:"Static Equilibrium - Tension, Torque, Lever, Beam, & Ladder Problem - Physics",https://www.youtube.com/watch?v=qGvFAl5CK_c,"Explains translational and rotational static equilibrium through seesaw, hanging-sign, beam, hinge, and ladder problems involving forces, tension, torque, and friction."
+154:"Elasticity & Hooke's Law - Intro to Young's Modulus, Stress & Strain, Elastic & Proportional Limit",https://www.youtube.com/watch?v=HALbtyDUjp0,"Introduces elasticity and Hooke's law, including proportional, elastic, plastic, and breaking behavior and calculations involving stress, strain, and Young's modulus."
+155:"Tensile Stress & Strain, Compressive Stress & Shear Stress - Basic Introduction",https://www.youtube.com/watch?v=c6ndD5kTkP4,"Distinguishes tensile, compressive, and shear stress and strain and presents formulas for each and for shear modulus."
+159:Specific Gravity and Density of Mixtures - Fluids Physics Problems,https://www.youtube.com/watch?v=ZcJGFZt-NO4,"Introduces density and specific gravity through mixture, room-air, balloon, mass, and volume calculations."
+161:Introduction to Pressure & Fluids - Physics Practice Problems,https://www.youtube.com/watch?v=kkq8ruV8_Jw,"Introduces pressure as force per area and calculates hydrostatic pressure from fluid density, gravity, and depth."
+168:"Open Tube Manometer, Basic Introduction, Pressure, Height & Density of Fluids - Physics Problems",https://www.youtube.com/watch?v=qHPaHMvsXLk,"Introduces open-tube manometers and calculates gas absolute and gauge pressures, column-height differences, and unknown fluid density."
+170:"Archimedes Principle, Buoyant Force, Basic Introduction - Buoyancy & Density - Fluid Statics",https://www.youtube.com/watch?v=Qgl_l0H7Qgc,"Introduces Archimedes' principle, derives the buoyant-force formula, and uses free-body diagrams to calculate tension on a submerged block."
+172:Physics - Intro to Buoyancy,https://www.youtube.com/watch?v=i1pGInNc-hg,Introduces buoyancy as an upward force caused by pressure differences between the lower and upper surfaces of an object submerged in a fluid.
+176:Volume Flow Rate & Mass Flow Rate - Fluid Dynamics Physics Problems,https://www.youtube.com/watch?v=lY0CaQaxLHE,Introduces mass and volume flow rates and calculates flow through pipes and the time required to fill tanks and pools.
+177:"Continuity Equation, Volume Flow Rate & Mass Flow Rate Physics Problems",https://www.youtube.com/watch?v=DxX6XLEdcAw,"Introduces the continuity equation and solves for fluid velocity, mass flow rate, and volume flow rate when a pipe's cross-sectional area changes."
+179:"Torricelli's Theorem & Speed of Efflux, Bernoulli's Principle, Fluid Mechanics - Physics Problems",https://www.youtube.com/watch?v=046-DygKrhc,"Introduces Torricelli's theorem, derives efflux speed from energy conservation and Bernoulli's principle, and includes a pressurized-tank calculation."
+182:"Viscosity of Fluids & Velocity Gradient - Fluid Mechanics, Physics Problems",https://www.youtube.com/watch?v=PoG14wRRQmM,Introduces fluid viscosity and calculates the viscosity coefficient and velocity gradient between moving and stationary plates.
+189:Physical Pendulum Problems - Moment of Inertia - Physics,https://www.youtube.com/watch?v=scIVIhChL1I,Introduces the physical pendulum and calculates its period from the rod's moment of inertia and any attached mass.
+191:Mechanical Waves Physics Practice Problems - Basic Introduction,https://www.youtube.com/watch?v=qm1hDJrIYwE,"Works through mechanical-wave problems involving wave graphs, speed, wavelength, frequency, string tension and linear density, standing-wave harmonics, nodes, and antinodes."
+192:"Wave Speed on a String - Tension Force, Intensity, Power, Amplitude, Frequency - Inverse Square Law",https://www.youtube.com/watch?v=vEzftaDL7fM,"Explains wave speed on a stretched string, wave intensity and the inverse-square law, and relationships among tension, linear density, period, frequency, wavelength, amplitude, power, and distance."
+195:Sound Intensity Physics Problems & Inverse Square Law Formula,https://www.youtube.com/watch?v=6ZQYALZqZNQ,"Introduces sound intensity and the inverse-square law and calculates intensity at a distance, source power, and energy received over time."
+204:"Thermal Stress and Strain - Basic Introduction - Compressive & Tensile Forces, Elastic Modulus",https://www.youtube.com/watch?v=FwOsoeOvZzo,"Explains thermal stress and strain under temperature changes, including compressive and tensile forces and calculations involving Young's modulus, cross-sectional area, linear expansion, and temperature change."
+222:Molar Heat Capacity Problems - Physics,https://www.youtube.com/watch?v=Vr3FJLxpdrU,Introduces molar heat capacity and works through calculations using its basic formula.
+227:"Open System, Closed System and Isolated System - Thermodynamics & Physics",https://www.youtube.com/watch?v=TFP6SvWPOQc,"Introduces open, closed, and isolated thermodynamic systems."
+228:"First Law of Thermodynamics, Basic Introduction, Physics Problems",https://www.youtube.com/watch?v=7Siv2NNCFag,"Introduces the first law of thermodynamics and the conservation of energy, focusing on how heat and mechanical work change a system's internal energy."
+236:"Second Law of Thermodynamics - Heat Energy, Entropy & Spontaneous Processes",https://www.youtube.com/watch?v=DWiCaDPM7Hk,"Introduces the second law of thermodynamics, heat flow from hot to cold objects, entropy changes in natural processes, and reversible processes."
+240:Light Energy to Kinetic Energy Using a Crookes Radiometer,https://www.youtube.com/watch?v=oqSThC47C4k,Introduces the Crookes radiometer as a heat engine that uses a temperature gradient to convert electromagnetic radiation into kinetic energy and mechanical work.
+247:Physics 2 - Basic Introduction,https://www.youtube.com/watch?v=rHgKLIYcZOI,"Introduces electricity topics including electric force, electric field, and electric potential."
+248:Electric Charge - Physics,https://www.youtube.com/watch?v=VD009jiZreo,Introduces the concept of electric charge.
+249:Law of Conservation of Electric Charge,https://www.youtube.com/watch?v=OSUvXC1pACA,Introduces the law of conservation of electric charge.
+252:Electric Field Due To Point Charges - Physics Problems,https://www.youtube.com/watch?v=V9RLc9EX1so,"Explains electric fields and calculates the magnitude and direction of fields produced by one or multiple point charges, including their effects on positive and negative charges."
+257:"Electric Dipole Moment, Force, Torque, Potential Energy, Work, Electric Field, Physics",https://www.youtube.com/watch?v=Mt9Rn2Ek0SU,"Calculates electric dipole moment, force, torque, potential energy, and the work required to rotate a dipole in an electric field using calculus and trigonometric integration."
+261:"Electron Volt Explained, Conversion to Joules, Basic Introduction",https://www.youtube.com/watch?v=DjQl4J-jePc,Defines the electron volt as a unit of electric potential energy and shows how to convert between electron volts and joules.
+262:Electric Potential Energy,https://www.youtube.com/watch?v=KoZ61FujkRk,"Introduces electric potential energy and calculates it from charge, electric field, and height, along with electric potential and work done by an electric force."
+267:Capacitors - Basic Introduction - Physics,https://www.youtube.com/watch?v=BimpNou0orc,"Introduces capacitors and capacitance, how they work, and the equations used to solve capacitor problems."
+268:The Electric Battery and Conventional Current - Introduction to Basic Electricity,https://www.youtube.com/watch?v=xrf6I_5vX64,"Explains how batteries convert chemical energy to electrical energy, distinguishes conventional current from electron flow, compares series and parallel battery connections, and introduces Ohm's law and the charge-current relationship."
+270:Voltage Current and Resistance,https://www.youtube.com/watch?v=08YugQce9OA,"Introduces voltage, current, and resistance and their units, applies Ohm's law to circuit calculations, and distinguishes conventional current from electron flow."
+272:Electrical Formulas - Basic Electricity For Beginners,https://www.youtube.com/watch?v=Pv_-OU4Dluo,"Introduces formulas for Ohm's law, electric power, electrical energy, and series and parallel circuits."
+285:"Open Circuits, Closed Circuits & Short Circuits - Basic Introduction",https://www.youtube.com/watch?v=v5RJf_V0LYA,"Explains open, closed, and short circuits and the roles of fuses and circuit breakers in preventing hazardous high-current conditions."
+298:Norton's Theorem and Thevenin's Theorem - Electrical Circuit Analysis,https://www.youtube.com/watch?v=-kkvqr1wSwA,Introduces Norton's theorem and its relationship to Thevenin's theorem and uses Norton equivalence and nodal analysis to calculate load current.
+309:Physics - Homopolar Motor Explained,https://www.youtube.com/watch?v=6Oj4qvCR6ow,Explains a homopolar motor using the right-hand rule and the Lorentz force produced by current in a wire within the magnetic field of neodymium magnets.
+311:Battery Powered Electric Motor - The Lorentz Force,https://www.youtube.com/watch?v=6ThH8IpsqAA,Introduces the Lorentz force using a battery-powered electric motor as a demonstration.
+317:"Magnetic Field of a Moving Charge, Proton, Right Hand Rule - Physics & Electromagnetism",https://www.youtube.com/watch?v=CXChim2gOzs,Calculates the magnetic field produced by a moving charge and determines its direction using the right-hand rule and the cross product of velocity and position vectors.
+318:Torque on a Current Loop In a Magnetic Field & Magnetic Dipole Moment - Physics,https://www.youtube.com/watch?v=-l-aajUS_Ik,Calculates the torque and magnetic dipole moment of a current loop in a uniform magnetic field and derives the torque formula for a current-carrying coil.
+320:"Magnetic Flux, Basic Introduction - Physics Problems",https://www.youtube.com/watch?v=y30ATrKpwpU,Introduces magnetic flux as the product of surface area and the perpendicular magnetic-field component and calculates flux through square and circular surfaces.
+337:Impedance,https://www.youtube.com/watch?v=8D9XPDNY3Mk,Introduces impedance as opposition to AC flow and contrasts it with resistance as opposition to DC flow.
+342:Law of Reflection - Geometric Optics - Physics,https://www.youtube.com/watch?v=yscrBkfPRyc,"Introduces the law of reflection, in which the angle of incidence equals the angle of reflection, and applies it in a practice problem."
+349:Huygens Principle - Physics,https://www.youtube.com/watch?v=ANsHXbIoA6U,Introduces Huygens’ principle.
+355:Planck's Constant and BlackBody Radiation,https://www.youtube.com/watch?v=bF3WAOBejqg,"Introduces Planck’s constant, blackbody radiation, photon-energy calculations from frequency, and the quantization of energy."
+357:Blackbody Radiation and Wien's Law,https://www.youtube.com/watch?v=yCNcbkLFTFs,Introduces blackbody radiation and Wien’s law relating a blackbody’s absolute temperature to its peak-emission wavelength.
+358:Compton Effect and Compton Wavelength,https://www.youtube.com/watch?v=hzwykQ7KSRE,Introduces the Compton effect and photon–electron interactions and explains how to calculate the Compton wavelengths of electrons and protons.
+363:Chemistry,https://www.youtube.com/watch?v=-KfG8kH-r3Y,"Introduces the periodic table, element families, ion charges, atoms and ions, ionic and molecular compounds, nomenclature, polyatomic ions, chemical formulas, isotopes, average atomic mass, and subatomic-particle counts."
+364:"Geometry Introduction - Basic Overview - Review For SAT, ACT, EOC, Midterm Final Exam",https://www.youtube.com/watch?v=KtZai86htng,"Reviews geometry concepts including angles, measurement, perimeter, area, surface area, volume, and the properties and formulas of common two- and three-dimensional shapes."
+365:Trigonometry For Beginners!,https://www.youtube.com/watch?v=PUB0TaZ7bhA,"Introduces sine, cosine, tangent, SOHCAHTOA, solving right triangles for missing sides, and finding missing angles with inverse trigonometric functions."
+366:"Precalculus Introduction, Basic Overview, Graphing Parent Functions, Transformations, Domain & Range",https://www.youtube.com/watch?v=JrWJnwCMlP0,Explains how to graph parent functions with transformations and write domain and range in interval notation.
+368:Calculus 1 Review -  Basic Introduction,https://www.youtube.com/watch?v=GiCojsAWRj0,Introduces several core concepts from AP Calculus AB or a first-semester college calculus course.
+369:Introduction to Statistics,https://www.youtube.com/watch?v=GUQJ7zMoSCM,"Covers mean, median, mode, range, quartiles, percentiles, outliers, common statistical plots and frequency tables, relative and cumulative frequency, and symmetric and skewed distributions."
+
+codex
+{"lecture_id":"2026-07-08-M2-2","lecture_summary":"The lecture centers on continuous center-of-mass calculations, deriving and calculating moment of inertia, axis choice, the parallel-axis theorem, and additive moments for composite systems. I found the playlist’s strongest cluster and am now removing overlap while preserving the lecture’s worked-example coverage.","videos":[],"coverage_gaps":[]}
+exec
+/bin/zsh -lc "sed -n '124,151p' /Users/jake/Developer/ytdl/playlist-titles.csv" in /Users/jake/Developer/study
+ succeeded in 0ms:
+Elastic Collisions - Conservation of Momentum - Shortcut Formula,https://www.youtube.com/watch?v=Gbh9ippmNWc,Explains a shortcut formula for solving an elastic-collision momentum problem.
+Coefficient of Restitution - Inelastic Collisions and Elastic Collisions - Physics,https://www.youtube.com/watch?v=DyfGzKOwtYU,Introduces the coefficient of restitution and its values for completely inelastic and perfectly elastic collisions.
+Conservation of Momentum In Two Dimensions - 2D Elastic & Inelastic Collisions - Physics Problems,https://www.youtube.com/watch?v=9YRgHikdcqs,Explains two-dimensional momentum conservation by treating the x and y components separately and distinguishes elastic from inelastic collisions.
+Impulse and Momentum - Formulas and Equations - College Physics,https://www.youtube.com/watch?v=FYKoU0sb9ks,"Presents formulas for impulse, momentum, mass flow rate, and one-dimensional elastic and inelastic collisions."
+Impulse Formula - Definite Integral - Physics and Calculus,https://www.youtube.com/watch?v=Zs7N7W8VvbI,Explains how to calculate the impulse of a variable force by integrating the force function over time.
+Impulse and Momentum Conservation - Inelastic & Elastic Collisions,https://www.youtube.com/watch?v=FfaEbqmvKQA,"Reviews impulse, momentum, elastic and inelastic collisions, impulse from force-time graphs, and final velocities from momentum and kinetic-energy conservation."
+Center of Mass Physics Problems - Basic Introduction,https://www.youtube.com/watch?v=2uszSnvzBEU,Explains how to find the center of mass of discrete masses in one and two dimensions and where to place a load to center a truck's mass.
+"Rotational Motion Physics, Basic Introduction, Angular Velocity & Tangential Acceleration",https://www.youtube.com/watch?v=WQ9AH2S8B6Y,"Introduces rotational motion and its relationship to translation, including angular displacement, angular velocity and acceleration, frequency, period, tangential acceleration, and centripetal acceleration."
+"Angular Velocity Physics Problems, Linear Speed, Frequency & Period",https://www.youtube.com/watch?v=d5VXZGinKSk,"Explains angular and linear velocity, converting between angular speed and linear speed, and calculating angular velocity from frequency and period."
+"Angular Acceleration Physics Problems, Radial Acceleration, Linear Velocity",https://www.youtube.com/watch?v=a99sO7pogXA,"Calculates angular, radial, tangential, and net acceleration in non-uniform circular motion and relates them to linear velocity."
+"Rotational Kinematics Physics Problems, Basic Introduction, Equations & Formulas",https://www.youtube.com/watch?v=0El-DqrCTZM,"Introduces rotational kinematics and solves problems involving angular velocity, angular acceleration, angular displacement, and time."
+"Torque, Basic Introduction, Lever Arm, Moment of Force, Simple Machines & Mechanical Advantage",https://www.youtube.com/watch?v=jg4e8W44_E4,"Introduces torque, lever arms, rotational sign conventions, and the mechanical advantage of simple machines such as seesaws and shovels."
+Torque Vs Horsepower Explained - Automotive Car Engines & Physics,https://www.youtube.com/watch?v=S23AOeGP_Os,"Distinguishes torque from horsepower and calculates torque, horsepower, and engine speed in revolutions per minute."
+"Inertia - Basic Introduction, Torque, Angular Acceleration, Newton's Second Law, Rotational Motion",https://www.youtube.com/watch?v=Ic_wFYu8xVs,"Introduces translational and rotational inertia, relates force and torque laws, and explains how mass distribution determines the moments of inertia of hoops, disks, and point masses."
+Parallel Axis Theorem & Moment of Inertia - Physics Practice Problems,https://www.youtube.com/watch?v=JrkimXqnCLw,Introduces the parallel-axis theorem and applies it to moments of inertia for systems of two and four masses.
+Rotational Dynamics - Basic Introduction,https://www.youtube.com/watch?v=dbvr-L5rxdg,"Introduces rotational dynamics through hanging masses and rotating pulleys, including Atwood machines and inclined planes with kinetic friction."
+Rotational Kinetic Energy and Moment of Inertia Examples & Physics Problems,https://www.youtube.com/watch?v=REIP2mf6sIQ,Uses energy conservation and rotational dynamics to calculate speeds for rolling objects on inclines and falling blocks attached to rotating pulleys.
+"Rotational Power, Work, Energy, Torque & Moment of Inertia - Physics Problems",https://www.youtube.com/watch?v=KbYejyiRsFw,"Introduces rotational work, power, and kinetic energy and relates them to torque, angular displacement, angular speed, and moment of inertia."
+Work Done By a Constant Torque - Power & Moment of Inertia - Rotational Motion Physics Problems,https://www.youtube.com/watch?v=-DPthKuQGyQ,Calculates work and power from constant torque and relates rotational work to angular displacement and changes in rotational kinetic energy.
+"Angular Momentum - Basic Introduction, Torque, Inertia, Conservation of Angular Momentum",https://www.youtube.com/watch?v=WzjIMuf-yuo,"Introduces angular momentum, compares it with linear momentum, relates net torque to its rate of change, and presents conservation of angular momentum."
+What Is Angular Momentum?,https://www.youtube.com/watch?v=4GgJ6EgAmFg,Introduces angular momentum as the product of rotational inertia and angular velocity and relates its conservation to torque.
+Angular Momentum Physics Practice Problems,https://www.youtube.com/watch?v=QghXDDJtJeQ,"Works through angular-momentum problems involving a disk, a rotating rod, torque, angular speed, work, and a child jumping onto a merry-go-round."
+Angular Impulse,https://www.youtube.com/watch?v=RQL_0MMbxkc,"Calculates angular impulse, change in angular momentum, final angular speed, rotational kinetic energy, and work done by torque."
+"Torque, Moment of Inertia, Rotational Kinetic Energy, Pulley, Incline, Angular Acceleration, Physics",https://www.youtube.com/watch?v=SPSvosj6Snc,"Reviews angular displacement, velocity and acceleration, torque, moment of inertia, rotational kinetic energy, and the parallel-axis theorem through pulley, incline, and friction problems."
+"Physics 1 Formulas and Equations - Kinematics, Projectile Motion, Force, Work, Energy, Power, Moment",https://www.youtube.com/watch?v=E8C06X-v0_A,"Collects first-semester physics formulas for kinematics, projectiles, relative velocity, forces and friction, circular motion, work and energy, momentum, and simple harmonic motion."
+Physics 1 Final Exam Review,https://www.youtube.com/watch?v=CwkhvFlNFp0,Reviews first-semester high-school and college physics material in preparation for a midterm or final exam.
+Physics 1 Final Exam Review Part 2 - Membership,https://www.youtube.com/watch?v=c0_IjpLnJ1w,
+Physics 1 Final Exam Review Part 3 - Membership,https://www.youtube.com/watch?v=g0SiqNll1tc,
+
+collab: Wait
+codex
+{"lecture_id":"2026-07-08-M2-2","lecture_summary":"The lecture connects torque-based balance and center of mass to continuous mass distributions, then develops moment of inertia, rotational kinetic energy, direct rod integrations, the parallel-axis theorem, and additive inertia for composite objects.","videos":[{"rank":1,"title":"Center of Mass Physics Problems - Basic Introduction","url":"https://www.youtube.com/watch?v=2uszSnvzBEU","reason":"Builds the mass-weighted-position and balance intuition needed before the lecture’s continuous center-of-mass calculations."},{"rank":2,"title":"Inertia - Basic Introduction, Torque, Angular Acceleration, Newton's Second Law, Rotational Motion","url":"https://www.youtube.com/watch?v=Ic_wFYu8xVs","reason":"Provides the strongest conceptual treatment of rotational inertia, its dependence on mass distribution and axis choice, and its relationship to torque and angular acceleration."},{"rank":3,"title":"Parallel Axis Theorem & Moment of Inertia - Physics Practice Problems","url":"https://www.youtube.com/watch?v=JrkimXqnCLw","reason":"Directly teaches the shifted-axis method used to obtain and verify the lecture’s end-axis and off-center rod results."}],"coverage_gaps":["No strong playlist match covers the variable-density workflow dm = λ(x)dx, normalization of λ(x) = Cx from total mass, and integration yielding x_cm = 2L/3.","No listed video directly derives rod moments of inertia by integration, including I_cm = ML²/12, I_end = ML²/3, the variable-density result ML²/2, or the axis-at-L/3 result ML²/9.","No direct match covers adding the inertia of a rod and an attached point mass about a common axis.","The closest rotational-kinetic-energy video focuses on rolling bodies, inclines, and pulleys rather than this lecture’s derivation of K_rot = Iω²/2 and rod examples, so it was omitted from the minimal set."]}
+tokens used
+54,778
+{"lecture_id":"2026-07-08-M2-2","lecture_summary":"The lecture connects torque-based balance and center of mass to continuous mass distributions, then develops moment of inertia, rotational kinetic energy, direct rod integrations, the parallel-axis theorem, and additive inertia for composite objects.","videos":[{"rank":1,"title":"Center of Mass Physics Problems - Basic Introduction","url":"https://www.youtube.com/watch?v=2uszSnvzBEU","reason":"Builds the mass-weighted-position and balance intuition needed before the lecture’s continuous center-of-mass calculations."},{"rank":2,"title":"Inertia - Basic Introduction, Torque, Angular Acceleration, Newton's Second Law, Rotational Motion","url":"https://www.youtube.com/watch?v=Ic_wFYu8xVs","reason":"Provides the strongest conceptual treatment of rotational inertia, its dependence on mass distribution and axis choice, and its relationship to torque and angular acceleration."},{"rank":3,"title":"Parallel Axis Theorem & Moment of Inertia - Physics Practice Problems","url":"https://www.youtube.com/watch?v=JrkimXqnCLw","reason":"Directly teaches the shifted-axis method used to obtain and verify the lecture’s end-axis and off-center rod results."}],"coverage_gaps":["No strong playlist match covers the variable-density workflow dm = λ(x)dx, normalization of λ(x) = Cx from total mass, and integration yielding x_cm = 2L/3.","No listed video directly derives rod moments of inertia by integration, including I_cm = ML²/12, I_end = ML²/3, the variable-density result ML²/2, or the axis-at-L/3 result ML²/9.","No direct match covers adding the inertia of a rod and an attached point mass about a common axis.","The closest rotational-kinetic-energy video focuses on rolling bodies, inclines, and pulleys rather than this lecture’s derivation of K_rot = Iω²/2 and rod examples, so it was omitted from the minimal set."]}

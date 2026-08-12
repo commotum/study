@@ -17,7 +17,7 @@ topic-code: MTH212.M3.34
 ## Prerequisites
 
 - Use Newtonian gravity, $F_g=GMm/r^2$.
-- Use the radial-force requirement, $F_r=mv^2/r$.
+- Use the inward-positive radial-force requirement, $\sum F_r=m a_r=mv^2/r$.
 - Recognize that one circular orbit covers circumference $2\pi r$ in one period $T$.
 - Isolate a requested variable in a symbolic equation.
 
@@ -42,22 +42,22 @@ The result will have the form $T^2=Cr^3$, which turns Kepler's proportionality $
 <a id="match-gravity-to-radial-force"></a>
 ## Match Gravity to Radial Force
 
-"Centripetal force" is not an additional force. It is the name for the net inward force. In this orbit, Newtonian gravity is that inward force.
+The radial-acceleration term is not an additional force. It is the requirement the net inward force must satisfy. In this orbit, Newtonian gravity is that inward force.
 
-**Example:** A satellite of mass $\mu$ moves in a circular orbit of radius $R$ around a central mass $P$. Write the radial force equation.
+**Example:** A satellite of mass $m$ moves in a circular orbit of radius $r$ around a central mass $M$. Write the radial force equation.
 
 **Explanation**
 
-Set the gravitational-force magnitude equal to the required radial-force magnitude:
+Take inward as positive and set the gravitational-force magnitude equal to the radial net force:
 
 $$
-\frac{GP\mu}{R^2}=\frac{\mu u^2}{R}.
+\sum F_r=m a_r=\frac{mv^2}{r}=F_g=\frac{GMm}{r^2}.
 $$
 
-The satellite mass $\mu$ appears on both sides and cancels:
+The satellite mass $m$ appears on both sides and cancels:
 
 $$
-\frac{GP}{R}=u^2.
+\frac{GM}{r}=v^2.
 $$
 
 ```quiz
@@ -65,19 +65,19 @@ type: radio
 id: kepler-force-balance
 shuffle: true
 content: |-
-  A small satellite of mass $m$ travels in a circular orbit of radius $r$ around a central mass $M$. Which equation correctly states that gravity supplies the radial force?
+  A small satellite of mass $m$ travels in a circular orbit of radius $r$ around a central mass $M$. Which equation correctly states that gravity supplies the inward radial net force?
 options:
 - id: kepler-force-balance-correct
   content: |-
-    $\displaystyle \frac{GMm}{r^2}=\frac{mv^2}{r}$
+    $\displaystyle \sum F_r=m a_r=\frac{mv^2}{r}=F_g=\frac{GMm}{r^2}$
   correct: true
   feedback: |-
-    Newtonian gravity has magnitude $GMm/r^2$, and circular motion requires net inward force $mv^2/r$. Gravity is the inward force here, so these two expressions are equal.
+    With inward positive, circular motion requires $\sum F_r=m a_r=mv^2/r$. Gravity is the radial net force here, so $\sum F_r=m a_r=mv^2/r=F_g=GMm/r^2$.
 - id: kepler-force-balance-gravity-power
   content: |-
     $\displaystyle \frac{GMm}{r}=\frac{mv^2}{r}$
   feedback: |-
-    The radial-force side is correct, but Newtonian gravity follows an inverse-square law. Its magnitude is $GMm/r^2$, not $GMm/r$.
+    The radial requirement on the right has the correct $mv^2/r$ dependence, but Newtonian gravity follows an inverse-square law. Its magnitude is $GMm/r^2$, not $GMm/r$.
 - id: kepler-force-balance-radial-power
   content: |-
     $\displaystyle \frac{GMm}{r^2}=\frac{mv^2}{r^2}$
@@ -106,15 +106,15 @@ $$
 v=\frac{2\pi r}{T}.
 $$
 
-**Example:** Express $u^2$ in terms of the orbit radius $R$ and period $\tau$.
+**Example:** Express $v^2$ in terms of the orbit radius $r$ and period $T$.
 
 **Explanation**
 
 Square the entire speed expression:
 
 $$
-u^2=\left(\frac{2\pi R}{\tau}\right)^2
-=\frac{4\pi^2R^2}{\tau^2}.
+v^2=\left(\frac{2\pi r}{T}\right)^2
+=\frac{4\pi^2r^2}{T^2}.
 $$
 
 Every factor in the numerator and denominator is squared.
@@ -204,14 +204,14 @@ is constant. Thus $T^2=Cr^3$ explicitly shows the direct variation $T^2\propto r
 The units also check. Since
 
 $$
-[G]=\frac{\mathrm m^3}{\mathrm{kg}\,\mathrm s^2},
+[G]=\frac{\mathrm{m}^3}{\mathrm{kg}\,\mathrm{s}^2},
 $$
 
 the factor $r^3/(GM)$ has units
 
 $$
-\frac{\mathrm m^3}{(\mathrm m^3/(\mathrm{kg}\,\mathrm s^2))\mathrm{kg}}
-=\mathrm s^2,
+\frac{\mathrm{m}^3}{(\mathrm{m}^3/(\mathrm{kg}\,\mathrm{s}^2))\mathrm{kg}}
+=\mathrm{s}^2,
 $$
 
 which matches $T^2$.
@@ -258,22 +258,16 @@ options:
 
 Keep the physical and algebraic roles separate: gravity supplies the force, circular motion supplies the required inward acceleration, and circumference over period replaces speed.
 
-**Example:** A small moon orbits a planet of mass $P$ at circular radius $R$. Derive its period-squared equation.
+**Example:** A small moon orbits a planet of mass $M$ at circular radius $r$. Derive its period-squared equation.
 
 **Explanation**
 
-Use
+Use $\sum F_r=m a_r=mv^2/r=F_g=GMm/r^2$ together with $v=2\pi r/T$.
+
+Cancel $m$, substitute the speed, and isolate $T^2$:
 
 $$
-\frac{GP\mu}{R^2}=\frac{\mu u^2}{R},
-\qquad
-u=\frac{2\pi R}{\tau}.
-$$
-
-Cancel $\mu$, substitute the speed, and isolate $\tau^2$:
-
-$$
-\tau^2=\frac{4\pi^2R^3}{GP}.
+T^2=\frac{4\pi^2r^3}{GM}.
 $$
 
 ```quiz
@@ -290,7 +284,7 @@ options:
     $\displaystyle T^2=\frac{4\pi^2}{GM}r^3$
   correct: true
   feedback: |-
-    Gravity supplies the radial force: $GMm/r^2=mv^2/r$. Cancel $m$, substitute $v=2\pi r/T$, and isolate $T^2$ to obtain $T^2=4\pi^2r^3/(GM)$.
+    With inward positive, gravity supplies the radial net force: $\sum F_r=m a_r=mv^2/r=F_g=GMm/r^2$. Cancel $m$, substitute $v=2\pi r/T$, and isolate $T^2$ to obtain $T^2=4\pi^2r^3/(GM)$.
 - id: khadley-gravity-q1-inverted
   content: |-
     $\displaystyle T^2=\frac{GM}{4\pi^2r^3}$
@@ -320,7 +314,7 @@ options:
 
 To derive Kepler's third law for a small satellite in a circular orbit:
 
-1. Set $GMm/r^2=mv^2/r$.
+1. Set $\sum F_r=m a_r=mv^2/r=F_g=GMm/r^2$ with inward positive.
 2. Cancel $m$ to obtain $GM/r=v^2$.
 3. Substitute $v=2\pi r/T$ and square the entire expression.
 4. Isolate $T^2$:
@@ -329,7 +323,7 @@ $$
 T^2=\frac{4\pi^2}{GM}r^3.
 $$
 
-The coefficient $4\pi^2/(GM)$ is fixed for one central mass, so $T^2\propto r^3$, and $r^3/(GM)$ has units of time squared. The main traps are treating centripetal force as an extra force, forgetting to square every factor in $2\pi r/T$, losing one power of $r$, or keeping the satellite mass after it cancels.
+The coefficient $4\pi^2/(GM)$ is fixed for one central mass, so $T^2\propto r^3$, and $r^3/(GM)$ has units of time squared. The main traps are treating the radial-acceleration requirement as an extra force, forgetting to square every factor in $2\pi r/T$, losing one power of $r$, or keeping the satellite mass after it cancels.
 
 <!-- lesson-nav:start -->
 ---

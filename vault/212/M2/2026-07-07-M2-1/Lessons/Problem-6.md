@@ -187,11 +187,11 @@ c
 &=\frac{2M}{L^2}\\
 &=\frac{2(0.90\ \mathrm{kg})}{(1.5\ \mathrm{m})^2}\\
 &=\frac{1.8\ \mathrm{kg}}{2.25\ \mathrm{m^2}}\\
-&=0.80\ \mathrm{kg/m^2}.
+&=0.80\ \mathrm{kg}/\mathrm{m}^2.
 \end{aligned}
 $$
 
-The square applies to both the number and the meter unit. These units are also required by $\lambda(x)=cx$: multiplying $\mathrm{kg/m^2}$ by $x$ in meters gives linear density in $\mathrm{kg/m}$.
+The square applies to both the number and the meter unit. These units are also required by $\lambda(x)=cx$: multiplying $\mathrm{kg}/\mathrm{m}^2$ by $x$ in meters gives linear density in $\mathrm{kg}/\mathrm{m}$.
 
 Equivalently, substitute units into the solved formula:
 
@@ -217,30 +217,30 @@ content: |-
 options:
 - id: a
   content: |-
-    $1.0\ \mathrm{kg/m^2}$
+    $1.0\ \mathrm{kg}/\mathrm{m}^2$
   correct: true
   feedback: |-
-    $c=2(0.72\ \mathrm{kg})/(1.2\ \mathrm{m})^2=1.0\ \mathrm{kg/m^2}$.
+    $c=2(0.72\ \mathrm{kg})/(1.2\ \mathrm{m})^2=1.0\ \mathrm{kg}/\mathrm{m}^2$.
 - id: b
   content: |-
-    $0.50\ \mathrm{kg/m^2}$
+    $0.50\ \mathrm{kg}/\mathrm{m}^2$
   feedback: |-
     This omits the factor $2$ in $c=2M/L^2$.
 - id: c
   content: |-
-    $0.60\ \mathrm{kg/m}$
+    $0.60\ \mathrm{kg}/\mathrm{m}$
   feedback: |-
     This uses the uniform-density calculation $M/L$ and has the wrong units for $c$.
 - id: d
   content: |-
-    $1.2\ \mathrm{kg/m^2}$
+    $1.2\ \mathrm{kg}/\mathrm{m}^2$
   feedback: |-
     This fails to square the rod length in the denominator.
 - id: e
   content: |-
-    $1.0\ \mathrm{kg/m}$
+    $1.0\ \mathrm{kg}/\mathrm{m}$
   feedback: |-
-    The numerical value is right, but $c$ must have units $\mathrm{kg/m^2}$ so that $cx$ has units $\mathrm{kg/m}$.
+    The numerical value is right, but $c$ must have units $\mathrm{kg}/\mathrm{m}^2$ so that $cx$ has units $\mathrm{kg}/\mathrm{m}$.
 ```
 
 ---
@@ -265,8 +265,8 @@ $$
 c
 &=\frac{2m}{l^2}\\
 &=\frac{2(0.65\ \mathrm{kg})}{(1.8\ \mathrm{m})^2}\\
-&=\frac{1.30}{3.24}\ \mathrm{kg/m^2}\\
-&\approx0.40\ \mathrm{kg/m^2}.
+&=\frac{1.30}{3.24}\ \mathrm{kg}/\mathrm{m}^2\\
+&\approx0.40\ \mathrm{kg}/\mathrm{m}^2.
 \end{aligned}
 $$
 
@@ -276,11 +276,11 @@ id: m2-1lec-q5
 content: |-
   **Question 5**
 
-  A rod of mass $m$ and length $l$ has linear mass density $\lambda(x)=cx$. Find $c$ when $m=0.65\ \mathrm{kg}$ and $l=1.8\ \mathrm{m}$. Enter your answer in $\mathrm{kg/m^2}$.
+  A rod of mass $m$ and length $l$ has linear mass density $\lambda(x)=cx$. Find $c$ when $m=0.65\ \mathrm{kg}$ and $l=1.8\ \mathrm{m}$. Enter your answer in $\mathrm{kg}/\mathrm{m}^2$.
 
   ![](<../Source/Images/rod-with-linearly-increasing-density.png>)
 
-  Enter $c$ in $\mathrm{kg/m^2}$ as a number only:
+  Enter $c$ in $\mathrm{kg}/\mathrm{m}^2$ as a number only:
 options:
 - id: a
   content: |-
@@ -300,7 +300,7 @@ options:
     $$
     c=\frac{2m}{l^2}
     =\frac{2(0.65\ \mathrm{kg})}{(1.8\ \mathrm{m})^2}
-    \approx0.40\ \mathrm{kg/m^2}.
+    \approx0.40\ \mathrm{kg}/\mathrm{m}^2.
     $$
 - id: b
   content: |-
@@ -342,7 +342,7 @@ For $\lambda(x)=cx$,
 $$
 \boxed{c=\frac{2M}{L^2}},
 \qquad
-[c]=\mathrm{kg/m^2}.
+[c]=\mathrm{kg}/\mathrm{m}^2.
 $$
 
 <!-- lesson-nav:start -->

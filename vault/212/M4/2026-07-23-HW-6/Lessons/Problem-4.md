@@ -107,7 +107,7 @@ One cycle covers $2\pi$ radians of phase, so divide $2\pi$ by the time for one c
 $$
 \omega=\frac{2\pi}{T}
 =\frac{2\pi}{5.0\ \mathrm{s}}
-=\frac{2\pi}{5}\ \mathrm{rad/s}.
+=\frac{2\pi}{5}\ \mathrm{rad}/\mathrm{s}.
 $$
 
 Ordinary frequency is $f=1/T$, but the speed relation uses angular frequency $\omega=2\pi f$. Omitting $2\pi$ changes the energy by a factor of $4\pi^2$.
@@ -120,20 +120,20 @@ content: |-
 options:
 - id: a
   content: |-
-    $\dfrac{1}{8}\ \mathrm{rad/s}$
+    $\dfrac{1}{8}\ \mathrm{rad}/\mathrm{s}$
 - id: b
   content: |-
-    $\dfrac{\pi}{8}\ \mathrm{rad/s}$
+    $\dfrac{\pi}{8}\ \mathrm{rad}/\mathrm{s}$
 - id: c
   content: |-
-    $\dfrac{\pi}{4}\ \mathrm{rad/s}$
+    $\dfrac{\pi}{4}\ \mathrm{rad}/\mathrm{s}$
   correct: true
 - id: d
   content: |-
-    $4\pi\ \mathrm{rad/s}$
+    $4\pi\ \mathrm{rad}/\mathrm{s}$
 - id: e
   content: |-
-    $8\pi\ \mathrm{rad/s}$
+    $8\pi\ \mathrm{rad}/\mathrm{s}$
 ```
 
 ---
@@ -148,9 +148,9 @@ options:
 At equilibrium, the speed and kinetic energy are greatest. First find
 
 $$
-\omega=\frac{2\pi}{2.0\ \mathrm{s}}=\pi\ \mathrm{rad/s},
+\omega=\frac{2\pi}{2.0\ \mathrm{s}}=\pi\ \mathrm{rad}/\mathrm{s},
 \qquad
-v_{\max}=\omega A=(\pi)(0.40)=0.40\pi\ \mathrm{m/s}.
+v_{\max}=\omega A=(\pi)(0.40)=0.40\pi\ \mathrm{m}/\mathrm{s}.
 $$
 
 Then
@@ -245,10 +245,10 @@ Read $A=0.60\ \mathrm{m}$ and $T=3.0\ \mathrm{s}$, then chain the same three qua
 
 $$
 \begin{aligned}
-\omega&=\frac{2\pi}{3.0\ \mathrm{s}}=\frac{2\pi}{3}\ \mathrm{rad/s},\\
+\omega&=\frac{2\pi}{3.0\ \mathrm{s}}=\frac{2\pi}{3}\ \mathrm{rad}/\mathrm{s},\\
 v_{\max}&=\omega A
 =\left(\frac{2\pi}{3}\right)(0.60)
-=0.40\pi\ \mathrm{m/s},\\
+=0.40\pi\ \mathrm{m}/\mathrm{s},\\
 K_{\max}&=\frac12(1.2)(0.40\pi)^2
 =0.096\pi^2\ \mathrm{J}.
 \end{aligned}

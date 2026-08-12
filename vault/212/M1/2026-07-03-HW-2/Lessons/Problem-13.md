@@ -27,7 +27,7 @@ topic-code: MTH212.M1.30
 <a id="introduction"></a>
 ## Introduction
 
-A penguin starts from rest at the top of a spherical igloo of radius $r$ and slides down its right side. With friction neglected, the penguin eventually leaves the surface. At what angle $\theta_c$, measured from the vertical through the top of the igloo, does contact end?
+A penguin starts from rest at the top of a spherical igloo of radius $r$ and slides down its right side. With friction neglected, the penguin eventually leaves the surface. At what angle $\theta_{\mathrm{c}}$, measured from the vertical through the top of the igloo, does contact end?
 
 ![](<../Source/Images/igloo-slide-diagram.png>)
 
@@ -35,7 +35,7 @@ While the penguin remains on the igloo, the surface pushes outward with a normal
 
 No outward force throws the penguin off the igloo. This transfers the same inertia reasoning used for a rider cresting a hill: the penguin tends to continue along its instantaneous tangent while the surface curves away beneath it. Lift-off is the disappearance of the surface's contact push, not the disappearance of acceleration.
 
-The contact condition relates the speed to $\theta_c$. Conservation of energy supplies a second relation for that same speed after the penguin has dropped from the top.
+The contact condition relates the speed to $\theta_{\mathrm{c}}$. Conservation of energy supplies a second relation for that same speed after the penguin has dropped from the top.
 
 ---
 
@@ -49,7 +49,7 @@ The contact condition relates the speed to $\theta_c$. Conservation of energy su
 Choose radial inward, toward the center of the sphere, as positive. The penguin is moving along a circular path of radius $r$, so
 
 $$
-\sum F_r=m\dfrac{v^2}{r}.
+\sum F_r=m a_r=m\dfrac{v^2}{r}.
 $$
 
 Weight points straight down. At angle $\theta$ from the vertical, the inward radial component of weight is
@@ -286,26 +286,26 @@ options:
 <a id="evaluate-the-critical-angle"></a>
 ## Evaluate the Critical Angle
 
-**Example:** A penguin lying on its belly slides down the right side of a spherical igloo, starting from rest. Neglecting friction, it loses contact at angle $\theta_c$ from the vertical. To two significant figures, what is $\theta_c$?
+**Example:** A penguin lying on its belly slides down the right side of a spherical igloo, starting from rest. Neglecting friction, it loses contact at angle $\theta_{\mathrm{c}}$ from the vertical. To two significant figures, what is $\theta_{\mathrm{c}}$?
 
 **Explanation**
 
 The combined force-and-energy result is
 
 $$
-\cos\theta_c=\dfrac{2}{3}.
+\cos\theta_{\mathrm{c}}=\dfrac{2}{3}.
 $$
 
 So
 
 $$
-\theta_c=\cos^{-1}\left(\dfrac{2}{3}\right)\approx 48.2^\circ.
+\theta_{\mathrm{c}}=\cos^{-1}\left(\dfrac{2}{3}\right)\approx 48.2^\circ.
 $$
 
 To two significant figures, the calculator value becomes
 
 $$
-\theta_c\approx 48^\circ.
+\theta_{\mathrm{c}}\approx 48^\circ.
 $$
 
 Thus the critical angle is $48^\circ$.
@@ -315,7 +315,7 @@ type: radio
 id: p13-q5-final-answer
 shuffle: true
 content: |-
-  A penguin lying on its belly slides down the right side of a spherical igloo, starting from rest. Neglecting friction, it loses contact at angle $\theta_c$ from the vertical. To two significant figures, what is $\theta_c$?
+  A penguin lying on its belly slides down the right side of a spherical igloo, starting from rest. Neglecting friction, it loses contact at angle $\theta_{\mathrm{c}}$ from the vertical. To two significant figures, what is $\theta_{\mathrm{c}}$?
 options:
 - id: p13-q5-a
   content: |-
@@ -351,7 +351,7 @@ $$
 v^2=2gr(1-\cos\theta).
 $$
 
-The two equations can be combined because they describe the same instant. At lift-off, the normal force is zero, but the penguin still has inward radial acceleration; setting the centripetal term to zero would describe neither its motion nor the contact condition.
+The two equations can be combined because they describe the same instant. At lift-off, the normal force is zero, but the penguin still has inward radial acceleration; setting the radial term to zero would describe neither its motion nor the contact condition.
 
 <!-- lesson-nav:start -->
 ---

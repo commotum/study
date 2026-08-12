@@ -173,7 +173,7 @@ $$
 That tension pulls upward on the block, so
 
 $$
-F_{\text{net}}=mg-T<mg.
+F_{\mathrm{net}}=mg-T<mg.
 $$
 
 For the negligible-mass flywheel, $I\approx0$, so the idealized tension needed to spin it is negligible and $a\approx g$. Equal driving weights do not imply equal accelerations when one system must also accelerate a rotating object.

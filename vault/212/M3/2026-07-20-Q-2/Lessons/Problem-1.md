@@ -120,7 +120,7 @@ $$
 The string does not slip, so $alpha=a/R$. Since the system accelerates, $a>0$, and therefore
 
 $$
-T_2-T_1=rac{I}{R^2}a>0.
+T_2-T_1=\frac{I}{R^2}a>0.
 $$
 
 Thus,

@@ -18,7 +18,7 @@
 ### 2. Definition
 - Superposition means adding the displacements of overlapping waves.
 - If two waves occupy the same location:
-  $$ y_{\text{total}}(x,t)=y_1(x,t)+y_2(x,t) $$
+  $$ y_{\mathrm{net}}(x,t)=y_1(x,t)+y_2(x,t) $$
 - The addition is performed point by point.
 
 ---
@@ -38,7 +38,7 @@
   - wavelength
 - If they are in phase, each crest overlaps a crest and each trough overlaps a trough.
 - Their amplitudes add:
-  $$ A_{\text{result}}=A+A=2A $$
+  $$ A_{\mathrm{net}}=A+A=2A $$
 - Frequency and wavelength remain unchanged.
 
 ---
@@ -48,7 +48,7 @@
   - the crest of one overlaps the trough of the other
   - their phase difference is $180^\circ$ or $\pi$ radians
 - Their displacements cancel:
-  $$ A_{\text{result}}=A-A=0 $$
+  $$ A_{\mathrm{net}}=A-A=0 $$
 
 ---
 
@@ -58,7 +58,7 @@
   - partly constructive
   - partly destructive
 - The total displacement still follows:
-  $$ y_{\text{total}}=y_1+y_2 $$
+  $$ y_{\mathrm{net}}=y_1+y_2 $$
 
 ---
 
@@ -79,7 +79,7 @@
   - an upward pulse reflects downward
   - a downward pulse reflects upward
 - This corresponds to a phase change of:
-  $$ \pi\text{ radians} $$
+  $$ \pi\ \mathrm{rad} $$
 
 ---
 
@@ -113,7 +113,7 @@
 
 ### 12. Nodes
 - A **node** is a location that remains stationary:
-  $$ A_{\text{node}}=0 $$
+  $$ A_{\mathrm{node}}=0 $$
 - The oppositely traveling waves always interfere destructively at a node.
 
 ---
@@ -143,11 +143,11 @@
 
 ### 16. Roles of the Medium and Source
 - For a string, the medium determines the wave speed:
-  $$ v=\sqrt{\frac{F_T}{\mu}} $$
+  $$ v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}} $$
 - The oscillator determines the frequency:
-  $$ f=f_{\text{oscillator}} $$
+  $$ f=f_{\mathrm{oscillator}} $$
 - The wavelength must then satisfy:
-  $$ v=\lambda f $$
+  $$ v_{\mathrm{wave}}=f\lambda $$
 - A standing wave appears when this wavelength fits the available length and boundary conditions.
 
 ---
@@ -155,9 +155,9 @@
 ### 17. Simulation Demonstration
 - Driving the string at approximately the second-harmonic frequency produced one node near its center.
 - The approximate resonant frequencies demonstrated were:
-  $$ f_1\approx0.44\text{ Hz} $$
-  $$ f_2\approx0.88\text{ Hz} $$
-  $$ f_3\approx1.32\text{ Hz} $$
+  $$ f_1\approx0.44\ \mathrm{Hz} $$
+  $$ f_2\approx0.88\ \mathrm{Hz} $$
+  $$ f_3\approx1.32\ \mathrm{Hz} $$
 - These obey:
   $$ f_2=2f_1 $$
   $$ f_3=3f_1=\frac{3}{2}f_2 $$
@@ -220,7 +220,7 @@
   $$ \lambda_3=\frac{2L}{3} $$
 - Its frequency is:
   $$ f_3=\frac{v}{\lambda_3}
-  =\frac{3v}{2L}
+  =\frac{3v_{\mathrm{wave}}}{2L}
   =3f_1 $$
 
 ---
@@ -262,22 +262,22 @@
 
 ### 26. Linear Mass Density
 - The linear mass density is:
-  $$ \mu=\frac{m_w}{L} $$
+  $$ \mu=\frac{m_{\mathrm{wire}}}{L} $$
 - Here:
-  - $m_w$ is the total mass of the vibrating wire
+  - $m_{\mathrm{wire}}$ is the total mass of the vibrating wire
   - $L$ is its length
 - Units:
-  $$ [\mu]=\frac{\text{kg}}{\text{m}} $$
+  $$ [\mu]=\mathrm{kg}/\mathrm{m} $$
 
 ---
 
 ### 27. String-Wave Speed
 - The wave speed is:
-  $$ v=\sqrt{\frac{F_T}{\mu}} $$
+  $$ v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}} $$
 - Substituting:
-  $$ \mu=\frac{m_w}{L} $$
+  $$ \mu=\frac{m_{\mathrm{wire}}}{L} $$
 - Gives:
-  $$ v=\sqrt{\frac{F_TL}{m_w}} $$
+  $$ v_{\mathrm{wave}}=\sqrt{\frac{F_TL}{m_{\mathrm{wire}}}} $$
 
 ---
 
@@ -285,18 +285,18 @@
 - Combining:
   $$ f_m=\frac{mv}{2L} $$
   with:
-  $$ v=\sqrt{\frac{F_TL}{m_w}} $$
+  $$ v_{\mathrm{wave}}=\sqrt{\frac{F_TL}{m_{\mathrm{wire}}}} $$
 - Gives:
   $$ f_m
   =
   \frac{m}{2L}
-  \sqrt{\frac{F_TL}{m_w}} $$
+  \sqrt{\frac{F_TL}{m_{\mathrm{wire}}}} $$
 - Equivalently:
   $$ \boxed{
   f_m
   =
   \frac{m}{2}
-  \sqrt{\frac{F_T}{m_wL}}
+  \sqrt{\frac{F_T}{m_{\mathrm{wire}}L}}
   } $$
 
 ---
@@ -305,11 +305,11 @@
 
 ### 29. Given Information
 - Wire length:
-  $$ L=0.85\text{ m} $$
+  $$ L=0.85\ \mathrm{m} $$
 - Wire mass:
-  $$ m_w=0.0022\text{ kg} $$
+  $$ m_{\mathrm{wire}}=0.0022\ \mathrm{kg} $$
 - Tension:
-  $$ F_T=52\text{ N} $$
+  $$ F_T=52\ \mathrm{N} $$
 - Find:
   $$ f_1 $$
 
@@ -325,17 +325,17 @@
 
 ### 31. Substitute the Wave Speed
 - Use:
-  $$ v=\sqrt{\frac{F_TL}{m_w}} $$
+  $$ v_{\mathrm{wave}}=\sqrt{\frac{F_TL}{m_{\mathrm{wire}}}} $$
 - Then:
   $$ f_1
   =
   \frac{1}{2L}
-  \sqrt{\frac{F_TL}{m_w}} $$
+  \sqrt{\frac{F_TL}{m_{\mathrm{wire}}}} $$
 - Simplifying:
   $$ f_1
   =
   \frac{1}{2}
-  \sqrt{\frac{F_T}{m_wL}} $$
+  \sqrt{\frac{F_T}{m_{\mathrm{wire}}L}} $$
 
 ---
 
@@ -349,10 +349,10 @@
   \frac{52}
   {(0.0022)(0.85)}
   }
-  \text{ Hz}
+  \ \mathrm{Hz}
   $$
 - Therefore:
-  $$ \boxed{f_1\approx83.4\text{ Hz}} $$
+  $$ \boxed{f_1\approx83.4\ \mathrm{Hz}} $$
 
 ---
 
@@ -362,7 +362,7 @@
 - A hanging mass $M$ supplies the tension in a wire.
 - The vibrating wire has:
   - length $L$
-  - mass $m_w$
+  - mass $m_{\mathrm{wire}}$
 - The goal is to find the third-harmonic frequency.
 
 ---
@@ -377,13 +377,13 @@
 
 ### 35. Determine the Wave Speed
 - The string-wave speed is:
-  $$ v=\sqrt{\frac{F_T}{\mu}} $$
+  $$ v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}} $$
 - Using:
   $$ F_T=Mg $$
   and:
-  $$ \mu=\frac{m_w}{L} $$
+  $$ \mu=\frac{m_{\mathrm{wire}}}{L} $$
 - Gives:
-  $$ v=\sqrt{\frac{MgL}{m_w}} $$
+  $$ v_{\mathrm{wave}}=\sqrt{\frac{MgL}{m_{\mathrm{wire}}}} $$
 
 ---
 
@@ -400,16 +400,16 @@
   $$ f_3
   =
   \frac{3}{2L}
-  \sqrt{\frac{MgL}{m_w}} $$
+  \sqrt{\frac{MgL}{m_{\mathrm{wire}}}} $$
 - Simplifying:
   $$ \boxed{
   f_3
   =
   \frac{3}{2}
-  \sqrt{\frac{Mg}{m_wL}}
+  \sqrt{\frac{Mg}{m_{\mathrm{wire}}L}}
   } $$
 - Substitution of the diagram’s values gives:
-  $$ \boxed{f_3\approx130\text{ Hz}} $$
+  $$ \boxed{f_3\approx130\ \mathrm{Hz}} $$
 
 ---
 
@@ -442,7 +442,7 @@
 
 ### 41. Speed of Sound
 - For the problems in this lecture:
-  $$ v_{\text{sound}}\approx343\text{ m/s} $$
+  $$ v_{\mathrm{wave}}\approx343\ \mathrm{m}/\mathrm{s} $$
 - The precise speed depends on properties of the medium and conditions such as:
   - temperature
   - density
@@ -516,7 +516,7 @@
   $$ \lambda_3=\frac{4L}{3} $$
 - Its frequency is:
   $$ f_3=\frac{v}{\lambda_3}
-  =\frac{3v}{4L}
+  =\frac{3v_{\mathrm{wave}}}{4L}
   =3f_1 $$
 
 ---
@@ -545,9 +545,9 @@
 
 ### 50. Given Information
 - Pipe length:
-  $$ L=0.85\text{ m} $$
+  $$ L=0.85\ \mathrm{m} $$
 - Speed of sound:
-  $$ v=343\text{ m/s} $$
+  $$ v_{\mathrm{wave}}=343\ \mathrm{m}/\mathrm{s} $$
 - Find:
   $$ f_3 $$
 
@@ -561,19 +561,19 @@
   =
   \frac{v}{4L/3}
   =
-  \frac{3v}{4L} $$
+  \frac{3v_{\mathrm{wave}}}{4L} $$
 - Substitute:
   $$
   f_3
   =
   \frac{3(343)}
   {4(0.85)}
-  \text{ Hz}
+  \ \mathrm{Hz}
   $$
 - Result:
-  $$ f_3\approx303\text{ Hz} $$
+  $$ f_3\approx303\ \mathrm{Hz} $$
 - Rounded as in the lecture:
-  $$ \boxed{f_3\approx300\text{ Hz}} $$
+  $$ \boxed{f_3\approx300\ \mathrm{Hz}} $$
 
 ---
 
@@ -592,26 +592,26 @@
 
 ### 53. Numerical Result
 - Using:
-  $$ f_3\approx300\text{ Hz} $$
+  $$ f_3\approx300\ \mathrm{Hz} $$
 - Then:
   $$ f_5
   =
-  \frac{5}{3}(300\text{ Hz}) $$
+  \frac{5}{3}(300\ \mathrm{Hz}) $$
 - Therefore:
-  $$ \boxed{f_5\approx500\text{ Hz}} $$
+  $$ \boxed{f_5\approx500\ \mathrm{Hz}} $$
 
 ---
 
 ### 54. Main Physics Takeaways
 - Superposition:
-  $$ y_{\text{total}}=y_1+y_2 $$
+  $$ y_{\mathrm{net}}=y_1+y_2 $$
 - Constructive interference increases the resultant amplitude.
 - Destructive interference reduces or cancels the resultant amplitude.
 - A fixed-end reflection is inverted.
 - A free-end reflection is not inverted.
 - Standing waves contain fixed nodes and antinodes.
 - String-wave speed:
-  $$ v=\sqrt{\frac{F_T}{\mu}} $$
+  $$ v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}} $$
 - Fixed–fixed string:
   $$ \lambda_m=\frac{2L}{m} $$
   $$ f_m=\frac{mv}{2L}=mf_1 $$
@@ -630,9 +630,9 @@
 3. Draw the standing-wave pattern.
 4. Relate the system length to the wavelength.
 5. Determine the wave speed from the medium:
-   $$ v=\sqrt{\frac{F_T}{\mu}} $$
+   $$ v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}} $$
    for a string, or:
-   $$ v\approx343\text{ m/s} $$
+   $$ v_{\mathrm{wave}}\approx343\ \mathrm{m}/\mathrm{s} $$
    for sound in air.
 6. Use:
    $$ f=\frac{v}{\lambda} $$

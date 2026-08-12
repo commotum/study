@@ -16,7 +16,7 @@ topic-code: MTH212.M2.21
 
 ## Prerequisites
 
-- Review [[Problem-1|Interpreting the Moment of Inertia Integral]]: understand $I=\int r^2\,dm$ as mass weighted by squared distance.
+- Review [[Problem-1|Interpreting the Moment of Inertia Integral]]: understand $I=\int r_\perp^2\,dm$ as mass weighted by squared perpendicular distance.
 - Use $dm=\lambda(x)\,dx$ for a thin rod with linear mass density $\lambda(x)$.
 - Apply the power rule for definite integrals.
 
@@ -28,7 +28,7 @@ topic-code: MTH212.M2.21
 When a thin rod has a position-dependent linear density and the problem asks for its moment of inertia, first turn the mass integral into an $x$-integral. For a rod on the $x$-axis rotating about a perpendicular axis through the origin,
 
 $$
-r=x
+r_\perp=x
 \qquad\text{and}\qquad
 dm=\lambda(x)\,dx.
 $$
@@ -36,7 +36,7 @@ $$
 Therefore,
 
 $$
-I=\int r^2\,dm
+I=\int r_\perp^2\,dm
 =\int x^2\lambda(x)\,dx.
 $$
 
@@ -46,14 +46,14 @@ Before doing any arithmetic, translate the problem in this order:
 
 | Problem information | Integral ingredient |
 | --- | --- |
-| Axis location | Perpendicular distance $r$ |
+| Axis location | Perpendicular distance $r_\perp$ |
 | Linear density | Mass element $dm=\lambda(x)\,dx$ |
 | Rod's coordinate interval | Lower and upper bounds |
 
 For a rod on $0\le x\le L$ about the origin, this produces the reusable setup line
 
 $$
-\boxed{I=\int_0^L \underbrace{x^2}_{r^2}\underbrace{\lambda(x)\,dx}_{dm}}.
+\boxed{I=\int_0^L \underbrace{x^2}_{r_\perp^2}\underbrace{\lambda(x)\,dx}_{dm}}.
 $$
 
 ---
@@ -172,7 +172,7 @@ options:
 
 **Explanation**
 
-The axis is still at the origin, so a point at coordinate $x$ has distance $r=x$. The rod begins at $a$, however, so its geometric bounds are $a$ and $b$:
+The axis is still at the origin, so a point at coordinate $x$ has perpendicular distance $r_\perp=x$. The rod begins at $a$, however, so its geometric bounds are $a$ and $b$:
 
 $$
 I=\int_a^b x^2(cx^2)\,dx
@@ -267,7 +267,7 @@ options:
 
 For a thin rod with density $\lambda(x)$:
 
-1. Use the rotation axis to write the perpendicular distance $r$.
+1. Use the rotation axis to write the perpendicular distance $r_\perp$.
 2. Replace $dm$ with $\lambda(x)\,dx$.
 3. Form the full contribution $dI=r^2\lambda(x)\,dx$.
 4. Integrate over the rod's actual coordinate interval.

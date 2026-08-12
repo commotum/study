@@ -136,7 +136,7 @@
 
 ### 15. Problem Statement
 - A disk is spinning initially at:
-  $$ \omega_0=12\ \mathrm{rad/s} $$
+  $$ \omega_0=12\ \mathrm{rad}/\mathrm{s} $$
 - It comes to a stop in:
   $$ \Delta t=26\ \mathrm{s} $$
 - The angular acceleration is constant.
@@ -147,7 +147,7 @@
 
 ### 16. Known Quantities
 - Initial angular velocity:
-  $$ \omega_0=12\ \mathrm{rad/s} $$
+  $$ \omega_0=12\ \mathrm{rad}/\mathrm{s} $$
 - Final angular velocity:
   $$ \omega_f=0 $$
 - Time interval:
@@ -183,9 +183,9 @@
 - Substitute:
   $$ |\alpha|=\frac{12}{26} $$
 - Result:
-  $$ |\alpha|=0.46\ \mathrm{rad/s^2} $$
+  $$ |\alpha|=0.46\ \mathrm{rad}/\mathrm{s}^2 $$
 - With one extra digit:
-  $$ |\alpha|=0.461\ \mathrm{rad/s^2} $$
+  $$ |\alpha|=0.461\ \mathrm{rad}/\mathrm{s}^2 $$
 
 ---
 
@@ -195,7 +195,7 @@
 - Since the disk slows down:
   $$ \alpha<0 $$
 - The magnitude is still positive:
-  $$ |\alpha|=0.46\ \mathrm{rad/s^2} $$
+  $$ |\alpha|=0.46\ \mathrm{rad}/\mathrm{s}^2 $$
 
 ---
 
@@ -237,13 +237,13 @@
 
 ---
 
-### 25. Magnitude of Tangential Velocity
-- From the cross product:
-  $$ |\vec{v}|=|\vec{\omega}||\vec{r}|\sin(\beta) $$
+### 25. Tangential Speed
+- From the cross-product magnitude:
+  $$ v=r\omega\sin\theta $$
 - Since $\vec{\omega}$ is perpendicular to $\vec{r}$:
-  $$ \beta=90^\circ $$
+  $$ \theta=90^\circ $$
 - Therefore:
-  $$ v=\omega r $$
+  $$ v=r\omega $$
 
 ---
 
@@ -317,7 +317,7 @@
 
 ### 33. Problem Statement
 - Same disk:
-  $$ \omega_0=12\ \mathrm{rad/s} $$
+  $$ \omega_0=12\ \mathrm{rad}/\mathrm{s} $$
 - It stops in:
   $$ t=26\ \mathrm{s} $$
 - Find how many revolutions it makes before stopping.
@@ -362,11 +362,11 @@
 
 ### 38. Convert Radians to Revolutions
 - Use:
-  $$ 1\ \text{rev}=2\pi\ \text{rad} $$
+  $$ 1\ \mathrm{rev}=2\pi\ \mathrm{rad} $$
 - Number of revolutions:
-  $$ N=\frac{156}{2\pi} $$
+  $$ n_{\mathrm{rev}}=\frac{156}{2\pi} $$
 - Result:
-  $$ N\approx 25\ \text{rev} $$
+  $$ n_{\mathrm{rev}}\approx 25\ \mathrm{rev} $$
 
 ---
 
@@ -393,4 +393,4 @@
 - Choose the equation based on what is known and what is being asked.
 - Keep signs separate from magnitudes when needed.
 - Convert final angular displacement into the requested units:
-  $$ \text{radians} \to \text{revolutions} $$
+  $$ \mathrm{rad} \to \mathrm{rev} $$

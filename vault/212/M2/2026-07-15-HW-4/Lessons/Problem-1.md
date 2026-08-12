@@ -231,9 +231,9 @@ $$
 The cylinder has the smaller rotational-inertia factor:
 
 $$
-a_{\text{cylinder}}=\frac23g\sin\theta,
+a_{\mathrm{cylinder}}=\frac23g\sin\theta,
 \qquad
-a_{\text{hoop}}=\frac12g\sin\theta.
+a_{\mathrm{hoop}}=\frac12g\sin\theta.
 $$
 
 The cylinder reaches the bottom first. Shape matters here because the two objects have different values of $\kappa$.

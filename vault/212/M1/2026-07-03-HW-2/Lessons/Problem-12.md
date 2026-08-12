@@ -27,7 +27,7 @@ topic-code: MTH212.M1.20
 <a id="introduction"></a>
 ## Introduction
 
-A penguin starts from rest and slides on its belly down the right side of a spherical igloo of radius $r$. There is no friction. At some angle $\theta_c$ from the vertical, the penguin leaves the surface. What is true in the instant just before contact is lost?
+A penguin starts from rest and slides on its belly down the right side of a spherical igloo of radius $r$. There is no friction. At some angle $\theta_{\mathrm{c}}$ from the vertical, the penguin leaves the surface. What is true in the instant just before contact is lost?
 
 ![](<../Source/Images/igloo-slide-diagram.png>)
 
@@ -163,7 +163,7 @@ At the contact-loss instant, $N=0$, but the penguin still has speed and is still
 
 The tangential part changes the speed. The radial part changes the direction of the velocity.
 
-The $r$-$t$ axes rotate with the penguin: $+\hat r$ keeps pointing toward the current center, and $\hat t$ stays tangent to the surface. The word *instant* is also important. Losing the contact constraint changes the force set, but it does not make position or velocity jump; the penguin retains its tangent velocity as $N$ reaches zero. Thus, $N=0$ cannot be used as evidence that either the speed or radial acceleration was already zero just before release.
+The $r$-$t$ axes rotate with the penguin: $+\hat{r}$ keeps pointing toward the current center, and $\hat{t}$ stays tangent to the surface. The word *instant* is also important. Losing the contact constraint changes the force set, but it does not make position or velocity jump; the penguin retains its tangent velocity as $N$ reaches zero. Thus, $N=0$ cannot be used as evidence that either the speed or radial acceleration was already zero just before release.
 
 ```quiz
 type: radio
@@ -252,7 +252,7 @@ type: radio
 id: p12-q5-original-check
 shuffle: true
 content: |-
-  Starting from rest, a penguin slides without friction down the outside of a spherical igloo and loses contact at an angle $\theta_c$ from the vertical. Which statement is true just before contact is lost?
+  Starting from rest, a penguin slides without friction down the outside of a spherical igloo and loses contact at an angle $\theta_{\mathrm{c}}$ from the vertical. Which statement is true just before contact is lost?
 options:
 - id: p12q5-a
   content: |-

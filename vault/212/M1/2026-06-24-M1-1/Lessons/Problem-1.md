@@ -1,4 +1,4 @@
-# Convert Revolutions Per Second to Angular Frequency
+# Convert Rotation Frequency to Angular Speed
 
 <!--
 lesson-id: 212-M1-033
@@ -10,7 +10,7 @@ topic-code: MTH212.M1.33
 - [Introduction](#introduction)
 - [One Revolution Is \(2\pi\) Radians](#one-revolution-is-2pi-radians)
 - [Convert A Rotation Rate](#convert-a-rotation-rate)
-- [Round The Angular Frequency](#round-the-angular-frequency)
+- [Round The Angular Speed](#round-the-angular-frequency)
 - [Avoid Leaving Revolutions In The Answer](#avoid-leaving-revolutions-in-the-answer)
 - [Summary](#summary)
 
@@ -25,30 +25,36 @@ topic-code: MTH212.M1.33
 <a id="introduction"></a>
 ## Introduction
 
-Angular frequency \(\omega\) is a rate:
+Rotation frequency $f$ counts revolutions per second. Angular speed $\omega$ measures the angle swept out per unit time:
 
 $$
 \omega=\frac{\text{angle swept out}}{\text{time}}.
 $$
 
-When a problem gives a spinning rate in revolutions per second but asks for \(\omega\) in radians per second, convert the angle unit from revolutions to radians.
+The two rates are related by
+
+$$
+\omega=2\pi f.
+$$
+
+When a problem gives $f$ in revolutions per second but asks for $\omega$ in radians per second, convert the angle unit from revolutions to radians.
 
 The cue is the mismatch between the given unit and the requested unit:
 
 $$
-\frac{\text{rev}}{\text{s}} \quad \longrightarrow \quad \frac{\text{rad}}{\text{s}}
+\mathrm{rev}/\mathrm{s} \quad \longrightarrow \quad \mathrm{rad}/\mathrm{s}
 $$
 
 Use the conversion
 
 $$
-1\text{ rev}=2\pi\text{ rad}
+1\ \mathrm{rev}=2\pi\ \mathrm{rad}
 $$
 
-The given rate has \(\text{rev}\) in the numerator, so put \(\text{rev}\) in the denominator of the conversion factor:
+The given rate has \(\mathrm{rev}\) in the numerator, so put \(\mathrm{rev}\) in the denominator of the conversion factor:
 
 $$
-\omega=\left(\text{revolutions per second}\right)\left(\frac{2\pi\text{ rad}}{1\text{ rev}}\right).
+\omega=f\left(\frac{2\pi\ \mathrm{rad}}{1\ \mathrm{rev}}\right).
 $$
 
 ---
@@ -63,7 +69,7 @@ $$
 One revolution is one full turn around a circle, and one full turn has angle \(2\pi\) radians.
 
 $$
-4\text{ rev}\cdot \frac{2\pi\text{ rad}}{1\text{ rev}}=8\pi\text{ rad}
+4\ \mathrm{rev}\cdot \frac{2\pi\ \mathrm{rad}}{1\ \mathrm{rev}}=8\pi\ \mathrm{rad}
 $$
 
 The revolution units cancel, leaving radians.
@@ -77,17 +83,17 @@ content: |-
 options:
 - id: q1-a
   content: |-
-    \(6\pi\text{ rad}\)
+    \(6\pi\ \mathrm{rad}\)
 - id: q1-b
   content: |-
-    \(12\pi\text{ rad}\)
+    \(12\pi\ \mathrm{rad}\)
   correct: true
 - id: q1-c
   content: |-
-    \(3\pi\text{ rad}\)
+    \(3\pi\ \mathrm{rad}\)
 - id: q1-d
   content: |-
-    \(6\text{ rad}\)
+    \(6\ \mathrm{rad}\)
 ```
 
 ---
@@ -95,60 +101,60 @@ options:
 <a id="convert-a-rotation-rate"></a>
 ## Convert A Rotation Rate
 
-**Example:** A wheel spins at \(5\) revolutions per second. Find its angular frequency in radians per second.
+**Example:** A wheel spins with frequency $f=5$ revolutions per second. Find its angular speed in radians per second.
 
 **Explanation**
 
 Keep the "per second" part and convert only the revolution part.
 
 $$
-\omega=5\frac{\text{rev}}{\text{s}}\cdot \frac{2\pi\text{ rad}}{1\text{ rev}}
+\omega=5\ \mathrm{rev}/\mathrm{s}\cdot \frac{2\pi\ \mathrm{rad}}{1\ \mathrm{rev}}
 $$
 
-Cancel \(\text{rev}\):
+Cancel \(\mathrm{rev}\):
 
 $$
-\omega=10\pi\frac{\text{rad}}{\text{s}}
+\omega=10\pi\ \mathrm{rad}/\mathrm{s}
 $$
 
-So a rate of \(5\) revolutions per second is an angular frequency of \(10\pi\text{ rad/s}\).
+So a frequency of $5$ revolutions per second corresponds to angular speed $\omega=10\pi\ \mathrm{rad}/\mathrm{s}$.
 
 ```quiz
 type: radio
 id: q-2
 shuffle: true
 content: |-
-  A disk spins at \(9\) revolutions per second. What is its angular frequency?
+  A disk spins with frequency $f=9$ revolutions per second. What is its angular speed?
 options:
 - id: q2-a
   content: |-
-    \(9\pi\text{ rad/s}\)
+    \(9\pi\ \mathrm{rad}/\mathrm{s}\)
 - id: q2-b
   content: |-
-    \(18\pi\text{ rad/s}\)
+    \(18\pi\ \mathrm{rad}/\mathrm{s}\)
   correct: true
 - id: q2-c
   content: |-
-    \(\frac{9}{2\pi}\text{ rad/s}\)
+    \(\frac{9}{2\pi}\ \mathrm{rad}/\mathrm{s}\)
 - id: q2-d
   content: |-
-    \(9\text{ rad/s}\)
+    \(9\ \mathrm{rad}/\mathrm{s}\)
 ```
 
 ---
 
 <a id="round-the-angular-frequency"></a>
-## Round The Angular Frequency
+## Round The Angular Speed
 
-**Example:** A wheel is spinning at \(14\) revolutions per second. What is its angular frequency \(\omega\) in radians per second? Give the answer to \(2\) significant figures.
+**Example:** A wheel spins with frequency $f=14$ revolutions per second. What is its angular speed $\omega$ in radians per second? Give the answer to $2$ significant figures.
 
 **Explanation**
 
 First convert exactly:
 
 $$
-\omega=14\frac{\text{rev}}{\text{s}}\cdot \frac{2\pi\text{ rad}}{1\text{ rev}}
-=28\pi\frac{\text{rad}}{\text{s}}
+\omega=14\ \mathrm{rev}/\mathrm{s}\cdot \frac{2\pi\ \mathrm{rad}}{1\ \mathrm{rev}}
+=28\pi\ \mathrm{rad}/\mathrm{s}
 $$
 
 Then approximate. Keep \(2\pi\) until this step so the final rounding uses the full conversion factor.
@@ -160,7 +166,7 @@ $$
 To \(2\) significant figures,
 
 $$
-\omega\approx 88\text{ rad/s}.
+\omega\approx 88\ \mathrm{rad}/\mathrm{s}.
 $$
 
 ```quiz
@@ -168,21 +174,21 @@ type: radio
 id: q-3
 shuffle: true
 content: |-
-  A fan spins at \(11\) revolutions per second. What is its angular frequency in radians per second, rounded to \(2\) significant figures?
+  A fan spins with frequency $f=11$ revolutions per second. What is its angular speed in radians per second, rounded to $2$ significant figures?
 options:
 - id: q3-a
   content: |-
-    \(35\text{ rad/s}\)
+    \(35\ \mathrm{rad}/\mathrm{s}\)
 - id: q3-b
   content: |-
-    \(69\text{ rad/s}\)
+    \(69\ \mathrm{rad}/\mathrm{s}\)
   correct: true
 - id: q3-c
   content: |-
-    \(11\text{ rad/s}\)
+    \(11\ \mathrm{rad}/\mathrm{s}\)
 - id: q3-d
   content: |-
-    \(66\text{ rad/s}\)
+    \(66\ \mathrm{rad}/\mathrm{s}\)
 ```
 
 ---
@@ -194,11 +200,11 @@ options:
 
 **Explanation**
 
-The number \(7\) tells how many full turns happen each second. It is not yet in radians per second. Multiply by \(2\pi\text{ rad/rev}\), not by \(\pi\), and do not divide by \(2\pi\).
+The number \(7\) tells how many full turns happen each second. It is not yet in radians per second. Multiply by \(2\pi\ \mathrm{rad}/\mathrm{rev}\), not by \(\pi\), and do not divide by \(2\pi\).
 
 $$
-\omega=7\frac{\text{rev}}{\text{s}}\cdot \frac{2\pi\text{ rad}}{1\text{ rev}}
-=14\pi\text{ rad/s}
+\omega=7\ \mathrm{rev}/\mathrm{s}\cdot \frac{2\pi\ \mathrm{rad}}{1\ \mathrm{rev}}
+=14\pi\ \mathrm{rad}/\mathrm{s}
 $$
 
 ```quiz
@@ -206,21 +212,21 @@ type: radio
 id: q-4
 shuffle: true
 content: |-
-  A motor spins at \(3\) revolutions per second. Which value is its angular frequency?
+  A motor spins with frequency $f=3$ revolutions per second. Which value is its angular speed?
 options:
 - id: q4-a
   content: |-
-    \(3\text{ rad/s}\)
+    \(3\ \mathrm{rad}/\mathrm{s}\)
 - id: q4-b
   content: |-
-    \(3\pi\text{ rad/s}\)
+    \(3\pi\ \mathrm{rad}/\mathrm{s}\)
 - id: q4-c
   content: |-
-    \(6\pi\text{ rad/s}\)
+    \(6\pi\ \mathrm{rad}/\mathrm{s}\)
   correct: true
 - id: q4-d
   content: |-
-    \(\frac{3}{2\pi}\text{ rad/s}\)
+    \(\frac{3}{2\pi}\ \mathrm{rad}/\mathrm{s}\)
 ```
 
 ---
@@ -228,17 +234,17 @@ options:
 <a id="summary"></a>
 ## Summary
 
-When a spinning rate is given in revolutions per second and the answer must be in radians per second, use
+When rotation frequency $f$ is given in revolutions per second and angular speed $\omega$ is required in radians per second, use
 
 $$
-\omega=\left(\text{rev/s}\right)(2\pi).
+\omega=2\pi f.
 $$
 
 The seconds stay in the denominator, and each revolution becomes \(2\pi\) radians. A quick checklist is:
 
-1. Start with the given number in \(\text{rev/s}\).
-2. Multiply by \(\frac{2\pi\text{ rad}}{1\text{ rev}}\).
-3. Cancel \(\text{rev}\), keep \(\text{rad/s}\), and round only if the problem asks for a rounded answer.
+1. Start with $f$ in \(\mathrm{rev}/\mathrm{s}\).
+2. Multiply by \(\frac{2\pi\ \mathrm{rad}}{1\ \mathrm{rev}}\).
+3. Cancel \(\mathrm{rev}\), keep \(\mathrm{rad}/\mathrm{s}\), and round only if the problem asks for a rounded answer.
 
 The main trap is to report the revolutions-per-second number as if it were already in radians per second.
 

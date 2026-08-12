@@ -33,13 +33,13 @@ When a problem describes a moving sound source and asks which listener hears a h
 
 The key is to make a separate comparison for each listener before comparing what they hear.
 
-Let $f_s$ denote the siren's emitted frequency. For the situations in this lesson, use this direction map:
+Let $f_0$ denote the siren's emitted frequency. For the situations in this lesson, use this direction map:
 
 | Source-listener situation | Wavefront cue | Frequency heard |
 |---|---|---|
-| Source moves toward a stationary listener | Compressed in front | $f_{\text{heard}}>f_s$ |
-| Source moves away from a stationary listener | Spread out behind | $f_{\text{heard}}<f_s$ |
-| Listener moves with the source | Same source-listener position | $f_{\text{heard}}\approx f_s$ |
+| Source moves toward a stationary listener | Compressed in front | $f_{\mathrm{obs}}>f_0$ |
+| Source moves away from a stationary listener | Spread out behind | $f_{\mathrm{obs}}<f_0$ |
+| Listener moves with the source | Same source-listener position | $f_{\mathrm{obs}}\approx f_0$ |
 
 ---
 
@@ -52,10 +52,10 @@ Let $f_s$ denote the siren's emitted frequency. For the situations in this lesso
 
 The recognition cue is **moves toward**. Between one emitted wavefront and the next, the ambulance advances toward the cyclist. The wavefronts reaching the cyclist are therefore closer together.
 
-For sound traveling through the same air at speed $v$,
+For sound traveling through the same air at speed $v_{\mathrm{wave}}$,
 
 $$
-f=\frac{v}{\lambda}.
+f=\frac{v_{\mathrm{wave}}}{\lambda}.
 $$
 
 A shorter wavelength $\lambda$ means a higher observed frequency $f$. The cyclist hears a higher frequency than the siren emits.
@@ -95,7 +95,7 @@ options:
     The wavelength is shorter, so the heard frequency is higher than the emitted frequency.
   correct: true
   feedback: |-
-    With the sound speed fixed, $f=v/\lambda$: decreasing $\lambda$ increases $f$.
+    With the sound speed fixed, $f=v_{\mathrm{wave}}/\lambda$: decreasing $\lambda$ increases $f$.
 - id: b
   content: |-
     The wavelength is shorter, so the heard frequency is lower than the emitted frequency.
@@ -210,7 +210,7 @@ The driver moves with the siren and hears approximately its emitted frequency. T
 In comparison form,
 
 $$
-f_{\text{you}}>f_s\approx f_{\text{driver}}.
+f_{\mathrm{you}}>f_0\approx f_{\mathrm{driver}}.
 $$
 
 ```quiz

@@ -203,7 +203,7 @@ options:
 First infer the measured index:
 
 $$
-n_{\text{sample}}=rac{\sin48^\circ}{\sin29^\circ}
+n_{\mathrm{sample}}=\frac{\sin48^\circ}{\sin29^\circ}
 =1.5329\ldots\approx1.53.
 $$
 

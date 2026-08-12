@@ -29,7 +29,7 @@ The recognition cue is an object that stays at a fixed height while a guide carr
 Choose its free-body diagram with this three-part test:
 
 1. **List interactions:** include one force for each object that pushes or pulls on the bead.
-2. **Infer the net force:** use $\sum \vec F=m\vec a$ to determine the direction the real forces must add to.
+2. **Infer the net force:** use $\vec{F}_{\mathrm{net}}=m\vec{a}$ to determine the direction the real forces must add to.
 3. **Recover the unknown force:** choose the contact-force direction whose components produce that required net force.
 
 For a bead on a frictionless loop, Earth supplies weight and the loop supplies one contact force. “Centripetal force” is not a third interaction; it is the inward component of the net force.
@@ -37,9 +37,9 @@ For a bead on a frictionless loop, Earth supplies weight and the loop supplies o
 The whole direction test can be compressed to
 
 $$
-\underbrace{\vec W+\vec N}_{\text{real forces}}
+\underbrace{m\vec{g}+\vec{N}}_{\text{real forces}}
 =
-\underbrace{m\vec a_{\text{in}}}_{\text{horizontal inward resultant}}.
+\underbrace{m a_r\hat{r}}_{\text{horizontal inward resultant}}.
 $$
 
 ---
@@ -51,12 +51,12 @@ $$
 
 **Explanation**
 
-Earth pulls downward with weight $m\vec g$, and the string pulls along itself with tension $\vec T$. Those are the only two interactions. The horizontal component of tension produces the inward acceleration, but that component is not an additional “centripetal force.”
+Earth pulls downward with weight $m\vec{g}$, and the string pulls along itself with tension $\vec{T}_{\mathrm{tens}}$. Those are the only two interactions. The horizontal component of tension produces the inward acceleration, but that component is not an additional “centripetal force.”
 
 In vector form,
 
 $$
-\vec T+m\vec g=m\vec a.
+\vec{T}_{\mathrm{tens}}+m\vec{g}=m\vec{a}.
 $$
 
 The right side describes what the two real forces do; it does not add another force to the left side.
@@ -104,7 +104,7 @@ Its height does not change, so its vertical acceleration is zero. Its speed is c
 $$
 a_y=0,
 \qquad
-a_{\text{in}}=\frac{v^2}{r}.
+a_r=\frac{v^2}{r}.
 $$
 
 Newton's second law therefore requires
@@ -112,7 +112,7 @@ Newton's second law therefore requires
 $$
 \sum F_y=0,
 \qquad
-\sum F_{\text{in}}=m\frac{v^2}{r}.
+\sum F_r=m a_r=m\frac{v^2}{r}.
 $$
 
 The forces must cancel vertically while leaving a horizontal inward resultant.
@@ -128,7 +128,7 @@ options:
     Horizontally inward toward the rotation axis
   correct: true
   feedback: |-
-    Fixed height gives zero vertical acceleration, and constant-speed circular motion gives acceleration toward the center of the horizontal circle. Thus $\sum\vec F=m\vec a$ points horizontally inward toward the rotation axis.
+    Fixed height gives zero vertical acceleration, and constant-speed circular motion gives acceleration toward the center of the horizontal circle. Thus $\vec{F}_{\mathrm{net}}=m\vec{a}$ points horizontally inward toward the rotation axis.
 - id: p3-net-direction-down
   content: |-
     Vertically downward
@@ -156,7 +156,7 @@ options:
 <a id="recover-the-loops-contact-force"></a>
 ## Recover the Loop's Contact Force
 
-**Example:** A bead moves in a horizontal circle at fixed height while touching a smooth guide. Suppose only its weight $m\vec g$ and the guide's contact force $\vec N$ act. Determine the direction of $\vec N$.
+**Example:** A bead moves in a horizontal circle at fixed height while touching a smooth guide. Suppose only its weight $m\vec{g}$ and the guide's contact force $\vec{N}$ act. Determine the direction of $\vec{N}$.
 
 **Explanation**
 
@@ -165,10 +165,10 @@ Weight has no inward horizontal component, so the contact force must supply the 
 $$
 N_y-mg=0,
 \qquad
-N_{\text{in}}=m\frac{v^2}{r}.
+N_r=m\frac{v^2}{r}.
 $$
 
-Therefore, $\vec N$ points **upward and inward**. Draw it as one force vector. Its horizontal and vertical components are bookkeeping pieces of that vector, not extra forces.
+Therefore, $\vec{N}$ points **upward and inward**. Draw it as one force vector. Its horizontal and vertical components are bookkeeping pieces of that vector, not extra forces.
 
 For a frictionless wire, the contact force is perpendicular to the local tangent; there is no force along the wire. “Normal” means perpendicular to the guide, not automatically vertical. In the spinning-loop geometry below, the upward-and-inward direction is also toward the loop's center along the local normal line.
 
@@ -182,7 +182,7 @@ Use this elimination order on the diagrams:
 type: radio
 id: p3-source-fbd
 content: |-
-  A circular loop of radius $R$ spins as shown. A glass bead of mass $m$ is free to slide on the loop and remains at an angle $\theta$. Assume there is no friction anywhere in the system.
+  A circular loop of radius $r$ spins as shown. A glass bead of mass $m$ is free to slide on the loop and remains at an angle $\theta$. Assume there is no friction anywhere in the system.
 
   Which free-body diagram could accurately depict the bead?
 
@@ -208,7 +208,7 @@ options:
     D
   correct: true
   feedback: |-
-    Only gravity and the loop's normal force act on the bead. Gravity points downward, while the normal force points up and toward the vertical rotation axis; its vertical component balances $mg$, and its horizontal component supplies the centripetal net force. Therefore, diagram D has both the correct force count and directions.
+    Only gravity and the loop's normal force act on the bead. Gravity points downward, while the normal force points up and toward the vertical rotation axis; its vertical component balances $mg$, and its horizontal component supplies the inward net force. Therefore, diagram D has both the correct force count and directions.
 ```
 
 ---

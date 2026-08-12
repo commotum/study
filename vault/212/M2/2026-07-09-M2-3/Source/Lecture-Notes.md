@@ -56,9 +56,9 @@
 
 ### 7. Rotational Version of Newton’s Second Law
 - Translational dynamics:
-  $$ \sum \vec{F}=m\vec{a} $$
+  $$ \sum\vec{F}=m\vec{a} $$
 - Rotational dynamics for a fixed-axis rigid body:
-  $$ \sum \vec{\tau}=I\vec{\alpha} $$
+  $$ \sum\vec{\tau}=I\vec{\alpha} $$
 - Here:
   - $I$ is the moment of inertia
   - $\vec{\alpha}$ is the angular acceleration
@@ -126,8 +126,8 @@
 ### 13. Problem Setup
 - A force is applied to a wrench.
 - Given:
-  $$ r=52\text{ cm}=0.52\text{ m} $$
-  $$ F=120\text{ N} $$
+  $$ r=52\ \mathrm{cm}=0.52\ \mathrm{m} $$
+  $$ F=120\ \mathrm{N} $$
   $$ \phi=33^\circ $$
 - Goal:
   - calculate the torque about the pivot
@@ -152,17 +152,17 @@
 - Substitute:
   $$ \tau=(0.52)(120)\sin(57^\circ) $$
 - Result:
-  $$ \tau\approx52\text{ N}\cdot\text{m} $$
+  $$ \tau\approx52\ \mathrm{N}\,\mathrm{m} $$
 
 ---
 
 ### 16. Units of Torque
 - Torque units are:
-  $$ \text{N}\cdot\text{m} $$
+  $$ \mathrm{N}\,\mathrm{m} $$
 - From the formula:
   $$ \tau=rF $$
 - The units are:
-  $$ (\text{m})(\text{N})=\text{N}\cdot\text{m} $$
+  $$ (\mathrm{m})(\mathrm{N})=\mathrm{N}\,\mathrm{m} $$
 
 ---
 
@@ -201,7 +201,7 @@
 ### 20. Physical Setup
 - A cord is wrapped around a freely rotating solid cylindrical spool.
 - Given:
-  - tension $T$
+  - tension $F_T$
   - spool mass $m$
   - spool radius $r$
 - The tension is constant and tangential to the spool.
@@ -217,7 +217,7 @@
   - upward normal force:
     $$ N_1 $$
   - tension:
-    $$ T $$
+    $$ F_T $$
   - horizontal support force at the spindle:
     $$ N_2 $$
 - The center of the spool does not translate, so:
@@ -228,11 +228,11 @@
 
 ### 22. Translational Equilibrium Equations
 - Horizontal direction:
-  $$ T-N_2=0 $$
+  $$ F_T-N_2=0 $$
 - Vertical direction:
   $$ N_1-mg=0 $$
 - Therefore:
-  $$ N_2=T $$
+  $$ N_2=F_T $$
   $$ N_1=mg $$
 
 ---
@@ -246,11 +246,11 @@
 
 ### 24. Torque About the Spool Axis
 - Torque from tension:
-  $$ \tau_T=Tr $$
-- The angle between $\vec{r}$ and $\vec{T}$ is:
+  $$ \tau_T=F_T r $$
+- The angle between $\vec{r}$ and $\vec{F}_T$ is:
   $$ 90^\circ $$
 - Therefore:
-  $$ \tau_T=Tr\sin90^\circ=Tr $$
+  $$ \tau_T=F_T r\sin90^\circ=F_T r $$
 
 ---
 
@@ -259,7 +259,7 @@
 - Its position relative to the pivot is:
   $$ r=0 $$
 - Therefore:
-  $$ \tau_{\text{spindle}}=0 $$
+  $$ \tau_{\mathrm{spindle}}=0 $$
 - The force itself is not zero; only its torque about that pivot is zero.
 
 ---
@@ -274,17 +274,17 @@
 - Apply:
   $$ \sum\tau=I\alpha $$
 - Therefore:
-  $$ Tr=\frac{1}{2}mr^2\alpha $$
+  $$ F_T r=\frac{1}{2}mr^2\alpha $$
 - Solve for $\alpha$:
-  $$ \alpha=\frac{Tr}{\frac{1}{2}mr^2} $$
+  $$ \alpha=\frac{F_T r}{\frac{1}{2}mr^2} $$
 - Simplify:
-  $$ \alpha=\frac{2T}{mr} $$
+  $$ \alpha=\frac{2F_T}{mr} $$
 
 ---
 
 ### 28. Numerical Result
 - Substituting the values given in the lecture produces:
-  $$ \alpha\approx2.7\text{ rad/s}^2 $$
+  $$ \alpha\approx2.7\ \mathrm{rad}/\mathrm{s}^2 $$
 
 ---
 
@@ -313,11 +313,11 @@
 
 ### 31. Total Moment of Inertia
 - Because the cylinders are rigidly connected and rotate about the same axis, their moments of inertia add:
-  $$ I_{\text{total}}=I_{\text{small}}+I_{\text{large}} $$
+  $$ I_{\mathrm{total}}=I_{\mathrm{small}}+I_{\mathrm{large}} $$
 - For each solid cylinder:
   $$ I=\frac{1}{2}MR^2 $$
 - Therefore:
-  $$ I_{\text{total}}
+  $$ I_{\mathrm{total}}
   =
   \frac{1}{2}mr^2+\frac{1}{2}MR^2 $$
 
@@ -325,7 +325,7 @@
 
 ### 32. Rotational Equation of Motion
 - Apply:
-  $$ \sum\tau=I_{\text{total}}\alpha $$
+  $$ \sum\tau=I_{\mathrm{total}}\alpha $$
 - Therefore:
   $$ FR=
   \left(
@@ -349,7 +349,7 @@
 
 ### 34. Numerical Result
 - Substitution of the lecture’s numerical values gives:
-  $$ m\approx2.5\text{ kg} $$
+  $$ m\approx2.5\ \mathrm{kg} $$
 
 ---
 
@@ -359,16 +359,16 @@
 - Units:
   $$
   \frac{
-  (\text{kg}\cdot\text{m/s}^2)(\text{m})
+  (\mathrm{kg}\,\mathrm{m}/\mathrm{s}^2)(\mathrm{m})
   }{
-  (\text{s}^{-2})(\text{m}^2)
+  (\mathrm{s}^{-2})(\mathrm{m}^2)
   }
-  =\text{kg}
+  =\mathrm{kg}
   $$
 - Second term:
   $$ \frac{MR^2}{r^2} $$
 - Units:
-  $$ \frac{(\text{kg})(\text{m}^2)}{\text{m}^2}=\text{kg} $$
+  $$ \frac{(\mathrm{kg})(\mathrm{m}^2)}{\mathrm{m}^2}=\mathrm{kg} $$
 - Both terms have the correct units of mass.
 
 ---
@@ -383,7 +383,7 @@
 - Forces applied farther from the pivot generally produce more torque.
 - Forces applied at the pivot produce zero torque about that pivot.
 - For composite rigid bodies rotating about the same axis:
-  $$ I_{\text{total}}=\sum_i I_i $$
+  $$ I_{\mathrm{total}}=\sum_i I_i $$
 
 ---
 

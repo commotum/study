@@ -83,11 +83,11 @@ A solid cylindrical spool of mass $m$ and radius $r$ rotates freely about a fixe
 6. Check the units:
 
    $$
-   \frac{\text{N}}{\text{kg}\cdot\text{m}}
+   \frac{\mathrm{N}}{\mathrm{kg}\cdot\mathrm{m}}
    =
-   \frac{\text{kg}\cdot\text{m}/\text{s}^2}
-        {\text{kg}\cdot\text{m}}
-   =\text{s}^{-2},
+   \frac{\mathrm{kg}\cdot\mathrm{m}/\mathrm{s}^2}
+        {\mathrm{kg}\cdot\mathrm{m}}
+   =\mathrm{s}^{-2},
    $$
 
    which is equivalent to $\text{rad/s}^2$. The right-hand rule applied to the tension determines the sign of $\alpha$.

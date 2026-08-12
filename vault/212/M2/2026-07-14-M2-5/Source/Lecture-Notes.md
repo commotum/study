@@ -50,27 +50,27 @@
 
 ### 5. Rolling-Without-Slipping Condition
 - The center-of-mass speed is:
-  $$ v_{\text{cm}}=\frac{\Delta x}{T} $$
+  $$ v_{\mathrm{cm}}=\frac{\Delta x}{T} $$
 - Using:
   $$ \Delta x=2\pi R $$
   and:
   $$ T=\frac{2\pi}{\omega} $$
 - We obtain:
-  $$ v_{\text{cm}}
+  $$ v_{\mathrm{cm}}
   =
   \frac{2\pi R}{2\pi/\omega}
   =
   \omega R $$
 - Therefore, for rolling without slipping:
-  $$ v_{\text{cm}}=\omega R $$
+  $$ v_{\mathrm{cm}}=\omega R $$
 
 ---
 
 ### 6. Acceleration Relation for Rolling
 - Differentiate:
-  $$ v_{\text{cm}}=\omega R $$
+  $$ v_{\mathrm{cm}}=\omega R $$
 - If $R$ is constant:
-  $$ a_{\text{cm}}=\alpha R $$
+  $$ a_{\mathrm{cm}}=\alpha R $$
 - Thus:
   - translational speed relates to angular speed through $R$
   - translational acceleration relates to angular acceleration through $R$
@@ -105,9 +105,9 @@
 
 ### 9. Conservation of Energy
 - Begin with:
-  $$ U_0+K_0=U_f+K_f+\Delta E_{\text{th}} $$
+  $$ U_0+K_0=U_f+K_f+\Delta E_{\mathrm{th}} $$
 - Under the idealized assumptions:
-  $$ \Delta E_{\text{th}}\approx0 $$
+  $$ \Delta E_{\mathrm{th}}\approx0 $$
 - Taking the bottom of the ramp as zero gravitational potential:
   $$ mgh
   =
@@ -133,6 +133,8 @@
 
 ### 12. Apply the Rolling Constraint
 - Since the sphere rolls without slipping:
+  $$ v_f=\omega_f R $$
+- Therefore:
   $$ \omega_f=\frac{v_f}{R} $$
 - Substitute into the rotational kinetic energy:
   $$
@@ -165,19 +167,19 @@
 
 ### 14. Numerical Result
 - Substituting the values from the lecture gives approximately:
-  $$ v_f\approx2.5\text{ m/s} $$
+  $$ v_f\approx2.5\ \mathrm{m}/\mathrm{s} $$
 
 ---
 
 ### 15. Important Rolling-Energy Lesson
 - A rolling object has two kinds of kinetic energy:
-  $$ K_{\text{total}}
+  $$ K_{\mathrm{total}}
   =
-  K_{\text{trans}}+K_{\text{rot}} $$
+  K_{\mathrm{trans}}+K_{\mathrm{rot}} $$
 - Specifically:
-  $$ K_{\text{total}}
+  $$ K_{\mathrm{total}}
   =
-  \frac{1}{2}mv_{\text{cm}}^2
+  \frac{1}{2}mv_{\mathrm{cm}}^2
   +
   \frac{1}{2}I\omega^2 $$
 - Neglecting rotational kinetic energy would give an incorrect final speed.
@@ -190,7 +192,7 @@
 - Linear momentum is:
   $$ \vec{p}=m\vec{v} $$
 - Newton’s second law can be written as:
-  $$ \sum\vec{F}_{\text{ext}}=\frac{d\vec{p}}{dt} $$
+  $$ \sum\vec{F}_{\mathrm{ext}}=\frac{d\vec{p}}{dt} $$
 
 ---
 
@@ -212,7 +214,7 @@
 - The rotational analogue of:
   $$ \sum\vec{F}=\frac{d\vec{p}}{dt} $$
   is:
-  $$ \sum\vec{\tau}_{\text{ext}}
+  $$ \sum\vec{\tau}_{\mathrm{ext}}
   =
   \frac{d\vec{L}}{dt} $$
 
@@ -229,13 +231,13 @@
 
 ### 20. Conservation of Angular Momentum
 - If the net external torque about the chosen axis is zero:
-  $$ \sum\vec{\tau}_{\text{ext}}=0 $$
+  $$ \sum\vec{\tau}_{\mathrm{ext}}=0 $$
 - Then:
   $$ \frac{d\vec{L}}{dt}=0 $$
 - Therefore:
-  $$ \vec{L}_f=\vec{L}_0 $$
+  $$ \vec{L}_i=\vec{L}_f $$
 - For fixed-axis rotation:
-  $$ I_0\omega_0=I_f\omega_f $$
+  $$ I_i\omega_i=I_f\omega_f $$
 
 ---
 
@@ -308,9 +310,9 @@
 
 ### 26. Numerical Result
 - If:
-  $$ \omega_0=4.2\text{ rad/s} $$
+  $$ \omega_0=4.2\ \mathrm{rad}/\mathrm{s} $$
 - Then:
-  $$ \omega_f=2.1\text{ rad/s} $$
+  $$ \omega_f=2.1\ \mathrm{rad}/\mathrm{s} $$
 
 ---
 
@@ -362,15 +364,15 @@
 
 ### 31. Thermal-Energy Increase
 - The mechanical energy converted to thermal/internal energy is:
-  $$ \Delta E_{\text{th}}=K_0-K_f $$
+  $$ \Delta E_{\mathrm{th}}=K_0-K_f $$
 - Substitute:
-  $$ \Delta E_{\text{th}}
+  $$ \Delta E_{\mathrm{th}}
   =
   \frac{1}{4}md^2\omega_0^2
   -
   \frac{1}{8}md^2\omega_0^2 $$
 - Therefore:
-  $$ \Delta E_{\text{th}}
+  $$ \Delta E_{\mathrm{th}}
   =
   \frac{1}{8}md^2\omega_0^2 $$
 
@@ -378,7 +380,7 @@
 
 ### 32. Numerical Result
 - Using the values from the lecture:
-  $$ \Delta E_{\text{th}}\approx0.47\text{ J} $$
+  $$ \Delta E_{\mathrm{th}}\approx0.47\ \mathrm{J} $$
 
 ---
 
@@ -402,7 +404,7 @@
 ### 34. Conservation Principle
 - During the short collision, the net external torque about the spindle axis is assumed negligible.
 - Therefore:
-  $$ L_0=L_f $$
+  $$ L_i=L_f $$
 - Mechanical energy is not conserved because the bullet embeds in the cylinder.
 
 ---
@@ -411,15 +413,15 @@
 - The cylinder is initially at rest.
 - The bullet’s velocity is perpendicular to the radius at impact.
 - Therefore:
-  $$ L_0=mRv $$
+  $$ L_i=mRv $$
 
 ---
 
 ### 36. Final Moment of Inertia
 - The cylinder’s moment of inertia is:
-  $$ I_{\text{cyl}}=\frac{1}{2}MR^2 $$
+  $$ I_{\mathrm{cyl}}=\frac{1}{2}MR^2 $$
 - Treat the embedded bullet as a point mass at radius $R$:
-  $$ I_{\text{bullet}}=mR^2 $$
+  $$ I_{\mathrm{bullet}}=mR^2 $$
 - Total final moment of inertia:
   $$ I_f=\frac{1}{2}MR^2+mR^2 $$
 
@@ -427,7 +429,7 @@
 
 ### 37. Solve for the Final Angular Speed
 - Apply:
-  $$ L_0=L_f $$
+  $$ L_i=L_f $$
 - Therefore:
   $$ mRv
   =
@@ -453,17 +455,17 @@
 
 ### 38. Numerical Result
 - Substituting the values from the lecture gives:
-  $$ \omega_f\approx0.95\text{ rad/s} $$
+  $$ \omega_f\approx0.95\ \mathrm{rad}/\mathrm{s} $$
 
 ---
 
 ### 39. Main Physics Takeaways
 - Rolling without slipping:
-  $$ v_{\text{cm}}=\omega R $$
-  $$ a_{\text{cm}}=\alpha R $$
+  $$ v_{\mathrm{cm}}=\omega R $$
+  $$ a_{\mathrm{cm}}=\alpha R $$
 - Total kinetic energy of a rolling object:
   $$ K=
-  \frac{1}{2}mv_{\text{cm}}^2
+  \frac{1}{2}mv_{\mathrm{cm}}^2
   +
   \frac{1}{2}I\omega^2 $$
 - Angular momentum:
@@ -471,7 +473,7 @@
 - For fixed-axis rigid-body rotation:
   $$ L=I\omega $$
 - Angular momentum is conserved when:
-  $$ \sum\vec{\tau}_{\text{ext}}=0 $$
+  $$ \sum\vec{\tau}_{\mathrm{ext}}=0 $$
 - Angular momentum may be conserved even when mechanical energy is not.
 
 ---
@@ -485,7 +487,7 @@
    $$ L=I\omega $$
 4. Calculate the initial and final moments of inertia.
 5. Apply:
-   $$ L_0=L_f $$
+   $$ L_i=L_f $$
 6. Treat sticking collisions as mechanically inelastic.
 7. Use energy conservation for ideal rolling problems, including both translational and rotational kinetic energy.
 8. Solve symbolically before substituting numerical values.

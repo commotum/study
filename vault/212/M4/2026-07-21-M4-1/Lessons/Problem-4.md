@@ -109,11 +109,11 @@ Take the reciprocal of the period:
 $$
 f=\frac{1}{T}
 =\frac{1}{5.0\ \mathrm{s}}
-=0.20\ \mathrm{s^{-1}}
+=0.20\ \mathrm{s}^{-1}
 =0.20\ \mathrm{Hz}.
 $$
 
-A period measured in seconds produces a frequency in inverse seconds, and \(1\ \mathrm{s^{-1}}=1\ \mathrm{Hz}\).
+A period measured in seconds produces a frequency in inverse seconds, and \(1\ \mathrm{s}^{-1}=1\ \mathrm{Hz}\).
 
 Equivalently,
 

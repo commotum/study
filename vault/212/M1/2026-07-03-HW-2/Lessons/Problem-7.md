@@ -1,4 +1,4 @@
-# Resolving Banked-Track Forces Along the Centripetal Direction
+# Resolving Banked-Track Forces Along the Radial Direction
 
 <!--
 lesson-id: 212-M1-061
@@ -11,7 +11,7 @@ topic-code: MTH212.M1.61
 - [Choose the Inward Axis](#choose-the-inward-axis)
 - [Resolve the Normal Force](#resolve-the-normal-force)
 - [Resolve Friction Pointing Up the Track](#resolve-friction-pointing-up-the-track)
-- [Write the Centripetal Force Equation](#write-the-centripetal-force-equation)
+- [Write the Radial Force Equation](#write-the-centripetal-force-equation)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -42,7 +42,7 @@ The trigonometric function gives each component's magnitude; its physical direct
 
 **Explanation**
 
-The inward direction is the direction of centripetal acceleration. For constant-speed circular motion,
+The inward direction is the direction of radial acceleration. For constant-speed circular motion,
 
 $$
 a_r=\dfrac{v^2}{r}.
@@ -51,7 +51,7 @@ $$
 So the force equation along the inward direction is
 
 $$
-\sum F_r=ma_r=m\dfrac{v^2}{r}.
+\sum F_r=m a_r=m\dfrac{v^2}{r}.
 $$
 
 This axis choice is doing real work. Axes parallel and perpendicular to the bank are legal, but the horizontal circular acceleration would then have components along both axes. Choosing $+r$ horizontally inward puts the full known acceleration $v^2/r$ on one axis, so every sign on the left can be read simply as inward or outward.
@@ -150,7 +150,7 @@ $$
 f_{s,r}=-f_s\cos\theta.
 $$
 
-The vertical component $f_s\sin\theta$ is useful for the $y$ equation, but it is not the centripetal component.
+The vertical component $f_s\sin\theta$ is useful for the $y$ equation, but it is not the radial component.
 
 ```quiz
 type: radio
@@ -177,7 +177,7 @@ options:
 ---
 
 <a id="write-the-centripetal-force-equation"></a>
-## Write the Centripetal Force Equation
+## Write the Radial Force Equation
 
 **Example:** A car of mass $m$ travels at constant speed $v$ around a banked circular track of radius $r$. The normal force has magnitude $N$, and friction of magnitude $f_s$ points up the track. Write the net-force equation along the inward $r$ direction.
 
@@ -200,19 +200,19 @@ Weight points vertically downward, so it has no component along the horizontal i
 Therefore,
 
 $$
-\sum F_r=N\sin\theta-f_s\cos\theta.
+\sum F_r=m a_r=m\frac{v^2}{r}=N\sin\theta-f_s\cos\theta.
 $$
 
 For circular motion at constant speed,
 
 $$
-\sum F_r=ma_r=m\dfrac{v^2}{r}.
+\sum F_r=m a_r=m\dfrac{v^2}{r}.
 $$
 
 So the correct equation is
 
 $$
-\dfrac{mv^2}{r}=ma_r=\sum F_r=N\sin\theta-f_s\cos\theta.
+\sum F_r=m a_r=m\dfrac{v^2}{r}=N\sin\theta-f_s\cos\theta.
 $$
 
 ```quiz
@@ -224,7 +224,7 @@ content: |-
 
   The track has radius $r$ and there is friction between the tires and the track. Assume the friction points up the track in the side-view.
 
-  Which of the following options is the correct equation for the component of the net force along the centripetal $r$ direction, pointing radially inward toward the circle's center?
+  Which of the following options is the correct equation for the component of the net force along the $r$ direction, pointing radially inward toward the circle's center?
 
   Take $N$ to be the magnitude of the normal force on the car and $f_s$ the magnitude of the frictional force.
 
@@ -232,17 +232,17 @@ content: |-
 options:
 - id: p7-q4-a
   content: |-
-    $\dfrac{mv^2}{r}=ma_r=\sum F_r=N\sin\theta+f_s\cos\theta$
+    $\sum F_r=m a_r=m\dfrac{v^2}{r}=N\sin\theta+f_s\cos\theta$
 - id: p7-q4-b
   content: |-
-    $\dfrac{mv^2}{r}=ma_r=\sum F_r=N\sin\theta-f_s\cos\theta$
+    $\sum F_r=m a_r=m\dfrac{v^2}{r}=N\sin\theta-f_s\cos\theta$
   correct: true
 - id: p7-q4-c
   content: |-
-    $\dfrac{mv^2}{r}=ma_r=\sum F_r=N\cos\theta+f_s\sin\theta$
+    $\sum F_r=m a_r=m\dfrac{v^2}{r}=N\cos\theta+f_s\sin\theta$
 - id: p7-q4-d
   content: |-
-    $\dfrac{mv^2}{r}=ma_r=\sum F_r=N\cos\theta-f_s\sin\theta$
+    $\sum F_r=m a_r=m\dfrac{v^2}{r}=N\cos\theta-f_s\sin\theta$
 ```
 
 ---
@@ -253,7 +253,7 @@ options:
 For a car moving around a banked track, the net radial force points inward:
 
 $$
-\sum F_r=m\dfrac{v^2}{r}.
+\sum F_r=m a_r=m\dfrac{v^2}{r}.
 $$
 
 Then resolve the real forces onto that axis. For each force, find the component magnitude from the reference angle, then choose the sign from the component direction.
@@ -270,10 +270,10 @@ $$
 f_{s,r}=-f_s\cos\theta.
 $$
 
-The sign on friction is negative because up the track points outward in the side view, opposite the inward centripetal direction. Therefore,
+The sign on friction is negative because up the track points outward in the side view, opposite the inward radial direction. Therefore,
 
 $$
-\dfrac{mv^2}{r}=ma_r=\sum F_r=N\sin\theta-f_s\cos\theta.
+\sum F_r=m a_r=m\dfrac{v^2}{r}=N\sin\theta-f_s\cos\theta.
 $$
 
 <!-- lesson-nav:start -->

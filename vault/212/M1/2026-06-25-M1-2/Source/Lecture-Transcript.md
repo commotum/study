@@ -28,7 +28,7 @@ We will begin with a rotating apparatus that allows us to practice **covariation
 
 # A Bullet Passing Through Two Rotating Disks
 
-Consider two disks rigidly attached to the same rotating shaft. The disks are separated by a distance $d$.
+Consider two disks rigidly attached to the same rotating shaft. The disks are separated by a distance $D$.
 
 Each disk contains a small hole. When viewed along the shaft, the holes are separated by an angular displacement $\theta$. The entire apparatus rotates with constant angular speed and has a rotational period $T$.
 
@@ -72,27 +72,27 @@ $$
 
 # Covariational Reasoning
 
-Before solving the problem mathematically, we can predict how the bullet’s speed should depend on $d$, $T$, and $\theta$.
+Before solving the problem mathematically, we can predict how the bullet’s speed should depend on $D$, $T$, and $\theta$.
 
 Covariational reasoning asks how the requested quantity changes when one variable changes while the others are held constant.
 
 ## Dependence on Disk Separation
 
-Suppose the distance $d$ between the disks increases while $T$ and $\theta$ remain unchanged.
+Suppose the distance $D$ between the disks increases while $T$ and $\theta$ remain unchanged.
 
 The bullet must then travel a greater distance during the same available time. Its speed must therefore increase:
 
 $$
-d\uparrow
+D\uparrow
 \quad\Longrightarrow\quad
 v\uparrow.
 $$
 
-We consequently expect $d$ to appear in the numerator of the final expression.
+We consequently expect $D$ to appear in the numerator of the final expression.
 
 ## Dependence on the Rotational Period
 
-Suppose the period $T$ increases while $d$ and $\theta$ remain unchanged.
+Suppose the period $T$ increases while $D$ and $\theta$ remain unchanged.
 
 A larger period means the apparatus rotates more slowly. It therefore takes more time for the second hole to rotate into alignment. The bullet can travel more slowly and still pass through both holes:
 
@@ -106,7 +106,7 @@ We consequently expect $T$ to appear in the denominator.
 
 ## Dependence on Angular Separation
 
-Suppose the angular separation $\theta$ increases while $d$ and $T$ remain unchanged.
+Suppose the angular separation $\theta$ increases while $D$ and $T$ remain unchanged.
 
 The second disk must rotate through a greater angle before its hole reaches the bullet’s path. This provides the bullet with more travel time, so the required bullet speed decreases:
 
@@ -121,7 +121,7 @@ We consequently expect $\theta$ to appear in the denominator.
 Before completing the derivation, we therefore expect a relationship of the general form
 
 $$
-v\propto\frac{d}{T\theta}.
+v\propto\frac{D}{T\theta}.
 $$
 
 This prediction does not determine dimensionless numerical factors such as $2\pi$, but it establishes the correct dependence on the physical variables.
@@ -132,20 +132,20 @@ The expected combination has units
 
 $$
 \left[
-\frac{d}{T\theta}
+\frac{D}{T\theta}
 \right]
 =
-\frac{\mathrm{m}}{\mathrm{s}\cdot\mathrm{rad}}.
+\mathrm{m}/(\mathrm{s}\cdot\mathrm{rad}).
 $$
 
 Radians are dimensionless, so
 
 $$
 \left[
-\frac{d}{T\theta}
+\frac{D}{T\theta}
 \right]
 =
-\mathrm{m/s}.
+\mathrm{m}/\mathrm{s}.
 $$
 
 The predicted form therefore has the correct units for speed.
@@ -179,14 +179,14 @@ $$
 Its displacement between the disks is
 
 $$
-x_f-x_0=d.
+x_f-x_0=D.
 $$
 
 Therefore,
 
 $$
 \boxed{
-d=v\Delta t
+D=v\Delta t
 }.
 $$
 
@@ -223,7 +223,7 @@ $$
 Divide the translational equation by the rotational equation:
 
 $$
-\frac{d}{\theta}
+\frac{D}{\theta}
 =
 \frac{v\Delta t}{\omega\Delta t}.
 $$
@@ -231,7 +231,7 @@ $$
 The travel time cancels:
 
 $$
-\frac{d}{\theta}
+\frac{D}{\theta}
 =
 \frac{v}{\omega}.
 $$
@@ -239,7 +239,7 @@ $$
 Solving for $v$ gives
 
 $$
-v=\frac{\omega d}{\theta}.
+v=\frac{\omega D}{\theta}.
 $$
 
 Using
@@ -253,7 +253,7 @@ we obtain
 $$
 v
 =
-\frac{d}{\theta}
+\frac{D}{\theta}
 \left(
 \frac{2\pi}{T}
 \right).
@@ -263,13 +263,13 @@ Therefore,
 
 $$
 \boxed{
-v=\frac{2\pi d}{T\theta}
+v=\frac{2\pi D}{T\theta}
 }.
 $$
 
 This expression agrees with our covariational prediction:
 
-- $d$ appears in the numerator.
+- $D$ appears in the numerator.
 - $T$ appears in the denominator.
 - $\theta$ appears in the denominator.
 - The remaining factor $2\pi$ is dimensionless.
@@ -281,7 +281,7 @@ The angle $\theta$ must be expressed in radians when it is used with angular spe
 Suppose
 
 $$
-d=0.86\ \mathrm{m},
+D=0.86\ \mathrm{m},
 $$
 
 $$
@@ -324,25 +324,25 @@ $$
 Therefore,
 
 $$
-v\approx46.9\ \mathrm{m/s}.
+v\approx46.9\ \mathrm{m}/\mathrm{s}.
 $$
 
 Using two significant figures,
 
 $$
 \boxed{
-v\approx47\ \mathrm{m/s}
+v\approx47\ \mathrm{m}/\mathrm{s}
 }.
 $$
 
-A result near $7.5\ \mathrm{m/s}$ would arise from omitting the factor of $2\pi$ that relates angular speed to rotational period.
+A result near $7.5\ \mathrm{m}/\mathrm{s}$ would arise from omitting the factor of $2\pi$ that relates angular speed to rotational period.
 
 # Explicit Unit Analysis
 
 Starting from
 
 $$
-v=\frac{2\pi d}{T\theta},
+v=\frac{2\pi D}{T\theta},
 $$
 
 the factor $2\pi$ is dimensionless, and angles measured in radians are also dimensionless. Therefore,
@@ -362,7 +362,7 @@ Thus,
 
 $$
 \boxed{
-[v]=\mathrm{m/s}
+[v]=\mathrm{m}/\mathrm{s}
 },
 $$
 
@@ -384,10 +384,10 @@ In **nonuniform circular motion**, both the magnitude and direction of the veloc
 
 Consider an object moving around a circle of radius $r$ at constant speed $v$.
 
-At two nearby points on the path, let the velocity vectors be $\vec v_1$ and $\vec v_2$. Because the speed is constant,
+At two nearby points on the path, let the velocity vectors be $\vec{v}_1$ and $\vec{v}_2$. Because the speed is constant,
 
 $$
-|\vec v_1|=|\vec v_2|=v.
+|\vec{v}_1|=|\vec{v}_2|=v.
 $$
 
 The directions of the vectors differ by a small angle $\Delta\theta$.
@@ -395,9 +395,9 @@ The directions of the vectors differ by a small angle $\Delta\theta$.
 The change in velocity is
 
 $$
-\Delta\vec v
+\Delta\vec{v}
 =
-\vec v_2-\vec v_1.
+\vec{v}_2-\vec{v}_1.
 $$
 
 Although the speed does not change, the velocity changes because its direction changes.
@@ -406,35 +406,35 @@ Although the speed does not change, the velocity changes because its direction c
 
 The two radius vectors and the arc between them form a geometric figure with angle $\Delta\theta$.
 
-The two velocity vectors and their difference $\Delta\vec v$ form a similar figure because each velocity vector is perpendicular to its corresponding radius vector. The angle between the velocity vectors is therefore also $\Delta\theta$.
+The two velocity vectors and their difference $\Delta\vec{v}$ form a similar figure because each velocity vector is perpendicular to its corresponding radius vector. The angle between the velocity vectors is therefore also $\Delta\theta$.
 
 For a sufficiently small time interval, the arc length $\Delta s$ is approximately a straight segment. The similar triangles then give
 
 $$
-\frac{\Delta v}{v}
+\frac{|\Delta\vec{v}|}{v}
 =
 \frac{\Delta s}{r},
 $$
 
-where $\Delta v$ is the magnitude of the change in velocity.
+where $|\Delta\vec{v}|$ is the magnitude of the change in velocity.
 
-Solving for $\Delta v$,
+Solving for $|\Delta\vec{v}|$,
 
 $$
-\Delta v
+|\Delta\vec{v}|
 =
 \frac{v\Delta s}{r}.
 $$
 
 ## Taking the Limit
 
-Acceleration is the rate of change of velocity:
+The radial-acceleration magnitude is the limiting magnitude of the velocity-change rate:
 
 $$
 a_r
 =
 \lim_{\Delta t\to0}
-\frac{\Delta v}{\Delta t}.
+\frac{|\Delta\vec{v}|}{\Delta t}.
 $$
 
 Substituting the similar-triangle result,
@@ -486,7 +486,7 @@ $$
 Using
 
 $$
-v=\omega r,
+v=r\omega,
 $$
 
 we may also write
@@ -495,7 +495,7 @@ $$
 a_r
 =
 \frac{
-(\omega r)^2
+(r\omega)^2
 }{
 r
 }.
@@ -505,7 +505,7 @@ Therefore,
 
 $$
 \boxed{
-a_r=\omega^2r
+a_r=r\omega^2
 }.
 $$
 
@@ -514,14 +514,14 @@ $$
 The vector
 
 $$
-\Delta\vec v
+\Delta\vec{v}
 =
-\vec v_2-\vec v_1
+\vec{v}_2-\vec{v}_1
 $$
 
 points approximately toward the center of the circle.
 
-As the time interval approaches zero, the direction of $\Delta\vec v$ becomes exactly radial and inward. Because acceleration points in the direction of the change in velocity, radial acceleration always points toward the center of the circular path.
+As the time interval approaches zero, the direction of $\Delta\vec{v}$ becomes exactly radial and inward. Because acceleration points in the direction of the change in velocity, radial acceleration always points toward the center of the circular path.
 
 Therefore, radial acceleration has:
 
@@ -533,13 +533,13 @@ $$
 
 - Direction toward the center of the circle
 
-If the unit vector $\hat r$ is defined to point outward, the vector form is
+If the unit vector $\hat{r}$ is defined to point outward, the vector form is
 
 $$
 \boxed{
-\vec a_r
+\vec{a}
 =
--\frac{v^2}{r}\hat r
+-\frac{v^2}{r}\hat{r}
 }.
 $$
 
@@ -548,8 +548,10 @@ The negative sign indicates that the acceleration points opposite the outward ra
 If the positive radial axis is instead defined to point inward, then the radial component is simply
 
 $$
-a_r=+\frac{v^2}{r}.
+a_r=\frac{v^2}{r}.
 $$
+
+The component equations below use this inward-positive convention, with $\hat{r}$ directed inward and $\hat{t}$ tangent to the path.
 
 # Uniform and Nonuniform Circular Motion
 
@@ -562,7 +564,7 @@ $$
 and the total acceleration is entirely radial:
 
 $$
-\vec a=\vec a_r.
+\vec{a}=a_r\hat{r}.
 $$
 
 It points directly toward the center of the circle.
@@ -579,9 +581,9 @@ The total acceleration is
 
 $$
 \boxed{
-\vec a
+\vec{a}
 =
-\vec a_r+\vec a_t
+a_r\hat{r}+a_t\hat{t}
 }.
 $$
 
@@ -589,7 +591,7 @@ Because the radial and tangential directions are perpendicular,
 
 $$
 \boxed{
-a
+|\vec{a}|
 =
 \sqrt{
 a_r^2+a_t^2
@@ -607,10 +609,10 @@ Their speeds and radii are:
 
 | Object | Speed $v$ | Radius $r$ |
 |---|---:|---:|
-| A | $1\ \mathrm{m/s}$ | $1\ \mathrm{m}$ |
-| B | $2\ \mathrm{m/s}$ | $1\ \mathrm{m}$ |
-| C | $2\ \mathrm{m/s}$ | $2\ \mathrm{m}$ |
-| D | $1\ \mathrm{m/s}$ | $2\ \mathrm{m}$ |
+| A | $1\ \mathrm{m}/\mathrm{s}$ | $1\ \mathrm{m}$ |
+| B | $2\ \mathrm{m}/\mathrm{s}$ | $1\ \mathrm{m}$ |
+| C | $2\ \mathrm{m}/\mathrm{s}$ | $2\ \mathrm{m}$ |
+| D | $1\ \mathrm{m}/\mathrm{s}$ | $2\ \mathrm{m}$ |
 
 The radial acceleration is
 
@@ -624,7 +626,7 @@ $$
 a_{r,A}
 =
 \frac{
-(1\ \mathrm{m/s})^2
+(1\ \mathrm{m}/\mathrm{s})^2
 }{
 1\ \mathrm{m}
 }.
@@ -633,7 +635,7 @@ $$
 Therefore,
 
 $$
-a_{r,A}=1\ \mathrm{m/s^2}.
+a_{r,A}=1\ \mathrm{m}/\mathrm{s}^2.
 $$
 
 ## Object B
@@ -642,7 +644,7 @@ $$
 a_{r,B}
 =
 \frac{
-(2\ \mathrm{m/s})^2
+(2\ \mathrm{m}/\mathrm{s})^2
 }{
 1\ \mathrm{m}
 }.
@@ -651,7 +653,7 @@ $$
 Therefore,
 
 $$
-a_{r,B}=4\ \mathrm{m/s^2}.
+a_{r,B}=4\ \mathrm{m}/\mathrm{s}^2.
 $$
 
 ## Object C
@@ -660,7 +662,7 @@ $$
 a_{r,C}
 =
 \frac{
-(2\ \mathrm{m/s})^2
+(2\ \mathrm{m}/\mathrm{s})^2
 }{
 2\ \mathrm{m}
 }.
@@ -669,7 +671,7 @@ $$
 Therefore,
 
 $$
-a_{r,C}=2\ \mathrm{m/s^2}.
+a_{r,C}=2\ \mathrm{m}/\mathrm{s}^2.
 $$
 
 ## Object D
@@ -678,7 +680,7 @@ $$
 a_{r,D}
 =
 \frac{
-(1\ \mathrm{m/s})^2
+(1\ \mathrm{m}/\mathrm{s})^2
 }{
 2\ \mathrm{m}
 }.
@@ -687,7 +689,7 @@ $$
 Therefore,
 
 $$
-a_{r,D}=0.50\ \mathrm{m/s^2}.
+a_{r,D}=0.50\ \mathrm{m}/\mathrm{s}^2.
 $$
 
 From smallest to largest, the radial accelerations are
@@ -766,7 +768,7 @@ Before calculating, predict how the answer should depend on each given variable.
 For the rotating-disk problem,
 
 $$
-v\propto\frac{d}{T\theta}.
+v\propto\frac{D}{T\theta}.
 $$
 
 The final symbolic expression should agree with these predictions.
@@ -806,7 +808,7 @@ Do not substitute numerical values until the requested variable has been isolate
 For the bullet problem, the symbolic result is
 
 $$
-v=\frac{2\pi d}{T\theta}.
+v=\frac{2\pi D}{T\theta}.
 $$
 
 ## 6. Perform an Explicit Unit Check
@@ -837,10 +839,10 @@ $$
 }.
 $$
 
-For a bullet passing through two rotating disks separated by distance $d$, with their holes separated by angle $\theta$, the bullet’s travel time satisfies
+For a bullet passing through two rotating disks separated by distance $D$, with their holes separated by angle $\theta$, the bullet’s travel time satisfies
 
 $$
-d=v\Delta t
+D=v\Delta t
 $$
 
 and
@@ -853,7 +855,7 @@ Eliminating $\Delta t$ gives
 
 $$
 \boxed{
-v=\frac{\omega d}{\theta}
+v=\frac{\omega D}{\theta}
 }.
 $$
 
@@ -861,18 +863,18 @@ Using $\omega=2\pi/T$,
 
 $$
 \boxed{
-v=\frac{2\pi d}{T\theta}
+v=\frac{2\pi D}{T\theta}
 }.
 $$
 
 For
 
 $$
-d=0.86\ \mathrm{m},
+D=0.86\ \mathrm{m},
 $$
 
 $$
-\theta=\frac{\pi}{6},
+\theta=\frac{\pi}{6}\ \mathrm{rad},
 $$
 
 and
@@ -885,7 +887,7 @@ the bullet speed is
 
 $$
 \boxed{
-v\approx47\ \mathrm{m/s}
+v\approx47\ \mathrm{m}/\mathrm{s}
 }.
 $$
 
@@ -903,7 +905,7 @@ or equivalently,
 
 $$
 \boxed{
-a_r=\omega^2r
+a_r=r\omega^2
 }.
 $$
 

@@ -82,6 +82,6 @@ Use the parallel-axis theorem to determine its moment of inertia about an axis t
    \frac{1}{3}ML^2.
    $$
 
-5. This matches direct integration about the end. The shift term has units $\text{kg}\cdot\text{m}^2$, so it can be added to $I_{\mathrm{cm}}$.
+5. This matches direct integration about the end. The shift term has units $\mathrm{kg}\cdot\mathrm{m}^2$, so it can be added to $I_{\mathrm{cm}}$.
 
 6. The theorem would not apply directly if the requested axis were tilted relative to the center-of-mass axis; the axes must be parallel.

@@ -52,18 +52,18 @@ If the objects also have the same total mass, do **not** stop there. Ask where t
 <a id="cancel-the-shared-angular-speed"></a>
 ## Cancel the Shared Angular Speed
 
-**Example:** Two point masses rotate about the same axis. Mass A has $I_A=2\ \mathrm{kg\,m^2}$ and mass B has $I_B=5\ \mathrm{kg\,m^2}$. Both rotate with angular speed $3\ \mathrm{rad/s}$. Which has the larger angular momentum?
+**Example:** Two point masses rotate about the same axis. Mass A has $I_A=2\ \mathrm{kg}\,\mathrm{m}^2$ and mass B has $I_B=5\ \mathrm{kg}\,\mathrm{m}^2$. Both rotate with angular speed $3\ \mathrm{rad}/\mathrm{s}$. Which has the larger angular momentum?
 
 **Explanation**
 
 Use $L=I\omega$:
 
 $$
-L_A=(2)(3)=6\ \mathrm{kg\,m^2/s},
+L_A=(2)(3)=6\ \mathrm{kg}\,\mathrm{m}^2/\mathrm{s},
 $$
 
 $$
-L_B=(5)(3)=15\ \mathrm{kg\,m^2/s}.
+L_B=(5)(3)=15\ \mathrm{kg}\,\mathrm{m}^2/\mathrm{s}.
 $$
 
 Because the angular speeds are equal, the larger moment of inertia gives the larger angular momentum. Mass B has the larger $L$.
@@ -72,7 +72,7 @@ Because the angular speeds are equal, the larger moment of inertia gives the lar
 type: radio
 id: p1-equal-omega
 content: |-
-  Rotors P and Q spin with the same angular speed. Their moments of inertia are $I_P=7\ \mathrm{kg\,m^2}$ and $I_Q=4\ \mathrm{kg\,m^2}$. Which rotor has the larger angular momentum magnitude?
+  Rotors P and Q spin with the same angular speed. Their moments of inertia are $I_P=7\ \mathrm{kg}\,\mathrm{m}^2$ and $I_Q=4\ \mathrm{kg}\,\mathrm{m}^2$. Which rotor has the larger angular momentum magnitude?
 options:
 - id: a
   content: |-

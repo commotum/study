@@ -94,7 +94,7 @@
 - Frequency is the number of oscillations per unit time:
   $$ f=\frac{1}{T} $$
 - Its SI unit is hertz:
-  $$ 1\ \mathrm{Hz}=1\ \text{cycle/s} $$
+  $$ 1\ \mathrm{Hz}=1\ \mathrm{cycle}/\mathrm{s} $$
 
 ---
 
@@ -106,7 +106,7 @@
 - We also have:
   $$ \omega=\frac{2\pi}{T} $$
 - Angular frequency has units:
-  $$ \mathrm{rad/s} $$
+  $$ \mathrm{rad}/\mathrm{s} $$
 
 ---
 
@@ -301,9 +301,9 @@
 - Therefore:
   $$ \omega=2\pi(0.25) $$
 - Result:
-  $$ \omega=\frac{\pi}{2}\ \mathrm{rad/s} $$
+  $$ \omega=\frac{\pi}{2}\ \mathrm{rad}/\mathrm{s} $$
 - Numerically:
-  $$ \omega\approx1.57\ \mathrm{rad/s} $$
+  $$ \omega\approx1.57\ \mathrm{rad}/\mathrm{s} $$
 
 ---
 
@@ -313,10 +313,10 @@
 - Substitute:
   $$ v_{\max}
   =
-  \left(\frac{\pi}{2}\ \mathrm{rad/s}\right)
+  \left(\frac{\pi}{2}\ \mathrm{rad}/\mathrm{s}\right)
   (2.5\ \mathrm{cm}) $$
 - Result:
-  $$ v_{\max}\approx3.9\ \mathrm{cm/s} $$
+  $$ v_{\max}\approx3.9\ \mathrm{cm}/\mathrm{s} $$
 
 ---
 
@@ -324,9 +324,9 @@
 
 ### 32. Given Information
 - Equilibrium position:
-  $$ x_0=0.35\ \mathrm{m} $$
+  $$ x_{\mathrm{eq}}=0.35\ \mathrm{m} $$
 - Initial release position:
-  $$ x_f=0.48\ \mathrm{m} $$
+  $$ x_{\mathrm{release}}=0.48\ \mathrm{m} $$
 - Number of oscillations:
   $$ 12 $$
 - Elapsed time:
@@ -338,7 +338,7 @@
 
 ### 33. Amplitude
 - The amplitude relative to equilibrium is:
-  $$ A=x_f-x_0 $$
+  $$ A=x_{\mathrm{release}}-x_{\mathrm{eq}} $$
 - Therefore:
   $$ A=0.48-0.35 $$
 - Result:
@@ -352,22 +352,22 @@
 - Therefore:
   $$ f\approx1.71\ \mathrm{Hz} $$
 - Angular frequency:
-  $$ \omega=2\pi f=\frac{24\pi}{7}\ \mathrm{rad/s} $$
+  $$ \omega=2\pi f=\frac{24\pi}{7}\ \mathrm{rad}/\mathrm{s} $$
 
 ---
 
 ### 35. Position at $t=3.9\ \mathrm{s}$
 - Position relative to equilibrium:
-  $$ x(t)=A\cos(2\pi ft) $$
+  $$ y(t)=A\cos(2\pi ft) $$
 - Substitute:
-  $$ x(3.9)
+  $$ y(3.9)
   =
   (0.13)
   \cos\left(
   2\pi\frac{12}{7}(3.9)
   \right) $$
 - Result:
-  $$ x(3.9)\approx-0.051\ \mathrm{m} $$
+  $$ y(3.9)\approx-0.051\ \mathrm{m} $$
 - The negative sign means the block is to the left of equilibrium.
 
 ---
@@ -376,13 +376,13 @@
 - Velocity:
   $$ v(t)=-2\pi fA\sin(2\pi ft) $$
 - Substituting the values gives:
-  $$ v(3.9)\approx+1.3\ \mathrm{m/s} $$
+  $$ v(3.9)\approx+1.3\ \mathrm{m}/\mathrm{s} $$
 
 ---
 
 ### 37. Interpreting the Motion
 - At $t=3.9\ \mathrm{s}$:
-  $$ x<0 $$
+  $$ y<0 $$
   and:
   $$ v>0 $$
 - Therefore, the block is:
@@ -411,7 +411,7 @@
 - Solve:
   $$ v_{\max}=A\sqrt{\frac{k}{m}} $$
 - The numerical values in the lecture give:
-  $$ v_{\max}\approx8.8\ \mathrm{m/s} $$
+  $$ v_{\max}\approx8.8\ \mathrm{m}/\mathrm{s} $$
 
 ---
 

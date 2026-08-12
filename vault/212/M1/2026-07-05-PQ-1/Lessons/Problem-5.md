@@ -19,7 +19,7 @@ topic-code: MTH212.M1.65
 
 - Draw a free-body diagram using only real forces.
 - Resolve an angled force into components.
-- Use $\sum F_r = mv^2/r$ for uniform circular motion.
+- Use $\sum F_r=m a_r=m v^2/r$ for uniform circular motion.
 - Use $T = 2\pi r/v$ for one circular orbit.
 
 ---
@@ -27,7 +27,7 @@ topic-code: MTH212.M1.65
 <a id="introduction"></a>
 ## Introduction
 
-A bead sliding without friction around an inverted cone has only two real forces: gravity and the normal force from the cone. The recognition cue is that the bead stays at a constant height while moving in a circle, so the vertical forces balance and the inward radial force supplies centripetal acceleration.
+A bead sliding without friction around an inverted cone has only two real forces: gravity and the normal force from the cone. The recognition cue is that the bead stays at a constant height while moving in a circle, so the vertical forces balance and the inward radial net force supplies the radial acceleration.
 
 The useful move is to split the angled normal force into vertical and radial components, divide the two force equations to eliminate $N$, and then use tangent as opposite over adjacent in the cone's side-view triangle.
 
@@ -47,7 +47,7 @@ Because the surface is frictionless, the bead has no friction force. The only re
 - $mg$ downward.
 - $N$ perpendicular to the cone surface, pointing up and inward.
 
-Use a vertical $y$-axis and an inward radial $r$-axis. Do not draw a separate "centripetal force"; centripetal acceleration is caused by the inward component of the real forces.
+Use a vertical $y$-axis and an inward radial $r$-axis. Do not draw a separate "centripetal force"; radial acceleration is caused by the inward component of the real forces.
 
 ![](<../Source/Images/problem-5-free-body-diagram.png>)
 
@@ -103,7 +103,7 @@ $$
 The bead does have inward radial acceleration, so the radial equation is:
 
 $$
-\sum F_r = \frac{mv^2}{r} = N\cos\theta
+\sum F_r=m a_r=m\frac{v^2}{r}=N\cos\theta
 $$
 
 ```quiz

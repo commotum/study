@@ -37,10 +37,10 @@ Use the same phase ledger every time:
 $$
 \begin{aligned}
 \text{initial:}\quad &\Delta\phi_0,\\
-\text{propagation:}\quad &\Delta\phi_{\text{path}}
+\text{propagation:}\quad &\Delta\phi_{\mathrm{path}}
 =2\pi\frac{\Delta r}{\lambda},\\
-\text{arrival:}\quad &\Delta\phi_{\text{total}}
-=\Delta\phi_0+\Delta\phi_{\text{path}}.
+\text{arrival:}\quad &\Delta\phi_{\mathrm{total}}
+=\Delta\phi_0+\Delta\phi_{\mathrm{path}}.
 \end{aligned}
 $$
 
@@ -49,13 +49,13 @@ Then subtract whole cycles of $2\pi$ until the arrival phase is in the interval 
 For equal-amplitude signals:
 
 $$
-\Delta\phi_{\text{total}}\equiv 0\pmod{2\pi}
+\Delta\phi_{\mathrm{total}}\equiv 0\pmod{2\pi}
 \quad\Longrightarrow\quad
 \text{completely constructive},
 $$
 
 $$
-\Delta\phi_{\text{total}}\equiv \pi\pmod{2\pi}
+\Delta\phi_{\mathrm{total}}\equiv \pi\pmod{2\pi}
 \quad\Longrightarrow\quad
 \text{completely destructive}.
 $$
@@ -134,7 +134,7 @@ $$
 Each wavelength contributes $2\pi$ of phase, so
 
 $$
-\Delta\phi_{\text{path}}
+\Delta\phi_{\mathrm{path}}
 =2\pi\frac{\Delta r}{\lambda}
 =2\pi(1.5)
 =3\pi.
@@ -199,7 +199,7 @@ $$
 Propagation contributes
 
 $$
-\Delta\phi_{\text{path}}=2\pi(1.5)=3\pi.
+\Delta\phi_{\mathrm{path}}=2\pi(1.5)=3\pi.
 $$
 
 Completely out-of-phase sources begin with
@@ -211,8 +211,8 @@ $$
 Therefore,
 
 $$
-\Delta\phi_{\text{total}}
-=\Delta\phi_0+\Delta\phi_{\text{path}}
+\Delta\phi_{\mathrm{total}}
+=\Delta\phi_0+\Delta\phi_{\mathrm{path}}
 =\pi+3\pi
 =4\pi
 \equiv 0\pmod{2\pi}.
@@ -285,7 +285,7 @@ $$
 so
 
 $$
-\Delta\phi_{\text{path}}=2\pi(1.25)=2.5\pi
+\Delta\phi_{\mathrm{path}}=2\pi(1.25)=2.5\pi
 \equiv\frac{\pi}{2}\pmod{2\pi}.
 $$
 
@@ -326,7 +326,7 @@ When two sources interfere at a point:
 2. Compute $\Delta r=|r_B-r_A|$.
 3. Convert the path difference with
    $$
-   \Delta\phi_{\text{path}}=2\pi\frac{\Delta r}{\lambda}.
+   \Delta\phi_{\mathrm{path}}=2\pi\frac{\Delta r}{\lambda}.
    $$
 4. Add the initial phase difference: $0$ for in-phase sources or $\pi$ for completely out-of-phase sources.
 5. Reduce to $[0,2\pi)$ by subtracting whole multiples of $2\pi$:

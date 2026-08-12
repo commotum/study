@@ -30,7 +30,7 @@ When the masses stay fixed and only their separation changes, Newton's law of gr
 If the distance changes from $r$ to $kr$, replace $r$ by $kr$ everywhere in the denominator. The force then changes by the factor
 
 $$
-\boxed{\frac{F_{\text{new}}}{F_{\text{old}}}=\frac{1}{k^2}}.
+\boxed{\frac{F_{\mathrm{new}}}{F_{\mathrm{old}}}=\frac{1}{k^2}}.
 $$
 
 The square applies to the entire distance scale factor. This lets you compare the forces without knowing either mass or the value of $G$.
@@ -104,9 +104,9 @@ Use the same three-line pattern each time:
 Write the old and new forces using the same constant numerator $K$:
 
 $$
-F_{\text{old}}=\frac{K}{r^2},
+F_{\mathrm{old}}=\frac{K}{r^2},
 \qquad
-F_{\text{new}}=\frac{K}{(3r)^2}.
+F_{\mathrm{new}}=\frac{K}{(3r)^2}.
 $$
 
 Square both factors in the product $3r$:
@@ -118,9 +118,9 @@ $$
 Therefore,
 
 $$
-F_{\text{new}}
+F_{\mathrm{new}}
 =\frac{K}{9r^2}
-=\frac19F_{\text{old}}.
+=\frac19F_{\mathrm{old}}.
 $$
 
 The distance increased, so the smaller force is a useful direction check.
@@ -128,7 +128,7 @@ The distance increased, so the smaller force is a useful direction check.
 In general, taking the ratio cancels every fixed quantity:
 
 $$
-\frac{F_{\text{new}}}{F_{\text{old}}}
+\frac{F_{\mathrm{new}}}{F_{\mathrm{old}}}
 =\frac{K/(kr)^2}{K/r^2}
 =\frac{1}{k^2}.
 $$
@@ -151,7 +151,7 @@ options:
     $F/16$
   correct: true
   feedback: |-
-    Here $k=4$, so $F_{\text{new}}=F/k^2=F/16$. The distractor $F/4$ comes from forgetting to square the distance factor.
+    Here $k=4$, so $F_{\mathrm{new}}=F/k^2=F/16$. The distractor $F/4$ comes from forgetting to square the distance factor.
 - id: b
   content: |-
     $F/4$
@@ -179,7 +179,7 @@ The new distance is $kr$ with $k=1/2$. Apply the same scale-factor rule:
 
 $$
 \begin{aligned}
-F_{\text{new}}
+F_{\mathrm{new}}
 &=\frac{1}{(1/2)^2}F\\
 &=4F.
 \end{aligned}
@@ -198,7 +198,7 @@ options:
     $9F$
   correct: true
   feedback: |-
-    The scale factor is $k=1/3$, so $F_{\text{new}}=F/(1/3)^2=9F$. A shorter distance must produce a larger force.
+    The scale factor is $k=1/3$, so $F_{\mathrm{new}}=F/(1/3)^2=9F$. A shorter distance must produce a larger force.
 - id: b
   content: |-
     $3F$
@@ -226,7 +226,7 @@ The distance scale factor is $k=2$. Substitute $2r$ for $r$:
 
 $$
 \begin{aligned}
-F_{\text{new}}
+F_{\mathrm{new}}
 &=\frac{Gm_1m_2}{(2r)^2}\\
 &=\frac{Gm_1m_2}{4r^2}\\
 &=\frac14F.

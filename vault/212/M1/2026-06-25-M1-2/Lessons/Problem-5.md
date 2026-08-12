@@ -112,11 +112,11 @@ $$
 \begin{aligned}
 v&=\dfrac{D}{\Delta t} \\
 &=\dfrac{1.2}{0.0375} \\
-&=32\ \mathrm{m/s}.
+&=32\ \mathrm{m}/\mathrm{s}.
 \end{aligned}
 $$
 
-The unit check is meters divided by seconds, so the result should be in $\mathrm{m/s}$.
+The unit check is meters divided by seconds, so the result should be in $\mathrm{m}/\mathrm{s}$.
 
 ```quiz
 type: radio
@@ -127,20 +127,20 @@ content: |-
 options:
 - id: a
   content: |-
-    $0.036\ \mathrm{m/s}$
+    $0.036\ \mathrm{m}/\mathrm{s}$
 - id: b
   content: |-
-    $2.25\ \mathrm{m/s}$
+    $2.25\ \mathrm{m}/\mathrm{s}$
 - id: c
   content: |-
-    $9.0\ \mathrm{m/s}$
+    $9.0\ \mathrm{m}/\mathrm{s}$
 - id: d
   content: |-
-    $22.5\ \mathrm{m/s}$
+    $22.5\ \mathrm{m}/\mathrm{s}$
   correct: true
 - id: e
   content: |-
-    $36.0\ \mathrm{m/s}$
+    $36.0\ \mathrm{m}/\mathrm{s}$
 ```
 
 ---
@@ -218,14 +218,14 @@ v
 &=\dfrac{2\pi(0.86)}{(\pi/6)(0.22)} \\
 &=\dfrac{2(0.86)(6)}{0.22} \\
 &=\dfrac{10.32}{0.22} \\
-&\approx 46.9\ \mathrm{m/s}.
+&\approx 46.9\ \mathrm{m}/\mathrm{s}.
 \end{aligned}
 $$
 
 Rounded to two significant figures, the bullet speed is
 
 $$
-v\approx 47\ \mathrm{m/s}.
+v\approx 47\ \mathrm{m}/\mathrm{s}.
 $$
 
 ```quiz
@@ -237,20 +237,20 @@ content: |-
 options:
 - id: a
   content: |-
-    $4.5\ \mathrm{m/s}$
+    $4.5\ \mathrm{m}/\mathrm{s}$
 - id: b
   content: |-
-    $9.0\ \mathrm{m/s}$
+    $9.0\ \mathrm{m}/\mathrm{s}$
 - id: c
   content: |-
-    $18\ \mathrm{m/s}$
+    $18\ \mathrm{m}/\mathrm{s}$
   correct: true
 - id: d
   content: |-
-    $24\ \mathrm{m/s}$
+    $24\ \mathrm{m}/\mathrm{s}$
 - id: e
   content: |-
-    $57\ \mathrm{m/s}$
+    $57\ \mathrm{m}/\mathrm{s}$
 ```
 
 ---
@@ -289,20 +289,20 @@ content: |-
 options:
 - id: a
   content: |-
-    $v=\dfrac{3.0}{0.60}=5.0\ \mathrm{m/s}$ because the period is always the flight time.
+    $v=\dfrac{3.0}{0.60}=5.0\ \mathrm{m}/\mathrm{s}$ because the period is always the flight time.
 - id: b
   content: |-
-    $v=\dfrac{3.0}{0.15}=20\ \mathrm{m/s}$ because $\dfrac{\pi/2}{2\pi}=\dfrac14$, so $\Delta t=\dfrac14(0.60)=0.15\ \mathrm{s}$.
+    $v=\dfrac{3.0}{0.15}=20\ \mathrm{m}/\mathrm{s}$ because $\dfrac{\pi/2}{2\pi}=\dfrac14$, so $\Delta t=\dfrac14(0.60)=0.15\ \mathrm{s}$.
   correct: true
 - id: c
   content: |-
-    $v=\dfrac{0.60}{3.0}=0.20\ \mathrm{s/m}$ because speed is time divided by distance.
+    $v=\dfrac{0.60}{3.0}=0.20\ \mathrm{s}/\mathrm{m}$ because speed is time divided by distance.
 - id: d
   content: |-
-    $v=\dfrac{3.0}{2\pi(0.60)}\approx 0.80\ \mathrm{m/s}$ because every angle adds a factor of $2\pi$ to the time.
+    $v=\dfrac{3.0}{2\pi(0.60)}\approx 0.80\ \mathrm{m}/\mathrm{s}$ because every angle adds a factor of $2\pi$ to the time.
 - id: e
   content: |-
-    $v=3.0(0.60)=1.8\ \mathrm{m/s}$ because distance and period should be multiplied.
+    $v=3.0(0.60)=1.8\ \mathrm{m}/\mathrm{s}$ because distance and period should be multiplied.
 ```
 
 ---

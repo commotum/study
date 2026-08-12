@@ -57,20 +57,20 @@
 
 ### 6. Center of Mass of the Binary System
 - Choose the larger star $M$ as the origin:
-  $$ r_M=0,\qquad r_m=d $$
+  $$ x_M=0,\qquad x_m=d $$
 - The center-of-mass position is:
-  $$ r_{\text{cm}}
+  $$ x_{\mathrm{cm}}
   =
-  \frac{Mr_M+mr_m}{M+m} $$
+  \frac{Mx_M+mx_m}{M+m} $$
 - Therefore:
-  $$ r_{\text{cm}}=\frac{md}{M+m} $$
+  $$ x_{\mathrm{cm}}=\frac{md}{M+m} $$
 
 ---
 
 ### 7. Numerical Binary-Star Masses
 - The lecture uses:
-  $$ M=5.0\times10^{30}\text{ kg} $$
-  $$ m=2.5\times10^{30}\text{ kg} $$
+  $$ M=5.0\times10^{30}\ \mathrm{kg} $$
+  $$ m=2.5\times10^{30}\ \mathrm{kg} $$
 - Thus:
   $$ M=2m $$
 
@@ -78,13 +78,13 @@
 
 ### 8. Center-of-Mass Position for $M=2m$
 - Substitute $M=2m$:
-  $$ r_{\text{cm}}
+  $$ x_{\mathrm{cm}}
   =
   \frac{md}{2m+m} $$
 - Therefore:
-  $$ r_{\text{cm}}=\frac{d}{3} $$
+  $$ x_{\mathrm{cm}}=\frac{d}{3} $$
 - As a fraction of the star separation:
-  $$ \frac{r_{\text{cm}}}{d}=\frac{1}{3} $$
+  $$ \frac{x_{\mathrm{cm}}}{d}=\frac{1}{3} $$
 - The center of mass lies closer to the more massive star.
 
 ---
@@ -100,9 +100,9 @@
 ---
 
 ### 10. Gravitational Force as the Radial Force
-- For either star, gravity supplies the inward radial force.
+- For either star, take inward as positive. Gravity supplies the inward radial net force.
 - Using the larger star:
-  $$ \frac{GMm}{d^2}=M\frac{v_M^2}{r_M} $$
+  $$ \sum F_r=M a_r=M\frac{v_M^2}{r_M}=F_g=\frac{GMm}{d^2} $$
 - The relevant gravitational distance is:
   $$ d $$
 - The relevant orbital radius is:
@@ -135,10 +135,10 @@
 
 ### 14. Numerical Binary-Orbit Period
 - Using:
-  $$ d=3.0\times10^{12}\text{ m} $$
-  $$ m=2.5\times10^{30}\text{ kg} $$
+  $$ d=3.0\times10^{12}\ \mathrm{m} $$
+  $$ m=2.5\times10^{30}\ \mathrm{kg} $$
 - The lecture obtains:
-  $$ T\approx46\text{ yr} $$
+  $$ T\approx46\ \mathrm{yr} $$
 
 ---
 
@@ -183,17 +183,17 @@
 
 ### 19. Net Radial Force
 - The net force is:
-  $$ F_{\text{net}}
+  $$ F_{\mathrm{net}}
   =
-  2F_g\cos30^\circ $$
+  2F_g\cos(30^\circ) $$
 - Substitute:
-  $$ F_{\text{net}}
+  $$ F_{\mathrm{net}}
   =
-  2\frac{Gm^2}{L^2}\cos30^\circ $$
+  2\frac{Gm^2}{L^2}\cos(30^\circ) $$
 - Since:
-  $$ \cos30^\circ=\frac{\sqrt{3}}{2} $$
+  $$ \cos(30^\circ)=\frac{\sqrt{3}}{2} $$
 - Therefore:
-  $$ F_{\text{net}}
+  $$ F_{\mathrm{net}}
   =
   \sqrt{3}\frac{Gm^2}{L^2} $$
 
@@ -201,28 +201,26 @@
 
 ### 20. Numerical Net Force
 - Using the values supplied in the lecture:
-  $$ F_{\text{net}}\approx2.2\times10^{26}\text{ N} $$
+  $$ F_{\mathrm{net}}\approx2.2\times10^{26}\ \mathrm{N} $$
 - This is approximately:
-  $$ 220\text{ YN} $$
+  $$ 220\ \mathrm{YN} $$
 
 ---
 
 ### 21. Orbital Radius of Each Mass
 - Let $R$ be the distance from a vertex to the common center.
 - From the triangle geometry:
-  $$ \cos30^\circ=\frac{L/2}{R} $$
+  $$ \cos(30^\circ)=\frac{L/2}{R} $$
 - Therefore:
-  $$ R=\frac{L}{2\cos30^\circ} $$
+  $$ R=\frac{L}{2\cos(30^\circ)} $$
 - Simplify:
   $$ R=\frac{L}{\sqrt{3}} $$
 
 ---
 
 ### 22. Find the Orbital Speed
-- Set the net gravitational force equal to the radial-force requirement:
-  $$ m\frac{v^2}{R}
-  =
-  \sqrt{3}\frac{Gm^2}{L^2} $$
+- Take inward as positive and set the net gravitational force equal to the radial-acceleration requirement:
+  $$ \sum F_r=m a_r=m\frac{v^2}{R}=F_{\mathrm{net}}=\sqrt{3}\frac{Gm^2}{L^2} $$
 - Substitute:
   $$ R=\frac{L}{\sqrt{3}} $$
 - Then:
@@ -242,9 +240,9 @@
 
 ### 24. Numerical Orbital Speed
 - Using the lecture’s values:
-  $$ v\approx9.7\times10^3\text{ m/s} $$
+  $$ v\approx9.7\times10^3\ \mathrm{m}/\mathrm{s} $$
 - Equivalently:
-  $$ v\approx9700\text{ m/s} $$
+  $$ v\approx9700\ \mathrm{m}/\mathrm{s} $$
 
 ---
 
@@ -252,7 +250,7 @@
 
 ### 25. Total Mechanical Energy
 - The total mechanical energy is:
-  $$ E_{\text{total}}=K_{\text{total}}+U_{\text{total}} $$
+  $$ E_{\mathrm{total}}=K_{\mathrm{total}}+U_{\mathrm{total}} $$
 
 ---
 
@@ -260,13 +258,13 @@
 - Each of the three masses has kinetic energy:
   $$ K_i=\frac{1}{2}mv^2 $$
 - Therefore:
-  $$ K_{\text{total}}
+  $$ K_{\mathrm{total}}
   =
   3\left(\frac{1}{2}mv^2\right) $$
 - Using:
   $$ v^2=\frac{Gm}{L} $$
 - We get:
-  $$ K_{\text{total}}
+  $$ K_{\mathrm{total}}
   =
   \frac{3}{2}\frac{Gm^2}{L} $$
 
@@ -277,13 +275,13 @@
   $$ (1,2),\qquad(1,3),\qquad(2,3) $$
 - Each pair is separated by $L$.
 - Each pair contributes:
-  $$ U_{\text{pair}}=-\frac{Gm^2}{L} $$
+  $$ U_{\mathrm{pair}}=-\frac{Gm^2}{L} $$
 
 ---
 
 ### 28. Total Gravitational Potential Energy
 - Add the three pair energies:
-  $$ U_{\text{total}}
+  $$ U_{\mathrm{total}}
   =
   -3\frac{Gm^2}{L} $$
 
@@ -291,13 +289,13 @@
 
 ### 29. Total Energy
 - Combine kinetic and potential energy:
-  $$ E_{\text{total}}
+  $$ E_{\mathrm{total}}
   =
   \frac{3}{2}\frac{Gm^2}{L}
   -
   3\frac{Gm^2}{L} $$
 - Therefore:
-  $$ E_{\text{total}}
+  $$ E_{\mathrm{total}}
   =
   -\frac{3}{2}\frac{Gm^2}{L} $$
 
@@ -305,17 +303,17 @@
 
 ### 30. Numerical Total Energy
 - Using the values from the lecture:
-  $$ E_{\text{total}}
+  $$ E_{\mathrm{total}}
   \approx
-  -3.5\times10^{38}\text{ J} $$
+  -3.5\times10^{38}\ \mathrm{J} $$
 
 ---
 
 ### 31. Meaning of the Negative Energy
 - The potential-energy magnitude is larger than the kinetic energy:
-  $$ |U_{\text{total}}|>K_{\text{total}} $$
+  $$ |U_{\mathrm{total}}|>K_{\mathrm{total}} $$
 - Therefore:
-  $$ E_{\text{total}}<0 $$
+  $$ E_{\mathrm{total}}<0 $$
 - A negative total mechanical energy indicates that the system is gravitationally bound.
 - Energy must be added to separate all three masses to infinite distance.
 
@@ -327,12 +325,12 @@
   $$ T=2\pi\sqrt{\frac{d^3}{G(M+m)}} $$
 - Symmetry can simplify multi-body gravitational-force calculations.
 - For three identical masses at the vertices of an equilateral triangle:
-  $$ F_{\text{net}}
+  $$ F_{\mathrm{net}}
   =
   \sqrt{3}\frac{Gm^2}{L^2} $$
   $$ R=\frac{L}{\sqrt{3}} $$
   $$ v=\sqrt{\frac{Gm}{L}} $$
-  $$ E_{\text{total}}
+  $$ E_{\mathrm{total}}
   =
   -\frac{3}{2}\frac{Gm^2}{L} $$
 
@@ -345,7 +343,7 @@
 4. Resolve forces into radial and tangential components.
 5. Use symmetry to cancel components when possible.
 6. Set:
-   $$ \sum F_r=m\frac{v^2}{R} $$
+   $$ \sum F_r=m a_r=m\frac{v^2}{R} $$
 7. Count every unique gravitational pair once when calculating potential energy.
 8. Solve symbolically before substituting numerical values.
 9. Use the sign of the total energy to determine whether the system is bound.

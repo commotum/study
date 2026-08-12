@@ -54,7 +54,7 @@ $$
 =\left(\frac{A_2}{A_1}\right)^2}.
 $$
 
-The ratio $I_2/I_1$ is dimensionless. It tells how many times as intense wave $2$ is compared with wave $1$; it is not itself an intensity in $\mathrm{W/m^2}$.
+The ratio $I_2/I_1$ is dimensionless. It tells how many times as intense wave $2$ is compared with wave $1$; it is not itself an intensity in $\mathrm{W}/\mathrm{m}^2$.
 
 For a nonzero reference wave, a compact two-line template is
 

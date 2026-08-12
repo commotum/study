@@ -172,8 +172,8 @@ $$
 v_{\max}
 &=\frac{2\pi A}{T} \\
 &=(4.0\ \mathrm{cm})\frac{2\pi}{5.0\ \mathrm{s}} \\
-&=5.026\ldots\ \mathrm{cm/s} \\
-&=5.0\ \mathrm{cm/s}.
+&=5.026\ldots\ \mathrm{cm}/\mathrm{s} \\
+&=5.0\ \mathrm{cm}/\mathrm{s}.
 \end{aligned}
 $$
 
@@ -181,7 +181,7 @@ The units follow directly:
 
 $$
 (\mathrm{cm})\left(\frac{1}{\mathrm{s}}\right)
-=\mathrm{cm/s}.
+=\mathrm{cm}/\mathrm{s}.
 $$
 
 The factor $2\pi$ is required because one cycle corresponds to $2\pi$ radians.
@@ -194,20 +194,20 @@ content: |-
 options:
 - id: a
   content: |-
-    $1.5\ \mathrm{cm/s}$
+    $1.5\ \mathrm{cm}/\mathrm{s}$
   feedback: |-
-    This treats one cycle as one radian by using only $A/T$. One complete SHM cycle spans $2\pi$ radians, so $v_{\max}=2\pi A/T=9.4\ \mathrm{cm/s}$.
+    This treats one cycle as one radian by using only $A/T$. One complete SHM cycle spans $2\pi$ radians, so $v_{\max}=2\pi A/T=9.4\ \mathrm{cm}/\mathrm{s}$.
 - id: b
   content: |-
-    $9.4\ \mathrm{cm/s}$
+    $9.4\ \mathrm{cm}/\mathrm{s}$
   correct: true
   feedback: |-
-    Maximum speed is the amplitude times the angular frequency. With $A=3.0\ \mathrm{cm}$ and $\omega=2\pi/T$, $v_{\max}=2\pi(3.0\ \mathrm{cm})/(2.0\ \mathrm{s})=9.4\ \mathrm{cm/s}$.
+    Maximum speed is the amplitude times the angular frequency. With $A=3.0\ \mathrm{cm}$ and $\omega=2\pi/T$, $v_{\max}=2\pi(3.0\ \mathrm{cm})/(2.0\ \mathrm{s})=9.4\ \mathrm{cm}/\mathrm{s}$.
 - id: c
   content: |-
-    $19\ \mathrm{cm/s}$
+    $19\ \mathrm{cm}/\mathrm{s}$
   feedback: |-
-    This doubles the result by using the peak-to-peak distance $2A$ as the amplitude. Maximum speed uses the one-sided displacement $A=3.0\ \mathrm{cm}$, which gives $v_{\max}=9.4\ \mathrm{cm/s}$.
+    This doubles the result by using the peak-to-peak distance $2A$ as the amplitude. Maximum speed uses the one-sided displacement $A=3.0\ \mathrm{cm}$, which gives $v_{\max}=9.4\ \mathrm{cm}/\mathrm{s}$.
 ```
 
 ---
@@ -248,8 +248,8 @@ $$
 v_{\max}
 &=A\frac{2\pi}{T} \\
 &=(2.5\ \mathrm{cm})\frac{2\pi}{4.0\ \mathrm{s}} \\
-&=3.927\ldots\ \mathrm{cm/s} \\
-&=3.9\ \mathrm{cm/s}.
+&=3.927\ldots\ \mathrm{cm}/\mathrm{s} \\
+&=3.9\ \mathrm{cm}/\mathrm{s}.
 \end{aligned}
 $$
 
@@ -269,19 +269,19 @@ options:
   content: 3.9
   correct: true
   feedback: |-
-    Maximum SHM speed is $v_{\max}=2\pi A/T$. The graph shows a one-sided amplitude of $2.5\ \mathrm{cm}$ and a peak-to-peak period of $4.0\ \mathrm{s}$, so $v_{\max}=3.927\ldots\ \mathrm{cm/s}=3.9\ \mathrm{cm/s}$.
+    Maximum SHM speed is $v_{\max}=2\pi A/T$. The graph shows a one-sided amplitude of $2.5\ \mathrm{cm}$ and a peak-to-peak period of $4.0\ \mathrm{s}$, so $v_{\max}=3.927\ldots\ \mathrm{cm}/\mathrm{s}=3.9\ \mathrm{cm}/\mathrm{s}$.
 - id: b
   content: 0.63
   feedback: |-
-    This is $A/T=2.5/4.0=0.625$, which treats one cycle as one radian. The velocity formula needs angular frequency $\omega=2\pi/T$, so including $2\pi$ gives $v_{\max}=3.9\ \mathrm{cm/s}$.
+    This is $A/T=2.5/4.0=0.625$, which treats one cycle as one radian. The velocity formula needs angular frequency $\omega=2\pi/T$, so including $2\pi$ gives $v_{\max}=3.9\ \mathrm{cm}/\mathrm{s}$.
 - id: c
   content: 7.9
   feedback: |-
-    This uses the full $5.0\ \mathrm{cm}$ trough-to-peak distance as $A$. That distance is $2A$; the graph's one-sided amplitude is $2.5\ \mathrm{cm}$, so the speed is half this value: $3.9\ \mathrm{cm/s}$.
+    This uses the full $5.0\ \mathrm{cm}$ trough-to-peak distance as $A$. That distance is $2A$; the graph's one-sided amplitude is $2.5\ \mathrm{cm}$, so the speed is half this value: $3.9\ \mathrm{cm}/\mathrm{s}$.
 - id: d
   content: 1.6
   feedback: |-
-    This is the angular frequency $\omega=2\pi/T\approx1.6\ \mathrm{s^{-1}}$, which is a rate rather than a linear speed. Maximum speed also depends on the amplitude: $v_{\max}=A\omega=(2.5\ \mathrm{cm})(1.57\ \mathrm{s^{-1}})=3.9\ \mathrm{cm/s}$.
+    This is the angular frequency $\omega=2\pi/T\approx1.6\ \mathrm{s}^{-1}$, which is a rate rather than a linear speed. Maximum speed also depends on the amplitude: $v_{\max}=A\omega=(2.5\ \mathrm{cm})(1.57\ \mathrm{s}^{-1})=3.9\ \mathrm{cm}/\mathrm{s}$.
 ```
 
 ---
@@ -297,7 +297,7 @@ To find maximum speed from a sinusoidal position-time graph:
 4. Compute $v_{\max}=A\omega=2\pi A/T$.
 5. Preserve the graph's distance unit, divide by seconds, and round only the final value.
 
-For the given graph, $A=2.5\ \mathrm{cm}$ and $T=4.0\ \mathrm{s}$, so $v_{\max}=3.9\ \mathrm{cm/s}$.
+For the given graph, $A=2.5\ \mathrm{cm}$ and $T=4.0\ \mathrm{s}$, so $v_{\max}=3.9\ \mathrm{cm}/\mathrm{s}$.
 
 <!-- lesson-nav:start -->
 ---

@@ -17,9 +17,9 @@ topic-code: MTH212.M2.45
 ## Prerequisites
 
 - Moment of inertia depends on the chosen rotation axis.
-- For a thin uniform rod about its center, perpendicular to the rod, $I_{\text{rod,cm}}=\dfrac{1}{12}mL^2$.
-- For a uniform solid sphere about its center, $I_{\text{sphere,cm}}=\dfrac{2}{5}MR^2$.
-- The parallel-axis theorem is $I=I_{\text{cm}}+Md^2$.
+- For a thin uniform rod about its center, perpendicular to the rod, $I_{\mathrm{rod,cm}}=\dfrac{1}{12}mL^2$.
+- For a uniform solid sphere about its center, $I_{\mathrm{sphere,cm}}=\dfrac{2}{5}MR^2$.
+- The parallel-axis theorem is $I=I_{\mathrm{cm}}+Md^2$.
 
 ---
 
@@ -32,15 +32,15 @@ For the rod–ball system, the requested axis passes through the rod's center bu
 
 1. compute the rod's inertia about the requested axis;
 2. find the squared distance from the ball's center to that axis;
-3. shift the ball's inertia with $I_{\text{ball}}=I_{\text{ball,cm}}+Md^2$;
+3. shift the ball's inertia with $I_{\mathrm{ball}}=I_{\mathrm{ball,cm}}+Md^2$;
 4. add the two contributions.
 
 This gives the following component inventory before any algebra begins:
 
 | Body | Relation to the requested axis | Contribution to use |
 |---|---|---|
-| Rod | Axis passes through its center | $I_{\text{rod}}=\dfrac{1}{12}mL^2$ |
-| Ball | Center is displaced from the axis | $I_{\text{ball}}=\dfrac{2}{5}\left(\dfrac{m}{2}\right)r^2+\left(\dfrac{m}{2}\right)d^2$ |
+| Rod | Axis passes through its center | $I_{\mathrm{rod}}=\dfrac{1}{12}mL^2$ |
+| Ball | Center is displaced from the axis | $I_{\mathrm{ball}}=\dfrac{2}{5}\left(\dfrac{m}{2}\right)r^2+\left(\dfrac{m}{2}\right)d^2$ |
 
 The collision speed $v$ affects the later motion, but it does not enter this moment-of-inertia calculation.
 
@@ -57,8 +57,8 @@ Because the axis passes through both centers of mass, no parallel-axis shift is 
 
 $$
 \begin{aligned}
-I_{\text{total}}
-&=I_{\text{rod,cm}}+I_{\text{sphere,cm}}\\
+I_{\mathrm{total}}
+&=I_{\mathrm{rod,cm}}+I_{\mathrm{sphere,cm}}\\
 &=\frac{1}{12}mL^2+\frac{2}{5}\left(\frac{m}{2}\right)r^2\\
 &=\frac{1}{12}mL^2+\frac{1}{5}mr^2.
 \end{aligned}
@@ -145,8 +145,8 @@ Keep the ball's own center-of-mass inertia, then add the parallel-axis term:
 
 $$
 \begin{aligned}
-I_{\text{ball}}
-&=I_{\text{ball,cm}}+\left(\frac{m}{2}\right)d^2\\
+I_{\mathrm{ball}}
+&=I_{\mathrm{ball,cm}}+\left(\frac{m}{2}\right)d^2\\
 &=\frac{2}{5}\left(\frac{m}{2}\right)r^2
 +\frac{m}{2}\left(\frac{L^2}{4}+r^2\right)\\
 &=\frac{1}{5}mr^2+\frac{1}{8}mL^2+\frac{1}{2}mr^2\\
@@ -154,7 +154,7 @@ I_{\text{ball}}
 \end{aligned}
 $$
 
-Both terms use the **ball's mass**, $m/2$: its own rotational inertia is $I_{\text{ball,cm}}$, and the shift is $(m/2)d^2$. Treating the ball as a point mass would keep only $(m/2)d^2$ and incorrectly discard the $\frac{2}{5}(m/2)r^2$ term.
+Both terms use the **ball's mass**, $m/2$: its own rotational inertia is $I_{\mathrm{ball,cm}}$, and the shift is $(m/2)d^2$. Treating the ball as a point mass would keep only $(m/2)d^2$ and incorrectly discard the $\frac{2}{5}(m/2)r^2$ term.
 
 ```quiz
 type: radio
@@ -193,8 +193,8 @@ Add the rod contribution and the shifted ball contribution:
 
 $$
 \begin{aligned}
-I_{\text{total}}
-&=I_{\text{rod}}+I_{\text{ball}}\\
+I_{\mathrm{total}}
+&=I_{\mathrm{rod}}+I_{\mathrm{ball}}\\
 &=\frac{1}{12}mL^2
 +\left(\frac{1}{8}mL^2+\frac{7}{10}mr^2\right)\\
 &=\left(\frac{2}{24}+\frac{3}{24}\right)mL^2
@@ -233,7 +233,7 @@ For a composite rigid body about a specified axis:
 
 1. use one axis for every component;
 2. write each component's center-of-mass inertia;
-3. shift every off-center component with $I=I_{\text{cm}}+Md^2$;
+3. shift every off-center component with $I=I_{\mathrm{cm}}+Md^2$;
 4. find $d^2$ from the actual geometry—perpendicular offsets contribute as a sum of squares;
 5. add all component inertias.
 

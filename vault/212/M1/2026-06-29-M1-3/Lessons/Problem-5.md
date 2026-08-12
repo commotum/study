@@ -16,8 +16,8 @@ topic-code: MTH212.M1.18
 
 ## Prerequisites
 
-- Centripetal acceleration points toward the center of circular motion.
-- For constant angular speed, centripetal acceleration has magnitude $a_r=\omega^2r$.
+- Radial acceleration points toward the center of circular motion.
+- For constant angular speed, radial acceleration has magnitude $a_r=r\omega^2$.
 - Newton's second law in one direction is $\sum F=ma$.
 - Near Earth's surface, weight has magnitude $mg$.
 
@@ -48,7 +48,7 @@ Inward always means "toward the center of the circle." At the top of the wheel, 
 Along the inward axis, Newton's second law is
 
 $$
-\sum F_r=m\omega^2r.
+\sum F_r=m a_r=m\frac{v^2}{r}=m\omega^2 r.
 $$
 
 ```quiz
@@ -56,7 +56,7 @@ type: radio
 id: q-top-inward-direction
 shuffle: true
 content: |-
-  At the top of a vertical Ferris wheel, which direction is the required centripetal force?
+  At the top of a vertical Ferris wheel, which direction is the required inward net force?
 options:
 - id: a
   content: |-
@@ -92,13 +92,13 @@ Before doing any algebra, predict the comparison: gravity already supplies part 
 Using inward as positive gives
 
 $$
-mg-N=m\omega^2r.
+mg-N=m a_r=m\omega^2 r.
 $$
 
 Solving for the normal force gives
 
 $$
-N=mg-m\omega^2r.
+N=mg-m\omega^2 r.
 $$
 
 ```quiz
@@ -110,17 +110,17 @@ content: |-
 options:
 - id: a
   content: |-
-    $N-mg=m\omega^2r$
+    $N-mg=m a_r=m\omega^2 r$
 - id: b
   content: |-
-    $mg-N=m\omega^2r$
+    $mg-N=m a_r=m\omega^2 r$
   correct: true
 - id: c
   content: |-
     $N+mg=0$
 - id: d
   content: |-
-    $N=m\omega^2r$
+    $N=m\omega^2 r$
 ```
 
 ---
@@ -135,10 +135,10 @@ options:
 At the top,
 
 $$
-N=mg-m\omega^2r.
+N=mg-m\omega^2 r.
 $$
 
-The symbolic form $N=m(g-\omega^2r)$ keeps the expected subtraction visible. Using $g=9.8\ \mathrm{m}/\mathrm{s}^2$, now substitute the rider's mass and the wheel's radius and angular speed:
+The symbolic form $N=m(g-\omega^2 r)$ keeps the expected subtraction visible. Using $g=9.8\ \mathrm{m}/\mathrm{s}^2$, now substitute the rider's mass and the wheel's radius and angular speed:
 
 $$
 \begin{aligned}
@@ -192,13 +192,13 @@ Because the normal force is the rider's apparent weight, the smaller value corre
 That is why the formula is
 
 $$
-N=mg-m\omega^2r.
+N=mg-m\omega^2 r.
 $$
 
 At the bottom, inward is upward, so the force balance would be different:
 
 $$
-N-mg=m\omega^2r.
+N-mg=m a_r=m\omega^2 r.
 $$
 
 At the bottom, the seat must support the rider's weight and still produce an upward net force. Its normal force is therefore larger than $mg$, while the normal force at the top is smaller than $mg$.
@@ -208,7 +208,7 @@ type: radio
 id: q-top-bottom-trap
 shuffle: true
 content: |-
-  A student solves the top-of-wheel problem by using $N=mg+m\omega^2r$. What mistake did they make?
+  A student solves the top-of-wheel problem by using $N=mg+m\omega^2 r$. What mistake did they make?
 options:
 - id: a
   content: |-
@@ -233,16 +233,16 @@ options:
 At the top of an upright Ferris-wheel gondola, the center is below the rider. Weight points inward while the seat's normal force points outward, so
 
 $$
-mg-N=m\omega^2r.
+mg-N=m a_r=m\omega^2 r.
 $$
 
 Solving for the seat force gives
 
 $$
-N=mg-m\omega^2r.
+N=mg-m\omega^2 r.
 $$
 
-Because $m\omega^2r$ is positive, $N<mg$: the seat pushes less strongly than it would at rest, and the rider feels lighter. At the bottom, inward is upward and the directions reverse, giving $N-mg=m\omega^2r$ instead.
+Because $m\omega^2 r$ is positive, $N<mg$: the seat pushes less strongly than it would at rest, and the rider feels lighter. At the bottom, inward is upward and the directions reverse, giving $N-mg=m a_r=m\omega^2 r$ instead.
 
 <!-- lesson-nav:start -->
 ---

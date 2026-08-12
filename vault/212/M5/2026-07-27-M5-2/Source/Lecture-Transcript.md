@@ -157,7 +157,7 @@ $$
 Consider the phase of the wave
 
 $$
-\Phi=kx-\omega t+\phi_0.
+\phi=kx-\omega t+\phi_0.
 $$
 
 To follow a particular point of constant phase, set
@@ -390,7 +390,7 @@ Using the numerical values supplied in the problem gives
 
 $$
 \boxed{
-v_{\mathrm{wave}}=25\ \mathrm{m/s}
+v_{\mathrm{wave}}=25\ \mathrm{m}/\mathrm{s}
 }.
 $$
 
@@ -485,7 +485,7 @@ Using the numerical values supplied in the problem gives approximately
 
 $$
 \boxed{
-u_{\max}=2.0\times10^2\ \mathrm{m/s}
+u_{\max}=2.0\times10^2\ \mathrm{m}/\mathrm{s}
 }.
 $$
 
@@ -602,7 +602,7 @@ A corresponding point below the $x$-axis would have $y\approx-4.58\ \mathrm{m}$.
 Light is an electromagnetic wave. In a vacuum, its speed is
 
 $$
-c\approx3.00\times10^8\ \mathrm{m/s}.
+c\approx3.00\times10^8\ \mathrm{m}/\mathrm{s}.
 $$
 
 In a transparent material, the electromagnetic field interacts with the material’s charged particles. Their response produces a phase delay, so the wave has a lower effective propagation speed than it does in a vacuum.
@@ -972,7 +972,7 @@ $$
 Its SI unit is the watt:
 
 $$
-1\ \mathrm{W}=1\ \mathrm{J/s}.
+1\ \mathrm{W}=1\ \mathrm{J}/\mathrm{s}.
 $$
 
 For a continuous wave, we generally use the average power transported over many oscillation cycles.
@@ -993,7 +993,7 @@ The SI unit of intensity is
 
 $$
 \boxed{
-\mathrm{W/m^2}
+\mathrm{W}/\mathrm{m}^2
 }.
 $$
 
@@ -1062,7 +1062,7 @@ The standard reference intensity is
 
 $$
 \boxed{
-I_0=1.0\times10^{-12}\ \mathrm{W/m^2}
+I_0=1.0\times10^{-12}\ \mathrm{W}/\mathrm{m}^2
 }.
 $$
 
@@ -1200,7 +1200,7 @@ with
 
 $$
 \boxed{
-I_0=1.0\times10^{-12}\ \mathrm{W/m^2}
+I_0=1.0\times10^{-12}\ \mathrm{W}/\mathrm{m}^2
 }.
 $$
 

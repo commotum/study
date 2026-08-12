@@ -37,7 +37,7 @@ $$
 K_{\max}\propto A^2.
 $$
 
-If the new amplitude is $A_{\text{new}}=cA_{\text{old}}$, then
+If the new amplitude is $A_{\mathrm{new}}=cA_{\mathrm{old}}$, then
 
 $$
 K_{\max,\text{new}}=c^2K_{\max,\text{old}}.
@@ -62,7 +62,7 @@ $$
 K_{\max}=E=\frac12kA^2.
 $$
 
-**Example:** A spring has $k=50\ \mathrm{N/m}$, and a block oscillates with amplitude $0.20\ \mathrm{m}$. Find its maximum kinetic energy.
+**Example:** A spring has $k=50\ \mathrm{N}/\mathrm{m}$, and a block oscillates with amplitude $0.20\ \mathrm{m}$. Find its maximum kinetic energy.
 
 **Explanation**
 
@@ -70,7 +70,7 @@ Substitute the amplitude into the energy formula:
 
 $$
 K_{\max}
-=\frac12(50\ \mathrm{N/m})(0.20\ \mathrm{m})^2
+=\frac12(50\ \mathrm{N}/\mathrm{m})(0.20\ \mathrm{m})^2
 =1.0\ \mathrm{J}.
 $$
 
@@ -78,7 +78,7 @@ $$
 type: radio
 id: problem-2-energy-formula
 content: |-
-  A block oscillates on a spring with $k=40\ \mathrm{N/m}$ and amplitude $0.30\ \mathrm{m}$. What is its maximum kinetic energy?
+  A block oscillates on a spring with $k=40\ \mathrm{N}/\mathrm{m}$ and amplitude $0.30\ \mathrm{m}$. What is its maximum kinetic energy?
 options:
 - id: p2-energy-a
   content: |-
@@ -100,10 +100,10 @@ options:
 <a id="square-the-whole-amplitude-factor"></a>
 ## Square the Whole Amplitude Factor
 
-Write the new amplitude as $A_{\text{new}}=cA_{\text{old}}$. Because the entire amplitude is squared, the power applies to both factors:
+Write the new amplitude as $A_{\mathrm{new}}=cA_{\mathrm{old}}$. Because the entire amplitude is squared, the power applies to both factors:
 
 $$
-A_{\text{new}}^2=(cA_{\text{old}})^2=c^2A_{\text{old}}^2.
+A_{\mathrm{new}}^2=(cA_{\mathrm{old}})^2=c^2A_{\mathrm{old}}^2.
 $$
 
 Therefore,
@@ -111,13 +111,13 @@ Therefore,
 $$
 \begin{aligned}
 K_{\max,\text{new}}
-&=\frac12k(cA_{\text{old}})^2 \\
-&=c^2\left(\frac12kA_{\text{old}}^2\right) \\
+&=\frac12k(cA_{\mathrm{old}})^2 \\
+&=c^2\left(\frac12kA_{\mathrm{old}}^2\right) \\
 &=c^2K_{\max,\text{old}}.
 \end{aligned}
 $$
 
-**Example:** If the amplitude is tripled, then $A_{\text{new}}/A_{\text{old}}=3$. Therefore,
+**Example:** If the amplitude is tripled, then $A_{\mathrm{new}}/A_{\mathrm{old}}=3$. Therefore,
 
 $$
 \frac{K_{\max,\text{new}}}{K_{\max,\text{old}}}=3^2=9,
@@ -169,7 +169,7 @@ The same square-factor rule works when the amplitude decreases.
 **Example:** Suppose the amplitude is cut in half:
 
 $$
-\frac{A_{\text{new}}}{A_{\text{old}}}=\frac12.
+\frac{A_{\mathrm{new}}}{A_{\mathrm{old}}}=\frac12.
 $$
 
 **Explanation**
@@ -229,9 +229,9 @@ An equation such as $c^2=16$ has algebraic solutions $c=\pm4$, but an amplitude 
 **Example:** If the new maximum kinetic energy is $16$ times the old maximum kinetic energy, then
 
 $$
-\left(\frac{A_{\text{new}}}{A_{\text{old}}}\right)^2=16
+\left(\frac{A_{\mathrm{new}}}{A_{\mathrm{old}}}\right)^2=16
 \quad\Longrightarrow\quad
-\frac{A_{\text{new}}}{A_{\text{old}}}=4.
+\frac{A_{\mathrm{new}}}{A_{\mathrm{old}}}=4.
 $$
 
 **Explanation**
@@ -270,7 +270,7 @@ options:
 When the same spring is used, $k$ is fixed and $K_{\max}\propto A^2$. If only the amplitude changes:
 
 1. Start with $K_{\max}=\frac12kA^2$.
-2. Find the amplitude factor $c=A_{\text{new}}/A_{\text{old}}$.
+2. Find the amplitude factor $c=A_{\mathrm{new}}/A_{\mathrm{old}}$.
 3. Square the **whole** factor: $(cA)^2=c^2A^2$.
 4. Apply $K_{\max,\text{new}}=c^2K_{\max,\text{old}}$.
 5. For an inverse question, solve $c^2=$ energy factor and keep the positive root.

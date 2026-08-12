@@ -99,10 +99,10 @@ Multiply each position by its mass, add those contributions, and divide by the t
 
 | Object | Mass | Position | Mass-position contribution |
 | --- | ---: | ---: | ---: |
-| 1 | $2\,\mathrm{kg}$ | $1\,\mathrm{m}$ | $2\,\mathrm{kg\,m}$ |
-| 2 | $3\,\mathrm{kg}$ | $6\,\mathrm{m}$ | $18\,\mathrm{kg\,m}$ |
+| 1 | $2\,\mathrm{kg}$ | $1\,\mathrm{m}$ | $2\,\mathrm{kg}\,\mathrm{m}$ |
+| 2 | $3\,\mathrm{kg}$ | $6\,\mathrm{m}$ | $18\,\mathrm{kg}\,\mathrm{m}$ |
 
-The numerator is the total mass-position contribution, $20\,\mathrm{kg\,m}$, and the denominator is the total mass, $5\,\mathrm{kg}$:
+The numerator is the total mass-position contribution, $20\,\mathrm{kg}\,\mathrm{m}$, and the denominator is the total mass, $5\,\mathrm{kg}$:
 
 $$
 \begin{aligned}
@@ -145,14 +145,14 @@ options:
 <a id="add-moments-of-inertia-about-the-same-axis"></a>
 ## Add Moments of Inertia About the Same Axis
 
-**Example:** Object 1 has moment of inertia $I_1=2\,\mathrm{kg\,m^2}$ and object 2 has $I_2=5\,\mathrm{kg\,m^2}$, both measured about the same axis. Find the system's moment of inertia about that axis.
+**Example:** Object 1 has moment of inertia $I_1=2\,\mathrm{kg}\,\mathrm{m}^2$ and object 2 has $I_2=5\,\mathrm{kg}\,\mathrm{m}^2$, both measured about the same axis. Find the system's moment of inertia about that axis.
 
 **Explanation**
 
 Each given inertia already contains the object's full contribution relative to the specified axis. Add the contributions:
 
 $$
-I=I_1+I_2=2+5=7\,\mathrm{kg\,m^2}.
+I=I_1+I_2=2+5=7\,\mathrm{kg}\,\mathrm{m}^2.
 $$
 
 The axis is part of the definition of each $I_i$, so the phrase **about the same axis** is essential. If the quoted inertias use different axes, first express them about one common axis; direct addition is not yet valid.
@@ -161,21 +161,21 @@ The axis is part of the definition of each $I_i$, so the phrase **about the same
 type: radio
 id: p2-add-inertias
 content: |-
-  Two components have moments of inertia $I_1=4\,\mathrm{kg\,m^2}$ and $I_2=9\,\mathrm{kg\,m^2}$ about the same axis. What is the combined moment of inertia about that axis?
+  Two components have moments of inertia $I_1=4\,\mathrm{kg}\,\mathrm{m}^2$ and $I_2=9\,\mathrm{kg}\,\mathrm{m}^2$ about the same axis. What is the combined moment of inertia about that axis?
 options:
 - id: p2-inertia-a
   content: |-
-    $5\,\mathrm{kg\,m^2}$
+    $5\,\mathrm{kg}\,\mathrm{m}^2$
 - id: p2-inertia-b
   content: |-
-    $6.5\,\mathrm{kg\,m^2}$
+    $6.5\,\mathrm{kg}\,\mathrm{m}^2$
 - id: p2-inertia-c
   content: |-
-    $13\,\mathrm{kg\,m^2}$
+    $13\,\mathrm{kg}\,\mathrm{m}^2$
   correct: true
 - id: p2-inertia-d
   content: |-
-    $36\,\mathrm{kg\,m^2}$
+    $36\,\mathrm{kg}\,\mathrm{m}^2$
 - id: p2-inertia-e
   content: |-
     More information about the masses is required.
@@ -198,7 +198,7 @@ Which statements are true?
 
 Statements 1 and 2 are true. Statement 3 incorrectly treats moment of inertia as though it were a location or an average. The masses have already been accounted for inside $I_1$ and $I_2$.
 
-A units check alone does not expose this mistake because both the correct sum and the weighted average have units of $\mathrm{kg\,m^2}$. Instead, use a scaling check. If two identical components each have inertia $I_0$ about the same axis, the combined system must contain twice the contribution:
+A units check alone does not expose this mistake because both the correct sum and the weighted average have units of $\mathrm{kg}\,\mathrm{m}^2$. Instead, use a scaling check. If two identical components each have inertia $I_0$ about the same axis, the combined system must contain twice the contribution:
 
 $$
 I=I_0+I_0=2I_0.

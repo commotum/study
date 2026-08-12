@@ -30,13 +30,13 @@ In these circular-motion diagrams, an arrow's length represents speed and its ar
 The recognition cue is a sequence of equal-length velocity arrows tangent to the same circular path. For two successive velocities, the change is
 
 $$
-\Delta\vec v=\vec v_{\text{final}}-\vec v_{\text{initial}}.
+\Delta\vec{v}=\vec{v}_{\mathrm{final}}-\vec{v}_{\mathrm{initial}}.
 $$
 
 The useful visual move is to reverse the initial velocity and then add:
 
 $$
-\Delta\vec v=\vec v_{\text{final}}+\left(-\vec v_{\text{initial}}\right).
+\Delta\vec{v}=\vec{v}_{\mathrm{final}}+\left(-\vec{v}_{\mathrm{initial}}\right).
 $$
 
 Use this visual procedure:
@@ -46,51 +46,51 @@ Use this visual procedure:
 3. Read the direction of that resultant.
 4. Repeat for the next adjacent pair.
 
-For equal-speed tangent vectors around a circular path, this difference points radially inward. The velocity itself is tangent to the path; it is the **change in velocity** that points toward the center. This purely inward conclusion depends on the speed staying constant; a changing speed can add a tangential part to $\Delta\vec v$.
+For equal-speed tangent vectors around a circular path, this difference points radially inward. The velocity itself is tangent to the path; it is the **change in velocity** that points toward the center. This purely inward conclusion depends on the speed staying constant; a changing speed can add a tangential part to $\Delta\vec{v}$.
 
 ---
 
 <a id="reverse-the-initial-velocity"></a>
 ## Reverse the Initial Velocity
 
-**Example:** A particle's initial velocity points east, and its equal-magnitude final velocity points south. Determine the direction of $\Delta\vec v=\vec v_f-\vec v_i$.
+**Example:** A particle's initial velocity points east, and its equal-magnitude final velocity points south. Determine the direction of $\Delta\vec{v}=\vec{v}_f-\vec{v}_i$.
 
 **Explanation**
 
 Rewrite subtraction as addition of the opposite vector:
 
 $$
-\Delta\vec v=\underbrace{\vec v_f}_{\text{south}}+
-\underbrace{(-\vec v_i)}_{\text{west}}.
+\Delta\vec{v}=\underbrace{\vec{v}_f}_{\text{south}}+
+\underbrace{(-\vec{v}_i)}_{\text{west}}.
 $$
 
 Adding a southward vector and a westward vector gives a southwest result. The reversal applies to the initial vector only.
 
-There is an equivalent tail-to-tail shortcut: once $\vec v_i$ and $\vec v_f$ share a tail, $\vec v_f-\vec v_i$ is the arrow from the head of $\vec v_i$ to the head of $\vec v_f$. Drawing that connector backward would instead give $\vec v_i-\vec v_f$.
+There is an equivalent tail-to-tail shortcut: once $\vec{v}_i$ and $\vec{v}_f$ share a tail, $\vec{v}_f-\vec{v}_i$ is the arrow from the head of $\vec{v}_i$ to the head of $\vec{v}_f$. Drawing that connector backward would instead give $\vec{v}_i-\vec{v}_f$.
 
 ```quiz
 type: radio
 id: radial-delta-v-reverse-initial
 shuffle: true
 content: |-
-  A particle's initial velocity points north, and its equal-magnitude final velocity points east. Which direction does $\Delta\vec v=\vec v_f-\vec v_i$ point?
+  A particle's initial velocity points north, and its equal-magnitude final velocity points east. Which direction does $\Delta\vec{v}=\vec{v}_f-\vec{v}_i$ point?
 options:
 - id: southeast
   content: |-
     Southeast
   correct: true
   feedback: |-
-    Vector subtraction reverses the initial northward velocity to point south. Adding that southward vector to the eastward final velocity makes $\Delta\vec v$ point southeast.
+    Vector subtraction reverses the initial northward velocity to point south. Adding that southward vector to the eastward final velocity makes $\Delta\vec{v}$ point southeast.
 - id: northeast
   content: |-
     Northeast
   feedback: |-
-    Northeast comes from adding the final eastward velocity to the unreversed initial northward velocity. The expression is a difference, so $\vec v_i$ must first be reversed to point south.
+    Northeast comes from adding the final eastward velocity to the unreversed initial northward velocity. The expression is a difference, so $\vec{v}_i$ must first be reversed to point south.
 - id: southwest
   content: |-
     Southwest
   feedback: |-
-    Reversing the initial velocity supplies a southward component, but the final velocity still points east. Nothing in $\vec v_f-\vec v_i$ supplies a westward component here.
+    Reversing the initial velocity supplies a southward component, but the final velocity still points east. Nothing in $\vec{v}_f-\vec{v}_i$ supplies a westward component here.
 - id: northwest
   content: |-
     Northwest
@@ -108,25 +108,25 @@ options:
 <a id="read-the-difference-from-components"></a>
 ## Read the Difference From Components
 
-**Example:** Let $\vec v_i=\langle 4,0\rangle$ and $\vec v_f=\langle 0,-4\rangle$. Determine the direction of $\Delta\vec v$.
+**Example:** Let $\vec{v}_i=\langle 4,0\rangle$ and $\vec{v}_f=\langle 0,-4\rangle$. Determine the direction of $\Delta\vec{v}$.
 
 **Explanation**
 
 Subtract corresponding components:
 
 $$
-\Delta\vec v
+\Delta\vec{v}
 =\langle 0,-4\rangle-\langle 4,0\rangle
 =\langle -4,-4\rangle.
 $$
 
-The negative horizontal component points left, and the negative vertical component points down. Therefore, $\Delta\vec v$ points southwest. Components provide a sign check for the same reverse-and-add construction.
+The negative horizontal component points left, and the negative vertical component points down. Therefore, $\Delta\vec{v}$ points southwest. Components provide a sign check for the same reverse-and-add construction.
 
 The check is always **final minus initial in each slot**:
 
 $$
-\Delta\vec v
-=\langle v_{f,x}-v_{i,x},\ v_{f,y}-v_{i,y}\rangle.
+\Delta\vec{v}
+=\langle v_{fx}-v_{ix},\ v_{fy}-v_{iy}\rangle.
 $$
 
 ```quiz
@@ -134,14 +134,14 @@ type: radio
 id: radial-delta-v-component-direction
 shuffle: true
 content: |-
-  A velocity changes from $\vec v_i=\langle 0,3\rangle$ to $\vec v_f=\langle -3,0\rangle$. Which direction does $\Delta\vec v$ point?
+  A velocity changes from $\vec{v}_i=\langle 0,3\rangle$ to $\vec{v}_f=\langle -3,0\rangle$. Which direction does $\Delta\vec{v}$ point?
 options:
 - id: southwest
   content: |-
     Southwest
   correct: true
   feedback: |-
-    Subtract component by component: $\Delta\vec v=\langle -3-0,0-3\rangle=\langle -3,-3\rangle$. Its negative horizontal and vertical components make it point southwest.
+    Subtract component by component: $\Delta\vec{v}=\langle -3-0,0-3\rangle=\langle -3,-3\rangle$. Its negative horizontal and vertical components make it point southwest.
 - id: northwest
   content: |-
     Northwest
@@ -156,12 +156,12 @@ options:
   content: |-
     Northeast
   feedback: |-
-    Northeast is the direction of $\vec v_i-\vec v_f=\langle 3,3\rangle$, which reverses the subtraction order. The requested $\vec v_f-\vec v_i$ points in the opposite direction.
+    Northeast is the direction of $\vec{v}_i-\vec{v}_f=\langle 3,3\rangle$, which reverses the subtraction order. The requested $\vec{v}_f-\vec{v}_i$ points in the opposite direction.
 - id: west
   content: |-
     West
   feedback: |-
-    West is the direction of the final velocity alone. The change also includes $-\vec v_i$, which contributes a southward component, so the result is southwest.
+    West is the direction of the final velocity alone. The change also includes $-\vec{v}_i$, which contributes a southward component, so the result is southwest.
 ```
 
 ---
@@ -180,7 +180,7 @@ This is the circular-motion pattern:
 $$
 \text{successive equal-speed tangent velocities}
 \quad\Longrightarrow\quad
-\Delta\vec v\text{ points radially inward}.
+\Delta\vec{v}\text{ points radially inward}.
 $$
 
 ```quiz
@@ -188,7 +188,7 @@ type: radio
 id: radial-delta-v-inward-cue
 shuffle: true
 content: |-
-  At the right side of a clockwise circular path, an object's equal-speed tangent velocity turns from southeast to south. Which description best matches $\Delta\vec v$ for this turn?
+  At the right side of a clockwise circular path, an object's equal-speed tangent velocity turns from southeast to south. Which description best matches $\Delta\vec{v}$ for this turn?
 options:
 - id: inward
   content: |-
@@ -200,17 +200,17 @@ options:
   content: |-
     It points tangent to the path in the same direction as the final velocity.
   feedback: |-
-    The final velocity is tangent, but $\Delta\vec v$ is the difference between two tangent velocities. Reversing the initial vector and adding it leaves an inward component rather than another tangent vector.
+    The final velocity is tangent, but $\Delta\vec{v}$ is the difference between two tangent velocities. Reversing the initial vector and adding it leaves an inward component rather than another tangent vector.
 - id: outward
   content: |-
     It points radially outward, away from the center.
   feedback: |-
-    An outward result corresponds to reversing the subtraction order and finding $\vec v_i-\vec v_f$. The requested $\vec v_f-\vec v_i$ points in the opposite, inward direction.
+    An outward result corresponds to reversing the subtraction order and finding $\vec{v}_i-\vec{v}_f$. The requested $\vec{v}_f-\vec{v}_i$ points in the opposite, inward direction.
 - id: tangent-backward
   content: |-
     It points tangent to the path opposite the motion.
   feedback: |-
-    $-\vec v_i$ points opposite the initial motion, but it is only one term in the sum. Adding the final velocity to it produces the inward resultant, not a backward tangent.
+    $-\vec{v}_i$ points opposite the initial motion, but it is only one term in the sum. Adding the final velocity to it produces the inward resultant, not a backward tangent.
 - id: zero
   content: |-
     It is zero because the speed is unchanged.
@@ -233,7 +233,7 @@ Reverse the northeast initial vector so that it points southwest, then add the e
 
 **Question 2**
 
-For the velocity vectors around the circular path, determine the directions of $\vec v_2-\vec v_1$, $\vec v_3-\vec v_2$, and $\vec v_4-\vec v_3$.
+For the velocity vectors around the circular path, determine the directions of $\vec{v}_2-\vec{v}_1$, $\vec{v}_3-\vec{v}_2$, and $\vec{v}_4-\vec{v}_3$.
 
 ![](<../Source/Images/vectors-2.jpg>)
 
@@ -248,20 +248,20 @@ content: |-
 options:
 - id: inward-sequence
   content: |-
-    $\vec v_2-\vec v_1$ points down-left, $\vec v_3-\vec v_2$ points left and slightly down, and $\vec v_4-\vec v_3$ points left and slightly up. All three point radially inward.
+    $\vec{v}_2-\vec{v}_1$ points down-left, $\vec{v}_3-\vec{v}_2$ points left and slightly down, and $\vec{v}_4-\vec{v}_3$ points left and slightly up. All three point radially inward.
   correct: true
   feedback: |-
-    For every pair, $\Delta\vec v=\vec v_{\text{final}}+(-\vec v_{\text{initial}})$. Applying that construction at the three displayed positions gives the listed page directions, each toward the center of the circular path.
+    For every pair, $\Delta\vec{v}=\vec{v}_{\mathrm{final}}+(-\vec{v}_{\mathrm{initial}})$. Applying that construction at the three displayed positions gives the listed page directions, each toward the center of the circular path.
 - id: final-velocity-sequence
   content: |-
-    The three differences point southeast, south, and southwest, matching $\vec v_2$, $\vec v_3$, and $\vec v_4$.
+    The three differences point southeast, south, and southwest, matching $\vec{v}_2$, $\vec{v}_3$, and $\vec{v}_4$.
   feedback: |-
     These are the directions of the final velocities, not of their changes. Each difference must also include the reversed initial velocity, which turns the resultant away from the tangent and toward the center.
 - id: outward-sequence
   content: |-
     The three differences point outward, opposite the inward arrows shown in the second diagram.
   feedback: |-
-    Outward differences result from reversing the subtraction order to $\vec v_{\text{initial}}-\vec v_{\text{final}}$. The requested final-minus-initial differences point in the opposite, inward direction.
+    Outward differences result from reversing the subtraction order to $\vec{v}_{\mathrm{initial}}-\vec{v}_{\mathrm{final}}$. The requested final-minus-initial differences point in the opposite, inward direction.
 - id: zero-sequence
   content: |-
     All three differences are zero because all four velocity arrows have the same length.
@@ -284,10 +284,10 @@ When successive equal-speed velocity arrows are tangent to a circular path:
 1. Recognize the cue: equal-length tangent arrows at successive positions.
 2. Keep the final velocity unchanged and reverse the initial velocity.
 3. Add the arrows; tail to tail, the same result runs from the initial head to the final head.
-4. Check with $\langle v_{f,x}-v_{i,x},v_{f,y}-v_{i,y}\rangle$ when components are useful.
+4. Check with $\langle v_{fx}-v_{ix},v_{fy}-v_{iy}\rangle$ when components are useful.
 5. Read the resultant's direction and repeat for each adjacent pair.
 
-The repeated result is radial and inward. Do not confuse the tangent direction of $\vec v$ with the inward direction of $\Delta\vec v$, and do not reverse the subtraction order. The inward-only rule requires constant speed; if the arrow lengths change, check for a tangential component too.
+The repeated result is radial and inward. Do not confuse the tangent direction of $\vec{v}$ with the inward direction of $\Delta\vec{v}$, and do not reverse the subtraction order. The inward-only rule requires constant speed; if the arrow lengths change, check for a tangential component too.
 
 <!-- lesson-nav:start -->
 ---

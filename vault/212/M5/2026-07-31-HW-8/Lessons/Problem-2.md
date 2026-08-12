@@ -17,7 +17,7 @@ topic-code: MTH212.M5.42
 
 ## Prerequisites
 
-- Use $v=f\lambda$ to relate wave speed, frequency, and wavelength.
+- Use $v_{\mathrm{wave}}=f\lambda$ to relate wave speed, frequency, and wavelength.
 - Solve a one-step equation containing fractions.
 
 ---
@@ -37,12 +37,12 @@ $$
 \text{length ratio}.
 $$
 
-For sound traveling through the same air, both tubes have the same wave speed $v$:
+For sound traveling through the same air, both tubes have the same wave speed $v_{\mathrm{wave}}$:
 
 | Tube | Fundamental pattern | Fundamental frequency |
 | --- | --- | --- |
-| Open at both ends | $\ell_{\mathrm{oo}}=\lambda/2$ | $f_{\mathrm{oo}}=\dfrac{v}{2\ell_{\mathrm{oo}}}$ |
-| Closed at one end | $\ell_{\mathrm{co}}=\lambda/4$ | $f_{\mathrm{co}}=\dfrac{v}{4\ell_{\mathrm{co}}}$ |
+| Open at both ends | $\ell_{\mathrm{oo}}=\lambda/2$ | $f_{\mathrm{oo}}=\dfrac{v_{\mathrm{wave}}}{2\ell_{\mathrm{oo}}}$ |
+| Closed at one end | $\ell_{\mathrm{co}}=\lambda/4$ | $f_{\mathrm{co}}=\dfrac{v_{\mathrm{wave}}}{4\ell_{\mathrm{co}}}$ |
 
 The factors $2$ and $4$ come from the standing-wave patterns. Keep them attached to the correct tube. Because the tubes contain the same air, equal $f$ also means equal $\lambda$; their physical lengths differ because the two patterns fit different fractions of that common wavelength.
 
@@ -121,12 +121,12 @@ options:
 Let the closed-open tube's length be $x$. Equal fundamental frequencies give
 
 $$
-\frac{v}{2(1.20\ \mathrm{m})}
+\frac{v_{\mathrm{wave}}}{2(1.20\ \mathrm{m})}
 =
-\frac{v}{4x}.
+\frac{v_{\mathrm{wave}}}{4x}.
 $$
 
-Cancel the common nonzero wave speed $v$:
+Cancel the common nonzero wave speed $v_{\mathrm{wave}}$:
 
 $$
 \frac{1}{2(1.20\ \mathrm{m})}
@@ -192,10 +192,10 @@ options:
 Start from the two fundamental-frequency formulas:
 
 $$
-\frac{v}{2A}=\frac{v}{4C}.
+\frac{v_{\mathrm{wave}}}{2A}=\frac{v_{\mathrm{wave}}}{4C}.
 $$
 
-Cancel $v$ and cross-multiply:
+Cancel $v_{\mathrm{wave}}$ and cross-multiply:
 
 $$
 \begin{aligned}
@@ -257,7 +257,7 @@ options:
   content: |-
     $4L$
   feedback: |-
-    The $4$ in $f_{co}=v/(4L_{co})$ is tied to the quarter-wave pattern; it does not make the closed tube four times longer. Equal frequencies give $4L_{co}=2L$, so $L_{co}=L/2$.
+    The $4$ in $f_{co}=v_{\mathrm{wave}}/(4L_{co})$ is tied to the quarter-wave pattern; it does not make the closed tube four times longer. Equal frequencies give $4L_{co}=2L$, so $L_{co}=L/2$.
 ```
 
 ---
@@ -331,9 +331,9 @@ options:
 Their fundamental frequencies are
 
 $$
-f_{\mathrm{oo}}=\frac{v}{2L}
+f_{\mathrm{oo}}=\frac{v_{\mathrm{wave}}}{2L}
 \qquad\text{and}\qquad
-f_{\mathrm{co}}=\frac{v}{4L}.
+f_{\mathrm{co}}=\frac{v_{\mathrm{wave}}}{4L}.
 $$
 
 Therefore,
@@ -359,7 +359,7 @@ options:
   content: |-
     Equal frequencies require equal physical tube lengths.
   feedback: |-
-    Equal frequency and equal sound speed do not force equal lengths; they force equal wavelengths through $v=f\lambda$. The endpoint conditions then make the open tube contain $\lambda/2$ and the closed tube $\lambda/4$.
+    Equal frequency and equal sound speed do not force equal lengths; they force equal wavelengths through $v_{\mathrm{wave}}=f\lambda$. The endpoint conditions then make the open tube contain $\lambda/2$ and the closed tube $\lambda/4$.
 - id: p2-trap-c
   content: |-
     The open-open tube holds half of the common wavelength, while the closed-open tube holds one quarter.
@@ -386,7 +386,7 @@ options:
 When two tubes in the same medium have equal fundamental frequencies:
 
 1. Identify the end conditions.
-2. Write $f_{\mathrm{oo}}=v/(2\ell_{\mathrm{oo}})$ and $f_{\mathrm{co}}=v/(4\ell_{\mathrm{co}})$.
+2. Write $f_{\mathrm{oo}}=v_{\mathrm{wave}}/(2\ell_{\mathrm{oo}})$ and $f_{\mathrm{co}}=v_{\mathrm{wave}}/(4\ell_{\mathrm{co}})$.
 3. Set the frequencies equal and cancel the common wave speed.
 4. Solve to get
 

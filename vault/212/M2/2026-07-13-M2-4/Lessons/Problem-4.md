@@ -109,7 +109,7 @@ options:
 The two tensions act at radius $r$ in opposite rotational directions, so the net torque magnitude is
 
 $$
-\tau_{\text{net}}=(T_2-T_1)r.
+\tau_{\mathrm{net}}=(T_2-T_1)r.
 $$
 
 Use $\tau=I\alpha$ and $\alpha=a/r$:
@@ -292,16 +292,16 @@ $$
 a
 &=\frac{(m_2-m_1)g}{m_1+m_2+\frac12m_p}\\
 &=\frac{13.734}{5.45}\\
-&=2.519\ldots\ \mathrm{m/s^2}.
+&=2.519\ldots\ \mathrm{m}/\mathrm{s}^2.
 \end{aligned}
 $$
 
-The measured givens have two significant figures, so $a=2.5\ \mathrm{m/s^2}$. Since $m_2>m_1$, Block 2 accelerates downward and Block 1 upward.
+The measured givens have two significant figures, so $a=2.5\ \mathrm{m}/\mathrm{s}^2$. Since $m_2>m_1$, Block 2 accelerates downward and Block 1 upward.
 
-The units reduce correctly: $\mathrm{N/kg}=\mathrm{m/s^2}$. Also, a massless pulley would give
+The units reduce correctly: $\mathrm{N}/\mathrm{kg}=\mathrm{m}/\mathrm{s}^2$. Also, a massless pulley would give
 
 $$
-a_0=\frac{(2.6-1.2)(9.81)}{1.2+2.6}=3.61\ldots\ \mathrm{m/s^2}.
+a_0=\frac{(2.6-1.2)(9.81)}{1.2+2.6}=3.61\ldots\ \mathrm{m}/\mathrm{s}^2.
 $$
 
 The massive-pulley result satisfies $0<a<a_0<g$, as expected.
@@ -339,10 +339,10 @@ options:
 
     $$
     a=\frac{(2.6-1.2)(9.81)}{1.2+2.6+\frac12(3.3)}
-    =2.519\ldots\ \mathrm{m/s^2}.
+    =2.519\ldots\ \mathrm{m}/\mathrm{s}^2.
     $$
 
-    The measured givens have two significant figures, so $a=2.5\ \mathrm{m/s^2}$. Block 2 accelerates downward while block 1 accelerates upward.
+    The measured givens have two significant figures, so $a=2.5\ \mathrm{m}/\mathrm{s}^2$. Block 2 accelerates downward while block 1 accelerates upward.
 - id: b
   content: |-
     `3.6`

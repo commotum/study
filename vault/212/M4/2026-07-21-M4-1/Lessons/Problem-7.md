@@ -30,40 +30,40 @@ topic-code: MTH212.M4.07
 For simple harmonic motion, a block released from rest at its maximum positive displacement is modeled by
 
 $$
-x(t)=A\cos(\omega t).
+y(t)=A\cos(\omega t).
 $$
 
-Here \(x(t)\) is displacement **from equilibrium**, \(A\) is the amplitude, and \(\omega\) is angular frequency. When the problem gives an equilibrium coordinate \(x_0\), a release coordinate \(x_f>x_0\), and \(N\) cycles completed in time \(\Delta t\), use
+Here \(y(t)\) is displacement **from equilibrium**, \(A\) is the amplitude, and \(\omega\) is angular frequency. When the problem gives an equilibrium coordinate \(x_{\mathrm{eq}}\), a release coordinate \(x_{\mathrm{release}}>x_{\mathrm{eq}}\), and \(N\) cycles completed in time \(\Delta t\), use
 
 $$
-A=x_f-x_0,
+A=x_{\mathrm{release}}-x_{\mathrm{eq}},
 \qquad
 f=\frac{N}{\Delta t},
 \qquad
 \omega=2\pi f.
 $$
 
-**Recognition cue:** “Pulled right and released from rest” means \(x(0)=+A\) and \(v(0)=0\), matching a cosine with zero phase.
+**Recognition cue:** “Pulled right and released from rest” means \(y(0)=+A\) and \(v(0)=0\), matching a cosine with zero phase.
 
 | Given information | Derived model quantity |
 |---|---|
-| Coordinates \(x_0,x_f\) | \(A=x_f-x_0\) |
+| Coordinates \(x_{\mathrm{eq}},x_{\mathrm{release}}\) | \(A=x_{\mathrm{release}}-x_{\mathrm{eq}}\) |
 | \(N\) cycles in \(\Delta t\) | \(f=N/\Delta t\), then \(\omega=2\pi f\) |
-| Released from rest at the rightmost point | \(x(t)=A\cos(\omega t)\) |
+| Released from rest at the rightmost point | \(y(t)=A\cos(\omega t)\) |
 
 ---
 
 <a id="convert-coordinates-to-amplitude"></a>
 ## Convert Coordinates to Amplitude
 
-**Example:** A spring is unstretched at coordinate \(x_0=0.20\ \mathrm{m}\). The block is pulled right to \(x_f=0.32\ \mathrm{m}\). What is its initial displacement from equilibrium?
+**Example:** A spring is unstretched at coordinate \(x_{\mathrm{eq}}=0.20\ \mathrm{m}\). The block is pulled right to \(x_{\mathrm{release}}=0.32\ \mathrm{m}\). What is its initial displacement from equilibrium?
 
 **Explanation**
 
 Displacement is the signed difference between the block's coordinate and the equilibrium coordinate:
 
 $$
-A=x_f-x_0
+A=x_{\mathrm{release}}-x_{\mathrm{eq}}
 =0.32-0.20
 =0.12\ \mathrm{m}.
 $$
@@ -74,14 +74,14 @@ The amplitude is not \(0.32\ \mathrm{m}\); that is the coordinate measured from 
 type: radio
 id: problem-7-amplitude-q1
 content: |-
-  A spring is unstretched when a block is at \(x_0=0.45\ \mathrm{m}\). The block is pulled right to \(x_f=0.61\ \mathrm{m}\). What is the amplitude?
+  A spring is unstretched when a block is at \(x_{\mathrm{eq}}=0.45\ \mathrm{m}\). The block is pulled right to \(x_{\mathrm{release}}=0.61\ \mathrm{m}\). What is the amplitude?
 options:
 - id: a
   content: |-
     \(0.16\ \mathrm{m}\)
   correct: true
   feedback: |-
-    The displacement from equilibrium is \(A=x_f-x_0=0.61-0.45=0.16\ \mathrm{m}\).
+    The displacement from equilibrium is \(A=x_{\mathrm{release}}-x_{\mathrm{eq}}=0.61-0.45=0.16\ \mathrm{m}\).
 - id: b
   content: |-
     \(0.61\ \mathrm{m}\)
@@ -104,7 +104,7 @@ options:
 <a id="choose-cosine-from-the-release-condition"></a>
 ## Choose Cosine From the Release Condition
 
-**Example:** A block is released from rest at its rightmost position, \(x(0)=+A\). Which zero-phase SHM model matches?
+**Example:** A block is released from rest at its rightmost position, \(y(0)=+A\). Which zero-phase SHM model matches?
 
 **Explanation**
 
@@ -119,10 +119,10 @@ $$
 Therefore,
 
 $$
-x(t)=A\cos(\omega t)
+y(t)=A\cos(\omega t)
 $$
 
-starts at \(x(0)=+A\). Its velocity is
+starts at \(y(0)=+A\). Its velocity is
 
 $$
 v(t)=-A\omega\sin(\omega t),
@@ -138,23 +138,23 @@ content: |-
 options:
 - id: a
   content: |-
-    \(x(t)=A\cos(\omega t)\)
+    \(y(t)=A\cos(\omega t)\)
   correct: true
   feedback: |-
-    This gives \(x(0)=A\) and \(v(0)=0\).
+    This gives \(y(0)=A\) and \(v(0)=0\).
 - id: b
   content: |-
-    \(x(t)=A\sin(\omega t)\)
+    \(y(t)=A\sin(\omega t)\)
   feedback: |-
-    This begins at equilibrium, \(x(0)=0\), rather than at maximum displacement.
+    This begins at equilibrium, \(y(0)=0\), rather than at maximum displacement.
 - id: c
   content: |-
-    \(x(t)=-A\cos(\omega t)\)
+    \(y(t)=-A\cos(\omega t)\)
   feedback: |-
     This begins at maximum negative displacement.
 - id: d
   content: |-
-    \(x(t)=-A\sin(\omega t)\)
+    \(y(t)=-A\sin(\omega t)\)
   feedback: |-
     This also begins at equilibrium rather than at the rightmost position.
 ```
@@ -180,7 +180,7 @@ Each cycle contains \(2\pi\) radians, so
 
 $$
 \omega=2\pi f
-=4.0\pi\ \mathrm{rad/s}.
+=4.0\pi\ \mathrm{rad}/\mathrm{s}.
 $$
 
 ```quiz
@@ -191,23 +191,23 @@ content: |-
 options:
 - id: a
   content: |-
-    \(3.0\pi\ \mathrm{rad/s}\)
+    \(3.0\pi\ \mathrm{rad}/\mathrm{s}\)
   correct: true
   feedback: |-
-    \(f=9/6.0=1.5\ \mathrm{Hz}\), so \(\omega=2\pi f=3.0\pi\ \mathrm{rad/s}\).
+    \(f=9/6.0=1.5\ \mathrm{Hz}\), so \(\omega=2\pi f=3.0\pi\ \mathrm{rad}/\mathrm{s}\).
 - id: b
   content: |-
-    \(1.5\ \mathrm{rad/s}\)
+    \(1.5\ \mathrm{rad}/\mathrm{s}\)
   feedback: |-
     \(1.5\) is the ordinary frequency in hertz; multiply by \(2\pi\) for angular frequency.
 - id: c
   content: |-
-    \(12\pi\ \mathrm{rad/s}\)
+    \(12\pi\ \mathrm{rad}/\mathrm{s}\)
   feedback: |-
     The elapsed time belongs in the denominator of \(f=N/\Delta t\).
 - id: d
   content: |-
-    \(\dfrac{4\pi}{3}\ \mathrm{rad/s}\)
+    \(\dfrac{4\pi}{3}\ \mathrm{rad}/\mathrm{s}\)
   feedback: |-
     This uses the reciprocal cycle rate, \(\Delta t/N\), as though it were frequency.
 ```
@@ -233,7 +233,7 @@ Then
 
 $$
 \begin{aligned}
-x(t)
+y(t)
 &=A\cos(\omega t)\\
 &=(0.10)\cos\left(\frac{3\pi}{4}\right)\\
 &=-0.0707\ldots\ \mathrm{m}.
@@ -247,7 +247,7 @@ Evaluate in this order:
 1. Compute the dimensionless phase \(\omega t\).
 2. Evaluate the cosine in **radian mode**.
 3. Multiply by \(A\).
-4. Check that \(-A\le x(t)\le A\).
+4. Check that \(-A\le y(t)\le A\).
 
 ```quiz
 type: radio
@@ -260,7 +260,7 @@ options:
     \(-0.14\ \mathrm{m}\)
   correct: true
   feedback: |-
-    \(\omega t=2\pi(0.50)(0.75)=3\pi/4\), so \(x=0.20\cos(3\pi/4)=-0.1414\ldots\ \mathrm{m}\).
+    \(\omega t=2\pi(0.50)(0.75)=3\pi/4\), so \(y=0.20\cos(3\pi/4)=-0.1414\ldots\ \mathrm{m}\).
 - id: b
   content: |-
     \(+0.14\ \mathrm{m}\)
@@ -289,10 +289,10 @@ options:
 
 **Explanation**
 
-The equilibrium coordinate is \(x_0\), so the release displacement is
+The equilibrium coordinate is \(x_{\mathrm{eq}}\), so the release displacement is
 
 $$
-A=x_f-x_0
+A=x_{\mathrm{release}}-x_{\mathrm{eq}}
 =0.48-0.35
 =0.13\ \mathrm{m}.
 $$
@@ -308,7 +308,7 @@ $$
 Because the block is released from maximum positive displacement,
 
 $$
-x(t)=A\cos(\omega t).
+y(t)=A\cos(\omega t).
 $$
 
 At \(t=3.9\ \mathrm{s}\),
@@ -351,9 +351,9 @@ id: m4-1lec-q6
 content: |-
   **Question 6**
 
-  A block of mass $m$ rests on a frictionless surface and is attached to an ideal spring. The spring is unstretched when the block is at $x_0$. The block is pulled right to $x_f$ and released from rest, after which it completes 12 oscillations in $7.0\ \mathrm{s}$.
+  A block of mass $m$ rests on a frictionless surface and is attached to an ideal spring. The spring is unstretched when the block is at $x_{\mathrm{eq}}$. The block is pulled right to $x_{\mathrm{release}}$ and released from rest, after which it completes 12 oscillations in $7.0\ \mathrm{s}$.
 
-  Use $m=0.18\ \mathrm{kg}$, $x_0=0.35\ \mathrm{m}$, and $x_f=0.48\ \mathrm{m}$. What is the block's displacement from equilibrium at $t=3.9\ \mathrm{s}$? Define right as positive.
+  Use $m=0.18\ \mathrm{kg}$, $x_{\mathrm{eq}}=0.35\ \mathrm{m}$, and $x_{\mathrm{release}}=0.48\ \mathrm{m}$. What is the block's displacement from equilibrium at $t=3.9\ \mathrm{s}$? Define right as positive.
 
   ![](<../Source/Images/spring-block-displacement-setup.png>)
 
@@ -363,10 +363,10 @@ options:
   content: -0.051
   correct: true
   feedback: |-
-    The amplitude is $A=x_f-x_0=0.13\ \mathrm{m}$. Since the block is released from maximum positive displacement,
+    The amplitude is $A=x_{\mathrm{release}}-x_{\mathrm{eq}}=0.13\ \mathrm{m}$. Since the block is released from maximum positive displacement,
 
     $$
-    x(t)=A\cos(\omega t),
+    y(t)=A\cos(\omega t),
     \qquad
     \omega=2\pi\left(\frac{12}{7.0\ \mathrm{s}}\right).
     $$
@@ -379,7 +379,7 @@ options:
     =-0.05109\ldots\ \mathrm{m}.
     $$
 
-    The measured givens support two significant figures, so $x=-0.051\ \mathrm{m}$. The negative sign places the block left of equilibrium.
+    The measured givens support two significant figures, so $y=-0.051\ \mathrm{m}$. The negative sign places the block left of equilibrium.
 - id: b
   content: 0.051
   feedback: |-
@@ -403,7 +403,7 @@ options:
 <a id="variant-return-to-the-release-coordinate"></a>
 ## Variant: Return to the Release Coordinate
 
-At an integer number of periods, the displacement repeats its initial value. When the problem reports the laboratory coordinate rather than displacement from equilibrium, convert back with $x_{\text{coordinate}}=x_0+x$.
+At an integer number of periods, the displacement repeats its initial value. When the problem reports the laboratory coordinate rather than displacement from equilibrium, convert back with $x(t)=x_{\mathrm{eq}}+y(t)$.
 
 ```quiz
 type: blank
@@ -411,13 +411,13 @@ id: khadley-oscillations-q1
 input_mode: math
 require_exact: true
 content: |-
-  A $0.18\ \mathrm{kg}$ block on a frictionless surface is attached to an ideal spring. The spring is unstretched at coordinate $x_0=0.35\ \mathrm m$. The block is pulled right to $x_f=0.48\ \mathrm m$, released from rest, and completes $12$ oscillations in $7.0\ \mathrm s$.
+  A $0.18\ \mathrm{kg}$ block on a frictionless surface is attached to an ideal spring. The spring is unstretched at coordinate $x_{\mathrm{eq}}=0.35\ \mathrm{m}$. The block is pulled right to $x_{\mathrm{release}}=0.48\ \mathrm{m}$, released from rest, and completes $12$ oscillations in $7.0\ \mathrm{s}$.
 
   ![](<../Source/Images/spring-block-displacement-setup.png>)
 
-  What is the block's coordinate at $t=3.5\ \mathrm s$? Enter meters: ==0.48==
+  What is the block's coordinate at $t=3.5\ \mathrm{s}$? Enter meters: ==0.48==
 feedback: |-
-  The block completes six full periods in $3.5\ \mathrm s$, so it returns to its release position. Its displacement is again $A=0.13\ \mathrm m$, and its laboratory coordinate is $x_0+A=0.48\ \mathrm m$.
+  The block completes six full periods in $3.5\ \mathrm{s}$, so it returns to its release position. Its displacement is again $A=0.13\ \mathrm{m}$, and its laboratory coordinate is $x_{\mathrm{eq}}+A=0.48\ \mathrm{m}$.
 ```
 
 ---
@@ -427,13 +427,13 @@ feedback: |-
 
 For a block pulled right from equilibrium and released from rest:
 
-1. Compute \(A=x_f-x_0\).
+1. Compute \(A=x_{\mathrm{release}}-x_{\mathrm{eq}}\).
 2. Compute \(f=N/\Delta t\) and \(\omega=2\pi f\).
-3. Use \(x(t)=A\cos(\omega t)\).
+3. Use \(y(t)=A\cos(\omega t)\).
 4. Reduce any whole cycles, evaluate the cosine in radians, and multiply by \(A\).
-5. Keep guard digits, verify \(|x|\le A\), and interpret the sign relative to equilibrium.
+5. Keep guard digits, verify \(|y|\le A\), and interpret the sign relative to equilibrium.
 
-**Main traps:** using \(x_f\) as the amplitude, choosing sine despite release at \(+A\), using \(f\) in place of \(\omega\), switching the calculator to degrees, or dropping a negative displacement sign.
+**Main traps:** using \(x_{\mathrm{release}}\) as the amplitude, choosing sine despite release at \(+A\), using \(f\) in place of \(\omega\), switching the calculator to degrees, or dropping a negative displacement sign.
 
 <!-- lesson-nav:start -->
 ---

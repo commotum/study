@@ -44,7 +44,7 @@ $$
 If Speaker 1 moves by signed displacement $s$, where $s>0$ means forward and $s<0$ means backward, the new path difference is
 
 $$
-\boxed{\Delta r_{\text{new}}=d-s}.
+\boxed{\Delta r_{\mathrm{new}}=d-s}.
 $$
 
 The recognition cue is an in-phase source pair, a wavelength, an initial forward offset, and proposed source movements. Update $d-s$ for each move and keep the choices that make it an integer multiple of $\lambda$.
@@ -122,7 +122,7 @@ Use $s=-0.25\ \mathrm m$ because backward is negative. Then
 
 $$
 \begin{aligned}
-\Delta r_{\text{new}}
+\Delta r_{\mathrm{new}}
 &=d-s\\
 &=0.75\ \mathrm m-(-0.25\ \mathrm m)\\
 &=1.00\ \mathrm m\\
@@ -144,7 +144,7 @@ options:
     The new path difference is $0$, so the interference is completely constructive.
   correct: true
   feedback: |-
-    A forward move of Source 1 reduces the initial separation: $\Delta r_{\text{new}}=0.60-0.60=0$. Since $0=0\lambda$ is an integer multiple, the in-phase waves arrive completely constructively.
+    A forward move of Source 1 reduces the initial separation: $\Delta r_{\mathrm{new}}=0.60-0.60=0$. Since $0=0\lambda$ is an integer multiple, the in-phase waves arrive completely constructively.
 - id: one-wavelength-constructive
   content: |-
     The new path difference is $1.2\ \mathrm m$, so the interference is completely constructive.
@@ -322,10 +322,10 @@ options:
 The original answer form requires selecting every valid change. Take forward as positive, so $d=1.0\ \mathrm m$ and
 
 $$
-\Delta r_{\text{new}}=1.0\ \mathrm m-s.
+\Delta r_{\mathrm{new}}=1.0\ \mathrm m-s.
 $$
 
-Check each proposed $s$ against $\Delta r_{\text{new}}=n(2.0\ \mathrm m)$.
+Check each proposed $s$ against $\Delta r_{\mathrm{new}}=n(2.0\ \mathrm m)$.
 
 ```quiz
 type: radio
@@ -373,7 +373,7 @@ For in-phase sources on a common forward line:
 2. Give Source 1's move a sign: forward $s>0$, backward $s<0$.
 3. Update the path difference:
    $$
-   \Delta r_{\text{new}}=d-s.
+   \Delta r_{\mathrm{new}}=d-s.
    $$
 4. Require complete constructive interference:
    $$

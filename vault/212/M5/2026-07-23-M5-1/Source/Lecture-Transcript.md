@@ -98,14 +98,14 @@ If the circular motion is projected onto either the horizontal or vertical axis,
 The resulting one-dimensional motion can be described by
 
 $$
-x(t)=A\cos(\omega t+\phi),
+x(t)=A\cos(\omega t+\phi_0),
 $$
 
 where:
 
 - $A$ is the amplitude
 - $\omega$ is the angular frequency
-- $\phi$ is the phase constant
+- $\phi_0$ is the initial phase
 - $x(t)$ is the displacement from equilibrium
 
 The projection of uniform circular motion is therefore an example of simple harmonic motion.
@@ -300,7 +300,7 @@ For a wave traveling along an ideal stretched string, the wave speed is
 
 $$
 \boxed{
-v=\sqrt{\frac{F_T}{\mu}}
+v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}}
 },
 $$
 
@@ -320,7 +320,7 @@ where $m$ is the mass of a length $L$ of string.
 The equation
 
 $$
-v=\sqrt{\frac{F_T}{\mu}}
+v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}}
 $$
 
 has the same general structure as the frequency equation for an oscillator:
@@ -389,7 +389,7 @@ where $F$ describes the shape of the wave.
 For a sinusoidal wave,
 
 $$
-y(x,t)=A\sin(kx-\omega t+\phi),
+y(x,t)=A\sin(kx-\omega t+\phi_0),
 $$
 
 where
@@ -425,7 +425,7 @@ For a right-moving wave,
 $$
 \frac{\partial y}{\partial t}
 =
--v\frac{\partial y}{\partial x}.
+-v_{\mathrm{wave}}\frac{\partial y}{\partial x}.
 $$
 
 This provides a useful rule:
@@ -447,7 +447,7 @@ For a wave traveling to the left, the relationship becomes
 $$
 \frac{\partial y}{\partial t}
 =
-+v\frac{\partial y}{\partial x},
++v_{\mathrm{wave}}\frac{\partial y}{\partial x},
 $$
 
 and the directional rule is reversed.
@@ -472,12 +472,12 @@ We can therefore define two different velocities:
 For a transverse wave,
 
 $$
-v_{\mathrm{particle},y}
+u_y
 =
 \frac{\partial y}{\partial t}.
 $$
 
-This is different from the wave speed $v$.
+This is different from the wave speed $v_{\mathrm{wave}}$.
 
 ## Where Does a Particle Move Fastest?
 
@@ -511,7 +511,7 @@ The **period**, represented by $T$, is the time required for one complete cycle 
 During one period, the wave travels one wavelength. Therefore,
 
 $$
-v=\frac{\lambda}{T}.
+v_{\mathrm{wave}}=\frac{\lambda}{T}.
 $$
 
 Because
@@ -524,7 +524,7 @@ the wave-speed equation can also be written as
 
 $$
 \boxed{
-v=f\lambda
+v_{\mathrm{wave}}=f\lambda
 }.
 $$
 
@@ -533,7 +533,7 @@ This equation relates wave speed, frequency, and wavelength.
 For the nondispersive wave models considered here, the medium determines the wave speed. Once the source frequency is selected, the wavelength adjusts to satisfy
 
 $$
-\lambda=\frac{v}{f}.
+\lambda=\frac{v_{\mathrm{wave}}}{f}.
 $$
 
 Therefore, in the same medium:
@@ -557,7 +557,7 @@ $$
 The wave speed is therefore
 
 $$
-v
+v_{\mathrm{wave}}
 =
 \sqrt{\frac{Mg}{\mu}}.
 $$
@@ -569,7 +569,7 @@ M\uparrow
 \quad\Longrightarrow\quad
 F_T\uparrow
 \quad\Longrightarrow\quad
-v\uparrow.
+v_{\mathrm{wave}}\uparrow.
 $$
 
 The frequency of a wave sent along the string would still be set by the oscillator producing the wave. The increased tension changes the wave speed and therefore changes the wavelength associated with that frequency.
@@ -657,9 +657,9 @@ $$
 and
 
 $$
-\vec{E}\perp\vec{v},
+\vec{E}\perp\vec{v}_{\mathrm{wave}},
 \qquad
-\vec{B}\perp\vec{v}.
+\vec{B}\perp\vec{v}_{\mathrm{wave}}.
 $$
 
 Electromagnetic waves can therefore propagate through the vacuum of space, where sound waves cannot.
@@ -701,7 +701,7 @@ A stronger restoring effect produces a higher oscillation frequency, while great
 For a wave on a string, tension supplies the restoring force. The wave speed is
 
 $$
-v=\sqrt{\frac{F_T}{\mu}}.
+v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}}.
 $$
 
 A transverse wave has particle motion perpendicular to the propagation direction. A longitudinal wave has particle motion parallel to the propagation direction.
@@ -711,13 +711,13 @@ A wave can be graphed either as displacement versus position at a fixed time or 
 Wave speed, frequency, wavelength, and period are related by
 
 $$
-v=\frac{\lambda}{T}=f\lambda.
+v_{\mathrm{wave}}=\frac{\lambda}{T}=f\lambda.
 $$
 
 In the ideal nondispersive models considered here, the medium determines the wave speed, while the source determines the frequency. The wavelength then adjusts according to
 
 $$
-\lambda=\frac{v}{f}.
+\lambda=\frac{v_{\mathrm{wave}}}{f}.
 $$
 
 Mechanical waves require a material medium. Electromagnetic waves do not and can propagate through a vacuum.

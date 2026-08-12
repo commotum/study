@@ -30,24 +30,24 @@ When a problem gives one slit, two wavelengths, and asks about first-minimum pos
 Single-slit minima satisfy
 
 $$
-a\sin\theta=m\lambda,
-\qquad m=1,2,3,\ldots
+a\sin\theta_p=p\lambda,
+\qquad p=1,2,3,\ldots
 $$
 
 For a distant screen and small angles, $y\approx L\tan\theta\approx L\sin\theta$, so
 
 $$
-y_m\approx\frac{mL\lambda}{a}.
+y_p\approx\frac{pL\lambda}{a}.
 $$
 
-At fixed $m$, $L$, and $a$, a longer wavelength places its minimum farther from the center. Therefore, the distance between two same-side minima is
+At fixed $p$, $L$, and $a$, a longer wavelength places its minimum farther from the center. Therefore, the distance between two same-side minima is
 
 $$
-\boxed{\Delta y\approx \left|y_m(\lambda_2)-y_m(\lambda_1)\right|
-=\frac{mL\left|\lambda_2-\lambda_1\right|}{a}}.
+\boxed{\Delta y\approx \left|y_p(\lambda_2)-y_p(\lambda_1)\right|
+=\frac{pL\left|\lambda_2-\lambda_1\right|}{a}}.
 $$
 
-For first minima, use $m=1$. The shortcut is valid under the same small-angle condition as $y_m\approx mL\lambda/a$.
+For first minima, use $p=1$. The shortcut is valid under the same small-angle condition as $y_p\approx pL\lambda/a$.
 
 A quick direction check follows from the same formula:
 
@@ -70,7 +70,7 @@ Moving the screen farther away or increasing the wavelength gap increases the sp
 
 **Explanation**
 
-“First minimum” means $m=1$. Convert both small lengths to meters and use $y_1\approx L\lambda/a$:
+“First minimum” means $p=1$. Convert both small lengths to meters and use $y_1\approx L\lambda/a$:
 
 $$
 y_1\approx
@@ -95,7 +95,7 @@ options:
     $3.0\ \mathrm{cm}$
   correct: true
   feedback: |-
-    A first minimum uses $m=1$ in $y_m\approx mL\lambda/a$. Substituting the converted lengths gives $y_1=(2.0)(450\times10^{-9})/(30\times10^{-6})=0.030\ \mathrm{m}=3.0\ \mathrm{cm}$.
+    A first minimum uses $p=1$ in $y_p\approx pL\lambda/a$. Substituting the converted lengths gives $y_1=(2.0)(450\times10^{-9})/(30\times10^{-6})=0.030\ \mathrm{m}=3.0\ \mathrm{cm}$.
 - id: p3-locate-c
   content: |-
     $6.0\ \mathrm{cm}$
@@ -283,7 +283,7 @@ $$
 
 **Explanation**
 
-The calculation uses the first-minimum value $m=1$, subtracts the wavelengths because the positions are on the same side, and converts the final distance to the requested scale.
+The calculation uses the first-minimum value $p=1$, subtracts the wavelengths because the positions are on the same side, and converts the final distance to the requested scale.
 
 ```quiz
 type: radio
@@ -335,8 +335,8 @@ options:
 
 When two wavelengths pass through the same slit and the question compares minima of the same order on the same side:
 
-1. Use $y_m\approx mL\lambda/a$ under the small-angle condition.
-2. Subtract the positions: $\Delta y=mL|\lambda_2-\lambda_1|/a$.
+1. Use $y_p\approx pL\lambda/a$ under the small-angle condition.
+2. Subtract the positions: $\Delta y=pL|\lambda_2-\lambda_1|/a$.
 3. Convert wavelength and slit width to matching length units before dividing.
 4. Use a difference for same-side positions; reserve a sum for opposite-side positions and $2y_1$ for one wavelength's central-maximum width.
 5. Check the trend: greater $L$ or wavelength gap increases the spacing, while a wider slit decreases it.

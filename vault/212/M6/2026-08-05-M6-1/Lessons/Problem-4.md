@@ -188,7 +188,7 @@ options:
   content: |-
     $\Delta x=1.2\times10^{-2}\ \mathrm{m}$ and $d=4.0\times10^{-2}\ \mathrm{m}$
   feedback: |-
-    The centimeter conversion is correct, but $0.040\ \mathrm{mm}$ is much smaller than a centimeter. Multiplying $0.040$ by $10^{-3}\ \mathrm{m/mm}$ gives $4.0\times10^{-5}\ \mathrm{m}$.
+    The centimeter conversion is correct, but $0.040\ \mathrm{mm}$ is much smaller than a centimeter. Multiplying $0.040$ by $10^{-3}\ \mathrm{m}/\mathrm{mm}$ gives $4.0\times10^{-5}\ \mathrm{m}$.
 - id: p4-convert-lengths-c
   content: |-
     $\Delta x=1.2\times10^{-2}\ \mathrm{m}$ and $d=4.0\times10^{-5}\ \mathrm{m}$
@@ -271,7 +271,7 @@ options:
   content: |-
     $5.0\times10^{-7}\ \mathrm{nm}$
   feedback: |-
-    $5.0\times10^{-7}$ is the numerical value when the unit is meters. Relabeling it as nanometers changes the physical length; multiplying by $10^9\ \mathrm{nm/m}$ gives $500\ \mathrm{nm}$.
+    $5.0\times10^{-7}$ is the numerical value when the unit is meters. Relabeling it as nanometers changes the physical length; multiplying by $10^9\ \mathrm{nm}/\mathrm{m}$ gives $500\ \mathrm{nm}$.
 ```
 
 ---

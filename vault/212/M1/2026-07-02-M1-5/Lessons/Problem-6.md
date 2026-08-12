@@ -17,7 +17,7 @@ topic-code: MTH212.M1.58
 ## Prerequisites
 
 - Use Newton's second law along a chosen axis.
-- Use centripetal acceleration in the form $a_r=\dfrac{v^2}{L}$.
+- Use radial acceleration in the form $a_r=\dfrac{v^2}{r}$, with $r=L$ for the taut string.
 - Resolve a force or velocity into a trigonometric component.
 - Use the vertical projectile relation $0=v_y^2-2g\Delta y$ at maximum height.
 
@@ -49,44 +49,44 @@ $$
 <a id="turn-radial-forces-into-speed"></a>
 ## Turn Radial Forces Into Speed
 
-**Example:** A $0.50\ \mathrm{kg}$ ball is in the same upper-left position as the assignment diagram, with the string making $\theta=20^\circ$ from vertical. The string tension is $T=1.5\ \mathrm{N}$ and the string length is $L=0.80\ \mathrm{m}$. Find $a_r$ and $v^2$ at that instant.
+**Example:** A $0.50\ \mathrm{kg}$ ball is in the same upper-left position as the assignment diagram, with the string making $\theta=20^\circ$ from vertical. The string tension is $T_{\mathrm{tens}}=1.5\ \mathrm{N}$ and the string length is $L=0.80\ \mathrm{m}$. Find $a_r$ and $v^2$ at that instant.
 
 **Explanation**
 
 The inward direction is along the string toward the center. Tension points inward, and the component of weight along the inward direction is $mg\cos\theta$, so
 
 $$
-\sum F_r=m a_r
+\sum F_r=m a_r=m\frac{v^2}{r}
 $$
 
 becomes
 
 $$
-T+mg\cos\theta=m a_r.
+T_{\mathrm{tens}}+mg\cos\theta=m a_r.
 $$
 
 Divide by $m$:
 
 $$
-a_r=\frac{T}{m}+g\cos\theta.
+a_r=\frac{T_{\mathrm{tens}}}{m}+g\cos\theta.
 $$
 
 Substitute the values:
 
 $$
-a_r=\frac{1.5}{0.50}+9.8\cos(20^\circ)=12.21\ \mathrm{m/s^2}.
+a_r=\frac{1.5}{0.50}+9.8\cos(20^\circ)=12.21\ \mathrm{m}/\mathrm{s}^2.
 $$
 
-Now use $a_r=\dfrac{v^2}{L}$:
+Here $r=L$, so use $a_r=\dfrac{v^2}{r}=\dfrac{v^2}{L}$:
 
 $$
-v^2=a_rL=(12.21)(0.80)=9.77\ \mathrm{m^2/s^2}.
+v^2=a_rL=(12.21)(0.80)=9.77\ \mathrm{m}^2/\mathrm{s}^2.
 $$
 
 Equivalently, this diagram gives the direct speed-squared formula
 
 $$
-v^2=L\left(\frac{T}{m}+g\cos\theta\right).
+v^2=L\left(\frac{T_{\mathrm{tens}}}{m}+g\cos\theta\right).
 $$
 
 ```quiz
@@ -94,24 +94,24 @@ type: radio
 id: p6-radial-force
 shuffle: true
 content: |-
-  A ball is in the same upper-left position as the assignment diagram, so tension and the radial component of weight both point inward. If $T=2.0\ \mathrm{N}$, $m=0.40\ \mathrm{kg}$, and $\theta=30^\circ$, which value is the radial acceleration?
+  A ball is in the same upper-left position as the assignment diagram, so tension and the radial component of weight both point inward. If $T_{\mathrm{tens}}=2.0\ \mathrm{N}$, $m=0.40\ \mathrm{kg}$, and $\theta=30^\circ$, which value is the radial acceleration?
 options:
 - id: p6-radial-a
   content: |-
-    $13.49\ \mathrm{m/s^2}$
+    $13.49\ \mathrm{m}/\mathrm{s}^2$
   correct: true
 - id: p6-radial-b
   content: |-
-    $3.49\ \mathrm{m/s^2}$
+    $3.49\ \mathrm{m}/\mathrm{s}^2$
 - id: p6-radial-c
   content: |-
-    $10.00\ \mathrm{m/s^2}$
+    $10.00\ \mathrm{m}/\mathrm{s}^2$
 - id: p6-radial-d
   content: |-
-    $18.49\ \mathrm{m/s^2}$
+    $18.49\ \mathrm{m}/\mathrm{s}^2$
 - id: p6-radial-e
   content: |-
-    $11.78\ \mathrm{m/s^2}$
+    $11.78\ \mathrm{m}/\mathrm{s}^2$
 ```
 
 ---
@@ -119,7 +119,7 @@ options:
 <a id="find-the-upward-release-component"></a>
 ## Find the Upward Release Component
 
-**Example:** A ball is released from the same clockwise position with speed $v=3.0\ \mathrm{m/s}$ and angle $\theta=20^\circ$. Find the upward component of its velocity.
+**Example:** A ball is released from the same clockwise position with speed $v=3.0\ \mathrm{m}/\mathrm{s}$ and angle $\theta=20^\circ$. Find the upward component of its velocity.
 
 **Explanation**
 
@@ -132,7 +132,7 @@ $$
 Thus,
 
 $$
-v_y=3.0\sin(20^\circ)=1.03\ \mathrm{m/s}.
+v_y=3.0\sin(20^\circ)=1.03\ \mathrm{m}/\mathrm{s}.
 $$
 
 Do not use $v\cos\theta$ here. In this diagram, cosine gives the horizontal component of the tangent velocity.
@@ -142,24 +142,24 @@ type: radio
 id: p6-vertical-component
 shuffle: true
 content: |-
-  A ball is released from the same clockwise position with speed $4.0\ \mathrm{m/s}$ and $\theta=30^\circ$. What is its upward velocity component?
+  A ball is released from the same clockwise position with speed $4.0\ \mathrm{m}/\mathrm{s}$ and $\theta=30^\circ$. What is its upward velocity component?
 options:
 - id: p6-vertical-a
   content: |-
-    $2.0\ \mathrm{m/s}$
+    $2.0\ \mathrm{m}/\mathrm{s}$
   correct: true
 - id: p6-vertical-b
   content: |-
-    $3.46\ \mathrm{m/s}$
+    $3.46\ \mathrm{m}/\mathrm{s}$
 - id: p6-vertical-c
   content: |-
-    $4.0\ \mathrm{m/s}$
+    $4.0\ \mathrm{m}/\mathrm{s}$
 - id: p6-vertical-d
   content: |-
-    $0.50\ \mathrm{m/s}$
+    $0.50\ \mathrm{m}/\mathrm{s}$
 - id: p6-vertical-e
   content: |-
-    $8.0\ \mathrm{m/s}$
+    $8.0\ \mathrm{m}/\mathrm{s}$
 ```
 
 ---
@@ -167,20 +167,20 @@ options:
 <a id="combine-speed-with-projectile-height"></a>
 ## Combine Speed With Projectile Height
 
-**Example:** Use $m=0.50\ \mathrm{kg}$, $L=0.80\ \mathrm{m}$, $T=1.5\ \mathrm{N}$, and $\theta=20^\circ$ to find the height above the release point.
+**Example:** Use $m=0.50\ \mathrm{kg}$, $L=0.80\ \mathrm{m}$, $T_{\mathrm{tens}}=1.5\ \mathrm{N}$, and $\theta=20^\circ$ to find the height above the release point.
 
 **Explanation**
 
 From the radial-force step,
 
 $$
-a_r=\frac{T}{m}+g\cos\theta=12.21\ \mathrm{m/s^2}
+a_r=\frac{T_{\mathrm{tens}}}{m}+g\cos\theta=12.21\ \mathrm{m}/\mathrm{s}^2
 $$
 
 and
 
 $$
-v^2=a_rL=(12.21)(0.80)=9.77\ \mathrm{m^2/s^2}.
+v^2=a_rL=(12.21)(0.80)=9.77\ \mathrm{m}^2/\mathrm{s}^2.
 $$
 
 After release, the vertical velocity component is $v_y=v\sin\theta$, so
@@ -201,10 +201,10 @@ $$
 \Delta y=\frac{v_y^2}{2g}=\frac{v^2\sin^2\theta}{2g}.
 $$
 
-Since $v^2=L\left(\dfrac{T}{m}+g\cos\theta\right)$, the whole calculation can be written as
+Since $v^2=L\left(\dfrac{T_{\mathrm{tens}}}{m}+g\cos\theta\right)$, the whole calculation can be written as
 
 $$
-\Delta y=\frac{L\left(\dfrac{T}{m}+g\cos\theta\right)\sin^2\theta}{2g}.
+\Delta y=\frac{L\left(\dfrac{T_{\mathrm{tens}}}{m}+g\cos\theta\right)\sin^2\theta}{2g}.
 $$
 
 Substitute:
@@ -218,7 +218,7 @@ type: radio
 id: p6-combined-height
 shuffle: true
 content: |-
-  A $0.40\ \mathrm{kg}$ ball is released from the same clockwise position with $L=0.60\ \mathrm{m}$, $T=2.0\ \mathrm{N}$, and $\theta=30^\circ$. Using $g=9.8\ \mathrm{m/s^2}$, how far above the release point will it rise?
+  A $0.40\ \mathrm{kg}$ ball is released from the same clockwise position with $L=0.60\ \mathrm{m}$, $T_{\mathrm{tens}}=2.0\ \mathrm{N}$, and $\theta=30^\circ$. Using $g=9.8\ \mathrm{m}/\mathrm{s}^2$, how far above the release point will it rise?
 options:
 - id: p6-combined-a
   content: |-
@@ -243,28 +243,28 @@ options:
 <a id="finish-the-assignment-calculation"></a>
 ## Finish the Assignment Calculation
 
-**Example:** Use the assignment values $L=0.88\ \mathrm{m}$, $T=1.2\ \mathrm{N}$, $m=0.56\ \mathrm{kg}$, and $\theta=14^\circ$.
+**Example:** Use the assignment values $L=0.88\ \mathrm{m}$, $T_{\mathrm{tens}}=1.2\ \mathrm{N}$, $m=0.56\ \mathrm{kg}$, and $\theta=14^\circ$.
 
 **Explanation**
 
 Start with the radial equation:
 
 $$
-T+mg\cos\theta=m a_r.
+T_{\mathrm{tens}}+mg\cos\theta=m a_r.
 $$
 
 Then
 
 $$
-a_r=\frac{T}{m}+g\cos\theta
+a_r=\frac{T_{\mathrm{tens}}}{m}+g\cos\theta
 =\frac{1.2}{0.56}+9.8\cos(14^\circ)
-=11.65\ \mathrm{m/s^2}.
+=11.65\ \mathrm{m}/\mathrm{s}^2.
 $$
 
 Use $v^2=a_rL$:
 
 $$
-v^2=(11.65)(0.88)=10.25\ \mathrm{m^2/s^2}.
+v^2=(11.65)(0.88)=10.25\ \mathrm{m}^2/\mathrm{s}^2.
 $$
 
 The release velocity points upward by the amount $v\sin\theta$, so
@@ -286,7 +286,7 @@ type: radio
 id: p6-assignment-check
 shuffle: true
 content: |-
-  A ball is released from the same clockwise position with $L=0.75\ \mathrm{m}$, $T=1.0\ \mathrm{N}$, $m=0.50\ \mathrm{kg}$, and $\theta=18^\circ$. Using the same method, what is the height above the release point?
+  A ball is released from the same clockwise position with $L=0.75\ \mathrm{m}$, $T_{\mathrm{tens}}=1.0\ \mathrm{N}$, $m=0.50\ \mathrm{kg}$, and $\theta=18^\circ$. Using the same method, what is the height above the release point?
 options:
 - id: p6-assignment-a
   content: |-
@@ -313,7 +313,7 @@ options:
 For this diagram, use the inward radial force equation first:
 
 $$
-T+mg\cos\theta=m\frac{v^2}{L}.
+T_{\mathrm{tens}}+mg\cos\theta=m\frac{v^2}{L}.
 $$
 
 Then turn that speed into the upward release component:
@@ -332,7 +332,7 @@ $$
 For this exact force diagram, that becomes
 
 $$
-\Delta y=\frac{L\left(\dfrac{T}{m}+g\cos\theta\right)\sin^2\theta}{2g}.
+\Delta y=\frac{L\left(\dfrac{T_{\mathrm{tens}}}{m}+g\cos\theta\right)\sin^2\theta}{2g}.
 $$
 
 The main trap is mixing up the two uses of the angle: $\cos\theta$ appears in the radial force equation for weight's inward component, while $\sin\theta$ appears in the projectile step for the upward component of the tangent velocity.

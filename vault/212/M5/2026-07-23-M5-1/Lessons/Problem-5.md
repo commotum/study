@@ -32,15 +32,15 @@ A snapshot $y$ versus $x$ shows the string's shape at one instant. It does **not
 1. the wave's propagation direction, and
 2. the snapshot's local slope at the particle.
 
-For a wave moving right at speed $v$,
+For a wave moving right at speed $v_{\mathrm{wave}}$,
 
 $$
 y(x,t)=F(x-vt)
 \qquad\Longrightarrow\qquad
-\frac{\partial y}{\partial t}=-v\frac{\partial y}{\partial x}.
+\frac{\partial y}{\partial t}=-v_{\mathrm{wave}}\frac{\partial y}{\partial x}.
 $$
 
-Because $v>0$, the vertical velocity and spatial slope have opposite signs.
+Because $v_{\mathrm{wave}}>0$, the vertical velocity and spatial slope have opposite signs.
 
 **Recognition cue:** If the horizontal axis is position $x$, read a **spatial slope** and combine it with the propagation direction. If the horizontal axis were time $t$, the graph's slope would already be the particle's velocity.
 
@@ -93,7 +93,7 @@ options:
 Imagine shifting the entire profile a tiny distance to the right, but keep your eye on the same horizontal position $x_0$. The future height at $x_0$ is the height that was a little to its left:
 
 $$
-y(x_0,t+\Delta t)=y(x_0-v\Delta t,t).
+y(x_0,t+\Delta t)=y(x_0-v_{\mathrm{wave}}\Delta t,t).
 $$
 
 On a positive-slope segment, the point just to the left is lower. That lower value arrives at $x_0$, so the marked particle moves **down**.
@@ -147,7 +147,7 @@ For a right-moving wave,
 
 $$
 \frac{\partial y}{\partial t}
-=-v\frac{\partial y}{\partial x}>0.
+=-v_{\mathrm{wave}}\frac{\partial y}{\partial x}>0.
 $$
 
 Positive vertical velocity means the particle moves **up**.
@@ -170,18 +170,18 @@ options:
   content: |-
     Moving up
   feedback: |-
-    For a right-moving profile, vertical velocity has the opposite sign from spatial slope: $\partial y/\partial t=-v\,\partial y/\partial x$. Upward motion requires negative slope, whereas the stated zero slope gives zero vertical velocity.
+    For a right-moving profile, vertical velocity has the opposite sign from spatial slope: $\partial y/\partial t=-v_{\mathrm{wave}}\,\partial y/\partial x$. Upward motion requires negative slope, whereas the stated zero slope gives zero vertical velocity.
 - id: b
   content: |-
     Moving down
   feedback: |-
-    Downward motion occurs where a right-moving wave has positive spatial slope. At the stated point the slope is zero, so $\partial y/\partial t=-v(0)=0$ and the particle is momentarily at rest vertically.
+    Downward motion occurs where a right-moving wave has positive spatial slope. At the stated point the slope is zero, so $\partial y/\partial t=-v_{\mathrm{wave}}(0)=0$ and the particle is momentarily at rest vertically.
 - id: c
   content: |-
     Momentarily not moving vertically
   correct: true
   feedback: |-
-    A right-moving wave has vertical particle velocity opposite in sign to its spatial slope. Since the local slope is zero, $\partial y/\partial t=-v(0)=0$, so the particle is momentarily not moving vertically.
+    A right-moving wave has vertical particle velocity opposite in sign to its spatial slope. Since the local slope is zero, $\partial y/\partial t=-v_{\mathrm{wave}}(0)=0$, so the particle is momentarily not moving vertically.
 ```
 
 ---
@@ -205,7 +205,7 @@ $$
 \frac{\partial y}{\partial x}>0
 \qquad\Longrightarrow\qquad
 \frac{\partial y}{\partial t}
-=-v\frac{\partial y}{\partial x}<0.
+=-v_{\mathrm{wave}}\frac{\partial y}{\partial x}<0.
 $$
 
 The particle therefore moves **down**. It does not move horizontally with the wave pattern.
@@ -280,7 +280,7 @@ options:
   content: Upward
   correct: true
   feedback: |-
-    For a right-moving profile $y(x,t)=f(x-vt)$, particle velocity satisfies $\partial y/\partial t=-v\,\partial y/\partial x$. The profile slopes downward at the dot, so the particle moves upward.
+    For a right-moving profile $y(x,t)=f(x-vt)$, particle velocity satisfies $\partial y/\partial t=-v_{\mathrm{wave}}\,\partial y/\partial x$. The profile slopes downward at the dot, so the particle moves upward.
 - id: down
   content: Downward
   feedback: |-

@@ -104,7 +104,7 @@ $$
 Initially, the two cups give
 
 $$
-I_i=2m\left(\frac d2\right)^2.
+I_0=2m\left(\frac d2\right)^2.
 $$
 
 After capture, each cup-plus-water combination has mass $m+m=2m$ at the same radius:
@@ -211,7 +211,7 @@ options:
 
 **Example:** Two cups, each of mass $m$, are connected by a negligible-mass rod of length $d$ and rotate at angular speed $\omega_0$. Rain falls into the cups until each contains an additional water mass $m$. What is the final angular speed?
 
-Use $m=0.46\ \mathrm{kg}$, $d=0.68\ \mathrm{m}$, and $\omega_0=4.2\ \mathrm{rad/s}$.
+Use $m=0.46\ \mathrm{kg}$, $d=0.68\ \mathrm{m}$, and $\omega_0=4.2\ \mathrm{rad}/\mathrm{s}$.
 
 ![](<../Source/Images/rotating-cups-collecting-rain.png>)
 
@@ -223,12 +223,12 @@ $$
 I_i=2m\left(\frac d2\right)^2.
 $$
 
-After the capture, each cup's mass doubles, so $I_f=2I_i$. Conservation of angular momentum gives
+After the capture, each cup's mass doubles, so $I_f=2I_0$. Conservation of angular momentum gives
 
 $$
-I_i\omega_0=I_f\omega_f,
+I_0\omega_0=I_f\omega_f,
 \qquad
-\omega_f=\frac{\omega_0}{2}=2.1\ \mathrm{rad/s}.
+\omega_f=\frac{\omega_0}{2}=2.1\ \mathrm{rad}/\mathrm{s}.
 $$
 
 The mass and rod length cancel.
@@ -248,7 +248,7 @@ content: |-
 
   Two cups, each of mass $m$, are connected by a negligible-mass rod of length $d$ and rotate at angular speed $\omega_0$. Rain falls into the cups until each contains an additional water mass $m$. What is the final angular speed?
 
-  Use $m=0.46\ \mathrm{kg}$, $d=0.68\ \mathrm{m}$, and $\omega_0=4.2\ \mathrm{rad/s}$.
+  Use $m=0.46\ \mathrm{kg}$, $d=0.68\ \mathrm{m}$, and $\omega_0=4.2\ \mathrm{rad}/\mathrm{s}$.
 
   ![](<../Source/Images/rotating-cups-collecting-rain.png>)
 
@@ -262,15 +262,15 @@ options:
     Each cup is $d/2$ from the axis. Initially,
 
     $$
-    I_i=2m\left(\frac d2\right)^2.
+    I_0=2m\left(\frac d2\right)^2.
     $$
 
-    After the capture, each cup's mass doubles, so $I_f=2I_i$. Conservation of angular momentum gives
+    After the capture, each cup's mass doubles, so $I_f=2I_0$. Conservation of angular momentum gives
 
     $$
-    I_i\omega_0=I_f\omega_f,
+    I_0\omega_0=I_f\omega_f,
     \qquad
-    \omega_f=\frac{\omega_0}{2}=2.1\ \mathrm{rad/s}.
+    \omega_f=\frac{\omega_0}{2}=2.1\ \mathrm{rad}/\mathrm{s}.
     $$
 
     The mass and rod length cancel.
@@ -296,7 +296,7 @@ options:
 - Compare moments of inertia by their multiplicative factor before substituting numbers.
 - Conserve angular momentum: $I_i\omega_i=I_f\omega_f$.
 - If $I$ grows by a factor $q$, then $\omega$ shrinks by the reciprocal factor $1/q$.
-- In Problem 3, $I_f/I_i=2$ because the common $m$ and $(d/2)^2$ factors cancel, so $\omega_f=\omega_0/2=2.1\ \mathrm{rad/s}$.
+- In Problem 3, $I_f/I_0=2$ because the common $m$ and $(d/2)^2$ factors cancel, so $\omega_f=\omega_0/2=2.1\ \mathrm{rad}/\mathrm{s}$.
 
 <!-- lesson-nav:start -->
 ---

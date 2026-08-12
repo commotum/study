@@ -17,7 +17,7 @@ topic-code: MTH212.M5.34
 ## Prerequisites
 
 - Distinguishing a displacement node from a displacement antinode
-- Using $v=f\lambda$
+- Using $v_{\mathrm{wave}}=f\lambda$
 - Substituting values with units into a formula
 - Rounding to the significant figures set by measured data
 
@@ -26,7 +26,7 @@ topic-code: MTH212.M5.34
 <a id="introduction"></a>
 ## Introduction
 
-The cue is a pipe with one closed end and one open end. For displacement, the closed end must be a node and the open end must be an antinode. To find the third-harmonic frequency, draw the third-harmonic node–antinode pattern, turn its three quarter-wavelength segments into an equation for $\lambda_3$, and then use $f_3=v/\lambda_3$.
+The cue is a pipe with one closed end and one open end. For displacement, the closed end must be a node and the open end must be an antinode. To find the third-harmonic frequency, draw the third-harmonic node–antinode pattern, turn its three quarter-wavelength segments into an equation for $\lambda_3$, and then use $f_3=v_{\mathrm{wave}}/\lambda_3$.
 
 Only odd harmonics fit these endpoint conditions. The third harmonic is the next allowed pattern after the fundamental.
 
@@ -157,7 +157,7 @@ options:
 <a id="convert-wavelength-to-frequency"></a>
 ## Convert Wavelength to Frequency
 
-**Example:** An open–closed pipe is $0.60\ \mathrm{m}$ long, and sound travels at $340\ \mathrm{m/s}$. Find the third-harmonic frequency.
+**Example:** An open–closed pipe is $0.60\ \mathrm{m}$ long, and sound travels at $340\ \mathrm{m}/\mathrm{s}$. Find the third-harmonic frequency.
 
 **Explanation**
 
@@ -169,11 +169,11 @@ $$
 =0.80\ \mathrm{m}.
 $$
 
-Then use $v=f\lambda$:
+Then use $v_{\mathrm{wave}}=f\lambda$:
 
 $$
-f_3=\frac{v}{\lambda_3}
-=\frac{340\ \mathrm{m/s}}{0.80\ \mathrm{m}}
+f_3=\frac{v_{\mathrm{wave}}}{\lambda_3}
+=\frac{340\ \mathrm{m}/\mathrm{s}}{0.80\ \mathrm{m}}
 =425\ \mathrm{s^{-1}}
 =425\ \mathrm{Hz}.
 $$
@@ -181,7 +181,7 @@ $$
 Combining the two equations gives the useful third-harmonic formula
 
 $$
-f_3=\frac{3v}{4L}.
+f_3=\frac{3v_{\mathrm{wave}}}{4L}.
 $$
 
 This formula also gives a direction check: for a fixed sound speed, $f_3$ varies inversely with $L$. A longer pipe must have a lower third-harmonic frequency.
@@ -190,29 +190,29 @@ This formula also gives a direction check: for a fixed sound speed, $f_3$ varies
 type: radio
 id: p4-frequency
 content: |-
-  An open–closed pipe is $0.75\ \mathrm{m}$ long, and the sound speed is $344\ \mathrm{m/s}$. What is its third-harmonic frequency?
+  An open–closed pipe is $0.75\ \mathrm{m}$ long, and the sound speed is $344\ \mathrm{m}/\mathrm{s}$. What is its third-harmonic frequency?
 options:
 - id: a
   content: |-
     $344\ \mathrm{Hz}$
   correct: true
   feedback: |-
-    Three quarter wavelengths fit in an open-closed pipe's third harmonic, so $f_3=3v/(4L)$. With these values, $f_3=3(344)/[4(0.75)]=344\ \mathrm{Hz}$.
+    Three quarter wavelengths fit in an open-closed pipe's third harmonic, so $f_3=3v_{\mathrm{wave}}/(4L)$. With these values, $f_3=3(344)/[4(0.75)]=344\ \mathrm{Hz}$.
 - id: b
   content: |-
     $115\ \mathrm{Hz}$
   feedback: |-
-    $115\ \mathrm{Hz}$ is the fundamental $f_1=v/(4L)$. Only odd harmonics occur, and the requested third harmonic is $f_3=3f_1=344\ \mathrm{Hz}$.
+    $115\ \mathrm{Hz}$ is the fundamental $f_1=v_{\mathrm{wave}}/(4L)$. Only odd harmonics occur, and the requested third harmonic is $f_3=3f_1=344\ \mathrm{Hz}$.
 - id: c
   content: |-
     $459\ \mathrm{Hz}$
   feedback: |-
-    $459\ \mathrm{Hz}$ comes from $v/L$, which would make one full wavelength fit inside the pipe. The third-harmonic open-closed pattern fits $3\lambda/4$, so the required factor is $3/4$ and $f_3=344\ \mathrm{Hz}$.
+    $459\ \mathrm{Hz}$ comes from $v_{\mathrm{wave}}/L$, which would make one full wavelength fit inside the pipe. The third-harmonic open-closed pattern fits $3\lambda/4$, so the required factor is $3/4$ and $f_3=344\ \mathrm{Hz}$.
 - id: d
   content: |-
     $258\ \mathrm{Hz}$
   feedback: |-
-    $258\ \mathrm{Hz}=3v/4$ omits division by the pipe length. Because $L=3\lambda/4$, the frequency is $f_3=3v/(4L)=344\ \mathrm{Hz}$.
+    $258\ \mathrm{Hz}=3v_{\mathrm{wave}}/4$ omits division by the pipe length. Because $L=3\lambda/4$, the frequency is $f_3=3v_{\mathrm{wave}}/(4L)=344\ \mathrm{Hz}$.
 ```
 
 ---
@@ -220,7 +220,7 @@ options:
 <a id="apply-the-method-and-round"></a>
 ## Apply the Method and Round
 
-**Example:** An open–closed pipe is $0.85\ \mathrm{m}$ long. Use a sound speed of $343\ \mathrm{m/s}$. What is its third-harmonic frequency? Be sure to draw the corresponding displacement standing-wave pattern.
+**Example:** An open–closed pipe is $0.85\ \mathrm{m}$ long. Use a sound speed of $343\ \mathrm{m}/\mathrm{s}$. What is its third-harmonic frequency? Be sure to draw the corresponding displacement standing-wave pattern.
 
 **Explanation**
 
@@ -233,7 +233,7 @@ options:
 $$
 L=\frac{3\lambda_3}{4}
 \qquad\text{and}\qquad
-f_3=\frac{v}{\lambda_3}=\frac{3v}{4L}.
+f_3=\frac{v_{\mathrm{wave}}}{\lambda_3}=\frac{3v_{\mathrm{wave}}}{4L}.
 $$
 
 **3. Substitute with units.** Keep the unrounded value until the end:
@@ -241,12 +241,12 @@ $$
 $$
 \begin{aligned}
 f_3
-&=\frac{3(343\ \mathrm{m/s})}{4(0.85\ \mathrm{m})}\\
+&=\frac{3(343\ \mathrm{m}/\mathrm{s})}{4(0.85\ \mathrm{m})}\\
 &=302.647\ldots\ \mathrm{Hz}.
 \end{aligned}
 $$
 
-The units also check: $(\mathrm{m/s})/\mathrm{m}=\mathrm{s^{-1}}=\mathrm{Hz}$.
+The units also check: $(\mathrm{m}/\mathrm{s})/\mathrm{m}=\mathrm{s^{-1}}=\mathrm{Hz}$.
 
 **4. Report the requested precision.** The pipe length $0.85\ \mathrm{m}$ has two significant figures, so the final result is
 
@@ -260,14 +260,14 @@ For the requested number-only answer, enter $\boxed{300}$.
 type: radio
 id: p4-precision
 content: |-
-  An open–closed pipe is $0.65\ \mathrm{m}$ long, and the sound speed is $343\ \mathrm{m/s}$. What number should be reported for its third-harmonic frequency if the measured length sets two significant figures?
+  An open–closed pipe is $0.65\ \mathrm{m}$ long, and the sound speed is $343\ \mathrm{m}/\mathrm{s}$. What number should be reported for its third-harmonic frequency if the measured length sets two significant figures?
 options:
 - id: a
   content: |-
     $400$
   correct: true
   feedback: |-
-    The open-closed third harmonic uses $f_3=3v/(4L)$, giving $395.769\ldots\ \mathrm{Hz}$. The two-significant-figure result is $4.0\times10^2\ \mathrm{Hz}$, so the number-only entry is $400$.
+    The open-closed third harmonic uses $f_3=3v_{\mathrm{wave}}/(4L)$, giving $395.769\ldots\ \mathrm{Hz}$. The two-significant-figure result is $4.0\times10^2\ \mathrm{Hz}$, so the number-only entry is $400$.
 - id: b
   content: |-
     $396$
@@ -277,12 +277,12 @@ options:
   content: |-
     $132$
   feedback: |-
-    $132\ \mathrm{Hz}$ is the fundamental $v/(4L)$. The requested third harmonic is three times the fundamental, $395.769\ldots\ \mathrm{Hz}$, which rounds to $400$.
+    $132\ \mathrm{Hz}$ is the fundamental $v_{\mathrm{wave}}/(4L)$. The requested third harmonic is three times the fundamental, $395.769\ldots\ \mathrm{Hz}$, which rounds to $400$.
 - id: d
   content: |-
     $528$
   feedback: |-
-    $528\ \mathrm{Hz}$ comes from $v/L$, as though one full wavelength occupied the pipe. The third-harmonic pattern contains $3\lambda/4$, so $f_3=3v/(4L)$ and the rounded entry is $400$.
+    $528\ \mathrm{Hz}$ comes from $v_{\mathrm{wave}}/L$, as though one full wavelength occupied the pipe. The third-harmonic pattern contains $3\lambda/4$, so $f_3=3v_{\mathrm{wave}}/(4L)$ and the rounded entry is $400$.
 ```
 
 ---
@@ -297,14 +297,14 @@ L=\frac{3\lambda_3}{4},
 \qquad
 \lambda_3=\frac{4L}{3},
 \qquad
-f_3=\frac{3v}{4L}.
+f_3=\frac{3v_{\mathrm{wave}}}{4L}.
 $$
 
 The reusable procedure is:
 
 1. Mark a displacement node at the closed end and an antinode at the open end.
 2. Draw N–A–N–A and count three quarter-wavelength intervals.
-3. Write $L=3\lambda_3/4$, then use $f_3=v/\lambda_3=3v/(4L)$.
+3. Write $L=3\lambda_3/4$, then use $f_3=v_{\mathrm{wave}}/\lambda_3=3v_{\mathrm{wave}}/(4L)$.
 4. Check that the units reduce to hertz and that increasing $L$ would decrease $f_3$.
 5. Keep full calculator precision and round only the reported answer.
 

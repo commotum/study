@@ -17,8 +17,8 @@ topic-code: MTH212.M1.50
 ## Prerequisites
 
 - A point in circular motion stays a fixed distance $r$ from the center
-- The velocity vector $\vec v$ is tangent to the circular path
-- The magnitude $|\vec v|$ is the object's speed
+- The velocity vector $\vec{v}$ is tangent to the circular path
+- The magnitude $|\vec{v}|$ is the object's speed
 - Angular speed $\omega$ measures angle swept per unit time
 - For angles measured in radians, arc length satisfies $s=r\theta$
 - A radian is a ratio of two lengths, so it does not add a new length unit
@@ -33,18 +33,18 @@ In non-uniform circular motion, the object still moves on a circle, but its spee
 The recognition cue is a statement about the **magnitude** of the velocity vector:
 
 $$
-|\vec v| \stackrel{?}{=} r\omega.
+|\vec{v}| \stackrel{?}{=} r\omega.
 $$
 
 The useful check is to read $\omega$ as the angular speed at that same instant. Multiplying the radius by that instantaneous angular speed converts angle per time into arc length per time:
 
 $$
-|\vec v|=r\omega.
+|\vec{v}|=r\omega.
 $$
 
 Use three quick checks:
 
-- $|\vec v|$ and $r\omega$ are both scalar speeds
+- $|\vec{v}|$ and $r\omega$ are both scalar speeds
 - $r\omega$ has units of length per time
 - non-uniform motion changes the value of $\omega$ over time, not the formula at one instant
 
@@ -55,22 +55,22 @@ The main trap is thinking that this formula only works for uniform circular moti
 <a id="separating-velocity-direction-from-speed"></a>
 ## Separating Velocity Direction From Speed
 
-**Example:** In circular motion, what is the difference between saying "$\vec v$ is tangent to the circle" and saying "$\vec v$ has magnitude $r\omega$"?
+**Example:** In circular motion, what is the difference between saying "$\vec{v}$ is tangent to the circle" and saying "$\vec{v}$ has magnitude $r\omega$"?
 
 **Explanation**
 
-The velocity vector $\vec v$ includes direction and size. In circular motion, its direction is tangent to the circle.
+The velocity vector $\vec{v}$ includes direction and size. In circular motion, its direction is tangent to the circle.
 
-The magnitude $|\vec v|$ is only the size of that vector, so it is the speed. The expression $r\omega$ is also a scalar speed. So this is a correctly matched statement:
+The magnitude $|\vec{v}|$ is only the size of that vector, so it is the speed. The expression $r\omega$ is also a scalar speed. So this is a correctly matched statement:
 
 $$
-|\vec v|=r\omega.
+|\vec{v}|=r\omega.
 $$
 
 This would not be a correctly matched vector equation:
 
 $$
-\vec v=r\omega.
+\vec{v}=r\omega.
 $$
 
 The left side is a vector, but the right side is only a scalar.
@@ -84,17 +84,17 @@ content: |-
 options:
 - id: a
   content: |-
-    $\vec v=r\omega$
+    $\vec{v}=r\omega$
 - id: b
   content: |-
-    $|\vec v|=r\omega$
+    $|\vec{v}|=r\omega$
   correct: true
 - id: c
   content: |-
-    $\vec r=r\omega$
+    $\vec{r}=r\omega$
 - id: d
   content: |-
-    $\omega=|\vec v|r$
+    $\omega=|\vec{v}|r$
 ```
 
 ---
@@ -102,44 +102,44 @@ options:
 <a id="using-instantaneous-angular-speed"></a>
 ## Using Instantaneous Angular Speed
 
-**Example:** An object moves on a circle of radius $2\ \mathrm{m}$. At one instant, its angular speed is $5\ \mathrm{rad/s}$. What is its speed at that instant?
+**Example:** An object moves on a circle of radius $2\ \mathrm{m}$. At one instant, its angular speed is $5\ \mathrm{rad}/\mathrm{s}$. What is its speed at that instant?
 
 **Explanation**
 
 Use the speed relation at the instant described:
 
 $$
-|\vec v|=r\omega.
+|\vec{v}|=r\omega.
 $$
 
-Substitute $r=2\ \mathrm{m}$ and $\omega=5\ \mathrm{rad/s}$:
+Substitute $r=2\ \mathrm{m}$ and $\omega=5\ \mathrm{rad}/\mathrm{s}$:
 
 $$
-|\vec v|=2(5)=10\ \mathrm{m/s}.
+|\vec{v}|=2(5)=10\ \mathrm{m}/\mathrm{s}.
 $$
 
-The calculation does not require the angular speed to stay $5\ \mathrm{rad/s}$ forever. It only gives the speed at the instant when $\omega=5\ \mathrm{rad/s}$.
+The calculation does not require the angular speed to stay $5\ \mathrm{rad}/\mathrm{s}$ forever. It only gives the speed at the instant when $\omega=5\ \mathrm{rad}/\mathrm{s}$.
 
 ```quiz
 type: radio
 id: q-2
 shuffle: true
 content: |-
-  An object moves on a circle of radius $4\ \mathrm{m}$. At one instant, its angular speed is $3\ \mathrm{rad/s}$. What is its speed at that instant?
+  An object moves on a circle of radius $4\ \mathrm{m}$. At one instant, its angular speed is $3\ \mathrm{rad}/\mathrm{s}$. What is its speed at that instant?
 options:
 - id: a
   content: |-
-    $7\ \mathrm{m/s}$
+    $7\ \mathrm{m}/\mathrm{s}$
 - id: b
   content: |-
-    $12\ \mathrm{m/s}$
+    $12\ \mathrm{m}/\mathrm{s}$
   correct: true
 - id: c
   content: |-
-    $\dfrac{3}{4}\ \mathrm{m/s}$
+    $\dfrac{3}{4}\ \mathrm{m}/\mathrm{s}$
 - id: d
   content: |-
-    $\dfrac{4}{3}\ \mathrm{m/s}$
+    $\dfrac{4}{3}\ \mathrm{m}/\mathrm{s}$
 ```
 
 ---
@@ -154,7 +154,7 @@ options:
 Substitute the units into the product:
 
 $$
-[r\omega]=\mathrm{m}\cdot\frac{\mathrm{rad}}{\mathrm{s}}.
+[r\omega]=\mathrm{m}\cdot\mathrm{rad}/\mathrm{s}.
 $$
 
 A radian measures arc length divided by radius, so it is a ratio rather than a new length unit. The product has speed units:
@@ -162,10 +162,10 @@ A radian measures arc length divided by radius, so it is a ratio rather than a n
 $$
 \mathrm{m}\cdot\frac{1}{\mathrm{s}}
 =
-\frac{\mathrm{m}}{\mathrm{s}}.
+\mathrm{m}/\mathrm{s}.
 $$
 
-That matches the meaning of $|\vec v|$.
+That matches the meaning of $|\vec{v}|$.
 
 ```quiz
 type: radio
@@ -176,17 +176,17 @@ content: |-
 options:
 - id: a
   content: |-
-    $\mathrm{cm/s}$
+    $\mathrm{cm}/\mathrm{s}$
   correct: true
 - id: b
   content: |-
-    $\mathrm{s/cm}$
+    $\mathrm{s}/\mathrm{cm}$
 - id: c
   content: |-
-    $\mathrm{cm^2/s}$
+    $\mathrm{cm}^2/\mathrm{s}$
 - id: d
   content: |-
-    $\mathrm{rad/cm}$
+    $\mathrm{rad}/\mathrm{cm}$
 ```
 
 ---
@@ -194,7 +194,7 @@ options:
 <a id="why-non-uniform-motion-still-uses-r-omega"></a>
 ## Why Non-Uniform Motion Still Uses $r\omega$
 
-**Example:** Suppose an object speeds up while moving around a circle of fixed radius $r$. Why does $|\vec v|=r\omega$ still describe its speed at an instant?
+**Example:** Suppose an object speeds up while moving around a circle of fixed radius $r$. Why does $|\vec{v}|=r\omega$ still describe its speed at an instant?
 
 **Explanation**
 
@@ -218,10 +218,10 @@ $$
 r\frac{\Delta\theta}{\Delta t}.
 $$
 
-At an instant, the left side becomes speed $|\vec v|$, and the angular rate becomes $\omega$. Therefore,
+At an instant, the left side becomes speed $|\vec{v}|$, and the angular rate becomes $\omega$. Therefore,
 
 $$
-|\vec v|=r\omega.
+|\vec{v}|=r\omega.
 $$
 
 Non-uniform motion changes whether $\omega$ is constant. It does not change the instant-by-instant conversion from angular speed to linear speed.
@@ -231,21 +231,21 @@ type: radio
 id: q-4
 shuffle: true
 content: |-
-  An object moves in non-uniform circular motion with fixed radius $6\ \mathrm{m}$. At a particular instant, $\omega=2\ \mathrm{rad/s}$. Which statement is true at that instant?
+  An object moves in non-uniform circular motion with fixed radius $6\ \mathrm{m}$. At a particular instant, $\omega=2\ \mathrm{rad}/\mathrm{s}$. Which statement is true at that instant?
 options:
 - id: a
   content: |-
-    The speed is $12\ \mathrm{m/s}$.
+    The speed is $12\ \mathrm{m}/\mathrm{s}$.
   correct: true
 - id: b
   content: |-
     The speed cannot be found from $r\omega$ because the motion is non-uniform.
 - id: c
   content: |-
-    The speed is $\dfrac{1}{3}\ \mathrm{m/s}$.
+    The speed is $\dfrac{1}{3}\ \mathrm{m}/\mathrm{s}$.
 - id: d
   content: |-
-    The speed is $8\ \mathrm{m/s}$.
+    The speed is $8\ \mathrm{m}/\mathrm{s}$.
 ```
 
 ---
@@ -253,20 +253,20 @@ options:
 <a id="checking-the-true-or-false-claim"></a>
 ## Checking the True-or-False Claim
 
-**Example:** Consider an object undergoing non-uniform circular motion. Let $\vec r$ be the position of the object relative to the circle's center, $\vec v$ the velocity, and $\omega$ the angular speed. True or false: $\vec v$ has magnitude $r\omega$.
+**Example:** Consider an object undergoing non-uniform circular motion. Let $\vec{r}$ be the position of the object relative to the circle's center, $\vec{v}$ the velocity, and $\omega$ the angular speed. True or false: $\vec{v}$ has magnitude $r\omega$.
 
 **Explanation**
 
-The statement asks about the magnitude of $\vec v$, so it is asking about speed:
+The statement asks about the magnitude of $\vec{v}$, so it is asking about speed:
 
 $$
-|\vec v|.
+|\vec{v}|.
 $$
 
 In circular motion, angular speed converts to speed by multiplying by the radius:
 
 $$
-|\vec v|=r\omega.
+|\vec{v}|=r\omega.
 $$
 
 The word "non-uniform" tells us the speed or angular speed may be changing. It does not make the instantaneous relation false.
@@ -278,9 +278,9 @@ type: radio
 id: q-5
 shuffle: true
 content: |-
-  Consider an object undergoing non-uniform circular motion. Let $\vec r$ be the position of the object relative to the circle's center, $\vec v$ the velocity, and $\omega$ the angular speed.
+  Consider an object undergoing non-uniform circular motion. Let $\vec{r}$ be the position of the object relative to the circle's center, $\vec{v}$ the velocity, and $\omega$ the angular speed.
 
-  True or false: $\vec v$ has magnitude $r\omega$.
+  True or false: $\vec{v}$ has magnitude $r\omega$.
 options:
 - id: a
   content: |-
@@ -296,7 +296,7 @@ type: radio
 id: q-6
 shuffle: true
 content: |-
-  Why does non-uniform circular motion still satisfy $|\vec v|=r\omega$ at an instant?
+  Why does non-uniform circular motion still satisfy $|\vec{v}|=r\omega$ at an instant?
 options:
 - id: a
   content: |-
@@ -307,7 +307,7 @@ options:
     Because non-uniform circular motion has no tangential acceleration.
 - id: c
   content: |-
-    Because $\vec v$ points in the same direction as $\vec r$.
+    Because $\vec{v}$ points in the same direction as $\vec{r}$.
 - id: d
   content: |-
     Because $\omega$ must be constant whenever the path is circular.
@@ -326,12 +326,12 @@ $$
 Turning arc length per time into speed gives
 
 $$
-|\vec v|=r\omega.
+|\vec{v}|=r\omega.
 $$
 
 In non-uniform circular motion, $\omega$ may change with time, so use the value of $\omega$ at the instant being discussed. Check the claim by asking whether both sides are scalar speeds, whether the units are length per time, and whether $\omega$ refers to that same instant.
 
-The statement "$\vec v$ has magnitude $r\omega$" is true because it describes the speed, not the full velocity vector.
+The statement "$\vec{v}$ has magnitude $r\omega$" is true because it describes the speed, not the full velocity vector.
 
 <!-- lesson-nav:start -->
 ---

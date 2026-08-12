@@ -16,8 +16,8 @@ topic-code: MTH212.M1.74
 
 ## Prerequisites
 
-- Apply Newton's second law along a chosen axis: $\sum F_r=ma_r$.
-- Use the inward radial acceleration $a_r=v^2/L$ for motion on a circle of radius $L$.
+- Apply Newton's second law along a chosen axis: $\sum F_r=m a_r$.
+- Use the inward radial acceleration $a_r=v^2/r$, with $r=L$ for a taut string of length $L$.
 - Know that string tension pulls along the string and that weight $mg$ points downward.
 - Solve a symbolic equation for a nonnegative speed.
 
@@ -26,7 +26,7 @@ topic-code: MTH212.M1.74
 <a id="introduction"></a>
 ## Introduction
 
-A ball of mass $m$ on the end of a massless string of length $L$ is swung in a vertical circle. The problem asks for two symbolic results:
+A ball of mass $m$ on the end of a massless string of length $L$ is swung in a vertical circle, so the path radius is $r=L$. The problem asks for two symbolic results:
 
 1. the minimum possible speed at the top of the circle;
 2. the tension at the bottom when the bottom speed is twice that minimum top speed.
@@ -35,8 +35,8 @@ The recognition cues are **minimum speed at the top** and **tension at the botto
 
 Use the same three-move routine every time:
 
-1. Choose inward as positive and write $\sum F_r=mv^2/L$ at the named position.
-2. Translate a limiting word such as *minimum* into the physical boundary $T=0$.
+1. Choose inward as positive and write $\sum F_r=m a_r=m v^2/r=m v^2/L$ at the named position.
+2. Translate a limiting word such as *minimum* into the physical boundary $T_{\mathrm{tens}}=0$.
 3. Substitute any speed relation, square it, and isolate the requested variable.
 
 ![](<../Source/Images/ballstring-2.jpg>)
@@ -53,13 +53,13 @@ Use the same three-move routine every time:
 At the top, inward is downward. Both tension and weight point inward, so
 
 $$
-T_T+mg=m\frac{v_T^2}{L}.
+T_{\mathrm{tens},\mathrm{top}}+mg=m\frac{v_{\mathrm{top}}^2}{L}.
 $$
 
 At the bottom, inward is upward. Tension points inward, but weight points away from the center, so
 
 $$
-T_B-mg=m\frac{v_B^2}{L}.
+T_{\mathrm{tens},\mathrm{bottom}}-mg=m\frac{v_{\mathrm{bottom}}^2}{L}.
 $$
 
 The positive direction changes between the two locations. There is no extra "centripetal force" to add; $mv^2/L$ is the required inward net force.
@@ -73,23 +73,23 @@ content: |-
 options:
 - id: top-plus-bottom-minus
   content: |-
-    $T_T+mg=m\dfrac{v_T^2}{L}$ and $T_B-mg=m\dfrac{v_B^2}{L}$
+    $T_{\mathrm{tens},\mathrm{top}}+mg=m\dfrac{v_{\mathrm{top}}^2}{L}$ and $T_{\mathrm{tens},\mathrm{bottom}}-mg=m\dfrac{v_{\mathrm{bottom}}^2}{L}$
   correct: true
   feedback: |-
-    Inward points downward at the top, so both $T_T$ and $mg$ are positive there. Inward points upward at the bottom, so $T_B$ is positive and $mg$ is negative, giving the stated pair.
+    Inward points downward at the top, so both $T_{\mathrm{tens},\mathrm{top}}$ and $mg$ are positive there. Inward points upward at the bottom, so $T_{\mathrm{tens},\mathrm{bottom}}$ is positive and $mg$ is negative, giving the stated pair.
 - id: top-minus-bottom-plus
   content: |-
-    $T_T-mg=m\dfrac{v_T^2}{L}$ and $T_B+mg=m\dfrac{v_B^2}{L}$
+    $T_{\mathrm{tens},\mathrm{top}}-mg=m\dfrac{v_{\mathrm{top}}^2}{L}$ and $T_{\mathrm{tens},\mathrm{bottom}}+mg=m\dfrac{v_{\mathrm{bottom}}^2}{L}$
   feedback: |-
     This treats weight as though it pointed outward at the top and inward at the bottom. Weight always points downward: it is inward at the top but outward at the bottom.
 - id: both-minus
   content: |-
-    $T_T-mg=m\dfrac{v_T^2}{L}$ and $T_B-mg=m\dfrac{v_B^2}{L}$
+    $T_{\mathrm{tens},\mathrm{top}}-mg=m\dfrac{v_{\mathrm{top}}^2}{L}$ and $T_{\mathrm{tens},\mathrm{bottom}}-mg=m\dfrac{v_{\mathrm{bottom}}^2}{L}$
   feedback: |-
     The bottom sign is correct, but the top sign is not. With inward chosen separately at each position, downward weight is positive at the top and negative at the bottom.
 - id: both-plus
   content: |-
-    $T_T+mg=m\dfrac{v_T^2}{L}$ and $T_B+mg=m\dfrac{v_B^2}{L}$
+    $T_{\mathrm{tens},\mathrm{top}}+mg=m\dfrac{v_{\mathrm{top}}^2}{L}$ and $T_{\mathrm{tens},\mathrm{bottom}}+mg=m\dfrac{v_{\mathrm{bottom}}^2}{L}$
   feedback: |-
     The top sign is correct, but weight does not point inward at the bottom. At the bottom the center is above the ball while weight points downward, so the bottom equation needs $-mg$.
 ```
@@ -106,21 +106,21 @@ options:
 A string can pull but cannot push, so its tension cannot be negative. As the top speed decreases, less inward force is required. The smallest speed that still permits the circular path occurs at the boundary where the string is just about to go slack:
 
 $$
-T_T=0.
+T_{\mathrm{tens},\mathrm{top}}=0.
 $$
 
 Apply that boundary to the top equation:
 
 $$
-0+mg=m\frac{v_{T,\min}^2}{L}.
+0+mg=m\frac{v_{\mathrm{top},\min}^2}{L}.
 $$
 
 Cancel $m$ and solve for the nonnegative speed:
 
 $$
-v_{T,\min}^2=gL
+v_{\mathrm{top},\min}^2=gL
 \qquad\Longrightarrow\qquad
-\boxed{v_{T,\min}=\sqrt{gL}}.
+\boxed{v_{\mathrm{top},\min}=\sqrt{gL}}.
 $$
 
 Only the positive square root is kept because speed is a magnitude.
@@ -130,34 +130,34 @@ type: radio
 id: vertical-circle-minimum-top-speed
 shuffle: true
 content: |-
-  A ball on a massless string of length $R$ barely maintains the circular path at the top. What is its speed there?
+  A ball on a massless string of length $r$ barely maintains the circular path at the top. What is its speed there?
 options:
 - id: square-root-gr
   content: |-
-    $\sqrt{gR}$
+    $\sqrt{gr}$
   correct: true
   feedback: |-
-    At the limiting top speed the string tension is zero, so gravity alone provides the inward force: $mg=mv^2/R$. Canceling $m$ gives $v^2=gR$, hence the speed is $\sqrt{gR}$.
+    At the limiting top speed the string tension is zero, so gravity alone provides the inward force: $mg=mv^2/r$. Canceling $m$ gives $v^2=gr$, hence the speed is $\sqrt{gr}$.
 - id: gr
   content: |-
-    $gR$
+    $gr$
   feedback: |-
-    The force equation gives $v^2=gR$, not $v=gR$. Taking the positive square root is required, and it also changes the units from speed squared to speed.
+    The force equation gives $v^2=gr$, not $v=gr$. Taking the positive square root is required, and it also changes the units from speed squared to speed.
 - id: square-root-two-gr
   content: |-
-    $\sqrt{2gR}$
+    $\sqrt{2gr}$
   feedback: |-
-    The top radial equation uses the radius $R$ in $v^2/R$; it does not introduce a factor of two. A $2R$ height change belongs to an energy comparison between positions, not this local minimum-force condition.
+    The top radial equation uses the radius $r$ in $v^2/r$; it does not introduce a factor of two. A $2r$ height change belongs to an energy comparison between positions, not this local minimum-force condition.
 - id: zero
   content: |-
     $0$
   feedback: |-
-    Zero tension does not mean zero inward net force. At the boundary, gravity still supplies $mg$ inward, which requires the nonzero speed $\sqrt{gR}$.
+    Zero tension does not mean zero inward net force. At the boundary, gravity still supplies $mg$ inward, which requires the nonzero speed $\sqrt{gr}$.
 - id: square-root-gr-over-m
   content: |-
-    $\sqrt{\dfrac{gR}{m}}$
+    $\sqrt{\dfrac{gr}{m}}$
   feedback: |-
-    Mass multiplies both sides of $mg=mv^2/R$ and cancels. The limiting speed is independent of $m$, so no mass remains under the square root.
+    Mass multiplies both sides of $mg=mv^2/r$ and cancels. The limiting speed is independent of $m$, so no mass remains under the square root.
 ```
 
 ---
@@ -172,64 +172,64 @@ options:
 Use the result from the top and the stated speed relation:
 
 $$
-v_B=2v_{T,\min}=2\sqrt{gL}.
+v_{\mathrm{bottom}}=2v_{\mathrm{top},\min}=2\sqrt{gL}.
 $$
 
 The radial force equation contains the square of the speed, so
 
 $$
-v_B^2=\left(2\sqrt{gL}\right)^2=4gL.
+v_{\mathrm{bottom}}^2=\left(2\sqrt{gL}\right)^2=4gL.
 $$
 
 Substitute into the bottom equation and solve for tension:
 
 $$
 \begin{aligned}
-T_B-mg&=m\frac{v_B^2}{L} \\
-T_B-mg&=m\frac{4gL}{L}=4mg \\
-T_B&=\boxed{5mg}.
+T_{\mathrm{tens},\mathrm{bottom}}-mg&=m\frac{v_{\mathrm{bottom}}^2}{L} \\
+T_{\mathrm{tens},\mathrm{bottom}}-mg&=m\frac{4gL}{L}=4mg \\
+T_{\mathrm{tens},\mathrm{bottom}}&=\boxed{5mg}.
 \end{aligned}
 $$
 
 The same substitution can be compressed into a reusable ratio rule. If
 
 $$
-v_B=k\,v_{T,\min},
+v_{\mathrm{bottom}}=k\,v_{\mathrm{top},\min},
 $$
 
-then $v_B^2=k^2gL$, so the bottom equation becomes
+then $v_{\mathrm{bottom}}^2=k^2gL$, so the bottom equation becomes
 
 $$
-T_B-mg=k^2mg
+T_{\mathrm{tens},\mathrm{bottom}}-mg=k^2mg
 \qquad\Longrightarrow\qquad
-T_B=(k^2+1)mg.
+T_{\mathrm{tens},\mathrm{bottom}}=(k^2+1)mg.
 $$
 
-For the stated factor $k=2$, this gives $T_B=(2^2+1)mg=5mg$. The square on $k$ accounts for the radial net force, and the added $1$ accounts for the ball's outward weight at the bottom.
+For the stated factor $k=2$, this gives $T_{\mathrm{tens},\mathrm{bottom}}=(2^2+1)mg=5mg$. The square on $k$ accounts for the radial net force, and the added $1$ accounts for the ball's outward weight at the bottom.
 
 ```quiz
 type: radio
 id: vertical-circle-bottom-tension-ratio
 shuffle: true
 content: |-
-  At the bottom of a vertical circle, a ball has speed $v_B=3\sqrt{gL}$. What is the string tension there?
+  At the bottom of a vertical circle, a ball has speed $v_{\mathrm{bottom}}=3\sqrt{gL}$. What is the string tension there?
 options:
 - id: ten-mg
   content: |-
     $10mg$
   correct: true
   feedback: |-
-    At the bottom, $T_B-mg=mv_B^2/L$. Here $v_B^2=9gL$, so the required inward net force is $9mg$ and the tension must be $9mg+mg=10mg$.
+    At the bottom, $T_{\mathrm{tens},\mathrm{bottom}}-mg=mv_{\mathrm{bottom}}^2/L$. Here $v_{\mathrm{bottom}}^2=9gL$, so the required inward net force is $9mg$ and the tension must be $9mg+mg=10mg$.
 - id: nine-mg
   content: |-
     $9mg$
   feedback: |-
-    This is the required inward net force $mv_B^2/L$, not the tension. Because weight points outward at the bottom, tension must exceed the net inward force by $mg$, giving $10mg$.
+    This is the required inward net force $mv_{\mathrm{bottom}}^2/L$, not the tension. Because weight points outward at the bottom, tension must exceed the net inward force by $mg$, giving $10mg$.
 - id: eight-mg
   content: |-
     $8mg$
   feedback: |-
-    This follows from adding weight on the left as though gravity pointed inward. At the bottom gravity points away from the center, so $T_B-mg=9mg$ and $T_B=10mg$.
+    This follows from adding weight on the left as though gravity pointed inward. At the bottom gravity points away from the center, so $T_{\mathrm{tens},\mathrm{bottom}}-mg=9mg$ and $T_{\mathrm{tens},\mathrm{bottom}}=10mg$.
 - id: four-mg
   content: |-
     $4mg$
@@ -272,7 +272,7 @@ options:
     $\left(\sqrt{gL},\ 5mg\right)$
   correct: true
   feedback: |-
-    At the top, $T_T=0$ makes $mg=mv_T^2/L$, so $v_{T,\min}=\sqrt{gL}$. Then $v_B^2=(2\sqrt{gL})^2=4gL$ and $T_B-mg=4mg$, giving $T_B=5mg$.
+    At the top, $T_{\mathrm{tens},\mathrm{top}}=0$ makes $mg=mv_{\mathrm{top}}^2/L$, so $v_{\mathrm{top},\min}=\sqrt{gL}$. Then $v_{\mathrm{bottom}}^2=(2\sqrt{gL})^2=4gL$ and $T_{\mathrm{tens},\mathrm{bottom}}-mg=4mg$, giving $T_{\mathrm{tens},\mathrm{bottom}}=5mg$.
 - id: square-root-gl-three-mg
   content: |-
     $\left(\sqrt{gL},\ 3mg\right)$
@@ -282,17 +282,17 @@ options:
   content: |-
     $\left(\sqrt{2gL},\ 5mg\right)$
   feedback: |-
-    The bottom result matches the stated speed relation, but the local top boundary has no factor of two: $mg=mv_T^2/L$. The factor $2L$ is a height difference used in an energy comparison, not in the top radial-force equation.
+    The bottom result matches the stated speed relation, but the local top boundary has no factor of two: $mg=mv_{\mathrm{top}}^2/L$. The factor $2L$ is a height difference used in an energy comparison, not in the top radial-force equation.
 - id: square-root-gl-four-mg
   content: |-
     $\left(\sqrt{gL},\ 4mg\right)$
   feedback: |-
-    The value $4mg$ is the required inward net force $mv_B^2/L$, not the string tension. At the bottom weight points outward, so tension must supply both that net force and another $mg$, giving $5mg$.
+    The value $4mg$ is the required inward net force $mv_{\mathrm{bottom}}^2/L$, not the string tension. At the bottom weight points outward, so tension must supply both that net force and another $mg$, giving $5mg$.
 - id: zero-one-mg
   content: |-
     $\left(0,\ mg\right)$
   feedback: |-
-    The limiting condition sets top tension to zero, not top speed. Gravity alone must still provide the inward acceleration at the top, so $v_{T,\min}=\sqrt{gL}$; carrying the stated bottom speed then gives $T_B=5mg$.
+    The limiting condition sets top tension to zero, not top speed. Gravity alone must still provide the inward acceleration at the top, so $v_{\mathrm{top},\min}=\sqrt{gL}$; carrying the stated bottom speed then gives $T_{\mathrm{tens},\mathrm{bottom}}=5mg$.
 ```
 
 ---
@@ -303,30 +303,30 @@ options:
 When a vertical-circle problem asks for a minimum top speed and a bottom tension:
 
 1. Choose inward as positive at each location.
-2. At the top, write $T_T+mg=mv_T^2/L$ and use the limiting condition $T_T=0$.
-3. Keep the nonnegative speed, $v_{T,\min}=\sqrt{gL}$.
+2. At the top, write $T_{\mathrm{tens},\mathrm{top}}+mg=mv_{\mathrm{top}}^2/L$ and use the limiting condition $T_{\mathrm{tens},\mathrm{top}}=0$.
+3. Keep the nonnegative speed, $v_{\mathrm{top},\min}=\sqrt{gL}$.
 4. Apply the stated speed relation before squaring it.
-5. At the bottom, write $T_B-mg=mv_B^2/L$ and solve for the actual tension.
+5. At the bottom, write $T_{\mathrm{tens},\mathrm{bottom}}-mg=mv_{\mathrm{bottom}}^2/L$ and solve for the actual tension.
 
-For the given relation $v_B=2v_{T,\min}$, the results are
+For the given relation $v_{\mathrm{bottom}}=2v_{\mathrm{top},\min}$, the results are
 
 $$
-\boxed{v_{T,\min}=\sqrt{gL}},
+\boxed{v_{\mathrm{top},\min}=\sqrt{gL}},
 \qquad
-\boxed{T_B=5mg}.
+\boxed{T_{\mathrm{tens},\mathrm{bottom}}=5mg}.
 $$
 
 The units provide a quick check:
 
 $$
 [\sqrt{gL}]
-=\sqrt{\left(\frac{\mathrm{m}}{\mathrm{s}^2}\right)(\mathrm{m})}
-=\frac{\mathrm{m}}{\mathrm{s}},
+=\sqrt{\left(\mathrm{m}/\mathrm{s}^2\right)(\mathrm{m})}
+=\mathrm{m}/\mathrm{s},
 \qquad
 [5mg]=\mathrm{N}.
 $$
 
-For a general stated ratio $v_B=k\,v_{T,\min}$, the same work gives $T_B=(k^2+1)mg$.
+For a general stated ratio $v_{\mathrm{bottom}}=k\,v_{\mathrm{top},\min}$, the same work gives $T_{\mathrm{tens},\mathrm{bottom}}=(k^2+1)mg$.
 
 The main traps are treating $mv^2/L$ as an extra force, using one fixed sign for weight at both positions, forgetting that a speed multiplier is squared, or setting speed to zero when the limiting tension is zero.
 

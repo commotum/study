@@ -17,7 +17,7 @@ topic-code: MTH212.M3.23
 ## Prerequisites
 
 - Newton's law of gravitation: $F=Gm_1m_2/r^2$
-- Uniform circular motion: $F_{\mathrm{net}}=mv^2/r$
+- Inward-positive radial equation: $\sum F_r=m a_r=mv^2/r$
 - Gravitational potential energy of a pair: $U_{ij}=-Gm_im_j/r_{ij}$
 - A square's diagonal is $\sqrt{2}$ times its side
 
@@ -173,13 +173,13 @@ options:
 
 **Explanation**
 
-The inward gravitational force supplies the centripetal force. Use the corner-to-center distance, not the side length, as the orbital radius:
+Take inward as positive. The gravitational force supplies the radial net force. Use the corner-to-center distance, not the side length, as the orbital radius:
 
 $$
 r_{\mathrm{orb}}=\frac{L}{\sqrt{2}}.
 $$
 
-Set $F_{\mathrm{net}}=mv^2/r_{\mathrm{orb}}$ and solve for $v^2$:
+Set $\sum F_r=m a_r=mv^2/r_{\mathrm{orb}}=F_{\mathrm{net}}$ and solve for $v^2$:
 
 $$
 \begin{aligned}

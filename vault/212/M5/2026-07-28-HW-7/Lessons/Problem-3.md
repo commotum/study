@@ -16,7 +16,7 @@ topic-code: MTH212.M5.16
 
 ## Prerequisites
 
-- Use the wave relation $v=f\lambda$.
+- Use the wave relation $v_{\mathrm{wave}}=f\lambda$.
 - Use the refractive-index relation $n=c/v$.
 - Factor a common symbolic multiplier from a difference.
 
@@ -37,19 +37,19 @@ Here,
 - $d$ is the distance traveled,
 - $\lambda$ is the wavelength in the medium,
 - $f$ is the frequency,
-- $v$ is the wave speed in the medium,
+- $v_{\mathrm{wave}}$ is the wave speed in the medium,
 - $n$ is the refractive index, and
 - $c$ is the speed of light in vacuum.
 
-The recognition cue is the combination of a path length, a wave frequency, and a request for a **number of wavelengths**. Use $v=f\lambda$ to replace the wavelength:
+The recognition cue is the combination of a path length, a wave frequency, and a request for a **number of wavelengths**. Use $v_{\mathrm{wave}}=f\lambda$ to replace the wavelength:
 
 $$
-\lambda=\frac{v}{f}
+\lambda=\frac{v_{\mathrm{wave}}}{f}
 \qquad\Longrightarrow\qquad
-N=\frac{d}{v/f}=\frac{df}{v}.
+N=\frac{d}{v_{\mathrm{wave}}/f}=\frac{df}{v_{\mathrm{wave}}}.
 $$
 
-For light in a medium with refractive index $n$, the speed is $v=c/n$. Therefore,
+For light in a medium with refractive index $n$, the speed is $v_{\mathrm{wave}}=c/n$. Therefore,
 
 $$
 N=\frac{df}{c/n}=\frac{ndf}{c}.
@@ -105,24 +105,24 @@ options:
 <a id="rewrite-the-count-using-frequency"></a>
 ## Rewrite the Count Using Frequency
 
-**Example:** A wave travels at $12\ \mathrm{m/s}$ with frequency $3\ \mathrm{Hz}$. How many wavelengths fit in a distance of $20\ \mathrm{m}$?
+**Example:** A wave travels at $12\ \mathrm{m}/\mathrm{s}$ with frequency $3\ \mathrm{Hz}$. How many wavelengths fit in a distance of $20\ \mathrm{m}$?
 
 **Explanation**
 
 The wavelength is
 
 $$
-\lambda=\frac{v}{f}
-=\frac{12\ \mathrm{m/s}}{3\ \mathrm{s}^{-1}}
+\lambda=\frac{v_{\mathrm{wave}}}{f}
+=\frac{12\ \mathrm{m}/\mathrm{s}}{3\ \mathrm{s}^{-1}}
 =4\ \mathrm{m}.
 $$
 
 Substituting this into $N=d/\lambda$ gives
 
 $$
-N=\frac{d}{v/f}
-=\frac{df}{v}
-=\frac{(20\ \mathrm{m})(3\ \mathrm{s}^{-1})}{12\ \mathrm{m/s}}
+N=\frac{d}{v_{\mathrm{wave}}/f}
+=\frac{df}{v_{\mathrm{wave}}}
+=\frac{(20\ \mathrm{m})(3\ \mathrm{s}^{-1})}{12\ \mathrm{m}/\mathrm{s}}
 =5.
 $$
 
@@ -132,7 +132,7 @@ The units cancel, as they must for a wavelength count.
 type: radio
 id: problem-3-q2
 content: |-
-  A wave travels at $18\ \mathrm{m/s}$ with frequency $6\ \mathrm{Hz}$. How many wavelengths fit in a distance of $12\ \mathrm{m}$?
+  A wave travels at $18\ \mathrm{m}/\mathrm{s}$ with frequency $6\ \mathrm{Hz}$. How many wavelengths fit in a distance of $12\ \mathrm{m}$?
 options:
 - id: problem-3-q2-a
   content: |-
@@ -166,10 +166,10 @@ The refractive-index definition gives
 $$
 n=\frac{c}{v}
 \qquad\Longrightarrow\qquad
-v=\frac{c}{n}.
+v_{\mathrm{wave}}=\frac{c}{n}.
 $$
 
-Insert this medium speed into $N=df/v$:
+Insert this medium speed into $N=df/v_{\mathrm{wave}}$:
 
 $$
 N=\frac{df}{c/n}
@@ -274,15 +274,15 @@ options:
 When a problem asks for the number of wavelengths across a distance:
 
 1. Start with $N=d/\lambda$.
-2. Use $\lambda=v/f$ to obtain $N=df/v$.
-3. In a medium, substitute $v=c/n$ to obtain $N=ndf/c$.
+2. Use $\lambda=v_{\mathrm{wave}}/f$ to obtain $N=df/v_{\mathrm{wave}}$.
+3. In a medium, substitute $v_{\mathrm{wave}}=c/n$ to obtain $N=ndf/c$.
 4. For two frequencies in the same medium and over the same distance, subtract the counts and factor:
 
 $$
 \Delta N=\frac{nd}{c}(f_1-f_2).
 $$
 
-The main trap is dividing by $c/n$ incorrectly. Since $c/n$ is the medium speed, it belongs in the denominator of $df/v$, so the final count is multiplied by $n$.
+The main trap is dividing by $c/n$ incorrectly. Since $c/n$ is the medium speed, it belongs in the denominator of $df/v_{\mathrm{wave}}$, so the final count is multiplied by $n$.
 
 <!-- lesson-nav:start -->
 ---

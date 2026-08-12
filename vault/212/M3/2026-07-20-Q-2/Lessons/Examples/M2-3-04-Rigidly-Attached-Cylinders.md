@@ -94,9 +94,9 @@ Two uniform solid cylinders are rigidly attached and rotate together about their
 6. The first term has units
 
    $$
-   \frac{(\text{N})(\text{m})}
-        {(\text{s}^{-2})(\text{m}^2)}
-   =\text{kg},
+   \frac{(\mathrm{N})(\mathrm{m})}
+        {(\mathrm{s}^{-2})(\mathrm{m}^2)}
+   =\mathrm{kg},
    $$
 
    and the second term also has units of kilograms.

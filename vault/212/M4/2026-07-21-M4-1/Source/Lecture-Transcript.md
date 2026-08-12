@@ -95,7 +95,7 @@ $$
 The SI unit of frequency is the hertz:
 
 $$
-1\ \mathrm{Hz}=1\ \mathrm{cycle/s}=1\ \mathrm{s}^{-1}.
+1\ \mathrm{Hz}=1\ \mathrm{cycle}/\mathrm{s}=1\ \mathrm{s}^{-1}.
 $$
 
 The **angular frequency**, represented by $\omega$, measures how rapidly the oscillator moves through its cycle in radians per second.
@@ -128,7 +128,7 @@ $$
 \omega=\frac{2\pi}{T}.
 $$
 
-In this context, $T$ represents the period. In other contexts, the same symbol may be used for tension, so its meaning must be determined from the situation.
+Throughout this module, $T$ represents the period; when tension appears, it is written as $F_T$.
 
 ## Velocity in Simple Harmonic Motion
 
@@ -500,13 +500,13 @@ $$
 Therefore,
 
 $$
-\omega=\frac{\pi}{2}\ \mathrm{rad/s},
+\omega=\frac{\pi}{2}\ \mathrm{rad}/\mathrm{s},
 $$
 
 or numerically,
 
 $$
-\boxed{\omega=1.57\ \mathrm{rad/s}}.
+\boxed{\omega=1.57\ \mathrm{rad}/\mathrm{s}}.
 $$
 
 ### Maximum Speed
@@ -522,20 +522,20 @@ Substituting the angular frequency and amplitude,
 $$
 v_{\max}
 =
-\left(\frac{\pi}{2}\ \mathrm{rad/s}\right)
+\left(\frac{\pi}{2}\ \mathrm{rad}/\mathrm{s}\right)
 (2.5\ \mathrm{cm}).
 $$
 
 Therefore,
 
 $$
-v_{\max}=1.25\pi\ \mathrm{cm/s},
+v_{\max}=1.25\pi\ \mathrm{cm}/\mathrm{s},
 $$
 
 or
 
 $$
-\boxed{v_{\max}\approx3.9\ \mathrm{cm/s}}.
+\boxed{v_{\max}\approx3.9\ \mathrm{cm}/\mathrm{s}}.
 $$
 
 ## Worked Example: Position of a Mass on a Spring
@@ -598,7 +598,7 @@ $$
 \omega
 =
 2\pi\left(\frac{12}{7.0\ \mathrm{s}}\right)
-\approx10.77\ \mathrm{rad/s}.
+\approx10.77\ \mathrm{rad}/\mathrm{s}.
 $$
 
 Let $y(t)$ represent the displacement measured from equilibrium. Because the block is released at maximum positive displacement,
@@ -692,7 +692,7 @@ $$
 Evaluating this expression gives
 
 $$
-\boxed{v(3.9\ \mathrm{s})\approx+1.29\ \mathrm{m/s}}.
+\boxed{v(3.9\ \mathrm{s})\approx+1.29\ \mathrm{m}/\mathrm{s}}.
 $$
 
 The velocity is positive, so the block is moving to the right.
@@ -779,7 +779,7 @@ $$
 For the numerical values given in the problem, this produces
 
 $$
-\boxed{v_{\max}=8.8\ \mathrm{m/s}}.
+\boxed{v_{\max}=8.8\ \mathrm{m}/\mathrm{s}}.
 $$
 
 This is equivalent to using

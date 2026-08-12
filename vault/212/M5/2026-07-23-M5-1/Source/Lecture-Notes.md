@@ -88,12 +88,12 @@
 
 ### 10. Comparing Two Masses on Identical Springs
 - Two identical springs carry different masses:
-  - one mass is $100\text{ g}$
-  - one mass is $50\text{ g}$
+  - one mass is $100\ \mathrm{g}$
+  - one mass is $50\ \mathrm{g}$
 - Since:
   $$ f\propto\frac{1}{\sqrt{m}} $$
 - The smaller mass has the higher frequency:
-  $$ f_{50\text{ g}}>f_{100\text{ g}} $$
+  $$ f_{50\ \mathrm{g}}>f_{100\ \mathrm{g}} $$
 
 ---
 
@@ -118,7 +118,7 @@
 - The spring force provides the restoring force around equilibrium.
 - Gravity acts downward at all times and shifts the equilibrium position.
 - At equilibrium:
-  $$ kx_{\text{eq}}=mg $$
+  $$ kx_{\mathrm{eq}}=mg $$
 - Once displacement is measured relative to equilibrium, the oscillation frequency remains:
   $$ \omega=\sqrt{\frac{k}{m}} $$
 
@@ -195,7 +195,7 @@
 
 ### 22. Superposition
 - When two waves overlap, their displacements add:
-  $$ y_{\text{total}}=y_1+y_2 $$
+  $$ y_{\mathrm{net}}=y_1+y_2 $$
 - A right-moving wave and its reflected left-moving wave can overlap and interfere.
 
 ---
@@ -220,15 +220,15 @@
 
 ### 25. Linear Mass Density
 - The linear mass density of a string is:
-  $$ \mu=\frac{m_{\text{string}}}{L} $$
+  $$ \mu=\frac{m_{\mathrm{string}}}{L} $$
 - Units:
-  $$ [\mu]=\frac{\text{kg}}{\text{m}} $$
+  $$ [\mu]=\mathrm{kg}/\mathrm{m} $$
 
 ---
 
 ### 26. Wave Speed on a String
 - The wave speed is:
-  $$ v=\sqrt{\frac{F_T}{\mu}} $$
+  $$ v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}} $$
 - Here:
   - $F_T$ is the string tension
   - $\mu$ is the linear mass density
@@ -237,14 +237,14 @@
 
 ### 27. Effect of Tension
 - Increasing the tension increases the wave speed:
-  $$ v\propto\sqrt{F_T} $$
+  $$ v_{\mathrm{wave}}\propto\sqrt{F_T} $$
 - A larger tension provides a stronger restoring force, allowing the disturbance to propagate more rapidly.
 
 ---
 
 ### 28. Effect of Linear Density
 - Increasing the linear mass density decreases the wave speed:
-  $$ v\propto\frac{1}{\sqrt{\mu}} $$
+  $$ v_{\mathrm{wave}}\propto\frac{1}{\sqrt{\mu}} $$
 - A heavier or denser string has more inertia per unit length and responds more slowly.
 
 ---
@@ -254,7 +254,7 @@
 - If the mass is stationary and the pulley and string are ideal:
   $$ F_T\approx Mg $$
 - Therefore:
-  $$ v\approx\sqrt{\frac{Mg}{\mu}} $$
+  $$ v_{\mathrm{wave}}\approx\sqrt{\frac{Mg}{\mu}} $$
 - Increasing the hanging mass increases the tension and therefore increases the wave speed.
 
 ---
@@ -311,9 +311,9 @@
 ### 36. Particle Speed in a Sinusoidal Wave
 - Each particle in a sinusoidal wave undergoes simple harmonic motion.
 - At a crest or trough:
-  $$ v_{\text{particle}}=0 $$
+  $$ u=0 $$
 - At equilibrium:
-  $$ |v_{\text{particle}}|=v_{\text{particle,max}} $$
+  $$ |u|=u_{\max} $$
 - Therefore, particles move fastest while crossing the equilibrium line.
 
 ---
@@ -337,11 +337,11 @@
 ### 39. Wave-Speed Relation
 - In one period, the wave travels one wavelength.
 - Therefore:
-  $$ v=\frac{\lambda}{T} $$
+  $$ v_{\mathrm{wave}}=\frac{\lambda}{T} $$
 - Since:
   $$ f=\frac{1}{T} $$
 - We obtain:
-  $$ v=\lambda f $$
+  $$ v_{\mathrm{wave}}=f\lambda $$
 
 ---
 
@@ -447,8 +447,8 @@
 - For an ideal electromagnetic wave:
   $$ \vec{E}\perp\vec{B} $$
 - Both fields are also perpendicular to the propagation direction:
-  $$ \vec{E}\perp\vec{v}_{\text{wave}} $$
-  $$ \vec{B}\perp\vec{v}_{\text{wave}} $$
+  $$ \vec{E}\perp\vec{v}_{\mathrm{wave}} $$
+  $$ \vec{B}\perp\vec{v}_{\mathrm{wave}} $$
 
 ---
 
@@ -458,9 +458,9 @@
 - Mass–spring frequency:
   $$ f=\frac{1}{2\pi}\sqrt{\frac{k}{m}} $$
 - Wave speed on a string:
-  $$ v=\sqrt{\frac{F_T}{\mu}} $$
+  $$ v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}} $$
 - General wave-speed relation:
-  $$ v=\lambda f=\frac{\lambda}{T} $$
+  $$ v_{\mathrm{wave}}=f\lambda=\frac{\lambda}{T} $$
 - A wave transports a disturbance while medium particles oscillate around equilibrium.
 - Transverse and longitudinal waves differ in the direction of particle motion.
 - Mechanical waves require a medium; electromagnetic waves can propagate through vacuum.
@@ -473,6 +473,6 @@
 3. Distinguish a spatial wave snapshot from a time history at one location.
 4. Remember that the medium determines wave speed.
 5. Use:
-   $$ v=\lambda f $$
+   $$ v_{\mathrm{wave}}=f\lambda $$
    to relate changes in frequency and wavelength.
 6. Treat each point in a sinusoidal mechanical wave as a local simple harmonic oscillator.

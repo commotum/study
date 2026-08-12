@@ -37,7 +37,7 @@ Newton’s second law in the radial direction is therefore
 
 $$
 \boxed{
-\sum F_r=m\frac{v^2}{r}
+\sum F_r=m a_r=m\frac{v^2}{r}
 }.
 $$
 
@@ -94,7 +94,7 @@ The normal-force and gravitational-force vectors must therefore have equal magni
 In the radial direction,
 
 $$
-\sum F_r=m\frac{v^2}{r}.
+\sum F_r=m a_r=m\frac{v^2}{r}.
 $$
 
 The only radial force is friction, so
@@ -112,7 +112,7 @@ Suppose the car is moving at the greatest speed possible without sliding.
 At that threshold, static friction has reached its maximum value:
 
 $$
-f_{s,\max}=\mu_sN,
+f_{s,\max}=\mu_s N,
 $$
 
 where $\mu_s$ is the coefficient of static friction between the tires and the road.
@@ -126,19 +126,19 @@ $$
 the maximum static-friction force is
 
 $$
-f_{s,\max}=\mu_smg.
+f_{s,\max}=\mu_s mg.
 $$
 
 The radial equation is
 
 $$
-\mu_smg=m\frac{v^2}{r}.
+\mu_s mg=m\frac{v^2}{r}.
 $$
 
 The mass cancels:
 
 $$
-\mu_sg=\frac{v^2}{r}.
+\mu_s g=\frac{v^2}{r}.
 $$
 
 Solving for the coefficient of static friction gives
@@ -152,7 +152,7 @@ $$
 For the values
 
 $$
-v=16\ \mathrm{m/s}
+v=16\ \mathrm{m}/\mathrm{s}
 $$
 
 and
@@ -167,9 +167,9 @@ $$
 \mu_s
 =
 \frac{
-(16\ \mathrm{m/s})^2
+(16\ \mathrm{m}/\mathrm{s})^2
 }{
-(49\ \mathrm{m})(9.81\ \mathrm{m/s^2})
+(49\ \mathrm{m})(9.81\ \mathrm{m}/\mathrm{s}^2)
 }.
 $$
 
@@ -192,7 +192,7 @@ The friction is static because the tire surfaces are not sliding sideways across
 If the car exceeds the maximum possible speed and begins to slide, kinetic friction becomes relevant. At the threshold just before sliding, however, the appropriate relationship is
 
 $$
-f_s=\mu_sN.
+f_s=f_{s,\max}=\mu_s N.
 $$
 
 # Car Traveling Around a Frictionless Banked Curve
@@ -276,7 +276,7 @@ $$
 The inward component of the normal force supplies the radial acceleration:
 
 $$
-\sum F_r=m\frac{v^2}{r}.
+\sum F_r=m a_r=m\frac{v^2}{r}.
 $$
 
 Therefore,
@@ -352,7 +352,7 @@ v
 =
 \sqrt{
 (48\ \mathrm{m})
-(9.81\ \mathrm{m/s^2})
+(9.81\ \mathrm{m}/\mathrm{s}^2)
 \tan(6.2^\circ)
 }.
 $$
@@ -361,7 +361,7 @@ Therefore,
 
 $$
 \boxed{
-v\approx7.2\ \mathrm{m/s}
+v\approx7.2\ \mathrm{m}/\mathrm{s}
 }.
 $$
 
@@ -436,7 +436,7 @@ At the maximum speed:
 Therefore,
 
 $$
-f_s=\mu_sN.
+f_s=f_{s,\max}=\mu_s N.
 $$
 
 ## Force Components
@@ -475,13 +475,13 @@ $$
 Substituting
 
 $$
-f_s=\mu_sN
+f_s=f_{s,\max}=\mu_s N
 $$
 
 gives
 
 $$
-N\cos\theta-\mu_sN\sin\theta-mg=0.
+N\cos\theta-\mu_s N\sin\theta-mg=0.
 $$
 
 Factor out $N$:
@@ -514,7 +514,7 @@ $$
 The inward radial components of both the normal force and friction contribute to the circular motion:
 
 $$
-\sum F_r=m\frac{v^2}{r}.
+\sum F_r=m a_r=m\frac{v^2}{r}.
 $$
 
 Therefore,
@@ -525,16 +525,16 @@ N\sin\theta+f_s\cos\theta
 m\frac{v^2}{r}.
 $$
 
-Using
+Using the threshold relation
 
 $$
-f_s=\mu_sN,
+f_s=f_{s,\max}=\mu_s N,
 $$
 
 we obtain
 
 $$
-N\sin\theta+\mu_sN\cos\theta
+N\sin\theta+\mu_s N\cos\theta
 =
 m\frac{v^2}{r}.
 $$
@@ -597,7 +597,7 @@ Therefore, the maximum speed is
 
 $$
 \boxed{
-v_{\max}
+v_{\max,\mathrm{banked}}
 =
 \sqrt{
 rg
@@ -614,7 +614,7 @@ Using the numerical values supplied in the problem gives approximately
 
 $$
 \boxed{
-v_{\max}=25\ \mathrm{m/s}
+v_{\max,\mathrm{banked}}=25\ \mathrm{m}/\mathrm{s}
 }.
 $$
 
@@ -622,7 +622,7 @@ This is approximately
 
 $$
 \boxed{
-v_{\max}\approx55\ \mathrm{mph}
+v_{\max,\mathrm{banked}}\approx55\ \mathrm{mi}/\mathrm{h}
 }.
 $$
 
@@ -642,7 +642,7 @@ At the maximum speed,
 
 $$
 \boxed{
-v_{\max}=\sqrt{\mu_srg}
+v_{\max,\mathrm{banked}}=\sqrt{\mu_s r g}
 }.
 $$
 
@@ -668,7 +668,7 @@ At the maximum speed, friction points down the bank and contributes to the inwar
 
 $$
 \boxed{
-v_{\max}
+v_{\max,\mathrm{banked}}
 =
 \sqrt{
 rg
@@ -692,32 +692,32 @@ The string remains at a constant angle $\theta$ from the vertical, producing a s
 Only two physical forces act on the object:
 
 - The gravitational force $mg$, directed downward
-- The tension force $F_T$, directed along the string toward the pivot
+- The tension force $T_{\mathrm{tens}}$, directed along the string toward the pivot
 
 There is no separate force called “centripetal force.” The inward component of the tension supplies the required net radial force.
 
 If $\theta$ is measured from the vertical, the tension components are
 
 $$
-F_{T,y}=F_T\cos\theta
+T_{\mathrm{tens},y}=T_{\mathrm{tens}}\cos\theta
 $$
 
 and
 
 $$
-F_{T,r}=F_T\sin\theta.
+T_{\mathrm{tens},r}=T_{\mathrm{tens}}\sin\theta.
 $$
 
 Because the object has no vertical acceleration,
 
 $$
-F_T\cos\theta=mg.
+T_{\mathrm{tens}}\cos\theta=mg.
 $$
 
 The inward component produces the circular motion:
 
 $$
-F_T\sin\theta=m\frac{v^2}{r}.
+T_{\mathrm{tens}}\sin\theta=m a_r=m\frac{v^2}{r}.
 $$
 
 Dividing the radial equation by the vertical equation gives
@@ -782,7 +782,7 @@ For a horizontal circular path, choose:
 These axes allow the radial equation to be written directly as
 
 $$
-\sum F_r=m\frac{v^2}{r}.
+\sum F_r=m a_r=m\frac{v^2}{r}.
 $$
 
 ## 4. Resolve Angled Forces into Components
@@ -811,13 +811,13 @@ Static friction opposes the impending relative motion between the tires and the 
 Use
 
 $$
-\sum F_y=ma_y
+\sum F_y=m a_y
 $$
 
 and
 
 $$
-\sum F_r=m\frac{v^2}{r}.
+\sum F_r=m a_r=m\frac{v^2}{r}.
 $$
 
 For the systems considered here,
@@ -831,13 +831,13 @@ $$
 In general,
 
 $$
-f_s\leq\mu_sN.
+f_s\leq\mu_s N.
 $$
 
 Use
 
 $$
-f_s=\mu_sN
+f_s=f_{s,\max}=\mu_s N
 $$
 
 only when the object is just about to slide.
@@ -866,7 +866,7 @@ and
 
 $$
 \boxed{
-\sum F_r=m\frac{v^2}{r}
+\sum F_r=m a_r=m\frac{v^2}{r}
 }.
 $$
 
@@ -888,7 +888,7 @@ or
 
 $$
 \boxed{
-v_{\max}=\sqrt{\mu_srg}
+v_{\max,\mathrm{banked}}=\sqrt{\mu_s r g}
 }.
 $$
 
@@ -924,7 +924,7 @@ For the banked-curve example,
 
 $$
 \boxed{
-v\approx7.2\ \mathrm{m/s}
+v\approx7.2\ \mathrm{m}/\mathrm{s}
 }.
 $$
 
@@ -937,7 +937,7 @@ At the maximum speed,
 
 $$
 \boxed{
-v_{\max}
+v_{\max,\mathrm{banked}}
 =
 \sqrt{
 rg
@@ -954,20 +954,20 @@ For the values used in the problem,
 
 $$
 \boxed{
-v_{\max}=25\ \mathrm{m/s}
+v_{\max,\mathrm{banked}}=25\ \mathrm{m}/\mathrm{s}
 }.
 $$
 
 A conical pendulum has the same force-component structure as a frictionless banked curve:
 
 $$
-F_T\cos\theta=mg
+T_{\mathrm{tens}}\cos\theta=mg
 $$
 
 and
 
 $$
-F_T\sin\theta=m\frac{v^2}{r}.
+T_{\mathrm{tens}}\sin\theta=m a_r=m\frac{v^2}{r}.
 $$
 
 In both systems, the inward component of an angled physical force supplies the radial acceleration. There is no additional centripetal force acting on the object.

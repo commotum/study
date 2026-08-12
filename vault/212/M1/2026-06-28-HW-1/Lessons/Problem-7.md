@@ -19,39 +19,39 @@ topic-code: MTH212.M1.07
 - A vector points in the direction of its arrow
 - Perpendicular vectors meet at a $90^\circ$ angle
 - Opposite vectors lie on the same line but point in opposite directions
-- In uniform circular motion, the position vector $\vec r$ is measured from the circle's center to the object
+- In uniform circular motion, the position vector $\vec{r}$ is measured from the circle's center to the object
 
 ---
 
 <a id="introduction"></a>
 ## Introduction
 
-Picture an object at the right edge of a circular path. Its position vector $\vec r$ points from the center toward the object, so it points right. Its centripetal acceleration points back toward the center, so it points left. The two vectors lie on the same line but face opposite directions.
+Picture an object at the right edge of a circular path. Its position vector $\vec{r}$ points from the center toward the object, so it points right. Its radial acceleration points back toward the center, so it points left. The two vectors lie on the same line but face opposite directions.
 
 For uniform circular motion, that relationship is written
 
 $$
-\vec a=-\omega^2\vec r.
+\vec{a}=-\omega^2\vec{r}.
 $$
 
-In the cheat sheet's scalar component notation, the same uniform-circular-motion result is $a_r=|\vec a|=\omega^2r$. The vector equation above adds the inward direction through its minus sign.
+In the cheat sheet's scalar component notation, the same uniform-circular-motion result is $a_r=|\vec{a}|=r\omega^2$. The vector equation above adds the inward direction through its minus sign.
 
-The positive factor $\omega^2$ sets the acceleration's magnitude, while the minus sign reverses the direction of $\vec r$. It does not turn the vector by $90^\circ$. The angle between $\vec a$ and $\vec r$ is $180^\circ$, so they are opposite rather than perpendicular.
+The positive factor $\omega^2$ sets the acceleration's magnitude, while the minus sign reverses the direction of $\vec{r}$. It does not turn the vector by $90^\circ$. The angle between $\vec{a}$ and $\vec{r}$ is $180^\circ$, so they are opposite rather than perpendicular.
 
-The sign depends on the chosen radial axis. If $\hat r$ points outward, then
+The position vector $\vec{r}$ points outward, but the positive scalar radial direction is inward. Therefore $a_r=+\frac{v^2}{r}$, while the outward-vector form is
 
 $$
-\vec a_r=-\frac{v^2}{r}\hat r.
+\vec{a}=-\frac{v^2}{r^2}\vec{r}.
 $$
 
-If the positive radial direction is instead chosen inward, the scalar component is $a_r=+v^2/r$. The coordinate sign changes, but the physical acceleration remains directed toward the center.
+The coordinate sign changes between these two descriptions, but the physical acceleration remains directed toward the center.
 
 ---
 
 <a id="reading-the-radius-vector"></a>
 ## Reading the Radius Vector
 
-**Example:** An object is at the rightmost point of a circle, and $\vec r$ is measured from the center to the object. Which way does $\vec r$ point?
+**Example:** An object is at the rightmost point of a circle, and $\vec{r}$ is measured from the center to the object. Which way does $\vec{r}$ point?
 
 **Explanation**
 
@@ -60,7 +60,7 @@ The position vector has its tail at the center and its head at the object. If th
 So at the rightmost point,
 
 $$
-\vec r \text{ points right.}
+\vec{r} \text{ points right.}
 $$
 
 ```quiz
@@ -68,7 +68,7 @@ type: radio
 id: q-1
 shuffle: true
 content: |-
-  An object is at the top of a circle. The vector $\vec r$ is measured from the center to the object. Which way does $\vec r$ point?
+  An object is at the top of a circle. The vector $\vec{r}$ is measured from the center to the object. Which way does $\vec{r}$ point?
 options:
 - id: q1-a
   content: |-
@@ -90,26 +90,26 @@ options:
 <a id="finding-the-acceleration-direction"></a>
 ## Finding the Acceleration Direction
 
-**Example:** The same object is at the rightmost point of a circle and is moving with uniform circular motion. Which way does $\vec a$ point?
+**Example:** The same object is at the rightmost point of a circle and is moving with uniform circular motion. Which way does $\vec{a}$ point?
 
 **Explanation**
 
-Uniform circular motion has centripetal acceleration. "Centripetal" means toward the center.
+Uniform circular motion has radial acceleration directed toward the center.
 
 At the rightmost point, the center is to the left of the object, so the acceleration points left:
 
 $$
-\vec a \text{ points left.}
+\vec{a} \text{ points left.}
 $$
 
-This matches the formula $\vec a=-\omega^2\vec r$: if $\vec r$ points right, then $\vec a$ points opposite it.
+This matches the formula $\vec{a}=-\omega^2\vec{r}$: if $\vec{r}$ points right, then $\vec{a}$ points opposite it.
 
 ```quiz
 type: radio
 id: q-2
 shuffle: true
 content: |-
-  An object is at the bottom of a circle and is moving with uniform circular motion. Which way does $\vec a$ point?
+  An object is at the bottom of a circle and is moving with uniform circular motion. Which way does $\vec{a}$ point?
 options:
 - id: q2-a
   content: |-
@@ -131,21 +131,21 @@ type: radio
 id: q-3
 shuffle: true
 content: |-
-  Suppose $\vec a=-4\vec r$ and $\vec r$ points left. Which statement correctly describes $\vec a$?
+  Suppose $\vec{a}=-4\vec{r}$ and $\vec{r}$ points left. Which statement correctly describes $\vec{a}$?
 options:
 - id: q3-a
   content: |-
-    $\vec a$ points right, opposite $\vec r$.
+    $\vec{a}$ points right, opposite $\vec{r}$.
   correct: true
 - id: q3-b
   content: |-
-    $\vec a$ points left, in the same direction as $\vec r$.
+    $\vec{a}$ points left, in the same direction as $\vec{r}$.
 - id: q3-c
   content: |-
-    $\vec a$ is perpendicular to $\vec r$ because the coefficient is negative.
+    $\vec{a}$ is perpendicular to $\vec{r}$ because the coefficient is negative.
 - id: q3-d
   content: |-
-    The direction of $\vec a$ cannot be determined from the equation.
+    The direction of $\vec{a}$ cannot be determined from the equation.
 ```
 
 ---
@@ -153,16 +153,16 @@ options:
 <a id="comparing-the-two-directions"></a>
 ## Comparing the Two Directions
 
-**Example:** At the rightmost point of a circle, $\vec r$ points right and $\vec a$ points left. Are $\vec r$ and $\vec a$ perpendicular?
+**Example:** At the rightmost point of a circle, $\vec{r}$ points right and $\vec{a}$ points left. Are $\vec{r}$ and $\vec{a}$ perpendicular?
 
 **Explanation**
 
 Perpendicular vectors meet at a $90^\circ$ angle. These two vectors lie on the same line:
 
 $$
-\vec r \text{ points right},
+\vec{r} \text{ points right},
 \qquad
-\vec a \text{ points left}.
+\vec{a} \text{ points left}.
 $$
 
 Their angle is $180^\circ$, so they are opposite, not perpendicular.
@@ -172,7 +172,7 @@ type: radio
 id: q-4
 shuffle: true
 content: |-
-  At the top of a circle in uniform circular motion, $\vec r$ points up and $\vec a$ points down. Which description is correct?
+  At the top of a circle in uniform circular motion, $\vec{r}$ points up and $\vec{a}$ points down. Which description is correct?
 options:
 - id: q4-a
   content: |-
@@ -194,18 +194,18 @@ options:
 <a id="separating-velocity-from-acceleration"></a>
 ## Separating Velocity from Acceleration
 
-**Example:** In uniform circular motion, which vector is perpendicular to $\vec r$: the velocity $\vec v$ or the acceleration $\vec a$?
+**Example:** In uniform circular motion, which vector is perpendicular to $\vec{r}$: the velocity $\vec{v}$ or the acceleration $\vec{a}$?
 
 **Explanation**
 
-The velocity is tangent to the circle. A tangent is perpendicular to the radius at the point of contact, so $\vec v$ is perpendicular to $\vec r$.
+The velocity is tangent to the circle. A tangent is perpendicular to the radius at the point of contact, so $\vec{v}$ is perpendicular to $\vec{r}$.
 
 The acceleration is different. It points inward toward the center:
 
 $$
-\vec v \perp \vec r,
+\vec{v} \perp \vec{r},
 \qquad
-\vec a=-\omega^2\vec r.
+\vec{a}=-\omega^2\vec{r}.
 $$
 
 So the common trap is to remember the tangent velocity fact and apply it to acceleration.
@@ -215,21 +215,21 @@ type: radio
 id: q-5
 shuffle: true
 content: |-
-  In uniform circular motion, which statement correctly separates the directions of $\vec v$ and $\vec a$ relative to $\vec r$?
+  In uniform circular motion, which statement correctly separates the directions of $\vec{v}$ and $\vec{a}$ relative to $\vec{r}$?
 options:
 - id: q5-a
   content: |-
-    Both $\vec v$ and $\vec a$ are perpendicular to $\vec r$.
+    Both $\vec{v}$ and $\vec{a}$ are perpendicular to $\vec{r}$.
 - id: q5-b
   content: |-
-    $\vec v$ is perpendicular to $\vec r$, while $\vec a$ points opposite $\vec r$.
+    $\vec{v}$ is perpendicular to $\vec{r}$, while $\vec{a}$ points opposite $\vec{r}$.
   correct: true
 - id: q5-c
   content: |-
-    $\vec a$ is perpendicular to $\vec r$, while $\vec v$ points opposite $\vec r$.
+    $\vec{a}$ is perpendicular to $\vec{r}$, while $\vec{v}$ points opposite $\vec{r}$.
 - id: q5-d
   content: |-
-    Neither $\vec v$ nor $\vec a$ has a fixed direction relative to $\vec r$.
+    Neither $\vec{v}$ nor $\vec{a}$ has a fixed direction relative to $\vec{r}$.
 ```
 
 ---
@@ -237,17 +237,17 @@ options:
 <a id="decide-whether-the-vectors-are-perpendicular"></a>
 ## Decide Whether the Vectors Are Perpendicular
 
-**Example:** In uniform circular motion, true or false: $\vec a$ is perpendicular to $\vec r$.
+**Example:** In uniform circular motion, true or false: $\vec{a}$ is perpendicular to $\vec{r}$.
 
 **Explanation**
 
 Use the direction rule:
 
 $$
-\vec a=-\omega^2\vec r.
+\vec{a}=-\omega^2\vec{r}.
 $$
 
-That means $\vec a$ points opposite $\vec r$. Opposite vectors are separated by $180^\circ$, so they are not perpendicular.
+That means $\vec{a}$ points opposite $\vec{r}$. Opposite vectors are separated by $180^\circ$, so they are not perpendicular.
 
 The statement is false.
 
@@ -256,9 +256,9 @@ type: radio
 id: q-6
 shuffle: true
 content: |-
-  Consider an object undergoing uniform circular motion. Let $\vec r$ be the position of the object relative to the circle's center, $\vec v$ the velocity of the object, $\omega$ the angular speed of the object, and $\vec a$ its acceleration.
+  Consider an object undergoing uniform circular motion. Let $\vec{r}$ be the position of the object relative to the circle's center, $\vec{v}$ the velocity of the object, $\omega$ the angular speed of the object, and $\vec{a}$ its acceleration.
 
-  True or false: $\vec a$ is perpendicular to $\vec r$.
+  True or false: $\vec{a}$ is perpendicular to $\vec{r}$.
 options:
 - id: q6-a
   content: |-
@@ -276,14 +276,14 @@ options:
 In uniform circular motion,
 
 $$
-\vec a=-\omega^2\vec r.
+\vec{a}=-\omega^2\vec{r}.
 $$
 
-The radius vector $\vec r$ points from the center to the object. The acceleration $\vec a$ points from the object back toward the center. Therefore $\vec a$ is opposite $\vec r$, not perpendicular to it.
+The radius vector $\vec{r}$ points from the center to the object. The acceleration $\vec{a}$ points from the object back toward the center. Therefore $\vec{a}$ is opposite $\vec{r}$, not perpendicular to it.
 
-In $\vec a=-\omega^2\vec r$, the negative scalar reverses the direction of $\vec r$ instead of turning it through a right angle.
+In $\vec{a}=-\omega^2\vec{r}$, the negative scalar reverses the direction of $\vec{r}$ instead of turning it through a right angle.
 
-The main trap is mixing up acceleration with velocity: $\vec v$ is tangent and perpendicular to $\vec r$, but $\vec a$ is inward and opposite $\vec r$.
+The main trap is mixing up acceleration with velocity: $\vec{v}$ is tangent and perpendicular to $\vec{r}$, but $\vec{a}$ is inward and opposite $\vec{r}$.
 
 <!-- lesson-nav:start -->
 ---

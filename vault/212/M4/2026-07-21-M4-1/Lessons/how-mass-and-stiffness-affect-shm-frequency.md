@@ -348,7 +348,7 @@ f=\frac{1}{2\pi}\sqrt{\frac{k}{m}}
 \propto k^{1/2}m^{-1/2}.
 $$
 
-The dimensions also verify that this is a frequency. Since $[k]=\mathrm{N/m}=\mathrm{kg/s^2}$,
+The dimensions also verify that this is a frequency. Since $[k]=\mathrm{N}/\mathrm{m}=\mathrm{kg}/\mathrm{s}^2$,
 
 $$
 \left[\frac{k}{m}\right]=\mathrm{s}^{-2},

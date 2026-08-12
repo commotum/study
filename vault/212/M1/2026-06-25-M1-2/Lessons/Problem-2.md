@@ -42,11 +42,11 @@ The question asks whether $D$ should appear in the numerator or denominator of t
 The second bullet must have the larger speed because it covers more distance in the same time. For example, if the fixed time is $\Delta t=0.2\ \mathrm{s}$, then
 
 $$
-v=\frac{0.8}{0.2}=4\ \mathrm{m/s}
+v=\frac{0.8}{0.2}=4\ \mathrm{m}/\mathrm{s}
 $$
 
 $$
-v=\frac{1.6}{0.2}=8\ \mathrm{m/s}
+v=\frac{1.6}{0.2}=8\ \mathrm{m}/\mathrm{s}
 $$
 
 The rotating disks create the same kind of comparison. The rotation controls the timing condition: the second hole lines up after a fixed angular rotation. If $T$ and $\theta$ stay fixed, the bullet has the same amount of travel time available. Only the distance it must cover has changed.

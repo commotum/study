@@ -122,15 +122,15 @@
 ### 11. Radial, Tangential, and Angular Acceleration
 - Radial acceleration:
   - units:
-    $$ \text{m/s}^2 $$
+    $$ \mathrm{m}/\mathrm{s}^2 $$
   - points toward the center of circular motion
 - Tangential acceleration:
   - units:
-    $$ \text{m/s}^2 $$
+    $$ \mathrm{m}/\mathrm{s}^2 $$
   - changes the speed of the object
 - Angular acceleration:
   - units:
-    $$ \text{rad/s}^2 $$
+    $$ \mathrm{rad}/\mathrm{s}^2 $$
   - describes how fast angular velocity changes:
     $$ \alpha=\frac{d\omega}{dt} $$
 
@@ -181,18 +181,18 @@
   - clockwise
   - while speeding up
 - Since:
-  $$ \sum \vec{F}=m\vec{a} $$
+  $$ \vec{F}_{\mathrm{net}}=m\vec{a} $$
 - The net force points in the same direction as the acceleration.
 
 ---
 
 ### 17. Acceleration Components for Clockwise Speeding Up
 - Because the particle moves in a circle, it has radial acceleration:
-  $$ \vec{a}_r \text{ points toward the center} $$
+  $$ a_r\hat{r}\ \text{points toward the center} $$
 - Because it is speeding up, it also has tangential acceleration in the direction of motion:
-  $$ \vec{a}_t \text{ points tangent to the path} $$
+  $$ a_t\hat{t}\ \text{points tangent to the path} $$
 - Total acceleration:
-  $$ \vec{a}=\vec{a}_r+\vec{a}_t $$
+  $$ \vec{a}=a_r\hat{r}+a_t\hat{t} $$
 
 ---
 
@@ -217,7 +217,7 @@
 ### 20. Physical Setup
 - A ball of mass $m$ is attached to a string of length $L$.
 - The string has tension:
-  $$ T_{\text{tens}} $$
+  $$ T_{\mathrm{tens}} $$
 - The ball is at an angle:
   $$ \theta $$
 - The goal is to find:
@@ -239,7 +239,7 @@
 ### 22. Free-Body Diagram
 - Forces on the ball:
   - tension along the string:
-    $$ T_{\text{tens}} $$
+    $$ T_{\mathrm{tens}} $$
   - weight downward:
     $$ mg $$
 - The radial axis points inward.
@@ -249,30 +249,30 @@
 
 ### 23. Radial Force Equation
 - Newton’s second law in the radial direction:
-  $$ \sum F_r=ma_r $$
+  $$ \sum F_r=m a_r $$
 - Radial forces:
   - tension contributes positively:
-    $$ T_{\text{tens}} $$
+    $$ T_{\mathrm{tens}} $$
   - the radial component of weight contributes:
     $$ mg\cos\theta $$
 - Therefore:
-  $$ T_{\text{tens}}+mg\cos\theta=ma_r $$
+  $$ T_{\mathrm{tens}}+mg\cos\theta=m a_r $$
 
 ---
 
 ### 24. Radial Acceleration
 - Solve for radial acceleration:
-  $$ a_r=\frac{T_{\text{tens}}}{m}+g\cos\theta $$
+  $$ a_r=\frac{T_{\mathrm{tens}}}{m}+g\cos\theta $$
 - The numerical result from the lecture is:
-  $$ a_r=11.7\text{ m/s}^2 $$
+  $$ a_r=11.7\ \mathrm{m}/\mathrm{s}^2 $$
 - Rounded to two significant figures:
-  $$ a_r\approx 12\text{ m/s}^2 $$
+  $$ a_r\approx 12\ \mathrm{m}/\mathrm{s}^2 $$
 
 ---
 
 ### 25. Tangential Force Equation
 - Newton’s second law in the tangential direction:
-  $$ \sum F_t=ma_t $$
+  $$ \sum F_t=m a_t $$
 - Tension is radial, so it has no tangential component.
 - The tangential component comes from gravity:
   $$ mg\sin\theta $$
@@ -281,11 +281,11 @@
 
 ### 26. Tangential Acceleration
 - From:
-  $$ ma_t=mg\sin\theta $$
+  $$ m a_t=mg\sin\theta $$
 - Solve:
   $$ a_t=g\sin\theta $$
 - Numerical result:
-  $$ a_t=2.4\text{ m/s}^2 $$
+  $$ a_t=2.4\ \mathrm{m}/\mathrm{s}^2 $$
 
 ---
 
@@ -304,11 +304,11 @@
 - Since radial and tangential directions are perpendicular:
   $$ |\vec{a}|=\sqrt{a_r^2+a_t^2} $$
 - Substitute:
-  $$ |\vec{a}|=\sqrt{\left(\frac{T_{\text{tens}}}{m}+g\cos\theta\right)^2+\left(g\sin\theta\right)^2} $$
+  $$ |\vec{a}|=\sqrt{\left(\frac{T_{\mathrm{tens}}}{m}+g\cos\theta\right)^2+\left(g\sin\theta\right)^2} $$
 - Numerical result:
-  $$ |\vec{a}|=11.9\text{ m/s}^2 $$
+  $$ |\vec{a}|=11.9\ \mathrm{m}/\mathrm{s}^2 $$
 - Rounded:
-  $$ |\vec{a}|\approx 12\text{ m/s}^2 $$
+  $$ |\vec{a}|\approx 12\ \mathrm{m}/\mathrm{s}^2 $$
 
 ---
 
@@ -344,15 +344,15 @@
 - Find:
   $$ \Delta y_{\max} $$
 - At the maximum height:
-  $$ v_{yf}=0 $$
+  $$ v_{fy}=0 $$
 
 ---
 
 ### 33. Projectile Kinematics Equation
 - Use:
-  $$ v_{yf}^2=v_{0y}^2+2a_y\Delta y $$
+  $$ v_{fy}^2=v_{0y}^2+2a_y\Delta y $$
 - Since:
-  $$ v_{yf}=0 $$
+  $$ v_{fy}=0 $$
   and:
   $$ a_y=-g $$
 - Then:
@@ -376,9 +376,9 @@
 - So:
   $$ v_0^2=a_rL $$
 - Using:
-  $$ a_r=\frac{T_{\text{tens}}}{m}+g\cos\theta $$
+  $$ a_r=\frac{T_{\mathrm{tens}}}{m}+g\cos\theta $$
 - Therefore:
-  $$ v_0^2=L\left(\frac{T_{\text{tens}}}{m}+g\cos\theta\right) $$
+  $$ v_0^2=L\left(\frac{T_{\mathrm{tens}}}{m}+g\cos\theta\right) $$
 
 ---
 
@@ -388,17 +388,17 @@
   \Delta y_{\max}
   =
   \frac{
-  L\left(\frac{T_{\text{tens}}}{m}+g\cos\theta\right)\sin^2\theta
+  L\left(\frac{T_{\mathrm{tens}}}{m}+g\cos\theta\right)\sin^2\theta
   }{2g}
   $$
 - The lecture emphasizes that this is a complete symbolic solution in terms of given variables:
-  $$ L,\quad T_{\text{tens}},\quad m,\quad \theta,\quad g $$
+  $$ L,\quad T_{\mathrm{tens}},\quad m,\quad \theta,\quad g $$
 
 ---
 
 ### 37. Numerical Result for Maximum Height
 - Using the values from the problem, the lecture gives:
-  $$ \Delta y_{\max}=0.031\text{ m} $$
+  $$ \Delta y_{\max}=0.031\ \mathrm{m} $$
 
 ---
 
@@ -421,7 +421,7 @@
   \Delta y_{\max}
   =
   \frac{
-  L\left(\frac{T_{\text{tens}}}{m}+g\cos\theta\right)\sin^2\theta
+  L\left(\frac{T_{\mathrm{tens}}}{m}+g\cos\theta\right)\sin^2\theta
   }{2g}
   $$
 
@@ -437,9 +437,9 @@
 - Tangential acceleration changes the object’s speed:
   $$ a_t=\frac{dv}{dt} $$
 - Net force direction matches total acceleration:
-  $$ \sum \vec{F}=m\vec{a} $$
+  $$ \vec{F}_{\mathrm{net}}=m\vec{a} $$
 - For a ball on a string:
-  $$ a_r=\frac{T_{\text{tens}}}{m}+g\cos\theta $$
+  $$ a_r=\frac{T_{\mathrm{tens}}}{m}+g\cos\theta $$
   $$ a_t=g\sin\theta $$
 - If the string is cut, the ball becomes a projectile with initial velocity tangent to the circle.
 
@@ -450,8 +450,8 @@
 - Choose radial and tangential axes carefully.
 - Resolve forces along the chosen axes.
 - Use:
-  $$ \sum F_r=ma_r $$
+  $$ \sum F_r=m a_r $$
   and:
-  $$ \sum F_t=ma_t $$
+  $$ \sum F_t=m a_t $$
 - Use projectile kinematics after circular motion ends.
 - Solve symbolically before using numerical values.

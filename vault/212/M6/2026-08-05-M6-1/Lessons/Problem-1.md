@@ -46,7 +46,7 @@ The output $\Delta y$ is therefore directly proportional to the input $L$. Deter
 <a id="read-the-fringe-spacing-law"></a>
 ## Read the Fringe-Spacing Law
 
-**Example:** Light with wavelength $600\ \text{nm}$ passes through slits separated by $0.30\ \text{mm}$. Find the fringe spacing on a screen $2.0\ \text{m}$ away.
+**Example:** Light with wavelength $600\ \mathrm{nm}$ passes through slits separated by $0.30\ \mathrm{mm}$. Find the fringe spacing on a screen $2.0\ \mathrm{m}$ away.
 
 **Explanation**
 
@@ -55,10 +55,10 @@ Use SI units in $\Delta y\approx \lambda L/d$:
 $$
 \Delta y
 \approx
-\frac{(600\times 10^{-9}\ \text{m})(2.0\ \text{m})}
-{0.30\times 10^{-3}\ \text{m}}
-=4.0\times 10^{-3}\ \text{m}
-=4.0\ \text{mm}.
+\frac{(600\times 10^{-9}\ \mathrm{m})(2.0\ \mathrm{m})}
+{0.30\times 10^{-3}\ \mathrm{m}}
+=4.0\times 10^{-3}\ \mathrm{m}
+=4.0\ \mathrm{mm}.
 $$
 
 The ratio $\lambda/d$ is a dimensionless constant for this setup, so the equation has the direct-variation form $\Delta y=CL$. Increasing $L$ increases the spacing, while decreasing $L$ decreases the spacing.
@@ -97,7 +97,7 @@ options:
 <a id="compare-two-screen-distances"></a>
 ## Compare Two Screen Distances
 
-**Example:** A pattern has fringe spacing $5.0\ \text{mm}$ at $L_1=2.5\ \text{m}$. The screen moves to $L_2=1.0\ \text{m}$ without changing the light or slits. Find the new spacing.
+**Example:** A pattern has fringe spacing $5.0\ \mathrm{mm}$ at $L_1=2.5\ \mathrm{m}$. The screen moves to $L_2=1.0\ \mathrm{m}$ without changing the light or slits. Find the new spacing.
 
 **Explanation**
 
@@ -116,7 +116,7 @@ $$
 Since $f<1$, the new spacing must be smaller. Now apply the factor:
 
 $$
-\Delta y_2=(5.0\ \text{mm})\frac{1.0}{2.5}=2.0\ \text{mm}.
+\Delta y_2=(5.0\ \mathrm{mm})\frac{1.0}{2.5}=2.0\ \mathrm{mm}.
 $$
 
 The screen distance became $0.40$ of its original value, so the spacing also became $0.40$ of its original value.
@@ -125,27 +125,27 @@ The screen distance became $0.40$ of its original value, so the spacing also bec
 type: radio
 id: m6-1-p1-distance-ratio
 content: |-
-  A double-slit pattern has fringe spacing $3.6\ \text{mm}$ on a screen $2.4\ \text{m}$ from the slits. If the screen is moved to $1.2\ \text{m}$ and everything else remains fixed, what is the new spacing?
+  A double-slit pattern has fringe spacing $3.6\ \mathrm{mm}$ on a screen $2.4\ \mathrm{m}$ from the slits. If the screen is moved to $1.2\ \mathrm{m}$ and everything else remains fixed, what is the new spacing?
 options:
 - id: half
   content: |-
-    $1.8\ \text{mm}$
+    $1.8\ \mathrm{mm}$
   correct: true
   feedback: |-
-    Fringe spacing scales directly with screen distance. Since $L$ is multiplied by $1.2/2.4=1/2$, the spacing is also halved: $\Delta y_2=(3.6\ \text{mm})(1/2)=1.8\ \text{mm}$.
+    Fringe spacing scales directly with screen distance. Since $L$ is multiplied by $1.2/2.4=1/2$, the spacing is also halved: $\Delta y_2=(3.6\ \mathrm{mm})(1/2)=1.8\ \mathrm{mm}$.
 - id: double
   content: |-
-    $7.2\ \text{mm}$
+    $7.2\ \mathrm{mm}$
   feedback: |-
     This applies the distance factor backward, as though spacing were inversely proportional to $L$. Because $\Delta y\propto L$, halving $L$ halves the spacing rather than doubling it.
 - id: unchanged
   content: |-
-    $3.6\ \text{mm}$
+    $3.6\ \mathrm{mm}$
   feedback: |-
-    The wavelength and slit separation stay fixed, but the linear fringe spacing does not: $L$ appears in $\Delta y\approx \lambda L/d$. Halving $L$ changes the spacing from $3.6\ \text{mm}$ to $1.8\ \text{mm}$.
+    The wavelength and slit separation stay fixed, but the linear fringe spacing does not: $L$ appears in $\Delta y\approx \lambda L/d$. Halving $L$ changes the spacing from $3.6\ \mathrm{mm}$ to $1.8\ \mathrm{mm}$.
 - id: squared
   content: |-
-    $0.90\ \text{mm}$
+    $0.90\ \mathrm{mm}$
   feedback: |-
     This squares the factor $1/2$. The spacing law is linear in $L$, so the spacing receives one factor of $1/2$, not $(1/2)^2$.
 ```
@@ -210,7 +210,7 @@ options:
 **Example:** If a screen is shifted from $L$ to $0.70L$ while the light and slits remain unchanged, then
 
 $$
-\Delta y_{\text{new}}=0.70\Delta y_{\text{old}}.
+\Delta y_{\mathrm{new}}=0.70\Delta y_{\mathrm{old}}.
 $$
 
 **Explanation**

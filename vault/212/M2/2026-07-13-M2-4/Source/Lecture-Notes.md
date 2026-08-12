@@ -58,22 +58,22 @@
 
 ### 5. Center of Mass
 - For discrete masses:
-  $$ x_{\text{cm}}=\frac{\sum_i m_ix_i}{\sum_i m_i} $$
+  $$ x_{\mathrm{cm}}=\frac{\sum_i m_ix_i}{\sum_i m_i} $$
 - For a continuous object:
-  $$ x_{\text{cm}}=\frac{1}{M}\int x\,dm $$
+  $$ x_{\mathrm{cm}}=\frac{1}{M}\int x\,dm $$
 
 ---
 
 ### 6. Rotational Kinetic Energy
 - Rotational kinetic energy:
-  $$ K_{\text{rot}}=\frac{1}{2}I\omega^2 $$
+  $$ K_{\mathrm{rot}}=\frac{1}{2}I\omega^2 $$
 - The moment of inertia $I$ describes how mass is distributed relative to the rotation axis.
 
 ---
 
 ### 7. Parallel-Axis Theorem
 - If the rotation axis is a distance $d$ from a parallel axis through the center of mass:
-  $$ I=I_{\text{cm}}+Md^2 $$
+  $$ I=I_{\mathrm{cm}}+Md^2 $$
 
 ---
 
@@ -169,9 +169,9 @@
 ### 16. Torque Balance About Support $B$
 - Choose clockwise torque as positive.
 - The box produces clockwise torque:
-  $$ \tau_{\text{box}}=mgx $$
+  $$ \tau_{\mathrm{box}}=mgx $$
 - The plank’s weight produces counterclockwise torque:
-  $$ \tau_{\text{plank}}=Mg\frac{L}{6} $$
+  $$ \tau_{\mathrm{plank}}=Mg\frac{L}{6} $$
 - At the tipping threshold:
   $$ mgx-Mg\frac{L}{6}=0 $$
 
@@ -189,13 +189,13 @@
 
 ### 18. Numerical Result
 - Given:
-  $$ M=2.4\text{ kg} $$
-  $$ m=1.6\text{ kg} $$
-  $$ L=1.4\text{ m} $$
+  $$ M=2.4\ \mathrm{kg} $$
+  $$ m=1.6\ \mathrm{kg} $$
+  $$ L=1.4\ \mathrm{m} $$
 - Then:
   $$ x=\frac{(2.4)(1.4)}{6(1.6)} $$
 - Result:
-  $$ x=0.35\text{ m} $$
+  $$ x=0.35\ \mathrm{m} $$
 
 ---
 
@@ -204,7 +204,7 @@
   - to the right of support $B$
   - still located on the plank
 - The result:
-  $$ x=0.35\text{ m} $$
+  $$ x=0.35\ \mathrm{m} $$
   satisfies those physical conditions.
 
 ---
@@ -250,7 +250,7 @@
 - The floor friction balances the wall’s normal force:
   $$ N_W=f_s $$
 - At the threshold of slipping:
-  $$ f_s=f_{s,\max}=\mu_sN_F $$
+  $$ f_s=\mu_s N_F $$
 - Since $N_F=mg$:
   $$ N_W=\mu_smg $$
 
@@ -326,7 +326,7 @@
   $$ m_1<m_2 $$
 - Pulley:
   - mass $M_p$
-  - radius $r$
+  - radius $R$
   - modeled as a solid disk
 - The heavier mass $m_2$ moves downward.
 - The lighter mass $m_1$ moves upward.
@@ -368,34 +368,34 @@
 ### 35. Pulley Torque Equation
 - Choose clockwise rotation as positive.
 - Torque from $T_2$:
-  $$ +T_2r $$
+  $$ +T_2 R $$
 - Torque from $T_1$:
-  $$ -T_1r $$
+  $$ -T_1 R $$
 - Therefore:
-  $$ (T_2-T_1)r=I\alpha $$
+  $$ (T_2-T_1)R=I\alpha $$
 
 ---
 
 ### 36. Pulley Moment of Inertia
 - For a solid-disk pulley:
-  $$ I=\frac{1}{2}M_pr^2 $$
+  $$ I=\frac{1}{2}M_pR^2 $$
 
 ---
 
 ### 37. No-Slip Condition
 - The string does not slip on the pulley:
-  $$ a=\alpha r $$
+  $$ a=\alpha R $$
 - Therefore:
-  $$ \alpha=\frac{a}{r} $$
+  $$ \alpha=\frac{a}{R} $$
 
 ---
 
 ### 38. Substitute into the Torque Equation
 - Start with:
-  $$ (T_2-T_1)r
+  $$ (T_2-T_1)R
      =
-     \left(\frac{1}{2}M_pr^2\right)\frac{a}{r} $$
-- Cancel $r$:
+     \left(\frac{1}{2}M_pR^2\right)\frac{a}{R} $$
+- Cancel $R$:
   $$ T_2-T_1=\frac{1}{2}M_pa $$
 
 ---
@@ -429,7 +429,7 @@
 
 ### 41. Numerical Result
 - Substituting the values from the lecture gives:
-  $$ a\approx2.5\text{ m/s}^2 $$
+  $$ a\approx2.5\ \mathrm{m}/\mathrm{s}^2 $$
 
 ---
 
@@ -465,7 +465,7 @@
 - For a massive pulley:
   $$ T_1\ne T_2 $$
 - Translational and rotational motion are connected through:
-  $$ a=\alpha r $$
+  $$ a=\alpha R $$
 
 ---
 
@@ -479,6 +479,6 @@
 6. Write:
    $$ \sum\tau=I\alpha $$
 7. Apply geometric constraints such as:
-   $$ a=\alpha r $$
+   $$ a=\alpha R $$
 8. Solve symbolically before substituting numbers.
 9. Check the result using units and physical reasoning.

@@ -17,7 +17,7 @@ topic-code: MTH212.M3.16
 
 ## Prerequisites
 
-- Use $F=mv^2/r$ for centripetal force in uniform circular motion.
+- Use the inward-positive radial equation $\sum F_r=m a_r=mv^2/r$ for uniform circular motion.
 - Use $F_g=GMm/r^2$ for gravitational force.
 - Simplify ratios and reciprocal scale factors.
 
@@ -49,9 +49,9 @@ where $C=GMm/2$ is constant. The product form says that the old and new orbits s
 If the radius is multiplied by a factor $c$, then the kinetic energy is divided by that factor:
 
 $$
-r_{\text{new}}=cr_{\text{old}}
+r_{\mathrm{new}}=cr_{\mathrm{old}}
 \quad\Longrightarrow\quad
-K_{\text{new}}=\frac{1}{c}K_{\text{old}}.
+K_{\mathrm{new}}=\frac{1}{c}K_{\mathrm{old}}.
 $$
 
 ---
@@ -63,10 +63,10 @@ $$
 
 **Explanation**
 
-Gravity supplies the centripetal force, so
+Take inward as positive. Gravity supplies the radial net force, so
 
 $$
-\frac{GMm}{r^2}=\frac{mv^2}{r}.
+\sum F_r=m a_r=m\frac{v^2}{r}=F_g=\frac{GMm}{r^2}.
 $$
 
 Cancel $m$ and one factor of $r$:
@@ -147,7 +147,7 @@ Both forms avoid computing $G$, $M$, or $m$. Put the **old radius over the new r
 type: radio
 id: p6-ratio-method
 content: |-
-  A satellite moves from a circular orbit of radius $r$ to one of radius $4r$. What is $K_{\text{new}}/K_{\text{old}}$?
+  A satellite moves from a circular orbit of radius $r$ to one of radius $4r$. What is $K_{\mathrm{new}}/K_{\mathrm{old}}$?
 options:
 - id: a
   content: |-
@@ -179,7 +179,7 @@ options:
 Here the radius scale factor is $c=\frac35$. Since kinetic energy uses the reciprocal factor,
 
 $$
-K_{\text{new}}
+K_{\mathrm{new}}
 =\frac{1}{3/5}K
 =\frac53K.
 $$
@@ -269,7 +269,7 @@ options:
 Compare the new orbit with the old orbit:
 
 $$
-\frac{K_{\text{new}}}{K}
+\frac{K_{\mathrm{new}}}{K}
 =\frac{r}{2r}
 =\frac12.
 $$
@@ -277,7 +277,7 @@ $$
 Therefore,
 
 $$
-K_{\text{new}}=\frac{K}{2}.
+K_{\mathrm{new}}=\frac{K}{2}.
 $$
 
 ```quiz
@@ -311,8 +311,8 @@ options:
 For the same satellite in circular orbits around the same central mass:
 
 1. Start with $K=GMm/(2r)$, so $K\propto 1/r$.
-2. Use the invariant $K_{\text{old}}r_{\text{old}}=K_{\text{new}}r_{\text{new}}$.
-3. Compare the orbits with $K_{\text{new}}/K_{\text{old}}=r_{\text{old}}/r_{\text{new}}$.
+2. Use the invariant $K_{\mathrm{old}}r_{\mathrm{old}}=K_{\mathrm{new}}r_{\mathrm{new}}$.
+3. Compare the orbits with $K_{\mathrm{new}}/K_{\mathrm{old}}=r_{\mathrm{old}}/r_{\mathrm{new}}$.
 4. If the radius is multiplied by $c$, divide the kinetic energy by $c$.
 5. Check the direction: a larger circular orbit has smaller kinetic energy.
 6. Do not use the $1/r^2$ scaling of gravitational force for kinetic energy.

@@ -28,7 +28,7 @@ topic-code: MTH212.M5.36
 When two pulses overlap on the same string, the string has one net displacement at each point. The **principle of superposition** says to add the two signed displacements at that point:
 
 $$
-y_{\text{net}}=y_1+y_2.
+y_{\mathrm{net}}=y_1+y_2.
 $$
 
 If a problem shows two upward pulses approaching each other and asks for the largest displacement while they pass through each other, look for the instant when their peaks completely overlap. Then add the two positive peak heights.
@@ -98,7 +98,7 @@ Superposition is point-by-point addition. Add displacements only when the two pa
 Both displacements are positive, so
 
 $$
-y_{\text{net}}=0.8\ \mathrm{cm}+1.3\ \mathrm{cm}=2.1\ \mathrm{cm}.
+y_{\mathrm{net}}=0.8\ \mathrm{cm}+1.3\ \mathrm{cm}=2.1\ \mathrm{cm}.
 $$
 
 ```quiz
@@ -292,14 +292,14 @@ When two pulses overlap, use this checklist:
 
 - **Cue:** two pulses occupy the same string and pass through one another.
 - **Read:** take signed heights from the vertical axis; do not use horizontal peak locations or travel arrows as displacement signs.
-- **Combine:** add displacements at the same point, $y_{\text{net}}=y_1+y_2$.
+- **Combine:** add displacements at the same point, $y_{\mathrm{net}}=y_1+y_2$.
 - **Maximize:** for two upward pulses, align their peaks and add the two positive peak heights.
 - **Report:** give the maximum vertical value, not its location, and follow the requested units and number format.
 
 The governing equation is
 
 $$
-y_{\text{net}}=y_1+y_2.
+y_{\mathrm{net}}=y_1+y_2.
 $$
 
 For the given pulses,

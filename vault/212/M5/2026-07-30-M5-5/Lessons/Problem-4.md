@@ -50,8 +50,8 @@ Use this calculation map:
 | --- | --- | --- |
 | $r_A,r_B$ | source-to-detector path lengths | distance formula |
 | $\Delta r$ | signed path difference | $r_B-r_A$ |
-| $\Delta\phi_{\text{path}}$ | phase added by unequal paths | $2\pi f\Delta r/v$ |
-| $\Delta\phi$ | total phase difference | $\Delta\phi_0+\Delta\phi_{\text{path}}$ |
+| $\Delta\phi_{\mathrm{path}}$ | phase added by unequal paths | $2\pi f\Delta r/v$ |
+| $\Delta\phi$ | total phase difference | $\Delta\phi_0+\Delta\phi_{\mathrm{path}}$ |
 
 The recognition cue is a problem that gives source locations, a detector location, frequency, wave speed, and an initial phase relationship. The task is to find both path lengths, subtract them in the chosen order, convert that distance difference to radians, and add the initial phase offset.
 
@@ -110,7 +110,7 @@ options:
 <a id="convert-path-difference-to-phase"></a>
 ## Convert Path Difference to Phase
 
-**Example:** A sound has frequency $343\ \mathrm{Hz}$, travels at $343\ \mathrm{m/s}$, and has path difference $0.75\ \mathrm{m}$. Find the phase difference caused by the paths.
+**Example:** A sound has frequency $343\ \mathrm{Hz}$, travels at $343\ \mathrm{m}/\mathrm{s}$, and has path difference $0.75\ \mathrm{m}$. Find the phase difference caused by the paths.
 
 **Explanation**
 
@@ -118,7 +118,7 @@ The wavelength is $\lambda=v/f=1\ \mathrm{m}$, so the path difference is $0.75$ 
 
 $$
 \begin{aligned}
-\Delta\phi_{\text{path}}
+\Delta\phi_{\mathrm{path}}
 &=\frac{2\pi f\Delta r}{v}\\
 &=\frac{2\pi(343)(0.75)}{343}\\
 &=\frac{3\pi}{2}\ \mathrm{rad}.
@@ -131,7 +131,7 @@ The factor $2\pi$ converts cycles to radians. Leaving it out gives a number of c
 type: radio
 id: p4-path-to-phase
 content: |-
-  A wave has $f=686\ \mathrm{Hz}$, $v=343\ \mathrm{m/s}$, and $\Delta r=0.25\ \mathrm{m}$. What is $\Delta\phi_{\text{path}}$?
+  A wave has $f=686\ \mathrm{Hz}$, $v=343\ \mathrm{m}/\mathrm{s}$, and $\Delta r=0.25\ \mathrm{m}$. What is $\Delta\phi_{\mathrm{path}}$?
 options:
 - id: p4-phase-a
   content: |-
@@ -165,7 +165,7 @@ Use the same B-relative-to-A convention for both terms:
 $$
 \begin{aligned}
 \Delta\phi
-&=\Delta\phi_0+\Delta\phi_{\text{path}}\\
+&=\Delta\phi_0+\Delta\phi_{\mathrm{path}}\\
 &=\pi+\frac{3\pi}{2}\\
 &=\frac{5\pi}{2}\ \mathrm{rad}.
 \end{aligned}
@@ -209,7 +209,7 @@ options:
 The unreduced phase is the value produced by the full calculation:
 
 $$
-\Delta\phi_{\text{unreduced}}=\frac{13\pi}{2}\ \mathrm{rad}.
+\Delta\phi_{\mathrm{unreduced}}=\frac{13\pi}{2}\ \mathrm{rad}.
 $$
 
 For a one-cycle representation, subtract whole turns of $2\pi$:
@@ -249,7 +249,7 @@ options:
 <a id="complete-the-two-flute-calculation"></a>
 ## Complete the Two-Flute Calculation
 
-**Example:** Flute A is at $x=-13\ \mathrm{m}$, flute B is at $x=+27\ \mathrm{m}$, and point P is at $(0,61\ \mathrm{m})$. Both flutes emit an $830\ \mathrm{Hz}$ note, the sound speed is $343\ \mathrm{m/s}$, and the flutes begin $\pi$ radians out of phase. Find the phase difference at P.
+**Example:** Flute A is at $x=-13\ \mathrm{m}$, flute B is at $x=+27\ \mathrm{m}$, and point P is at $(0,61\ \mathrm{m})$. Both flutes emit an $830\ \mathrm{Hz}$ note, the sound speed is $343\ \mathrm{m}/\mathrm{s}$, and the flutes begin $\pi$ radians out of phase. Find the phase difference at P.
 
 ![](<../Source/Images/two-flute-source-geometry.png>)
 
@@ -321,8 +321,8 @@ When source positions, a detector position, frequency, wave speed, and an initia
 
 1. Find the full path lengths $r_A$ and $r_B$.
 2. Choose and keep a subtraction order, such as $\Delta r=r_B-r_A$.
-3. Convert distance difference to phase with $\Delta\phi_{\text{path}}=2\pi f\Delta r/v$.
-4. Add the initial offset: $\Delta\phi=\Delta\phi_0+\Delta\phi_{\text{path}}$.
+3. Convert distance difference to phase with $\Delta\phi_{\mathrm{path}}=2\pi f\Delta r/v$.
+4. Add the initial offset: $\Delta\phi=\Delta\phi_0+\Delta\phi_{\mathrm{path}}$.
 5. Reduce modulo $2\pi$ only if the requested answer convention calls for it.
 
 The main traps are subtracting source coordinates instead of path lengths, dropping the factor $2\pi$, forgetting the initial phase offset, and reporting a reduced phase when an unreduced value was requested.

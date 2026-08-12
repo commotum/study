@@ -25,12 +25,12 @@ topic-code: MTH212.M5.32
 <a id="introduction"></a>
 ## Introduction
 
-When a wire fixed at both ends is described by its length $L$, total mass $m$, and tension $T$, and the question asks for its **fundamental frequency**, use the fundamental standing-wave length together with the wave speed on the wire:
+When a wire fixed at both ends is described by its length $L$, total mass $m$, and tension $F_T$, and the question asks for its **fundamental frequency**, use the fundamental standing-wave length together with the wave speed on the wire:
 
 $$
 \lambda_1=2L,
 \qquad
-v=\sqrt{\frac{T}{\mu}},
+v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}},
 \qquad
 \mu=\frac{m}{L}.
 $$
@@ -48,13 +48,13 @@ Before calculating, make three checks:
 <a id="connect-the-fundamental-mode-to-wave-speed"></a>
 ## Connect the Fundamental Mode to Wave Speed
 
-For the fundamental mode, one half-wavelength fits along the wire, so $\lambda_1=2L$. Since $f=v/\lambda$,
+For the fundamental mode, one half-wavelength fits along the wire, so $\lambda_1=2L$. Since $f=v_{\mathrm{wave}}/\lambda$,
 
 $$
-f_1=\frac{v}{2L}.
+f_1=\frac{v_{\mathrm{wave}}}{2L}.
 $$
 
-**Example:** A wire fixed at both ends has $L=2.0\ \mathrm{m}$, total mass $m=0.080\ \mathrm{kg}$, and tension $T=16\ \mathrm{N}$. Find its fundamental frequency.
+**Example:** A wire fixed at both ends has $L=2.0\ \mathrm{m}$, total mass $m=0.080\ \mathrm{kg}$, and tension $F_T=16\ \mathrm{N}$. Find its fundamental frequency.
 
 **Explanation**
 
@@ -62,13 +62,13 @@ First convert total mass to mass per unit length:
 
 $$
 \mu=\frac{m}{L}=\frac{0.080\ \mathrm{kg}}{2.0\ \mathrm{m}}
-=0.040\ \mathrm{kg/m}.
+=0.040\ \mathrm{kg}/\mathrm{m}.
 $$
 
 Then find the wave speed and use $\lambda_1=2L$:
 
 $$
-v=\sqrt{\frac{16}{0.040}}=20\ \mathrm{m/s},
+v_{\mathrm{wave}}=\sqrt{\frac{16}{0.040}}=20\ \mathrm{m}/\mathrm{s},
 \qquad
 f_1=\frac{20}{2(2.0)}=5.0\ \mathrm{Hz}.
 $$
@@ -77,7 +77,7 @@ $$
 type: radio
 id: problem-2-fundamental-q1
 content: |-
-  A wire fixed at both ends has $L=1.5\ \mathrm{m}$, total mass $m=0.060\ \mathrm{kg}$, and tension $T=36\ \mathrm{N}$. What is its fundamental frequency?
+  A wire fixed at both ends has $L=1.5\ \mathrm{m}$, total mass $m=0.060\ \mathrm{kg}$, and tension $F_T=36\ \mathrm{N}$. What is its fundamental frequency?
 options:
 - id: a
   content: |-
@@ -87,7 +87,7 @@ options:
     $10\ \mathrm{Hz}$
   correct: true
   feedback: |-
-    $\mu=0.040\ \mathrm{kg/m}$, $v=30\ \mathrm{m/s}$, and $f_1=v/(2L)=10\ \mathrm{Hz}$.
+    $\mu=0.040\ \mathrm{kg}/\mathrm{m}$, $v_{\mathrm{wave}}=30\ \mathrm{m}/\mathrm{s}$, and $f_1=v_{\mathrm{wave}}/(2L)=10\ \mathrm{Hz}$.
 - id: c
   content: |-
     $20\ \mathrm{Hz}$
@@ -108,8 +108,8 @@ If the problem gives the wire's **total mass** rather than $\mu$, substitute $\m
 
 $$
 f_1
-=\frac{1}{2L}\sqrt{\frac{T}{m/L}}
-=\frac12\sqrt{\frac{T}{mL}}.
+=\frac{1}{2L}\sqrt{\frac{F_T}{m/L}}
+=\frac12\sqrt{\frac{F_T}{mL}}.
 $$
 
 This compact form uses the three given quantities directly.
@@ -117,7 +117,7 @@ This compact form uses the three given quantities directly.
 The units provide a quick check:
 
 $$
-\left[\frac{T}{mL}\right]
+\left[\frac{F_T}{mL}\right]
 =\frac{\mathrm{N}}{\mathrm{kg}\cdot\mathrm{m}}
 =\frac{\mathrm{kg}\cdot\mathrm{m}/\mathrm{s}^2}
 {\mathrm{kg}\cdot\mathrm{m}}
@@ -126,7 +126,7 @@ $$
 
 Taking the square root gives $\mathrm{s}^{-1}=\mathrm{Hz}$, as a frequency should.
 
-**Example:** A wire has $L=0.80\ \mathrm{m}$, $m=0.0050\ \mathrm{kg}$, and $T=40\ \mathrm{N}$. Find $f_1$.
+**Example:** A wire has $L=0.80\ \mathrm{m}$, $m=0.0050\ \mathrm{kg}$, and $F_T=40\ \mathrm{N}$. Find $f_1$.
 
 **Explanation**
 
@@ -142,7 +142,7 @@ $$
 On a calculator, evaluate in the same visible order as the formula:
 
 1. Compute $mL$.
-2. Compute $T/(mL)$.
+2. Compute $F_T/(mL)$.
 3. Take the square root.
 4. Multiply by $1/2$.
 
@@ -152,7 +152,7 @@ This keeps the entire quotient inside the radical and prevents premature roundin
 type: radio
 id: problem-2-fundamental-q2
 content: |-
-  A wire has $L=1.25\ \mathrm{m}$, total mass $m=0.0080\ \mathrm{kg}$, and tension $T=36\ \mathrm{N}$. What is its fundamental frequency?
+  A wire has $L=1.25\ \mathrm{m}$, total mass $m=0.0080\ \mathrm{kg}$, and tension $F_T=36\ \mathrm{N}$. What is its fundamental frequency?
 options:
 - id: a
   content: |-
@@ -181,7 +181,7 @@ options:
 
 The symbol $m$ is the mass of the whole vibrating wire, measured in kilograms. The symbol $\mu$ is mass per unit length, measured in kilograms per meter. They are related by $\mu=m/L$, but they cannot be inserted into the same formula as though they were interchangeable.
 
-**Example:** For $L=0.90\ \mathrm{m}$, $m=0.0030\ \mathrm{kg}$, and $T=27\ \mathrm{N}$, choose a correct direct setup.
+**Example:** For $L=0.90\ \mathrm{m}$, $m=0.0030\ \mathrm{kg}$, and $F_T=27\ \mathrm{N}$, choose a correct direct setup.
 
 **Explanation**
 
@@ -191,20 +191,20 @@ $$
 f_1=\frac12\sqrt{\frac{27}{(0.0030)(0.90)}}.
 $$
 
-The factor $1/2$ comes from $\lambda_1=2L$. Omitting it returns twice the fundamental frequency. Using $m$ directly in $f_1=(1/2L)\sqrt{T/\mu}$ treats kilograms as though they were kilograms per meter.
+The factor $1/2$ comes from $\lambda_1=2L$. Omitting it returns twice the fundamental frequency. Using $m$ directly in $f_1=(1/2L)\sqrt{F_T/\mu}$ treats kilograms as though they were kilograms per meter.
 
 ```quiz
 type: radio
 id: problem-2-fundamental-q3
 content: |-
-  A wire fixed at both ends has $L=1.10\ \mathrm{m}$, total mass $m=0.0040\ \mathrm{kg}$, and tension $T=44\ \mathrm{N}$. Which expression correctly gives its fundamental frequency?
+  A wire fixed at both ends has $L=1.10\ \mathrm{m}$, total mass $m=0.0040\ \mathrm{kg}$, and tension $F_T=44\ \mathrm{N}$. Which expression correctly gives its fundamental frequency?
 options:
 - id: a
   content: |-
     $\displaystyle \frac12\sqrt{\frac{44}{(0.0040)(1.10)}}$
   correct: true
   feedback: |-
-    This is $f_1=\frac12\sqrt{T/(mL)}$, the direct formula when total wire mass is given.
+    This is $f_1=\frac12\sqrt{F_T/(mL)}$, the direct formula when total wire mass is given.
 - id: b
   content: |-
     $\displaystyle \sqrt{\frac{44}{(0.0040)(1.10)}}$
@@ -255,7 +255,7 @@ Keep those two stages distinct: $83.377\ldots\ \mathrm{Hz}$ is the calculator re
 type: radio
 id: problem-2-fundamental-q4
 content: |-
-  A wire has $L=0.60\ \mathrm{m}$, total mass $m=0.0030\ \mathrm{kg}$, and tension $T=30\ \mathrm{N}$. Its fundamental frequency must be entered in hertz as a number only. Which number should be entered?
+  A wire has $L=0.60\ \mathrm{m}$, total mass $m=0.0030\ \mathrm{kg}$, and tension $F_T=30\ \mathrm{N}$. Its fundamental frequency must be entered in hertz as a number only. Which number should be entered?
 options:
 - id: a
   content: |-
@@ -282,11 +282,11 @@ options:
 <a id="summary"></a>
 ## Summary
 
-For a wire fixed at both ends, the phrase **fundamental frequency** signals $\lambda_1=2L$. If the givens are tension $T$, total wire mass $m$, and length $L$:
+For a wire fixed at both ends, the phrase **fundamental frequency** signals $\lambda_1=2L$. If the givens are tension $F_T$, total wire mass $m$, and length $L$:
 
-1. Use $\mu=m/L$ and $v=\sqrt{T/\mu}$, or go directly to
+1. Use $\mu=m/L$ and $v_{\mathrm{wave}}=\sqrt{F_T/\mu}$, or go directly to
    $$
-   f_1=\frac12\sqrt{\frac{T}{mL}}.
+   f_1=\frac12\sqrt{\frac{F_T}{mL}}.
    $$
 2. Keep $mL$ grouped beneath the fraction and keep the factor $1/2$.
 3. Check that the units reduce to $\mathrm{s}^{-1}$, or hertz.

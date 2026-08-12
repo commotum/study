@@ -94,7 +94,7 @@ options:
 <a id="convert-energy-to-amplitude"></a>
 ## Convert Energy to Amplitude
 
-**Example:** After an event, an ideal oscillator has total mechanical energy $12\ \mathrm{J}$ and spring constant $6\ \mathrm{N/m}$. Find its new amplitude.
+**Example:** After an event, an ideal oscillator has total mechanical energy $12\ \mathrm{J}$ and spring constant $6\ \mathrm{N}/\mathrm{m}$. Find its new amplitude.
 
 **Explanation**
 
@@ -126,7 +126,7 @@ This expression requires $E_{\mathrm{after}}\geq 0$, as mechanical energy for th
 type: radio
 id: p10-energy-to-amplitude
 content: |-
-  An ideal spring oscillator has total energy $18\ \mathrm{J}$ and spring constant $4\ \mathrm{N/m}$. What is its amplitude?
+  An ideal spring oscillator has total energy $18\ \mathrm{J}$ and spring constant $4\ \mathrm{N}/\mathrm{m}$. What is its amplitude?
 options:
 - id: p10-amplitude-a
   content: |-

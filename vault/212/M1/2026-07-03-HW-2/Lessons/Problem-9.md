@@ -50,13 +50,13 @@ At one particular speed, the normal force alone supplies the required inward for
 
 **Explanation**
 
-The car is moving in a circle, so its acceleration is centripetal:
+The car is moving in a circle, so its acceleration is radially inward:
 
 $$
-\vec a=\vec a_r.
+\vec{a}=a_r\hat{r}.
 $$
 
-Centripetal acceleration always points toward the center of the circular path. In this side view, the center is horizontally to the left, so the acceleration points directly left.
+Radial acceleration always points toward the center of the circular path. In this side view, the center is horizontally to the left, so the acceleration points directly left.
 
 The acceleration does not point down the ramp. Forces can have components along the ramp, but the net acceleration for this constant-height circular motion is horizontal and inward.
 
@@ -109,7 +109,7 @@ $$
 N\cos\theta=mg.
 $$
 
-The inward component supplies the centripetal force:
+The inward component supplies the radial net force:
 
 $$
 N\sin\theta=\dfrac{mv_0^2}{r}.
@@ -252,10 +252,10 @@ The physical magnitude is $|f_s|$, so the magnitude also depends on $v$.
 The component equations give the static friction that is required, not automatically the maximum friction. The circular path can be maintained only while
 
 $$
-|f_s|\leq \mu_sN.
+|f_s|\leq \mu_s N.
 $$
 
-Use $|f_s|=\mu_sN$ only at the threshold of sliding.
+Use $|f_s|=\mu_s N$ only at the threshold of sliding.
 
 Static friction is limited by a maximum possible value. If the car is too fast, the required down-ramp friction becomes too large, and the car cannot maintain the circular path of radius $r$. That gives a maximum allowable speed.
 
@@ -268,7 +268,7 @@ content: |-
 options:
 - id: p9-q4-a
   content: |-
-    Because the required centripetal force is $\dfrac{mv^2}{r}$, which changes when $v$ changes.
+    Because the required radial net force is $\dfrac{mv^2}{r}$, which changes when $v$ changes.
   correct: true
 - id: p9-q4-b
   content: |-

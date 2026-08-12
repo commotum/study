@@ -16,7 +16,7 @@ topic-code: MTH212.M1.10
 
 ## Prerequisites
 
-- Recognize that a particle moving in a circle has an inward centripetal acceleration.
+- Recognize that a particle moving in a circle has inward radial acceleration.
 - Identify the tangent direction at a point on a circle.
 - Know that a net force component in the direction of motion speeds an object up, while a component opposite the motion slows it down.
 
@@ -176,7 +176,7 @@ Work in two parts:
 1. The inward radial component points down and right, toward the center.
 2. Clockwise velocity at the upper-left point is tangent up and right, so slowing down requires a tangential component down and left.
 
-Combining those components gives a net force that points generally downward, between down-right and down-left. Because mass is positive, $\vec F_{\text{net}}=m\vec a$ guarantees that the net-force arrow and the resultant-acceleration arrow point the same way. Among the arrows shown, that is choice C.
+Combining those components gives a net force that points generally downward, between down-right and down-left. Because mass is positive, $\vec{F}_{\mathrm{net}}=m\vec{a}$ guarantees that the net-force arrow and the resultant-acceleration arrow point the same way. Among the arrows shown, that is choice C.
 
 Before choosing, reject arrows that miss either requirement. A purely tangential arrow does not bend the path, and a purely inward arrow does not match a changing speed. An arrow with an outward part cannot be the net force for circular motion at that instant.
 

@@ -51,7 +51,7 @@ This rule applies during the short impact when the external horizontal impulse i
 <a id="build-the-horizontal-momentum-equation"></a>
 ## Build the Horizontal Momentum Equation
 
-**Example:** A $3\,\mathrm{kg}$ block moves right at $4\,\mathrm{m/s}$. A $1\,\mathrm{kg}$ lump of clay falls vertically onto it and sticks. Write the horizontal momentum equation for the collision.
+**Example:** A $3\,\mathrm{kg}$ block moves right at $4\,\mathrm{m}/\mathrm{s}$. A $1\,\mathrm{kg}$ lump of clay falls vertically onto it and sticks. Write the horizontal momentum equation for the collision.
 
 **Explanation**
 
@@ -59,8 +59,8 @@ Before impact, only the block has horizontal momentum:
 
 $$
 p_{x,\text{before}}
-=(3\,\mathrm{kg})(4\,\mathrm{m/s})+(1\,\mathrm{kg})(0)
-=12\,\mathrm{kg\,m/s}.
+=(3\,\mathrm{kg})(4\,\mathrm{m}/\mathrm{s})+(1\,\mathrm{kg})(0)
+=12\,\mathrm{kg}\,\mathrm{m}/\mathrm{s}.
 $$
 
 After impact, the block and clay move together. If their shared velocity is $v_f$, then
@@ -78,7 +78,7 @@ $$
 Solving gives
 
 $$
-v_f=3\,\mathrm{m/s}.
+v_f=3\,\mathrm{m}/\mathrm{s}.
 $$
 
 The block slows because the same horizontal momentum is carried by more mass after the clay sticks.
@@ -138,24 +138,24 @@ Here, $M+m>0$ because both masses are positive.
 type: radio
 id: p8-solve-shared-speed
 content: |-
-  A $4\,\mathrm{kg}$ block moves at $10\,\mathrm{m/s}$. A $1\,\mathrm{kg}$ clay ball drops vertically and sticks to it. What is their speed immediately after impact?
+  A $4\,\mathrm{kg}$ block moves at $10\,\mathrm{m}/\mathrm{s}$. A $1\,\mathrm{kg}$ clay ball drops vertically and sticks to it. What is their speed immediately after impact?
 options:
 - id: p8-solve-shared-speed-a
   content: |-
-    $8\,\mathrm{m/s}$
+    $8\,\mathrm{m}/\mathrm{s}$
   correct: true
 - id: p8-solve-shared-speed-b
   content: |-
-    $2\,\mathrm{m/s}$
+    $2\,\mathrm{m}/\mathrm{s}$
 - id: p8-solve-shared-speed-c
   content: |-
-    $10\,\mathrm{m/s}$
+    $10\,\mathrm{m}/\mathrm{s}$
 - id: p8-solve-shared-speed-d
   content: |-
-    $12.5\,\mathrm{m/s}$
+    $12.5\,\mathrm{m}/\mathrm{s}$
 - id: p8-solve-shared-speed-e
   content: |-
-    $50\,\mathrm{m/s}$
+    $50\,\mathrm{m}/\mathrm{s}$
 ```
 
 ---
@@ -207,14 +207,14 @@ options:
 <a id="do-not-conserve-kinetic-energy"></a>
 ## Do Not Conserve Kinetic Energy
 
-**Example:** In the earlier collision, a $3\,\mathrm{kg}$ block moving at $4\,\mathrm{m/s}$ sticks to $1\,\mathrm{kg}$ of vertically dropped clay and leaves at $3\,\mathrm{m/s}$. Compare the kinetic energy immediately before and after impact.
+**Example:** In the earlier collision, a $3\,\mathrm{kg}$ block moving at $4\,\mathrm{m}/\mathrm{s}$ sticks to $1\,\mathrm{kg}$ of vertically dropped clay and leaves at $3\,\mathrm{m}/\mathrm{s}$. Compare the kinetic energy immediately before and after impact.
 
 **Explanation**
 
 Before impact,
 
 $$
-K_{\text{before}}
+K_{\mathrm{before}}
 =\frac12(3)(4^2)
 =24\,\mathrm{J}.
 $$
@@ -222,7 +222,7 @@ $$
 After impact,
 
 $$
-K_{\text{after}}
+K_{\mathrm{after}}
 =\frac12(3+1)(3^2)
 =18\,\mathrm{J}.
 $$
@@ -267,8 +267,8 @@ options:
 The location $x=A/2$ was needed to determine the pre-impact speed $v_0$. Once $v_0$ is known, freeze the motion at the collision:
 
 $$
-\underbrace{Mv_0}_{\text{before}}
-=\underbrace{(M+m)v_f}_{\text{after}}.
+\underbrace{Mv_0}_{\mathrm{before}}
+=\underbrace{(M+m)v_f}_{\mathrm{after}}.
 $$
 
 Therefore,

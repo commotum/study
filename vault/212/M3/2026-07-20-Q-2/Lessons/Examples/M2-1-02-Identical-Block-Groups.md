@@ -6,9 +6,9 @@ Source: [[212/M2/2026-07-07-M2-1/Source/Lecture-Notes#Example 2: Arrangement of 
 
 Ten identical blocks, each of mass $m$, are arranged in three groups along the $x$-axis. The groups may be represented by their total masses at their own center positions:
 
-- six blocks centered at $x=1.5\text{ cm}$,
-- two blocks centered at $x=4.0\text{ cm}$,
-- two blocks centered at $x=5.5\text{ cm}$.
+- six blocks centered at $x=1.5\ \mathrm{cm}$,
+- two blocks centered at $x=4.0\ \mathrm{cm}$,
+- two blocks centered at $x=5.5\ \mathrm{cm}$.
 
 **A.** Replace each group by an equivalent point mass and list the three mass-position pairs.
 
@@ -52,9 +52,9 @@ Ten identical blocks, each of mass $m$, are arranged in three groups along the $
 1. Replace the groups by the point masses
 
    $$
-   6m\text{ at }1.5\text{ cm},\qquad
-   2m\text{ at }4.0\text{ cm},\qquad
-   2m\text{ at }5.5\text{ cm}.
+   6m\text{ at }1.5\ \mathrm{cm},\qquad
+   2m\text{ at }4.0\ \mathrm{cm},\qquad
+   2m\text{ at }5.5\ \mathrm{cm}.
    $$
 
 2. Form the weighted average:
@@ -68,15 +68,15 @@ Ten identical blocks, each of mass $m$, are arranged in three groups along the $
 3. Cancel the common block mass $m$:
 
    $$
-   x_{\mathrm{cm}}=\frac{9+8+11}{10}\text{ cm}.
+   x_{\mathrm{cm}}=\frac{9+8+11}{10}\ \mathrm{cm}.
    $$
 
 4. Evaluate:
 
    $$
-   x_{\mathrm{cm}}=2.8\text{ cm}.
+   x_{\mathrm{cm}}=2.8\ \mathrm{cm}.
    $$
 
-5. A plain average of $1.5$, $4.0$, and $5.5$ would give equal influence to unequal groups. The group at $1.5\text{ cm}$ contains three times as many blocks as either other group.
+5. A plain average of $1.5$, $4.0$, and $5.5$ would give equal influence to unequal groups. The group at $1.5\ \mathrm{cm}$ contains three times as many blocks as either other group.
 
-6. The result lies between $1.5\text{ cm}$ and $5.5\text{ cm}$ and is closer to the six-block group, so it passes the physical check.
+6. The result lies between $1.5\ \mathrm{cm}$ and $5.5\ \mathrm{cm}$ and is closer to the six-block group, so it passes the physical check.

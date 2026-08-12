@@ -146,7 +146,7 @@ options:
 After impact, the cylinder and bullet rotate together. Add both contributions about the same spindle:
 
 $$
-I_f=I_{\text{cylinder}}+I_{\text{bullet}}.
+I_f=I_{\mathrm{cylinder}}+I_{\mathrm{bullet}}.
 $$
 
 The solid cylinder contributes $\frac12Mr^2$. The embedded bullet is modeled as a point mass at distance $r$, so it contributes $mr^2$. Therefore,
@@ -215,7 +215,7 @@ The dimensions verify the simplified expression:
 $$
 \frac{mv}{r(\frac12M+m)}
 \longrightarrow
-\frac{\mathrm{kg}\,\mathrm{m/s}}{\mathrm{m}\,\mathrm{kg}}
+\frac{\mathrm{kg}\,\mathrm{m}/\mathrm{s}}{\mathrm{m}\,\mathrm{kg}}
 =\mathrm{s^{-1}}.
 $$
 
@@ -231,26 +231,26 @@ $$
 type: radio
 id: m2-5-p5-calculate-angular-speed
 content: |-
-  A bullet with $m=0.20\ \mathrm{kg}$ and $v=3.0\ \mathrm{m/s}$ embeds tangentially at the rim of a solid cylinder with $M=1.6\ \mathrm{kg}$ and $r=0.50\ \mathrm{m}$. What is the final angular speed?
+  A bullet with $m=0.20\ \mathrm{kg}$ and $v=3.0\ \mathrm{m}/\mathrm{s}$ embeds tangentially at the rim of a solid cylinder with $M=1.6\ \mathrm{kg}$ and $r=0.50\ \mathrm{m}$. What is the final angular speed?
 options:
 - id: a
   content: |-
-    $1.2\ \mathrm{rad/s}$
+    $1.2\ \mathrm{rad}/\mathrm{s}$
   correct: true
   feedback: |-
-    $\omega_f=mv/[r(\frac12M+m)]=(0.20)(3.0)/[(0.50)(0.80+0.20)]=1.2\ \mathrm{rad/s}$.
+    $\omega_f=mv/[r(\frac12M+m)]=(0.20)(3.0)/[(0.50)(0.80+0.20)]=1.2\ \mathrm{rad}/\mathrm{s}$.
 - id: b
   content: |-
-    $0.60\ \mathrm{rad/s}$
+    $0.60\ \mathrm{rad}/\mathrm{s}$
 - id: c
   content: |-
-    $2.4\ \mathrm{rad/s}$
+    $2.4\ \mathrm{rad}/\mathrm{s}$
 - id: d
   content: |-
-    $3.0\ \mathrm{rad/s}$
+    $3.0\ \mathrm{rad}/\mathrm{s}$
 - id: e
   content: |-
-    $6.0\ \mathrm{rad/s}$
+    $6.0\ \mathrm{rad}/\mathrm{s}$
 ```
 
 ---
@@ -285,12 +285,12 @@ Evaluate the grouped pieces before dividing:
 Therefore,
 
 $$
-\omega_f=\frac{1.33}{1.4025}=0.9483\ldots\ \mathrm{rad/s}.
+\omega_f=\frac{1.33}{1.4025}=0.9483\ldots\ \mathrm{rad}/\mathrm{s}.
 $$
 
-The measured givens have two significant figures, so the final value is $0.95\ \mathrm{rad/s}$.
+The measured givens have two significant figures, so the final value is $0.95\ \mathrm{rad}/\mathrm{s}$.
 
-As a reasonableness check, $v/r=3.8/0.85\approx4.47\ \mathrm{rad/s}$, and the combined cylinder-bullet angular speed $0.95\ \mathrm{rad/s}$ is smaller.
+As a reasonableness check, $v/r=3.8/0.85\approx4.47\ \mathrm{rad}/\mathrm{s}$, and the combined cylinder-bullet angular speed $0.95\ \mathrm{rad}/\mathrm{s}$ is smaller.
 
 ```quiz
 type: radio
@@ -298,7 +298,7 @@ id: m2-5lec-q4
 content: |-
   **Question 4**
 
-  A bullet of mass $m$ moving at speed $v$ embeds in the rim of a solid uniform cylinder of mass $M$ and radius $r$, initially at rest on a spindle. Find the final angular speed for $m=0.35\ \mathrm{kg}$, $M=2.6\ \mathrm{kg}$, $r=0.85\ \mathrm{m}$, and $v=3.8\ \mathrm{m/s}$.
+  A bullet of mass $m$ moving at speed $v$ embeds in the rim of a solid uniform cylinder of mass $M$ and radius $r$, initially at rest on a spindle. Find the final angular speed for $m=0.35\ \mathrm{kg}$, $M=2.6\ \mathrm{kg}$, $r=0.85\ \mathrm{m}$, and $v=3.8\ \mathrm{m}/\mathrm{s}$.
 
   ![](<../Source/Images/bullet-embedding-solid-cylinder.png>)
 
@@ -328,10 +328,10 @@ options:
     $$
     \omega_f
     =\frac{(0.35)(3.8)}{(0.85)[\frac12(2.6)+0.35]}
-    =0.9483\ldots\ \mathrm{rad/s}.
+    =0.9483\ldots\ \mathrm{rad}/\mathrm{s}.
     $$
 
-    The measured givens have two significant figures, so $\omega_f=0.95\ \mathrm{rad/s}$.
+    The measured givens have two significant figures, so $\omega_f=0.95\ \mathrm{rad}/\mathrm{s}$.
 - id: b
   content: |-
     `1.2`

@@ -137,7 +137,7 @@ options:
 <a id="turn-the-fractional-shift-into-radial-velocity"></a>
 ## Turn the Fractional Shift into Radial Velocity
 
-**Example:** A galaxy's spectral line has fractional shift $z=-2.0\times10^{-3}$. Find its radial velocity using $c=3.00\times10^8\ \mathrm{m/s}$.
+**Example:** A galaxy's spectral line has fractional shift $z=-2.0\times10^{-3}$. Find its radial velocity using $c=3.00\times10^8\ \mathrm{m}/\mathrm{s}$.
 
 **Explanation**
 
@@ -156,47 +156,47 @@ Now substitute the given fractional shift:
 $$
 \begin{aligned}
 v_r&\approx cz\\
-&=(3.00\times10^8\ \mathrm{m/s})
+&=(3.00\times10^8\ \mathrm{m}/\mathrm{s})
 (-2.0\times10^{-3})\\
-&=-6.0\times10^5\ \mathrm{m/s}.
+&=-6.0\times10^5\ \mathrm{m}/\mathrm{s}.
 \end{aligned}
 $$
 
-The negative sign is part of the answer: it indicates motion toward Earth. Thus the galaxy is approaching at a speed of $6.0\times10^5\ \mathrm{m/s}$, or equivalently has radial velocity $-6.0\times10^5\ \mathrm{m/s}$.
+The negative sign is part of the answer: it indicates motion toward Earth. Thus the galaxy is approaching at a speed of $6.0\times10^5\ \mathrm{m}/\mathrm{s}$, or equivalently has radial velocity $-6.0\times10^5\ \mathrm{m}/\mathrm{s}$.
 
 ```quiz
 type: radio
 id: radial-velocity-from-fractional-shift
 shuffle: true
 content: |-
-  A galaxy has fractional wavelength shift $z=-2.0\times10^{-3}$. Using $c=3.00\times10^8\ \mathrm{m/s}$, which radial velocity and direction are correct?
+  A galaxy has fractional wavelength shift $z=-2.0\times10^{-3}$. Using $c=3.00\times10^8\ \mathrm{m}/\mathrm{s}$, which radial velocity and direction are correct?
 options:
 - id: negative-six-e-five-approaching
   content: |-
-    $v_r=-6.0\times10^5\ \mathrm{m/s}$; approaching.
+    $v_r=-6.0\times10^5\ \mathrm{m}/\mathrm{s}$; approaching.
   correct: true
   feedback: |-
-    In the nonrelativistic limit, $v_r\approx cz$. Multiplying $-2.0\times10^{-3}$ by $3.00\times10^8\ \mathrm{m/s}$ gives $-6.0\times10^5\ \mathrm{m/s}$; the negative sign means approaching.
+    In the nonrelativistic limit, $v_r\approx cz$. Multiplying $-2.0\times10^{-3}$ by $3.00\times10^8\ \mathrm{m}/\mathrm{s}$ gives $-6.0\times10^5\ \mathrm{m}/\mathrm{s}$; the negative sign means approaching.
 - id: positive-six-e-five-receding
   content: |-
-    $v_r=+6.0\times10^5\ \mathrm{m/s}$; receding.
+    $v_r=+6.0\times10^5\ \mathrm{m}/\mathrm{s}$; receding.
   feedback: |-
     This drops the negative sign of the wavelength shift. Since $c$ is positive, $v_r=cz$ must have the same sign as $z$, so the radial velocity is negative and the galaxy is approaching.
 - id: negative-six-e-five-receding
   content: |-
-    $v_r=-6.0\times10^5\ \mathrm{m/s}$; receding.
+    $v_r=-6.0\times10^5\ \mathrm{m}/\mathrm{s}$; receding.
   feedback: |-
     The numerical velocity is correct, but its interpretation is reversed. With positive defined as away from Earth, a negative radial velocity indicates approach, not recession.
 - id: fractional-shift-as-speed
   content: |-
-    $v_r=-2.0\times10^{-3}\ \mathrm{m/s}$; approaching.
+    $v_r=-2.0\times10^{-3}\ \mathrm{m}/\mathrm{s}$; approaching.
   feedback: |-
-    The value $-2.0\times10^{-3}$ is the dimensionless fractional shift, not a velocity. Multiplying it by $c$ supplies velocity units and gives $-6.0\times10^5\ \mathrm{m/s}$.
+    The value $-2.0\times10^{-3}$ is the dimensionless fractional shift, not a velocity. Multiplying it by $c$ supplies velocity units and gives $-6.0\times10^5\ \mathrm{m}/\mathrm{s}$.
 - id: divide-by-light-speed
   content: |-
-    $v_r=-6.7\times10^{-12}\ \mathrm{m/s}$; approaching.
+    $v_r=-6.7\times10^{-12}\ \mathrm{m}/\mathrm{s}$; approaching.
   feedback: |-
-    This divides the fractional shift by $c$. The relationship is $v_r/c\approx z$, so solving for velocity requires multiplication: $v_r\approx cz=-6.0\times10^5\ \mathrm{m/s}$.
+    This divides the fractional shift by $c$. The relationship is $v_r/c\approx z$, so solving for velocity requires multiplication: $v_r\approx cz=-6.0\times10^5\ \mathrm{m}/\mathrm{s}$.
 ```
 
 ---
@@ -225,9 +225,9 @@ There is no need to convert each wavelength to meters because the ratio is dimen
 $$
 \begin{aligned}
 v_r
-&\approx (3.00\times10^8\ \mathrm{m/s})
+&\approx (3.00\times10^8\ \mathrm{m}/\mathrm{s})
 (-2.5\times10^{-3})\\
-&=-7.5\times10^5\ \mathrm{m/s}.
+&=-7.5\times10^5\ \mathrm{m}/\mathrm{s}.
 \end{aligned}
 $$
 
@@ -238,32 +238,32 @@ type: radio
 id: wavelength-shift-units-and-precision
 shuffle: true
 content: |-
-  A line is observed at $478.8\ \mathrm{nm}$ rather than $480.0\ \mathrm{nm}$. Using $c=3.00\times10^8\ \mathrm{m/s}$, which result is correct?
+  A line is observed at $478.8\ \mathrm{nm}$ rather than $480.0\ \mathrm{nm}$. Using $c=3.00\times10^8\ \mathrm{m}/\mathrm{s}$, which result is correct?
 options:
 - id: negative-seven-five-e-five
   content: |-
-    $v_r=-7.5\times10^5\ \mathrm{m/s}$; approaching.
+    $v_r=-7.5\times10^5\ \mathrm{m}/\mathrm{s}$; approaching.
   correct: true
   feedback: |-
-    The shift is $z=(478.8-480.0)/480.0=-2.5\times10^{-3}$. Multiplying by $c$ gives $-7.5\times10^5\ \mathrm{m/s}$, and the negative sign identifies approach.
+    The shift is $z=(478.8-480.0)/480.0=-2.5\times10^{-3}$. Multiplying by $c$ gives $-7.5\times10^5\ \mathrm{m}/\mathrm{s}$, and the negative sign identifies approach.
 - id: positive-seven-five-e-five
   content: |-
-    $v_r=+7.5\times10^5\ \mathrm{m/s}$; receding.
+    $v_r=+7.5\times10^5\ \mathrm{m}/\mathrm{s}$; receding.
   feedback: |-
-    This loses the sign of the blueshift. Because the observed wavelength is shorter, observed minus laboratory is negative, so the radial velocity must be $-7.5\times10^5\ \mathrm{m/s}$ and the galaxy is approaching.
+    This loses the sign of the blueshift. Because the observed wavelength is shorter, observed minus laboratory is negative, so the radial velocity must be $-7.5\times10^5\ \mathrm{m}/\mathrm{s}$ and the galaxy is approaching.
 - id: negative-two-five-e-three
   content: |-
-    $v_r=-2.5\times10^{-3}\ \mathrm{m/s}$; approaching.
+    $v_r=-2.5\times10^{-3}\ \mathrm{m}/\mathrm{s}$; approaching.
   feedback: |-
-    The number $-2.5\times10^{-3}$ is $z$, the dimensionless wavelength ratio. It must be multiplied by $c$ to become the velocity $-7.5\times10^5\ \mathrm{m/s}$.
+    The number $-2.5\times10^{-3}$ is $z$, the dimensionless wavelength ratio. It must be multiplied by $c$ to become the velocity $-7.5\times10^5\ \mathrm{m}/\mathrm{s}$.
 - id: negative-seven-five-e-eight
   content: |-
-    $v_r=-7.5\times10^8\ \mathrm{m/s}$; approaching.
+    $v_r=-7.5\times10^8\ \mathrm{m}/\mathrm{s}$; approaching.
   feedback: |-
-    This introduces an extra factor of $10^3$ even though the nanometer units already cancel between numerator and denominator. The dimensionless shift is $-0.0025$, so the speed is well below $c$: $-7.5\times10^5\ \mathrm{m/s}$.
+    This introduces an extra factor of $10^3$ even though the nanometer units already cancel between numerator and denominator. The dimensionless shift is $-0.0025$, so the speed is well below $c$: $-7.5\times10^5\ \mathrm{m}/\mathrm{s}$.
 - id: negative-seven-five-e-five-receding
   content: |-
-    $v_r=-7.5\times10^5\ \mathrm{m/s}$; receding.
+    $v_r=-7.5\times10^5\ \mathrm{m}/\mathrm{s}$; receding.
   feedback: |-
     The magnitude and sign are correct, but the direction label conflicts with the convention. A negative radial velocity is motion toward Earth, so the galaxy is approaching.
 ```
@@ -297,16 +297,16 @@ z
 &=\frac{-2.3\ \mathrm{nm}}{656.3\ \mathrm{nm}}
 =-0.003504\ldots,\\
 v_r
-&\approx (3.00\times10^8\ \mathrm{m/s})(-0.003504\ldots)\\
-&=-1.051\ldots\times10^6\ \mathrm{m/s}\\
-&\approx -1.1\times10^6\ \mathrm{m/s}.
+&\approx (3.00\times10^8\ \mathrm{m}/\mathrm{s})(-0.003504\ldots)\\
+&=-1.051\ldots\times10^6\ \mathrm{m}/\mathrm{s}\\
+&\approx -1.1\times10^6\ \mathrm{m}/\mathrm{s}.
 \end{aligned}
 $$
 
 Therefore, the galaxy is **approaching**, with radial velocity
 
 $$
-\boxed{v_r\approx-1.1\times10^6\ \mathrm{m/s}},
+\boxed{v_r\approx-1.1\times10^6\ \mathrm{m}/\mathrm{s}},
 $$
 
 where the negative sign denotes motion toward Earth.
@@ -320,30 +320,30 @@ content: |-
 options:
 - id: approaching-negative-one-one-e-six
   content: |-
-    Approaching; $v_r\approx-1.1\times10^6\ \mathrm{m/s}$.
+    Approaching; $v_r\approx-1.1\times10^6\ \mathrm{m}/\mathrm{s}$.
   correct: true
   feedback: |-
-    A shorter observed wavelength is a blueshift. Using $v_r/c\approx(654.0-656.3)/656.3$ gives $v_r\approx-1.1\times10^6\ \mathrm{m/s}$, whose negative sign denotes motion toward Earth.
+    A shorter observed wavelength is a blueshift. Using $v_r/c\approx(654.0-656.3)/656.3$ gives $v_r\approx-1.1\times10^6\ \mathrm{m}/\mathrm{s}$, whose negative sign denotes motion toward Earth.
 - id: receding-positive-one-one-e-six
   content: |-
-    Receding; $v_r\approx+1.1\times10^6\ \mathrm{m/s}$.
+    Receding; $v_r\approx+1.1\times10^6\ \mathrm{m}/\mathrm{s}$.
   feedback: |-
     This reverses the wavelength subtraction. Since $654.0\ \mathrm{nm}<656.3\ \mathrm{nm}$, the line is blueshifted; observed minus laboratory is negative, so the galaxy is approaching with negative radial velocity.
 - id: approaching-positive-one-one-e-six
   content: |-
-    Approaching; $v_r\approx+1.1\times10^6\ \mathrm{m/s}$.
+    Approaching; $v_r\approx+1.1\times10^6\ \mathrm{m}/\mathrm{s}$.
   feedback: |-
-    The direction and speed magnitude are right, but the sign conflicts with the stated convention. Motion toward Earth is negative radial velocity, so the signed answer must be $-1.1\times10^6\ \mathrm{m/s}$.
+    The direction and speed magnitude are right, but the sign conflicts with the stated convention. Motion toward Earth is negative radial velocity, so the signed answer must be $-1.1\times10^6\ \mathrm{m}/\mathrm{s}$.
 - id: approaching-negative-one-one-e-three
   content: |-
-    Approaching; $v_r\approx-1.1\times10^3\ \mathrm{m/s}$.
+    Approaching; $v_r\approx-1.1\times10^3\ \mathrm{m}/\mathrm{s}$.
   feedback: |-
-    This uses $3.00\times10^5$ as though it were the speed of light in meters per second. That value is $c$ in kilometers per second; using $c=3.00\times10^8\ \mathrm{m/s}$ gives $-1.1\times10^6\ \mathrm{m/s}$.
+    This uses $3.00\times10^5$ as though it were the speed of light in meters per second. That value is $c$ in kilometers per second; using $c=3.00\times10^8\ \mathrm{m}/\mathrm{s}$ gives $-1.1\times10^6\ \mathrm{m}/\mathrm{s}$.
 - id: approaching-negative-three-five-e-three
   content: |-
-    Approaching; $v_r\approx-3.5\times10^{-3}\ \mathrm{m/s}$.
+    Approaching; $v_r\approx-3.5\times10^{-3}\ \mathrm{m}/\mathrm{s}$.
   feedback: |-
-    The value near $-3.5\times10^{-3}$ is the dimensionless fractional wavelength shift, not the radial velocity. Multiplying it by $c$ gives $-1.1\times10^6\ \mathrm{m/s}$.
+    The value near $-3.5\times10^{-3}$ is the dimensionless fractional wavelength shift, not the radial velocity. Multiplying it by $c$ gives $-1.1\times10^6\ \mathrm{m}/\mathrm{s}$.
 ```
 
 ---

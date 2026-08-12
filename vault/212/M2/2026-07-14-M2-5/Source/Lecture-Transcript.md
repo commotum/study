@@ -335,7 +335,7 @@ Using the numerical values supplied in the activity gives
 
 $$
 \boxed{
-v\approx2.5\ \mathrm{m/s}
+v\approx2.5\ \mathrm{m}/\mathrm{s}
 }.
 $$
 
@@ -624,14 +624,14 @@ $$
 If the initial angular velocity is
 
 $$
-\omega_0=4.2\ \mathrm{rad/s},
+\omega_0=4.2\ \mathrm{rad}/\mathrm{s},
 $$
 
 then
 
 $$
 \boxed{
-\omega_f=2.1\ \mathrm{rad/s}
+\omega_f=2.1\ \mathrm{rad}/\mathrm{s}
 }.
 $$
 
@@ -948,7 +948,7 @@ $$
 \boxed{
 \omega_f
 =
-0.95\ \mathrm{rad/s}
+0.95\ \mathrm{rad}/\mathrm{s}
 }.
 $$
 

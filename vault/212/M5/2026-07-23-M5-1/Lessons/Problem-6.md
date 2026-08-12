@@ -42,13 +42,13 @@ topic-code: MTH212.M5.06
 For a wave traveling to the right with speed $v_{\mathrm{wave}}$,
 
 $$
-v_y=-v_{\mathrm{wave}}\frac{\partial y}{\partial x}.
+u_y=-v_{\mathrm{wave}}\frac{\partial y}{\partial x}.
 $$
 
 The particle's **speed** is the magnitude of its vertical velocity:
 
 $$
-|v_y|=v_{\mathrm{wave}}\left|\frac{\partial y}{\partial x}\right|.
+|u_y|=v_{\mathrm{wave}}\left|\frac{\partial y}{\partial x}\right|.
 $$
 
 Because $v_{\mathrm{wave}}$ is the same at every labeled point, compare only the magnitude of the local slope. The steepest point has the greatest particle speed.
@@ -82,7 +82,7 @@ options:
   content: |-
     The point with slope $0$
   feedback: |-
-    A zero slope makes $|v_y|=v_{\mathrm{wave}}|\partial y/\partial x|=0$, so this particle is instantaneously at rest rather than moving fastest.
+    A zero slope makes $|u_y|=v_{\mathrm{wave}}|\partial y/\partial x|=0$, so this particle is instantaneously at rest rather than moving fastest.
 - id: p6-largest-slope-c
   content: |-
     The point with slope $+4$
@@ -108,7 +108,7 @@ At a smooth crest or trough, the graph is locally horizontal:
 $$
 \frac{\partial y}{\partial x}=0
 \quad\Longrightarrow\quad
-|v_y|=0.
+|u_y|=0.
 $$
 
 For a sinusoidal wave, the slope magnitude is greatest at an equilibrium crossing. That is where particles move fastest at that instant.
@@ -163,12 +163,12 @@ options:
 The sign in
 
 $$
-v_y=-v_{\mathrm{wave}}\frac{\partial y}{\partial x}
+u_y=-v_{\mathrm{wave}}\frac{\partial y}{\partial x}
 $$
 
 determines the particle's vertical direction for a right-moving wave:
 
-| Local slope | Particle velocity $v_y$ |
+| Local slope | Particle velocity $u_y$ |
 | --- | --- |
 | Positive | Negative: downward |
 | Negative | Positive: upward |
@@ -179,7 +179,7 @@ Direction uses the sign of the slope; speed uses its magnitude.
 The units also check the relationship:
 
 $$
-[v_y]
+[u_y]
 =\left[ v_{\mathrm{wave}}\frac{\partial y}{\partial x}\right]
 =\frac{\mathrm{length}}{\mathrm{time}}
 \frac{\mathrm{length}}{\mathrm{length}}
@@ -264,7 +264,7 @@ options:
 - id: p6-source-check-c
   content: C
   correct: true
-  feedback: For a right-moving wave, $|v_y|=v_{\mathrm{wave}}|\partial y/\partial x|$. Point C lies where the magnitude of the slope is greatest, so its particle speed is greatest.
+  feedback: For a right-moving wave, $|u_y|=v_{\mathrm{wave}}|\partial y/\partial x|$. Point C lies where the magnitude of the slope is greatest, so its particle speed is greatest.
 - id: p6-source-check-d
   content: D
   feedback: |-
@@ -312,7 +312,7 @@ options:
 ## Summary
 
 - Cue: a traveling-wave snapshot asks for a particle's speed.
-- Rule: compare $|\partial y/\partial x|$ because $|v_y|=v_{\mathrm{wave}}|\partial y/\partial x|$.
+- Rule: compare $|\partial y/\partial x|$ because $|u_y|=v_{\mathrm{wave}}|\partial y/\partial x|$.
 - Procedure: imagine a tiny tangent at each labeled point, compare absolute slopes, and choose the tangent farthest from horizontal.
 - Fastest point: the labeled point where the graph is locally steepest.
 - Stationary point: a smooth crest or trough, where the slope is zero.

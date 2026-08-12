@@ -34,7 +34,7 @@ When a horizontal system rests on one support and the question asks where that s
 For a rod of length $L$ supported a distance $d$ from its left end, the important positions measured from the left end are
 
 $$
-x_{\text{left object}}=0, \qquad x_{\text{support}}=d, \qquad x_{\text{rod}}=\frac{L}{2}.
+x_{\mathrm{left object}}=0, \qquad x_{\mathrm{support}}=d, \qquad x_{\mathrm{rod}}=\frac{L}{2}.
 $$
 
 ---
@@ -83,13 +83,13 @@ options:
 A lever arm is the distance from the pivot to the force's line of action. Therefore,
 
 $$
-r_{\text{left object}}=d-0=d,
+r_{\mathrm{left object}}=d-0=d,
 $$
 
 and
 
 $$
-r_{\text{rod}}=\frac{L}{2}-d.
+r_{\mathrm{rod}}=\frac{L}{2}-d.
 $$
 
 The quantity $L/2$ is the rod center's coordinate, not its distance from the support. Subtract the support coordinate $d$.
@@ -202,7 +202,7 @@ This support position is also the combined center of mass. It must lie between $
 Substitution checks the torque balance itself. At $d=L/3$,
 
 $$
-\tau_{\text{left}}
+\tau_{\mathrm{left}}
 =\left(\frac{m}{2}g\right)\frac{L}{3}
 =\frac{mgL}{6},
 $$
@@ -210,7 +210,7 @@ $$
 while
 
 $$
-\tau_{\text{rod}}
+\tau_{\mathrm{rod}}
 =mg\left(\frac{L}{2}-\frac{L}{3}\right)
 =\frac{mgL}{6}.
 $$

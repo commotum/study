@@ -17,7 +17,7 @@ topic-code: MTH212.M5.17
 
 ## Prerequisites
 
-- Use the wave relation $c=f\lambda$ for sound traveling at speed $c$.
+- Use the Doppler-specialized wave relation $v=f\lambda$, where $v$ is the speed of sound.
 - Interpret frequency as the number of wave crests arriving per unit time.
 - Recognize that “toward” decreases a distance while “away” increases it.
 
@@ -26,30 +26,30 @@ topic-code: MTH212.M5.17
 <a id="introduction"></a>
 ## Introduction
 
-When a source of sound moves while its listener is stationary, the source changes the spacing between successive wave crests. The sound still travels through the air at speed $c$; it does not travel at $c+v$ or $c-v$.
+When a source of sound moves while its listener is stationary, the source changes the spacing between successive wave crests. The sound still travels through the air at speed $v$; it does not travel at $v+v_s$ or $v-v_s$.
 
-For a source moving directly toward a stationary listener at speed $v$, the crests in front of the source are closer together. Find that shortened wavelength first, then use $f=c/\lambda$ to determine the frequency heard by the listener. The formulas in this lesson assume direct line-of-sight motion, a stationary listener, and $0\le v<c$.
+For a source moving directly toward a stationary listener at speed $v_s$, the crests in front of the source are closer together. Find that shortened wavelength first, then use $f=v/\lambda$ to determine the frequency heard by the listener. The formulas in this lesson assume direct line-of-sight motion, a stationary listener, and $0\le v_s<v$.
 
 The result is
 
 $$
-f_{\text{heard}}=\frac{c}{c-v}f_0,
+f_{\mathrm{obs}}=\frac{v}{v-v_s}f_0,
 $$
 
-where $f_0$ is the frequency emitted by the source. Because $c-v<c$, the factor $c/(c-v)$ is greater than $1$, matching the fact that approaching motion raises the heard frequency.
+where $f_0$ is the frequency emitted by the source. Because $v-v_s<v$, the factor $v/(v-v_s)$ is greater than $1$, matching the fact that approaching motion raises the observed frequency.
 
 Before choosing a formula, ask:
 
 1. **Who moves?** Here, it is the source.
 2. **Which way?** Toward means the wavefront spacing decreases.
-3. **Should the answer rise or fall?** Toward means $f_{\text{heard}}>f_0$.
+3. **Should the answer rise or fall?** Toward means $f_{\mathrm{obs}}>f_0$.
 
 ---
 
 <a id="find-the-wavelength-in-front-of-the-source"></a>
 ## Find the Wavelength in Front of the Source
 
-**Example:** A source emits a tone of frequency $500\ \mathrm{Hz}$ while moving at $20\ \mathrm{m/s}$ toward a stationary listener. Take the speed of sound to be $340\ \mathrm{m/s}$. What is the wavelength in front of the source?
+**Example:** A source emits a tone of frequency $500\ \mathrm{Hz}$ while moving at $20\ \mathrm{m}/\mathrm{s}$ toward a stationary listener. Take the speed of sound to be $340\ \mathrm{m}/\mathrm{s}$. What is the wavelength in front of the source?
 
 **Explanation**
 
@@ -63,22 +63,22 @@ During one period, the first crest travels forward a distance $cT$, while the so
 
 $$
 \begin{aligned}
-\lambda_{\text{front}}
-&=cT-vT\\
-&=(c-v)T\\
-&=\frac{c-v}{f_0}\\
+\lambda_{\mathrm{front}}
+&=vT-v_sT\\
+&=(v-v_s)T\\
+&=\frac{v-v_s}{f_0}\\
 &=\frac{340-20}{500}\ \mathrm{m}\\
 &=0.64\ \mathrm{m}.
 \end{aligned}
 $$
 
-Subtracting $v$ is appropriate because the source moves toward the crest it just emitted, reducing the space before the next crest.
+Subtracting $v_s$ is appropriate because the source moves toward the crest it just emitted, reducing the space before the next crest.
 
 ```quiz
 type: radio
 id: problem-4-q1
 content: |-
-  A source emits a $300\ \mathrm{Hz}$ tone while moving at $30\ \mathrm{m/s}$ toward a stationary listener. If $c=330\ \mathrm{m/s}$, what is the wavelength in front of the source?
+  A source emits a $300\ \mathrm{Hz}$ tone while moving at $v_s=30\ \mathrm{m}/\mathrm{s}$ toward a stationary listener. If $v=330\ \mathrm{m}/\mathrm{s}$, what is the wavelength in front of the source?
 options:
 - id: problem-4-q1-a
   content: |-
@@ -107,29 +107,29 @@ options:
 
 **Explanation**
 
-The crests pass the stationary listener at the sound speed $c$, so use $f=c/\lambda$ with the shortened wavelength:
+The crests pass the stationary listener at the sound speed $v$, so use $f=v/\lambda$ with the shortened wavelength:
 
 $$
 \begin{aligned}
-f_{\text{heard}}
-&=\frac{c}{\lambda_{\text{front}}}\\
-&=\frac{c}{(c-v)/f_0}\\
-&=\frac{c}{c-v}f_0\\
+f_{\mathrm{obs}}
+&=\frac{v}{\lambda_{\mathrm{front}}}\\
+&=\frac{v}{(v-v_s)/f_0}\\
+&=\frac{v}{v-v_s}f_0\\
 &=\frac{340}{340-20}(500\ \mathrm{Hz})\\
 &=531.25\ \mathrm{Hz}.
 \end{aligned}
 $$
 
-The source motion changed the wavelength; the sound speed at the listener remains $c$.
+The source motion changed the wavelength; the sound speed at the listener remains $v$.
 
 The units also check:
 
 $$
-\left[\frac{c}{c-v}\right]
-=\frac{\mathrm{m/s}}{\mathrm{m/s}}
+\left[\frac{v}{v-v_s}\right]
+=\frac{\mathrm{m}/\mathrm{s}}{\mathrm{m}/\mathrm{s}}
 =1,
 \qquad
-[f_{\text{heard}}]=1\cdot\mathrm{Hz}=\mathrm{Hz}.
+[f_{\mathrm{obs}}]=1\cdot\mathrm{Hz}=\mathrm{Hz}.
 $$
 
 The Doppler factor is dimensionless, so multiplying by $f_0$ produces another frequency.
@@ -138,7 +138,7 @@ The Doppler factor is dimensionless, so multiplying by $f_0$ produces another fr
 type: radio
 id: problem-4-q2
 content: |-
-  A source emits a $400\ \mathrm{Hz}$ tone while moving at $40\ \mathrm{m/s}$ toward a stationary listener. If $c=360\ \mathrm{m/s}$, what frequency does the listener hear?
+  A source emits a $400\ \mathrm{Hz}$ tone while moving at $v_s=40\ \mathrm{m}/\mathrm{s}$ toward a stationary listener. If $v=360\ \mathrm{m}/\mathrm{s}$, what frequency does the listener hear?
 options:
 - id: problem-4-q2-a
   content: |-
@@ -170,49 +170,49 @@ options:
 When the source moves away, it increases the spacing between successive crests traveling toward the listener:
 
 $$
-\lambda_{\text{back}}=\frac{c+v}{f_0}.
+\lambda_{\mathrm{back}}=\frac{v+v_s}{f_0}.
 $$
 
 Consequently,
 
 $$
-f_{\text{heard}}
-=\frac{c}{\lambda_{\text{back}}}
-=\frac{c}{c+v}f_0.
+f_{\mathrm{obs}}
+=\frac{v}{\lambda_{\mathrm{back}}}
+=\frac{v}{v+v_s}f_0.
 $$
 
 Use the physical direction as a sign check:
 
-- approaching source $\Rightarrow$ shorter wavelength $\Rightarrow$ higher frequency $\Rightarrow c-v$;
-- receding source $\Rightarrow$ longer wavelength $\Rightarrow$ lower frequency $\Rightarrow c+v$.
+- approaching source $\Rightarrow$ shorter wavelength $\Rightarrow$ higher frequency $\Rightarrow v-v_s$;
+- receding source $\Rightarrow$ longer wavelength $\Rightarrow$ lower frequency $\Rightarrow v+v_s$.
 
 Equivalently, check the size of the multiplier:
 
 $$
-\frac{c}{c-v}>1
+\frac{v}{v-v_s}>1
 \quad\text{and}\quad
-\frac{c}{c+v}<1.
+\frac{v}{v+v_s}<1.
 $$
 
 ```quiz
 type: radio
 id: problem-4-q3
 content: |-
-  A source of frequency $f_0$ moves directly away from a stationary listener at speed $v$. Which frequency does the listener hear?
+  A source of frequency $f_0$ moves directly away from a stationary listener at speed $v_s$. Which frequency does the listener hear?
 options:
 - id: problem-4-q3-a
   content: |-
-    $\dfrac{c}{c+v}f_0$
+    $\dfrac{v}{v+v_s}f_0$
   correct: true
 - id: problem-4-q3-b
   content: |-
-    $\dfrac{c}{c-v}f_0$
+    $\dfrac{v}{v-v_s}f_0$
 - id: problem-4-q3-c
   content: |-
-    $\dfrac{c+v}{c}f_0$
+    $\dfrac{v+v_s}{v}f_0$
 - id: problem-4-q3-d
   content: |-
-    $\dfrac{c-v}{c}f_0$
+    $\dfrac{v-v_s}{v}f_0$
 - id: problem-4-q3-e
   content: |-
     $f_0$
@@ -223,26 +223,26 @@ options:
 <a id="keep-source-motion-in-the-denominator"></a>
 ## Keep Source Motion in the Denominator
 
-**Example:** A source approaches a stationary listener. Why is the factor $c/(c-v)$ rather than $(c+v)/c$?
+**Example:** A source approaches a stationary listener. Why is the factor $v/(v-v_s)$ rather than $(v+v_s)/v$?
 
 **Explanation**
 
 The moving source changes the wavelength at emission:
 
 $$
-\lambda_{\text{front}}=\frac{c-v}{f_0}.
+\lambda_{\mathrm{front}}=\frac{v-v_s}{f_0}.
 $$
 
-The stationary listener does not move through the incoming wave, so the crest speed relative to the listener is simply $c$. Thus,
+The stationary listener does not move through the incoming wave, so the crest speed relative to the listener is simply $v$. Thus,
 
 $$
-f_{\text{heard}}
+f_{\mathrm{obs}}
 =\frac{\text{crest speed at listener}}{\text{crest spacing}}
-=\frac{c}{(c-v)/f_0}
-=\frac{c}{c-v}f_0.
+=\frac{v}{(v-v_s)/f_0}
+=\frac{v}{v-v_s}f_0.
 $$
 
-A factor such as $(c+v)/c$ describes a different setup in which listener motion changes the rate of encountering otherwise unchanged wavefronts. For a **moving source**, put the source-speed adjustment with $c$ in the denominator.
+A factor such as $(v+v_s)/v$ describes a different setup in which listener motion changes the rate of encountering otherwise unchanged wavefronts. For a **moving source**, put the source-speed adjustment with $v$ in the denominator.
 
 ```quiz
 type: radio
@@ -256,16 +256,16 @@ options:
   correct: true
 - id: problem-4-q4-b
   content: |-
-    Source motion changes the speed of sound to $c+v$.
+    Source motion changes the speed of sound to $v+v_s$.
 - id: problem-4-q4-c
   content: |-
     The listener's stationary position makes the heard frequency equal to $f_0$.
 - id: problem-4-q4-d
   content: |-
-    Approaching motion always places $c+v$ in the numerator.
+    Approaching motion always places $v+v_s$ in the numerator.
 - id: problem-4-q4-e
   content: |-
-    The emitted wavelength remains $c/f_0$ in front of the moving source.
+    The emitted wavelength remains $v/f_0$ in front of the moving source.
 ```
 
 ---
@@ -279,15 +279,15 @@ options:
 
 For the requested frequency, identify only the source-listener pair:
 
-- source: the hawk, moving toward the climber at speed $v$;
+- source: the hawk, moving toward the climber at speed $v_s$;
 - listener: the climber, stationary;
-- sound speed: $c$;
+- sound speed: $v$;
 - emitted frequency: $f_0$.
 
 The echo does not enter the direct hawk-to-climber frequency. The source approaches, so
 
 $$
-f_{\text{climber}}=\frac{c}{c-v}f_0.
+f_{\mathrm{climber}}=\frac{v}{v-v_s}f_0.
 $$
 
 The factor is greater than $1$, providing a quick direction check.
@@ -297,24 +297,24 @@ type: radio
 id: problem-4-q5
 shuffle: true
 content: |-
-  Let $c$ denote the speed of sound.
+  Let $v$ denote the speed of sound.
 
-  A hawk at the Grand Canyon produces a pure tone of frequency $f_0$ while flying at constant speed $v$ directly towards a climber on the canyon wall. Some of the sound echoes off the canyon wall and back to the hawk.
+  A hawk at the Grand Canyon produces a pure tone of frequency $f_0$ while flying at constant speed $v_s$ directly towards a climber on the canyon wall. Some of the sound echoes off the canyon wall and back to the hawk.
 
   What is the frequency of the hawk's screech according to the mountain climber?
 options:
 - id: problem-4-q5-a
   content: |-
-    $\dfrac{c+v}{c}f_0$
+    $\dfrac{v+v_s}{v}f_0$
 - id: problem-4-q5-b
   content: |-
-    $\dfrac{c-v}{c}f_0$
+    $\dfrac{v-v_s}{v}f_0$
 - id: problem-4-q5-c
   content: |-
-    $\dfrac{c}{c+v}f_0$
+    $\dfrac{v}{v+v_s}f_0$
 - id: problem-4-q5-d
   content: |-
-    $\dfrac{c}{c-v}f_0$
+    $\dfrac{v}{v-v_s}f_0$
   correct: true
 ```
 
@@ -323,22 +323,22 @@ options:
 <a id="summary"></a>
 ## Summary
 
-For a sound source moving at speed $v$ while its listener is stationary:
+For a sound source moving at speed $v_s$ while its listener is stationary:
 
 1. Determine how source motion changes the wavefront spacing:
 
    $$
-   \lambda_{\text{toward}}=\frac{c-v}{f_0},
+   \lambda_{\mathrm{toward}}=\frac{v-v_s}{f_0},
    \qquad
-   \lambda_{\text{away}}=\frac{c+v}{f_0}.
+   \lambda_{\mathrm{away}}=\frac{v+v_s}{f_0}.
    $$
 
-2. Use $f_{\text{heard}}=c/\lambda$:
+2. Use $f_{\mathrm{obs}}=v/\lambda$:
 
    $$
-   f_{\text{toward}}=\frac{c}{c-v}f_0,
+   f_{\mathrm{toward}}=\frac{v}{v-v_s}f_0,
    \qquad
-   f_{\text{away}}=\frac{c}{c+v}f_0.
+   f_{\mathrm{away}}=\frac{v}{v+v_s}f_0.
    $$
 
 3. Check the result: approaching must raise the frequency, and receding must lower it.

@@ -200,34 +200,34 @@ type: radio
 id: flywheel-speed-numerical-check
 shuffle: true
 content: |-
-  A $2.0\,\mathrm{kg}$ block descends $3.0\,\mathrm{m}$ from rest while turning a uniform solid flywheel of mass $6.0\,\mathrm{kg}$. Use $g=10\,\mathrm{m/s^2}$ and no slip. What is the block's speed?
+  A $2.0\,\mathrm{kg}$ block descends $3.0\,\mathrm{m}$ from rest while turning a uniform solid flywheel of mass $6.0\,\mathrm{kg}$. Use $g=10\,\mathrm{m}/\mathrm{s}^2$ and no slip. What is the block's speed?
 options:
 - id: flywheel-speed-numerical-check-correct
   content: |-
-    $4.90\,\mathrm{m/s}$
+    $4.90\,\mathrm{m}/\mathrm{s}$
   correct: true
   feedback: |-
-    Conservation of energy with the solid-flywheel rotation gives $v^2=4mgh/(2m+M)=240/10=24\,\mathrm{m^2/s^2}$. Taking the positive square root gives $v=4.90\,\mathrm{m/s}$.
+    Conservation of energy with the solid-flywheel rotation gives $v^2=4mgh/(2m+M)=240/10=24\,\mathrm{m}^2/\mathrm{s}^2$. Taking the positive square root gives $v=4.90\,\mathrm{m}/\mathrm{s}$.
 - id: flywheel-speed-numerical-check-free-fall
   content: |-
-    $7.75\,\mathrm{m/s}$
+    $7.75\,\mathrm{m}/\mathrm{s}$
   feedback: |-
     This is $\sqrt{2gh}$, the free-fall result obtained by assigning no energy to the flywheel. Here the flywheel rotates, so the block receives less kinetic energy and moves more slowly than free fall.
 - id: flywheel-speed-numerical-check-hoop-inertia
   content: |-
-    $3.87\,\mathrm{m/s}$
+    $3.87\,\mathrm{m}/\mathrm{s}$
   feedback: |-
     This results from using $I=Mr^2$, appropriate to a thin hoop. The stated flywheel is a uniform solid disk, so $I=Mr^2/2$ and the correct speed is larger.
 - id: flywheel-speed-numerical-check-rotation-only
   content: |-
-    $6.32\,\mathrm{m/s}$
+    $6.32\,\mathrm{m}/\mathrm{s}$
   feedback: |-
-    This assigns the lost potential energy only to flywheel rotation. The descending block also has translational kinetic energy, so including both terms lowers the speed to $4.90\,\mathrm{m/s}$.
+    This assigns the lost potential energy only to flywheel rotation. The descending block also has translational kinetic energy, so including both terms lowers the speed to $4.90\,\mathrm{m}/\mathrm{s}$.
 - id: flywheel-speed-numerical-check-no-root
   content: |-
-    $24.0\,\mathrm{m/s}$
+    $24.0\,\mathrm{m}/\mathrm{s}$
   feedback: |-
-    The energy algebra produces $v^2=24\,\mathrm{m^2/s^2}$. The question asks for $v$, so a square root is still required; $24$ is not a speed and its units are squared.
+    The energy algebra produces $v^2=24\,\mathrm{m}^2/\mathrm{s}^2$. The question asks for $v$, so a square root is still required; $24$ is not a speed and its units are squared.
 ```
 
 ---
@@ -274,7 +274,7 @@ options:
     It has units of speed, and as $M\to0$ it becomes $\sqrt{2gh}$.
   correct: true
   feedback: |-
-    Dividing the energy scale $mgh$ by the mass scale $2m+M$ gives $\mathrm{m^2/s^2}$, and the square root gives $\mathrm{m/s}$. Setting $M=0$ also recovers the free-fall result $\sqrt{2gh}$.
+    Dividing the energy scale $mgh$ by the mass scale $2m+M$ gives $\mathrm{m}^2/\mathrm{s}^2$, and the square root gives $\mathrm{m}/\mathrm{s}$. Setting $M=0$ also recovers the free-fall result $\sqrt{2gh}$.
 - id: flywheel-formula-audit-radius-required
   content: |-
     It must be wrong because the flywheel radius $r$ is absent.
@@ -287,9 +287,9 @@ options:
     The flywheel mass appears in the denominator because a larger $M$ requires more rotational kinetic energy at the same cord speed. Increasing $M$ therefore lowers $v$ rather than raising it.
 - id: flywheel-formula-audit-squared-speed
   content: |-
-    Its units are $\mathrm{m^2/s^2}$, so it gives $v^2$ rather than $v$.
+    Its units are $\mathrm{m}^2/\mathrm{s}^2$, so it gives $v^2$ rather than $v$.
   feedback: |-
-    The expression inside the radical has units $\mathrm{m^2/s^2}$. Taking the displayed square root changes those units to $\mathrm{m/s}$, so the complete expression gives speed.
+    The expression inside the radical has units $\mathrm{m}^2/\mathrm{s}^2$. Taking the displayed square root changes those units to $\mathrm{m}/\mathrm{s}$, so the complete expression gives speed.
 - id: flywheel-formula-audit-plus-minus
   content: |-
     It needs a $\pm$ sign because every square-root step must report two speeds.

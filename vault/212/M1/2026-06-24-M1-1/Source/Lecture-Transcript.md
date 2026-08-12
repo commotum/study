@@ -119,10 +119,10 @@ $$
 For a point at a fixed distance $r$ from the rotation axis, differentiating $s=r\theta$ gives
 
 $$
-v_t=r\omega,
+v=r\omega,
 $$
 
-where $v_t$ is the tangential speed.
+where $v$ is the tangential speed.
 
 Differentiating again gives
 
@@ -221,7 +221,7 @@ $$
 with magnitude
 
 $$
-a
+|\vec{a}|
 =
 \sqrt{a_x^2+a_y^2}.
 $$
@@ -242,7 +242,7 @@ The magnitude is then
 
 $$
 \boxed{
-a
+|\vec{a}|
 =
 \sqrt{a_r^2+a_t^2}
 }.
@@ -256,13 +256,13 @@ The two components have different physical meanings:
 Both $a_r$ and $a_t$ have units of linear acceleration:
 
 $$
-[a_r]=[a_t]=\mathrm{m/s^2}.
+[a_r]=[a_t]=\mathrm{m}/\mathrm{s}^2.
 $$
 
 Angular acceleration has different units:
 
 $$
-[\alpha]=\mathrm{rad/s^2}.
+[\alpha]=\mathrm{rad}/\mathrm{s}^2.
 $$
 
 For circular-motion problems, it is often convenient to choose the positive radial direction inward, toward the center of the circle.
@@ -272,7 +272,7 @@ For circular-motion problems, it is often convenient to choose the positive radi
 Consider a disk with initial angular speed
 
 $$
-\omega_0=12\ \mathrm{rad/s}.
+\omega_0=12\ \mathrm{rad}/\mathrm{s}.
 $$
 
 The disk comes to rest after
@@ -290,7 +290,7 @@ We want to determine the magnitude and direction of the angular acceleration.
 The known quantities are
 
 $$
-\omega_0=12\ \mathrm{rad/s},
+\omega_0=12\ \mathrm{rad}/\mathrm{s},
 $$
 
 $$
@@ -346,7 +346,7 @@ However, its slope becomes progressively smaller because $\omega$ decreases. The
 Graphically:
 
 - $\alpha(t)$ is constant and negative.
-- $\omega(t)$ decreases linearly from $12\ \mathrm{rad/s}$ to zero.
+- $\omega(t)$ decreases linearly from $12\ \mathrm{rad}/\mathrm{s}$ to zero.
 - $\theta(t)$ increases with a decreasing slope.
 
 ## Calculating the Angular Acceleration
@@ -366,7 +366,7 @@ Substituting the known values,
 $$
 0
 =
-12\ \mathrm{rad/s}
+12\ \mathrm{rad}/\mathrm{s}
 +
 \alpha(26\ \mathrm{s}).
 $$
@@ -376,14 +376,14 @@ Solving for $\alpha$,
 $$
 \alpha
 =
--\frac{12\ \mathrm{rad/s}}{26\ \mathrm{s}}.
+-\frac{12\ \mathrm{rad}/\mathrm{s}}{26\ \mathrm{s}}.
 $$
 
 Therefore,
 
 $$
 \boxed{
-\alpha=-0.46\ \mathrm{rad/s^2}
+\alpha=-0.46\ \mathrm{rad}/\mathrm{s}^2
 }.
 $$
 
@@ -393,7 +393,7 @@ The magnitude is
 
 $$
 \boxed{
-|\alpha|=0.46\ \mathrm{rad/s^2}
+|\alpha|=0.46\ \mathrm{rad}/\mathrm{s}^2
 }.
 $$
 
@@ -453,28 +453,28 @@ The magnitude of the cross product is
 $$
 v
 =
-\omega r\sin\beta,
+r\omega\sin\theta,
 $$
 
-where $\beta$ is the angle between $\vec{\omega}$ and $\vec{r}$.
+where $\theta$ is the angle between $\vec{\omega}$ and $\vec{r}$.
 
 For planar circular motion,
 
 $$
-\beta=90^\circ,
+\theta=90^\circ,
 $$
 
 so
 
 $$
-\sin\beta=1.
+\sin\theta=1.
 $$
 
 Therefore,
 
 $$
 \boxed{
-v=\omega r
+v=r\omega
 }.
 $$
 
@@ -556,7 +556,7 @@ Physics conventionally uses right-handed coordinate systems.
 Return to the disk that begins with
 
 $$
-\omega_0=12\ \mathrm{rad/s}
+\omega_0=12\ \mathrm{rad}/\mathrm{s}
 $$
 
 and slows to rest.
@@ -607,7 +607,7 @@ The important sequence is:
 We now want to determine how many revolutions the disk completes while slowing from
 
 $$
-\omega_0=12\ \mathrm{rad/s}
+\omega_0=12\ \mathrm{rad}/\mathrm{s}
 $$
 
 to rest over
@@ -702,7 +702,7 @@ $$
 \Delta\theta
 =
 \frac{
-(12\ \mathrm{rad/s})(26\ \mathrm{s})
+(12\ \mathrm{rad}/\mathrm{s})(26\ \mathrm{s})
 }{
 2
 }.
@@ -725,7 +725,7 @@ $$
 The number of revolutions is
 
 $$
-N
+n_{\mathrm{rev}}
 =
 \Delta\theta
 \left(
@@ -740,7 +740,7 @@ $$
 Thus,
 
 $$
-N
+n_{\mathrm{rev}}
 =
 \frac{
 156
@@ -752,7 +752,7 @@ $$
 Equivalently,
 
 $$
-N
+n_{\mathrm{rev}}
 =
 \frac{
 \omega_0\Delta t
@@ -764,26 +764,26 @@ $$
 Substituting directly,
 
 $$
-N
+n_{\mathrm{rev}}
 =
 \frac{
-(12\ \mathrm{rad/s})(26\ \mathrm{s})
+(12\ \mathrm{rad}/\mathrm{s})(26\ \mathrm{s})
 }{
-4\pi\ \mathrm{rad/rev}
+4\pi\ \mathrm{rad}/\mathrm{rev}
 }.
 $$
 
 This gives
 
 $$
-N\approx24.8\ \mathrm{rev}.
+n_{\mathrm{rev}}\approx24.8\ \mathrm{rev}.
 $$
 
 To two significant figures,
 
 $$
 \boxed{
-N=25\ \mathrm{revolutions}
+n_{\mathrm{rev}}=25\ \mathrm{rev}
 }.
 $$
 
@@ -803,14 +803,14 @@ $$
 \omega_{\mathrm{avg}}
 =
 \frac{
-12\ \mathrm{rad/s}
+12\ \mathrm{rad}/\mathrm{s}
 +
 0
 }{
 2
 }
 =
-6.0\ \mathrm{rad/s}.
+6.0\ \mathrm{rad}/\mathrm{s}.
 $$
 
 The angular displacement is
@@ -826,21 +826,21 @@ Thus,
 $$
 \Delta\theta
 =
-(6.0\ \mathrm{rad/s})(26\ \mathrm{s})
+(6.0\ \mathrm{rad}/\mathrm{s})(26\ \mathrm{s})
 =
 156\ \mathrm{rad},
 $$
 
 which agrees with the kinematic derivation.
 
-Geometrically, this is also the area beneath the angular-velocity-versus-time graph. That graph forms a triangle with base $26\ \mathrm{s}$ and height $12\ \mathrm{rad/s}$:
+Geometrically, this is also the area beneath the angular-velocity-versus-time graph. That graph forms a triangle with base $26\ \mathrm{s}$ and height $12\ \mathrm{rad}/\mathrm{s}$:
 
 $$
 \Delta\theta
 =
 \frac{1}{2}
 (26\ \mathrm{s})
-(12\ \mathrm{rad/s})
+(12\ \mathrm{rad}/\mathrm{s})
 =
 156\ \mathrm{rad}.
 $$
@@ -942,13 +942,13 @@ A vector quantity may have a negative component even though its magnitude is pos
 For the slowing disk,
 
 $$
-\alpha=-0.46\ \mathrm{rad/s^2},
+\alpha=-0.46\ \mathrm{rad}/\mathrm{s}^2,
 $$
 
 while
 
 $$
-|\alpha|=0.46\ \mathrm{rad/s^2}.
+|\alpha|=0.46\ \mathrm{rad}/\mathrm{s}^2.
 $$
 
 ## 7. Convert Angular Units Carefully
@@ -1045,17 +1045,17 @@ When $\vec{\omega}$ and $\vec{r}$ are perpendicular,
 
 $$
 \boxed{
-v=\omega r
+v=r\omega
 }.
 $$
 
 Angular velocity points along the rotation axis, with its direction determined by the right-hand rule.
 
-For the disk that slows from $12\ \mathrm{rad/s}$ to rest in $26\ \mathrm{s}$,
+For the disk that slows from $12\ \mathrm{rad}/\mathrm{s}$ to rest in $26\ \mathrm{s}$,
 
 $$
 \boxed{
-\alpha=-0.46\ \mathrm{rad/s^2}
+\alpha=-0.46\ \mathrm{rad}/\mathrm{s}^2
 }.
 $$
 
@@ -1063,7 +1063,7 @@ Its angular-acceleration magnitude is
 
 $$
 \boxed{
-|\alpha|=0.46\ \mathrm{rad/s^2}
+|\alpha|=0.46\ \mathrm{rad}/\mathrm{s}^2
 }.
 $$
 
@@ -1081,7 +1081,7 @@ before stopping, corresponding to
 
 $$
 \boxed{
-N\approx25\ \mathrm{revolutions}
+n_{\mathrm{rev}}\approx25\ \mathrm{rev}
 }.
 $$
 

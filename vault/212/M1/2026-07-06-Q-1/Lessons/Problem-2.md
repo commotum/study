@@ -17,19 +17,19 @@ topic-code: MTH212.M1.68
 
 - Read the direction of a vector from its tail toward its arrowhead.
 - Distinguish an object's speed from the direction of its velocity.
-- Use Newton's second law, $\vec F_{\mathrm{net}}=m\vec a$.
+- Use Newton's second law, $\vec{F}_{\mathrm{net}}=m\vec{a}$.
 
 ---
 
 <a id="introduction"></a>
 ## Introduction
 
-When an object follows a circular path, its velocity is tangent to the path while its centripetal acceleration points toward the circle's center. Newton's second law makes the net force point in the same direction as that acceleration:
+When an object follows a circular path, its velocity is tangent to the path while its radial acceleration points toward the circle's center. Newton's second law makes the net force point in the same direction as that acceleration:
 
 $$
-\vec F_{\mathrm{net}}=m\vec a_c,
+\vec{F}_{\mathrm{net}}=m a_r\hat{r},
 \qquad
-\vec a_c\text{ points toward the center.}
+a_r\hat{r}\text{ points toward the center.}
 $$
 
 Use the same direction chain every time:
@@ -37,9 +37,9 @@ Use the same direction chain every time:
 $$
 \text{location of center}
 \longrightarrow
-\text{inward direction of }\vec a_c
+\text{inward direction of }a_r\hat{r}
 \longrightarrow
-\text{same direction for }\vec F_{\mathrm{net}}.
+\text{same direction for }\vec{F}_{\mathrm{net}}.
 $$
 
 The recognition cue is a locally circular path and a request for the direction of acceleration or net force. Locate the center of the path at that instant, then point inward. If the speed is constant, there is no tangential acceleration, so the net-force vector has no component along or opposite the motion. In an arrow-choice diagram, read each arrow from its dot-shaped tail toward its arrowhead; its placement on the page does not affect its direction.
@@ -53,7 +53,7 @@ The recognition cue is a locally circular path and a request for the direction o
 
 **Explanation**
 
-The center of the circle is directly left of the cart. Centripetal acceleration points from the cart toward that center, so Newton's second law makes the net force point directly left. The upward velocity is tangent to the circle: it identifies the current motion, while the radius toward the center identifies how the velocity must turn.
+The center of the circle is directly left of the cart. Radial acceleration points from the cart toward that center, so Newton's second law makes the net force point directly left. The upward velocity is tangent to the circle: it identifies the current motion, while the radius toward the center identifies how the velocity must turn.
 
 ```quiz
 type: radio
@@ -77,7 +77,7 @@ options:
   content: Right
   correct: true
   feedback: |-
-    Centripetal acceleration points toward the center of the circular path. The center is directly right of the puck, so $\vec a$ and therefore $\vec F_{\mathrm{net}}$ point right.
+    Radial acceleration points toward the center of the circular path. The center is directly right of the puck, so $\vec{a}$ and therefore $\vec{F}_{\mathrm{net}}$ point right.
 - id: p2-follow-radius-e
   content: The net force is zero
   feedback: |-
@@ -105,7 +105,7 @@ options:
   content: Straight upward
   correct: true
   feedback: |-
-    At the bottom of the dip, inward is straight upward. Constant speed makes the tangential acceleration zero, so $\vec F_{\mathrm{net}}=m\vec a$ has only that upward component.
+    At the bottom of the dip, inward is straight upward. Constant speed makes the tangential acceleration zero, so $\vec{F}_{\mathrm{net}}=m\vec{a}$ has only that upward component.
 - id: p2-remove-tangent-b
   content: Up and to the right
   feedback: |-
@@ -121,7 +121,7 @@ options:
 - id: p2-remove-tangent-e
   content: Straight downward
   feedback: |-
-    Downward points outward at the bottom of the dip. The centripetal acceleration and net force must point toward the center, which is upward here.
+    Downward points outward at the bottom of the dip. The radial acceleration and net force must point toward the center, which is upward here.
 ```
 
 ---
@@ -133,7 +133,7 @@ options:
 
 **Explanation**
 
-At the top of the hill, the circle's center is below the motorcycle. Therefore, the centripetal acceleration and net force point downward. The rule is not "net force points upward"; it is "net force points inward."
+At the top of the hill, the circle's center is below the motorcycle. Therefore, the radial acceleration and net force point downward. The rule is not "net force points upward"; it is "net force points inward."
 
 ```quiz
 type: radio
@@ -152,12 +152,12 @@ options:
 - id: p2-recognize-crest-c
   content: Upward
   feedback: |-
-    Upward is outward at the top of a crest. Centripetal acceleration points toward the center below the cart, so the net force points downward.
+    Upward is outward at the top of a crest. Radial acceleration points toward the center below the cart, so the net force points downward.
 - id: p2-recognize-crest-d
   content: Downward
   correct: true
   feedback: |-
-    The circle's center is below an object at the top of a crest. Centripetal acceleration therefore points downward, and $\vec F_{\mathrm{net}}=m\vec a$ points downward as well.
+    The circle's center is below an object at the top of a crest. Radial acceleration therefore points downward, and $\vec{F}_{\mathrm{net}}=m\vec{a}$ points downward as well.
 - id: p2-recognize-crest-e
   content: Zero
   feedback: |-
@@ -180,7 +180,7 @@ Apply the direction chain before looking at the answer letters:
 1. **Center:** directly above the truck.
 2. **Inward acceleration:** straight upward.
 3. **Tangential acceleration:** zero because the speed is constant.
-4. **Net force:** straight upward because $\vec F_{\mathrm{net}}=m\vec a$.
+4. **Net force:** straight upward because $\vec{F}_{\mathrm{net}}=m\vec{a}$.
 
 The truck's leftward velocity is tangent to the path and does not change this result. In the choices, the arrow from its dot-shaped tail straight upward is vector A.
 
@@ -198,7 +198,7 @@ options:
   content: A
   correct: true
   feedback: |-
-    At the bottom of the dip, the center of the circular path is directly above the truck. Constant speed removes tangential acceleration, so $\vec F_{\mathrm{net}}=m\vec a$ points straight upward, as vector A does.
+    At the bottom of the dip, the center of the circular path is directly above the truck. Constant speed removes tangential acceleration, so $\vec{F}_{\mathrm{net}}=m\vec{a}$ points straight upward, as vector A does.
 - id: p2-truck-source-b
   content: B
   feedback: |-
@@ -237,8 +237,8 @@ options:
 When a problem shows circular motion and asks for the net-force direction:
 
 1. Locate the center of the circular path at the object's current position.
-2. Point the centripetal acceleration inward, from the object toward that center.
-3. Use $\vec F_{\mathrm{net}}=m\vec a$ to give the net force the same direction.
+2. Point the radial acceleration inward, from the object toward that center.
+3. Use $\vec{F}_{\mathrm{net}}=m\vec{a}$ to give the net force the same direction.
 4. If the speed is constant, reject every vector with a tangential component.
 
 The main trap is following the velocity arrow. Velocity is tangent to the path; the net force for constant-speed circular motion points inward.

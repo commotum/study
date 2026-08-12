@@ -399,7 +399,7 @@ for a constant radius.
 Because
 
 $$
-v_t=\frac{ds}{dt}
+v=\frac{ds}{dt}
 $$
 
 and
@@ -412,14 +412,14 @@ the tangential speed is
 
 $$
 \boxed{
-v_t=r\omega
+v=r\omega
 }.
 $$
 
 Taking another time derivative gives
 
 $$
-\frac{dv_t}{dt}
+\frac{dv}{dt}
 =
 r\frac{d\omega}{dt}.
 $$
@@ -438,7 +438,7 @@ It is important to distinguish the quantities:
 
 - $\omega$ is angular velocity.
 - $\alpha$ is angular acceleration.
-- $v_t$ is tangential velocity.
+- $v$ is tangential speed.
 - $a_t$ is tangential acceleration.
 
 Angular acceleration and tangential acceleration are related, but they are not the same quantity and do not have the same units.
@@ -448,39 +448,39 @@ Angular acceleration and tangential acceleration are related, but they are not t
 Ordinary linear velocity may be measured in units such as
 
 $$
-\mathrm{m/s},
+\mathrm{m}/\mathrm{s},
 $$
 
 $$
-\mathrm{cm/s},
+\mathrm{cm}/\mathrm{s},
 $$
 
 or
 
 $$
-\mathrm{mi/h}.
+\mathrm{mi}/\mathrm{h}.
 $$
 
 Angular velocity may be measured in
 
 $$
-\mathrm{rad/s},
+\mathrm{rad}/\mathrm{s},
 $$
 
 $$
-\mathrm{deg/s},
+\mathrm{deg}/\mathrm{s},
 $$
 
 or
 
 $$
-\mathrm{rev/s}.
+\mathrm{rev}/\mathrm{s}.
 $$
 
 Angular acceleration is commonly measured in
 
 $$
-\mathrm{rad/s^2}.
+\mathrm{rad}/\mathrm{s}^2.
 $$
 
 Radians are dimensionless in the formal SI dimensional system, but retaining “rad” in the written units is often helpful because it identifies the quantity as angular.
@@ -613,7 +613,7 @@ Its magnitude is
 
 $$
 \boxed{
-a
+|\vec{a}|
 =
 \sqrt{a_x^2+a_y^2}
 }.
@@ -642,7 +642,7 @@ Because the radial and tangential directions are perpendicular,
 
 $$
 \boxed{
-a
+|\vec{a}|
 =
 \sqrt{a_r^2+a_t^2}
 }.
@@ -668,7 +668,7 @@ $a_r$ is a linear acceleration directed along the radius. In circular motion, it
 Its units are
 
 $$
-\mathrm{m/s^2}.
+\mathrm{m}/\mathrm{s}^2.
 $$
 
 ### Tangential Acceleration
@@ -678,7 +678,7 @@ $a_t$ is a linear acceleration directed tangent to the circular path. It describ
 Its units are
 
 $$
-\mathrm{m/s^2}.
+\mathrm{m}/\mathrm{s}^2.
 $$
 
 ### Angular Acceleration
@@ -692,7 +692,7 @@ $$
 Its units are
 
 $$
-\mathrm{rad/s^2}.
+\mathrm{rad}/\mathrm{s}^2.
 $$
 
 Tangential and angular acceleration are related by
@@ -714,25 +714,25 @@ $$
 where
 
 $$
-a=18\ \mathrm{s^{-1}}
+a=18\ \mathrm{s}^{-1}
 $$
 
 and
 
 $$
-b=0.50\ \mathrm{s^{-3}}.
+b=0.50\ \mathrm{s}^{-3}.
 $$
 
 Equivalently, when the angular velocity is explicitly interpreted in radians per second, the units may be written as
 
 $$
-a=18\ \mathrm{rad/s}
+a=18\ \mathrm{rad}/\mathrm{s}
 $$
 
 and
 
 $$
-b=0.50\ \mathrm{rad/s^3}.
+b=0.50\ \mathrm{rad}/\mathrm{s}^3.
 $$
 
 Here, $a$ and $b$ are constant coefficients. The symbol $a$ in this equation is not linear acceleration.
@@ -842,9 +842,9 @@ t_{\mathrm{rev}}
 =
 \sqrt{
 \frac{
-18\ \mathrm{s^{-1}}
+18\ \mathrm{s}^{-1}
 }{
-0.50\ \mathrm{s^{-3}}
+0.50\ \mathrm{s}^{-3}
 }
 }.
 $$
@@ -852,9 +852,9 @@ $$
 The units inside the square root are
 
 $$
-\frac{\mathrm{s^{-1}}}{\mathrm{s^{-3}}}
+\frac{\mathrm{s}^{-1}}{\mathrm{s}^{-3}}
 =
-\mathrm{s^2}.
+\mathrm{s}^2.
 $$
 
 Therefore,
@@ -863,7 +863,7 @@ $$
 t_{\mathrm{rev}}
 =
 \sqrt{
-36\ \mathrm{s^2}
+36\ \mathrm{s}^2
 }.
 $$
 
@@ -992,10 +992,10 @@ Substituting the numerical values directly,
 $$
 \Delta\theta
 =
-(18\ \mathrm{rad/s})(6.0\ \mathrm{s})
+(18\ \mathrm{rad}/\mathrm{s})(6.0\ \mathrm{s})
 -
 \frac{
-0.50\ \mathrm{rad/s^3}
+0.50\ \mathrm{rad}/\mathrm{s}^3
 }{3}
 (6.0\ \mathrm{s})^3.
 $$
@@ -1108,9 +1108,9 @@ $$
 \frac{a}{b}
 \right]
 =
-\frac{\mathrm{s^{-1}}}{\mathrm{s^{-3}}}
+\frac{\mathrm{s}^{-1}}{\mathrm{s}^{-3}}
 =
-\mathrm{s^2}.
+\mathrm{s}^2.
 $$
 
 Taking the square root produces seconds.
@@ -1120,7 +1120,7 @@ For angular displacement,
 $$
 [a][t]
 =
-\mathrm{rad/s}\cdot\mathrm{s}
+\left(\mathrm{rad}/\mathrm{s}\right)\mathrm{s}
 =
 \mathrm{rad}.
 $$
@@ -1173,7 +1173,7 @@ For a fixed radius,
 
 $$
 \boxed{
-v_t=r\omega
+v=r\omega
 }
 $$
 
@@ -1246,7 +1246,7 @@ $$
 The corresponding magnitudes are
 
 $$
-a
+|\vec{a}|
 =
 \sqrt{a_x^2+a_y^2}
 $$
@@ -1254,7 +1254,7 @@ $$
 and
 
 $$
-a
+|\vec{a}|
 =
 \sqrt{a_r^2+a_t^2}.
 $$
@@ -1294,13 +1294,13 @@ $$
 For
 
 $$
-a=18\ \mathrm{s^{-1}}
+a=18\ \mathrm{s}^{-1}
 $$
 
 and
 
 $$
-b=0.50\ \mathrm{s^{-3}},
+b=0.50\ \mathrm{s}^{-3},
 $$
 
 the reversal time is

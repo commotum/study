@@ -27,10 +27,10 @@ topic-code: MTH212.M4.14
 <a id="introduction"></a>
 ## Introduction
 
-When several rigid components swing together about one pivot through small angles, the recognition cue is that every component contributes both rotational inertia and a gravity-torque weight. Use one move: make a component ledger, add the pivot moments $I_i$ and the paired terms $m_id_i$ separately, then substitute those two sums into
+When several rigid components swing together about one pivot through small angles, the recognition cue is that every component contributes both rotational inertia and a gravity-torque weight. Use one move: make a component ledger, add the pivot moments $I_{i,p}$ and the paired terms $m_i r_i$ separately, then substitute those two sums into
 
 $$
-T=2\pi\sqrt{\frac{\sum_i I_i}{g\sum_i m_id_i}}.
+T=2\pi\sqrt{\frac{\sum_i I_{i,p}}{g\sum_i m_i r_i}}.
 $$
 
 ---
@@ -43,26 +43,26 @@ $$
 For a composite physical pendulum,
 
 $$
-T=2\pi\sqrt{\frac{I_{\mathrm{total}}}{g\sum_i m_i d_i}},
+T=2\pi\sqrt{\frac{I_p}{g\sum_i m_i r_i}},
 $$
 
 where
 
 $$
-I_{\mathrm{total}}=\sum_i I_i
+I_p=\sum_i I_{i,p}
 $$
 
-and $d_i$ is the distance from the pivot to component $i$'s center of mass.
+and $r_i$ is the distance from the pivot to component $i$'s center of mass.
 
 There are two separate sums:
 
 - add each component's pivot moment of inertia in the numerator;
-- add each component's $m_i d_i$ contribution in the denominator.
+- add each component's $m_i r_i$ contribution in the denominator.
 
-**Example:** A rigid assembly contains two parts with pivot moments of inertia $I_1$ and $I_2$, masses $m_1$ and $m_2$, and center-of-mass distances $d_1$ and $d_2$. Its period formula is
+**Example:** A rigid assembly contains two parts with pivot moments of inertia $I_{1,p}$ and $I_{2,p}$, masses $m_1$ and $m_2$, and center-of-mass distances $r_1$ and $r_2$. Its period formula is
 
 $$
-T=2\pi\sqrt{\frac{I_1+I_2}{g(m_1d_1+m_2d_2)}}.
+T=2\pi\sqrt{\frac{I_{1,p}+I_{2,p}}{g(m_1r_1+m_2r_2)}}.
 $$
 
 **Explanation**
@@ -77,19 +77,19 @@ content: |-
 options:
 - id: p5-composite-formula-a
   content: |-
-    $2\pi\sqrt{\dfrac{I_1+I_2}{g(m_1d_1+m_2d_2)}}$
+    $2\pi\sqrt{\dfrac{I_{1,p}+I_{2,p}}{g(m_1r_1+m_2r_2)}}$
   correct: true
   feedback: |-
-    Add the pivot moments and add each component's own $m_id_i$ term. Moments of inertia add; they do not multiply. Also, each mass must stay paired with the distance to its own center of mass.
+    Add the pivot moments and add each component's own $m_i r_i$ term. Moments of inertia add; they do not multiply. Also, each mass must stay paired with the distance to its own center of mass.
 - id: p5-composite-formula-b
   content: |-
-    $2\pi\sqrt{\dfrac{I_1I_2}{g(m_1d_1+m_2d_2)}}$
+    $2\pi\sqrt{\dfrac{I_{1,p}I_{2,p}}{g(m_1r_1+m_2r_2)}}$
 - id: p5-composite-formula-c
   content: |-
-    $2\pi\sqrt{\dfrac{I_1+I_2}{g(m_1+m_2)(d_1+d_2)}}$
+    $2\pi\sqrt{\dfrac{I_{1,p}+I_{2,p}}{g(m_1+m_2)(r_1+r_2)}}$
 - id: p5-composite-formula-d
   content: |-
-    $2\pi\sqrt{\dfrac{I_1+I_2}{g(m_1d_2+m_2d_1)}}$
+    $2\pi\sqrt{\dfrac{I_{1,p}+I_{2,p}}{g(m_1r_2+m_2r_1)}}$
 ```
 
 ---
@@ -99,7 +99,7 @@ options:
 
 For a uniform rod of mass $m_r$ and length $L$ pivoted at its upper end, with a point mass $m_p$ at its lower end, list the two contributions before combining them.
 
-| Component | Pivot moment of inertia $I_i$ | Distance $d_i$ | Torque contribution $m_i d_i$ |
+| Component | Pivot moment of inertia $I_{i,p}$ | Distance $r_i$ | Torque contribution $m_i r_i$ |
 | --- | --- | --- | --- |
 | Uniform rod | $\frac13m_rL^2$ | $L/2$ | $m_rL/2$ |
 | Point mass | $m_pL^2$ | $L$ | $m_pL$ |
@@ -107,16 +107,16 @@ For a uniform rod of mass $m_r$ and length $L$ pivoted at its upper end, with a 
 Therefore,
 
 $$
-I_{\mathrm{total}}=\frac13m_rL^2+m_pL^2
+I_p=\frac13m_rL^2+m_pL^2
 $$
 
 and
 
 $$
-\sum_i m_i d_i=m_r\frac L2+m_pL.
+\sum_i m_i r_i=m_r\frac L2+m_pL.
 $$
 
-**Example:** If the point mass is removed, these sums reduce to the uniform-rod expressions $I=\frac13m_rL^2$ and $m_rd=m_rL/2$.
+**Example:** If the point mass is removed, these sums reduce to the uniform-rod expressions $I_p=\frac13m_rL^2$ and $m_r r_r=m_rL/2$.
 
 **Explanation**
 
@@ -130,19 +130,19 @@ content: |-
 options:
 - id: p5-component-ledger-a
   content: |-
-    $I_{\mathrm{total}}=\frac13m_rL^2+m_pL^2$ and $\sum m_id_i=m_r\frac L2+m_pL$
+    $I_p=\frac13m_rL^2+m_pL^2$ and $\sum m_i r_i=m_r\frac L2+m_pL$
   correct: true
   feedback: |-
     The rod uses its end-pivot moment $\frac13m_rL^2$ and center-of-mass distance $L/2$. The point mass is distance $L$ from the pivot, so its moment is $m_pL^2$ and its torque weight is $m_pL$.
 - id: p5-component-ledger-b
   content: |-
-    $I_{\mathrm{total}}=\frac1{12}m_rL^2+m_pL^2$ and $\sum m_id_i=m_r\frac L2+m_pL$
+    $I_p=\frac1{12}m_rL^2+m_pL^2$ and $\sum m_i r_i=m_r\frac L2+m_pL$
 - id: p5-component-ledger-c
   content: |-
-    $I_{\mathrm{total}}=\frac13(m_r+m_p)L^2$ and $\sum m_id_i=(m_r+m_p)\frac L2$
+    $I_p=\frac13(m_r+m_p)L^2$ and $\sum m_i r_i=(m_r+m_p)\frac L2$
 - id: p5-component-ledger-d
   content: |-
-    $I_{\mathrm{total}}=\frac13m_rL^2+m_pL$ and $\sum m_id_i=m_r+m_p$
+    $I_p=\frac13m_rL^2+m_pL$ and $\sum m_i r_i=m_r+m_p$
 ```
 
 ---
@@ -179,23 +179,23 @@ $$
 The units check:
 
 $$
-\frac{I_{\mathrm{total}}}{g\sum m_i d_i}
+\frac{I_p}{g\sum m_i r_i}
 \sim
-\frac{\mathrm{kg\,m^2}}
-{(\mathrm{m/s^2})(\mathrm{kg\,m})}
-=\mathrm{s^2},
+\frac{\mathrm{kg}\,\mathrm{m}^2}
+{(\mathrm{m}/\mathrm{s}^2)(\mathrm{kg}\,\mathrm{m})}
+=\mathrm{s}^2,
 $$
 
 so the square root has units of seconds.
 
-**Example:** For $m_r=0.30\ \mathrm{kg}$, $m_p=0.20\ \mathrm{kg}$, and $L=1.0\ \mathrm m$,
+**Example:** For $m_r=0.30\ \mathrm{kg}$, $m_p=0.20\ \mathrm{kg}$, and $L=1.0\ \mathrm{m}$,
 
 $$
 T=2\pi\sqrt{
 \frac{(1.0)\left(0.30/3+0.20\right)}
 {(9.81)\left(0.30/2+0.20\right)}
 }
-=1.86\ldots\ \mathrm s.
+=1.86\ldots\ \mathrm{s}.
 $$
 
 **Explanation**
@@ -211,23 +211,23 @@ Evaluate in this order:
 type: radio
 id: p5-evaluate-composite
 content: |-
-  A uniform rod with $m_r=0.40\ \mathrm{kg}$ and $L=0.80\ \mathrm m$ carries a point mass $m_p=0.20\ \mathrm{kg}$ at its lower end. Using $g=9.81\ \mathrm{m/s^2}$, what is the small-angle period?
+  A uniform rod with $m_r=0.40\ \mathrm{kg}$ and $L=0.80\ \mathrm{m}$ carries a point mass $m_p=0.20\ \mathrm{kg}$ at its lower end. Using $g=9.81\ \mathrm{m}/\mathrm{s}^2$, what is the small-angle period?
 options:
 - id: p5-evaluate-composite-a
   content: |-
-    $1.64\ \mathrm s$
+    $1.64\ \mathrm{s}$
   correct: true
   feedback: |-
-    Substitute with parentheses into $T=2\pi\sqrt{L(m_r/3+m_p)/[g(m_r/2+m_p)]}$. This gives $1.637\ldots\ \mathrm s$, or $1.64\ \mathrm s$. The value $1.79\ \mathrm s$ ignores the point mass and uses the rod-only period.
+    Substitute with parentheses into $T=2\pi\sqrt{L(m_r/3+m_p)/[g(m_r/2+m_p)]}$. This gives $1.637\ldots\ \mathrm{s}$, or $1.64\ \mathrm{s}$. The value $1.79\ \mathrm{s}$ ignores the point mass and uses the rod-only period.
 - id: p5-evaluate-composite-b
   content: |-
-    $1.79\ \mathrm s$
+    $1.79\ \mathrm{s}$
 - id: p5-evaluate-composite-c
   content: |-
-    $0.82\ \mathrm s$
+    $0.82\ \mathrm{s}$
 - id: p5-evaluate-composite-d
   content: |-
-    $2.32\ \mathrm s$
+    $2.32\ \mathrm{s}$
 ```
 
 ---
@@ -244,7 +244,7 @@ options:
 The total moment of inertia about the pivot is
 
 $$
-I=\frac13m_rL^2+m_pL^2.
+I_p=\frac13m_rL^2+m_pL^2.
 $$
 
 The gravitational torque factor is $g[m_r(L/2)+m_pL]$, so
@@ -258,18 +258,18 @@ The component ledger makes the substitution auditable:
 
 | Contribution | Rod | Point mass | Total |
 | --- | ---: | ---: | ---: |
-| Pivot moment $I_i$ | $\frac13(0.35)(1.2)^2=0.168\ \mathrm{kg\,m^2}$ | $(0.25)(1.2)^2=0.360\ \mathrm{kg\,m^2}$ | $0.528\ \mathrm{kg\,m^2}$ |
-| Torque weight $m_id_i$ | $(0.35)(0.60)=0.210\ \mathrm{kg\,m}$ | $(0.25)(1.2)=0.300\ \mathrm{kg\,m}$ | $0.510\ \mathrm{kg\,m}$ |
+| Pivot moment $I_{i,p}$ | $\frac13(0.35)(1.2)^2=0.168\ \mathrm{kg}\,\mathrm{m}^2$ | $(0.25)(1.2)^2=0.360\ \mathrm{kg}\,\mathrm{m}^2$ | $0.528\ \mathrm{kg}\,\mathrm{m}^2$ |
+| Torque weight $m_i r_i$ | $(0.35)(0.60)=0.210\ \mathrm{kg}\,\mathrm{m}$ | $(0.25)(1.2)=0.300\ \mathrm{kg}\,\mathrm{m}$ | $0.510\ \mathrm{kg}\,\mathrm{m}$ |
 
 Thus,
 
 $$
-\frac{I_{\mathrm{total}}}{g\sum m_id_i}
+\frac{I_p}{g\sum m_i r_i}
 =\frac{0.528}{(9.81)(0.510)}
-=0.1055\ldots\ \mathrm{s^2},
+=0.1055\ldots\ \mathrm{s}^2,
 $$
 
-and $2\pi\sqrt{0.1055\ldots}=2.0412\ldots\ \mathrm s$.
+and $2\pi\sqrt{0.1055\ldots}=2.0412\ldots\ \mathrm{s}$.
 
 The measured givens have two significant figures, so $T=2.0\ \mathrm{s}$.
 
@@ -295,7 +295,7 @@ options:
     The total moment of inertia about the pivot is
 
     $$
-    I=\frac13m_rL^2+m_pL^2.
+    I_p=\frac13m_rL^2+m_pL^2.
     $$
 
     The gravitational torque factor is $g[m_r(L/2)+m_pL]$, so
@@ -324,9 +324,9 @@ options:
 ## Summary
 
 1. Recognize multiple rigid components swinging together about one pivot.
-2. Add pivot moments: $I_{\mathrm{total}}=\sum I_i$.
-3. Add torque weights: $\sum m_i d_i$.
-4. Use $T=2\pi\sqrt{I_{\mathrm{total}}/(g\sum m_i d_i)}$; never cancel through an addition sign.
+2. Add pivot moments: $I_p=\sum I_{i,p}$.
+3. Add torque weights: $\sum m_i r_i$.
+4. Use $T=2\pi\sqrt{I_p/(g\sum m_i r_i)}$; never cancel through an addition sign.
 5. Evaluate both sums, form the radicand, take the positive square root, then multiply by $2\pi$.
 6. Check units, keep guard digits, and round only the final result.
 

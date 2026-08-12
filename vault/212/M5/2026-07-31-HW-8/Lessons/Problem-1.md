@@ -23,25 +23,25 @@ topic-code: MTH212.M5.41
 <a id="introduction"></a>
 ## Introduction
 
-When a problem names an air-column resonance as the **$n$th harmonic**, the harmonic frequency $f_n$ is $n$ times the fundamental frequency $f_1$:
+When a problem names an air-column resonance as the **$m$th harmonic**, the harmonic frequency $f_m$ is $m$ times the fundamental frequency $f_1$:
 
 $$
-f_n=nf_1.
+f_m=mf_1.
 $$
 
-The fundamental is the first harmonic, so it corresponds to $n=1$. Higher harmonics have higher frequencies.
+The fundamental is the first harmonic, so it corresponds to $m=1$. Higher harmonics have higher frequencies.
 
 | Resonance | Harmonic number | Frequency |
 | --- | ---: | ---: |
 | Fundamental | $1$ | $f_1$ |
 | Second harmonic | $2$ | $2f_1$ |
 | Fourth harmonic | $4$ | $4f_1$ |
-| $n$th harmonic | $n$ | $nf_1$ |
+| $m$th harmonic | $m$ | $mf_1$ |
 
 When the higher-harmonic frequency is known and the fundamental is requested, solve backward:
 
 $$
-\boxed{f_1=\frac{f_n}{n}}.
+\boxed{f_1=\frac{f_m}{m}}.
 $$
 
 ---
@@ -53,7 +53,7 @@ $$
 
 **Explanation**
 
-The phrase **fifth harmonic** gives the multiplier $n=5$. Substitute into $f_n=nf_1$:
+The phrase **fifth harmonic** gives the multiplier $m=5$. Substitute into $f_m=mf_1$:
 
 $$
 f_5=5f_1=5(45\ \mathrm{Hz})=225\ \mathrm{Hz}.
@@ -94,7 +94,7 @@ options:
 
 **Explanation**
 
-The known frequency is $f_5=300\ \mathrm{Hz}$, and the harmonic number is $n=5$. Write the harmonic relation:
+The known frequency is $f_5=300\ \mathrm{Hz}$, and the harmonic number is $m=5$. Write the harmonic relation:
 
 $$
 f_5=5f_1.
@@ -187,24 +187,24 @@ options:
 <a id="summary"></a>
 ## Summary
 
-**Recognition cue:** A problem gives an $n$th-harmonic frequency and asks for the fundamental frequency.
+**Recognition cue:** A problem gives an $m$th-harmonic frequency and asks for the fundamental frequency.
 
 **Rule:**
 
 $$
-f_n=nf_1
+f_m=mf_1
 \qquad\Longrightarrow\qquad
-f_1=\frac{f_n}{n}.
+f_1=\frac{f_m}{m}.
 $$
 
 **Procedure:**
 
-1. Read the harmonic number as the multiplier $n$.
-2. Divide the given harmonic frequency by $n$.
+1. Read the harmonic number as the multiplier $m$.
+2. Divide the given harmonic frequency by $m$.
 3. Keep the frequency unit, usually hertz.
-4. Check that the fundamental is lower than the higher harmonic and that $nf_1$ rebuilds the given frequency.
+4. Check that the fundamental is lower than the higher harmonic and that $mf_1$ rebuilds the given frequency.
 
-**Main trap:** Multiplying by $n$ moves from the fundamental to the $n$th harmonic. To move backward from the $n$th harmonic to the fundamental, divide by $n$.
+**Main trap:** Multiplying by $m$ moves from the fundamental to the $m$th harmonic. To move backward from the $m$th harmonic to the fundamental, divide by $m$.
 
 <!-- lesson-nav:start -->
 ---

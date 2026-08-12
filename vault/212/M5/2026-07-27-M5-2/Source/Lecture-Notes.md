@@ -85,13 +85,13 @@
 
 ### 10. Wave-Speed Relations
 - In one period, the wave travels one wavelength:
-  $$ v_{\text{wave}}=\frac{\lambda}{T} $$
+  $$ v_{\mathrm{wave}}=\frac{\lambda}{T} $$
 - Since:
   $$ f=\frac{1}{T} $$
 - Then:
-  $$ v_{\text{wave}}=\lambda f $$
+  $$ v_{\mathrm{wave}}=f\lambda $$
 - Using $k$ and $\omega$:
-  $$ v_{\text{wave}}=\frac{\omega}{k} $$
+  $$ v_{\mathrm{wave}}=\frac{\omega}{k} $$
 
 ---
 
@@ -137,26 +137,26 @@
 - For:
   $$ x(t)=A\cos(\omega t) $$
 - Particle velocity is:
-  $$ v_{\text{particle}}(t)=-\omega A\sin(\omega t) $$
+  $$ u(t)=-\omega A\sin(\omega t) $$
 - Maximum particle speed:
-  $$ v_{\text{particle,max}}=\omega A $$
+  $$ u_{\max}=\omega A $$
 
 ---
 
 ### 15. Particle Acceleration
 - Particle acceleration is:
-  $$ a_{\text{particle}}(t)=-\omega^2A\cos(\omega t) $$
+  $$ a_{\mathrm{particle}}(t)=-\omega^2A\cos(\omega t) $$
 - Equivalently:
-  $$ a_{\text{particle}}(t)=-\omega^2x(t) $$
+  $$ a_{\mathrm{particle}}(t)=-\omega^2x(t) $$
 
 ---
 
 ### 16. Important Distinction
 - Wave speed:
-  $$ v_{\text{wave}}=\lambda f=\frac{\omega}{k} $$
+  $$ v_{\mathrm{wave}}=f\lambda=\frac{\omega}{k} $$
   describes how fast the disturbance propagates.
 - Particle speed:
-  $$ v_{\text{particle,max}}=\omega A $$
+  $$ u_{\max}=\omega A $$
   describes how fast a particle in the medium moves around equilibrium.
 - These are different physical quantities and need not have the same value.
 
@@ -166,15 +166,15 @@
 
 ### 17. Linear Mass Density
 - Linear mass density is:
-  $$ \mu=\frac{m_{\text{string}}}{L} $$
+  $$ \mu=\frac{m_{\mathrm{string}}}{L} $$
 - Units:
-  $$ [\mu]=\frac{\text{kg}}{\text{m}} $$
+  $$ [\mu]=\mathrm{kg}/\mathrm{m} $$
 
 ---
 
 ### 18. Wave Speed on a String
 - The wave speed is:
-  $$ v_{\text{wave}}=\sqrt{\frac{F_T}{\mu}} $$
+  $$ v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}} $$
 - Here:
   - $F_T$ is the string tension
   - $\mu$ is the linear mass density
@@ -183,14 +183,14 @@
 
 ### 19. Effect of String Tension
 - Increasing tension increases the wave speed:
-  $$ v_{\text{wave}}\propto\sqrt{F_T} $$
+  $$ v_{\mathrm{wave}}\propto\sqrt{F_T} $$
 - Greater tension produces a stronger restoring force.
 
 ---
 
 ### 20. Effect of Linear Density
 - Increasing linear density decreases the wave speed:
-  $$ v_{\text{wave}}\propto\frac{1}{\sqrt{\mu}} $$
+  $$ v_{\mathrm{wave}}\propto\frac{1}{\sqrt{\mu}} $$
 - A more massive string has greater inertia per unit length.
 
 ---
@@ -211,7 +211,7 @@
 - Since:
   $$ \mu=\frac{m_w}{L} $$
 - The wave speed becomes:
-  $$ v_{\text{wave}}
+  $$ v_{\mathrm{wave}}
   =
   \sqrt{
   \frac{Mg}{m_w/L}
@@ -221,11 +221,11 @@
 
 ### 23. Final Wave-Speed Formula
 - Simplify:
-  $$ v_{\text{wave}}
+  $$ v_{\mathrm{wave}}
   =
   \sqrt{\frac{MgL}{m_w}} $$
 - The lecture’s numerical result is:
-  $$ v_{\text{wave}}\approx25\text{ m/s} $$
+  $$ v_{\mathrm{wave}}\approx25\ \mathrm{m}/\mathrm{s} $$
 
 ---
 
@@ -243,7 +243,7 @@
 - The system also specifies:
   - amplitude $A$
   - wavelength $\lambda$
-  - wave speed $v_{\text{wave}}$
+  - wave speed $v_{\mathrm{wave}}$
 - Goal:
   - find the maximum speed of a particle oscillating in the wire
 
@@ -251,44 +251,44 @@
 
 ### 26. Relate Frequency to Wave Speed
 - Use:
-  $$ v_{\text{wave}}=\lambda f $$
+  $$ v_{\mathrm{wave}}=f\lambda $$
 - Therefore:
-  $$ f=\frac{v_{\text{wave}}}{\lambda} $$
+  $$ f=\frac{v_{\mathrm{wave}}}{\lambda} $$
 
 ---
 
 ### 27. Maximum Particle Speed
 - Start with:
-  $$ v_{\text{particle,max}}=\omega A $$
+  $$ u_{\max}=\omega A $$
 - Since:
   $$ \omega=2\pi f $$
 - Then:
-  $$ v_{\text{particle,max}}=2\pi fA $$
+  $$ u_{\max}=2\pi fA $$
 
 ---
 
 ### 28. Substitute the Wave Frequency
 - Using:
-  $$ f=\frac{v_{\text{wave}}}{\lambda} $$
+  $$ f=\frac{v_{\mathrm{wave}}}{\lambda} $$
 - We obtain:
-  $$ v_{\text{particle,max}}
+  $$ u_{\max}
   =
-  \frac{2\pi A}{\lambda}v_{\text{wave}} $$
+  \frac{2\pi A}{\lambda}v_{\mathrm{wave}} $$
 
 ---
 
 ### 29. Complete Formula for the Hanging-Mass System
 - Substitute:
-  $$ v_{\text{wave}}=\sqrt{\frac{MgL}{m_w}} $$
+  $$ v_{\mathrm{wave}}=\sqrt{\frac{MgL}{m_w}} $$
 - Then:
   $$
-  v_{\text{particle,max}}
+  u_{\max}
   =
   \frac{2\pi A}{\lambda}
   \sqrt{\frac{MgL}{m_w}}
   $$
 - The lecture’s numerical result is approximately:
-  $$ v_{\text{particle,max}}\approx200\text{ m/s} $$
+  $$ u_{\max}\approx200\ \mathrm{m}/\mathrm{s} $$
 
 ---
 
@@ -303,13 +303,13 @@
 
 ### 31. Locate the Sound Source
 - Two listeners lie on the $x$-axis at:
-  $$ x_1=-7\text{ m} $$
-  $$ x_2=3\text{ m} $$
+  $$ x_1=-7\ \mathrm{m} $$
+  $$ x_2=3\ \mathrm{m} $$
 - The source is also on the $x$-axis.
 - Its position is the midpoint:
   $$ x_s=\frac{x_1+x_2}{2} $$
 - Therefore:
-  $$ x_s=\frac{-7+3}{2}=-2\text{ m} $$
+  $$ x_s=\frac{-7+3}{2}=-2\ \mathrm{m} $$
 
 ---
 
@@ -317,13 +317,13 @@
 - The wavefront radius is:
   $$ r=|-7-(-2)| $$
 - Therefore:
-  $$ r=5\text{ m} $$
+  $$ r=5\ \mathrm{m} $$
 
 ---
 
 ### 33. Position of a Third Listener
 - For a third listener shown at $x=0$, its horizontal distance from the source is:
-  $$ \Delta x=0-(-2)=2\text{ m} $$
+  $$ \Delta x=0-(-2)=2\ \mathrm{m} $$
 - Apply the circle equation:
   $$ (\Delta x)^2+y^2=r^2 $$
 
@@ -333,11 +333,11 @@
 - Rearranging:
   $$ y=\sqrt{r^2-(\Delta x)^2} $$
 - Substitute:
-  $$ y=\sqrt{(5\text{ m})^2-(2\text{ m})^2} $$
+  $$ y=\sqrt{(5\ \mathrm{m})^2-(2\ \mathrm{m})^2} $$
 - Therefore:
-  $$ y=\sqrt{21}\text{ m} $$
+  $$ y=\sqrt{21}\ \mathrm{m} $$
 - Numerical result:
-  $$ y\approx4.58\text{ m} $$
+  $$ y\approx4.58\ \mathrm{m} $$
 
 ---
 
@@ -371,7 +371,7 @@
 
 ### 38. Wavelength Across a Boundary
 - Since:
-  $$ v=\lambda f $$
+  $$ v=f\lambda $$
 - A change in speed with constant frequency requires a change in wavelength:
   $$ \lambda=\frac{v}{f} $$
 - Slower light speed means shorter wavelength.
@@ -380,11 +380,11 @@
 
 ### 39. Index–Wavelength Relationship
 - Substitute:
-  $$ v=\lambda f $$
+  $$ v=f\lambda $$
   into:
   $$ n=\frac{c}{v} $$
 - Then:
-  $$ n=\frac{c}{\lambda f} $$
+  $$ n=\frac{c}{f\lambda} $$
 - For the same light:
   $$ n\lambda=\frac{c}{f}=\text{constant} $$
 
@@ -412,10 +412,10 @@
 
 ### 42. Given Information
 - Light in air has wavelength:
-  $$ \lambda_a=650\text{ nm} $$
+  $$ \lambda_{\mathrm{air}}=650\ \mathrm{nm} $$
 - Indices of refraction:
-  $$ n_a=1.0 $$
-  $$ n_g=1.5 $$
+  $$ n_{\mathrm{air}}=1.0 $$
+  $$ n_{\mathrm{glass}}=1.5 $$
 - The glass slide has width $w$.
 - Goal:
   - find the number of wavelengths contained within the slide
@@ -424,23 +424,23 @@
 
 ### 43. Wavelength in Glass
 - Use:
-  $$ n_a\lambda_a=n_g\lambda_g $$
+  $$ n_{\mathrm{air}}\lambda_{\mathrm{air}}=n_{\mathrm{glass}}\lambda_{\mathrm{glass}} $$
 - Therefore:
-  $$ \lambda_g=\frac{n_a}{n_g}\lambda_a $$
+  $$ \lambda_{\mathrm{glass}}=\frac{n_{\mathrm{air}}}{n_{\mathrm{glass}}}\lambda_{\mathrm{air}} $$
 
 ---
 
 ### 44. Number of Wavelengths
 - The number of wavelengths in a width $w$ is:
-  $$ N=\frac{w}{\lambda_g} $$
-- Substitute the expression for $\lambda_g$:
+  $$ N=\frac{w}{\lambda_{\mathrm{glass}}} $$
+- Substitute the expression for $\lambda_{\mathrm{glass}}$:
   $$
   N
   =
-  \frac{w}{(n_a/n_g)\lambda_a}
+  \frac{w}{(n_{\mathrm{air}}/n_{\mathrm{glass}})\lambda_{\mathrm{air}}}
   $$
 - Therefore:
-  $$ N=\frac{wn_g}{n_a\lambda_a} $$
+  $$ N=\frac{wn_{\mathrm{glass}}}{n_{\mathrm{air}}\lambda_{\mathrm{air}}} $$
 
 ---
 
@@ -456,15 +456,15 @@
 
 ### 46. Kinetic Energy of an Oscillating Particle
 - The kinetic energy of a particle is:
-  $$ K=\frac{1}{2}mv^2 $$
+  $$ K=\frac{1}{2}mu^2 $$
 - For simple harmonic motion:
-  $$ v_{\text{particle,max}}=\omega A $$
+  $$ u_{\max}=\omega A $$
 
 ---
 
 ### 47. Dependence on Frequency and Amplitude
 - Since:
-  $$ v_{\text{particle,max}}\propto\omega A $$
+  $$ u_{\max}\propto\omega A $$
 - The kinetic energy scale is:
   $$ K\propto\omega^2A^2 $$
 - Since:
@@ -505,16 +505,16 @@
 
 ### 51. Definition of Intensity
 - Intensity is power per area:
-  $$ I=\frac{P}{A_{\text{surface}}} $$
+  $$ I=\frac{P}{A_s} $$
 - SI units:
-  $$ [I]=\frac{\text{W}}{\text{m}^2} $$
+  $$ [I]=\mathrm{W}/\mathrm{m}^2 $$
 
 ---
 
 ### 52. Point Source in Three Dimensions
 - For an isotropic point source, power spreads uniformly over a sphere.
 - Surface area of a sphere:
-  $$ A_{\text{sphere}}=4\pi r^2 $$
+  $$ A_s=4\pi r^2 $$
 - Therefore:
   $$ I=\frac{P}{4\pi r^2} $$
 
@@ -557,13 +557,13 @@
 
 ### 56. Reference Intensity
 - The reference intensity is approximately the threshold of human hearing:
-  $$ I_0=10^{-12}\frac{\text{W}}{\text{m}^2} $$
+  $$ I_0=10^{-12}\ \mathrm{W}/\mathrm{m}^2 $$
 
 ---
 
 ### 57. Units of Intensity Level
 - Sound intensity level is measured in decibels:
-  $$ [\beta]=\text{dB} $$
+  $$ [\beta]=\mathrm{dB} $$
 
 ---
 
@@ -582,17 +582,17 @@
 - Angular frequency:
   $$ \omega=2\pi f $$
 - Wave speed:
-  $$ v_{\text{wave}}=\lambda f=\frac{\omega}{k} $$
+  $$ v_{\mathrm{wave}}=f\lambda=\frac{\omega}{k} $$
 - String-wave speed:
-  $$ v_{\text{wave}}=\sqrt{\frac{F_T}{\mu}} $$
+  $$ v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}} $$
 - Maximum particle speed:
-  $$ v_{\text{particle,max}}=\omega A $$
+  $$ u_{\max}=\omega A $$
 - Index of refraction:
   $$ n=\frac{c}{v} $$
 - For the same light:
   $$ n\lambda=\text{constant} $$
 - Intensity:
-  $$ I=\frac{P}{A} $$
+  $$ I=\frac{P}{A_s} $$
 - Isotropic point-source intensity:
   $$ I=\frac{P}{4\pi r^2} $$
 - Sound intensity level:

@@ -48,7 +48,7 @@ The denominator is the mass that remains, not the original mass. If the hole is 
 <a id="represent-a-hole-as-negative-mass"></a>
 ## Represent a Hole as Negative Mass
 
-**Example:** A uniform plate of mass $10\text{ kg}$ is centered at $x=0$. A $2\text{ kg}$ piece centered at $x=3\text{ m}$ is removed. Find the center of mass of the remaining plate.
+**Example:** A uniform plate of mass $10\ \mathrm{kg}$ is centered at $x=0$. A $2\ \mathrm{kg}$ piece centered at $x=3\ \mathrm{m}$ is removed. Find the center of mass of the remaining plate.
 
 **Explanation**
 
@@ -59,7 +59,7 @@ $$
 x_{\mathrm{cm}}
 &=\frac{(10)(0)+(-2)(3)}{10+(-2)}\\
 &=\frac{-6}{8}\\
-&=-0.75\text{ m}.
+&=-0.75\ \mathrm{m}.
 \end{aligned}
 $$
 
@@ -69,24 +69,24 @@ Removing mass at positive $x$ leaves the plate balanced to the left of the origi
 type: radio
 id: p10-negative-mass
 content: |-
-  A uniform plate of mass $12\text{ kg}$ is centered at $x=0$. A $3\text{ kg}$ piece centered at $x=2\text{ m}$ is removed. What is the remaining plate's $x$-coordinate of center of mass?
+  A uniform plate of mass $12\ \mathrm{kg}$ is centered at $x=0$. A $3\ \mathrm{kg}$ piece centered at $x=2\ \mathrm{m}$ is removed. What is the remaining plate's $x$-coordinate of center of mass?
 options:
 - id: a
   content: |-
-    $-2/3\text{ m}$
+    $-2/3\ \mathrm{m}$
   correct: true
 - id: b
   content: |-
-    $-1/2\text{ m}$
+    $-1/2\ \mathrm{m}$
 - id: c
   content: |-
     $0$
 - id: d
   content: |-
-    $1/2\text{ m}$
+    $1/2\ \mathrm{m}$
 - id: e
   content: |-
-    $2/3\text{ m}$
+    $2/3\ \mathrm{m}$
 ```
 
 ---
@@ -224,7 +224,7 @@ The remaining center of mass shifts **away from** the hole, so its coordinate ha
 type: radio
 id: p10-direction-check
 content: |-
-  A hole centered at $x=+4\text{ cm}$ is removed from a uniform plate originally centered at the origin. Which sign must the remaining plate's $x_{\mathrm{cm}}$ have?
+  A hole centered at $x=+4\ \mathrm{cm}$ is removed from a uniform plate originally centered at the origin. Which sign must the remaining plate's $x_{\mathrm{cm}}$ have?
 options:
 - id: a
   content: |-

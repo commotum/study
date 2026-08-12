@@ -392,15 +392,15 @@ To two significant figures,
 
 $$
 \boxed{
-N\approx5.3\times10^2\ \text{slits per millimeter}
+N\approx5.3\times10^2
 }.
 $$
 
-Thus, the diffraction grating contains approximately
+Thus, the diffraction grating’s line density is approximately
 
 $$
 \boxed{
-530\ \text{slits/mm}
+\frac{N}{W}\approx530\ \mathrm{slits}/\mathrm{mm}
 }.
 $$
 

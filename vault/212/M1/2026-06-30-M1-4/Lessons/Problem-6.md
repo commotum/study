@@ -18,7 +18,7 @@ topic-code: MTH212.M1.24
 
 - Resolve a force into components parallel to horizontal radial and vertical axes.
 - Use $a_r=\frac{v^2}{r}$ for uniform circular motion.
-- Use $f_s=\mu_sN$ at the limiting speed before sliding.
+- Use $f_{s,\max}=\mu_s N$ at the limiting speed before sliding.
 
 ---
 
@@ -82,22 +82,22 @@ options:
 
 **Explanation**
 
-Use radial inward as the positive horizontal direction. The normal force contributes $N\sin\theta$ inward. Since friction points down the bank at maximum speed, friction contributes $\mu_sN\cos\theta$ inward.
+Use radial inward as the positive horizontal direction. The normal force contributes $N\sin\theta$ inward. Since friction points down the bank at maximum speed, friction contributes $\mu_s N\cos\theta$ inward.
 
 | Force | Radial inward component | Vertical upward component |
 | --- | ---: | ---: |
 | Normal force | $N\sin\theta$ | $N\cos\theta$ |
-| Static friction down the bank | $\mu_sN\cos\theta$ | $-\mu_sN\sin\theta$ |
+| Static friction down the bank | $\mu_s N\cos\theta$ | $-\mu_s N\sin\theta$ |
 | Weight | $0$ | $-mg$ |
 
 $$
-N\sin\theta+\mu_sN\cos\theta=\frac{mv^2}{r}
+N\sin\theta+\mu_s N\cos\theta=m a_r=m\frac{v^2}{r}
 $$
 
 Use upward as positive vertical direction. The normal force contributes $N\cos\theta$ upward. Weight and the vertical part of friction point downward.
 
 $$
-N\cos\theta-mg-\mu_sN\sin\theta=0
+N\cos\theta-mg-\mu_s N\sin\theta=0
 $$
 
 So the vertical equation can be written as
@@ -115,19 +115,19 @@ content: |-
 options:
 - id: a
   content: |-
-    $N\sin\theta+\mu_sN\cos\theta=\frac{mv^2}{r}$ and $N\cos\theta-\mu_sN\sin\theta=mg$
+    $N\sin\theta+\mu_s N\cos\theta=m a_r=m\frac{v^2}{r}$ and $N\cos\theta-\mu_s N\sin\theta=mg$
   correct: true
   feedback: |-
     Down-slope friction adds inward force and subtracts from the upward vertical balance.
 - id: b
   content: |-
-    $N\sin\theta-\mu_sN\cos\theta=\frac{mv^2}{r}$ and $N\cos\theta+\mu_sN\sin\theta=mg$
+    $N\sin\theta-\mu_s N\cos\theta=\frac{mv^2}{r}$ and $N\cos\theta+\mu_s N\sin\theta=mg$
 - id: c
   content: |-
-    $N\cos\theta+\mu_sN\sin\theta=\frac{mv^2}{r}$ and $N\sin\theta-\mu_sN\cos\theta=mg$
+    $N\cos\theta+\mu_s N\sin\theta=\frac{mv^2}{r}$ and $N\sin\theta-\mu_s N\cos\theta=mg$
 - id: d
   content: |-
-    $N+\mu_sN=\frac{mv^2}{r}$ and $N-mg=0$
+    $N+\mu_s N=\frac{mv^2}{r}$ and $N-mg=0$
 ```
 
 ---
@@ -135,16 +135,16 @@ options:
 <a id="divide-the-equations-to-isolate-speed"></a>
 ## Divide the Equations to Isolate Speed
 
-**Example:** Starting from the maximum-speed equations, solve for $v_{\max}$.
+**Example:** Starting from the maximum-speed equations, solve for $v_{\max,\mathrm{banked}}$.
 
 **Explanation**
 
-First count unknowns. At the maximum-speed threshold, $f_s=\mu_sN$, so friction is not a third independent unknown. With the givens fixed, the two unknowns are $N$ and $v$, matched by the vertical and radial equations. Rearranging each equation as $N$ times a trigonometric factor and then dividing is a deliberate elimination step: both $N$ and $m$ cancel at once.
+First count unknowns. At the maximum-speed threshold, $f_{s,\max}=\mu_s N$, so friction is not a third independent unknown. With the givens fixed, the two unknowns are $N$ and $v$, matched by the vertical and radial equations. Rearranging each equation as $N$ times a trigonometric factor and then dividing is a deliberate elimination step: both $N$ and $m$ cancel at once.
 
 Start with the two equations:
 
 $$
-N(\sin\theta+\mu_s\cos\theta)=\frac{mv^2}{r}
+N(\sin\theta+\mu_s\cos\theta)=m a_r=m\frac{v^2}{r}
 $$
 
 $$
@@ -163,7 +163,7 @@ This is why the car's mass does not appear in the final speed formula. The given
 Then solve for $v$:
 
 $$
-v_{\max}=\sqrt{rg\left(\frac{\sin\theta+\mu_s\cos\theta}{\cos\theta-\mu_s\sin\theta}\right)}.
+v_{\max,\mathrm{banked}}=\sqrt{rg\left(\frac{\sin\theta+\mu_s\cos\theta}{\cos\theta-\mu_s\sin\theta}\right)}.
 $$
 
 ```quiz
@@ -175,19 +175,19 @@ content: |-
 options:
 - id: a
   content: |-
-    $v_{\max}=\sqrt{rg\left(\frac{\sin\theta+\mu_s\cos\theta}{\cos\theta-\mu_s\sin\theta}\right)}$
+    $v_{\max,\mathrm{banked}}=\sqrt{rg\left(\frac{\sin\theta+\mu_s\cos\theta}{\cos\theta-\mu_s\sin\theta}\right)}$
   correct: true
   feedback: |-
     The numerator has both inward force components, and the denominator comes from the vertical balance.
 - id: b
   content: |-
-    $v_{\max}=\sqrt{rg\left(\frac{\sin\theta-\mu_s\cos\theta}{\cos\theta+\mu_s\sin\theta}\right)}$
+    $v_{\max,\mathrm{banked}}=\sqrt{rg\left(\frac{\sin\theta-\mu_s\cos\theta}{\cos\theta+\mu_s\sin\theta}\right)}$
 - id: c
   content: |-
-    $v_{\max}=\sqrt{rg\tan\theta}$
+    $v_{\max,\mathrm{banked}}=\sqrt{rg\tan\theta}$
 - id: d
   content: |-
-    $v_{\max}=\sqrt{\mu_srg}$
+    $v_{\max,\mathrm{banked}}=\sqrt{\mu_s r g}$
 ```
 
 ---
@@ -204,7 +204,7 @@ The given mass $m=1400\ \mathrm{kg}$ is not needed because it canceled when the 
 Substitute into the maximum-speed formula:
 
 $$
-v_{\max}=\sqrt{(55)(9.8)\left(\frac{\sin 12^\circ+0.65\cos 12^\circ}{\cos 12^\circ-0.65\sin 12^\circ}\right)}.
+v_{\max,\mathrm{banked}}=\sqrt{(55)(9.8)\left(\frac{\sin 12^\circ+0.65\cos 12^\circ}{\cos 12^\circ-0.65\sin 12^\circ}\right)}.
 $$
 
 Evaluate the trig pieces in degree mode:
@@ -227,13 +227,13 @@ $$
 So
 
 $$
-v_{\max}\approx \sqrt{539.5}\approx 23.2\ \mathrm{m/s}.
+v_{\max,\mathrm{banked}}\approx \sqrt{539.5}\approx 23.2\ \mathrm{m}/\mathrm{s}.
 $$
 
 To two significant figures, the answer is
 
 $$
-23\ \mathrm{m/s}.
+23\ \mathrm{m}/\mathrm{s}.
 $$
 
 ```quiz
@@ -243,25 +243,25 @@ shuffle: true
 content: |-
   A car goes around a banked curve with $r=60\ \mathrm{m}$, $\theta=10^\circ$, and $\mu_s=0.50$. Use
   $$
-  v_{\max}=\sqrt{rg\left(\frac{\sin\theta+\mu_s\cos\theta}{\cos\theta-\mu_s\sin\theta}\right)}
+  v_{\max,\mathrm{banked}}=\sqrt{rg\left(\frac{\sin\theta+\mu_s\cos\theta}{\cos\theta-\mu_s\sin\theta}\right)}
   $$
-  with $g=9.8\ \mathrm{m/s^2}$. What is $v_{\max}$ to two significant figures?
+  with $g=9.8\ \mathrm{m}/\mathrm{s}^2$. What is $v_{\max,\mathrm{banked}}$ to two significant figures?
 options:
 - id: a
   content: |-
-    $10\ \mathrm{m/s}$
+    $10\ \mathrm{m}/\mathrm{s}$
 - id: b
   content: |-
-    $21\ \mathrm{m/s}$
+    $21\ \mathrm{m}/\mathrm{s}$
   correct: true
   feedback: |-
-    The ratio is about $0.742$, so $v_{\max}\approx\sqrt{(60)(9.8)(0.742)}\approx 21\ \mathrm{m/s}$.
+    The ratio is about $0.742$, so $v_{\max,\mathrm{banked}}\approx\sqrt{(60)(9.8)(0.742)}\approx 21\ \mathrm{m}/\mathrm{s}$.
 - id: c
   content: |-
-    $17\ \mathrm{m/s}$
+    $17\ \mathrm{m}/\mathrm{s}$
 - id: d
   content: |-
-    $24\ \mathrm{m/s}$
+    $24\ \mathrm{m}/\mathrm{s}$
 ```
 
 ---
@@ -274,7 +274,7 @@ At the maximum speed on a frictional banked curve, the car is about to slide up 
 The force equations are
 
 $$
-N(\sin\theta+\mu_s\cos\theta)=\frac{mv^2}{r}
+N(\sin\theta+\mu_s\cos\theta)=m a_r=m\frac{v^2}{r}
 $$
 
 and
@@ -286,7 +286,7 @@ $$
 Dividing them gives
 
 $$
-v_{\max}=\sqrt{rg\left(\frac{\sin\theta+\mu_s\cos\theta}{\cos\theta-\mu_s\sin\theta}\right)}.
+v_{\max,\mathrm{banked}}=\sqrt{rg\left(\frac{\sin\theta+\mu_s\cos\theta}{\cos\theta-\mu_s\sin\theta}\right)}.
 $$
 
 Two limiting-case checks expose sign errors quickly. Setting $\mu_s=0$ must recover the frictionless design speed,
@@ -298,7 +298,7 @@ $$
 Setting $\theta=0$ must recover the flat-curve result,
 
 $$
-v_{\max}=\sqrt{\mu_srg}.
+v_{\max,\mathrm{banked}}=\sqrt{\mu_s r g}.
 $$
 
 The formula passes both checks.

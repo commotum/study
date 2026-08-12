@@ -25,7 +25,7 @@ topic-code: MTH212.M3.03
 <a id="introduction"></a>
 ## Introduction
 
-A geostationary satellite has a $24\ \mathrm h$ orbital period. The circular-orbit period equation uses SI units and returns the satellite's distance $r$ from Earth's **center**:
+A geostationary satellite has a $24\ \mathrm{h}$ orbital period. The circular-orbit period equation uses SI units and returns the satellite's distance $r$ from Earth's **center**:
 
 $$
 T^2=\frac{4\pi^2r^3}{GM_E}.
@@ -54,7 +54,7 @@ $$
 <a id="convert-the-period-to-seconds"></a>
 ## Convert the Period to Seconds
 
-**Example:** Convert a $24\ \mathrm h$ orbital period to seconds.
+**Example:** Convert a $24\ \mathrm{h}$ orbital period to seconds.
 
 **Explanation**
 
@@ -62,11 +62,11 @@ Use conversion factors whose unwanted units cancel:
 
 $$
 \begin{aligned}
-24\ \mathrm h
-\left(\frac{60\ \mathrm{min}}{1\ \mathrm h}\right)
-\left(\frac{60\ \mathrm s}{1\ \mathrm{min}}\right)
-&=24(60)(60)\ \mathrm s\\
-&=86400\ \mathrm s.
+24\ \mathrm{h}
+\left(\frac{60\ \mathrm{min}}{1\ \mathrm{h}}\right)
+\left(\frac{60\ \mathrm{s}}{1\ \mathrm{min}}\right)
+&=24(60)(60)\ \mathrm{s}\\
+&=86400\ \mathrm{s}.
 \end{aligned}
 $$
 
@@ -76,26 +76,26 @@ Using $24$ as though it were already in seconds would make the orbital radius fa
 type: radio
 id: p3-time-to-seconds
 content: |-
-  A circular-orbit formula requires time in seconds. What value should be used for a $12\ \mathrm h$ period?
+  A circular-orbit formula requires time in seconds. What value should be used for a $12\ \mathrm{h}$ period?
 options:
 - id: p3-time-a
   content: |-
-    $43200\ \mathrm s$
+    $43200\ \mathrm{s}$
   correct: true
   feedback: |-
-    Multiply by $60\ \mathrm{min/h}$ and $60\ \mathrm{s/min}$: $12(60)(60)=43200\ \mathrm s$.
+    Multiply by $60\ \mathrm{min}/\mathrm{h}$ and $60\ \mathrm{s}/\mathrm{min}$: $12(60)(60)=43200\ \mathrm{s}$.
 - id: p3-time-b
   content: |-
-    $720\ \mathrm s$
+    $720\ \mathrm{s}$
 - id: p3-time-c
   content: |-
-    $12\ \mathrm s$
+    $12\ \mathrm{s}$
 - id: p3-time-d
   content: |-
-    $12000\ \mathrm s$
+    $12000\ \mathrm{s}$
 - id: p3-time-e
   content: |-
-    $4.32\times10^6\ \mathrm s$
+    $4.32\times10^6\ \mathrm{s}$
 ```
 
 ---
@@ -157,7 +157,7 @@ options:
 <a id="convert-orbital-radius-to-altitude"></a>
 ## Convert Orbital Radius to Altitude
 
-**Example:** A calculation gives an orbital radius $r=2.10\times10^7\ \mathrm m$ for a planet with radius $r_P=6.0\times10^6\ \mathrm m$. Find the satellite's altitude in kilometers.
+**Example:** A calculation gives an orbital radius $r=2.10\times10^7\ \mathrm{m}$ for a planet with radius $r_P=6.0\times10^6\ \mathrm{m}$. Find the satellite's altitude in kilometers.
 
 **Explanation**
 
@@ -167,15 +167,15 @@ $$
 \begin{aligned}
 h&=r-r_P\\
 &=2.10\times10^7-6.0\times10^6\\
-&=1.50\times10^7\ \mathrm m.
+&=1.50\times10^7\ \mathrm{m}.
 \end{aligned}
 $$
 
 Then convert meters to kilometers with a factor whose meters cancel:
 
 $$
-(1.50\times10^7\ \mathrm m)
-\left(\frac{1\ \mathrm{km}}{1000\ \mathrm m}\right)
+(1.50\times10^7\ \mathrm{m})
+\left(\frac{1\ \mathrm{km}}{1000\ \mathrm{m}}\right)
 =1.50\times10^4\ \mathrm{km}.
 $$
 
@@ -183,14 +183,14 @@ $$
 type: radio
 id: p3-radius-to-altitude
 content: |-
-  A satellite's orbital radius is $3.2\times10^7\ \mathrm m$, measured from a planet's center. The planet's radius is $7.0\times10^6\ \mathrm m$. What is the satellite's altitude in kilometers?
+  A satellite's orbital radius is $3.2\times10^7\ \mathrm{m}$, measured from a planet's center. The planet's radius is $7.0\times10^6\ \mathrm{m}$. What is the satellite's altitude in kilometers?
 options:
 - id: p3-altitude-a
   content: |-
     $2.5\times10^4\ \mathrm{km}$
   correct: true
   feedback: |-
-    Subtract the planet's radius, then divide by $1000$: $(3.2\times10^7-7.0\times10^6)\ \mathrm m=2.5\times10^7\ \mathrm m=2.5\times10^4\ \mathrm{km}$.
+    Subtract the planet's radius, then divide by $1000$: $(3.2\times10^7-7.0\times10^6)\ \mathrm{m}=2.5\times10^7\ \mathrm{m}=2.5\times10^4\ \mathrm{km}$.
 - id: p3-altitude-b
   content: |-
     $3.2\times10^4\ \mathrm{km}$
@@ -210,7 +210,7 @@ options:
 <a id="apply-the-method-to-problem-3"></a>
 ## Apply the Method to Problem 3
 
-**Example:** Find the altitude of a geostationary satellite. Use $G=6.67\times10^{-11}\ \mathrm{N\,m^2/kg^2}$, $M_E=5.97\times10^{24}\ \mathrm{kg}$, $r_E=6.38\times10^6\ \mathrm{m}$, and a $24\ \mathrm{h}$ orbital period.
+**Example:** Find the altitude of a geostationary satellite. Use $G=6.67\times10^{-11}\ \mathrm{N}\,\mathrm{m}^2/\mathrm{kg}^2$, $M_E=5.97\times10^{24}\ \mathrm{kg}$, $r_E=6.38\times10^6\ \mathrm{m}$, and a $24\ \mathrm{h}$ orbital period.
 
 **Explanation**
 
@@ -251,7 +251,7 @@ id: p3-source-check
 content: |-
   **Question 2**
 
-  Find the altitude of a geostationary satellite. Use $G=6.67\times10^{-11}\ \mathrm{N\,m^2/kg^2}$, $M_E=5.97\times10^{24}\ \mathrm{kg}$, $r_E=6.38\times10^6\ \mathrm{m}$, and a $24\ \mathrm{h}$ orbital period.
+  Find the altitude of a geostationary satellite. Use $G=6.67\times10^{-11}\ \mathrm{N}\,\mathrm{m}^2/\mathrm{kg}^2$, $M_E=5.97\times10^{24}\ \mathrm{kg}$, $r_E=6.38\times10^6\ \mathrm{m}$, and a $24\ \mathrm{h}$ orbital period.
 
   Enter the altitude in kilometers as a number only:
 options:

@@ -16,8 +16,8 @@ topic-code: MTH212.M1.11
 
 ## Prerequisites
 
-- Know that uniform circular motion has centripetal acceleration directed toward the center of the circle.
-- Know that net force points in the same direction as acceleration because $\sum \vec F=m\vec a$.
+- Know that uniform circular motion has inward radial acceleration directed toward the center of the circle.
+- Know that net force points in the same direction as acceleration because $\vec{F}_{\mathrm{net}}=m\vec{a}$.
 - Be able to read left, right, up, and down directions from a side-view diagram.
 
 ---
@@ -42,13 +42,13 @@ This is the direction of the combined force on the bob, not the direction of the
 
 **Explanation**
 
-The net force must point in the same direction as the centripetal acceleration:
+The net force must point in the same direction as the inward radial acceleration:
 
 $$
-\sum \vec F = m\vec a_r
+\vec{F}_{\mathrm{net}}=m a_r\hat{r}
 $$
 
-The centripetal direction is always from the object toward the center of the circle. The object is the tail of the direction arrow, and the center is the head of the direction arrow. From the rightmost point, the center is to the left, so the net force points left.
+The inward radial direction is always from the object toward the center of the circle. The object is the tail of the direction arrow, and the center is the head of the direction arrow. From the rightmost point, the center is to the left, so the net force points left.
 
 ```quiz
 type: radio
@@ -127,7 +127,7 @@ $$
 $$
 
 $$
-\sum F_r=ma_r
+\sum F_r=m a_r=m\frac{v^2}{r}
 $$
 
 So the net force points inward toward the center, not along the string.

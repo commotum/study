@@ -31,9 +31,9 @@ A wheel spins with an angular speed of $120$ revolutions per minute, and the que
 The cue is the unit change:
 
 $$
-\frac{\mathrm{rev}}{\mathrm{min}}
+\mathrm{rev}/\mathrm{min}
 \quad\longrightarrow\quad
-\frac{\mathrm{rad}}{\mathrm{s}}.
+\mathrm{rad}/\mathrm{s}.
 $$
 
 Convert the numerator unit and the denominator unit separately:
@@ -44,16 +44,16 @@ $$
 1\ \mathrm{min}=60\ \mathrm{s}.
 $$
 
-For any angular speed $R$ in revolutions per minute,
+For any rotation frequency $f$ in revolutions per minute,
 
 $$
-R\ \frac{\mathrm{rev}}{\mathrm{min}}
+f\ \mathrm{rev}/\mathrm{min}
 \cdot
 \frac{2\pi\ \mathrm{rad}}{1\ \mathrm{rev}}
 \cdot
 \frac{1\ \mathrm{min}}{60\ \mathrm{s}}
 =
-\frac{R\pi}{30}\ \frac{\mathrm{rad}}{\mathrm{s}}.
+\frac{f\pi}{30}\ \mathrm{rad}/\mathrm{s}.
 $$
 
 The important part is not the shortcut. The important part is arranging the conversion factors so the old units cancel.
@@ -70,7 +70,7 @@ The important part is not the shortcut. The important part is arranging the conv
 Start with
 
 $$
-15\ \frac{\mathrm{rev}}{\mathrm{min}}.
+15\ \mathrm{rev}/\mathrm{min}.
 $$
 
 The unit $\mathrm{rev}$ is in the numerator, so put $\mathrm{rev}$ in the denominator of the conversion factor:
@@ -88,7 +88,7 @@ $$
 The setup is
 
 $$
-15\ \frac{\mathrm{rev}}{\mathrm{min}}
+15\ \mathrm{rev}/\mathrm{min}
 \cdot
 \frac{2\pi\ \mathrm{rad}}{1\ \mathrm{rev}}
 \cdot
@@ -147,7 +147,7 @@ options:
 **Example:** After setting up
 
 $$
-45\ \frac{\mathrm{rev}}{\mathrm{min}}
+45\ \mathrm{rev}/\mathrm{min}
 \cdot
 \frac{2\pi\ \mathrm{rad}}{1\ \mathrm{rev}}
 \cdot
@@ -161,13 +161,13 @@ what units remain?
 The $\mathrm{rev}$ unit appears once in the numerator and once in the denominator, so those cancel. The same is true for $\mathrm{min}$:
 
 $$
-\frac{\mathrm{rev}}{\mathrm{min}}
+\mathrm{rev}/\mathrm{min}
 \cdot
-\frac{\mathrm{rad}}{\mathrm{rev}}
+\mathrm{rad}/\mathrm{rev}
 \cdot
 \frac{\mathrm{min}}{\mathrm{s}}
 =
-\frac{\mathrm{rad}}{\mathrm{s}}.
+\mathrm{rad}/\mathrm{s}.
 $$
 
 So the setup has the correct final units.
@@ -208,7 +208,7 @@ options:
 Write the full conversion:
 
 $$
-60\ \frac{\mathrm{rev}}{\mathrm{min}}
+60\ \mathrm{rev}/\mathrm{min}
 \cdot
 \frac{2\pi\ \mathrm{rad}}{1\ \mathrm{rev}}
 \cdot
@@ -224,9 +224,9 @@ $$
 Therefore,
 
 $$
-60\ \frac{\mathrm{rev}}{\mathrm{min}}
+60\ \mathrm{rev}/\mathrm{min}
 =
-2\pi\ \frac{\mathrm{rad}}{\mathrm{s}}.
+2\pi\ \mathrm{rad}/\mathrm{s}.
 $$
 
 ```quiz
@@ -285,21 +285,21 @@ options:
 First convert revolutions to radians:
 
 $$
-180\ \frac{\mathrm{rev}}{\mathrm{min}}
+180\ \mathrm{rev}/\mathrm{min}
 \cdot
 \frac{2\pi\ \mathrm{rad}}{1\ \mathrm{rev}}
 =
-360\pi\ \frac{\mathrm{rad}}{\mathrm{min}}.
+360\pi\ \mathrm{rad}/\mathrm{min}.
 $$
 
 This is not finished because the unit is still radians per minute. Convert the denominator from minutes to seconds:
 
 $$
-360\pi\ \frac{\mathrm{rad}}{\mathrm{min}}
+360\pi\ \mathrm{rad}/\mathrm{min}
 \cdot
 \frac{1\ \mathrm{min}}{60\ \mathrm{s}}
 =
-6\pi\ \frac{\mathrm{rad}}{\mathrm{s}}.
+6\pi\ \mathrm{rad}/\mathrm{s}.
 $$
 
 The common trap is stopping at $360\pi$. That number has the wrong time unit.
@@ -338,7 +338,7 @@ options:
 Use the same two conversion factors:
 
 $$
-120\ \frac{\mathrm{rev}}{\mathrm{min}}
+120\ \mathrm{rev}/\mathrm{min}
 \cdot
 \frac{2\pi\ \mathrm{rad}}{1\ \mathrm{rev}}
 \cdot
@@ -348,7 +348,7 @@ $$
 Cancel units:
 
 $$
-120\cdot\frac{2\pi}{60}\ \frac{\mathrm{rad}}{\mathrm{s}}.
+120\cdot\frac{2\pi}{60}\ \mathrm{rad}/\mathrm{s}.
 $$
 
 Simplify:
@@ -414,13 +414,13 @@ $$
 and arrange the factors so the old units cancel:
 
 $$
-R\ \frac{\mathrm{rev}}{\mathrm{min}}
+f\ \mathrm{rev}/\mathrm{min}
 \cdot
 \frac{2\pi\ \mathrm{rad}}{1\ \mathrm{rev}}
 \cdot
 \frac{1\ \mathrm{min}}{60\ \mathrm{s}}
 =
-\frac{R\pi}{30}\ \frac{\mathrm{rad}}{\mathrm{s}}.
+\frac{f\pi}{30}\ \mathrm{rad}/\mathrm{s}.
 $$
 
 The main trap is converting revolutions to radians but leaving the answer in radians per minute. For $120$ revolutions per minute,

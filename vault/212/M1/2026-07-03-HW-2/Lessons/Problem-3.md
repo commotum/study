@@ -1,4 +1,4 @@
-# Finding Centripetal Force From Radius and Period
+# Finding Radial Net Force From Radius and Period
 
 <!--
 lesson-id: 212-M1-059
@@ -9,7 +9,7 @@ topic-code: MTH212.M1.59
 
 - [Introduction](#introduction)
 - [Turn Period Into Speed](#turn-period-into-speed)
-- [Substitute Speed Into Centripetal Force](#substitute-speed-into-centripetal-force)
+- [Substitute Speed Into Radial Net Force](#substitute-speed-into-centripetal-force)
 - [Match the Formula to the Answer Choices](#match-the-formula-to-the-answer-choices)
 - [Check How the Period Affects the Force](#check-how-the-period-affects-the-force)
 - [Summary](#summary)
@@ -18,7 +18,7 @@ topic-code: MTH212.M1.59
 
 - Circumference of a circle: $2\pi r$
 - Speed is distance divided by time
-- Centripetal force magnitude: $F_c=\dfrac{mv^2}{r}$
+- Radial net-force magnitude: $\sum F_r=m a_r=\dfrac{mv^2}{r}$
 - Period $T$ means the time for one complete revolution
 
 ---
@@ -30,7 +30,7 @@ In a conical-pendulum problem, the bob moves in a horizontal circle while the st
 
 ![](<../Source/Images/conical-pendulum-diagram.png>)
 
-The cue in this problem is that the question asks for centripetal force, but it gives the period $T$ instead of the speed $v$.
+The cue in this problem is that the question asks for radial net force, but it gives the period $T$ instead of the speed $v$.
 
 Use one full revolution to build the speed:
 
@@ -41,7 +41,7 @@ $$
 Then substitute that speed into
 
 $$
-F_c=\dfrac{mv^2}{r}.
+\sum F_r=m a_r=\dfrac{mv^2}{r}.
 $$
 
 The radius in the force formula is the circular path radius $r$. The string length $L$ and angle $\theta$ can help find $r$ in other questions, but this answer is written directly in terms of $r$.
@@ -51,20 +51,20 @@ The radius in the force formula is the circular path radius $r$. The string leng
 <a id="turn-period-into-speed"></a>
 ## Turn Period Into Speed
 
-**Example:** An object moves at constant speed in a circle of radius $R$. Its period is $P$. What is its speed?
+**Example:** An object moves at constant speed in a circle of radius $r$. Its period is $T$. What is its speed?
 
 **Explanation**
 
 In one full revolution, the object travels one circumference:
 
 $$
-\text{distance in one revolution}=2\pi R.
+\text{distance in one revolution}=2\pi r.
 $$
 
-The time for one revolution is the period $P$. Since speed is distance divided by time,
+The time for one revolution is the period $T$. Since speed is distance divided by time,
 
 $$
-v=\dfrac{2\pi R}{P}.
+v=\dfrac{2\pi r}{T}.
 $$
 
 ```quiz
@@ -95,16 +95,16 @@ options:
 ---
 
 <a id="substitute-speed-into-centripetal-force"></a>
-## Substitute Speed Into Centripetal Force
+## Substitute Speed Into Radial Net Force
 
-**Example:** A mass $m$ moves at constant speed in a circle of radius $r$ with period $T$. Find the magnitude of its centripetal force.
+**Example:** A mass $m$ moves at constant speed in a circle of radius $r$ with period $T$. Find the magnitude of its radial net force.
 
 **Explanation**
 
-Start with the centripetal force formula:
+Start with the radial net force formula:
 
 $$
-F_c=\dfrac{mv^2}{r}.
+\sum F_r=m a_r=\dfrac{mv^2}{r}.
 $$
 
 From the period,
@@ -116,19 +116,19 @@ $$
 Substitute that whole expression for $v$:
 
 $$
-F_c=\dfrac{m}{r}\left(\dfrac{2\pi r}{T}\right)^2.
+\sum F_r=m a_r=\dfrac{m}{r}\left(\dfrac{2\pi r}{T}\right)^2.
 $$
 
 Now square the numerator and denominator:
 
 $$
-F_c=\dfrac{m}{r}\cdot \dfrac{4\pi^2r^2}{T^2}.
+\sum F_r=m a_r=\dfrac{m}{r}\cdot \dfrac{4\pi^2r^2}{T^2}.
 $$
 
 One factor of $r$ cancels:
 
 $$
-F_c=\dfrac{4\pi^2mr}{T^2}.
+\sum F_r=m a_r=\dfrac{4\pi^2mr}{T^2}.
 $$
 
 ```quiz
@@ -136,24 +136,24 @@ type: radio
 id: p3-q2
 shuffle: true
 content: |-
-  A mass $M$ moves in a circle of radius $R$ with period $P$. Which expression gives the centripetal force magnitude?
+  A mass $m$ moves in a circle of radius $r$ with period $T$. Which expression gives the radial net force magnitude?
 options:
 - id: p3-q2-a
   content: |-
-    $\dfrac{4\pi^2MR}{P^2}$
+    $\dfrac{4\pi^2mr}{T^2}$
   correct: true
 - id: p3-q2-b
   content: |-
-    $\dfrac{2\pi MR}{P^2}$
+    $\dfrac{2\pi mr}{T^2}$
 - id: p3-q2-c
   content: |-
-    $\dfrac{4\pi^2MR^2}{P^2}$
+    $\dfrac{4\pi^2mr^2}{T^2}$
 - id: p3-q2-d
   content: |-
-    $\dfrac{4\pi^2M}{RP^2}$
+    $\dfrac{4\pi^2m}{rT^2}$
 - id: p3-q2-e
   content: |-
-    $\dfrac{MR}{P^2}$
+    $\dfrac{mr}{T^2}$
 ```
 
 ---
@@ -161,7 +161,7 @@ options:
 <a id="match-the-formula-to-the-answer-choices"></a>
 ## Match the Formula to the Answer Choices
 
-**Example:** A bob of mass $m$ attached to a light string traverses a circular trajectory. The circular path has radius $r$, and the period of the circular motion is $T$. Which answer matches the centripetal force magnitude?
+**Example:** A bob of mass $m$ attached to a light string traverses a circular trajectory. The circular path has radius $r$, and the period of the circular motion is $T$. Which answer matches the radial net force magnitude?
 
 **Explanation**
 
@@ -171,10 +171,10 @@ $$
 v=\dfrac{2\pi r}{T}.
 $$
 
-Substituting into $F_c=\dfrac{mv^2}{r}$ gives
+Substituting into $\sum F_r=m a_r=\dfrac{mv^2}{r}$ gives
 
 $$
-F_c
+\sum F_r=m a_r=m\frac{v^2}{r}
 =\dfrac{m}{r}\left(\dfrac{2\pi r}{T}\right)^2
 =\dfrac{4\pi^2mr}{T^2}.
 $$
@@ -190,7 +190,7 @@ content: |-
 
   The string makes an angle $\theta$ with the horizontal and the period of the circular motion is $T$ (constant).
 
-  What is the magnitude of the object's centripetal force?
+  What is the magnitude of the object's radial net force?
 
   ![](<../Source/Images/conical-pendulum-diagram.png>)
 options:
@@ -217,20 +217,20 @@ options:
 <a id="check-how-the-period-affects-the-force"></a>
 ## Check How the Period Affects the Force
 
-**Example:** Two bobs have the same mass and circular-path radius. Bob A has period $T$, and Bob B has period $2T$. How does Bob B's centripetal force compare with Bob A's?
+**Example:** Two bobs have the same mass and circular-path radius. Bob A has period $T$, and Bob B has period $2T$. How does Bob B's radial net force compare with Bob A's?
 
 **Explanation**
 
 The force formula from period is
 
 $$
-F_c=\dfrac{4\pi^2mr}{T^2}.
+\sum F_r=m a_r=\dfrac{4\pi^2mr}{T^2}.
 $$
 
 If the period doubles, then $T^2$ becomes $(2T)^2=4T^2$. The force becomes one fourth as large:
 
 $$
-F_{c,B}=\dfrac{4\pi^2mr}{(2T)^2}
+(\sum F_r)_{\mathrm{B}}=\dfrac{4\pi^2mr}{(2T)^2}
 =\dfrac{1}{4}\cdot \dfrac{4\pi^2mr}{T^2}.
 $$
 
@@ -241,7 +241,7 @@ type: radio
 id: p3-q4
 shuffle: true
 content: |-
-  Two objects have the same mass and circular-path radius. If the second object's period is $3$ times as large as the first object's period, what happens to the centripetal force magnitude?
+  Two objects have the same mass and circular-path radius. If the second object's period is $3$ times as large as the first object's period, what happens to the radial net force magnitude?
 options:
 - id: p3-q4-a
   content: |-
@@ -265,7 +265,7 @@ options:
 
 ## Summary
 
-When centripetal force is requested but period is given, first convert one revolution into speed:
+When radial net force is requested but period is given, first convert one revolution into speed:
 
 $$
 v=\dfrac{2\pi r}{T}.
@@ -274,7 +274,7 @@ $$
 Then substitute into the force formula:
 
 $$
-F_c=\dfrac{mv^2}{r}
+\sum F_r=m a_r=\dfrac{mv^2}{r}
 =\dfrac{m}{r}\left(\dfrac{2\pi r}{T}\right)^2
 =\dfrac{4\pi^2mr}{T^2}.
 $$

@@ -115,14 +115,14 @@ options:
 <a id="checking-the-direction-with-signs"></a>
 ## Checking the Direction With Signs
 
-**Example:** A disk spins counterclockwise at $12\ \mathrm{rad/s}$ and comes to rest in $26\ \mathrm{s}$. If out of the page is positive, what is the sign of its angular acceleration?
+**Example:** A disk spins counterclockwise at $12\ \mathrm{rad}/\mathrm{s}$ and comes to rest in $26\ \mathrm{s}$. If out of the page is positive, what is the sign of its angular acceleration?
 
 **Explanation**
 
 Since the rotation is counterclockwise, choose
 
 $$
-\vec{\omega}_i = 12\ \mathrm{rad/s}.
+\vec{\omega}_0 = 12\ \mathrm{rad}/\mathrm{s}.
 $$
 
 The disk stops, so
@@ -134,20 +134,20 @@ $$
 Angular acceleration is
 
 $$
-\vec{\alpha}=\frac{\vec{\omega}_f-\vec{\omega}_i}{\Delta t}
+\vec{\alpha}=\frac{\vec{\omega}_f-\vec{\omega}_0}{\Delta t}
 =\frac{0-12}{26}.
 $$
 
 This is negative. Since out of the page was chosen as positive, a negative angular acceleration points into the page.
 
-The $26\ \mathrm{s}$ affects the magnitude of $\vec{\alpha}$, but not its direction. The direction comes from the sign of $\vec{\omega}_f-\vec{\omega}_i$.
+The $26\ \mathrm{s}$ affects the magnitude of $\vec{\alpha}$, but not its direction. The direction comes from the sign of $\vec{\omega}_f-\vec{\omega}_0$.
 
 ```quiz
 type: radio
 id: p3-q3
 shuffle: true
 content: |-
-  A disk spins counterclockwise at $8\ \mathrm{rad/s}$ and stops in $4\ \mathrm{s}$. If out of the page is positive, what is the sign of its angular acceleration?
+  A disk spins counterclockwise at $8\ \mathrm{rad}/\mathrm{s}$ and stops in $4\ \mathrm{s}$. If out of the page is positive, what is the sign of its angular acceleration?
 options:
 - id: a
   content: |-

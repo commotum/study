@@ -29,12 +29,12 @@ topic-code: MTH212.M2.07
 Moment of inertia measures how strongly a mass distribution resists angular acceleration about a chosen axis. For point masses,
 
 $$
-I=\sum_i m_i r_i^2,
+I=\sum_i m_i r_{\perp,i}^2,
 $$
 
-where $r_i$ is the perpendicular distance from mass $m_i$ to the rotation axis.
+where $r_{\perp,i}$ is the perpendicular distance from mass $m_i$ to the rotation axis.
 
-When two objects contain the same masses and differ only in where those masses are placed, compare their $r^2$ terms. Moving mass closer to the axis decreases the moment of inertia; moving it farther away increases the moment of inertia.
+When two objects contain the same masses and differ only in where those masses are placed, compare their $r_\perp^2$ terms. Moving mass closer to the axis decreases the moment of inertia; moving it farther away increases the moment of inertia.
 
 ---
 
@@ -48,19 +48,19 @@ When two objects contain the same masses and differ only in where those masses a
 Both masses are the same perpendicular distance from the axis, so
 
 $$
-I_{\text{masses}}
+I_{\mathrm{masses}}
 =m(0.40)^2+m(0.40)^2
 =2m(0.40)^2.
 $$
 
-Use distance from the axis, not the full distance between the two masses. Here, the masses are $0.80\ \mathrm{m}$ apart, but each individual $r$ is $0.40\ \mathrm{m}$.
+Use distance from the axis, not the full distance between the two masses. Here, the masses are $0.80\ \mathrm{m}$ apart, but each individual $r_\perp$ is $0.40\ \mathrm{m}$.
 
 ```quiz
 type: radio
 id: m2-2-p1-axis-distance
 shuffle: true
 content: |-
-  Two equal point masses lie symmetrically on a bar and are $1.20\ \mathrm{m}$ apart. The rotation axis passes through the midpoint. What distance $r$ belongs in each term of $I=\sum mr^2$?
+  Two equal point masses lie symmetrically on a bar and are $1.20\ \mathrm{m}$ apart. The rotation axis passes through the midpoint. What distance $r_\perp$ belongs in each term of $I=\sum_i m_i r_{\perp,i}^2$?
 options:
 - id: a
   content: |-
@@ -111,9 +111,9 @@ Halving every relevant distance makes that part of the moment of inertia one-fou
 More generally, for unchanged mass,
 
 $$
-r_{\text{new}}=kr_{\text{old}}
+r_{\perp,\mathrm{new}}=kr_{\perp,\mathrm{old}}
 \quad\Longrightarrow\quad
-I_{\text{new}}=k^2I_{\text{old}}.
+I_{\mathrm{new}}=k^2I_{\mathrm{old}}.
 $$
 
 | Distance scale factor $k$ | Contribution scale factor $k^2$ |
@@ -129,7 +129,7 @@ type: radio
 id: m2-2-p1-square-effect
 shuffle: true
 content: |-
-  Identical masses are moved from distance $r$ to distance $3r$ from the same rotation axis. By what factor does each mass's $mr^2$ contribution change?
+  Identical masses are moved from perpendicular distance $r_\perp$ to distance $3r_\perp$ from the same rotation axis. By what factor does each mass's $m r_\perp^2$ contribution change?
 options:
 - id: a
   content: |-
@@ -145,7 +145,7 @@ options:
     It becomes nine times as large.
   correct: true
   feedback: |-
-    Replacing $r$ with $3r$ gives $m(3r)^2=9mr^2$.
+    Replacing $r_\perp$ with $3r_\perp$ gives $m(3r_\perp)^2=9m r_\perp^2$.
 - id: e
   content: |-
     It does not change.
@@ -156,16 +156,16 @@ options:
 <a id="cancel-identical-contributions"></a>
 ## Cancel Identical Contributions
 
-**Example:** Two barbell sets have the same center bar with moment of inertia $I_{\text{bar}}$ and the same two weights of mass $m$. Set X places each weight at distance $d_X$; Set Y places each at the smaller distance $d_Y$.
+**Example:** Two barbell sets have the same center bar with moment of inertia $I_{\mathrm{bar}}$ and the same two weights of mass $m$. Set X places each weight at distance $d_X$; Set Y places each at the smaller distance $d_Y$.
 
 **Explanation**
 
 Their total moments of inertia can be written as
 
 $$
-I_X=I_{\text{bar}}+2md_X^2,
+I_X=I_{\mathrm{bar}}+2md_X^2,
 \qquad
-I_Y=I_{\text{bar}}+2md_Y^2.
+I_Y=I_{\mathrm{bar}}+2md_Y^2.
 $$
 
 The center-bar term is identical in both totals. Because $d_Y<d_X$ and distances are nonnegative,
@@ -224,8 +224,8 @@ The weights and center bars are identical, so mass and the bar's contribution do
 |---|---|---|
 | Center bar | Identical | Cancels from the ranking |
 | Two weight masses | Identical | Cancels from the ranking |
-| Weight distances $r$ | Larger in A | Makes the weight terms larger in A |
-| Squared-distance sum | $\sum r_A^2>\sum r_B^2$ | Therefore $I_A>I_B$ |
+| Weight distances $r_\perp$ | Larger in A | Makes the weight terms larger in A |
+| Squared-distance sum | $\sum r_{\perp,A}^2>\sum r_{\perp,B}^2$ | Therefore $I_A>I_B$ |
 
 ```quiz
 type: radio
@@ -251,10 +251,10 @@ options:
     Moment of inertia depends on the distance of each mass from the rotation axis:
 
     $$
-    I=\sum mr^2.
+    I=\sum_i m_i r_{\perp,i}^2.
     $$
 
-    In Set B, the weights are closer to the center of mass, so their $r$ values are smaller. The identical center bars contribute the same moment of inertia, making Set B's total moment of inertia smaller.
+    In Set B, the weights are closer to the center of mass, so their $r_\perp$ values are smaller. The identical center bars contribute the same moment of inertia, making Set B's total moment of inertia smaller.
 - id: same
   content: |-
     They have the same moment of inertia
@@ -265,8 +265,8 @@ options:
 <a id="summary"></a>
 ## Summary
 
-- Identify the rotation axis and measure each mass's perpendicular distance $r$ from it.
-- Use $I=\sum mr^2$ and compare squared distances, not just total mass or overall length.
+- Identify the rotation axis and measure each mass's perpendicular distance $r_\perp$ from it.
+- Use $I=\sum_i m_i r_{\perp,i}^2$ and compare squared distances, not just total mass or overall length.
 - Equal masses moved to a fraction $k$ of their old distance contribute a fraction $k^2$ as much.
 - Ignore contributions that are identical in both configurations; they cannot change which total is larger.
 - The main trap is assuming equal total mass means equal moment of inertia. Distribution relative to the axis matters.

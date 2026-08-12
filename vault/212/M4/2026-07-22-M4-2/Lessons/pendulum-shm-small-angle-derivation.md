@@ -156,7 +156,7 @@ options:
 <a id="match-the-equation-to-shm"></a>
 ## Match the Equation to SHM
 
-**Example:** A physical pendulum has mass $M=0.80\ \mathrm{kg}$, center-of-mass distance $\ell=0.25\ \mathrm{m}$, and pivot moment of inertia $I=0.060\ \mathrm{kg\,m^2}$. Find its small-angle angular frequency.
+**Example:** A physical pendulum has mass $M=0.80\ \mathrm{kg}$, center-of-mass distance $\ell=0.25\ \mathrm{m}$, and pivot moment of inertia $I=0.060\ \mathrm{kg}\,\mathrm{m}^2$. Find its small-angle angular frequency.
 
 **Explanation**
 
@@ -191,43 +191,43 @@ For this pendulum,
 $$
 \omega
 =\sqrt{\frac{(0.80)(9.81)(0.25)}{0.060}}
-=5.72\ \mathrm{rad/s}.
+=5.72\ \mathrm{rad}/\mathrm{s}.
 $$
 
-The coefficient $Mg\ell/I$ has units of $\mathrm{s^{-2}}$; taking its square root produces an angular frequency in $\mathrm{rad/s}$.
+The coefficient $Mg\ell/I$ has units of $\mathrm{s}^{-2}$; taking its square root produces an angular frequency in $\mathrm{rad}/\mathrm{s}$.
 
 ```quiz
 type: radio
 id: m4-pendulum-q3
 content: |-
-  A physical pendulum has $M=0.60\ \mathrm{kg}$, $\ell=0.20\ \mathrm{m}$, and $I=0.048\ \mathrm{kg\,m^2}$. Using $g=9.8\ \mathrm{m/s^2}$, what is its small-angle angular frequency?
+  A physical pendulum has $M=0.60\ \mathrm{kg}$, $\ell=0.20\ \mathrm{m}$, and $I=0.048\ \mathrm{kg}\,\mathrm{m}^2$. Using $g=9.8\ \mathrm{m}/\mathrm{s}^2$, what is its small-angle angular frequency?
 options:
 - id: m4-pendulum-q3-a
   content: |-
-    $4.95\ \mathrm{rad/s}$
+    $4.95\ \mathrm{rad}/\mathrm{s}$
   correct: true
   feedback: |-
-    Matching $\ddot\theta+(Mg\ell/I)\theta=0$ to SHM gives $\omega=\sqrt{Mg\ell/I}$. Here $Mg\ell/I=24.5\ \mathrm{s^{-2}}$, so $\omega=\sqrt{24.5}=4.95\ \mathrm{rad/s}$.
+    Matching $\ddot\theta+(Mg\ell/I)\theta=0$ to SHM gives $\omega=\sqrt{Mg\ell/I}$. Here $Mg\ell/I=24.5\ \mathrm{s}^{-2}$, so $\omega=\sqrt{24.5}=4.95\ \mathrm{rad}/\mathrm{s}$.
 - id: m4-pendulum-q3-b
   content: |-
-    $24.5\ \mathrm{rad/s}$
+    $24.5\ \mathrm{rad}/\mathrm{s}$
   feedback: |-
-    The value $24.5\ \mathrm{s^{-2}}$ is the coefficient identified as $\omega^2$, not $\omega$. Taking the square root gives $\omega=4.95\ \mathrm{rad/s}$.
+    The value $24.5\ \mathrm{s}^{-2}$ is the coefficient identified as $\omega^2$, not $\omega$. Taking the square root gives $\omega=4.95\ \mathrm{rad}/\mathrm{s}$.
 - id: m4-pendulum-q3-c
   content: |-
-    $0.202\ \mathrm{rad/s}$
+    $0.202\ \mathrm{rad}/\mathrm{s}$
   feedback: |-
-    This is $1/\sqrt{24.5}$, but matching the equation gives $\omega^2=24.5\ \mathrm{s^{-2}}$, not $1/\omega^2=24.5\ \mathrm{s^{-2}}$. The required frequency is $\sqrt{24.5}=4.95\ \mathrm{rad/s}$.
+    This is $1/\sqrt{24.5}$, but matching the equation gives $\omega^2=24.5\ \mathrm{s}^{-2}$, not $1/\omega^2=24.5\ \mathrm{s}^{-2}$. The required frequency is $\sqrt{24.5}=4.95\ \mathrm{rad}/\mathrm{s}$.
 - id: m4-pendulum-q3-d
   content: |-
-    $0.0408\ \mathrm{rad/s}$
+    $0.0408\ \mathrm{rad}/\mathrm{s}$
   feedback: |-
-    The ratio $I/(Mg\ell)=0.0408\ \mathrm{s^2}$ is the inverse of $\omega^2$ and does not itself have frequency units. Invert the ratio and take the square root to obtain $4.95\ \mathrm{rad/s}$.
+    The ratio $I/(Mg\ell)=0.0408\ \mathrm{s}^2$ is the inverse of $\omega^2$ and does not itself have frequency units. Invert the ratio and take the square root to obtain $4.95\ \mathrm{rad}/\mathrm{s}$.
 - id: m4-pendulum-q3-e
   content: |-
-    $3.13\ \mathrm{rad/s}$
+    $3.13\ \mathrm{rad}/\mathrm{s}$
   feedback: |-
-    This is approximately $\sqrt{g}$ and ignores the pendulum's inertia and center-of-mass lever arm. Physical-pendulum frequency depends on the full ratio $Mg\ell/I$, which gives $4.95\ \mathrm{rad/s}$ here.
+    This is approximately $\sqrt{g}$ and ignores the pendulum's inertia and center-of-mass lever arm. Physical-pendulum frequency depends on the full ratio $Mg\ell/I$, which gives $4.95\ \mathrm{rad}/\mathrm{s}$ here.
 ```
 
 ---
@@ -242,9 +242,9 @@ options:
 The coefficient of $\theta$ is $\omega^2$, so
 
 $$
-\omega^2=16\ \mathrm{s^{-2}},
+\omega^2=16\ \mathrm{s}^{-2},
 \qquad
-\omega=4\ \mathrm{rad/s}.
+\omega=4\ \mathrm{rad}/\mathrm{s}.
 $$
 
 One cycle spans $2\pi$ radians of phase, so
@@ -272,12 +272,12 @@ options:
     $2.09\ \mathrm{s}$
   correct: true
   feedback: |-
-    The SHM coefficient is $\omega^2=9\ \mathrm{s^{-2}}$, so $\omega=3\ \mathrm{rad/s}$. Therefore $T=2\pi/\omega=2\pi/3=2.09\ \mathrm{s}$.
+    The SHM coefficient is $\omega^2=9\ \mathrm{s}^{-2}$, so $\omega=3\ \mathrm{rad}/\mathrm{s}$. Therefore $T=2\pi/\omega=2\pi/3=2.09\ \mathrm{s}$.
 - id: m4-pendulum-q4-b
   content: |-
     $3.00\ \mathrm{s}$
   feedback: |-
-    The square root gives $\omega=3\ \mathrm{rad/s}$, which is an angular frequency, not a period. Convert frequency to a cycle time with $T=2\pi/\omega$, giving $2.09\ \mathrm{s}$.
+    The square root gives $\omega=3\ \mathrm{rad}/\mathrm{s}$, which is an angular frequency, not a period. Convert frequency to a cycle time with $T=2\pi/\omega$, giving $2.09\ \mathrm{s}$.
 - id: m4-pendulum-q4-c
   content: |-
     $0.333\ \mathrm{s}$
@@ -292,7 +292,7 @@ options:
   content: |-
     $0.698\ \mathrm{s}$
   feedback: |-
-    This uses the coefficient $9=\omega^2$ directly in $2\pi/9$. First take the square root to get $\omega=3\ \mathrm{rad/s}$, then compute $T=2\pi/3=2.09\ \mathrm{s}$.
+    This uses the coefficient $9=\omega^2$ directly in $2\pi/9$. First take the square root to get $\omega=3\ \mathrm{rad}/\mathrm{s}$, then compute $T=2\pi/3=2.09\ \mathrm{s}$.
 ```
 
 ---

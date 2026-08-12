@@ -16,7 +16,7 @@ $$
 
 **C.** Evaluate the integral and solve symbolically for $x_{\mathrm{cm}}$ in terms of $L$.
 
-**D.** Evaluate $x_{\mathrm{cm}}$ for $L=1.8\text{ m}$.
+**D.** Evaluate $x_{\mathrm{cm}}$ for $L=1.8\ \mathrm{m}$.
 
 **E.** Check the units and explain why the result should lie between $L/2$ and $L$.
 
@@ -100,10 +100,10 @@ $$
    =\frac{2L}{3}.
    $$
 
-6. For $L=1.8\text{ m}$:
+6. For $L=1.8\ \mathrm{m}$:
 
    $$
-   x_{\mathrm{cm}}=\frac{2}{3}(1.8\text{ m})=1.2\text{ m}.
+   x_{\mathrm{cm}}=\frac{2}{3}(1.8\ \mathrm{m})=1.2\ \mathrm{m}.
    $$
 
 7. The result has units of length and satisfies $L/2<2L/3<L$. That agrees with the increasing density toward the right end.

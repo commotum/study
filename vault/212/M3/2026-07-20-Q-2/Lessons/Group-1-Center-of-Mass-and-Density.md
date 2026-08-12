@@ -32,13 +32,13 @@ When a problem asks where a collection or distributed object balances, locate ea
 For discrete pieces,
 
 $$
-\vec r_{\mathrm{cm}}=\frac{\sum_i m_i\vec r_i}{\sum_i m_i}.
+\vec{r}_{\mathrm{cm}}=\frac{\sum_i m_i\vec{r}_i}{\sum_i m_i}.
 $$
 
 For a continuous distribution,
 
 $$
-\vec r_{\mathrm{cm}}=\frac{1}{M}\int \vec r\,dm.
+\vec{r}_{\mathrm{cm}}=\frac{1}{M}\int \vec{r}\,dm.
 $$
 
 The machinery changes from a sum to an integral, but the move does not change: accumulate **mass times position**, then divide by total mass.
@@ -103,7 +103,7 @@ options:
 <a id="replace-groups-by-equivalent-point-masses"></a>
 ## Replace Groups by Equivalent Point Masses
 
-**Example:** Six identical blocks have their group center at $x=1.5\text{ cm}$, two at $x=4.0\text{ cm}$, and two at $x=5.5\text{ cm}$. Find the center of mass of all ten blocks.
+**Example:** Six identical blocks have their group center at $x=1.5\ \mathrm{cm}$, two at $x=4.0\ \mathrm{cm}$, and two at $x=5.5\ \mathrm{cm}$. Find the center of mass of all ten blocks.
 
 **Explanation**
 
@@ -118,7 +118,7 @@ $$
 The common block mass cancels:
 
 $$
-x_{\mathrm{cm}}=\frac{9+8+11}{10}\text{ cm}=2.8\text{ cm}.
+x_{\mathrm{cm}}=\frac{9+8+11}{10}\ \mathrm{cm}=2.8\ \mathrm{cm}.
 $$
 
 Grouping is valid because the center of mass of each group already captures how that group's mass is positioned.
@@ -128,29 +128,29 @@ type: radio
 id: cm-density-q2
 shuffle: true
 content: |-
-  Four identical objects have their group center at $x=1\text{ m}$, and two identical objects have their group center at $x=5\text{ m}$. What is the center of mass of all six objects?
+  Four identical objects have their group center at $x=1\ \mathrm{m}$, and two identical objects have their group center at $x=5\ \mathrm{m}$. What is the center of mass of all six objects?
 options:
 - id: cm-density-q2-a
   content: |-
-    $\dfrac{7}{3}\text{ m}$
+    $\dfrac{7}{3}\ \mathrm{m}$
   correct: true
   feedback: |-
     Use $[4m(1)+2m(5)]/(6m)=14/6$.
 - id: cm-density-q2-b
   content: |-
-    $3\text{ m}$
+    $3\ \mathrm{m}$
   feedback: |-
     This averages the two group positions without weighting their different masses.
 - id: cm-density-q2-c
   content: |-
-    $\dfrac{5}{3}\text{ m}$
+    $\dfrac{5}{3}\ \mathrm{m}$
   feedback: |-
-    This underweights the group at $x=5\text{ m}$.
+    This underweights the group at $x=5\ \mathrm{m}$.
 - id: cm-density-q2-d
   content: |-
-    $4\text{ m}$
+    $4\ \mathrm{m}$
   feedback: |-
-    The larger group is on the left, so the result must be closer to $1\text{ m}$ than to $5\text{ m}$.
+    The larger group is on the left, so the result must be closer to $1\ \mathrm{m}$ than to $5\ \mathrm{m}$.
 ```
 
 ---
@@ -351,8 +351,8 @@ When asked where a system balances:
 
 1. Choose one origin and measure every position from it.
 2. Replace each uniform piece or group by its mass at its own center.
-3. Use $\vec r_{\mathrm{cm}}=\sum m_i\vec r_i/\sum m_i$ for discrete pieces.
-4. For a distribution, write $dm$ from its density, normalize with $M=\int dm$, and use $\vec r_{\mathrm{cm}}=(1/M)\int\vec r\,dm$.
+3. Use $\vec{r}_{\mathrm{cm}}=\sum m_i\vec{r}_i/\sum m_i$ for discrete pieces.
+4. For a distribution, write $dm$ from its density, normalize with $M=\int dm$, and use $\vec{r}_{\mathrm{cm}}=(1/M)\int\vec{r}\,dm$.
 5. Check that the result lies near the greater concentration of mass and gives zero net torque when used as the support point.
 
 The main trap is averaging positions without weighting them by mass.

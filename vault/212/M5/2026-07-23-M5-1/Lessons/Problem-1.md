@@ -26,10 +26,10 @@ topic-code: MTH212.M5.01
 <a id="introduction"></a>
 ## Introduction
 
-On a graph of displacement $D$ versus time $t$, the slope at an instant is the particle's vertical velocity:
+On a graph of displacement $y$ versus time $t$, the slope at an instant is the particle's vertical velocity:
 
 $$
-v_y=\frac{dD}{dt}.
+u_y=\frac{dD}{dt}.
 $$
 
 Read the curve from left to right, because time increases to the right.
@@ -92,18 +92,18 @@ options:
 <a id="separate-displacement-from-velocity"></a>
 ## Separate Displacement From Velocity
 
-**Example:** A particle is at $D=0$, and its displacement-time graph is crossing the axis with a negative slope. Is the particle stopped?
+**Example:** A particle is at $y=0$, and its displacement-time graph is crossing the axis with a negative slope. Is the particle stopped?
 
 **Explanation**
 
-No. The value $D=0$ tells where the particle is: at its equilibrium displacement. The slope tells how it is moving.
+No. The value $y=0$ tells where the particle is: at its equilibrium displacement. The slope tells how it is moving.
 
 Since the curve has negative slope,
 
 $$
-D=0
+y=0
 \qquad\text{but}\qquad
-v_y=\frac{dD}{dt}<0.
+u_y=\frac{dD}{dt}<0.
 $$
 
 The particle is passing through equilibrium while moving downward.
@@ -112,7 +112,7 @@ The particle is passing through equilibrium while moving downward.
 type: radio
 id: problem-1-displacement-q1
 content: |-
-  A displacement-time curve crosses $D=0$ with positive slope. Which statement is correct at that instant?
+  A displacement-time curve crosses $y=0$ with positive slope. Which statement is correct at that instant?
 options:
 - id: a
   content: |-
@@ -129,7 +129,7 @@ options:
   content: |-
     The particle is above equilibrium and moving down.
   feedback: |-
-    The curve is at $D=0$, not above equilibrium, and its positive slope means upward motion.
+    The curve is at $y=0$, not above equilibrium, and its positive slope means upward motion.
 ```
 
 ---
@@ -144,7 +144,7 @@ options:
 At the crest, the tangent to the graph is horizontal. Its instantaneous slope is zero:
 
 $$
-v_y=\frac{dD}{dt}=0.
+u_y=\frac{dD}{dt}=0.
 $$
 
 The particle is momentarily stopped before reversing from upward to downward motion. The slopes elsewhere on the curve do not replace the local slope at the marked instant.
@@ -189,7 +189,7 @@ The rightward arrow describes the motion of the **wave pattern** along the strin
 The particle's direction comes from
 
 $$
-v_y=\frac{dD}{dt}<0,
+u_y=\frac{dD}{dt}<0,
 $$
 
 so the particle moves down even while the wave travels right.
@@ -234,14 +234,14 @@ Read the graph's roles before interpreting the mark:
 | Graph feature | Meaning |
 |---|---|
 | Horizontal axis | Time $t$ |
-| Vertical axis | Displacement $D$ |
+| Vertical axis | Displacement $y$ |
 | Local slope | $dD/dt$, vertical velocity |
 | Slope at the mark | Negative |
 
 Because the horizontal axis is time $t$, inspect the curve from left to right at the marked instant. The curve is falling there, which means its local slope is negative:
 
 $$
-v_y=\frac{dD}{dt}<0.
+u_y=\frac{dD}{dt}<0.
 $$
 
 Therefore, the particle is moving down. The rightward arrow gives the propagation direction of the wave, not the motion direction of the string particle.
@@ -262,7 +262,7 @@ options:
 - id: b
   content: Down
   correct: true
-  feedback: The slope of the displacement-versus-time graph is negative at the marked instant, so $v_y=dD/dt<0$ and the particle is moving downward.
+  feedback: The slope of the displacement-versus-time graph is negative at the marked instant, so $u_y=dD/dt<0$ and the particle is moving downward.
 - id: c
   content: Right
 - id: d

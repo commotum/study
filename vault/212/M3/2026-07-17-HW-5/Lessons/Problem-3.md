@@ -30,9 +30,9 @@ When several masses attract one object, the net force is a **vector sum**, not a
 The reusable rule is
 
 $$
-\mathbf F_{\text{net}}=\sum_i \mathbf F_i,
+\vec{F}_{\mathrm{net}}=\sum_i \vec{F}_i,
 \qquad
-F_{\text{net}}=\sqrt{F_{\text{net},x}^2+F_{\text{net},y}^2}.
+F_{\mathrm{net}}=\sqrt{F_{\text{net},x}^2+F_{\text{net},y}^2}.
 $$
 
 Use this sequence:
@@ -41,7 +41,7 @@ Use this sequence:
 2. Find every separation distance.
 3. Resolve each diagonal force into $x$- and $y$-components.
 4. Add the $x$-components and the $y$-components separately.
-5. Compute $F_{\text{net}}=\sqrt{F_{\text{net},x}^2+F_{\text{net},y}^2}$.
+5. Compute $F_{\mathrm{net}}=\sqrt{F_{\text{net},x}^2+F_{\text{net},y}^2}$.
 
 ---
 
@@ -93,14 +93,14 @@ $$
 and the unit vector toward the attracting mass is
 
 $$
-\hat{\mathbf r}=\left\langle -\frac{a}{r},\frac{b}{r}\right\rangle.
+\hat{r}=\left\langle -\frac{a}{r},\frac{b}{r}\right\rangle.
 $$
 
 Multiplying the force magnitude $GmM/r^2$ by this unit vector gives
 
 $$
-\mathbf F
-=\frac{GmM}{r^2}\hat{\mathbf r}
+\vec{F}
+=\frac{GmM}{r^2}\hat{r}
 =\left\langle
 -\frac{GmMa}{(a^2+b^2)^{3/2}},
 \frac{GmMb}{(a^2+b^2)^{3/2}}
@@ -114,7 +114,7 @@ $$
 Here $r=\sqrt{3^2+4^2}=5$. The force magnitude is $GmM/25$, and the unit direction is $\langle-3/5,4/5\rangle$. Thus
 
 $$
-\mathbf F=\left\langle-\frac{3GmM}{125},\frac{4GmM}{125}\right\rangle.
+\vec{F}=\left\langle-\frac{3GmM}{125},\frac{4GmM}{125}\right\rangle.
 $$
 
 The power $r^3$ in the component denominators comes from $1/r^2$ for the force magnitude and another $1/r$ from the unit vector.
@@ -152,9 +152,9 @@ Add horizontal components only to horizontal components, and vertical components
 **Example:** Suppose the two forces on an object are
 
 $$
-\mathbf F_1=\langle-A,0\rangle
+\vec{F}_1=\langle-A,0\rangle
 \qquad\text{and}\qquad
-\mathbf F_2=\langle-B,C\rangle,
+\vec{F}_2=\langle-B,C\rangle,
 $$
 
 where $A,B,C>0$. Find the net-force components.
@@ -164,8 +164,8 @@ where $A,B,C>0$. Find the net-force components.
 Componentwise addition gives
 
 $$
-\mathbf F_{\text{net}}
-=\mathbf F_1+\mathbf F_2
+\vec{F}_{\mathrm{net}}
+=\vec{F}_1+\vec{F}_2
 =\langle-(A+B),C\rangle.
 $$
 
@@ -175,21 +175,21 @@ The two leftward contributions add. Writing $-A+B$ would incorrectly treat the d
 type: radio
 id: p3-component-sum
 content: |-
-  Two forces are $\mathbf F_1=\langle-7,0\rangle\,\mathrm N$ and $\mathbf F_2=\langle-3,4\rangle\,\mathrm N$. What is their vector sum?
+  Two forces are $\vec{F}_1=\langle-7,0\rangle\,\mathrm{N}$ and $\vec{F}_2=\langle-3,4\rangle\,\mathrm{N}$. What is their vector sum?
 options:
 - id: a
   content: |-
-    $\langle-10,4\rangle\,\mathrm N$
+    $\langle-10,4\rangle\,\mathrm{N}$
   correct: true
 - id: b
   content: |-
-    $\langle-4,4\rangle\,\mathrm N$
+    $\langle-4,4\rangle\,\mathrm{N}$
 - id: c
   content: |-
-    $\langle-10,0\rangle\,\mathrm N$
+    $\langle-10,0\rangle\,\mathrm{N}$
 - id: d
   content: |-
-    $\langle-7,4\rangle\,\mathrm N$
+    $\langle-7,4\rangle\,\mathrm{N}$
 ```
 
 ---
@@ -199,12 +199,12 @@ options:
 
 Once the net force is in component form, its magnitude follows from the right triangle formed by its perpendicular components.
 
-**Example:** Find the magnitude of $\mathbf F_{\text{net}}=\langle-10,4\rangle\,\mathrm N$.
+**Example:** Find the magnitude of $\vec{F}_{\mathrm{net}}=\langle-10,4\rangle\,\mathrm{N}$.
 
 **Explanation**
 
 $$
-F_{\text{net}}=\sqrt{(-10)^2+4^2}=\sqrt{116}=2\sqrt{29}\,\mathrm N.
+F_{\mathrm{net}}=\sqrt{(-10)^2+4^2}=\sqrt{116}=2\sqrt{29}\,\mathrm{N}.
 $$
 
 The sign of a component records direction. Squaring removes that sign when computing magnitude.
@@ -212,14 +212,14 @@ The sign of a component records direction. Squaring removes that sign when compu
 For the asteroid arrangement, the force from $m_1$ on $m_2$ is purely leftward:
 
 $$
-\mathbf F_{21}
+\vec{F}_{21}
 =\left\langle-\frac{Gm_1m_2}{d_2^2},0\right\rangle.
 $$
 
 The separation between $m_2$ and $m_3$ is $\sqrt{d_2^2+d_3^2}$, and the direction from $m_2$ toward $m_3$ is proportional to $\langle-d_2,d_3\rangle$. Therefore,
 
 $$
-\mathbf F_{23}
+\vec{F}_{23}
 =\left\langle
 -\frac{Gm_2m_3d_2}{(d_2^2+d_3^2)^{3/2}},
 \frac{Gm_2m_3d_3}{(d_2^2+d_3^2)^{3/2}}
@@ -234,10 +234,10 @@ B=\frac{Gm_2m_3d_2}{(d_2^2+d_3^2)^{3/2}},\qquad
 C=\frac{Gm_2m_3d_3}{(d_2^2+d_3^2)^{3/2}}.
 $$
 
-Then $\mathbf F_{\text{net}}=\langle-(A+B),C\rangle$, so
+Then $\vec{F}_{\mathrm{net}}=\langle-(A+B),C\rangle$, so
 
 $$
-F_{\text{net}}=\sqrt{(A+B)^2+C^2}.
+F_{\mathrm{net}}=\sqrt{(A+B)^2+C^2}.
 $$
 
 This magnitude must be larger than either nonzero component magnitude by itself. That gives a quick check on the final expression.

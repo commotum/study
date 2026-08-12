@@ -18,7 +18,7 @@ topic-code: MTH212.M1.60
 
 - Resolve a vector into horizontal and vertical components.
 - Use $\sin\theta$ for the component opposite $\theta$ and $\cos\theta$ for the component adjacent to $\theta$.
-- Write Newton's second law in one direction as $\sum F_y=ma_y$.
+- Write Newton's second law in one direction as $\sum F_y=m a_y$.
 - Recognize that circular motion on a level-height track has no vertical acceleration.
 
 ---
@@ -138,7 +138,7 @@ $$
 Newton's second law in the vertical direction is
 
 $$
-\sum F_y=ma_y.
+\sum F_y=m a_y.
 $$
 
 Substitute the vertical components:
@@ -150,7 +150,7 @@ $$
 So the vertical force equation can be written as
 
 $$
-0=ma_y=\sum F_y=N\cos\theta+f_s\sin\theta-mg.
+\sum F_y=m a_y=0=N\cos\theta+f_s\sin\theta-mg.
 $$
 
 ```quiz
@@ -162,17 +162,17 @@ content: |-
 options:
 - id: a
   content: |-
-    $0=ma_y=\sum F_y=N\cos\theta+f_s\sin\theta-mg$
+    $\sum F_y=m a_y=0=N\cos\theta+f_s\sin\theta-mg$
   correct: true
 - id: b
   content: |-
-    $0=ma_y=\sum F_y=N\sin\theta+f_s\cos\theta-mg$
+    $\sum F_y=m a_y=0=N\sin\theta+f_s\cos\theta-mg$
 - id: c
   content: |-
-    $0=ma_y=\sum F_y=N\cos\theta-f_s\sin\theta-mg$
+    $\sum F_y=m a_y=0=N\cos\theta-f_s\sin\theta-mg$
 - id: d
   content: |-
-    $0=ma_y=\sum F_y=N\sin\theta-f_s\cos\theta-mg$
+    $\sum F_y=m a_y=0=N\sin\theta-f_s\cos\theta-mg$
 ```
 
 ---
@@ -247,7 +247,7 @@ For a banked-track force equation in the vertical direction, first ask which for
 Because the car's circular acceleration is horizontal, $a_y=0$. Therefore,
 
 $$
-0=ma_y=\sum F_y=N\cos\theta+f_s\sin\theta-mg.
+\sum F_y=m a_y=0=N\cos\theta+f_s\sin\theta-mg.
 $$
 
 The expression $N\sin\theta+f_s\cos\theta$ swaps the two components. Each trigonometric function must follow the angle its force actually makes.

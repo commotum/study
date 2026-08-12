@@ -208,7 +208,7 @@ The units of $C$ are mass per length squared because multiplying $C$ by $x$ must
 $$
 [C]
 =
-\frac{\mathrm{kg}}{\mathrm{m^2}}.
+\frac{\mathrm{kg}}{\mathrm{m}^2}.
 $$
 
 ## Center of Mass of the Nonuniform Rod
@@ -427,7 +427,7 @@ The SI units of moment of inertia are
 
 $$
 \boxed{
-[I]=\mathrm{kg\,m^2}
+[I]=\mathrm{kg}\,\mathrm{m}^2
 }.
 $$
 
@@ -845,14 +845,14 @@ Therefore,
 $$
 I_0
 \approx
-1.1\ \mathrm{kg\,m^2}.
+1.1\ \mathrm{kg}\,\mathrm{m}^2.
 $$
 
 Thus,
 
 $$
 \boxed{
-I_0\approx1.1\ \mathrm{kg\,m^2}
+I_0\approx1.1\ \mathrm{kg}\,\mathrm{m}^2
 }.
 $$
 
@@ -1295,7 +1295,7 @@ A symbolic solution makes it easier to:
 Every moment of inertia must have units of
 
 $$
-\mathrm{kg\,m^2}.
+\mathrm{kg}\,\mathrm{m}^2.
 $$
 
 The result should increase when mass is moved farther from the rotation axis.

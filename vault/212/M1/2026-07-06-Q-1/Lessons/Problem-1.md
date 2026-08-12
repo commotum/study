@@ -26,9 +26,9 @@ topic-code: MTH212.M1.67
 The recognition cue is **constant speed along a circular path**. A velocity vector carries two pieces of information: magnitude (speed) and direction. Constant speed fixes the magnitude, but the velocity vector still turns as the object moves. Acceleration describes that change in velocity, so it is not zero:
 
 $$
-|\vec v|=\text{constant}
+|\vec{v}|=\text{constant}
 \qquad\text{but}\qquad
-\frac{d\vec v}{dt}\ne \vec 0.
+\frac{d\vec{v}}{dt}\ne \vec{0}.
 $$
 
 For constant-speed circular motion, use this direction rule:
@@ -54,7 +54,7 @@ Use a three-question check:
 
 **Explanation**
 
-The two velocity vectors have the same magnitude because the speed is constant, but they have different directions. Subtracting the earlier velocity vector from the later one gives a change $\Delta\vec v$ that points inward in the short-time limit. Since $\vec a$ has the direction of $\Delta\vec v/\Delta t$, the acceleration is nonzero and points toward the center.
+The two velocity vectors have the same magnitude because the speed is constant, but they have different directions. Subtracting the earlier velocity vector from the later one gives a change $\Delta\vec{v}$ that points inward in the short-time limit. Since $\vec{a}$ has the direction of $\Delta\vec{v}/\Delta t$, the acceleration is nonzero and points toward the center.
 
 ```quiz
 type: radio
@@ -118,18 +118,18 @@ options:
   content: |-
     Downward
   feedback: |-
-    Downward is tangent to the circle but opposite the stated clockwise motion. Neither tangent direction is centripetal; the acceleration points inward, to the right.
+    Downward is tangent to the circle but opposite the stated clockwise motion. Neither tangent direction is radial; the acceleration points inward, to the right.
 - id: p1-left-side-direction-left
   content: |-
     Leftward
   feedback: |-
-    Leftward points away from the circle's center at this location. Centripetal acceleration points toward the center, so at the leftmost point it points rightward.
+    Leftward points away from the circle's center at this location. Radial acceleration points toward the center, so at the leftmost point it points rightward.
 - id: p1-left-side-direction-right
   content: |-
     Rightward
   correct: true
   feedback: |-
-    Centripetal acceleration always points from the object toward the circle's center. The center is to the right of the leftmost point, so the acceleration points rightward.
+    Radial acceleration always points from the object toward the circle's center. The center is to the right of the leftmost point, so the acceleration points rightward.
 - id: p1-left-side-direction-zero
   content: |-
     The acceleration is zero
@@ -178,7 +178,7 @@ options:
     perpendicular to the velocity of the object.
   correct: true
   feedback: |-
-    Constant speed eliminates tangential acceleration. The remaining centripetal acceleration points along the inward radius, while velocity is tangent to the circle, so the two vectors are perpendicular.
+    Constant speed eliminates tangential acceleration. The remaining radial acceleration points along the inward radius, while velocity is tangent to the circle, so the two vectors are perpendicular.
 ```
 
 If the speed were changing, a tangential acceleration component could also be present. Then the total acceleration would generally not be perpendicular to the velocity. The perpendicular conclusion depends on the phrase **constant speed**.

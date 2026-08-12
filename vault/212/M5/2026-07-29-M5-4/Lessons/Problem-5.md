@@ -17,7 +17,7 @@ topic-code: MTH212.M5.35
 ## Prerequisites
 
 - Recognize displacement nodes and antinodes in a standing wave.
-- Use the wave-speed relation $v=f\lambda$.
+- Use the wave-speed relation $v_{\mathrm{wave}}=f\lambda$.
 - Substitute measured quantities with units into a formula.
 - Round a calculated result to the significant figures of the least precise given measurement.
 
@@ -28,19 +28,19 @@ topic-code: MTH212.M5.35
 
 When a pipe is closed at one end and open at the other, its displacement standing wave must have a **node** at the closed end and an **antinode** at the open end. This unequal pair of boundary conditions allows only the odd harmonics.
 
-For the $n$th allowed harmonic, where $n=1,3,5,\ldots$,
+For the $m$th allowed harmonic, where $m=1,3,5,\ldots$,
 
 $$
-L=\frac{n\lambda_n}{4}
+L=\frac{m\lambda_m}{4}
 \qquad\text{and}\qquad
-f_n=\frac{v}{\lambda_n}=\frac{nv}{4L}.
+f_m=\frac{v_{\mathrm{wave}}}{\lambda_m}=\frac{m v_{\mathrm{wave}}}{4L}.
 $$
 
-Here, $L$ is the pipe length, $v$ is the sound speed, $\lambda_n$ is the wavelength of the $n$th harmonic, and $f_n$ is its frequency.
+Here, $L$ is the pipe length, $v_{\mathrm{wave}}$ is the sound speed, $\lambda_m$ is the wavelength of the $m$th harmonic, and $f_m$ is its frequency.
 
-The key is to translate the harmonic label into $n$ quarter-wavelength segments, draw the alternating node–antinode pattern, and then use the same value of $n$ in the frequency calculation.
+The key is to translate the harmonic label into $m$ quarter-wavelength segments, draw the alternating node–antinode pattern, and then use the same value of $m$ in the frequency calculation.
 
-Two direction checks help catch setup errors: with $v$ and $L$ fixed, $f_n$ varies directly with $n$; with $v$ and $n$ fixed, $f_n$ varies inversely with $L$.
+Two direction checks help catch setup errors: with $v_{\mathrm{wave}}$ and $L$ fixed, $f_m$ varies directly with $m$; with $m$ and $v_{\mathrm{wave}}$ fixed, $f_m$ varies inversely with $L$.
 
 ---
 
@@ -141,17 +141,17 @@ options:
 <a id="convert-wavelength-to-frequency"></a>
 ## Convert Wavelength to Frequency
 
-**Example:** An open–closed pipe has length $0.60\ \mathrm{m}$, and sound travels at $336\ \mathrm{m/s}$. Find its third-harmonic frequency.
+**Example:** An open–closed pipe has length $0.60\ \mathrm{m}$, and sound travels at $336\ \mathrm{m}/\mathrm{s}$. Find its third-harmonic frequency.
 
 **Explanation**
 
-For the third harmonic, $n=3$. Substitute into the open–closed frequency formula:
+For the third harmonic, $m=3$. Substitute into the open–closed frequency formula:
 
 $$
 \begin{aligned}
 f_3
-&=\frac{3v}{4L} \\
-&=\frac{3(336\ \mathrm{m/s})}{4(0.60\ \mathrm{m})} \\
+&=\frac{3v_{\mathrm{wave}}}{4L} \\
+&=\frac{3(336\ \mathrm{m}/\mathrm{s})}{4(0.60\ \mathrm{m})} \\
 &=420\ \mathrm{s}^{-1} \\
 &=420\ \mathrm{Hz}.
 \end{aligned}
@@ -164,7 +164,7 @@ This result also follows from the two linked relationships
 $$
 \lambda_3=\frac{4L}{3}
 \qquad\text{and}\qquad
-v=f_3\lambda_3.
+v_{\mathrm{wave}}=f_3\lambda_3.
 $$
 
 Thus the open–closed pipe condition selects the wavelength first, and the wave-speed relation converts that wavelength to frequency.
@@ -173,7 +173,7 @@ Thus the open–closed pipe condition selects the wavelength first, and the wave
 type: radio
 id: problem-5-frequency
 content: |-
-  An open–closed pipe has length $0.75\ \mathrm{m}$, and sound travels at $330\ \mathrm{m/s}$. What is its fifth-harmonic frequency?
+  An open–closed pipe has length $0.75\ \mathrm{m}$, and sound travels at $330\ \mathrm{m}/\mathrm{s}$. What is its fifth-harmonic frequency?
 options:
 - id: a
   content: |-
@@ -198,7 +198,7 @@ options:
 <a id="complete-the-given-pipe-problem"></a>
 ## Complete the Given Pipe Problem
 
-**Example:** For the same $0.85\ \mathrm{m}$ open–closed pipe and sound speed of $343\ \mathrm{m/s}$, what is its fifth-harmonic frequency? Draw the corresponding displacement standing-wave pattern, and enter the frequency in hertz as a number only.
+**Example:** For the same $0.85\ \mathrm{m}$ open–closed pipe and sound speed of $343\ \mathrm{m}/\mathrm{s}$, what is its fifth-harmonic frequency? Draw the corresponding displacement standing-wave pattern, and enter the frequency in hertz as a number only.
 
 **Explanation**
 
@@ -227,9 +227,9 @@ Now compute the frequency:
 $$
 \begin{aligned}
 f_5
-&=\frac{v}{\lambda_5} \\
-&=\frac{5v}{4L} \\
-&=\frac{5(343\ \mathrm{m/s})}{4(0.85\ \mathrm{m})} \\
+&=\frac{v_{\mathrm{wave}}}{\lambda_5} \\
+&=\frac{5v_{\mathrm{wave}}}{4L} \\
+&=\frac{5(343\ \mathrm{m}/\mathrm{s})}{4(0.85\ \mathrm{m})} \\
 &=504.411\ldots\ \mathrm{Hz}.
 \end{aligned}
 $$
@@ -282,8 +282,8 @@ options:
 For an open–closed pipe:
 
 1. Put a displacement node at the closed end and an antinode at the open end.
-2. For odd $n$, count $n$ quarter-wavelength segments: $L=n\lambda_n/4$.
-3. Use $f_n=v/\lambda_n=nv/(4L)$.
+2. For odd $m$, count $m$ quarter-wavelength segments: $L=m\lambda_m/4$.
+3. Use $f_m=v_{\mathrm{wave}}/\lambda_m=m v_{\mathrm{wave}}/(4L)$.
 4. Keep units through the calculation, round only at the end, and format the final entry exactly as requested.
 
 Useful checks: increasing the odd harmonic number raises the frequency, while increasing the pipe length lowers it. The main trap is using a half-wavelength condition instead of the open–closed quarter-wavelength condition.

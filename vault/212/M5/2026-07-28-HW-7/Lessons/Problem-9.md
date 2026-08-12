@@ -28,31 +28,31 @@ topic-code: MTH212.M5.22
 When a problem asks for the speed of an **element of the string**, it asks how fast one fixed piece of string moves transversely. Hold its position $x$ constant and differentiate the displacement with respect to time:
 
 $$
-v_y(x,t)=\frac{\partial y}{\partial t}.
+u_y(x,t)=\frac{\partial y}{\partial t}.
 $$
 
 For
 
 $$
-y(x,t)=A\sin(kx-\omega t+\phi),
+y(x,t)=A\sin(kx-\omega t+\phi_0),
 $$
 
 the transverse velocity is
 
 $$
-v_y(x,t)=-A\omega\cos(kx-\omega t+\phi).
+u_y(x,t)=-A\omega\cos(kx-\omega t+\phi_0).
 $$
 
 Because the magnitude of cosine can reach $1$,
 
 $$
-v_{\max}=|A\omega|.
+u_{\max}=|A\omega|.
 $$
 
 If $A$ and $\omega$ are listed as positive magnitudes, this becomes the shortcut
 
 $$
-\boxed{v_{\max}=A\omega}.
+\boxed{u_{\max}=A\omega}.
 $$
 
 The wave number $k$ does not enter this result. It controls how the pattern varies with position, not how rapidly a fixed string element moves up and down.
@@ -65,47 +65,47 @@ The wave number $k$ does not enter this result. It controls how the pattern vari
 **Example:** Find the maximum speed of a string element for the wave in Problem 9:
 
 $$
-y(x,t)=(0.1\ \mathrm{m})\sin\left[(2.5\ \mathrm{rad/m})x-(5\ \mathrm{rad/s})t\right].
+y(x,t)=(0.1\ \mathrm{m})\sin\left[(2.5\ \mathrm{rad}/\mathrm{m})x-(5\ \mathrm{rad}/\mathrm{s})t\right].
 $$
 
-The provided choices are $0.5\ \mathrm{m/s}$, $0.8\ \mathrm{m/s}$, $1.0\ \mathrm{m/s}$, and $1.3\ \mathrm{m/s}$.
+The provided choices are $0.5\ \mathrm{m}/\mathrm{s}$, $0.8\ \mathrm{m}/\mathrm{s}$, $1.0\ \mathrm{m}/\mathrm{s}$, and $1.3\ \mathrm{m}/\mathrm{s}$.
 
 **Explanation**
 
 Let the phase be
 
 $$
-\theta=(2.5\ \mathrm{rad/m})x-(5\ \mathrm{rad/s})t.
+\theta=(2.5\ \mathrm{rad}/\mathrm{m})x-(5\ \mathrm{rad}/\mathrm{s})t.
 $$
 
 The string element stays at one fixed $x$, so the $x$-term is constant while differentiating with respect to $t$:
 
 $$
-\frac{\partial \theta}{\partial t}=-(5\ \mathrm{rad/s}).
+\frac{\partial \theta}{\partial t}=-(5\ \mathrm{rad}/\mathrm{s}).
 $$
 
 Apply the chain rule:
 
 $$
 \begin{aligned}
-v_y(x,t)
+u_y(x,t)
 &=\frac{\partial y}{\partial t} \\
 &=(0.1\ \mathrm{m})\cos\theta\,
   \frac{\partial\theta}{\partial t} \\
-&=-(0.5\ \mathrm{m/s})\cos\theta.
+&=-(0.5\ \mathrm{m}/\mathrm{s})\cos\theta.
 \end{aligned}
 $$
 
 Thus the speed is
 
 $$
-|v_y|=(0.5\ \mathrm{m/s})|\cos\theta|.
+|u_y|=(0.5\ \mathrm{m}/\mathrm{s})|\cos\theta|.
 $$
 
 Its largest possible value occurs when $|\cos\theta|=1$:
 
 $$
-\boxed{v_{\max}=0.5\ \mathrm{m/s}}.
+\boxed{u_{\max}=0.5\ \mathrm{m}/\mathrm{s}}.
 $$
 
 ```quiz
@@ -114,26 +114,26 @@ id: p9-q1
 content: |-
   A wave on a string is
 
-  $y(x,t)=(0.06\ \mathrm{m})\sin\left[(4\ \mathrm{rad/m})x-(8\ \mathrm{rad/s})t\right]$.
+  $y(x,t)=(0.06\ \mathrm{m})\sin\left[(4\ \mathrm{rad}/\mathrm{m})x-(8\ \mathrm{rad}/\mathrm{s})t\right]$.
 
   What is the maximum speed of a string element?
 options:
 - id: p9-q1-a
   content: |-
-    $0.48\ \mathrm{m/s}$
+    $0.48\ \mathrm{m}/\mathrm{s}$
   correct: true
 - id: p9-q1-b
   content: |-
-    $2.0\ \mathrm{m/s}$
+    $2.0\ \mathrm{m}/\mathrm{s}$
 - id: p9-q1-c
   content: |-
-    $0.24\ \mathrm{m/s}$
+    $0.24\ \mathrm{m}/\mathrm{s}$
 - id: p9-q1-d
   content: |-
-    $0.06\ \mathrm{m/s}$
+    $0.06\ \mathrm{m}/\mathrm{s}$
 - id: p9-q1-e
   content: |-
-    $32\ \mathrm{m/s}$
+    $32\ \mathrm{m}/\mathrm{s}$
 ```
 
 ---
@@ -144,7 +144,7 @@ options:
 **Example:** Find the maximum element speed for
 
 $$
-y(x,t)=(0.08\ \mathrm{m})\cos\left[(3\ \mathrm{rad/m})x-(12\ \mathrm{rad/s})t\right].
+y(x,t)=(0.08\ \mathrm{m})\cos\left[(3\ \mathrm{rad}/\mathrm{m})x-(12\ \mathrm{rad}/\mathrm{s})t\right].
 $$
 
 **Explanation**
@@ -152,25 +152,25 @@ $$
 Let
 
 $$
-\theta=(3\ \mathrm{rad/m})x-(12\ \mathrm{rad/s})t.
+\theta=(3\ \mathrm{rad}/\mathrm{m})x-(12\ \mathrm{rad}/\mathrm{s})t.
 $$
 
 Differentiating cosine changes it to negative sine. The derivative of the phase supplies another negative sign:
 
 $$
 \begin{aligned}
-v_y(x,t)
+u_y(x,t)
 &=\frac{\partial y}{\partial t} \\
 &=(0.08\ \mathrm{m})
   (-\sin\theta)(-12\ \mathrm{s}^{-1}) \\
-&=(0.96\ \mathrm{m/s})\sin\theta.
+&=(0.96\ \mathrm{m}/\mathrm{s})\sin\theta.
 \end{aligned}
 $$
 
-The velocity ranges from $-0.96\ \mathrm{m/s}$ to $+0.96\ \mathrm{m/s}$. Speed is the magnitude of velocity, so its maximum is the amplitude of the velocity function:
+The velocity ranges from $-0.96\ \mathrm{m}/\mathrm{s}$ to $+0.96\ \mathrm{m}/\mathrm{s}$. Speed is the magnitude of velocity, so its maximum is the amplitude of the velocity function:
 
 $$
-\boxed{v_{\max}=0.96\ \mathrm{m/s}}.
+\boxed{u_{\max}=0.96\ \mathrm{m}/\mathrm{s}}.
 $$
 
 The same shortcut works for either a sine or cosine displacement.
@@ -181,26 +181,26 @@ id: p9-q2
 content: |-
   A wave on a string is
 
-  $y(x,t)=(0.05\ \mathrm{m})\cos\left[(6\ \mathrm{rad/m})x+(14\ \mathrm{rad/s})t\right]$.
+  $y(x,t)=(0.05\ \mathrm{m})\cos\left[(6\ \mathrm{rad}/\mathrm{m})x+(14\ \mathrm{rad}/\mathrm{s})t\right]$.
 
   What is the maximum speed of a string element?
 options:
 - id: p9-q2-a
   content: |-
-    $0.70\ \mathrm{m/s}$
+    $0.70\ \mathrm{m}/\mathrm{s}$
   correct: true
 - id: p9-q2-b
   content: |-
-    $2.33\ \mathrm{m/s}$
+    $2.33\ \mathrm{m}/\mathrm{s}$
 - id: p9-q2-c
   content: |-
-    $0.30\ \mathrm{m/s}$
+    $0.30\ \mathrm{m}/\mathrm{s}$
 - id: p9-q2-d
   content: |-
-    $14\ \mathrm{m/s}$
+    $14\ \mathrm{m}/\mathrm{s}$
 - id: p9-q2-e
   content: |-
-    $0.05\ \mathrm{m/s}$
+    $0.05\ \mathrm{m}/\mathrm{s}$
 ```
 
 ---
@@ -211,7 +211,7 @@ options:
 **Example:** A wave is
 
 $$
-y(x,t)=(0.03\ \mathrm{m})\sin\left[(6\ \mathrm{rad/m})x-(18\ \mathrm{rad/s})t\right].
+y(x,t)=(0.03\ \mathrm{m})\sin\left[(6\ \mathrm{rad}/\mathrm{m})x-(18\ \mathrm{rad}/\mathrm{s})t\right].
 $$
 
 Find the maximum transverse speed of an element of the string, and compare it with the speed of the wave pattern.
@@ -221,17 +221,17 @@ Find the maximum transverse speed of an element of the string, and compare it wi
 The maximum transverse speed of one element comes from the time derivative:
 
 $$
-v_{\text{element,max}}=A\omega
+u_{\max}=A\omega
 =(0.03\ \mathrm{m})(18\ \mathrm{s}^{-1})
-=0.54\ \mathrm{m/s}.
+=0.54\ \mathrm{m}/\mathrm{s}.
 $$
 
 The speed at which the wave pattern moves along the string is instead
 
 $$
-v_{\text{wave}}=\frac{\omega}{k}
-=\frac{18\ \mathrm{rad/s}}{6\ \mathrm{rad/m}}
-=3.0\ \mathrm{m/s}.
+v_{\mathrm{wave}}=\frac{\omega}{k}
+=\frac{18\ \mathrm{rad}/\mathrm{s}}{6\ \mathrm{rad}/\mathrm{m}}
+=3.0\ \mathrm{m}/\mathrm{s}.
 $$
 
 These are different motions:
@@ -247,26 +247,26 @@ id: p9-q3
 content: |-
   A wave is
 
-  $y(x,t)=(0.04\ \mathrm{m})\sin\left[(5\ \mathrm{rad/m})x-(20\ \mathrm{rad/s})t\right]$.
+  $y(x,t)=(0.04\ \mathrm{m})\sin\left[(5\ \mathrm{rad}/\mathrm{m})x-(20\ \mathrm{rad}/\mathrm{s})t\right]$.
 
   What is the maximum transverse speed of an element of the string?
 options:
 - id: p9-q3-a
   content: |-
-    $0.80\ \mathrm{m/s}$
+    $0.80\ \mathrm{m}/\mathrm{s}$
   correct: true
 - id: p9-q3-b
   content: |-
-    $4.0\ \mathrm{m/s}$
+    $4.0\ \mathrm{m}/\mathrm{s}$
 - id: p9-q3-c
   content: |-
-    $0.20\ \mathrm{m/s}$
+    $0.20\ \mathrm{m}/\mathrm{s}$
 - id: p9-q3-d
   content: |-
-    $5.0\ \mathrm{m/s}$
+    $5.0\ \mathrm{m}/\mathrm{s}$
 - id: p9-q3-e
   content: |-
-    $20\ \mathrm{m/s}$
+    $20\ \mathrm{m}/\mathrm{s}$
 ```
 
 ---
@@ -277,7 +277,7 @@ options:
 **Example:** Find the maximum element speed for
 
 $$
-y(x,t)=(0.07\ \mathrm{m})\sin\left[(9\ \mathrm{rad/m})x+(4\ \mathrm{rad/s})t+\frac{\pi}{3}\right].
+y(x,t)=(0.07\ \mathrm{m})\sin\left[(9\ \mathrm{rad}/\mathrm{m})x+(4\ \mathrm{rad}/\mathrm{s})t+\frac{\pi}{3}\right].
 $$
 
 **Explanation**
@@ -285,27 +285,27 @@ $$
 Let
 
 $$
-\theta=(9\ \mathrm{rad/m})x+(4\ \mathrm{rad/s})t+\frac{\pi}{3}.
+\theta=(9\ \mathrm{rad}/\mathrm{m})x+(4\ \mathrm{rad}/\mathrm{s})t+\frac{\pi}{3}.
 $$
 
 Differentiate with respect to time:
 
 $$
-v_y(x,t)
-=(0.28\ \mathrm{m/s})
+u_y(x,t)
+=(0.28\ \mathrm{m}/\mathrm{s})
 \cos\theta.
 $$
 
 The plus sign on the time term changes the sign pattern of the velocity compared with the standard $kx-\omega t$ form. The phase shift changes when the extrema occur. Neither changes the largest magnitude:
 
 $$
-\boxed{v_{\max}=0.28\ \mathrm{m/s}}.
+\boxed{u_{\max}=0.28\ \mathrm{m}/\mathrm{s}}.
 $$
 
 For any sinusoidal wave written with signed coefficients, take the magnitude of the product of the displacement coefficient and the time coefficient:
 
 $$
-v_{\max}=|A\omega|.
+u_{\max}=|A\omega|.
 $$
 
 ```quiz
@@ -314,26 +314,26 @@ id: p9-q4
 content: |-
   A wave is
 
-  $y(x,t)=(0.12\ \mathrm{m})\cos\left[(2.5\ \mathrm{rad/m})x-(7\ \mathrm{rad/s})t-\frac{\pi}{6}\right]$.
+  $y(x,t)=(0.12\ \mathrm{m})\cos\left[(2.5\ \mathrm{rad}/\mathrm{m})x-(7\ \mathrm{rad}/\mathrm{s})t-\frac{\pi}{6}\right]$.
 
   What is the maximum speed of a string element?
 options:
 - id: p9-q4-a
   content: |-
-    $0.84\ \mathrm{m/s}$
+    $0.84\ \mathrm{m}/\mathrm{s}$
   correct: true
 - id: p9-q4-b
   content: |-
-    $2.8\ \mathrm{m/s}$
+    $2.8\ \mathrm{m}/\mathrm{s}$
 - id: p9-q4-c
   content: |-
-    $0.30\ \mathrm{m/s}$
+    $0.30\ \mathrm{m}/\mathrm{s}$
 - id: p9-q4-d
   content: |-
-    $0.12\ \mathrm{m/s}$
+    $0.12\ \mathrm{m}/\mathrm{s}$
 - id: p9-q4-e
   content: |-
-    $7.0\ \mathrm{m/s}$
+    $7.0\ \mathrm{m}/\mathrm{s}$
 ```
 
 ---
@@ -344,15 +344,15 @@ options:
 When a problem asks for the maximum speed of an **element of a string**:
 
 1. Hold $x$ fixed.
-2. Compute the transverse velocity $v_y=\partial y/\partial t$.
+2. Compute the transverse velocity $u_y=\partial y/\partial t$.
 3. Read the amplitude of the resulting sine or cosine velocity function.
 4. Use
 
 $$
-\boxed{v_{\max}=|A\omega|}.
+\boxed{u_{\max}=|A\omega|}.
 $$
 
-For positive amplitude and angular-frequency magnitudes, this is $v_{\max}=A\omega$.
+For positive amplitude and angular-frequency magnitudes, this is $u_{\max}=A\omega$.
 
 The main trap is using $\omega/k$. That is the propagation speed of the wave pattern, not the maximum transverse speed of one string element.
 

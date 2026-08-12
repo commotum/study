@@ -18,7 +18,7 @@ topic-code: MTH212.M2.14
 
 - Position and force vectors
 - Clockwise and counterclockwise rotation
-- The cross product $\vec\tau=\vec r\times\vec F$
+- The cross product $\vec{\tau}=\vec{r}\times\vec{F}$
 - Positive and negative coordinate directions
 
 ---
@@ -28,10 +28,10 @@ topic-code: MTH212.M2.14
 Torque is a vector:
 
 $$
-\vec\tau=\vec r\times\vec F.
+\vec{\tau}=\vec{r}\times\vec{F}.
 $$
 
-When $\vec r$ and $\vec F$ lie in the page, their cross product is perpendicular to the page. It can point only:
+When $\vec{r}$ and $\vec{F}$ lie in the page, their cross product is perpendicular to the page. It can point only:
 
 - out of the page, or
 - into the page.
@@ -102,7 +102,7 @@ options:
 
 **Explanation**
 
-For $\vec\tau=\vec r\times\vec F$, point your right index finger along $\vec r$, point your middle finger along $\vec F$, and read the thumb as $\vec\tau$. Equivalently, curl the fingers in the direction the object tends to rotate; the thumb gives the torque-vector direction.
+For $\vec{\tau}=\vec{r}\times\vec{F}$, point your right index finger along $\vec{r}$, point your middle finger along $\vec{F}$, and read the thumb as $\vec{\tau}$. Equivalently, curl the fingers in the direction the object tends to rotate; the thumb gives the torque-vector direction.
 
 - Counterclockwise rotation makes the right thumb point **out of the page**.
 - Clockwise rotation makes the right thumb point **into the page**.
@@ -138,17 +138,17 @@ options:
   content: |-
     Up
   feedback: |-
-    The torque vector is perpendicular to the plane containing $\vec r$ and $\vec F$.
+    The torque vector is perpendicular to the plane containing $\vec{r}$ and $\vec{F}$.
 - id: d
   content: |-
     Down
   feedback: |-
-    The torque vector is perpendicular to the plane containing $\vec r$ and $\vec F$.
+    The torque vector is perpendicular to the plane containing $\vec{r}$ and $\vec{F}$.
 - id: e
   content: |-
     Right
   feedback: |-
-    The torque vector cannot lie in the same plane as both $\vec r$ and $\vec F$.
+    The torque vector cannot lie in the same plane as both $\vec{r}$ and $\vec{F}$.
 ```
 
 ---
@@ -158,9 +158,9 @@ options:
 **Example:** Let
 
 $$
-\vec r=(0.40,0.20,0)\ \mathrm{m},
+\vec{r}=(0.40,0.20,0)\ \mathrm{m},
 \qquad
-\vec F=(0,-10,0)\ \mathrm{N}.
+\vec{F}=(0,-10,0)\ \mathrm{N}.
 $$
 
 Find the torque direction.
@@ -176,7 +176,7 @@ $$
 Substitute the components:
 
 $$
-\tau_z=(0.40)(-10)-(0.20)(0)=-4.0\ \mathrm{N\,m}.
+\tau_z=(0.40)(-10)-(0.20)(0)=-4.0\ \mathrm{N}\,\mathrm{m}.
 $$
 
 The negative sign means $-\hat{\mathbf{k}}$, which points into the page. This matches the clockwise rotation seen in the diagram.
@@ -185,14 +185,14 @@ The negative sign means $-\hat{\mathbf{k}}$, which points into the page. This ma
 type: radio
 id: problem-4-component-check-q1
 content: |-
-  A force has $\vec r=(0.30,0,0)\ \mathrm{m}$ and $\vec F=(0,5.0,0)\ \mathrm{N}$. What is the torque-vector direction?
+  A force has $\vec{r}=(0.30,0,0)\ \mathrm{m}$ and $\vec{F}=(0,5.0,0)\ \mathrm{N}$. What is the torque-vector direction?
 options:
 - id: a
   content: |-
     Out of the page
   correct: true
   feedback: |-
-    $\tau_z=r_xF_y-r_yF_x=(0.30)(5.0)=+1.5\ \mathrm{N\,m}$, so the direction is $+\hat{\mathbf{k}}$, out of the page.
+    $\tau_z=r_xF_y-r_yF_x=(0.30)(5.0)=+1.5\ \mathrm{N}\,\mathrm{m}$, so the direction is $+\hat{\mathbf{k}}$, out of the page.
 - id: b
   content: |-
     Into the page
@@ -228,7 +228,7 @@ The pivot is at the bolt on the left. The force acts downward at a point to the 
 Curling the fingers of the right hand clockwise makes the thumb point into the page. Therefore,
 
 $$
-\vec\tau\ \text{points into the page}.
+\vec{\tau}\ \text{points into the page}.
 $$
 
 A component check gives the same result: $r_x>0$ and $F_y<0$, while $F_x=0$, so
@@ -268,7 +268,7 @@ options:
 - id: e
   content: Into the page
   correct: true
-  feedback: The force turns the wrench clockwise. By the right-hand rule for $\vec\tau=\vec r\times\vec F$, a clockwise torque vector points into the page.
+  feedback: The force turns the wrench clockwise. By the right-hand rule for $\vec{\tau}=\vec{r}\times\vec{F}$, a clockwise torque vector points into the page.
 - id: f
   content: Out of the page
 ```
@@ -287,7 +287,7 @@ For torque caused by forces drawn in the page:
    - clockwise $\rightarrow$ into the page.
 5. If needed, verify with $\tau_z=r_xF_y-r_yF_x$.
 
-Always preserve the cross-product order $\vec r\times\vec F$. Swapping the vectors reverses the torque direction.
+Always preserve the cross-product order $\vec{r}\times\vec{F}$. Swapping the vectors reverses the torque direction.
 
 <!-- lesson-nav:start -->
 ---

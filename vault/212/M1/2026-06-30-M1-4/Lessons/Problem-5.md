@@ -16,45 +16,45 @@ topic-code: MTH212.M1.23
 
 ## Prerequisites
 
-- Centripetal acceleration points horizontally toward the center of the curve.
+- Radial acceleration points horizontally toward the center of the curve.
 - The normal force is perpendicular to the road surface.
 - Static friction points along the road surface and opposes the direction the tires would slip.
-- At the no-friction banked-curve speed, the horizontal component of the normal force supplies exactly the required centripetal force.
+- At the no-friction banked-curve speed, the horizontal component of the normal force supplies exactly the required inward net force.
 
 ---
 
 <a id="introduction"></a>
 ## Introduction
 
-A car safely rounds an icy banked curve at speed $v$. After the ice melts, the tires can exert static friction on the road. If the car now travels faster than $v$, which way does the friction force point?
+A car safely rounds an icy banked curve at its no-friction design speed $v_0$. After the ice melts, the tires can exert static friction on the road. If the car now travels at speed $v>v_0$, which way does the friction force point?
 
 ![](<../Source/Images/banked-curve-car-diagram.png>)
 
-Friction does not automatically point backward along the car's motion. Static friction opposes the tires' tendency to slip across the road surface. At speed $v$, the bank angle is matched to the circular motion: the normal force supplies exactly the required inward force, and no friction is needed. A faster car requires more inward force and would otherwise slide up the bank toward the outside of the curve. Static friction therefore points down the slope, adding an inward component.
+Friction does not automatically point backward along the car's motion. Static friction opposes the tires' tendency to slip across the road surface. At speed $v_0$, the bank angle is matched to the circular motion: the normal force supplies exactly the required inward force, and no friction is needed. A faster car requires more inward force and would otherwise slide up the bank toward the outside of the curve. Static friction therefore points down the slope, adding an inward component.
 
 ---
 
 <a id="match-the-no-friction-speed"></a>
 ## Match the No-Friction Speed
 
-**Example:** A car travels around an icy banked curve at the special speed $v$. What direction does friction point?
+**Example:** A car travels around an icy banked curve at the design speed $v_0$. What direction does friction point?
 
 **Explanation**
 
-If the road is icy, there is no static friction. The phrase "safely navigates at speed $v$" means the bank angle and speed are matched so that the normal force alone supplies the required inward force:
+If the road is icy, there is no static friction. The phrase "safely navigates at speed $v_0$" means the bank angle and speed are matched so that the normal force alone supplies the required inward force:
 
 $$
-F_r=\frac{mv^2}{r}
+\sum F_r=m a_r=m\frac{v_0^2}{r}
 $$
 
-So at exactly speed $v$, static friction would not be needed. If friction is available but there is no tendency to slide along the bank, the static friction force is zero.
+So at exactly speed $v_0$, static friction would not be needed. If friction is available but there is no tendency to slide along the bank, the static friction force is zero.
 
 ```quiz
 type: radio
 id: p5-no-friction-speed
 shuffle: true
 content: |-
-  A car takes a banked curve at the no-friction speed $v$. The road now has static friction, but the car still travels at speed $v$. What is the direction of the static friction force?
+  A car takes a banked curve at the no-friction speed $v_0$. The road now has static friction, but the car still travels at speed $v_0$. What is the direction of the static friction force?
 options:
 - id: a
   content: |-
@@ -79,17 +79,17 @@ options:
 <a id="handle-a-speed-that-is-too-high"></a>
 ## Handle a Speed That Is Too High
 
-**Example:** The same car goes faster than the no-friction speed $v$. What direction does static friction point?
+**Example:** The same car travels at speed $v>v_0$. What direction does static friction point?
 
 **Explanation**
 
-If the new speed is $u$, the required inward force is
+At its new speed $v$, the required inward force is
 
 $$
-\frac{mu^2}{r}
+\frac{mv^2}{r}
 $$
 
-When $u>v$, the car needs more inward force than it needed at the no-friction speed. Without friction, the car would tend to slide up the bank, toward the outside of the curve.
+When $v>v_0$, the car needs more inward force than it needed at the no-friction speed. Without friction, the car would tend to slide up the bank, toward the outside of the curve.
 
 That uphill tendency can sound as though the car is driving itself against gravity. Look at the motion from above: inertia carries the car toward a straight tangent and therefore toward the outside of the turn. Because the road rises outward, that outward drift is motion up the bank relative to the road. Static friction then points down the bank to oppose that relative slip.
 
@@ -100,7 +100,7 @@ type: radio
 id: p5-too-fast
 shuffle: true
 content: |-
-  A car safely takes an icy banked curve at speed $v$. On the same curve, the road is dry and the car travels faster than $v$. Which statement correctly gives the static friction direction?
+  A car safely takes an icy banked curve at speed $v_0$. On the same curve, the road is dry and the car travels at $v>v_0$. Which statement correctly gives the static friction direction?
 options:
 - id: a
   content: |-
@@ -125,14 +125,14 @@ options:
 <a id="handle-a-speed-that-is-too-low"></a>
 ## Handle a Speed That Is Too Low
 
-**Example:** The same car goes slower than the no-friction speed $v$. What direction does static friction point?
+**Example:** The same car travels at speed $v<v_0$. What direction does static friction point?
 
 **Explanation**
 
-If the new speed is $u<v$, then
+If the new speed satisfies $v<v_0$, then
 
 $$
-\frac{mu^2}{r}<\frac{mv^2}{r}
+\frac{mv^2}{r}<\frac{mv_0^2}{r}
 $$
 
 so the car needs less inward force than it needed at the no-friction speed. Without friction, the car would tend to slide down the bank, toward the inside of the curve.
@@ -144,7 +144,7 @@ type: radio
 id: p5-too-slow
 shuffle: true
 content: |-
-  A car safely takes an icy banked curve at speed $v$. On the same curve, the road is dry and the car travels slower than $v$. What is the direction of static friction?
+  A car safely takes an icy banked curve at speed $v_0$. On the same curve, the road is dry and the car travels at $v<v_0$. What is the direction of static friction?
 options:
 - id: a
   content: |-
@@ -169,11 +169,11 @@ options:
 <a id="return-to-the-faster-car"></a>
 ## Return to the Faster Car
 
-**Example:** A car safely navigates an icy banked curve at speed $v$. Now the ice has melted, and there is static friction between the tires and road. What is the direction of the friction force if the car is going faster than $v$?
+**Example:** A car safely navigates an icy banked curve at its design speed $v_0$. Now the ice has melted, and there is static friction between the tires and road. What is the direction of the friction force if the car travels at $v>v_0$?
 
 **Explanation**
 
-Since $v$ was the no-friction speed, a faster car would tend to slide up the bank. Static friction opposes that possible motion, so it points down the slope of the bank.
+Since $v_0$ was the no-friction speed, a car traveling at $v>v_0$ would tend to slide up the bank. Static friction opposes that possible motion, so it points down the slope of the bank.
 
 The direction is not forward or backward along the path. In this question, static friction is preventing slipping along the banked surface.
 
@@ -182,7 +182,7 @@ type: radio
 id: p5-original-check
 shuffle: true
 content: |-
-  A car safely navigates an icy banked curve at speed $v$. Now consider that the ice has melted and there is static friction between the tires and road. What is the direction of the friction force if the car is going faster than $v$?
+  A car safely navigates an icy banked curve at speed $v_0$. Now consider that the ice has melted and there is static friction between the tires and road. What is the direction of the friction force if the car travels at $v>v_0$?
 
   ![](<../Source/Images/banked-curve-car-diagram.png>)
 options:

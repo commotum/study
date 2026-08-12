@@ -138,7 +138,7 @@ options:
 Each disk's center is a distance $R$ from the contact axis. Therefore, each disk contributes
 
 $$
-I_{\text{one disk}}
+I_{\mathrm{one disk}}
 =\frac12 MR^2+M(R)^2
 =\frac32 MR^2.
 $$
@@ -146,7 +146,7 @@ $$
 Add both contributions:
 
 $$
-I_{\text{contact}}
+I_{\mathrm{contact}}
 =2\left(\frac32 MR^2\right)
 =3MR^2.
 $$

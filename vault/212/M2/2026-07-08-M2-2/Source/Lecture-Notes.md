@@ -14,21 +14,21 @@
 - Torque is defined as:
   $$ \vec{\tau}=\vec{r}\times\vec{F} $$
 - Its magnitude is:
-  $$ \tau=rF\sin\phi $$
+  $$ \tau=rF\sin\theta $$
 - A balanced object has equal-magnitude clockwise and counterclockwise torques:
-  $$ \sum \tau=0 $$
+  $$ \sum\tau=0 $$
 - The masses on opposite sides do not need to be equal because their distances from the support point may differ.
 
 ---
 
 ### 3. Center of Mass for Discrete Masses
 - For a collection of point masses:
-  $$ \vec{r}_{\text{cm}}
+  $$ \vec{r}_{\mathrm{cm}}
   =
   \frac{\displaystyle\sum_i m_i\vec{r}_i}
        {\displaystyle\sum_i m_i} $$
 - In one dimension:
-  $$ x_{\text{cm}}
+  $$ x_{\mathrm{cm}}
   =
   \frac{\displaystyle\sum_i m_ix_i}
        {\displaystyle\sum_i m_i} $$
@@ -37,7 +37,7 @@
 
 ### 4. Center of Mass for a Continuous Object
 - For a continuous mass distribution:
-  $$ x_{\text{cm}}=\frac{1}{M}\int x\,dm $$
+  $$ x_{\mathrm{cm}}=\frac{1}{M}\int x\,dm $$
 - Here:
   - $M$ is the total mass
   - $dm$ is an infinitesimal mass element
@@ -72,14 +72,14 @@
 
 ### 7. Center of Mass of the Variable-Density Rod
 - Start with:
-  $$ x_{\text{cm}}=\frac{1}{M}\int_0^L x\,dm $$
+  $$ x_{\mathrm{cm}}=\frac{1}{M}\int_0^L x\,dm $$
 - Substitute:
   $$ dm=Cx\,dx $$
 - Then:
-  $$ x_{\text{cm}}
+  $$ x_{\mathrm{cm}}
   =
   \frac{1}{M}\int_0^L x(Cx)\,dx $$
-  $$ x_{\text{cm}}
+  $$ x_{\mathrm{cm}}
   =
   \frac{C}{M}\int_0^L x^2\,dx $$
 
@@ -87,25 +87,25 @@
 
 ### 8. Evaluate the Center-of-Mass Integral
 - Integrate:
-  $$ x_{\text{cm}}
+  $$ x_{\mathrm{cm}}
   =
   \frac{C}{M}
   \left[\frac{x^3}{3}\right]_0^L $$
 - Therefore:
-  $$ x_{\text{cm}}=\frac{CL^3}{3M} $$
+  $$ x_{\mathrm{cm}}=\frac{CL^3}{3M} $$
 - Substitute:
   $$ C=\frac{2M}{L^2} $$
 - Result:
-  $$ x_{\text{cm}}=\frac{2L}{3} $$
+  $$ x_{\mathrm{cm}}=\frac{2L}{3} $$
 
 ---
 
 ### 9. Numerical Center-of-Mass Result
 - For:
-  $$ L=1.8\text{ m} $$
+  $$ L=1.8\ \mathrm{m} $$
 - The center of mass is:
-  $$ x_{\text{cm}}=\frac{2}{3}(1.8\text{ m}) $$
-  $$ x_{\text{cm}}=1.2\text{ m} $$
+  $$ x_{\mathrm{cm}}=\frac{2}{3}(1.8\ \mathrm{m}) $$
+  $$ x_{\mathrm{cm}}=1.2\ \mathrm{m} $$
 - This is physically reasonable because the rod has more mass toward the right side.
 
 ---
@@ -118,7 +118,7 @@
   $$ \lambda(x)=Cx $$
   increases with $x$, the right side has greater mass density.
 - Therefore:
-  $$ \frac{L}{2}<x_{\text{cm}}<L $$
+  $$ \frac{L}{2}<x_{\mathrm{cm}}<L $$
 
 ---
 
@@ -127,47 +127,47 @@
 ### 11. Rotational Kinetic Energy of Point Masses
 - Consider a rigid object made from many small masses $m_i$.
 - Its rotational kinetic energy is:
-  $$ K_{\text{rot}}
+  $$ K_{\mathrm{rot}}
   =
   \sum_i \frac{1}{2}m_iv_i^2 $$
 - For rigid rotation:
-  $$ v_i=r_i\omega $$
+  $$ v_i=\omega r_{\perp,i} $$
 - Therefore:
-  $$ K_{\text{rot}}
+  $$ K_{\mathrm{rot}}
   =
-  \sum_i \frac{1}{2}m_i(r_i\omega)^2 $$
+  \sum_i \frac{1}{2}m_i(\omega r_{\perp,i})^2 $$
 
 ---
 
 ### 12. Define Moment of Inertia
 - Factor out $\omega^2$:
-  $$ K_{\text{rot}}
+  $$ K_{\mathrm{rot}}
   =
   \frac{1}{2}
-  \left(\sum_i m_ir_i^2\right)\omega^2 $$
+  \left(\sum_i m_ir_{\perp,i}^2\right)\omega^2 $$
 - Define the moment of inertia:
-  $$ I=\sum_i m_ir_i^2 $$
+  $$ I=\sum_i m_ir_{\perp,i}^2 $$
 - Then:
-  $$ K_{\text{rot}}=\frac{1}{2}I\omega^2 $$
+  $$ K_{\mathrm{rot}}=\frac{1}{2}I\omega^2 $$
 
 ---
 
 ### 13. Continuous Form of Moment of Inertia
 - For a continuous mass distribution:
-  $$ I=\int r^2\,dm $$
+  $$ I=\int r_\perp^2\,dm $$
 - Moment of inertia depends on:
   - total mass
   - how far each mass element is from the rotation axis
 - Distance is weighted by:
-  $$ r^2 $$
+  $$ r_\perp^2 $$
 
 ---
 
 ### 14. Units of Moment of Inertia
 - From:
-  $$ I=\int r^2\,dm $$
+  $$ I=\int r_\perp^2\,dm $$
 - The units are:
-  $$ [I]=\text{kg}\cdot\text{m}^2 $$
+  $$ [I]=\mathrm{kg}\,\mathrm{m}^2 $$
 - Moment of inertia has no special named SI unit.
 
 ---
@@ -199,11 +199,11 @@
 - Choose the origin at the center:
   $$ -\frac{L}{2}\le x\le\frac{L}{2} $$
 - Then:
-  $$ I_{\text{cm}}
+  $$ I_{\mathrm{cm}}
   =
   \int_{-L/2}^{L/2}x^2\,dm $$
 - Substitute $dm$:
-  $$ I_{\text{cm}}
+  $$ I_{\mathrm{cm}}
   =
   \frac{M}{L}
   \int_{-L/2}^{L/2}x^2\,dx $$
@@ -212,12 +212,12 @@
 
 ### 18. Evaluate the Integral
 - Integrate:
-  $$ I_{\text{cm}}
+  $$ I_{\mathrm{cm}}
   =
   \frac{M}{L}
   \left[\frac{x^3}{3}\right]_{-L/2}^{L/2} $$
 - Result:
-  $$ I_{\text{cm}}=\frac{1}{12}ML^2 $$
+  $$ I_{\mathrm{cm}}=\frac{1}{12}ML^2 $$
 
 ---
 
@@ -227,7 +227,7 @@
 - Move the rotation axis to one end of the rod:
   $$ 0\le x\le L $$
 - Then:
-  $$ I_{\text{end}}
+  $$ I_{\mathrm{end}}
   =
   \frac{M}{L}\int_0^Lx^2\,dx $$
 
@@ -235,22 +235,22 @@
 
 ### 20. Evaluate the End-Axis Integral
 - Integrate:
-  $$ I_{\text{end}}
+  $$ I_{\mathrm{end}}
   =
   \frac{M}{L}
   \left[\frac{x^3}{3}\right]_0^L $$
 - Result:
-  $$ I_{\text{end}}=\frac{1}{3}ML^2 $$
+  $$ I_{\mathrm{end}}=\frac{1}{3}ML^2 $$
 
 ---
 
 ### 21. Comparing the Two Rotation Axes
 - About the center:
-  $$ I_{\text{cm}}=\frac{1}{12}ML^2 $$
+  $$ I_{\mathrm{cm}}=\frac{1}{12}ML^2 $$
 - About the end:
-  $$ I_{\text{end}}=\frac{1}{3}ML^2 $$
+  $$ I_{\mathrm{end}}=\frac{1}{3}ML^2 $$
 - Therefore:
-  $$ I_{\text{end}}=4I_{\text{cm}} $$
+  $$ I_{\mathrm{end}}=4I_{\mathrm{cm}} $$
 - Rotating the rod about its end is more difficult because more of its mass lies farther from the axis.
 
 ---
@@ -259,9 +259,9 @@
 
 ### 22. General Formula
 - The parallel-axis theorem is:
-  $$ I=I_{\text{cm}}+Md^2 $$
+  $$ I=I_{\mathrm{cm}}+Md^2 $$
 - Here:
-  - $I_{\text{cm}}$ is the moment of inertia about a parallel axis through the center of mass
+  - $I_{\mathrm{cm}}$ is the moment of inertia about a parallel axis through the center of mass
   - $M$ is total mass
   - $d$ is the distance between the two parallel axes
 
@@ -271,20 +271,20 @@
 - For a rod, the center-to-end distance is:
   $$ d=\frac{L}{2} $$
 - Therefore:
-  $$ I_{\text{end}}
+  $$ I_{\mathrm{end}}
   =
   \frac{1}{12}ML^2
   +
   M\left(\frac{L}{2}\right)^2 $$
 - Simplify:
-  $$ I_{\text{end}}
+  $$ I_{\mathrm{end}}
   =
   \frac{1}{12}ML^2+\frac{1}{4}ML^2 $$
-  $$ I_{\text{end}}
+  $$ I_{\mathrm{end}}
   =
   \frac{4}{12}ML^2 $$
 - Result:
-  $$ I_{\text{end}}=\frac{1}{3}ML^2 $$
+  $$ I_{\mathrm{end}}=\frac{1}{3}ML^2 $$
 
 ---
 
@@ -317,12 +317,12 @@
 
 ### 26. Numerical Moment of Inertia
 - Given:
-  $$ M=0.65\text{ kg} $$
-  $$ L=1.8\text{ m} $$
+  $$ M=0.65\ \mathrm{kg} $$
+  $$ L=1.8\ \mathrm{m} $$
 - Compute:
   $$ I=\frac{1}{2}(0.65)(1.8)^2 $$
 - Result:
-  $$ I\approx1.1\text{ kg}\cdot\text{m}^2 $$
+  $$ I\approx1.1\ \mathrm{kg}\,\mathrm{m}^2 $$
 
 ---
 
@@ -380,7 +380,7 @@
 - Their separation is:
   $$ d=\frac{L}{2}-\frac{L}{3}=\frac{L}{6} $$
 - Apply:
-  $$ I=I_{\text{cm}}+Md^2 $$
+  $$ I=I_{\mathrm{cm}}+Md^2 $$
 - Therefore:
   $$ I=
   \frac{1}{12}ML^2
@@ -407,21 +407,21 @@
 
 ### 32. Add the Moments of Inertia
 - The total moment of inertia is:
-  $$ I_{\text{total}}=I_{\text{rod}}+I_{\text{point}} $$
+  $$ I_{\mathrm{total}}=I_{\mathrm{rod}}+I_{\mathrm{point}} $$
 - Rod about one end:
-  $$ I_{\text{rod}}=\frac{1}{3}ML^2 $$
+  $$ I_{\mathrm{rod}}=\frac{1}{3}ML^2 $$
 - Point mass at distance $L$:
-  $$ I_{\text{point}}=(3M)L^2 $$
+  $$ I_{\mathrm{point}}=(3M)L^2 $$
 
 ---
 
 ### 33. Final Composite Moment of Inertia
 - Add:
-  $$ I_{\text{total}}
+  $$ I_{\mathrm{total}}
   =
   \frac{1}{3}ML^2+3ML^2 $$
 - Therefore:
-  $$ I_{\text{total}}=\frac{10}{3}ML^2 $$
+  $$ I_{\mathrm{total}}=\frac{10}{3}ML^2 $$
 
 ---
 
@@ -443,24 +443,24 @@
 
 ### 35. Main Physics Takeaways
 - Center of mass is a mass-weighted average position:
-  $$ x_{\text{cm}}=\frac{1}{M}\int x\,dm $$
+  $$ x_{\mathrm{cm}}=\frac{1}{M}\int x\,dm $$
 - Moment of inertia is a mass-weighted average of squared distance from an axis:
-  $$ I=\int r^2\,dm $$
+  $$ I=\int r_\perp^2\,dm $$
 - Rotational kinetic energy is:
-  $$ K_{\text{rot}}=\frac{1}{2}I\omega^2 $$
+  $$ K_{\mathrm{rot}}=\frac{1}{2}I\omega^2 $$
 - Moving the rotation axis away from the center of mass increases the moment of inertia:
-  $$ I=I_{\text{cm}}+Md^2 $$
+  $$ I=I_{\mathrm{cm}}+Md^2 $$
 - Composite moments of inertia can be added:
-  $$ I_{\text{total}}=\sum_i I_i $$
+  $$ I_{\mathrm{total}}=\sum_i I_i $$
 
 ---
 
 ### 36. Main Problem-Solving Takeaways
 - Clearly identify the rotation axis before calculating $I$.
-- Measure every $r$ from that axis.
+- Measure every $r_\perp$ from that axis.
 - Convert mass density into a mass element:
   $$ dm=\lambda(x)\,dx $$
 - Solve symbolically before inserting numerical values.
 - Check the units:
-  $$ [I]=\text{kg}\cdot\text{m}^2 $$
+  $$ [I]=\mathrm{kg}\,\mathrm{m}^2 $$
 - Use the parallel-axis theorem when the axis is parallel to one through the center of mass.

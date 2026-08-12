@@ -59,8 +59,8 @@ $$
 The center lies at the midpoint of the left and right edges:
 
 $$
-x_{\text{center}}
-=\frac{x_{\text{left}}+x_{\text{right}}}{2}
+x_{\mathrm{center}}
+=\frac{x_{\mathrm{left}}+x_{\mathrm{right}}}{2}
 =\frac{2.0+3.0}{2}
 =2.5\ \mathrm{cm}.
 $$

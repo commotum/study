@@ -19,7 +19,7 @@ topic-code: MTH212.M1.04
 - Velocity is tangent to the circle
 - Acceleration points toward the center of the circle
 - The magnitude of a vector $\vec{a}$ is written $|\vec{a}|$
-- Linear speed and angular speed are related by $v=\omega r$
+- Linear speed and angular speed are related by $v=r\omega$
 
 ---
 
@@ -32,12 +32,12 @@ $$
 |\vec{a}|=\frac{v^2}{r}.
 $$
 
-Because uniform circular motion has $a_t=0$, this magnitude is the radial acceleration used on the cheat sheet: $a_r=|\vec a|$.
+Because uniform circular motion has $a_t=0$, this magnitude is the radial acceleration used on the cheat sheet: $a_r=|\vec{a}|$.
 
 If the motion is described by angular speed $\omega$, use
 
 $$
-v=\omega r.
+v=r\omega.
 $$
 
 Then
@@ -45,15 +45,15 @@ Then
 $$
 \frac{v^2}{r}
 =
-\frac{(\omega r)^2}{r}
+\frac{(r\omega)^2}{r}
 =
-\omega^2r.
+r\omega^2.
 $$
 
-So the magnitude of centripetal acceleration can be written either way:
+So the magnitude of radial acceleration can be written either way:
 
 $$
-|\vec{a}|=\frac{v^2}{r}=\omega^2r.
+|\vec{a}|=\frac{v^2}{r}=r\omega^2.
 $$
 
 The acceleration vector points inward, but its magnitude is the positive scalar $\dfrac{v^2}{r}$. Thus the statement
@@ -67,10 +67,10 @@ describes how large the acceleration is, not which way it points.
 The geometry also explains why the speed is squared. At two nearby instants, the triangle formed by the velocity vectors is similar to the triangle formed by the radius vectors, so
 
 $$
-\frac{\Delta v}{v}=\frac{\Delta s}{r},
+\frac{|\Delta\vec{v}|}{v}=\frac{\Delta s}{r},
 $$
 
-where $\Delta v$ is the magnitude of the change in velocity. Divide by $\Delta t$ and take the short-time limit:
+where $|\Delta\vec{v}|$ is the magnitude of the change in velocity. Divide by $\Delta t$ and take the short-time limit:
 
 $$
 a_r
@@ -118,34 +118,34 @@ options:
 <a id="using-the-speed-formula-for-the-magnitude"></a>
 ## Using the Speed Formula for the Magnitude
 
-**Example:** An object moves in a circle of radius $4\ \mathrm{m}$ with speed $6\ \mathrm{m/s}$. What is the magnitude of its acceleration?
+**Example:** An object moves in a circle of radius $4\ \mathrm{m}$ with speed $6\ \mathrm{m}/\mathrm{s}$. What is the magnitude of its acceleration?
 
 **Explanation**
 
-Use the centripetal acceleration magnitude formula:
+Use the radial-acceleration magnitude formula:
 
 $$
 |\vec{a}|=\frac{v^2}{r}.
 $$
 
-Here $v=6\ \mathrm{m/s}$ and $r=4\ \mathrm{m}$, so
+Here $v=6\ \mathrm{m}/\mathrm{s}$ and $r=4\ \mathrm{m}$, so
 
 $$
 |\vec{a}|=\frac{6^2}{4}
 =
 \frac{36}{4}
 =
-9\ \mathrm{m/s^2}.
+9\ \mathrm{m}/\mathrm{s}^2.
 $$
 
 The units also check:
 
 $$
-\frac{(\mathrm{m/s})^2}{\mathrm{m}}
+\frac{(\mathrm{m}/\mathrm{s})^2}{\mathrm{m}}
 =
-\frac{\mathrm{m^2/s^2}}{\mathrm{m}}
+\frac{\mathrm{m}^2/\mathrm{s}^2}{\mathrm{m}}
 =
-\mathrm{m/s^2}.
+\mathrm{m}/\mathrm{s}^2.
 $$
 
 ```quiz
@@ -153,21 +153,21 @@ type: radio
 id: q-2
 shuffle: true
 content: |-
-  An object moves in a circle of radius $3\ \mathrm{m}$ with speed $12\ \mathrm{m/s}$. What is $|\vec{a}|$?
+  An object moves in a circle of radius $3\ \mathrm{m}$ with speed $12\ \mathrm{m}/\mathrm{s}$. What is $|\vec{a}|$?
 options:
 - id: a
   content: |-
-    $4\ \mathrm{m/s^2}$
+    $4\ \mathrm{m}/\mathrm{s}^2$
 - id: b
   content: |-
-    $36\ \mathrm{m/s^2}$
+    $36\ \mathrm{m}/\mathrm{s}^2$
 - id: c
   content: |-
-    $48\ \mathrm{m/s^2}$
+    $48\ \mathrm{m}/\mathrm{s}^2$
   correct: true
 - id: d
   content: |-
-    $144\ \mathrm{m/s^2}$
+    $144\ \mathrm{m}/\mathrm{s}^2$
 ```
 
 ---
@@ -175,7 +175,7 @@ options:
 <a id="rewriting-the-magnitude-with-angular-speed"></a>
 ## Rewriting the Magnitude With Angular Speed
 
-**Example:** Show that $\dfrac{v^2}{r}$ becomes $\omega^2r$ when $v=\omega r$.
+**Example:** Show that $\dfrac{v^2}{r}$ becomes $r\omega^2$ when $v=r\omega$.
 
 **Explanation**
 
@@ -185,28 +185,28 @@ $$
 \frac{v^2}{r}.
 $$
 
-Substitute $v=\omega r$:
+Substitute $v=r\omega$:
 
 $$
 \frac{v^2}{r}
 =
-\frac{(\omega r)^2}{r}.
+\frac{(r\omega)^2}{r}.
 $$
 
 Square both factors in the numerator:
 
 $$
-\frac{(\omega r)^2}{r}
+\frac{(r\omega)^2}{r}
 =
-\frac{\omega^2r^2}{r}.
+\frac{r^2\omega^2}{r}.
 $$
 
 Cancel one factor of $r$:
 
 $$
-\frac{\omega^2r^2}{r}
+\frac{r^2\omega^2}{r}
 =
-\omega^2r.
+r\omega^2.
 $$
 
 ```quiz
@@ -214,17 +214,17 @@ type: radio
 id: q-3
 shuffle: true
 content: |-
-  If $v=\omega r$, which expression is equal to $\dfrac{v^2}{r}$?
+  If $v=r\omega$, which expression is equal to $\dfrac{v^2}{r}$?
 options:
 - id: a
   content: |-
-    $\omega r$
+    $r\omega$
 - id: b
   content: |-
-    $\omega r^2$
+    $r^2\omega$
 - id: c
   content: |-
-    $\omega^2r$
+    $r\omega^2$
   correct: true
 - id: d
   content: |-
@@ -249,13 +249,13 @@ $$
 If angular speed is included, the same magnitude can also be written as
 
 $$
-|\vec{a}|=\omega^2r.
+|\vec{a}|=r\omega^2.
 $$
 
 So the combined magnitude statement
 
 $$
-|\vec{a}|=\frac{v^2}{r}=\omega^2r
+|\vec{a}|=\frac{v^2}{r}=r\omega^2
 $$
 
 is true.
@@ -275,7 +275,7 @@ shuffle: true
 content: |-
   Consider an object undergoing uniform circular motion. Let $\vec{r}$ be the position of the object relative to the circle's center, $\vec{v}$ the velocity, $\omega$ the angular speed, and $\vec{a}$ the acceleration.
 
-  True or false: $\vec{a}$ has magnitude $\dfrac{v^2}{r}=\omega^2r$.
+  True or false: $\vec{a}$ has magnitude $\dfrac{v^2}{r}=r\omega^2$.
 options:
 - id: a
   content: |-
@@ -318,17 +318,17 @@ $$
 |\vec{a}|=\frac{v^2}{r}.
 $$
 
-When the motion is described by angular speed, substitute $v=\omega r$:
+When the motion is described by angular speed, substitute $v=r\omega$:
 
 $$
 \frac{v^2}{r}
 =
-\frac{(\omega r)^2}{r}
+\frac{(r\omega)^2}{r}
 =
-\omega^2r.
+r\omega^2.
 $$
 
-The statement "$\vec{a}$ has magnitude $\dfrac{v^2}{r}=\omega^2r$" is true. It describes the size of the acceleration, not the direction of the acceleration vector. Since $\vec{r}$ points outward from the center, the acceleration vector points opposite $\vec{r}$; that direction detail does not change the magnitude.
+The statement "$\vec{a}$ has magnitude $\dfrac{v^2}{r}=r\omega^2$" is true. It describes the size of the acceleration, not the direction of the acceleration vector. Since $\vec{r}$ points outward from the center, the acceleration vector points opposite $\vec{r}$; that direction detail does not change the magnitude.
 
 <!-- lesson-nav:start -->
 ---

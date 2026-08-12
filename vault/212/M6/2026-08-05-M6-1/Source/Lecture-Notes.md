@@ -222,9 +222,9 @@
 
 ### 21. Waves Arriving from the Two Slits
 
-- Represent the oscillating electric fields from the two slits as:
-  $$ E_1(r_1,t)=A\sin(kr_1-\omega t+\phi_{1,0}) $$
-  $$ E_2(r_2,t)=A\sin(kr_2-\omega t+\phi_{2,0}) $$
+- Represent the two waves at observation point $P$ as:
+  $$ D_1(P,t)=A\sin(kr_1-\omega t+\phi_{1,0}) $$
+  $$ D_2(P,t)=A\sin(kr_2-\omega t+\phi_{2,0}) $$
 - Here:
   - $r_1$ and $r_2$ are the two path lengths
   - $k$ is the wave number
@@ -477,11 +477,11 @@
 ### 39. Given Information
 
 - Distance from the slits to the screen:
-  $$ L=0.85\text{ m} $$
+  $$ L=0.85\ \mathrm{m} $$
 - Center-to-center slit separation:
-  $$ d=0.062\text{ mm} $$
+  $$ d=0.062\ \mathrm{mm} $$
 - The intensity graph shows an adjacent-fringe spacing of:
-  $$ \Delta y=1.0\text{ cm} $$
+  $$ \Delta y=1.0\ \mathrm{cm} $$
 - Find:
   $$ \lambda $$
 
@@ -493,17 +493,17 @@
   $$
   d
   =
-  0.062\text{ mm}
+  0.062\ \mathrm{mm}
   =
-  6.2\times10^{-5}\text{ m}
+  6.2\times10^{-5}\ \mathrm{m}
   $$
 - Fringe spacing:
   $$
   \Delta y
   =
-  1.0\text{ cm}
+  1.0\ \mathrm{cm}
   =
-  1.0\times10^{-2}\text{ m}
+  1.0\times10^{-2}\ \mathrm{m}
   $$
 
 ---
@@ -519,25 +519,25 @@
   \lambda
   =
   \frac{
-  (1.0\times10^{-2}\text{ m})
-  (6.2\times10^{-5}\text{ m})
+  (1.0\times10^{-2}\ \mathrm{m})
+  (6.2\times10^{-5}\ \mathrm{m})
   }
-  {0.85\text{ m}}
+  {0.85\ \mathrm{m}}
   $$
 - Therefore:
-  $$ \lambda\approx7.3\times10^{-7}\text{ m} $$
+  $$ \lambda\approx7.3\times10^{-7}\ \mathrm{m} $$
 - In nanometers:
-  $$ \boxed{\lambda\approx730\text{ nm}} $$
+  $$ \boxed{\lambda\approx730\ \mathrm{nm}} $$
 
 ---
 
 ### 42. Interpret the Result
 
 - A wavelength near:
-  $$ 730\text{ nm} $$
+  $$ 730\ \mathrm{nm} $$
   lies at the deep-red end of the visible spectrum.
 - A standard red helium–neon laser has a wavelength of approximately:
-  $$ 633\text{ nm} $$
+  $$ 633\ \mathrm{nm} $$
 - The calculated value is not the standard helium–neon wavelength, but it remains physically reasonable for red light.
 
 ---
@@ -566,11 +566,13 @@
 
 - A diffraction grating contains many evenly spaced narrow slits or lines.
 - A typical grating may contain approximately:
-  $$ 300\text{ to }3600\text{ lines/mm} $$
+  $$ 300\text{ to }3600\ \mathrm{lines}/\mathrm{mm} $$
 - The center-to-center separation between neighboring lines is denoted:
   $$ d $$
-- If the line density is $N$ lines per unit length:
-  $$ \boxed{d=\frac{1}{N}} $$
+- If a width $W$ contains $N$ lines:
+  $$ \boxed{d=\frac{W}{N}} $$
+- Equivalently, the line density is:
+  $$ \boxed{\frac{N}{W}=\frac{1}{d}} $$
 
 ---
 
@@ -659,11 +661,11 @@
 ### 50. Given Information
 
 - Grating line spacing:
-  $$ d=3.0\,\mu\text{m} $$
+  $$ d=3.0\ \mu\mathrm{m} $$
 - Distance from the grating to the screen:
-  $$ L=1.8\text{ m} $$
+  $$ L=1.8\ \mathrm{m} $$
 - The third bright fringe is:
-  $$ y_3=120\text{ cm} $$
+  $$ y_3=120\ \mathrm{cm} $$
   from the central maximum.
 - Therefore:
   $$ m=3 $$
@@ -678,17 +680,17 @@
   $$
   d
   =
-  3.0\,\mu\text{m}
+  3.0\ \mu\mathrm{m}
   =
-  3.0\times10^{-6}\text{ m}
+  3.0\times10^{-6}\ \mathrm{m}
   $$
 - Third-order fringe position:
   $$
   y_3
   =
-  120\text{ cm}
+  120\ \mathrm{cm}
   =
-  1.20\text{ m}
+  1.20\ \mathrm{m}
   $$
 
 ---
@@ -720,25 +722,25 @@
   \lambda
   =
   \frac{
-  (3.0\times10^{-6}\text{ m})
+  (3.0\times10^{-6}\ \mathrm{m})
   \sin(33.7^\circ)
   }
   {3}
   $$
 - Therefore:
-  $$ \lambda\approx5.55\times10^{-7}\text{ m} $$
+  $$ \lambda\approx5.55\times10^{-7}\ \mathrm{m} $$
 - To two significant figures:
-  $$ \boxed{\lambda\approx550\text{ nm}} $$
+  $$ \boxed{\lambda\approx550\ \mathrm{nm}} $$
 
 ---
 
 ### 54. Physical Interpretation
 
 - A wavelength of approximately:
-  $$ 550\text{ nm} $$
+  $$ 550\ \mathrm{nm} $$
   lies in the visible green region.
 - Visible light occupies approximately:
-  $$ 400\text{ nm}\lesssim\lambda\lesssim750\text{ nm} $$
+  $$ 400\ \mathrm{nm}\lesssim\lambda\lesssim750\ \mathrm{nm} $$
 - A result far outside this range may indicate:
   - an incorrect unit conversion
   - use of the wrong interference order
@@ -752,22 +754,22 @@
 - If the linear small-angle equation were incorrectly used:
   $$ y_m\approx\frac{m\lambda L}{d} $$
 - Solving for wavelength would give:
-  $$ \lambda_{\text{approx}}\approx\frac{y_m d}{mL} $$
+  $$ \lambda_{\mathrm{approx}}\approx\frac{y_m d}{mL} $$
 - Substitute:
   $$
-  \lambda_{\text{approx}}
+  \lambda_{\mathrm{approx}}
   \approx
   \frac{
-  (1.20\text{ m})(3.0\times10^{-6}\text{ m})
+  (1.20\ \mathrm{m})(3.0\times10^{-6}\ \mathrm{m})
   }
-  {(3)(1.8\text{ m})}
+  {(3)(1.8\ \mathrm{m})}
   $$
 - This gives:
-  $$ \lambda_{\text{approx}}\approx6.7\times10^{-7}\text{ m} $$
+  $$ \lambda_{\mathrm{approx}}\approx6.7\times10^{-7}\ \mathrm{m} $$
 - Therefore:
-  $$ \lambda_{\text{approx}}\approx670\text{ nm} $$
+  $$ \lambda_{\mathrm{approx}}\approx670\ \mathrm{nm} $$
 - This differs substantially from the correct result:
-  $$ \lambda\approx550\text{ nm} $$
+  $$ \lambda\approx550\ \mathrm{nm} $$
 
 ---
 
@@ -819,5 +821,5 @@
    $$ \Delta y\approx\frac{\lambda L}{d} $$
 8. Check that the calculated wavelength is physically reasonable.
 9. For visible light, expect a result on the order of:
-   $$ 10^{-7}\text{ m} $$
+   $$ 10^{-7}\ \mathrm{m} $$
 10. Retain sufficient precision during intermediate calculations before rounding the final answer.

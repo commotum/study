@@ -76,7 +76,7 @@ The SI unit of torque is the newton-meter:
 
 $$
 \boxed{
-[\tau]=\mathrm{N\,m}
+[\tau]=\mathrm{N}\,\mathrm{m}
 }.
 $$
 
@@ -204,7 +204,7 @@ This gives
 
 $$
 \boxed{
-\tau\approx52\ \mathrm{N\,m}
+\tau\approx52\ \mathrm{N}\,\mathrm{m}
 }.
 $$
 
@@ -349,7 +349,7 @@ $$
 so the torque magnitude is
 
 $$
-\tau=F_Tr.
+\tau=F_T r.
 $$
 
 The spindle reaction acts through the pivot. It may be nonzero, but its torque about the spindle is zero because its lever arm is zero.
@@ -363,7 +363,7 @@ $$
 Therefore,
 
 $$
-F_Tr=I_p\alpha.
+F_T r=I_p\alpha.
 $$
 
 For a uniform solid cylinder,
@@ -375,7 +375,7 @@ $$
 Substituting,
 
 $$
-F_Tr
+F_T r
 =
 \left(
 \frac{1}{2}mr^2
@@ -388,7 +388,7 @@ Solving for the angular acceleration,
 $$
 \alpha
 =
-\frac{F_Tr}{
+\frac{F_T r}{
 \frac{1}{2}mr^2
 }.
 $$
@@ -405,7 +405,7 @@ Using the numerical values supplied in the activity gives
 
 $$
 \boxed{
-\alpha=2.7\ \mathrm{rad/s^2}
+\alpha=2.7\ \mathrm{rad}/\mathrm{s}^2
 }.
 $$
 
@@ -566,7 +566,7 @@ $$
 \frac{
 (\mathrm{N})(\mathrm{m})
 }{
-(\mathrm{s^{-2}})(\mathrm{m^2})
+(\mathrm{s}^{-2})(\mathrm{m}^2)
 }.
 $$
 
@@ -575,7 +575,7 @@ Using
 $$
 1\ \mathrm{N}
 =
-1\ \mathrm{kg\,m/s^2},
+1\ \mathrm{kg}\,\mathrm{m}/\mathrm{s}^2,
 $$
 
 we obtain
@@ -586,13 +586,13 @@ $$
 \right]
 =
 \frac{
-(\mathrm{kg\,m/s^2})(\mathrm{m})
+(\mathrm{kg}\,\mathrm{m}/\mathrm{s}^2)(\mathrm{m})
 }{
-(\mathrm{s^{-2}})(\mathrm{m^2})
+(\mathrm{s}^{-2})(\mathrm{m}^2)
 }.
 $$
 
-The factors of $\mathrm{m^2/s^2}$ cancel:
+The factors of $\mathrm{m}^2/\mathrm{s}^2$ cancel:
 
 $$
 \left[
@@ -610,7 +610,7 @@ M\frac{R^2}{r^2}
 \right]
 =
 (\mathrm{kg})
-\frac{\mathrm{m^2}}{\mathrm{m^2}}
+\frac{\mathrm{m}^2}{\mathrm{m}^2}
 =
 \mathrm{kg}.
 $$
@@ -752,7 +752,7 @@ For the wrench example,
 
 $$
 \boxed{
-\tau\approx52\ \mathrm{N\,m}
+\tau\approx52\ \mathrm{N}\,\mathrm{m}
 }
 $$
 
@@ -761,7 +761,7 @@ and the torque points into the page.
 For a solid cylindrical spool pulled tangentially by a tension $F_T$,
 
 $$
-F_Tr=I\alpha
+F_T r=I\alpha
 $$
 
 with

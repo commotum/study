@@ -54,7 +54,7 @@ for a pulley with moment of inertia $I$ and radius $r$. Since $I/r^2>0$, System 
 For the two hanging masses considered together, the opposing weights leave the driving force
 
 $$
-F_{\text{drive}}=m_2g-m_1g=(m_2-m_1)g.
+F_{\mathrm{drive}}=m_2g-m_1g=(m_2-m_1)g.
 $$
 
 The masses are identical in the two systems, so this numerator is unchanged. The pulley mass is supported by its axle; it does not add another hanging weight to the driving force.

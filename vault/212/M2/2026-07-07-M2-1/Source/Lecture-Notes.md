@@ -49,11 +49,11 @@
 - Torque is defined by:
   $$ \vec{\tau}=\vec{r}\times\vec{F} $$
 - Its magnitude is:
-  $$ \tau=rF\sin\phi $$
+  $$ \tau=rF\sin\theta $$
 - Here:
   - $\vec{r}$ points from the rotation axis to the force application point
   - $\vec{F}$ is the applied force
-  - $\phi$ is the angle between $\vec{r}$ and $\vec{F}$
+  - $\theta$ is the angle between $\vec{r}$ and $\vec{F}$
 
 ---
 
@@ -61,7 +61,7 @@
 - For a mass supported on a horizontal teeter-totter:
   $$ F=mg $$
 - Since the position vector and weight are perpendicular:
-  $$ \phi=90^\circ $$
+  $$ \theta=90^\circ $$
 - Therefore:
   $$ \tau=rmg $$
 
@@ -83,23 +83,23 @@
 - A freely rotating object rotates about its center of mass.
 - The center of mass is a position, not an amount of mass.
 - Its units are units of length, such as:
-  $$ \text{m},\quad \text{cm} $$
+  $$ \mathrm{m},\quad \mathrm{cm} $$
 
 ---
 
 ### 9. Center of Mass for Discrete Masses
 - For point masses:
-  $$ \vec{r}_{\text{cm}}
+  $$ \vec{r}_{\mathrm{cm}}
   =
   \frac{\displaystyle\sum_i m_i\vec{r}_i}
        {\displaystyle\sum_i m_i} $$
 - In one dimension:
-  $$ x_{\text{cm}}
+  $$ x_{\mathrm{cm}}
   =
   \frac{\displaystyle\sum_i m_ix_i}
        {\displaystyle\sum_i m_i} $$
 - Expanded for two masses:
-  $$ x_{\text{cm}}
+  $$ x_{\mathrm{cm}}
   =
   \frac{m_1x_1+m_2x_2}{m_1+m_2} $$
 
@@ -107,7 +107,7 @@
 
 ### 10. Center of Mass for a Continuous Object
 - For a continuously distributed mass:
-  $$ x_{\text{cm}}=\frac{1}{M}\int x\,dm $$
+  $$ x_{\mathrm{cm}}=\frac{1}{M}\int x\,dm $$
 - Here:
   - $M$ is the total mass
   - $dm$ is a small mass element
@@ -128,43 +128,43 @@
 
 ### 12. Center of Mass Calculation
 - Use:
-  $$ x_{\text{cm}}
+  $$ x_{\mathrm{cm}}
   =
   \frac{m_1x_1+m_2x_2}{m_1+m_2} $$
 - Substitute:
-  $$ x_{\text{cm}}
+  $$ x_{\mathrm{cm}}
   =
   \frac{m_1(0)+m_2L}{m_1+m_2} $$
 - Since $m_1=3m_2$:
-  $$ x_{\text{cm}}
+  $$ x_{\mathrm{cm}}
   =
   \frac{m_2L}{3m_2+m_2} $$
 - Therefore:
-  $$ x_{\text{cm}}=\frac{L}{4} $$
+  $$ x_{\mathrm{cm}}=\frac{L}{4} $$
 
 ---
 
 ### 13. Numerical Result
 - For:
-  $$ L=0.88\text{ m} $$
+  $$ L=0.88\ \mathrm{m} $$
 - The center of mass is:
-  $$ x_{\text{cm}}=\frac{0.88}{4}=0.22\text{ m} $$
+  $$ x_{\mathrm{cm}}=\frac{0.88}{4}=0.22\ \mathrm{m} $$
 - It lies closer to the larger mass $m_1$.
 
 ---
 
 ### 14. Equivalent Torque Method
-- If the support is at $x=x_{\text{cm}}$, the lever arms are:
-  $$ r_1=x_{\text{cm}} $$
-  $$ r_2=L-x_{\text{cm}} $$
+- If the support is at $x=x_{\mathrm{cm}}$, the lever arms are:
+  $$ r_1=x_{\mathrm{cm}} $$
+  $$ r_2=L-x_{\mathrm{cm}} $$
 - Torque balance gives:
-  $$ m_1g x_{\text{cm}}
+  $$ m_1g x_{\mathrm{cm}}
   =
-  m_2g(L-x_{\text{cm}}) $$
+  m_2g(L-x_{\mathrm{cm}}) $$
 - Cancel $g$ and solve:
-  $$ (m_1+m_2)x_{\text{cm}}=m_2L $$
+  $$ (m_1+m_2)x_{\mathrm{cm}}=m_2L $$
 - Therefore:
-  $$ x_{\text{cm}}=\frac{m_2L}{m_1+m_2} $$
+  $$ x_{\mathrm{cm}}=\frac{m_2L}{m_1+m_2} $$
 - This matches the center-of-mass formula.
 
 ---
@@ -181,18 +181,18 @@
 
 ### 16. Grouped Masses and Positions
 - First group:
-  $$ 6m \text{ at } x=1.5\text{ cm} $$
+  $$ 6m \text{ at } x=1.5\ \mathrm{cm} $$
 - Second group:
-  $$ 2m \text{ at } x=4.0\text{ cm} $$
+  $$ 2m \text{ at } x=4.0\ \mathrm{cm} $$
 - Third group:
-  $$ 2m \text{ at } x=5.5\text{ cm} $$
+  $$ 2m \text{ at } x=5.5\ \mathrm{cm} $$
 
 ---
 
 ### 17. Center of Mass Calculation
 - Use:
   $$
-  x_{\text{cm}}
+  x_{\mathrm{cm}}
   =
   \frac{
   6m(1.5)+2m(4.0)+2m(5.5)
@@ -200,12 +200,12 @@
   $$
 - Cancel $m$:
   $$
-  x_{\text{cm}}
+  x_{\mathrm{cm}}
   =
-  \frac{9+8+11}{10}\text{ cm}
+  \frac{9+8+11}{10}\ \mathrm{cm}
   $$
 - Therefore:
-  $$ x_{\text{cm}}=2.8\text{ cm} $$
+  $$ x_{\mathrm{cm}}=2.8\ \mathrm{cm} $$
 
 ---
 
@@ -232,7 +232,7 @@
 ### 20. Expected Center-of-Mass Location
 - The origin is at the left side of the large cube.
 - The center of mass should lie between:
-  $$ L<x_{\text{cm}}<2L $$
+  $$ L<x_{\mathrm{cm}}<2L $$
 - It must be to the right of the large cube’s center because the smaller cube adds mass on the right.
 
 ---
@@ -263,12 +263,12 @@
 
 ### 24. Composite Center of Mass
 - Use:
-  $$ x_{\text{cm}}
+  $$ x_{\mathrm{cm}}
   =
   \frac{m_1x_1+m_2x_2}{m_1+m_2} $$
 - Substitute:
   $$
-  x_{\text{cm}}
+  x_{\mathrm{cm}}
   =
   \frac{
   (8\rho L^3)(L)
@@ -284,22 +284,22 @@
 ### 25. Simplify the Result
 - Cancel $\rho L^3$:
   $$
-  x_{\text{cm}}
+  x_{\mathrm{cm}}
   =
   \frac{8L+\frac{5L}{2}}{9}
   $$
 - Combine:
   $$
-  x_{\text{cm}}
+  x_{\mathrm{cm}}
   =
   \frac{\frac{16L}{2}+\frac{5L}{2}}{9}
   =
   \frac{21L}{18}
   $$
 - Therefore:
-  $$ x_{\text{cm}}=\frac{7L}{6} $$
+  $$ x_{\mathrm{cm}}=\frac{7L}{6} $$
 - The lecture’s numerical value is approximately:
-  $$ x_{\text{cm}}\approx0.875\text{ m} $$
+  $$ x_{\mathrm{cm}}\approx0.875\ \mathrm{m} $$
 
 ---
 
@@ -355,19 +355,19 @@
 - Rearranging:
   $$ C=\frac{2M}{L^2} $$
 - The units of $C$ are:
-  $$ [C]=\frac{\text{mass}}{\text{length}^2} $$
+  $$ [C]=\mathrm{kg}/\mathrm{m}^2 $$
 - The lecture’s numerical substitution gives:
-  $$ C=0.4 $$
+  $$ C=0.40\ \mathrm{kg}/\mathrm{m}^2 $$
 
 ---
 
 ### 32. Main Physics Takeaways
 - Center of mass is a weighted average of position:
-  $$ x_{\text{cm}}
+  $$ x_{\mathrm{cm}}
   =
   \frac{\sum_i m_ix_i}{\sum_i m_i} $$
 - For continuous distributions:
-  $$ x_{\text{cm}}=\frac{1}{M}\int x\,dm $$
+  $$ x_{\mathrm{cm}}=\frac{1}{M}\int x\,dm $$
 - A balanced system has zero net torque:
   $$ \sum\tau=0 $$
 - Equal torque does not require equal masses.

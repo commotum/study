@@ -17,7 +17,7 @@ topic-code: MTH212.M2.41
 ## Prerequisites
 
 - Translational Newton's second law: $\sum F_x=Ma$
-- Rotational Newton's second law about the center of mass: $\sum\tau_{\mathrm{CM}}=I\alpha$
+- Rotational Newton's second law about the center of mass: $\sum\tau_{\mathrm{cm}}=I\alpha$
 - The uniform-cylinder moment of inertia: $I=\frac12MR^2$
 - The rolling-without-slipping constraint
 

@@ -20,7 +20,7 @@ topic-code: MTH212.M3.27
 
 - Draw point and extended free-body diagrams.
 - Calculate signed torques about a chosen pivot.
-- Use $\sum\vec F=m\vec a$ and $\sum\tau=I\alpha$.
+- Use $\sum\vec{F}=m\vec{a}$ and $\sum\tau=I\alpha$.
 - Use the no-slip relation $a=\alpha r$.
 
 ---
@@ -33,13 +33,13 @@ Equilibrium and massive-pulley problems both require equations from more than on
 For static equilibrium,
 
 $$
-\sum\vec F=0,\qquad \sum\tau=0.
+\sum\vec{F}=0,\qquad \sum\tau=0.
 $$
 
 For coupled translation and rotation,
 
 $$
-\sum\vec F=m\vec a,\qquad \sum\tau=I\alpha,\qquad a=\alpha r.
+\sum\vec{F}=m\vec{a},\qquad \sum\tau=I\alpha,\qquad a=\alpha r.
 $$
 
 The governing move is to isolate each body, write the equation appropriate to that body, and then connect the equations through contact forces or kinematic constraints.
@@ -80,19 +80,19 @@ content: |-
 options:
 - id: equilibrium-pulley-q1-a
   content: |-
-    Only $\sum\vec F=0$
+    Only $\sum\vec{F}=0$
 - id: equilibrium-pulley-q1-b
   content: |-
     Only $\sum\tau=0$
 - id: equilibrium-pulley-q1-c
   content: |-
-    Both $\sum\vec F=0$ and $\sum\tau=0$
+    Both $\sum\vec{F}=0$ and $\sum\tau=0$
   correct: true
   feedback: |-
     The first prevents translation; the second prevents rotation.
 - id: equilibrium-pulley-q1-d
   content: |-
-    $\sum\vec F=\sum\tau$
+    $\sum\vec{F}=\sum\tau$
 ```
 
 ---
@@ -398,7 +398,7 @@ options:
 For static systems:
 
 1. Draw an extended free-body diagram.
-2. Require both $\sum\vec F=0$ and $\sum\tau=0$.
+2. Require both $\sum\vec{F}=0$ and $\sum\tau=0$.
 3. At impending tip, set the lost support force to zero and pivot about the remaining contact.
 4. At impending slip, use $f_s=\mu_sN$.
 

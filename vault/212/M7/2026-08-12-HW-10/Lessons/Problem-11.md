@@ -191,29 +191,29 @@ The complete numerator $PF$ and complete denominator $P-F$ exchange places. Keep
 type: radio
 id: p11-invert-expression
 content: |-
-  For a thin lens, $\dfrac{1}{f}=\dfrac{1}{s}+\dfrac{1}{s'}$. Which expression correctly solves for $s'$?
+  For a thin lens, $\dfrac{1}{f}=\dfrac{1}{d_o}+\dfrac{1}{d_i}$. Which expression correctly solves for $d_i$?
 options:
 - id: product-over-difference
   content: |-
-    $s'=\dfrac{sf}{s-f}$
+    $d_i=\dfrac{d_of}{d_o-f}$
   correct: true
   feedback: |-
-    Isolating gives $1/s'=1/f-1/s=(s-f)/(sf)$. Reciprocating that entire fraction gives $s'=sf/(s-f)$.
+    Isolating gives $1/d_i=1/f-1/d_o=(d_o-f)/(d_of)$. Reciprocating that entire fraction gives $d_i=d_of/(d_o-f)$.
 - id: reversed-difference
   content: |-
-    $s'=\dfrac{sf}{f-s}$
+    $d_i=\dfrac{d_of}{f-d_o}$
   feedback: |-
-    This reverses the denominator and therefore changes the sign. Since $1/s'=1/f-1/s=(s-f)/(sf)$, the reciprocal has denominator $s-f$.
+    This reverses the denominator and therefore changes the sign. Since $1/d_i=1/f-1/d_o=(d_o-f)/(d_of)$, the reciprocal has denominator $d_o-f$.
 - id: sum-denominator
   content: |-
-    $s'=\dfrac{sf}{s+f}$
+    $d_i=\dfrac{d_of}{d_o+f}$
   feedback: |-
-    The image reciprocal is isolated by subtracting $1/s$ from $1/f$, not adding it. The common numerator is therefore $s-f$, so $s'=sf/(s-f)$.
+    The image reciprocal is isolated by subtracting $1/d_o$ from $1/f$, not adding it. The common numerator is therefore $d_o-f$, so $d_i=d_of/(d_o-f)$.
 - id: uninverted
   content: |-
-    $s'=\dfrac{s-f}{sf}$
+    $d_i=\dfrac{d_o-f}{d_of}$
   feedback: |-
-    The fraction $(s-f)/(sf)$ equals $1/s'$, not $s'$. Taking the reciprocal of the whole fraction gives $s'=sf/(s-f)$.
+    The fraction $(d_o-f)/(d_of)$ equals $1/d_i$, not $d_i$. Taking the reciprocal of the whole fraction gives $d_i=d_of/(d_o-f)$.
 ```
 
 ---
@@ -253,7 +253,7 @@ options:
     $d_i=18\ \mathrm{cm}$
   correct: true
   feedback: |-
-    For a real object outside a converging lens's focal point, $d_i=d_of/(d_o-f)$. Substitution gives $(36)(12)/(36-12)=18\ \mathrm{cm}$, positive for an image on the opposite side.
+    For a real object outside a converging lend_is focal point, $d_i=d_of/(d_o-f)$. Substitution gives $(36)(12)/(36-12)=18\ \mathrm{cm}$, positive for an image on the opposite side.
 - id: negative-eighteen
   content: |-
     $d_i=-18\ \mathrm{cm}$

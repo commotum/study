@@ -45,7 +45,7 @@ $$
 After that time is found, the angle turned is
 
 $$
-\Delta\theta=\int_{t_0}^{t_{\text{rev}}}\omega(t)\,dt.
+\Delta\theta=\int_{t_0}^{t_{\mathrm{rev}}}\omega(t)\,dt.
 $$
 
 Do not stop after finding the time. The requested answer is an angle in radians, so the final step must accumulate angular velocity over time.
@@ -84,7 +84,7 @@ $$
 The square-root equation gives $t=\pm 5$, but the reversal after $t_0=0$ happens at the future time
 
 $$
-t_{\text{rev}}=5\ \mathrm{s}.
+t_{\mathrm{rev}}=5\ \mathrm{s}.
 $$
 
 ```quiz
@@ -259,7 +259,7 @@ $$
 \omega(t)=A-Bt^2,
 $$
 
-where $A=18\ \mathrm{s}^{-1}$ and $B=0.50\ \mathrm{s}^{-3}$. Through what angle does the disk turn between $t_0=0.0\ \mathrm{s}$ and the time at which it reverses its direction of rotation?
+where $A=18\ \mathrm{rad}/\mathrm{s}$ and $B=0.50\ \mathrm{rad}/\mathrm{s}^3$. Through what angle does the disk turn between $t_0=0.0\ \mathrm{s}$ and the time at which it reverses its direction of rotation?
 
 **Explanation**
 
@@ -282,7 +282,7 @@ $$
 Starting from $t_0=0$, the future reversal time is
 
 $$
-t_{\text{rev}}=6\ \mathrm{s}.
+t_{\mathrm{rev}}=6\ \mathrm{s}.
 $$
 
 Now integrate angular velocity from $0$ to $6$:
@@ -360,10 +360,10 @@ $$
 and keep the future positive time. Then compute
 
 $$
-\Delta\theta=\int_0^{t_{\text{rev}}}(A-Bt^2)\,dt.
+\Delta\theta=\int_0^{t_{\mathrm{rev}}}(A-Bt^2)\,dt.
 $$
 
-The main trap is stopping at $t_{\text{rev}}$. The reversal time is measured in seconds; the requested angle is found by integrating angular velocity and is measured in radians.
+The main trap is stopping at $t_{\mathrm{rev}}$. The reversal time is measured in seconds; the requested angle is found by integrating angular velocity and is measured in radians.
 
 <!-- lesson-nav:start -->
 ---

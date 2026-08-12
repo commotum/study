@@ -107,7 +107,7 @@ Now add those three signed terms:
 
 $$
 \begin{aligned}
-U_{\text{tot}}
+U_{\mathrm{tot}}
 &=U_{SP}+U_{SQ}+U_{PQ}\\
 &=-\frac{GMm}{a}-\frac{G(M)(2m)}{b}-\frac{G(m)(2m)}{c}\\
 &=-\frac{GMm}{a}-\frac{2GMm}{b}-\frac{2Gm^2}{c}.
@@ -169,7 +169,7 @@ Thus,
 
 $$
 \begin{aligned}
-U_{\text{tot}}
+U_{\mathrm{tot}}
 &=-\frac{GMm}{R}-\frac{G(M)(2m)}{2R}-\frac{G(m)(2m)}{3R}\\
 &=-\frac{2GMm}{R}-\frac{2Gm^2}{3R}.
 \end{aligned}
@@ -188,7 +188,7 @@ options:
     $-\dfrac{2GMm}{r}-\dfrac{Gm^2}{2r}$
   correct: true
   feedback: |-
-    There are two star–planet pairs at separation $r$ and one planet–planet pair at separation $2r$. Summing their negative contributions gives $U_{\text{tot}}=-2GMm/r-Gm^2/(2r)$.
+    There are two star–planet pairs at separation $r$ and one planet–planet pair at separation $2r$. Summing their negative contributions gives $U_{\mathrm{tot}}=-2GMm/r-Gm^2/(2r)$.
 - id: planet-distance-r
   content: |-
     $-\dfrac{2GMm}{r}-\dfrac{Gm^2}{r}$

@@ -102,7 +102,7 @@ options:
 
 If velocity and acceleration have the same sign, they point in the same direction. The magnitude of the velocity is increasing, so the oscillator is speeding up.
 
-**Example:** At one instant, $x=-0.08\ \mathrm{m}$ and $v=+0.45\ \mathrm{m/s}$. Is the oscillator speeding up or slowing down?
+**Example:** At one instant, $x=-0.08\ \mathrm{m}$ and $v=+0.45\ \mathrm{m}/\mathrm{s}$. Is the oscillator speeding up or slowing down?
 
 **Explanation**
 
@@ -118,7 +118,7 @@ Both $v$ and $a$ are positive. The oscillator moves right and accelerates right,
 type: radio
 id: q3-shm-speed-same-signs
 content: |-
-  At one instant, a simple harmonic oscillator has $x=+0.11\ \mathrm{m}$ and $v=-0.32\ \mathrm{m/s}$. What is it doing?
+  At one instant, a simple harmonic oscillator has $x=+0.11\ \mathrm{m}$ and $v=-0.32\ \mathrm{m}/\mathrm{s}$. What is it doing?
 options:
 - id: q3-shm-speed-same-signs-a
   content: |-
@@ -155,7 +155,7 @@ options:
 
 If velocity and acceleration have opposite signs, acceleration points against the motion. The magnitude of the velocity is decreasing, so the oscillator is slowing down.
 
-**Example:** At one instant, $x=+0.06\ \mathrm{m}$ and $v=+0.28\ \mathrm{m/s}$. Is the oscillator speeding up or slowing down?
+**Example:** At one instant, $x=+0.06\ \mathrm{m}$ and $v=+0.28\ \mathrm{m}/\mathrm{s}$. Is the oscillator speeding up or slowing down?
 
 **Explanation**
 
@@ -171,7 +171,7 @@ The velocity is positive while the acceleration is negative. The oscillator move
 type: radio
 id: q3-shm-speed-opposite-signs
 content: |-
-  A simple harmonic oscillator has $x=-0.09\ \mathrm{m}$ and $v=-0.40\ \mathrm{m/s}$ at one instant. Which description is correct?
+  A simple harmonic oscillator has $x=-0.09\ \mathrm{m}$ and $v=-0.40\ \mathrm{m}/\mathrm{s}$ at one instant. Which description is correct?
 options:
 - id: q3-shm-speed-opposite-signs-a
   content: |-
@@ -198,7 +198,7 @@ options:
   content: |-
     It is stopped because its displacement is negative.
   feedback: |-
-    Displacement tells location, while velocity tells motion; a negative $x$ does not mean stopped. The problem explicitly gives $v=-0.40\ \mathrm{m/s}\ne0$. An SHM oscillator stops only at a turning point, where $v=0$ and $x=\pm A$.
+    Displacement tells location, while velocity tells motion; a negative $x$ does not mean stopped. The problem explicitly gives $v=-0.40\ \mathrm{m}/\mathrm{s}\ne0$. An SHM oscillator stops only at a turning point, where $v=0$ and $x=\pm A$.
 ```
 
 ---

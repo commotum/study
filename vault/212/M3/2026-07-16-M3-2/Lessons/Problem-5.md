@@ -10,13 +10,13 @@ topic-code: MTH212.M3.09
 - [Introduction](#introduction)
 - [Combine the Two Gravitational Forces](#combine-the-two-gravitational-forces)
 - [Use the Center-to-Corner Radius](#use-the-center-to-corner-radius)
-- [Balance Gravity With Centripetal Force](#balance-gravity-with-centripetal-force)
+- [Balance Gravity With the Radial-Acceleration Requirement](#balance-gravity-with-centripetal-force)
 - [Apply the Method to Problem 5](#apply-the-method-to-problem-5)
 
 ## Prerequisites
 
 - Newton's law of gravitation: $F=Gm_1m_2/r^2$
-- Centripetal force: $F_c=mv^2/R$
+- Inward-positive radial equation: $\sum F_r=m a_r=mv^2/R$
 - Adding two equal vectors separated by $60^\circ$
 - Geometry of an equilateral triangle
 - Solving an equation containing $v^2$
@@ -28,7 +28,7 @@ topic-code: MTH212.M3.09
 
 Three equal masses at the corners of an equilateral triangle can orbit their common center while keeping the triangle's shape. For any one mass, the other two masses pull with equal forces separated by $60^\circ$. Their resultant points toward the triangle's center.
 
-The recognition cue is three equal masses in an equilateral-triangle orbit with side length $L$. Combine the two gravitational forces, use the center-to-corner radius $R=L/\sqrt3$, and set the inward force equal to $mv^2/R$. The geometry factors cancel, leaving
+The recognition cue is three equal masses in an equilateral-triangle orbit with side length $L$. Combine the two gravitational forces, use the center-to-corner radius $R=L/\sqrt3$, and set the inward-positive radial net force equal to $m a_r=mv^2/R$. The geometry factors cancel, leaving
 
 $$
 v=\sqrt{\frac{Gm}{L}}.
@@ -159,13 +159,19 @@ options:
 ---
 
 <a id="balance-gravity-with-centripetal-force"></a>
-## Balance Gravity With Centripetal Force
+## Balance Gravity With the Radial-Acceleration Requirement
 
 **Example:** Derive the speed of each mass in terms of $G$, $m$, and $L$.
 
 **Explanation**
 
-The inward gravitational resultant supplies the centripetal force. Substitute both geometry results:
+Take inward as positive. The gravitational resultant supplies the radial net force:
+
+$$
+\sum F_r=m a_r=m\frac{v^2}{R}=F_{\mathrm{net}}.
+$$
+
+Substitute both geometry results:
 
 $$
 \sqrt3\frac{Gm^2}{L^2}
@@ -192,17 +198,17 @@ The units provide a quick check:
 
 $$
 \left[\frac{Gm}{L}\right]
-=\frac{(\mathrm{N\,m^2/kg^2})(\mathrm{kg})}{\mathrm m}
-=\frac{\mathrm{m^2}}{\mathrm{s^2}},
+=\frac{(\mathrm{N}\,\mathrm{m}^2/\mathrm{kg}^2)(\mathrm{kg})}{\mathrm{m}}
+=\frac{\mathrm{m}^2}{\mathrm{s}^2},
 $$
 
-so its square root has units $\mathrm{m/s}$, as a speed should.
+so its square root has units $\mathrm{m}/\mathrm{s}$, as a speed should.
 
 ```quiz
 type: radio
 id: p5-isolate-speed
 content: |-
-  After setting the net gravitational force equal to the centripetal force, the equation simplifies to $v^2=Gm/L$. Which expression gives the orbital speed?
+  After setting the inward radial net force equal to $m a_r=mv^2/R$, the equation simplifies to $v^2=Gm/L$. Which expression gives the orbital speed?
 options:
 - id: p5-speed-a
   content: |-
@@ -233,7 +239,7 @@ options:
 
 **Explanation**
 
-The distance from each corner to the triangle's center is $R=L/\sqrt{3}$. Setting the net gravitational force equal to the centripetal force gives
+The distance from each corner to the triangle's center is $R=L/\sqrt{3}$. With inward positive, use $\sum F_r=m a_r=mv^2/R=F_{\mathrm{net}}$, which gives
 
 $$
 \sqrt{3}\frac{Gm^2}{L^2}
@@ -244,10 +250,10 @@ so
 
 $$
 v=\sqrt{\frac{Gm}{L}}
-=9624.9\ldots\ \mathrm{m/s}.
+=9624.9\ldots\ \mathrm{m}/\mathrm{s}.
 $$
 
-The measured givens have two significant figures, so $v=9.6\times10^3\ \mathrm{m/s}$, entered as `9600`.
+The measured givens have two significant figures, so $v=9.6\times10^3\ \mathrm{m}/\mathrm{s}$, entered as `9600`.
 
 The answer choices diagnose common mistakes:
 
@@ -271,7 +277,7 @@ options:
     $9600$
   correct: true
   feedback: |-
-    The distance from each corner to the triangle's center is $R=L/\sqrt{3}$. Setting the net gravitational force equal to the centripetal force gives
+    The distance from each corner to the triangle's center is $R=L/\sqrt{3}$. With inward positive, use $\sum F_r=m a_r=mv^2/R=F_{\mathrm{net}}$, which gives
 
     $$
     \sqrt{3}\frac{Gm^2}{L^2}
@@ -282,10 +288,10 @@ options:
 
     $$
     v=\sqrt{\frac{Gm}{L}}
-    =9624.9\ldots\ \mathrm{m/s}.
+    =9624.9\ldots\ \mathrm{m}/\mathrm{s}.
     $$
 
-    The measured givens have two significant figures, so $v=9.6\times10^3\ \mathrm{m/s}$, entered as `9600`.
+    The measured givens have two significant figures, so $v=9.6\times10^3\ \mathrm{m}/\mathrm{s}$, entered as `9600`.
 - id: p5-source-b
   content: |-
     $9624.9$
@@ -307,8 +313,8 @@ options:
 - Cue: three equal masses form an equilateral triangle and orbit their common center.
 - Combine the two $60^\circ$-separated forces: $F_{\mathrm{net}}=\sqrt3Gm^2/L^2$.
 - Use the orbital radius $R=L/\sqrt3$, not the side length $L$.
-- Set $F_{\mathrm{net}}=mv^2/R$ and simplify to $v=\sqrt{Gm/L}$.
-- Confirm that $Gm/L$ has units $\mathrm{m^2/s^2}$ before taking the square root.
+- Set $\sum F_r=m a_r=mv^2/R=F_{\mathrm{net}}$ and simplify to $v=\sqrt{Gm/L}$.
+- Confirm that $Gm/L$ has units $\mathrm{m}^2/\mathrm{s}^2$ before taking the square root.
 - Check the requested format and round only at the end; for Problem 5, enter `9600`.
 
 <!-- lesson-nav:start -->

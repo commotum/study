@@ -239,17 +239,17 @@ Wave speed, wavelength, and frequency are related by
 
 $$
 \boxed{
-v=\lambda f
+v_{\mathrm{wave}}=f\lambda
 }.
 $$
 
 For a particular string, the wave speed is determined by the properties of the medium, including the string’s tension and linear mass density.
 
-The oscillator determines the driving frequency. Once $v$ and $f$ are fixed, the wavelength is
+The oscillator determines the driving frequency. Once $v_{\mathrm{wave}}$ and $f$ are fixed, the wavelength is
 
 $$
 \boxed{
-\lambda=\frac{v}{f}
+\lambda=\frac{v_{\mathrm{wave}}}{f}
 }.
 $$
 
@@ -288,7 +288,7 @@ The mode number counts the number of half-wavelength segments that fit along the
 Because
 
 $$
-v=f\lambda,
+v_{\mathrm{wave}}=f\lambda,
 $$
 
 the frequency of mode $m$ is
@@ -296,7 +296,7 @@ the frequency of mode $m$ is
 $$
 f_m
 =
-\frac{v}{\lambda_m}.
+\frac{v_{\mathrm{wave}}}{\lambda_m}.
 $$
 
 Substituting the allowed wavelength,
@@ -304,14 +304,14 @@ Substituting the allowed wavelength,
 $$
 f_m
 =
-\frac{v}{2L/m},
+\frac{v_{\mathrm{wave}}}{2L/m},
 $$
 
 so
 
 $$
 \boxed{
-f_m=\frac{mv}{2L}
+f_m=\frac{mv_{\mathrm{wave}}}{2L}
 }.
 $$
 
@@ -343,7 +343,7 @@ The fundamental frequency is
 
 $$
 \boxed{
-f_1=\frac{v}{2L}
+f_1=\frac{v_{\mathrm{wave}}}{2L}
 }.
 $$
 
@@ -373,7 +373,7 @@ $$
 Its frequency is
 
 $$
-f_2=\frac{v}{L}.
+f_2=\frac{v_{\mathrm{wave}}}{L}.
 $$
 
 Comparing this with the fundamental frequency,
@@ -412,9 +412,9 @@ The corresponding frequency is
 $$
 f_3
 =
-\frac{v}{\lambda_3}
+\frac{v_{\mathrm{wave}}}{\lambda_3}
 =
-\frac{3v}{2L}.
+\frac{3v_{\mathrm{wave}}}{2L}.
 $$
 
 Therefore,
@@ -543,13 +543,13 @@ The speed of a transverse wave on a stretched string is
 
 $$
 \boxed{
-v=\sqrt{\frac{T}{\mu}}
+v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}}
 },
 $$
 
 where:
 
-- $T$ is the string tension.
+- $F_T$ is the string tension.
 - $\mu$ is the string’s linear mass density.
 
 Linear mass density is mass per unit length:
@@ -568,7 +568,7 @@ $$
 f_m
 =
 \frac{m}{2L}
-\sqrt{\frac{T}{\mu}}.
+\sqrt{\frac{F_T}{\mu}}.
 $$
 
 Using
@@ -585,7 +585,7 @@ f_m
 =
 \frac{m}{2}
 \sqrt{
-\frac{T}{
+\frac{F_T}{
 m_{\mathrm{wire}}L
 }
 }
@@ -600,7 +600,7 @@ f_1
 =
 \frac{1}{2}
 \sqrt{
-\frac{T}{
+\frac{F_T}{
 m_{\mathrm{wire}}L
 }
 }
@@ -618,7 +618,7 @@ $$
 tension
 
 $$
-T=52\ \mathrm{N},
+F_T=52\ \mathrm{N},
 $$
 
 and mass
@@ -656,7 +656,7 @@ Therefore,
 $$
 \mu
 \approx
-2.59\times10^{-3}\ \mathrm{kg/m}.
+2.59\times10^{-3}\ \mathrm{kg}/\mathrm{m}.
 $$
 
 ## 2. Find the Wave Speed
@@ -664,19 +664,19 @@ $$
 The wave speed is
 
 $$
-v=\sqrt{\frac{T}{\mu}}.
+v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}}.
 $$
 
 Substituting,
 
 $$
-v
+v_{\mathrm{wave}}
 =
 \sqrt{
 \frac{
 52\ \mathrm{N}
 }{
-2.59\times10^{-3}\ \mathrm{kg/m}
+2.59\times10^{-3}\ \mathrm{kg}/\mathrm{m}
 }
 }.
 $$
@@ -684,7 +684,7 @@ $$
 This gives
 
 $$
-v\approx142\ \mathrm{m/s}.
+v_{\mathrm{wave}}\approx142\ \mathrm{m}/\mathrm{s}.
 $$
 
 ## 3. Find the Fundamental Frequency
@@ -692,7 +692,7 @@ $$
 For a string fixed at both ends,
 
 $$
-f_1=\frac{v}{2L}.
+f_1=\frac{v_{\mathrm{wave}}}{2L}.
 $$
 
 Therefore,
@@ -701,7 +701,7 @@ $$
 f_1
 =
 \frac{
-142\ \mathrm{m/s}
+142\ \mathrm{m}/\mathrm{s}
 }{
 2(0.85\ \mathrm{m})
 }.
@@ -722,7 +722,7 @@ f_1
 =
 \frac{1}{2}
 \sqrt{
-\frac{T}{
+\frac{F_T}{
 m_{\mathrm{wire}}L
 }
 }.
@@ -739,14 +739,14 @@ Determine the third-harmonic frequency.
 Because the hanging mass is in equilibrium, its acceleration is zero. The upward tension balances its downward weight:
 
 $$
-T-Mg=0.
+F_T-Mg=0.
 $$
 
 Therefore,
 
 $$
 \boxed{
-T=Mg
+F_T=Mg
 }.
 $$
 
@@ -765,13 +765,13 @@ $$
 For the third harmonic,
 
 $$
-f_3=\frac{3v}{2L}.
+f_3=\frac{3v_{\mathrm{wave}}}{2L}.
 $$
 
 The wave speed is
 
 $$
-v=\sqrt{\frac{T}{\mu}}.
+v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}}.
 $$
 
 Therefore,
@@ -780,7 +780,7 @@ $$
 f_3
 =
 \frac{3}{2L}
-\sqrt{\frac{T}{\mu}}.
+\sqrt{\frac{F_T}{\mu}}.
 $$
 
 Substituting the tension and linear mass density,
@@ -934,7 +934,7 @@ with
 
 $$
 \boxed{
-f_1=\frac{v}{2L}
+f_1=\frac{v_{\mathrm{wave}}}{2L}
 }.
 $$
 
@@ -975,7 +975,7 @@ The fundamental frequency is
 
 $$
 \boxed{
-f_1=\frac{v}{4L}
+f_1=\frac{v_{\mathrm{wave}}}{4L}
 }.
 $$
 
@@ -1051,11 +1051,11 @@ For sound waves in air under typical conditions, use
 
 $$
 \boxed{
-v\approx343\ \mathrm{m/s}
+v_{\mathrm{wave}}\approx343\ \mathrm{m}/\mathrm{s}
 }.
 $$
 
-The speed of sound varies with temperature and other properties of the medium, but $343\ \mathrm{m/s}$ is the value used in these examples.
+The speed of sound varies with temperature and other properties of the medium, but $343\ \mathrm{m}/\mathrm{s}$ is the value used in these examples.
 
 # Worked Example: Third Harmonic of a Closed–Open Pipe
 
@@ -1080,7 +1080,7 @@ Using $m=3$,
 $$
 f_3
 =
-\frac{3v}{4L}.
+\frac{3v_{\mathrm{wave}}}{4L}.
 $$
 
 Substituting the known values,
@@ -1089,7 +1089,7 @@ $$
 f_3
 =
 \frac{
-3(343\ \mathrm{m/s})
+3(343\ \mathrm{m}/\mathrm{s})
 }{
 4(0.85\ \mathrm{m})
 }.
@@ -1117,7 +1117,7 @@ $$
 f_1
 =
 \frac{
-343\ \mathrm{m/s}
+343\ \mathrm{m}/\mathrm{s}
 }{
 4(0.85\ \mathrm{m})
 }
@@ -1137,7 +1137,7 @@ For the fifth harmonic,
 $$
 f_5
 =
-\frac{5v}{4L}.
+\frac{5v_{\mathrm{wave}}}{4L}.
 $$
 
 Substituting,
@@ -1146,7 +1146,7 @@ $$
 f_5
 =
 \frac{
-5(343\ \mathrm{m/s})
+5(343\ \mathrm{m}/\mathrm{s})
 }{
 4(0.85\ \mathrm{m})
 }.
@@ -1234,13 +1234,13 @@ $$
 For a string,
 
 $$
-v=\sqrt{\frac{T}{\mu}}.
+v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}}.
 $$
 
 For sound in air under typical conditions,
 
 $$
-v\approx343\ \mathrm{m/s}.
+v_{\mathrm{wave}}\approx343\ \mathrm{m}/\mathrm{s}.
 $$
 
 ## 5. Calculate the Frequency
@@ -1248,7 +1248,7 @@ $$
 Use
 
 $$
-f_m=\frac{v}{\lambda_m}.
+f_m=\frac{v_{\mathrm{wave}}}{\lambda_m}.
 $$
 
 ## 6. Check the Result
@@ -1300,7 +1300,7 @@ The wave speed on a string is
 
 $$
 \boxed{
-v=\sqrt{\frac{T}{\mu}}
+v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}}
 }
 $$
 

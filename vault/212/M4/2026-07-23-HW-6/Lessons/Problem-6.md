@@ -53,7 +53,7 @@ Separate the requested instant from the later event:
 The clay has not joined the oscillator, so the oscillating mass is
 
 $$
-m_{\text{osc}}=M.
+m_{\mathrm{osc}}=M.
 $$
 
 The combined mass $M+m_c$ would matter only for the motion after the collision.
@@ -84,7 +84,7 @@ options:
 <a id="use-the-period-formula"></a>
 ## Use the Mass-Spring Period Formula
 
-**Example:** A $4\,\mathrm{kg}$ block oscillates on a spring with $k=100\,\mathrm{N/m}$. Find its period.
+**Example:** A $4\,\mathrm{kg}$ block oscillates on a spring with $k=100\,\mathrm{N}/\mathrm{m}$. Find its period.
 
 **Explanation**
 
@@ -93,7 +93,7 @@ First extract the two inputs:
 $$
 m=4\,\mathrm{kg}
 \qquad\text{and}\qquad
-k=100\,\mathrm{N/m}.
+k=100\,\mathrm{N}/\mathrm{m}.
 $$
 
 Then substitute:
@@ -111,8 +111,8 @@ The units provide an independent check:
 
 $$
 \left[\frac{m}{k}\right]
-=\frac{\mathrm{kg}}{\mathrm{kg/s^2}}
-=\mathrm{s^2},
+=\frac{\mathrm{kg}}{\mathrm{kg}/\mathrm{s}^2}
+=\mathrm{s}^2,
 \qquad
 \left[\sqrt{\frac{m}{k}}\right]=\mathrm{s}.
 $$
@@ -121,7 +121,7 @@ $$
 type: radio
 id: q-p6-2
 content: |-
-  A $9\,\mathrm{kg}$ block oscillates on a spring with $k=100\,\mathrm{N/m}$. What is its period?
+  A $9\,\mathrm{kg}$ block oscillates on a spring with $k=100\,\mathrm{N}/\mathrm{m}$. What is its period?
 options:
 - id: q-p6-2-a
   content: |-

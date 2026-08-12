@@ -17,7 +17,7 @@ topic-code: MTH212.M5.43
 ## Prerequisites
 
 - Recognize wavelength $\lambda$ as the distance between repeating points on a wave.
-- Use the wave-speed relation $v=f\lambda$ and solve it as $f=v/\lambda$.
+- Use the wave-speed relation $v_{\mathrm{wave}}=f\lambda$ and solve it as $f=v_{\mathrm{wave}}/\lambda$.
 - Divide quantities whose length units match.
 
 ---
@@ -37,11 +37,11 @@ $$
 \lambda=2d.
 $$
 
-After finding the full wavelength, use $v=f\lambda$ to find the frequency:
+After finding the full wavelength, use $v_{\mathrm{wave}}=f\lambda$ to find the frequency:
 
 $$
-f=\frac{v}{\lambda}
-=\frac{v}{2d}.
+f=\frac{v_{\mathrm{wave}}}{\lambda}
+=\frac{v_{\mathrm{wave}}}{2d}.
 $$
 
 The recognition cue is the phrase **adjacent antinodes**. The essential move is to double their separation before dividing the wave speed by a wavelength.
@@ -92,7 +92,7 @@ options:
 <a id="use-wave-speed-to-find-frequency"></a>
 ## Use Wave Speed to Find Frequency
 
-**Example:** Adjacent antinodes are $25\ \mathrm{cm}$ apart, and the traveling waves move at $150\ \mathrm{cm/s}$. Find the vibration frequency.
+**Example:** Adjacent antinodes are $25\ \mathrm{cm}$ apart, and the traveling waves move at $150\ \mathrm{cm}/\mathrm{s}$. Find the vibration frequency.
 
 **Explanation**
 
@@ -102,10 +102,10 @@ $$
 \lambda=2d=2(25\ \mathrm{cm})=50\ \mathrm{cm}.
 $$
 
-Then use $f=v/\lambda$:
+Then use $f=v_{\mathrm{wave}}/\lambda$:
 
 $$
-f=\frac{150\ \mathrm{cm/s}}{50\ \mathrm{cm}}
+f=\frac{150\ \mathrm{cm}/\mathrm{s}}{50\ \mathrm{cm}}
 =3\ \mathrm{s}^{-1}
 =3\ \mathrm{Hz}.
 $$
@@ -116,7 +116,7 @@ Writing the formula before substituting keeps the target quantity clear. The cen
 type: radio
 id: p3-wave-frequency-q1
 content: |-
-  Adjacent antinodes are $30\ \mathrm{cm}$ apart, and the waves forming the standing wave travel at $240\ \mathrm{cm/s}$. What is the vibration frequency?
+  Adjacent antinodes are $30\ \mathrm{cm}$ apart, and the waves forming the standing wave travel at $240\ \mathrm{cm}/\mathrm{s}$. What is the vibration frequency?
 options:
 - id: p3-wave-frequency-q1-a
   content: |-
@@ -141,7 +141,7 @@ options:
 <a id="keep-the-length-units-consistent"></a>
 ## Keep the Length Units Consistent
 
-**Example:** Adjacent antinodes are $0.30\ \mathrm{m}$ apart, and the wave speed is $120\ \mathrm{cm/s}$. Find the vibration frequency.
+**Example:** Adjacent antinodes are $0.30\ \mathrm{m}$ apart, and the wave speed is $120\ \mathrm{cm}/\mathrm{s}$. Find the vibration frequency.
 
 **Explanation**
 
@@ -158,8 +158,8 @@ $$
 $$
 
 $$
-f=\frac{v}{\lambda}
-=\frac{120\ \mathrm{cm/s}}{60\ \mathrm{cm}}
+f=\frac{v_{\mathrm{wave}}}{\lambda}
+=\frac{120\ \mathrm{cm}/\mathrm{s}}{60\ \mathrm{cm}}
 =2\ \mathrm{Hz}.
 $$
 
@@ -169,7 +169,7 @@ Do not divide numerical values expressed in different length units.
 type: radio
 id: p3-consistent-units-q1
 content: |-
-  Adjacent antinodes are $0.25\ \mathrm{m}$ apart, and the wave speed is $150\ \mathrm{cm/s}$. What is the vibration frequency?
+  Adjacent antinodes are $0.25\ \mathrm{m}$ apart, and the wave speed is $150\ \mathrm{cm}/\mathrm{s}$. What is the vibration frequency?
 options:
 - id: p3-consistent-units-q1-a
   content: |-
@@ -194,7 +194,7 @@ options:
 <a id="avoid-the-half-wavelength-trap"></a>
 ## Avoid the Half-Wavelength Trap
 
-**Example:** Adjacent antinodes are $10\ \mathrm{cm}$ apart, and the wave speed is $80\ \mathrm{cm/s}$. A student calculates $80/10=8\ \mathrm{Hz}$. Explain and correct the mistake.
+**Example:** Adjacent antinodes are $10\ \mathrm{cm}$ apart, and the wave speed is $80\ \mathrm{cm}/\mathrm{s}$. A student calculates $80/10=8\ \mathrm{Hz}$. Explain and correct the mistake.
 
 **Explanation**
 
@@ -207,13 +207,13 @@ $$
 Therefore,
 
 $$
-f=\frac{80\ \mathrm{cm/s}}{20\ \mathrm{cm}}
+f=\frac{80\ \mathrm{cm}/\mathrm{s}}{20\ \mathrm{cm}}
 =4\ \mathrm{Hz}.
 $$
 
-Using $v/d$ instead of $v/(2d)$ makes the frequency twice as large as it should be.
+Using $v_{\mathrm{wave}}/d$ instead of $v_{\mathrm{wave}}/(2d)$ makes the frequency twice as large as it should be.
 
-A quick check reaches the same conclusion: because $\lambda=2d$, the correct frequency must be half of $v/d$. Here, $v/d=8\ \mathrm{Hz}$, so the frequency must be $4\ \mathrm{Hz}$.
+A quick check reaches the same conclusion: because $\lambda=2d$, the correct frequency must be half of $v_{\mathrm{wave}}/d$. Here, $v_{\mathrm{wave}}/d=8\ \mathrm{Hz}$, so the frequency must be $4\ \mathrm{Hz}$.
 
 ```quiz
 type: radio
@@ -222,7 +222,7 @@ shuffle: true
 content: |-
   For a standing wave mode on a string fixed at both ends, adjacent antinodes are separated by a distance of $20\ \mathrm{cm}$.
 
-  If the waves constituting the standing wave travel on this string with a speed of $100\ \mathrm{cm/s}$, at what frequency is the string being vibrated?
+  If the waves constituting the standing wave travel on this string with a speed of $100\ \mathrm{cm}/\mathrm{s}$, at what frequency is the string being vibrated?
 options:
 - id: p3-homework-q1-a
   content: |-
@@ -257,7 +257,7 @@ $$
 so
 
 $$
-\boxed{f=\frac{v}{2d}}.
+\boxed{f=\frac{v_{\mathrm{wave}}}{2d}}.
 $$
 
 **Procedure:**
@@ -266,7 +266,7 @@ $$
 2. Make sure the speed and wavelength use the same length unit.
 3. Divide the wave speed by the full wavelength.
 4. Report the result in hertz, where $\mathrm{Hz}=\mathrm{s}^{-1}$.
-5. Check that the result is half of $v/d$; at fixed speed, a larger spacing should give a lower frequency.
+5. Check that the result is half of $v_{\mathrm{wave}}/d$; at fixed speed, a larger spacing should give a lower frequency.
 
 **Main trap:** Adjacent antinodes are half a wavelength apart, not one full wavelength apart.
 

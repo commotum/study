@@ -127,27 +127,26 @@
 ### 11. Given Information
 
 - A helium–neon laser has wavelength:
-  $$ \lambda=633\text{ nm} $$
+  $$ \lambda=633\ \mathrm{nm} $$
 - The screen is:
-  $$ L=2.4\text{ m} $$
+  $$ L=2.4\ \mathrm{m} $$
   from the grating.
 - The separation between the two first-order bright fringes is:
-  $$ 2y_1=1.70\text{ m} $$
+  $$ 2y_1=1.70\ \mathrm{m} $$
 - Therefore:
-  $$ y_1=0.85\text{ m} $$
+  $$ y_1=0.85\ \mathrm{m} $$
 - Find the grating’s number of lines per millimeter.
 
 ---
 
 ### 12. Grating Spacing and Line Density
 
-- Let $\rho$ be the number of grating lines per unit width.
+- If a width $W$ contains $N$ grating lines, the line density is:
+  $$ \frac{N}{W} $$
 - If $d$ is the distance between neighboring lines:
-  $$ \boxed{\rho=\frac{1}{d}} $$
-- If a width $W$ contains $N$ lines:
-  $$ \rho=\frac{N}{W} $$
+  $$ \boxed{\frac{N}{W}=\frac{1}{d}} $$
 - Therefore:
-  $$ N=\rho W=\frac{W}{d} $$
+  $$ d=\frac{W}{N} $$
 
 ---
 
@@ -159,7 +158,7 @@
   $$
   \theta_1
   =
-  \tan^{-1}\left(\frac{0.85\text{ m}}{2.4\text{ m}}\right)
+  \tan^{-1}\left(\frac{0.85\ \mathrm{m}}{2.4\ \mathrm{m}}\right)
   $$
 - This gives:
   $$ \boxed{\theta_1\approx19.5^\circ} $$
@@ -175,11 +174,11 @@
 - This gives:
   $$ \frac{1}{d}=\frac{\sin\theta_m}{m\lambda} $$
 - Therefore:
-  $$ \boxed{\rho=\frac{\sin\theta_m}{m\lambda}} $$
+  $$ \boxed{\frac{N}{W}=\frac{\sin\theta_m}{m\lambda}} $$
 - Combining this with the screen geometry:
   $$
   \boxed{
-  \rho
+  \frac{N}{W}
   =
   \frac{
   \sin\left[
@@ -198,43 +197,43 @@
   $$ m=1 $$
 - Substitute:
   $$
-  \rho
+  \frac{N}{W}
   =
   \frac{
   \sin\left[
   \tan^{-1}\left(\frac{0.85}{2.4}\right)
   \right]
   }
-  {(1)(633\times10^{-9}\text{ m})}
+  {(1)(633\times10^{-9}\ \mathrm{m})}
   $$
 - Therefore:
-  $$ \rho\approx5.27\times10^5\frac{\text{lines}}{\text{m}} $$
+  $$ \frac{N}{W}\approx5.27\times10^5\frac{\mathrm{lines}}{\mathrm{m}} $$
 - Since:
-  $$ 1\text{ m}=1000\text{ mm} $$
+  $$ 1\ \mathrm{m}=1000\ \mathrm{mm} $$
 - The line density is:
-  $$ \rho\approx527\frac{\text{lines}}{\text{mm}} $$
+  $$ \frac{N}{W}\approx527\frac{\mathrm{lines}}{\mathrm{mm}} $$
 
 ---
 
 ### 16. Final Result
 
 - To two significant figures:
-  $$ \boxed{\rho\approx5.3\times10^2\frac{\text{lines}}{\text{mm}}} $$
-- Therefore, the grating contains approximately:
-  $$ \boxed{530\text{ lines/mm}} $$
+  $$ \boxed{\frac{N}{W}\approx5.3\times10^2\frac{\mathrm{lines}}{\mathrm{mm}}} $$
+- Therefore, the grating’s line density is approximately:
+  $$ \boxed{\frac{N}{W}\approx530\ \mathrm{lines}/\mathrm{mm}} $$
 
 ---
 
 ### 17. Significant Figures
 
 - The wavelength:
-  $$ 633\text{ nm} $$
+  $$ 633\ \mathrm{nm} $$
   has three significant figures.
 - The distances:
-  $$ 2.4\text{ m}\quad\text{and}\quad1.70\text{ m} $$
+  $$ 2.4\ \mathrm{m}\quad\text{and}\quad1.70\ \mathrm{m} $$
   limit the final answer to approximately two or three significant figures.
 - Scientific notation makes the intended precision clear:
-  $$ 5.3\times10^2\text{ lines/mm} $$
+  $$ 5.3\times10^2\ \mathrm{lines}/\mathrm{mm} $$
 
 ---
 
@@ -243,9 +242,9 @@
 ### 18. Given Information
 
 - Grating spacing:
-  $$ d=1.8\times10^{-6}\text{ m} $$
+  $$ d=1.8\times10^{-6}\ \mathrm{m} $$
 - Laser wavelength:
-  $$ \lambda=633\times10^{-9}\text{ m} $$
+  $$ \lambda=633\times10^{-9}\ \mathrm{m} $$
 - Find the possible bright-fringe orders and the total number of principal maxima.
 
 ---
@@ -326,11 +325,11 @@
 - The allowed orders are:
   $$ m=-2,-1,0,1,2 $$
 - The total number of possible principal maxima is:
-  $$ N_{\text{maxima}}=2m_{\max}+1 $$
+  $$ N_{\mathrm{maxima}}=2m_{\max}+1 $$
 - Therefore:
-  $$ N_{\text{maxima}}=2(2)+1 $$
+  $$ N_{\mathrm{maxima}}=2(2)+1 $$
 - Thus:
-  $$ \boxed{N_{\text{maxima}}=5} $$
+  $$ \boxed{N_{\mathrm{maxima}}=5} $$
 
 ---
 
@@ -525,7 +524,7 @@
   $$ y_2\approx\frac{2\lambda L}{a} $$
   $$ y_3\approx\frac{3\lambda L}{a} $$
 - Adjacent dark minima are approximately separated by:
-  $$ \boxed{\Delta y_{\text{dark}}\approx\frac{\lambda L}{a}} $$
+  $$ \boxed{\Delta y_{\mathrm{dark}}\approx\frac{\lambda L}{a}} $$
 
 ---
 
@@ -536,9 +535,9 @@
   and:
   $$ y=+y_1 $$
 - Therefore:
-  $$ w_{\text{central}}=2y_1 $$
+  $$ w_{\mathrm{central}}=2y_1 $$
 - Under the small-angle approximation:
-  $$ \boxed{w_{\text{central}}\approx\frac{2\lambda L}{a}} $$
+  $$ \boxed{w_{\mathrm{central}}\approx\frac{2\lambda L}{a}} $$
 
 ---
 
@@ -566,14 +565,14 @@
 ### 41. Given Information
 
 - Laser wavelength:
-  $$ \lambda\approx633\text{ nm} $$
+  $$ \lambda\approx633\ \mathrm{nm} $$
 - Single-slit width:
-  $$ a=0.15\text{ mm} $$
+  $$ a=0.15\ \mathrm{mm} $$
 - Convert the slit width:
-  $$ a=1.5\times10^{-4}\text{ m} $$
-- The center of the central maximum appears at the $6\text{ cm}$ coordinate on the graph.
-- The first dark minimum is $2\text{ cm}$ from the center:
-  $$ y_1=2.0\text{ cm}=2.0\times10^{-2}\text{ m} $$
+  $$ a=1.5\times10^{-4}\ \mathrm{m} $$
+- The center of the central maximum appears at the $6\ \mathrm{cm}$ coordinate on the graph.
+- The first dark minimum is $2\ \mathrm{cm}$ from the center:
+  $$ y_1=2.0\ \mathrm{cm}=2.0\times10^{-2}\ \mathrm{m} $$
 - Find the slit-to-screen distance:
   $$ L $$
 
@@ -595,15 +594,15 @@
   L
   \approx
   \frac{
-  (2.0\times10^{-2}\text{ m})
-  (1.5\times10^{-4}\text{ m})
+  (2.0\times10^{-2}\ \mathrm{m})
+  (1.5\times10^{-4}\ \mathrm{m})
   }
-  {633\times10^{-9}\text{ m}}
+  {633\times10^{-9}\ \mathrm{m}}
   $$
 - Therefore:
-  $$ L\approx4.74\text{ m} $$
+  $$ L\approx4.74\ \mathrm{m} $$
 - Rounded appropriately:
-  $$ \boxed{L\approx4.7\text{ m}} $$
+  $$ \boxed{L\approx4.7\ \mathrm{m}} $$
 
 ---
 
@@ -617,7 +616,7 @@
   $$ p=1\quad\text{and}\quad p=2 $$
 - Its approximate position is:
   $$
-  y_{\text{bright},1}
+  y_{\mathrm{bright},1}
   \approx
   \frac{y_1+y_2}{2}
   =
@@ -628,7 +627,7 @@
 - Its approximate position is:
   $$
   \boxed{
-  y_{\text{bright},2}
+  y_{\mathrm{bright},2}
   \approx
   \frac{y_2+y_3}{2}
   =
@@ -671,7 +670,7 @@
 
 - The wavelength $\lambda$ and slit width $a$ are supplied in the problem.
 - The screen is:
-  $$ L=1.2\text{ m} $$
+  $$ L=1.2\ \mathrm{m} $$
   from the slit.
 - Find the distance from the central maximum to the second secondary bright fringe.
 
@@ -683,7 +682,7 @@
 - The second secondary bright fringe lies between:
   $$ p=2\quad\text{and}\quad p=3 $$
 - Therefore:
-  $$ y_{\text{bright},2}\approx\frac{y_2+y_3}{2} $$
+  $$ y_{\mathrm{bright},2}\approx\frac{y_2+y_3}{2} $$
 
 ---
 
@@ -694,7 +693,7 @@
   $$ y_3\approx\frac{3\lambda L}{a} $$
 - Then:
   $$
-  y_{\text{bright},2}
+  y_{\mathrm{bright},2}
   \approx
   \frac{1}{2}
   \left(
@@ -704,13 +703,13 @@
   \right)
   $$
 - Therefore:
-  $$ \boxed{y_{\text{bright},2}\approx\frac{5\lambda L}{2a}} $$
+  $$ \boxed{y_{\mathrm{bright},2}\approx\frac{5\lambda L}{2a}} $$
 - Substitution of the problem’s values gives:
-  $$ y_{\text{bright},2}\approx0.0139\text{ m} $$
+  $$ y_{\mathrm{bright},2}\approx0.0139\ \mathrm{m} $$
 - Rounded appropriately:
-  $$ \boxed{y_{\text{bright},2}\approx0.014\text{ m}} $$
+  $$ \boxed{y_{\mathrm{bright},2}\approx0.014\ \mathrm{m}} $$
 - Equivalently:
-  $$ \boxed{y_{\text{bright},2}\approx1.4\text{ cm}} $$
+  $$ \boxed{y_{\mathrm{bright},2}\approx1.4\ \mathrm{cm}} $$
 
 ---
 
@@ -719,11 +718,11 @@
 - Diffraction-grating maxima:
   $$ \boxed{d\sin\theta_m=m\lambda} $$
 - Grating line density:
-  $$ \boxed{\rho=\frac{1}{d}} $$
+  $$ \boxed{\frac{N}{W}=\frac{1}{d}} $$
 - Maximum possible grating order:
   $$ \boxed{|m|\leq\frac{d}{\lambda}} $$
 - Total symmetric grating maxima:
-  $$ \boxed{N_{\text{maxima}}=2m_{\max}+1} $$
+  $$ \boxed{N_{\mathrm{maxima}}=2m_{\max}+1} $$
 - Single-slit dark minima:
   $$ \boxed{a\sin\theta_p=p\lambda} $$
 - Exact single-slit minimum position:
@@ -739,7 +738,7 @@
 - Small-angle single-slit minimum position:
   $$ \boxed{y_p\approx\frac{p\lambda L}{a}} $$
 - Central-maximum width:
-  $$ \boxed{w_{\text{central}}\approx\frac{2\lambda L}{a}} $$
+  $$ \boxed{w_{\mathrm{central}}\approx\frac{2\lambda L}{a}} $$
 - In the lecture’s approximation, secondary bright fringes are located halfway between adjacent dark minima.
 
 ---

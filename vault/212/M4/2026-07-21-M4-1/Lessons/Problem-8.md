@@ -33,7 +33,7 @@ topic-code: MTH212.M4.08
 When a spring-block oscillator is released from rest at maximum positive displacement, its position can be modeled by
 
 $$
-x(t)=A\cos(\omega t).
+y(t)=A\cos(\omega t).
 $$
 
 Differentiating gives the velocity:
@@ -42,10 +42,10 @@ $$
 v(t)=-A\omega\sin(\omega t).
 $$
 
-If the setup gives an equilibrium coordinate $x_0$, release coordinate $x_f$, and $N$ oscillations during a time interval $\Delta t$, use
+If the setup gives an equilibrium coordinate $x_{\mathrm{eq}}$, release coordinate $x_{\mathrm{release}}$, and $N$ oscillations during a time interval $\Delta t$, use
 
 $$
-A=x_f-x_0,
+A=x_{\mathrm{release}}-x_{\mathrm{eq}},
 \qquad
 f=\frac{N}{\Delta t},
 \qquad
@@ -58,7 +58,7 @@ Map each given to its role before calculating:
 
 | Given                                   | Produces                        | Used in                                         |
 | --------------------------------------- | ------------------------------- | ----------------------------------------------- |
-| $x_0$ and $x_f$                         | $A=\lvert x_f-x_0\rvert$       | Velocity amplitude $A\omega$                   |
+| $x_{\mathrm{eq}}$ and $x_{\mathrm{release}}$                         | $A=\lvert x_{\mathrm{release}}-x_{\mathrm{eq}}\rvert$       | Velocity amplitude $A\omega$                   |
 | $N$ oscillations in $\Delta t$          | $f=N/\Delta t$                  | $\omega=2\pi f$                                |
 | Released from rest at the right extreme | Zero-phase cosine model         | Sign and trigonometric form of $v(t)$           |
 | Evaluation time $t$                     | Phase $\omega t$                | Instantaneous velocity                          |
@@ -69,14 +69,14 @@ Map each given to its role before calculating:
 <a id="find-the-amplitude-from-the-setup"></a>
 ## Find the Amplitude From the Setup
 
-**Example:** A spring is unstretched at $x_0=0.20\ \mathrm{m}$. The block is pulled right to $x_f=0.32\ \mathrm{m}$ and released. What is the amplitude?
+**Example:** A spring is unstretched at $x_{\mathrm{eq}}=0.20\ \mathrm{m}$. The block is pulled right to $x_{\mathrm{release}}=0.32\ \mathrm{m}$ and released. What is the amplitude?
 
 **Explanation**
 
 The unstretched position is the equilibrium position. Amplitude is the magnitude of the release displacement from equilibrium:
 
 $$
-A=|x_f-x_0|.
+A=|x_{\mathrm{release}}-x_{\mathrm{eq}}|.
 $$
 
 Because the block is released to the right,
@@ -86,13 +86,13 @@ A=0.32\ \mathrm{m}-0.20\ \mathrm{m}
 =0.12\ \mathrm{m}.
 $$
 
-The coordinate $x_f$ is not itself the amplitude because the coordinate origin lies to the left of equilibrium.
+The coordinate $x_{\mathrm{release}}$ is not itself the amplitude because the coordinate origin lies to the left of equilibrium.
 
 ```quiz
 type: radio
 id: problem-8-amplitude-q1
 content: |-
-  A spring is unstretched at $x_0=0.41\ \mathrm{m}$, and the block is pulled right to $x_f=0.56\ \mathrm{m}$. What is the oscillation amplitude?
+  A spring is unstretched at $x_{\mathrm{eq}}=0.41\ \mathrm{m}$, and the block is pulled right to $x_{\mathrm{release}}=0.56\ \mathrm{m}$. What is the oscillation amplitude?
 options:
 - id: a
   content: |-
@@ -104,7 +104,7 @@ options:
   content: |-
     $0.56\ \mathrm{m}$
   feedback: |-
-    This is the release coordinate measured from the diagram's origin. Amplitude is the block's displacement from the equilibrium coordinate $x_0=0.41\ \mathrm{m}$, so $A=|0.56-0.41|=0.15\ \mathrm{m}$.
+    This is the release coordinate measured from the diagram's origin. Amplitude is the block's displacement from the equilibrium coordinate $x_{\mathrm{eq}}=0.41\ \mathrm{m}$, so $A=|0.56-0.41|=0.15\ \mathrm{m}$.
 - id: c
   content: |-
     $0.97\ \mathrm{m}$
@@ -135,8 +135,8 @@ Each cycle is $2\pi$ radians, so
 
 $$
 \omega=2\pi f
-=2\pi(1.5\ \mathrm{s^{-1}})
-=3\pi\ \mathrm{rad/s}.
+=2\pi(1.5\ \mathrm{s}^{-1})
+=3\pi\ \mathrm{rad}/\mathrm{s}.
 $$
 
 Thus the conversion chain is
@@ -158,20 +158,20 @@ content: |-
 options:
 - id: a
   content: |-
-    $1.25\ \mathrm{rad/s}$
+    $1.25\ \mathrm{rad}/\mathrm{s}$
   feedback: |-
-    The value $5/4.0=1.25$ is the frequency in cycles per second. Angular frequency counts radians per second, so multiply by $2\pi\ \mathrm{rad/cycle}$ to obtain $\omega=2.5\pi\ \mathrm{rad/s}$.
+    The value $5/4.0=1.25$ is the frequency in cycles per second. Angular frequency counts radians per second, so multiply by $2\pi\ \mathrm{rad}/\mathrm{cycle}$ to obtain $\omega=2.5\pi\ \mathrm{rad}/\mathrm{s}$.
 - id: b
   content: |-
-    $2.5\pi\ \mathrm{rad/s}$
+    $2.5\pi\ \mathrm{rad}/\mathrm{s}$
   correct: true
   feedback: |-
-    Frequency is cycles divided by elapsed time, so $f=5/(4.0\ \mathrm{s})=1.25\ \mathrm{Hz}$. Each cycle is $2\pi$ radians, giving $\omega=2\pi f=2.5\pi\ \mathrm{rad/s}$.
+    Frequency is cycles divided by elapsed time, so $f=5/(4.0\ \mathrm{s})=1.25\ \mathrm{Hz}$. Each cycle is $2\pi$ radians, giving $\omega=2\pi f=2.5\pi\ \mathrm{rad}/\mathrm{s}$.
 - id: c
   content: |-
-    $8\pi\ \mathrm{rad/s}$
+    $8\pi\ \mathrm{rad}/\mathrm{s}$
   feedback: |-
-    This treats the elapsed time $4.0\ \mathrm{s}$ as though it were the frequency in cycles per second. The relevant rate is the cycle count divided by time, $f=5/4.0=1.25\ \mathrm{Hz}$, so $\omega=2.5\pi\ \mathrm{rad/s}$.
+    This treats the elapsed time $4.0\ \mathrm{s}$ as though it were the frequency in cycles per second. The relevant rate is the cycle count divided by time, $f=5/4.0=1.25\ \mathrm{Hz}$, so $\omega=2.5\pi\ \mathrm{rad}/\mathrm{s}$.
 ```
 
 ---
@@ -179,20 +179,20 @@ options:
 <a id="build-the-velocity-function-from-the-release-condition"></a>
 ## Build the Velocity Function From the Release Condition
 
-**Example:** A block is released from rest at $x(0)=+A$. Write its position and velocity functions.
+**Example:** A block is released from rest at $y(0)=+A$. Write its position and velocity functions.
 
 **Explanation**
 
 Cosine matches the initial state because
 
 $$
-x(0)=A\cos(0)=A.
+y(0)=A\cos(0)=A.
 $$
 
 Thus,
 
 $$
-x(t)=A\cos(\omega t).
+y(t)=A\cos(\omega t).
 $$
 
 Differentiate with the chain rule:
@@ -200,7 +200,7 @@ Differentiate with the chain rule:
 $$
 \begin{aligned}
 v(t)
-&=\frac{dx}{dt} \\
+&=\frac{dy}{dt} \\
 &=A[-\sin(\omega t)]\frac{d}{dt}(\omega t) \\
 &=-A\omega\sin(\omega t).
 \end{aligned}
@@ -212,7 +212,7 @@ The factor $\omega$ comes from differentiating the angle. The negative sign make
 type: radio
 id: problem-8-model-q1
 content: |-
-  A block is released from rest at maximum positive displacement. Which velocity function matches $x(t)=A\cos(\omega t)$?
+  A block is released from rest at maximum positive displacement. Which velocity function matches $y(t)=A\cos(\omega t)$?
 options:
 - id: a
   content: |-
@@ -237,7 +237,7 @@ options:
 <a id="evaluate-velocity-and-interpret-its-sign"></a>
 ## Evaluate Velocity and Interpret Its Sign
 
-**Example:** An oscillator has $A=0.10\ \mathrm{m}$, completes $2$ cycles in $4.0\ \mathrm{s}$, and starts at $x=+A$. Find its velocity at $t=0.50\ \mathrm{s}$.
+**Example:** An oscillator has $A=0.10\ \mathrm{m}$, completes $2$ cycles in $4.0\ \mathrm{s}$, and starts at $y=+A$. Find its velocity at $t=0.50\ \mathrm{s}$.
 
 **Explanation**
 
@@ -245,7 +245,7 @@ First find angular frequency:
 
 $$
 \omega=2\pi\left(\frac{2}{4.0\ \mathrm{s}}\right)
-=\pi\ \mathrm{rad/s}.
+=\pi\ \mathrm{rad}/\mathrm{s}.
 $$
 
 Then evaluate the velocity function:
@@ -253,10 +253,10 @@ Then evaluate the velocity function:
 $$
 \begin{aligned}
 v(0.50\ \mathrm{s})
-&=-(0.10\ \mathrm{m})(\pi\ \mathrm{rad/s})
-\sin[(\pi\ \mathrm{rad/s})(0.50\ \mathrm{s})] \\
-&=-0.3141\ldots\ \mathrm{m/s} \\
-&=-0.31\ \mathrm{m/s}.
+&=-(0.10\ \mathrm{m})(\pi\ \mathrm{rad}/\mathrm{s})
+\sin[(\pi\ \mathrm{rad}/\mathrm{s})(0.50\ \mathrm{s})] \\
+&=-0.3141\ldots\ \mathrm{m}/\mathrm{s} \\
+&=-0.31\ \mathrm{m}/\mathrm{s}.
 \end{aligned}
 $$
 
@@ -273,7 +273,7 @@ The negative sign means the block is moving left. It does not mean the speed is 
 type: radio
 id: problem-8-sign-q1
 content: |-
-  With right defined as positive, an SHM calculation gives $v=+0.62\ \mathrm{m/s}$. What does the sign mean?
+  With right defined as positive, an SHM calculation gives $v=+0.62\ \mathrm{m}/\mathrm{s}$. What does the sign mean?
 options:
 - id: a
   content: |-
@@ -285,12 +285,12 @@ options:
     The block is moving right.
   correct: true
   feedback: |-
-    The sign of velocity gives the direction of motion. Since right is defined as positive, $v=+0.62\ \mathrm{m/s}$ means the block is moving right.
+    The sign of velocity gives the direction of motion. Since right is defined as positive, $v=+0.62\ \mathrm{m}/\mathrm{s}$ means the block is moving right.
 - id: c
   content: |-
     The block's speed is negative.
   feedback: |-
-    Speed is the magnitude $|v|$ and is never negative. The positive sign belongs to velocity and indicates direction, so the block moves right with speed $0.62\ \mathrm{m/s}$.
+    Speed is the magnitude $|v|$ and is never negative. The positive sign belongs to velocity and indicates direction, so the block moves right with speed $0.62\ \mathrm{m}/\mathrm{s}$.
 ```
 
 ---
@@ -307,7 +307,7 @@ options:
 The amplitude is the release displacement from equilibrium:
 
 $$
-A=x_f-x_0
+A=x_{\mathrm{release}}-x_{\mathrm{eq}}
 =0.48\ \mathrm{m}-0.35\ \mathrm{m}
 =0.13\ \mathrm{m}.
 $$
@@ -331,8 +331,8 @@ $$
 v(3.9\ \mathrm{s})
 &=-(0.13\ \mathrm{m})\omega
 \sin[\omega(3.9\ \mathrm{s})] \\
-&=1.2876\ldots\ \mathrm{m/s} \\
-&=1.3\ \mathrm{m/s}.
+&=1.2876\ldots\ \mathrm{m}/\mathrm{s} \\
+&=1.3\ \mathrm{m}/\mathrm{s}.
 \end{aligned}
 $$
 
@@ -346,7 +346,7 @@ content: |-
 
   For the same spring–block system, what is the block's velocity at $t=3.9\ \mathrm{s}$? Define right as positive.
 
-  Use $m=0.18\ \mathrm{kg}$, $x_0=0.35\ \mathrm{m}$, $x_f=0.48\ \mathrm{m}$, and 12 oscillations in $7.0\ \mathrm{s}$.
+  Use $m=0.18\ \mathrm{kg}$, $x_{\mathrm{eq}}=0.35\ \mathrm{m}$, $x_{\mathrm{release}}=0.48\ \mathrm{m}$, and 12 oscillations in $7.0\ \mathrm{s}$.
 
   ![](<../Source/Images/spring-block-displacement-setup.png>)
 
@@ -356,19 +356,19 @@ options:
   content: 1.3
   correct: true
   feedback: |-
-    The release displacement gives $A=0.48-0.35=0.13\ \mathrm{m}$, and the cycle rate gives $\omega=2\pi\frac{12}{7.0\ \mathrm{s}}$. Because the block starts at $+A$, $v=-A\omega\sin(\omega t)$; at $t=3.9\ \mathrm{s}$ this is $+1.2876\ldots\ \mathrm{m/s}$, or $+1.3\ \mathrm{m/s}$ to two significant figures. The positive sign means motion to the right.
+    The release displacement gives $A=0.48-0.35=0.13\ \mathrm{m}$, and the cycle rate gives $\omega=2\pi\frac{12}{7.0\ \mathrm{s}}$. Because the block starts at $+A$, $v=-A\omega\sin(\omega t)$; at $t=3.9\ \mathrm{s}$ this is $+1.2876\ldots\ \mathrm{m}/\mathrm{s}$, or $+1.3\ \mathrm{m}/\mathrm{s}$ to two significant figures. The positive sign means motion to the right.
 - id: b
   content: -1.3
   feedback: |-
-    This has the correct speed but reverses the direction. At $t=3.9\ \mathrm{s}$, $\sin(\omega t)<0$, and the leading minus sign in $v=-A\omega\sin(\omega t)$ therefore makes $v$ positive: $+1.3\ \mathrm{m/s}$, toward the right.
+    This has the correct speed but reverses the direction. At $t=3.9\ \mathrm{s}$, $\sin(\omega t)<0$, and the leading minus sign in $v=-A\omega\sin(\omega t)$ therefore makes $v$ positive: $+1.3\ \mathrm{m}/\mathrm{s}$, toward the right.
 - id: c
   content: 1.4
   feedback: |-
-    This is the maximum speed $A\omega\approx1.4\ \mathrm{m/s}$, which occurs only when $|\sin(\omega t)|=1$. The question asks for the velocity at a particular phase, so the factor $-\sin(\omega t)$ is required and gives $v=+1.3\ \mathrm{m/s}$.
+    This is the maximum speed $A\omega\approx1.4\ \mathrm{m}/\mathrm{s}$, which occurs only when $|\sin(\omega t)|=1$. The question asks for the velocity at a particular phase, so the factor $-\sin(\omega t)$ is required and gives $v=+1.3\ \mathrm{m}/\mathrm{s}$.
 - id: d
   content: -0.051
   feedback: |-
-    This comes from the position function $x=A\cos(\omega t)$, so it describes where the block is and has units of meters. Velocity is the slope of position, $v=-A\omega\sin(\omega t)$, which gives $+1.3\ \mathrm{m/s}$ here.
+    This comes from the position function $y=A\cos(\omega t)$, so it describes where the block is and has units of meters. Velocity is the slope of position, $v=-A\omega\sin(\omega t)$, which gives $+1.3\ \mathrm{m}/\mathrm{s}$ here.
 ```
 
 ---
@@ -384,13 +384,13 @@ id: khadley-oscillations-q2
 input_mode: math
 require_exact: true
 content: |-
-  A $0.18\ \mathrm{kg}$ block on a frictionless surface is attached to an ideal spring. The spring is unstretched at coordinate $x_0=0.35\ \mathrm m$. The block is pulled right to $x_f=0.48\ \mathrm m$, released from rest, and completes $12$ oscillations in $7.0\ \mathrm s$.
+  A $0.18\ \mathrm{kg}$ block on a frictionless surface is attached to an ideal spring. The spring is unstretched at coordinate $x_{\mathrm{eq}}=0.35\ \mathrm{m}$. The block is pulled right to $x_{\mathrm{release}}=0.48\ \mathrm{m}$, released from rest, and completes $12$ oscillations in $7.0\ \mathrm{s}$.
 
   ![](<../Source/Images/spring-block-displacement-setup.png>)
 
-  What is the block's velocity at $t=3.5\ \mathrm s$? Enter meters per second: ==0==
+  What is the block's velocity at $t=3.5\ \mathrm{s}$? Enter meters per second: ==0==
 feedback: |-
-  The time $3.5\ \mathrm s$ contains exactly six periods. The block has returned to its positive turning point, where $\sin(\omega t)=0$ and therefore $v=0\ \mathrm{m/s}$.
+  The time $3.5\ \mathrm{s}$ contains exactly six periods. The block has returned to its positive turning point, where $\sin(\omega t)=0$ and therefore $v=0\ \mathrm{m}/\mathrm{s}$.
 ```
 
 ---
@@ -400,14 +400,14 @@ feedback: |-
 
 For a block released from rest at maximum positive displacement:
 
-1. Find amplitude from the setup: $A=|x_f-x_0|$.
+1. Find amplitude from the setup: $A=|x_{\mathrm{release}}-x_{\mathrm{eq}}|$.
 2. Convert the cycle count to frequency: $f=N/\Delta t$.
 3. Convert to angular frequency: $\omega=2\pi f$.
-4. Use $x(t)=A\cos(\omega t)$ and $v(t)=-A\omega\sin(\omega t)$.
+4. Use $y(t)=A\cos(\omega t)$ and $v(t)=-A\omega\sin(\omega t)$.
 5. Evaluate in radian mode, keep guard digits, and round only the final result.
 6. Interpret the velocity sign using the stated positive direction.
 
-The main traps are treating $x_f$ as the amplitude, omitting $2\pi$ or the chain-rule factor $\omega$, and reporting speed instead of signed velocity.
+The main traps are treating $x_{\mathrm{release}}$ as the amplitude, omitting $2\pi$ or the chain-rule factor $\omega$, and reporting speed instead of signed velocity.
 
 <!-- lesson-nav:start -->
 ---

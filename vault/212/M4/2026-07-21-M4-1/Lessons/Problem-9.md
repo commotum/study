@@ -46,7 +46,7 @@ Here $A$ is the amplitude, the distance from equilibrium to the release point.
 <a id="match-the-two-energy-states"></a>
 ## Match the Two Energy States
 
-**Example:** A $2.0\ \mathrm{kg}$ block is released from rest $0.40\ \mathrm{m}$ from equilibrium on a spring with $k=50\ \mathrm{N/m}$. Find its maximum speed.
+**Example:** A $2.0\ \mathrm{kg}$ block is released from rest $0.40\ \mathrm{m}$ from equilibrium on a spring with $k=50\ \mathrm{N}/\mathrm{m}$. Find its maximum speed.
 
 **Explanation**
 
@@ -71,33 +71,33 @@ $$
 so
 
 $$
-v_{\max}=0.40\sqrt{\frac{50}{2.0}}=2.0\ \mathrm{m/s}.
+v_{\max}=0.40\sqrt{\frac{50}{2.0}}=2.0\ \mathrm{m}/\mathrm{s}.
 $$
 
 ```quiz
 type: radio
 id: p9-match-energy-states
 content: |-
-  A $2.0\ \mathrm{kg}$ block is released from rest at amplitude $0.50\ \mathrm{m}$ on a spring with $k=18\ \mathrm{N/m}$. What is its maximum speed?
+  A $2.0\ \mathrm{kg}$ block is released from rest at amplitude $0.50\ \mathrm{m}$ on a spring with $k=18\ \mathrm{N}/\mathrm{m}$. What is its maximum speed?
 options:
 - id: p9-match-a
   content: |-
-    $1.5\ \mathrm{m/s}$
+    $1.5\ \mathrm{m}/\mathrm{s}$
   correct: true
   feedback: |-
-    Use the full amplitude and equate the endpoint energies: $v_{\max}=A\sqrt{k/m}=(0.50)\sqrt{18/2.0}=1.5\ \mathrm{m/s}$.
+    Use the full amplitude and equate the endpoint energies: $v_{\max}=A\sqrt{k/m}=(0.50)\sqrt{18/2.0}=1.5\ \mathrm{m}/\mathrm{s}$.
 - id: p9-match-b
   content: |-
-    $4.5\ \mathrm{m/s}$
+    $4.5\ \mathrm{m}/\mathrm{s}$
 - id: p9-match-c
   content: |-
-    $0.75\ \mathrm{m/s}$
+    $0.75\ \mathrm{m}/\mathrm{s}$
 - id: p9-match-d
   content: |-
-    $3.0\ \mathrm{m/s}$
+    $3.0\ \mathrm{m}/\mathrm{s}$
 - id: p9-match-e
   content: |-
-    $9.0\ \mathrm{m/s}$
+    $9.0\ \mathrm{m}/\mathrm{s}$
 ```
 
 ---
@@ -160,19 +160,19 @@ options:
 
 **Explanation**
 
-Because $1\ \mathrm N=1\ \mathrm{kg\,m/s^2}$,
+Because $1\ \mathrm{N}=1\ \mathrm{kg}\,\mathrm{m}/\mathrm{s}^2$,
 
 $$
 \begin{aligned}
 \left[\sqrt{\frac{k}{m}}\right]
-&=\sqrt{\frac{\mathrm{N/m}}{\mathrm{kg}}}\\
-&=\sqrt{\frac{(\mathrm{kg\,m/s^2})/\mathrm m}{\mathrm{kg}}}\\
-&=\sqrt{\frac{1}{\mathrm{s^2}}}\\
-&=\frac1{\mathrm s}.
+&=\sqrt{\frac{\mathrm{N}/\mathrm{m}}{\mathrm{kg}}}\\
+&=\sqrt{\frac{(\mathrm{kg}\,\mathrm{m}/\mathrm{s}^2)/\mathrm{m}}{\mathrm{kg}}}\\
+&=\sqrt{\frac{1}{\mathrm{s}^2}}\\
+&=\frac1{\mathrm{s}}.
 \end{aligned}
 $$
 
-Multiplying by $A$ in meters gives $\mathrm{m/s}$, as required. The formula also shows that $v_{\max}$ is proportional to $A$ and $\sqrt{k}$, but inversely proportional to $\sqrt{m}$.
+Multiplying by $A$ in meters gives $\mathrm{m}/\mathrm{s}$, as required. The formula also shows that $v_{\max}$ is proportional to $A$ and $\sqrt{k}$, but inversely proportional to $\sqrt{m}$.
 
 ```quiz
 type: radio
@@ -205,13 +205,13 @@ options:
 <a id="apply-the-method-to-problem-9"></a>
 ## Apply the Method to Problem 9
 
-**Example:** A block of mass $m=0.86\ \mathrm{kg}$ on a frictionless surface is attached to an ideal spring with constant $k=78\ \mathrm{N/m}$. The block is pulled $0.92\ \mathrm{m}$ from equilibrium and released. What is its maximum speed?
+**Example:** A block of mass $m=0.86\ \mathrm{kg}$ on a frictionless surface is attached to an ideal spring with constant $k=78\ \mathrm{N}/\mathrm{m}$. The block is pulled $0.92\ \mathrm{m}$ from equilibrium and released. What is its maximum speed?
 
 ![](<../Source/Images/spring-block-displacement-setup.png>)
 
 **Explanation**
 
-The release distance is the amplitude, so $A=0.92\ \mathrm m$. At maximum displacement, the energy is entirely spring potential; at equilibrium, it is entirely kinetic:
+The release distance is the amplitude, so $A=0.92\ \mathrm{m}$. At maximum displacement, the energy is entirely spring potential; at equilibrium, it is entirely kinetic:
 
 $$
 \frac12kA^2=\frac12mv_{\max}^2.
@@ -221,11 +221,11 @@ Thus,
 
 $$
 v_{\max}=A\sqrt{\frac{k}{m}}
-=(0.92\ \mathrm{m})\sqrt{\frac{78\ \mathrm{N/m}}{0.86\ \mathrm{kg}}}
-=8.7617\ldots\ \mathrm{m/s}.
+=(0.92\ \mathrm{m})\sqrt{\frac{78\ \mathrm{N}/\mathrm{m}}{0.86\ \mathrm{kg}}}
+=8.7617\ldots\ \mathrm{m}/\mathrm{s}.
 $$
 
-Keep the unrounded calculator value until the final step. The measured givens have two significant figures, so $v_{\max}=8.8\ \mathrm{m/s}$. The requested answer is a number only: **8.8**.
+Keep the unrounded calculator value until the final step. The measured givens have two significant figures, so $v_{\max}=8.8\ \mathrm{m}/\mathrm{s}$. The requested answer is a number only: **8.8**.
 
 The answer choices diagnose common mistakes:
 
@@ -240,7 +240,7 @@ id: p9-source-check
 content: |-
   **Question 8**
 
-  A block of mass $m=0.86\ \mathrm{kg}$ on a frictionless surface is attached to an ideal spring with constant $k=78\ \mathrm{N/m}$. The block is pulled $0.92\ \mathrm{m}$ from equilibrium and released. What is its maximum speed?
+  A block of mass $m=0.86\ \mathrm{kg}$ on a frictionless surface is attached to an ideal spring with constant $k=78\ \mathrm{N}/\mathrm{m}$. The block is pulled $0.92\ \mathrm{m}$ from equilibrium and released. What is its maximum speed?
 
   ![](<../Source/Images/spring-block-displacement-setup.png>)
 
@@ -261,11 +261,11 @@ options:
 
     $$
     v_{\max}=A\sqrt{\frac{k}{m}}
-    =(0.92\ \mathrm{m})\sqrt{\frac{78\ \mathrm{N/m}}{0.86\ \mathrm{kg}}}
-    =8.7617\ldots\ \mathrm{m/s}.
+    =(0.92\ \mathrm{m})\sqrt{\frac{78\ \mathrm{N}/\mathrm{m}}{0.86\ \mathrm{kg}}}
+    =8.7617\ldots\ \mathrm{m}/\mathrm{s}.
     $$
 
-    The measured givens have two significant figures, so $v_{\max}=8.8\ \mathrm{m/s}$.
+    The measured givens have two significant figures, so $v_{\max}=8.8\ \mathrm{m}/\mathrm{s}$.
 - id: p9-source-b
   content: |-
     $8.7617$
@@ -287,7 +287,7 @@ options:
 - Cue: an ideal spring-block system is released from amplitude $A$, and the maximum speed is requested.
 - Match the energy at release to the energy at equilibrium: $\frac12kA^2=\frac12mv_{\max}^2$.
 - Make speed the subject, then choose its nonnegative magnitude: $v_{\max}=A\sqrt{k/m}$.
-- Check that the result has units of $\mathrm{m/s}$ and round only after the full calculation.
+- Check that the result has units of $\mathrm{m}/\mathrm{s}$ and round only after the full calculation.
 - Main trap: the release distance is the full amplitude, and the square root must apply to $k/m$.
 
 <!-- lesson-nav:start -->

@@ -98,7 +98,7 @@ For circular motion, the net horizontal force must point toward the center of th
 The label "centripetal force" describes the net inward force requirement:
 
 $$
-\sum F_r = \frac{mv^2}{r}
+\sum F_r=m a_r=m\frac{v^2}{r}
 $$
 
 It is not an additional force arrow. For a car on a level road, the real inward force is static friction $f_s$.

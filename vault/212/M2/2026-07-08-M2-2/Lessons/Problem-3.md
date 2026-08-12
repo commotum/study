@@ -72,10 +72,10 @@ Therefore,
 $$
 c=\frac{2m}{l^2}
 =\frac{2(6.0)}{(2.0)^2}
-=3.0\ \mathrm{kg/m^2}.
+=3.0\ \mathrm{kg}/\mathrm{m}^2.
 $$
 
-The units confirm the normalization: because $\lambda=cx$ has units $\mathrm{kg/m}$, the constant $c$ must have units $\mathrm{kg/m^2}$.
+The units confirm the normalization: because $\lambda=cx$ has units $\mathrm{kg}/\mathrm{m}$, the constant $c$ must have units $\mathrm{kg}/\mathrm{m}^2$.
 
 ```quiz
 type: radio
@@ -85,17 +85,17 @@ content: |-
 options:
 - id: p3-density-constant-a
   content: |-
-    $0.50\ \mathrm{kg/m^2}$
+    $0.50\ \mathrm{kg}/\mathrm{m}^2$
 - id: p3-density-constant-b
   content: |-
-    $1.0\ \mathrm{kg/m^2}$
+    $1.0\ \mathrm{kg}/\mathrm{m}^2$
   correct: true
 - id: p3-density-constant-c
   content: |-
-    $2.0\ \mathrm{kg/m^2}$
+    $2.0\ \mathrm{kg}/\mathrm{m}^2$
 - id: p3-density-constant-d
   content: |-
-    $4.0\ \mathrm{kg/m^2}$
+    $4.0\ \mathrm{kg}/\mathrm{m}^2$
 ```
 
 ---
@@ -189,7 +189,7 @@ $$
 The units reduce correctly:
 
 $$
-[I]=[m][l^2]=\mathrm{kg\,m^2}.
+[I]=[m][l^2]=\mathrm{kg}\,\mathrm{m}^2.
 $$
 
 This simplified formula is valid for a rod that begins at the origin and has the specific density $\lambda(x)=cx$.
@@ -202,17 +202,17 @@ content: |-
 options:
 - id: p3-eliminate-c-a
   content: |-
-    $0.30\ \mathrm{kg\,m^2}$
+    $0.30\ \mathrm{kg}\,\mathrm{m}^2$
 - id: p3-eliminate-c-b
   content: |-
-    $0.60\ \mathrm{kg\,m^2}$
+    $0.60\ \mathrm{kg}\,\mathrm{m}^2$
 - id: p3-eliminate-c-c
   content: |-
-    $0.90\ \mathrm{kg\,m^2}$
+    $0.90\ \mathrm{kg}\,\mathrm{m}^2$
   correct: true
 - id: p3-eliminate-c-d
   content: |-
-    $1.8\ \mathrm{kg\,m^2}$
+    $1.8\ \mathrm{kg}\,\mathrm{m}^2$
 ```
 
 ---
@@ -255,7 +255,7 @@ Substitution gives
 $$
 I
 =\frac12(0.65\ \mathrm{kg})(1.8\ \mathrm{m})^2
-=1.053\ \mathrm{kg\,m^2}.
+=1.053\ \mathrm{kg}\,\mathrm{m}^2.
 $$
 
 The coefficient also passes a magnitude check. Since the density increases toward the far end, this rod has more inertia than a uniform rod about its end, $\tfrac13ml^2$, but less than the limiting value $ml^2$ obtained if all mass were at $x=l$:
@@ -303,7 +303,7 @@ For a rod on $0\le x\le l$ with $\lambda(x)=cx$:
 3. Eliminate $c$ to obtain $I=\tfrac12ml^2$.
 4. Substitute the measured values and round only at the end.
 
-The main trap is using the mass integral again for inertia and forgetting the distance-squared factor $x^2$. Check that the final units are $\mathrm{kg\,m^2}$ and that $\tfrac13ml^2<I<ml^2$ for this linearly increasing density.
+The main trap is using the mass integral again for inertia and forgetting the distance-squared factor $x^2$. Check that the final units are $\mathrm{kg}\,\mathrm{m}^2$ and that $\tfrac13ml^2<I<ml^2$ for this linearly increasing density.
 
 <!-- lesson-nav:start -->
 ---

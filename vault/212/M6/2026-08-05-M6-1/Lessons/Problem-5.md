@@ -336,7 +336,7 @@ id: khadley-wave-optics-q3
 input_mode: math
 require_exact: true
 content: |-
-  A grating with line spacing $3.0\ \mathrm{\mu m}$ produces a first-order bright fringe $32\ \mathrm{cm}$ from the center on a screen $1.8\ \mathrm m$ away. Find the wavelength in nanometers: ==530==
+  A grating with line spacing $3.0\ \mu\mathrm{m}$ produces a first-order bright fringe $32\ \mathrm{cm}$ from the center on a screen $1.8\ \mathrm m$ away. Find the wavelength in nanometers: ==530==
 feedback: |-
   The angle is $\theta=\tan^{-1}(0.32/1.8)$. The exact grating relation gives $\lambda=d\sin\theta=5.25\times10^{-7}\ \mathrm m$, or $5.3\times10^2\ \mathrm{nm}$ to two significant figures.
 ```

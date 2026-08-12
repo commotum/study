@@ -17,7 +17,7 @@ topic-code: MTH212.M5.38
 
 ## Prerequisites
 
-- Use $v=f\lambda$ to relate wave speed, frequency, and wavelength.
+- Use $v_{\mathrm{wave}}=f\lambda$ to relate wave speed, frequency, and wavelength.
 - Find straight-line distances with the Pythagorean theorem.
 - Recognize that a phase difference of $0$ modulo $2\pi$ is in phase, while $\pi$ modulo $2\pi$ is completely out of phase.
 
@@ -37,13 +37,13 @@ Use the same three-part procedure each time:
 For a path difference $\Delta r$, the propagation phase difference is
 
 $$
-\Delta\phi_{\text{path}}=2\pi\frac{\Delta r}{\lambda}.
+\Delta\phi_{\mathrm{path}}=2\pi\frac{\Delta r}{\lambda}.
 $$
 
 For the out-of-phase sources in this lesson, combine that path contribution with the initial $\pi$ difference:
 
 $$
-\Delta\phi_{\text{arrival}}\equiv\pi+2\pi\frac{\Delta r}{\lambda}\pmod{2\pi}.
+\Delta\phi_{\mathrm{arrival}}\equiv\pi+2\pi\frac{\Delta r}{\lambda}\pmod{2\pi}.
 $$
 
 A result of $0$ modulo $2\pi$ means completely constructive interference, a result of $\pi$ means completely destructive interference, and any other result means neither. For these three classifications, the magnitude $\Delta r=|r_2-r_1|$ is sufficient.
@@ -53,7 +53,7 @@ A result of $0$ modulo $2\pi$ means completely constructive interference, a resu
 <a id="convert-frequency-to-wavelength"></a>
 ## Convert Frequency to Wavelength
 
-Radio waves in air travel at approximately $3.0\times10^8\ \mathrm{m/s}$. Convert megahertz to hertz before using $\lambda=v/f$.
+Radio waves in air travel at approximately $3.0\times10^8\ \mathrm{m}/\mathrm{s}$. Convert megahertz to hertz before using $\lambda=v_{\mathrm{wave}}/f$.
 
 **Example:** Find the wavelength of a $6.0\ \mathrm{MHz}$ radio wave.
 
@@ -63,7 +63,7 @@ Since $6.0\ \mathrm{MHz}=6.0\times10^6\ \mathrm{Hz}=6.0\times10^6\ \mathrm{s^{-1
 
 $$
 \lambda
-=\frac{3.0\times10^8\ \mathrm{m/s}}{6.0\times10^6\ \mathrm{s^{-1}}}
+=\frac{3.0\times10^8\ \mathrm{m}/\mathrm{s}}{6.0\times10^6\ \mathrm{s^{-1}}}
 =50\ \mathrm{m}.
 $$
 
@@ -71,7 +71,7 @@ $$
 type: radio
 id: problem-3-wavelength
 content: |-
-  What is the wavelength of a $2.0\ \mathrm{MHz}$ radio wave traveling at $3.0\times10^8\ \mathrm{m/s}$?
+  What is the wavelength of a $2.0\ \mathrm{MHz}$ radio wave traveling at $3.0\times10^8\ \mathrm{m}/\mathrm{s}$?
 options:
 - id: a
   content: |-
@@ -164,7 +164,7 @@ An integer-wavelength path difference contributes whole cycles, so it preserves 
 The path contribution is $2\pi(3)=6\pi$. Thus
 
 $$
-\Delta\phi_{\text{arrival}}=\pi+6\pi=7\pi\equiv\pi\pmod{2\pi}.
+\Delta\phi_{\mathrm{arrival}}=\pi+6\pi=7\pi\equiv\pi\pmod{2\pi}.
 $$
 
 The waves arrive completely out of phase, so the interference is completely destructive.
@@ -207,7 +207,7 @@ options:
 First find the wavelength:
 
 $$
-\lambda=\frac{3.0\times10^8\ \mathrm{m/s}}{3.0\times10^6\ \mathrm{s^{-1}}}=100\ \mathrm{m}.
+\lambda=\frac{3.0\times10^8\ \mathrm{m}/\mathrm{s}}{3.0\times10^6\ \mathrm{s^{-1}}}=100\ \mathrm{m}.
 $$
 
 The right antenna and $P$ have the same $x$-coordinate. Its vertical path is therefore
@@ -239,7 +239,7 @@ $$
 The integer-wavelength path difference contributes $4\pi$, which does not reverse the antennas' initial $\pi$ phase difference:
 
 $$
-\Delta\phi_{\text{arrival}}=\pi+4\pi=5\pi\equiv\pi\pmod{2\pi}.
+\Delta\phi_{\mathrm{arrival}}=\pi+4\pi=5\pi\equiv\pi\pmod{2\pi}.
 $$
 
 The interference at $P$ is **completely destructive**.
@@ -248,7 +248,7 @@ The interference at $P$ is **completely destructive**.
 type: radio
 id: problem-3-antennas
 content: |-
-  Two completely out-of-phase antennas emit $3.0\ \mathrm{MHz}$ waves. At a point where the source-to-point distances are $700\ \mathrm{m}$ and $1000\ \mathrm{m}$, is the interference completely constructive, completely destructive, or neither? Use $3.0\times10^8\ \mathrm{m/s}$ for the wave speed.
+  Two completely out-of-phase antennas emit $3.0\ \mathrm{MHz}$ waves. At a point where the source-to-point distances are $700\ \mathrm{m}$ and $1000\ \mathrm{m}$, is the interference completely constructive, completely destructive, or neither? Use $3.0\times10^8\ \mathrm{m}/\mathrm{s}$ for the wave speed.
 options:
 - id: a
   content: |-
@@ -282,7 +282,7 @@ Do not force every result into constructive or destructive interference. For sou
 The total phase difference is
 
 $$
-\Delta\phi_{\text{arrival}}=\pi+2\pi(1.25)=3.5\pi\equiv1.5\pi\pmod{2\pi}.
+\Delta\phi_{\mathrm{arrival}}=\pi+2\pi(1.25)=3.5\pi\equiv1.5\pi\pmod{2\pi}.
 $$
 
 This is neither $0$ nor $\pi$ modulo $2\pi$, so the interference is neither completely constructive nor completely destructive.
@@ -318,7 +318,7 @@ options:
 
 For two sources that begin completely out of phase:
 
-1. Find the wavelength with $\lambda=v/f$.
+1. Find the wavelength with $\lambda=v_{\mathrm{wave}}/f$.
 2. Compute both path lengths and set $\Delta r=|r_2-r_1|$.
 3. Compute $\Delta r/\lambda$.
 4. Classify: integer means destructive, half-integer means constructive, and any other value means neither.

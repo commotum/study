@@ -52,13 +52,13 @@ $$
 and the ray to an edge makes the angle
 
 $$
-\theta_{\text{edge}}=\tan^{-1}\left(\frac{Y}{L}\right).
+\theta_{\mathrm{edge}}=\tan^{-1}\left(\frac{Y}{L}\right).
 $$
 
-Only rays with $|\theta_m|\leq\theta_{\text{edge}}$ reach the screen. Since sine increases from $0^\circ$ to $90^\circ$, this becomes the symmetric order bound
+Only rays with $|\theta_m|\leq\theta_{\mathrm{edge}}$ reach the screen. Since sine increases from $0^\circ$ to $90^\circ$, this becomes the symmetric order bound
 
 $$
-|m|\leq\frac{d\sin\theta_{\text{edge}}}{\lambda}.
+|m|\leq\frac{d\sin\theta_{\mathrm{edge}}}{\lambda}.
 $$
 
 The largest visible order is therefore
@@ -69,7 +69,7 @@ m_{\max}
 \left\lfloor
 \min\left(
 \frac{d}{\lambda},
-\frac{d\sin\theta_{\text{edge}}}{\lambda}
+\frac{d\sin\theta_{\mathrm{edge}}}{\lambda}
 \right)
 \right\rfloor.
 $$
@@ -77,7 +77,7 @@ $$
 Here $\lfloor x\rfloor$ means the greatest integer less than or equal to $x$. Once $m_{\max}$ is known, symmetry gives
 
 $$
-N=2m_{\max}+1,
+N_{\mathrm{maxima}}=2m_{\max}+1,
 $$
 
 where the extra $1$ is the central maximum, $m=0$.
@@ -100,7 +100,7 @@ $$
 The adjacent side is the grating-to-screen distance. Thus
 
 $$
-\theta_{\text{edge}}
+\theta_{\mathrm{edge}}
 =\tan^{-1}\left(\frac{0.750}{2.00}\right)
 =20.556\ldots^\circ.
 $$
@@ -108,7 +108,7 @@ $$
 The same right triangle has hypotenuse $\sqrt{Y^2+L^2}$, so a useful no-rounding form for the next step is
 
 $$
-\sin\theta_{\text{edge}}
+\sin\theta_{\mathrm{edge}}
 =\frac{Y}{\sqrt{Y^2+L^2}}.
 $$
 
@@ -125,7 +125,7 @@ options:
     $33.7^\circ$
   correct: true
   feedback: |-
-    A centered screen extends half its full width to either side, so $Y=1.60/2=0.800\ \mathrm{m}$. Therefore $\theta_{\text{edge}}=\tan^{-1}(0.800/1.20)=33.7^\circ$.
+    A centered screen extends half its full width to either side, so $Y=1.60/2=0.800\ \mathrm{m}$. Therefore $\theta_{\mathrm{edge}}=\tan^{-1}(0.800/1.20)=33.7^\circ$.
 - id: m6-2-p3-screen-angle-b
   content: |-
     $53.1^\circ$
@@ -145,7 +145,7 @@ options:
   content: |-
     $0.667^\circ$
   feedback: |-
-    The value $0.800/1.20=0.667$ is the tangent of the angle, not the angle in degrees. Applying inverse tangent gives $\theta_{\text{edge}}=33.7^\circ$.
+    The value $0.800/1.20=0.667$ is the tangent of the angle, not the angle in degrees. Applying inverse tangent gives $\theta_{\mathrm{edge}}=33.7^\circ$.
 ```
 
 ---
@@ -166,8 +166,8 @@ $$
 The grating equation gives the order that would land exactly at the screen edge:
 
 $$
-m_{\text{screen}}
-=\frac{d\sin\theta_{\text{edge}}}{\lambda}
+m_{\mathrm{screen}}
+=\frac{d\sin\theta_{\mathrm{edge}}}{\lambda}
 =\frac{(2200)\sin(36.9^\circ)}{550}
 \approx2.40.
 $$
@@ -185,7 +185,7 @@ options:
     $1$
   correct: true
   feedback: |-
-    The screen sets $m\le d\sin\theta_{\text{edge}}/\lambda=(1500/500)\sin30.0^\circ=1.50$. Since $m$ must be an integer that does not exceed the bound, the largest visible order is $m_{\max}=1$.
+    The screen sets $m\le d\sin\theta_{\mathrm{edge}}/\lambda=(1500/500)\sin30.0^\circ=1.50$. Since $m$ must be an integer that does not exceed the bound, the largest visible order is $m_{\max}=1$.
 - id: m6-2-p3-order-cap-b
   content: |-
     $2$
@@ -226,10 +226,10 @@ $$
 There are three negative orders, three positive orders, and one central order. Therefore
 
 $$
-N
-=\underbrace{m_{\max}}_{\text{negative}}
+N_{\mathrm{maxima}}
+=\underbrace{m_{\max}}_{\mathrm{negative}}
 +\underbrace{1}_{m=0}
-+\underbrace{m_{\max}}_{\text{positive}}
++\underbrace{m_{\max}}_{\mathrm{positive}}
 =2m_{\max}+1
 =7.
 $$
@@ -245,7 +245,7 @@ options:
     $9$
   correct: true
   feedback: |-
-    Nonzero grating orders occur in symmetric pairs, $\pm1$ through $\pm4$, and $m=0$ contributes one central maximum. Thus $N=2(4)+1=9$.
+    Nonzero grating orders occur in symmetric pairs, $\pm1$ through $\pm4$, and $m=0$ contributes one central maximum. Thus $N_{\mathrm{maxima}}=2(4)+1=9$.
 - id: m6-2-p3-symmetry-count-b
   content: |-
     $8$
@@ -280,13 +280,13 @@ options:
 The physical existence bound is
 
 $$
-m_{\text{physical}}=\frac{d}{\lambda}=4.00.
+m_{\mathrm{physical}}=\frac{d}{\lambda}=4.00.
 $$
 
 The half-width is $Y=0.600\ \mathrm{m}$, so
 
 $$
-\theta_{\text{edge}}
+\theta_{\mathrm{edge}}
 =\tan^{-1}\left(\frac{0.600}{1.60}\right)
 =20.556\ldots^\circ.
 $$
@@ -294,8 +294,8 @@ $$
 The screen bound is
 
 $$
-m_{\text{screen}}
-=\frac{d\sin\theta_{\text{edge}}}{\lambda}
+m_{\mathrm{screen}}
+=\frac{d\sin\theta_{\mathrm{edge}}}{\lambda}
 =(4.00)\sin(20.556\ldots^\circ)
 =1.404\ldots.
 $$
@@ -303,7 +303,7 @@ $$
 The tighter limit is the screen, so $m_{\max}=1$ and
 
 $$
-N=2(1)+1=3.
+N_{\mathrm{maxima}}=2(1)+1=3.
 $$
 
 The orders $m=2,3,4$ can exist as beams, but they do not land on this screen.
@@ -319,12 +319,12 @@ options:
     $9$
   correct: true
   feedback: |-
-    The half-width is $1.20\ \mathrm{m}$, so the edge triangle has $\sin\theta_{\text{edge}}=1.20/1.50=0.800$. Hence $m_{\text{screen}}=(d/\lambda)\sin\theta_{\text{edge}}=5(0.800)=4$, giving $m=-4$ through $4$ and $N=9$.
+    The half-width is $1.20\ \mathrm{m}$, so the edge triangle has $\sin\theta_{\mathrm{edge}}=1.20/1.50=0.800$. Hence $m_{\mathrm{screen}}=(d/\lambda)\sin\theta_{\mathrm{edge}}=5(0.800)=4$, giving $m=-4$ through $4$ and $N_{\mathrm{maxima}}=9$.
 - id: m6-2-p3-competing-limits-b
   content: |-
     $11$
   feedback: |-
-    The physical limit $d/\lambda=5$ allows an $m=5$ beam only at $90^\circ$, parallel to the screen plane. The finite screen reaches only $\sin\theta_{\text{edge}}=0.800$, so $m_{\max}=4$ and only $9$ maxima land on it.
+    The physical limit $d/\lambda=5$ allows an $m=5$ beam only at $90^\circ$, parallel to the screen plane. The finite screen reaches only $\sin\theta_{\mathrm{edge}}=0.800$, so $m_{\max}=4$ and only $9$ maxima land on it.
 - id: m6-2-p3-competing-limits-c
   content: |-
     $8$
@@ -339,7 +339,7 @@ options:
   content: |-
     $4$
   feedback: |-
-    The value $4$ is the largest visible order, not the fringe count. Converting the order limit to a count requires both symmetric sides and the center: $N=2(4)+1=9$.
+    The value $4$ is the largest visible order, not the fringe count. Converting the order limit to a count requires both symmetric sides and the center: $N_{\mathrm{maxima}}=2(4)+1=9$.
 ```
 
 ---
@@ -356,7 +356,7 @@ Use nanometers for both microscopic lengths: $d=1800\ \mathrm{nm}$. The screen h
 $$
 Y=\frac{2.4}{2}=1.2\ \mathrm{m},
 \qquad
-\theta_{\text{edge}}
+\theta_{\mathrm{edge}}
 =\tan^{-1}\left(\frac{1.2}{0.85}\right)
 =54.688\ldots^\circ.
 $$
@@ -365,9 +365,9 @@ Now compare the two order bounds:
 
 $$
 \begin{aligned}
-m_{\text{physical}}
+m_{\mathrm{physical}}
 &=\frac{1800}{633}=2.843\ldots,\\
-m_{\text{screen}}
+m_{\mathrm{screen}}
 &=\frac{1800\sin(54.688\ldots^\circ)}{633}
 =2.320\ldots.
 \end{aligned}
@@ -382,7 +382,7 @@ $$
 and the screen shows
 
 $$
-\boxed{N=2(2)+1=5\text{ bright fringes}}.
+\boxed{N_{\mathrm{maxima}}=2(2)+1=5\text{ bright fringes}}.
 $$
 
 As a direct check, the second-order maximum is at
@@ -406,12 +406,12 @@ options:
     $7$
   correct: true
   feedback: |-
-    The half-width is $0.750\ \mathrm{m}$, so $\sin\theta_{\text{edge}}=0.750/1.25=0.600$. Thus $m_{\text{screen}}=(d/\lambda)(0.600)=5(0.600)=3$, and the orders $-3$ through $3$ give $N=2(3)+1=7$.
+    The half-width is $0.750\ \mathrm{m}$, so $\sin\theta_{\mathrm{edge}}=0.750/1.25=0.600$. Thus $m_{\mathrm{screen}}=(d/\lambda)(0.600)=5(0.600)=3$, and the orders $-3$ through $3$ give $N_{\mathrm{maxima}}=2(3)+1=7$.
 - id: m6-2-p3-complete-check-b
   content: |-
     $11$
   feedback: |-
-    The physical bound $d/\lambda=5$ ignores the finite screen. Its edge admits only $m\le5\sin\theta_{\text{edge}}=3$, so the visible count is $2(3)+1=7$, not the count of every physically possible order.
+    The physical bound $d/\lambda=5$ ignores the finite screen. Its edge admits only $m\le5\sin\theta_{\mathrm{edge}}=3$, so the visible count is $2(3)+1=7$, not the count of every physically possible order.
 - id: m6-2-p3-complete-check-c
   content: |-
     $6$
@@ -426,7 +426,7 @@ options:
   content: |-
     $3$
   feedback: |-
-    The number $3$ is the largest visible order. It must be converted to a total by counting both signs and the central order: $N=2(3)+1=7$.
+    The number $3$ is the largest visible order. It must be converted to a total by counting both signs and the central order: $N_{\mathrm{maxima}}=2(3)+1=7$.
 ```
 
 ---
@@ -437,18 +437,18 @@ options:
 For a finite screen centered on the grating axis:
 
 1. Use the half-width, $Y=W/2$.
-2. Find the edge angle, $\theta_{\text{edge}}=\tan^{-1}(Y/L)$.
+2. Find the edge angle, $\theta_{\mathrm{edge}}=\tan^{-1}(Y/L)$.
 3. Compare the physical and screen bounds:
 
    $$
    \frac{d}{\lambda}
    \qquad\text{and}\qquad
-   \frac{d\sin\theta_{\text{edge}}}{\lambda}.
+   \frac{d\sin\theta_{\mathrm{edge}}}{\lambda}.
    $$
 
 4. Take the smaller bound, then round **down** to the greatest allowed integer order.
 5. Read $|m|\leq m_{\max}$ as the symmetric integer list $-m_{\max},\ldots,0,\ldots,m_{\max}$.
-6. Count negative orders, the center, and positive orders with $N=m_{\max}+1+m_{\max}=2m_{\max}+1$.
+6. Count negative orders, the center, and positive orders with $N_{\mathrm{maxima}}=m_{\max}+1+m_{\max}=2m_{\max}+1$.
 
 The main traps are using the full screen width instead of its half-width, counting every physically possible order without checking the screen, rounding an order bound upward, and forgetting the central maximum.
 

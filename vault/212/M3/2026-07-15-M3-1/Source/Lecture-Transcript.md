@@ -33,17 +33,17 @@ $$
 \boxed{
 G
 =
-6.67\times10^{-11}\ \mathrm{N\,m^2/kg^2}
+6.67\times10^{-11}\ \mathrm{N}\,\mathrm{m}^2/\mathrm{kg}^2
 }.
 $$
 
-If the radial unit vector $\hat{\mathbf r}$ points outward from the central mass, the force on the other mass can be written as
+If the radial unit vector $\hat{r}$ points outward from the central mass, the force on the other mass can be written as
 
 $$
 \boxed{
 \vec{F}_g
 =
--G\frac{m_1m_2}{r^2}\hat{\mathbf r}
+-G\frac{m_1m_2}{r^2}\hat{r}
 }.
 $$
 
@@ -114,7 +114,7 @@ g
 =
 \frac{
 \left(
-6.67\times10^{-11}\ \mathrm{N\,m^2/kg^2}
+6.67\times10^{-11}\ \mathrm{N}\,\mathrm{m}^2/\mathrm{kg}^2
 \right)
 \left(
 5.97\times10^{24}\ \mathrm{kg}
@@ -130,7 +130,7 @@ Therefore,
 
 $$
 \boxed{
-g\approx9.81\ \mathrm{m/s^2}
+g\approx9.81\ \mathrm{m}/\mathrm{s}^2
 }.
 $$
 
@@ -393,10 +393,12 @@ As the objects move closer together, the potential energy becomes more negative.
 
 Consider a satellite of mass $m$ moving in a circular orbit of radius $r$ around a much more massive body of mass $M$.
 
-The gravitational force supplies the required centripetal force:
+For the scalar radial equation, take inward as positive.
+
+The gravitational force supplies the inward radial net force:
 
 $$
-F_g=F_c.
+\sum F_r=m a_r=m\frac{v^2}{r}=F_g.
 $$
 
 Therefore,
@@ -544,10 +546,10 @@ This is an orbit.
 
 An orbiting object is not free from gravity, and its acceleration is not zero. Gravity continually accelerates the object toward the center of Earth.
 
-For a circular orbit, the object may move at constant **speed**, but its velocity continually changes direction. Its acceleration is the centripetal acceleration
+For a circular orbit, the object may move at constant **speed**, but its velocity continually changes direction. Its acceleration is the inward radial acceleration
 
 $$
-a_c
+a_r
 =
 \frac{v^2}{r}.
 $$
@@ -555,7 +557,7 @@ $$
 Using the circular-orbit speed,
 
 $$
-a_c
+a_r
 =
 \frac{GM}{r^2},
 $$
@@ -804,7 +806,15 @@ $$
 r=R_E+h.
 $$
 
-The gravitational force supplies the centripetal force:
+For this scalar radial equation, take inward as positive.
+
+The gravitational force supplies the inward radial net force:
+
+$$
+\sum F_r=m a_r=m\frac{v^2}{R_E+h}=F_g.
+$$
+
+Substituting the gravitational-force magnitude gives
 
 $$
 G\frac{M_E m}{(R_E+h)^2}
@@ -897,7 +907,7 @@ Using
 $$
 G
 =
-6.67\times10^{-11}\ \mathrm{N\,m^2/kg^2},
+6.67\times10^{-11}\ \mathrm{N}\,\mathrm{m}^2/\mathrm{kg}^2,
 $$
 
 $$
@@ -985,13 +995,13 @@ G\frac{m_1m_2}{r^2}
 }.
 $$
 
-In vector form, with $\hat{\mathbf r}$ directed outward,
+In vector form, with $\hat{r}$ directed outward,
 
 $$
 \boxed{
 \vec{F}_g
 =
--G\frac{m_1m_2}{r^2}\hat{\mathbf r}
+-G\frac{m_1m_2}{r^2}\hat{r}
 }.
 $$
 
@@ -1009,7 +1019,7 @@ Near Earth’s surface,
 
 $$
 \boxed{
-g\approx9.81\ \mathrm{m/s^2}
+g\approx9.81\ \mathrm{m}/\mathrm{s}^2
 }.
 $$
 

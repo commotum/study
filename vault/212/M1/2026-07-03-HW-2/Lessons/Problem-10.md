@@ -11,13 +11,13 @@ topic-code: MTH212.M1.63
 - [Use the Top of the Loop as the Contact Test](#use-the-top-of-the-loop-as-the-contact-test)
 - [Use Energy to Connect the Entry Speed and the Top Speed](#use-energy-to-connect-the-entry-speed-and-the-top-speed)
 - [Separate Energy Conservation from Uniform Circular Motion](#separate-energy-conservation-from-uniform-circular-motion)
-- [Check Whether the Centripetal Force Is Constant](#check-whether-the-centripetal-force-is-constant)
+- [Check Whether the Radial Net Force Is Constant](#check-whether-the-centripetal-force-is-constant)
 - [Choose the True Statements](#choose-the-true-statements)
 - [Summary](#summary)
 
 ## Prerequisites
 
-- Use $a_r=\dfrac{v^2}{R}$ for circular motion of radius $R$.
+- Use $a_r=\dfrac{v^2}{r}$ for circular motion of radius $r$.
 - Read a radial force equation in the inward direction.
 - Use conservation of mechanical energy when friction is neglected.
 - Uniform circular motion means circular motion at constant speed.
@@ -40,32 +40,32 @@ Use Newton's second law locally at the top to test contact, then use energy betw
 <a id="use-the-top-of-the-loop-as-the-contact-test"></a>
 ## Use the Top of the Loop as the Contact Test
 
-**Example:** A rider moves through the top of a vertical loop of radius $R$ with speed $v_{\text{top}}$. What condition must hold for the rider to just maintain contact?
+**Example:** A rider moves through the top of a vertical loop of radius $r$ with speed $v_{\mathrm{top}}$. What condition must hold for the rider to just maintain contact?
 
 **Explanation**
 
 At the top of the loop, inward points downward. Gravity points inward, and the normal force also points inward if the track is pushing on the rider:
 
 $$
-N+mg=m\dfrac{v_{\text{top}}^2}{R}.
+\sum F_r=m a_r=m\dfrac{v_{\mathrm{top}}^2}{r}=N_{\mathrm{top}}+mg.
 $$
 
 The track can push, but it cannot pull. So contact requires
 
 $$
-N\ge 0.
+N_{\mathrm{top}}\ge 0.
 $$
 
 At the exact minimum speed for contact, the normal force is just zero:
 
 $$
-mg=m\dfrac{v_{\text{top}}^2}{R}.
+mg=m\dfrac{v_{\mathrm{top}}^2}{r}.
 $$
 
 Therefore
 
 $$
-v_{\text{top}}=\sqrt{gR}.
+v_{\mathrm{top}}=\sqrt{gr}.
 $$
 
 At the threshold, this top-of-the-loop condition determines the smallest speed that still permits contact.
@@ -79,17 +79,17 @@ content: |-
 options:
 - id: p10q1-a
   content: |-
-    $N=0$
+    $N_{\mathrm{top}}=0$
   correct: true
 - id: p10q1-b
   content: |-
-    $N=mg$
+    $N_{\mathrm{top}}=mg$
 - id: p10q1-c
   content: |-
-    $N=m\dfrac{v^2}{R}+mg$
+    $N_{\mathrm{top}}=m\dfrac{v^2}{r}+mg$
 - id: p10q1-d
   content: |-
-    $N$ must point outward from the center.
+    $N_{\mathrm{top}}$ must point outward from the center.
 ```
 
 ---
@@ -97,41 +97,41 @@ options:
 <a id="use-energy-to-connect-the-entry-speed-and-the-top-speed"></a>
 ## Use Energy to Connect the Entry Speed and the Top Speed
 
-**Example:** A rider enters the loop at the bottom with speed $v_0$. The top of the loop is $2R$ higher than the bottom. If friction is neglected, what entry speed gives the minimum top speed for contact?
+**Example:** A rider enters the loop at the bottom with speed $v_0$. The top of the loop is $2r$ higher than the bottom. If friction is neglected, what entry speed gives the minimum top speed for contact?
 
 **Explanation**
 
 Use conservation of mechanical energy between the bottom and the top:
 
 $$
-\dfrac{1}{2}mv_0^2=\dfrac{1}{2}mv_{\text{top}}^2+mg(2R).
+\dfrac{1}{2}mv_0^2=\dfrac{1}{2}mv_{\mathrm{top}}^2+mg(2r).
 $$
 
 At the minimum speed, the top speed satisfies
 
 $$
-v_{\text{top}}^2=gR.
+v_{\mathrm{top}}^2=gr.
 $$
 
 Substitute this into the energy equation:
 
 $$
-\dfrac{1}{2}mv_0^2=\dfrac{1}{2}m(gR)+2mgR.
+\dfrac{1}{2}mv_0^2=\dfrac{1}{2}m(gr)+2mgr.
 $$
 
 So
 
 $$
-v_0^2=5gR,
+v_0^2=5gr,
 $$
 
 and
 
 $$
-v_0=\sqrt{5gR}.
+v_0=\sqrt{5gr}.
 $$
 
-Thus the loop has a minimum entry speed, $\sqrt{5gR}$, which grows with the square root of its radius.
+Thus the loop has a minimum entry speed, $\sqrt{5gr}$, which grows with the square root of its radius.
 
 The normal force does not appear in the energy equation because it points perpendicular to the rider's motion along the track. With rolling friction neglected, gravity trades kinetic energy and potential energy while their sum stays approximately constant.
 
@@ -223,16 +223,16 @@ options:
 ---
 
 <a id="check-whether-the-centripetal-force-is-constant"></a>
-## Check Whether the Centripetal Force Is Constant
+## Check Whether the Radial Net Force Is Constant
 
-**Example:** In the same vertical loop, is the required centripetal force constant in magnitude?
+**Example:** In the same vertical loop, is the required radial net force constant in magnitude?
 
 **Explanation**
 
-For circular motion of radius $R$, the required inward net force has magnitude
+For circular motion of radius $r$, the required inward net force has magnitude
 
 $$
-\sum F_r=m\dfrac{v^2}{R}.
+\sum F_r=m a_r=m\dfrac{v^2}{r}.
 $$
 
 This is not a new extra force. It is the inward part of the net force required to keep the rider moving on the circular path.
@@ -248,11 +248,11 @@ type: radio
 id: p10-q4-centripetal-force
 shuffle: true
 content: |-
-  A rider moves through a vertical loop of fixed radius $R$ while speed changes with height. What happens to the required centripetal force magnitude $m\dfrac{v^2}{R}$?
+  A rider moves through a vertical loop of fixed radius $r$ while speed changes with height. What happens to the required radial net-force magnitude $m\dfrac{v^2}{r}$?
 options:
 - id: p10q4-a
   content: |-
-    It is constant because $R$ is constant.
+    It is constant because $r$ is constant.
 - id: p10q4-b
   content: |-
     It is constant because the path is circular.
@@ -291,9 +291,9 @@ Check each statement against the matching test:
 | Statement | Test | Result |
 | --- | --- | --- |
 | A | Top contact plus energy requires enough entry speed. | True |
-| B | At the threshold, $N=0$ at the top. | True |
+| B | At the threshold, $N_{\mathrm{top}}=0$. | True |
 | C | Uniform circular motion requires constant speed. | False |
-| D | $\sum F_r=m\dfrac{v^2}{R}$ changes when $v$ changes. | False |
+| D | $\sum F_r=m a_r=m\dfrac{v^2}{r}$ changes when $v$ changes. | False |
 | E | With rolling friction neglected, mechanical energy is approximately conserved. | True |
 
 So the true statements are A, B, and E.
@@ -330,10 +330,10 @@ options:
 For a vertical loop-the-loop, use the top of the loop as the contact test:
 
 $$
-N+mg=m\dfrac{v_{\text{top}}^2}{R}.
+\sum F_r=m a_r=m\dfrac{v_{\mathrm{top}}^2}{r}=N_{\mathrm{top}}+mg.
 $$
 
-At the minimum speed, $N=0$ at the top. Energy conservation connects the entry speed to that top speed when friction is neglected. Do not confuse a circular path with uniform circular motion: in a vertical loop, speed changes with height, so the required inward force $m\dfrac{v^2}{R}$ also changes.
+At the minimum speed, $N_{\mathrm{top}}=0$. Energy conservation connects the entry speed to that top speed when friction is neglected. Do not confuse a circular path with uniform circular motion: in a vertical loop, speed changes with height, so the required inward force $m\dfrac{v^2}{r}$ also changes.
 
 <!-- lesson-nav:start -->
 ---

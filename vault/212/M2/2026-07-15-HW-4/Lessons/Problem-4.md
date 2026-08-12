@@ -28,7 +28,7 @@ topic-code: MTH212.M2.40
 When an object starts from rest at height $h$, rolls without slipping, and reaches the bottom without losing mechanical energy, look first at the two endpoints. The decrease in gravitational potential energy becomes the object's **total** kinetic energy:
 
 $$
-K_{\text{total,bottom}}=mgh.
+K_{\mathrm{total,bottom}}=mgh.
 $$
 
 Here $m$ is the mass of the particular object named in the question. The ramp angle, radius, and division between translational and rotational kinetic energy can affect other quantities, but they do not change this total.
@@ -100,8 +100,8 @@ For a uniform solid cylinder, $I=\frac12mr^2$, and rolling without slipping give
 
 $$
 \begin{aligned}
-K_{\text{total}}
-&=K_{\text{trans}}+K_{\text{rot}} \\
+K_{\mathrm{total}}
+&=K_{\mathrm{trans}}+K_{\mathrm{rot}} \\
 &=\frac12mv^2+\frac12I\omega^2 \\
 &=\frac12mv^2+\frac12\left(\frac12mr^2\right)\left(\frac{v}{r}\right)^2 \\
 &=\frac34mv^2.
@@ -140,16 +140,16 @@ options:
 
 **Explanation**
 
-Use the mass of the requested cylinder in $K_{\text{total}}=mgh$. For the heavier cylinder,
+Use the mass of the requested cylinder in $K_{\mathrm{total}}=mgh$. For the heavier cylinder,
 
 $$
-m_{\text{object}}=4M.
+m_{\mathrm{object}}=4M.
 $$
 
 Thus,
 
 $$
-K_{\text{total,bottom}}=(4M)gh=4Mgh.
+K_{\mathrm{total,bottom}}=(4M)gh=4Mgh.
 $$
 
 The symbol $M$ is a reference mass, not the mass of this cylinder. Missing the factor of $4$ would give the energy of the other cylinder.
@@ -187,7 +187,7 @@ options:
 Only $m$, $g$, and the **vertical** height change $h$ appear in
 
 $$
-K_{\text{total,bottom}}=mgh.
+K_{\mathrm{total,bottom}}=mgh.
 $$
 
 The angle $\theta$ changes the ramp length and travel time. The radius $r$ appears while splitting the energy into translation and rotation, but it cancels for rolling without slipping. Neither belongs in the final total-energy expression. A useful unit check confirms the form:

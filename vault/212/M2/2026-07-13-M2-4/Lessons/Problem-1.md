@@ -63,7 +63,7 @@ The recognition cue is a balanced object with forces on opposite sides of a pivo
 A uniform plank's weight acts at its center of mass. Here the center of mass and the fulcrum coincide, so the perpendicular lever arm is zero:
 
 $$
-\tau_{\text{plank}}=r_\perp Mg=(0)Mg=0.
+\tau_{\mathrm{plank}}=r_\perp Mg=(0)Mg=0.
 $$
 
 The plank's mass may be given, but it does not enter the torque-balance equation in this geometry. The support force also acts at the pivot and has zero torque about it.
@@ -110,7 +110,7 @@ $$
 \tau
 &=rF\sin90^\circ\\
 &=(0.75)(4.0)(1)\\
-&=3.0\ \mathrm{N\,m}.
+&=3.0\ \mathrm{N}\,\mathrm{m}.
 \end{aligned}
 $$
 
@@ -124,22 +124,22 @@ content: |-
 options:
 - id: a
   content: |-
-    $2.4\ \mathrm{N\,m}$
+    $2.4\ \mathrm{N}\,\mathrm{m}$
   correct: true
   feedback: |-
-    The force is perpendicular to the lever arm, so $\tau=rF=(0.40)(6.0)=2.4\ \mathrm{N\,m}$.
+    The force is perpendicular to the lever arm, so $\tau=rF=(0.40)(6.0)=2.4\ \mathrm{N}\,\mathrm{m}$.
 - id: b
   content: |-
-    $15\ \mathrm{N\,m}$
+    $15\ \mathrm{N}\,\mathrm{m}$
 - id: c
   content: |-
-    $6.4\ \mathrm{N\,m}$
+    $6.4\ \mathrm{N}\,\mathrm{m}$
 - id: d
   content: |-
-    $5.6\ \mathrm{N\,m}$
+    $5.6\ \mathrm{N}\,\mathrm{m}$
 - id: e
   content: |-
-    $0\ \mathrm{N\,m}$
+    $0\ \mathrm{N}\,\mathrm{m}$
 ```
 
 ---
@@ -276,13 +276,13 @@ Evaluate the grouped pieces before rounding:
 
 | Piece | Calculation | Value |
 |---|---|---:|
-| known mass-distance product | $(1.6)(1.7)$ | $2.72\ \mathrm{kg\,m}$ |
+| known mass-distance product | $(1.6)(1.7)$ | $2.72\ \mathrm{kg}\,\mathrm{m}$ |
 | unknown mass | $2.72/1.1$ | $2.4727\ldots\ \mathrm{kg}$ |
 
 The units also check:
 
 $$
-\frac{\mathrm{kg\,m}}{\mathrm{m}}=\mathrm{kg}.
+\frac{\mathrm{kg}\,\mathrm{m}}{\mathrm{m}}=\mathrm{kg}.
 $$
 
 Because Box 2 is closer to the fulcrum than Box 1, it should be heavier than $1.6\ \mathrm{kg}$; the calculation passes that check. The measured values have two significant figures, so report $2.5\ \mathrm{kg}$.

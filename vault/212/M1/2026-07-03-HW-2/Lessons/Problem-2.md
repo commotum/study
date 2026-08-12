@@ -98,21 +98,21 @@ type: radio
 id: p2-q2
 shuffle: true
 content: |-
-  A string of length $L$ makes an angle $\alpha$ with the horizontal. The bob moves in a horizontal circle. Which expression gives the radius of the circular path?
+  A string of length $L$ makes an angle $\theta$ with the horizontal. The bob moves in a horizontal circle. Which expression gives the radius of the circular path?
 options:
 - id: a
   content: |-
     $L$
 - id: b
   content: |-
-    $L\sin\alpha$
+    $L\sin\theta$
 - id: c
   content: |-
-    $L\cos\alpha$
+    $L\cos\theta$
   correct: true
 - id: d
   content: |-
-    $L\tan\alpha$
+    $L\tan\theta$
 ```
 
 ---
@@ -120,36 +120,36 @@ options:
 <a id="do-not-swap-the-reference-line"></a>
 ## Do Not Swap the Reference Line
 
-**Example:** A string of length $L$ makes an angle $\phi$ with the vertical. The bob moves in a horizontal circle. Which expression gives the radius $r$?
+**Example:** A string of length $L$ makes an angle $\theta_{\mathrm{v}}$ with the vertical. The bob moves in a horizontal circle. Which expression gives the radius $r$?
 
 **Explanation**
 
 The string is still the hypotenuse, and the radius is still the horizontal leg. The difference is the reference angle.
 
-If $\phi$ is measured from the vertical, then the horizontal radius is opposite $\phi$, not adjacent to it. That gives
+If $\theta_{\mathrm{v}}$ is measured from the vertical, then the horizontal radius is opposite $\theta_{\mathrm{v}}$, not adjacent to it. That gives
 
 $$
-\sin\phi=\frac{r}{L}
+\sin\theta_{\mathrm{v}}=\frac{r}{L}
 $$
 
 so
 
 $$
-r=L\sin\phi.
+r=L\sin\theta_{\mathrm{v}}.
 $$
 
 This does not contradict the previous rule. It shows why the wording "with the horizontal" matters.
 
-The vertical-angle and horizontal-angle conventions are complementary. If $\phi$ is measured from the vertical while $\theta$ is measured from the horizontal, then
+The vertical-angle and horizontal-angle conventions are complementary. If $\theta_{\mathrm{v}}$ is measured from the vertical while $\theta_{\mathrm{h}}$ is measured from the horizontal, then
 
 $$
-\phi=90^\circ-\theta
+\theta_{\mathrm{v}}=90^\circ-\theta_{\mathrm{h}}
 $$
 
 and
 
 $$
-L\sin\phi=L\sin(90^\circ-\theta)=L\cos\theta.
+L\sin\theta_{\mathrm{v}}=L\sin(90^\circ-\theta_{\mathrm{h}})=L\cos\theta_{\mathrm{h}}.
 $$
 
 The two radius formulas are equivalent; only the reference line changed.
@@ -159,18 +159,18 @@ type: radio
 id: p2-q3
 shuffle: true
 content: |-
-  A string of length $L$ makes an angle $\beta$ with the vertical. The bob moves in a horizontal circle. Which expression gives the radius of the circular path?
+  A string of length $L$ makes an angle $\theta$ with the vertical. The bob moves in a horizontal circle. Which expression gives the radius of the circular path?
 options:
 - id: a
   content: |-
-    $L\cos\beta$
+    $L\cos\theta$
 - id: b
   content: |-
-    $L\sin\beta$
+    $L\sin\theta$
   correct: true
 - id: c
   content: |-
-    $L\tan\beta$
+    $L\tan\theta$
 - id: d
   content: |-
     $L$

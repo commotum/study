@@ -44,9 +44,9 @@
   - crest meets crest
   - trough meets trough
 - Their displacements add:
-  $$ y_{\text{total}}=y_1+y_2 $$
+  $$ y_{\mathrm{net}}=y_1+y_2 $$
 - For two waves with equal amplitude $A$:
-  $$ A_{\text{result}}=2A $$
+  $$ A_{\mathrm{net}}=2A $$
 - A location of constructive interference is not permanently a crest or trough.
 - Instead, it oscillates with the maximum possible amplitude.
 
@@ -58,7 +58,7 @@
   - compression meets rarefaction
   - crest meets trough
 - For equal amplitudes:
-  $$ A_{\text{result}}=A-A=0 $$
+  $$ A_{\mathrm{net}}=A-A=0 $$
 - At most other locations, the waves undergo partial interference rather than complete constructive or destructive interference.
 
 ---
@@ -66,7 +66,7 @@
 ### 6. Effect of Frequency on the Pattern
 
 - Wave speed, frequency, and wavelength are related by:
-  $$ v=\lambda f $$
+  $$ v_{\mathrm{wave}}=f\lambda $$
 - For a fixed wave speed, increasing the frequency decreases the wavelength.
 - More wavefronts then fit within the same region, producing more alternating lines of constructive and destructive interference.
 
@@ -262,14 +262,14 @@
 ### 21. Given Information
 
 - Two radio antennas are separated by:
-  $$ d=600\text{ m} $$
+  $$ d=600\ \mathrm{m} $$
 - The nearer antenna is:
-  $$ r_1=800\text{ m} $$
+  $$ r_1=800\ \mathrm{m} $$
   from observation point $P$.
 - The antennas emit at:
-  $$ f=3.0\times10^6\text{ Hz} $$
+  $$ f=3.0\times10^6\ \mathrm{Hz} $$
 - Radio waves travel at approximately:
-  $$ c=3.0\times10^8\text{ m/s} $$
+  $$ c=3.0\times10^8\ \mathrm{m}/\mathrm{s} $$
 - The sources are completely out of phase:
   $$ \Delta\phi_0=\pi $$
 
@@ -278,18 +278,18 @@
 ### 22. Radio Wavelength
 
 - Use:
-  $$ c=\lambda f $$
+  $$ c=f\lambda $$
 - Therefore:
   $$ \lambda=\frac{c}{f} $$
 - Substitute:
   $$
   \lambda
   =
-  \frac{3.0\times10^8\text{ m/s}}
-  {3.0\times10^6\text{ Hz}}
+  \frac{3.0\times10^8\ \mathrm{m}/\mathrm{s}}
+  {3.0\times10^6\ \mathrm{Hz}}
   $$
 - Thus:
-  $$ \boxed{\lambda=100\text{ m}} $$
+  $$ \boxed{\lambda=100\ \mathrm{m}} $$
 
 ---
 
@@ -301,10 +301,10 @@
   $$
   r_2
   =
-  \sqrt{(800\text{ m})^2+(600\text{ m})^2}
+  \sqrt{(800\ \mathrm{m})^2+(600\ \mathrm{m})^2}
   $$
 - Therefore:
-  $$ r_2=1000\text{ m} $$
+  $$ r_2=1000\ \mathrm{m} $$
 
 ---
 
@@ -313,9 +313,9 @@
 - The difference between the two paths is:
   $$ \Delta r=r_2-r_1 $$
 - Therefore:
-  $$ \Delta r=1000\text{ m}-800\text{ m} $$
+  $$ \Delta r=1000\ \mathrm{m}-800\ \mathrm{m} $$
 - Thus:
-  $$ \boxed{\Delta r=200\text{ m}=2\lambda} $$
+  $$ \boxed{\Delta r=200\ \mathrm{m}=2\lambda} $$
 
 ---
 
@@ -329,7 +329,7 @@
   =
   2\pi
   \left(
-  \frac{200\text{ m}}{100\text{ m}}
+  \frac{200\ \mathrm{m}}{100\ \mathrm{m}}
   \right)
   +
   \pi
@@ -364,9 +364,9 @@
 - Two flutes lie on opposite sides of the $y$-axis.
 - Point $P$ lies on the $y$-axis.
 - Both flutes emit:
-  $$ f=830\text{ Hz} $$
+  $$ f=830\ \mathrm{Hz} $$
 - Use the speed of sound:
-  $$ v_{\text{sound}}=343\text{ m/s} $$
+  $$ v_{\mathrm{wave}}=343\ \mathrm{m}/\mathrm{s} $$
 - The flutes emit in phase:
   $$ \Delta\phi_0=0 $$
 - Let:
@@ -398,15 +398,15 @@
 - Begin with:
   $$ \Delta\phi=\frac{2\pi\Delta r}{\lambda}+\Delta\phi_0 $$
 - Since:
-  $$ \lambda=\frac{v_{\text{sound}}}{f} $$
+  $$ \lambda=\frac{v_{\mathrm{wave}}}{f} $$
 - Then:
-  $$ \frac{1}{\lambda}=\frac{f}{v_{\text{sound}}} $$
+  $$ \frac{1}{\lambda}=\frac{f}{v_{\mathrm{wave}}} $$
 - Because the sources are in phase:
   $$
   \boxed{
   \Delta\phi
   =
-  \frac{2\pi f}{v_{\text{sound}}}
+  \frac{2\pi f}{v_{\mathrm{wave}}}
   \left(
   \sqrt{x_2^2+y^2}
   -
@@ -420,9 +420,9 @@
 ### 31. Numerical Result
 
 - Substitution of the coordinates shown in the lecture diagram gives:
-  $$ \boxed{\Delta\phi\approx66\text{ rad}} $$
+  $$ \boxed{\Delta\phi\approx66\ \mathrm{rad}} $$
 - Using the rounded value:
-  $$ 66\text{ rad}\bmod 2\pi\approx3.17\text{ rad} $$
+  $$ 66\ \mathrm{rad}\bmod 2\pi\approx3.17\ \mathrm{rad} $$
 - The unrounded phase should be used if the interference must be classified precisely.
 
 ---
@@ -439,8 +439,8 @@
   $$ P=(x,0) $$
 - The speakers emit coherent, in-phase sound waves.
 - The given values are:
-  $$ y=2.20\text{ m} $$
-  $$ \lambda=0.50\text{ m} $$
+  $$ y=2.20\ \mathrm{m} $$
+  $$ \lambda=0.50\ \mathrm{m} $$
 - Goal: find the first maximum-intensity position to the right of the origin.
 
 ---
@@ -505,19 +505,19 @@
 ### 37. Substitute the Given Values
 
 - Using:
-  $$ y=2.20\text{ m} $$
-  $$ \lambda=0.50\text{ m} $$
+  $$ y=2.20\ \mathrm{m} $$
+  $$ \lambda=0.50\ \mathrm{m} $$
 - The position becomes:
   $$
   x_m
   =
-  \frac{(2.20\text{ m})^2}
-  {2m(0.50\text{ m})}
+  \frac{(2.20\ \mathrm{m})^2}
+  {2m(0.50\ \mathrm{m})}
   -
-  \frac{m(0.50\text{ m})}{2}
+  \frac{m(0.50\ \mathrm{m})}{2}
   $$
 - Therefore:
-  $$ \boxed{x_m=\frac{4.84\text{ m}}{m}-(0.25\text{ m})m} $$
+  $$ \boxed{x_m=\frac{4.84\ \mathrm{m}}{m}-(0.25\ \mathrm{m})m} $$
 
 ---
 
@@ -525,12 +525,12 @@
 
 | $m$ | Calculated $x_m$ |
 |---:|---:|
-| $1$ | $4.59\text{ m}$ |
-| $2$ | $1.92\text{ m}$ |
-| $3$ | $0.86\text{ m}$ |
-| $4$ | $0.21\text{ m}$ |
-| $5$ | $-0.28\text{ m}$ |
-| $6$ | $-0.69\text{ m}$ |
+| $1$ | $4.59\ \mathrm{m}$ |
+| $2$ | $1.92\ \mathrm{m}$ |
+| $3$ | $0.86\ \mathrm{m}$ |
+| $4$ | $0.21\ \mathrm{m}$ |
+| $5$ | $-0.28\ \mathrm{m}$ |
+| $6$ | $-0.69\ \mathrm{m}$ |
 
 - The negative results lie outside the assumed positive-$x$ region.
 - Thus, the permitted positive-$x$ interference orders are:
@@ -544,7 +544,7 @@
 - From the table, this occurs at:
   $$ m=4 $$
 - Therefore:
-  $$ \boxed{x\approx0.21\text{ m}} $$
+  $$ \boxed{x\approx0.21\ \mathrm{m}} $$
 
 ---
 
@@ -553,7 +553,7 @@
 - Along the positive $x$-axis:
   $$ \Delta r=\sqrt{x^2+y^2}-x $$
 - Near the origin:
-  $$ \Delta r\rightarrow y=2.20\text{ m}=4.4\lambda $$
+  $$ \Delta r\rightarrow y=2.20\ \mathrm{m}=4.4\lambda $$
 - Far from the speakers:
   $$ \Delta r\rightarrow0 $$
 - Therefore, the positive integer multiples of $\lambda$ that occur are:
@@ -574,7 +574,7 @@
 - Phase difference from two coherent sources:
   $$ \boxed{\Delta\phi=\frac{2\pi\Delta r}{\lambda}+\Delta\phi_0} $$
 - Using:
-  $$ v=\lambda f $$
+  $$ v_{\mathrm{wave}}=f\lambda $$
 - The same equation may be written:
   $$ \boxed{\Delta\phi=\frac{2\pi f}{v}\Delta r+\Delta\phi_0} $$
 - Complete constructive interference:

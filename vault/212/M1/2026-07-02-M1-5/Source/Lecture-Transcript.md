@@ -113,15 +113,15 @@ $$
 When acceleration is constant, the familiar kinematic equations are
 
 $$
-v_f=v_i+a\Delta t,
+v_f=v_0+a\Delta t,
 $$
 
 $$
 x_f
 =
-x_i
+x_0
 +
-v_i\Delta t
+v_0\Delta t
 +
 \frac{1}{2}a(\Delta t)^2,
 $$
@@ -131,9 +131,9 @@ and
 $$
 v_f^2
 =
-v_i^2
+v_0^2
 +
-2a(x_f-x_i).
+2a(x_f-x_0).
 $$
 
 ## Rotational Motion
@@ -181,15 +181,15 @@ For constant angular acceleration,
 $$
 \omega_f
 =
-\omega_i+\alpha\Delta t,
+\omega_0+\alpha\Delta t,
 $$
 
 $$
 \theta_f
 =
-\theta_i
+\theta_0
 +
-\omega_i\Delta t
+\omega_0\Delta t
 +
 \frac{1}{2}\alpha(\Delta t)^2,
 $$
@@ -199,9 +199,9 @@ and
 $$
 \omega_f^2
 =
-\omega_i^2
+\omega_0^2
 +
-2\alpha(\theta_f-\theta_i).
+2\alpha(\theta_f-\theta_0).
 $$
 
 The translational and rotational variables correspond as follows:
@@ -259,7 +259,7 @@ $$
 or equivalently,
 
 $$
-a_r=\omega^2r.
+a_r=r\omega^2.
 $$
 
 The tangential acceleration describes the rate at which the speed changes:
@@ -274,17 +274,17 @@ It is related to angular acceleration by
 
 $$
 \boxed{
-a_t=\alpha r
+a_t=r\alpha
 }.
 $$
 
-Both $a_r$ and $a_t$ have units of acceleration, such as $\mathrm{m/s^2}$. Angular acceleration has units of $\mathrm{rad/s^2}$.
+Both $a_r$ and $a_t$ have units of acceleration, such as $\mathrm{m}/\mathrm{s}^2$. Angular acceleration has units of $\mathrm{rad}/\mathrm{s}^2$.
 
 Because the two components are perpendicular, the magnitude of the total acceleration is
 
 $$
 \boxed{
-a
+|\vec{a}|
 =
 \sqrt{a_r^2+a_t^2}
 }.
@@ -337,7 +337,7 @@ The total acceleration is the vector sum
 $$
 \vec{a}
 =
-\vec{a}_r+\vec{a}_t.
+a_r\hat{r}+a_t\hat{t}.
 $$
 
 The resulting acceleration points partly inward and partly forward along the path.
@@ -357,7 +357,7 @@ At the instant under consideration, the inward radial direction lies along the s
 
 Let:
 
-- $F_T$ be the tension in the string
+- $T_{\mathrm{tens}}$ be the tension in the string
 - $m$ be the ball’s mass
 - $L$ be the string length
 - $\theta$ be the angle shown in the problem
@@ -366,7 +366,7 @@ Let:
 
 The forces on the ball are:
 
-- The tension $F_T$, directed inward along the string
+- The tension $T_{\mathrm{tens}}$, directed inward along the string
 - The gravitational force $mg$, directed vertically downward
 
 The gravitational force can be resolved into radial and tangential components:
@@ -388,13 +388,13 @@ When resolving a force into components, the sides of the component triangle must
 Both the tension and the radial component of gravity point inward. Therefore,
 
 $$
-\sum F_r=ma_r.
+\sum F_r=m a_r.
 $$
 
 Substituting the radial forces gives
 
 $$
-F_T+mg\cos\theta=ma_r.
+T_{\mathrm{tens}}+mg\cos\theta=m a_r.
 $$
 
 Solving for the radial acceleration,
@@ -403,7 +403,7 @@ $$
 \boxed{
 a_r
 =
-\frac{F_T}{m}
+\frac{T_{\mathrm{tens}}}{m}
 +
 g\cos\theta
 }.
@@ -412,14 +412,14 @@ $$
 Using the values supplied in the problem gives
 
 $$
-a_r=11.7\ \mathrm{m/s^2}.
+a_r=11.7\ \mathrm{m}/\mathrm{s}^2.
 $$
 
 To two significant figures,
 
 $$
 \boxed{
-a_r\approx12\ \mathrm{m/s^2}
+a_r\approx12\ \mathrm{m}/\mathrm{s}^2
 }.
 $$
 
@@ -430,13 +430,13 @@ The tension points entirely in the radial direction, so it has no tangential com
 The only tangential force is the tangential component of gravity:
 
 $$
-\sum F_t=ma_t.
+\sum F_t=m a_t.
 $$
 
 Therefore,
 
 $$
-mg\sin\theta=ma_t.
+mg\sin\theta=m a_t.
 $$
 
 The mass cancels, giving
@@ -451,7 +451,7 @@ Using the given angle,
 
 $$
 \boxed{
-a_t=2.4\ \mathrm{m/s^2}
+a_t=2.4\ \mathrm{m}/\mathrm{s}^2
 }.
 $$
 
@@ -462,7 +462,7 @@ The positive tangential direction was chosen to point along gravity’s tangenti
 The radial and tangential accelerations are perpendicular, so the total magnitude is
 
 $$
-a
+|\vec{a}|
 =
 \sqrt{a_r^2+a_t^2}.
 $$
@@ -470,11 +470,11 @@ $$
 Substituting the component expressions,
 
 $$
-a
+|\vec{a}|
 =
 \sqrt{
 \left(
-\frac{F_T}{m}
+\frac{T_{\mathrm{tens}}}{m}
 +
 g\cos\theta
 \right)^2
@@ -489,11 +489,11 @@ Thus,
 
 $$
 \boxed{
-a
+|\vec{a}|
 =
 \sqrt{
 \left(
-\frac{F_T}{m}
+\frac{T_{\mathrm{tens}}}{m}
 +
 g\cos\theta
 \right)^2
@@ -506,14 +506,14 @@ $$
 Using the numerical values gives
 
 $$
-a=11.9\ \mathrm{m/s^2}.
+|\vec{a}|=11.9\ \mathrm{m}/\mathrm{s}^2.
 $$
 
 To two significant figures,
 
 $$
 \boxed{
-a\approx12\ \mathrm{m/s^2}
+|\vec{a}|\approx12\ \mathrm{m}/\mathrm{s}^2
 }.
 $$
 
@@ -544,7 +544,7 @@ Substituting the radial-acceleration expression,
 $$
 \frac{v^2}{L}
 =
-\frac{F_T}{m}
+\frac{T_{\mathrm{tens}}}{m}
 +
 g\cos\theta.
 $$
@@ -556,7 +556,7 @@ v^2
 =
 L
 \left(
-\frac{F_T}{m}
+\frac{T_{\mathrm{tens}}}{m}
 +
 g\cos\theta
 \right).
@@ -568,7 +568,7 @@ $$
 \boxed{
 v^2
 =
-\frac{F_TL}{m}
+\frac{T_{\mathrm{tens}}L}{m}
 +
 gL\cos\theta
 }
@@ -581,7 +581,7 @@ $$
 v
 =
 \sqrt{
-\frac{F_TL}{m}
+\frac{T_{\mathrm{tens}}L}{m}
 +
 gL\cos\theta
 }
@@ -685,7 +685,7 @@ From the circular-motion analysis,
 $$
 v_0^2
 =
-\frac{F_TL}{m}
+\frac{T_{\mathrm{tens}}L}{m}
 +
 gL\cos\theta.
 $$
@@ -698,7 +698,7 @@ $$
 =
 \frac{
 \left(
-\frac{F_TL}{m}
+\frac{T_{\mathrm{tens}}L}{m}
 +
 gL\cos\theta
 \right)
@@ -709,7 +709,7 @@ gL\cos\theta
 }.
 $$
 
-This expression is entirely in terms of the given quantities $F_T$, $L$, $m$, $\theta$, and $g$.
+This expression is entirely in terms of the given quantities $T_{\mathrm{tens}}$, $L$, $m$, $\theta$, and $g$.
 
 Using the numerical values supplied in the problem gives
 
@@ -756,13 +756,13 @@ Do not use an angle merely because it is labeled in the original diagram. Use th
 Write
 
 $$
-\sum F_r=ma_r
+\sum F_r=m a_r
 $$
 
 and
 
 $$
-\sum F_t=ma_t.
+\sum F_t=m a_t.
 $$
 
 The radial equation describes the curvature of the path. The tangential equation describes the change in speed.
@@ -772,7 +772,7 @@ The radial equation describes the curvature of the path. The tangential equation
 Use
 
 $$
-a=\sqrt{a_r^2+a_t^2}
+|\vec{a}|=\sqrt{a_r^2+a_t^2}
 $$
 
 to find the magnitude of the total acceleration.
@@ -827,7 +827,7 @@ and
 
 $$
 \boxed{
-a_t=\frac{dv}{dt}=\alpha r
+a_t=\frac{dv}{dt}=r\alpha
 }.
 $$
 
@@ -835,7 +835,7 @@ The total acceleration magnitude is
 
 $$
 \boxed{
-a=\sqrt{a_r^2+a_t^2}
+|\vec{a}|=\sqrt{a_r^2+a_t^2}
 }.
 $$
 
@@ -855,7 +855,7 @@ $$
 \boxed{
 a_r
 =
-\frac{F_T}{m}
+\frac{T_{\mathrm{tens}}}{m}
 +
 g\cos\theta
 },
@@ -871,11 +871,11 @@ and
 
 $$
 \boxed{
-a
+|\vec{a}|
 =
 \sqrt{
 \left(
-\frac{F_T}{m}
+\frac{T_{\mathrm{tens}}}{m}
 +
 g\cos\theta
 \right)^2
@@ -891,7 +891,7 @@ $$
 \boxed{
 v^2
 =
-\frac{F_TL}{m}
+\frac{T_{\mathrm{tens}}L}{m}
 +
 gL\cos\theta
 }.
@@ -907,7 +907,7 @@ $$
 =
 \frac{
 \left(
-\frac{F_TL}{m}
+\frac{T_{\mathrm{tens}}L}{m}
 +
 gL\cos\theta
 \right)

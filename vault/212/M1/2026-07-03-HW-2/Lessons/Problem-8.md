@@ -55,11 +55,11 @@ $$
 Friction points up the track. In the side view, up the track is upward and outward, so its vertical component is positive but its radial-inward component is negative:
 
 $$
-(f_s)_y=f_s\sin\theta
+f_{s,y}=f_s\sin\theta
 $$
 
 $$
-(f_s)_r=-f_s\cos\theta
+f_{s,r}=-f_s\cos\theta
 $$
 
 The sign checklist is:
@@ -77,17 +77,17 @@ content: |-
 options:
 - id: p8-q1-a
   content: |-
-    $N_y=N\cos\theta$, $N_r=N\sin\theta$, $(f_s)_y=f_s\sin\theta$, $(f_s)_r=-f_s\cos\theta$
+    $N_y=N\cos\theta$, $N_r=N\sin\theta$, $f_{s,y}=f_s\sin\theta$, $f_{s,r}=-f_s\cos\theta$
   correct: true
 - id: p8-q1-b
   content: |-
-    $N_y=N\sin\theta$, $N_r=N\cos\theta$, $(f_s)_y=f_s\cos\theta$, $(f_s)_r=-f_s\sin\theta$
+    $N_y=N\sin\theta$, $N_r=N\cos\theta$, $f_{s,y}=f_s\cos\theta$, $f_{s,r}=-f_s\sin\theta$
 - id: p8-q1-c
   content: |-
-    $N_y=N\cos\theta$, $N_r=-N\sin\theta$, $(f_s)_y=f_s\sin\theta$, $(f_s)_r=f_s\cos\theta$
+    $N_y=N\cos\theta$, $N_r=-N\sin\theta$, $f_{s,y}=f_s\sin\theta$, $f_{s,r}=f_s\cos\theta$
 - id: p8-q1-d
   content: |-
-    $N_y=N$, $N_r=0$, $(f_s)_y=0$, $(f_s)_r=f_s$
+    $N_y=N$, $N_r=0$, $f_{s,y}=0$, $f_{s,r}=f_s$
 ```
 
 ---
@@ -125,7 +125,7 @@ N\cos\theta+f_s\sin\theta=mg
 \tag{2}
 $$
 
-The main sign to check is the friction term in the radial equation. Because friction points outward when it points up the track, it subtracts from the inward centripetal force.
+The main sign to check is the friction term in the radial equation. Because friction points outward when it points up the track, it subtracts from the inward radial net force.
 
 ```quiz
 type: radio
@@ -260,28 +260,28 @@ $$
 This expression has two useful checks:
 
 - The $mg$ term must include $\sin\theta$, because only part of gravity's effect along the tilted geometry contributes to friction.
-- The centripetal term is subtracted, because uphill friction points outward and therefore opposes the inward radial acceleration.
+- The radial-force term is subtracted, because uphill friction points outward and therefore opposes the inward radial acceleration.
 
 ```quiz
 type: radio
 id: p8-q4-variant
 shuffle: true
 content: |-
-  A cart of mass $M$ moves at speed $u$ around a circular banked track of radius $R$. The bank angle is $\phi$, and friction points up the track. Which expression gives the static friction magnitude?
+  A cart of mass $m$ moves at speed $v$ around a circular banked track of radius $r$. The bank angle is $\theta$, and friction points up the track. Which expression gives the static friction magnitude?
 options:
 - id: p8-q4-a
   content: |-
-    $Mg\sin\phi-\dfrac{Mu^2}{R}\cos\phi$
+    $mg\sin\theta-\dfrac{mv^2}{r}\cos\theta$
   correct: true
 - id: p8-q4-b
   content: |-
-    $Mg\sin\phi+\dfrac{Mu^2}{R}\cos\phi$
+    $mg\sin\theta+\dfrac{mv^2}{r}\cos\theta$
 - id: p8-q4-c
   content: |-
-    $Mg\cos\phi-\dfrac{Mu^2}{R}\sin\phi$
+    $mg\cos\theta-\dfrac{mv^2}{r}\sin\theta$
 - id: p8-q4-d
   content: |-
-    $Mg-\dfrac{Mu^2}{R}\cos\phi$
+    $mg-\dfrac{mv^2}{r}\cos\theta$
 ```
 
 ```quiz
@@ -315,7 +315,7 @@ options:
 For a banked curve with friction pointing up the track:
 
 1. Choose vertical and radial-inward axes.
-2. Use $N_y=N\cos\theta$, $N_r=N\sin\theta$, $(f_s)_y=f_s\sin\theta$, and $(f_s)_r=-f_s\cos\theta$.
+2. Use $N_y=N\cos\theta$, $N_r=N\sin\theta$, $f_{s,y}=f_s\sin\theta$, and $f_{s,r}=-f_s\cos\theta$.
 3. Write the two force equations:
 
 $$
@@ -332,7 +332,7 @@ $$
 f_s=mg\sin\theta-\dfrac{mv^2}{r}\cos\theta
 $$
 
-The main trap is the sign of the radial friction component: uphill friction points outward on the bank, so it subtracts from the inward centripetal-force equation.
+The main trap is the sign of the radial friction component: uphill friction points outward on the bank, so it subtracts in the inward radial-force equation.
 
 <!-- lesson-nav:start -->
 ---

@@ -45,7 +45,7 @@ Here $L$ denotes the magnitude, so the result is the nonnegative angular speed. 
 <a id="connect-angular-momentum-and-angular-speed"></a>
 ## Connect Angular Momentum and Angular Speed
 
-**Example:** A rigid system has angular momentum magnitude $L=12\,\mathrm{kg\,m^2/s}$ and moment of inertia $I=3\,\mathrm{kg\,m^2}$ about its rotation axis. Find its angular speed.
+**Example:** A rigid system has angular momentum magnitude $L=12\,\mathrm{kg}\,\mathrm{m}^2/\mathrm{s}$ and moment of inertia $I=3\,\mathrm{kg}\,\mathrm{m}^2$ about its rotation axis. Find its angular speed.
 
 **Explanation**
 
@@ -53,8 +53,8 @@ Use $L=I\omega$ for the same axis, then divide by $I$:
 
 $$
 \omega=\frac{L}{I}
-=\frac{12\,\mathrm{kg\,m^2/s}}{3\,\mathrm{kg\,m^2}}
-=4\,\mathrm{rad/s}.
+=\frac{12\,\mathrm{kg}\,\mathrm{m}^2/\mathrm{s}}{3\,\mathrm{kg}\,\mathrm{m}^2}
+=4\,\mathrm{rad}/\mathrm{s}.
 $$
 
 Multiplying back checks the result:
@@ -67,21 +67,21 @@ $$
 type: radio
 id: p13-connect-q1
 content: |-
-  A rotating system has angular momentum magnitude $18\,\mathrm{kg\,m^2/s}$ and moment of inertia $6\,\mathrm{kg\,m^2}$ about the same axis. What is its angular speed?
+  A rotating system has angular momentum magnitude $18\,\mathrm{kg}\,\mathrm{m}^2/\mathrm{s}$ and moment of inertia $6\,\mathrm{kg}\,\mathrm{m}^2$ about the same axis. What is its angular speed?
 options:
 - id: a
   content: |-
-    $3\,\mathrm{rad/s}$
+    $3\,\mathrm{rad}/\mathrm{s}$
   correct: true
 - id: b
   content: |-
-    $108\,\mathrm{rad/s}$
+    $108\,\mathrm{rad}/\mathrm{s}$
 - id: c
   content: |-
-    $\frac{1}{3}\,\mathrm{rad/s}$
+    $\frac{1}{3}\,\mathrm{rad}/\mathrm{s}$
 - id: d
   content: |-
-    $12\,\mathrm{rad/s}$
+    $12\,\mathrm{rad}/\mathrm{s}$
 ```
 
 ---
@@ -154,11 +154,11 @@ doubling $I$ while holding $L$ fixed cuts $\omega$ in half. This inverse depende
 The units also reduce correctly:
 
 $$
-\frac{\mathrm{kg\,m^2/s}}{\mathrm{kg\,m^2}}
+\frac{\mathrm{kg}\,\mathrm{m}^2/\mathrm{s}}{\mathrm{kg}\,\mathrm{m}^2}
 =\frac{1}{\mathrm{s}},
 $$
 
-which is written as $\mathrm{rad/s}$ for angular speed.
+which is written as $\mathrm{rad}/\mathrm{s}$ for angular speed.
 
 ```quiz
 type: radio

@@ -18,7 +18,7 @@ topic-code: MTH212.M1.13
 ## Prerequisites
 
 - Identify forces on a car on a level road: weight $mg$, normal force $N$, and static friction $f_s$.
-- Use the radial force balance for the required net inward force: $\sum F_r=mv^2/r$.
+- Use the radial force balance for the required net inward force: $\sum F_r=m a_r=m\frac{v^2}{r}$.
 - Use maximum static friction as $f_{s,\max}=\mu_s N$.
 - Recognize that on a level road with no vertical acceleration, $N=mg$.
 
@@ -36,13 +36,13 @@ The normal force points upward on a level road, so it cannot turn the car. The h
 At that limit,
 
 $$
-f_{s,\max}=\frac{mv^2}{r}
+f_{s,\max}=m a_r=m\frac{v^2}{r}
 $$
 
-Because the car has no vertical acceleration, $N=mg$ and $f_{s,\max}=\mu_smg$. Equating the available friction to the required inward force gives
+Because the car has no vertical acceleration, $N=mg$ and $f_{s,\max}=\mu_s mg$. Denote the required coefficient for this flat-curve case by $\mu_{s,\mathrm{flat}}$. Equating the available friction to the required inward force gives
 
 $$
-\mu_s=\frac{v^2}{rg}.
+\mu_{s,\mathrm{flat}}=\frac{v^2}{rg}.
 $$
 
 ---
@@ -56,14 +56,14 @@ $$
 
 The car has weight $mg$ downward and normal force $N$ upward. Those vertical forces balance because the road is level and the car is not accelerating vertically.
 
-The only horizontal force available is static friction. Static friction points toward the center of the circle, so it supplies the centripetal force.
+The only horizontal force available is static friction. Static friction points toward the center of the circle, so it supplies the inward net force.
 
 ```quiz
 type: radio
 id: p3-q1
 shuffle: true
 content: |-
-  A car travels around a level circular curve without sliding. Which force supplies the inward, centripetal force?
+  A car travels around a level circular curve without sliding. Which force supplies the required inward net force?
 options:
 - id: a
   content: |-
@@ -89,7 +89,7 @@ options:
 
 **Explanation**
 
-"Just about to slide" means static friction is at its maximum. Below that boundary, the actual friction is only the value needed, $f_s=mv^2/r$, and need not equal $\mu_sN$. At the boundary,
+"Just about to slide" means static friction is at its maximum. Below that boundary, the actual friction is only the value needed, $f_s=m a_r=m\frac{v^2}{r}$, and need not equal $\mu_s N$. At the boundary,
 
 $$
 f_{s,\max}=\mu_s N.
@@ -106,8 +106,8 @@ The tires are still rolling without sideways slipping at this instant, so the fo
 $$
 \begin{aligned}
 \text{maximum static friction}&=\text{required inward force} \\
-\mu_s N&=\frac{mv^2}{r} \\
-\mu_s mg&=\frac{mv^2}{r}.
+\mu_{s,\mathrm{flat}}N&=m a_r=m\frac{v^2}{r} \\
+\mu_{s,\mathrm{flat}}mg&=m a_r=m\frac{v^2}{r}.
 \end{aligned}
 $$
 
@@ -120,17 +120,17 @@ content: |-
 options:
 - id: a
   content: |-
-    $\mu_s mg=\dfrac{mv^2}{r}$
+    $\mu_{s,\mathrm{flat}}mg=m a_r=m\frac{v^2}{r}$
   correct: true
 - id: b
   content: |-
     $mg=\dfrac{mv^2}{r}$
 - id: c
   content: |-
-    $\mu_s mg=\dfrac{mv}{r}$
+    $\mu_{s,\mathrm{flat}}mg=\dfrac{mv}{r}$
 - id: d
   content: |-
-    $\mu_s N=mg$
+    $\mu_{s,\mathrm{flat}}N=mg$
 - id: e
   content: |-
     $N=\dfrac{mv^2}{r}$
@@ -144,10 +144,10 @@ options:
 **Example:** Solve
 
 $$
-\mu_s mg=\frac{mv^2}{r}
+\mu_{s,\mathrm{flat}}mg=m a_r=m\frac{v^2}{r}
 $$
 
-for $\mu_s$.
+for $\mu_{s,\mathrm{flat}}$.
 
 **Explanation**
 
@@ -155,9 +155,9 @@ Divide both sides by $mg$:
 
 $$
 \begin{aligned}
-\mu_s mg&=\frac{mv^2}{r} \\
-\frac{\mu_s mg}{mg}&=\frac{mv^2/r}{mg} \\
-\mu_s&=\frac{v^2}{rg}.
+\mu_{s,\mathrm{flat}}mg&=m a_r=m\frac{v^2}{r} \\
+\frac{\mu_{s,\mathrm{flat}}mg}{mg}&=\frac{mv^2/r}{mg} \\
+\mu_{s,\mathrm{flat}}&=\frac{v^2}{rg}.
 \end{aligned}
 $$
 
@@ -168,7 +168,7 @@ type: radio
 id: p3-q3
 shuffle: true
 content: |-
-  A $1500\ \mathrm{kg}$ car goes around a level curve of radius $30\ \mathrm{m}$ at $12\ \mathrm{m}/\mathrm{s}$ at the limiting speed before sliding. Which expression gives $\mu_s$?
+  A $1500\ \mathrm{kg}$ car goes around a level curve of radius $30\ \mathrm{m}$ at $12\ \mathrm{m}/\mathrm{s}$ at the limiting speed before sliding. Which expression gives $\mu_{s,\mathrm{flat}}$?
 options:
 - id: a
   content: |-
@@ -200,14 +200,14 @@ options:
 Use
 
 $$
-\mu_s=\frac{v^2}{rg}.
+\mu_{s,\mathrm{flat}}=\frac{v^2}{rg}.
 $$
 
 Then substitute $v=16\ \mathrm{m}/\mathrm{s}$, $r=49\ \mathrm{m}$, and $g=9.8\ \mathrm{m}/\mathrm{s}^2$:
 
 $$
 \begin{aligned}
-\mu_s&=\frac{16^2}{(49)(9.8)} \\
+\mu_{s,\mathrm{flat}}&=\frac{16^2}{(49)(9.8)} \\
 &=\frac{256}{480.2} \\
 &\approx 0.53.
 \end{aligned}
@@ -216,7 +216,7 @@ $$
 The $1800\ \mathrm{kg}$ mass is not used in the final calculation because it cancels out of the force equation. The coefficient has no units, so the answer is
 
 $$
-\mu_s\approx 0.53.
+\mu_{s,\mathrm{flat}}\approx 0.53.
 $$
 
 ```quiz
@@ -258,10 +258,10 @@ Neither car needs a larger coefficient just because of mass. A heavier car needs
 The cancellation in
 
 $$
-\mu_s mg=\frac{mv^2}{r}
+\mu_{s,\mathrm{flat}}mg=m a_r=m\frac{v^2}{r}
 $$
 
-is the algebraic reason mass does not affect $\mu_s$ here. The units also cancel:
+is the algebraic reason mass does not affect $\mu_{s,\mathrm{flat}}$ here. The units also cancel:
 
 $$
 \frac{v^2}{rg}
@@ -269,7 +269,7 @@ $$
 =1.
 $$
 
-So a coefficient of static friction should be a plain number, not a number with $\mathrm{N}$, $\mathrm{kg}$, or $\mathrm{m}/\mathrm{s}$ attached. The symbolic result also supplies a behavior check: $\mu_s=v^2/(rg)$ must rise with $v^2$, fall when the curve radius grows, and remain independent of mass.
+So a coefficient of static friction should be a plain number, not a number with $\mathrm{N}$, $\mathrm{kg}$, or $\mathrm{m}/\mathrm{s}$ attached. The symbolic result also supplies a behavior check: $\mu_{s,\mathrm{flat}}=v^2/(rg)$ must rise with $v^2$, fall when the curve radius grows, and remain independent of mass.
 
 ```quiz
 type: radio
@@ -280,14 +280,14 @@ content: |-
 options:
 - id: a
   content: |-
-    They require the same $\mu_s$ because mass cancels from $\mu_s mg=\dfrac{mv^2}{r}$.
+    They require the same $\mu_{s,\mathrm{flat}}$ because mass cancels from $\mu_{s,\mathrm{flat}}mg=m a_r=m\frac{v^2}{r}$.
   correct: true
 - id: b
   content: |-
-    The $2000\ \mathrm{kg}$ car requires twice the $\mu_s$ because it has twice the mass.
+    The $2000\ \mathrm{kg}$ car requires twice the $\mu_{s,\mathrm{flat}}$ because it has twice the mass.
 - id: c
   content: |-
-    The $1000\ \mathrm{kg}$ car requires twice the $\mu_s$ because it is lighter.
+    The $1000\ \mathrm{kg}$ car requires twice the $\mu_{s,\mathrm{flat}}$ because it is lighter.
 - id: d
   content: |-
     The coefficient cannot be found unless the mass is known.
@@ -304,13 +304,13 @@ options:
 At the maximum speed before a car slides on a level curve, static friction has reached its limit and supplies the inward net force:
 
 $$
-\mu_s mg=\frac{mv^2}{r}.
+\mu_{s,\mathrm{flat}}mg=m a_r=m\frac{v^2}{r}.
 $$
 
 Cancel $m$ and solve:
 
 $$
-\mu_s=\frac{v^2}{rg}.
+\mu_{s,\mathrm{flat}}=\frac{v^2}{rg}.
 $$
 
 The normal force cannot turn the car because it is vertical. The required coefficient is dimensionless and independent of the car's mass; using $v$ instead of $v^2$ breaks both the circular-motion equation and the unit check.

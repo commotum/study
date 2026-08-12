@@ -16,7 +16,7 @@ topic-code: MTH212.M3.33
 ## Prerequisites
 
 - Compute a one-dimensional center of mass with $x_{\mathrm{cm}}=\sum m_ix_i/\sum m_i$.
-- Use Newton's gravitational force and the centripetal-acceleration form $a=\omega^2r$.
+- Use Newton's gravitational force and the inward radial-acceleration form $a_r=\omega^2r$.
 - Convert between angular speed and period with $T=2\pi/\omega$.
 - Use $U=-Gm_1m_2/r$ and $E=K+U$.
 - Substitute and simplify symbolic mass ratios.
@@ -134,12 +134,12 @@ options:
 
 **Explanation**
 
-Let $r_A$ and $r_B$ be their individual orbital radii. Both masses have the same angular speed $\omega$. Newton's gravitational force supplies the centripetal acceleration of each mass:
+Let $r_A$ and $r_B$ be their individual orbital radii. Both masses have the same angular speed $\omega$. Taking inward as positive, Newton's gravitational force supplies the radial acceleration of each mass:
 
 $$
-\omega^2r_A=\frac{GB}{s^2},
+a_{r,A}=\omega^2r_A=\frac{GB}{s^2},
 \qquad
-\omega^2r_B=\frac{GA}{s^2}.
+a_{r,B}=\omega^2r_B=\frac{GA}{s^2}.
 $$
 
 Add the equations and use $r_A+r_B=s$:
@@ -188,7 +188,7 @@ options:
   content: |-
     $2\pi\sqrt{\dfrac{d^3}{Gm}}$
   feedback: |-
-    This treats the smaller star as orbiting a fixed central mass $m$. In a two-body system neither star is fixed; adding their centripetal equations makes the controlling mass $2m+m=3m$.
+    This treats the smaller star as orbiting a fixed central mass $m$. In a two-body system neither star is fixed; adding their radial-acceleration equations makes the controlling mass $2m+m=3m$.
 - id: p5-orbital-period-d
   content: |-
     $2\pi\sqrt{\dfrac{(d/3)^3}{3Gm}}$

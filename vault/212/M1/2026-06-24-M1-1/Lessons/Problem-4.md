@@ -36,14 +36,14 @@ The cue is the phrase "comes to a stop" together with "constant angular accelera
 <a id="read-the-stopping-cue"></a>
 ## Read The Stopping Cue
 
-**Example:** A wheel starts at $10\ \mathrm{rad/s}$ and comes to a stop in $8\ \mathrm{s}$ with constant angular acceleration. What average angular velocity should be used during the stop?
+**Example:** A wheel starts at $10\ \mathrm{rad}/\mathrm{s}$ and comes to a stop in $8\ \mathrm{s}$ with constant angular acceleration. What average angular velocity should be used during the stop?
 
 **Explanation**
 
 The wheel starts with
 
 $$
-\omega_0=10\ \mathrm{rad/s}
+\omega_0=10\ \mathrm{rad}/\mathrm{s}
 $$
 
 and comes to a stop, so
@@ -57,31 +57,31 @@ With constant angular acceleration, angular velocity changes linearly. The avera
 $$
 \omega_{\mathrm{avg}}=\frac{\omega_0+\omega_f}{2}
 =\frac{10+0}{2}
-=5\ \mathrm{rad/s}.
+=5\ \mathrm{rad}/\mathrm{s}.
 $$
 
-This is the same as using the area of the triangle under the $\omega$-versus-$t$ graph: the height is $10\ \mathrm{rad/s}$, the base is $8\ \mathrm{s}$, and the factor $\frac{1}{2}$ comes from the steady drop to zero.
+This is the same as using the area of the triangle under the $\omega$-versus-$t$ graph: the height is $10\ \mathrm{rad}/\mathrm{s}$, the base is $8\ \mathrm{s}$, and the factor $\frac{1}{2}$ comes from the steady drop to zero.
 
 ```quiz
 type: radio
 id: p4-q1
 shuffle: true
 content: |-
-  A disk starts at $18\ \mathrm{rad/s}$ and comes to a stop with constant angular acceleration. What average angular velocity should be used while it stops?
+  A disk starts at $18\ \mathrm{rad}/\mathrm{s}$ and comes to a stop with constant angular acceleration. What average angular velocity should be used while it stops?
 options:
 - id: p4-q1-a
   content: |-
-    $18\ \mathrm{rad/s}$
+    $18\ \mathrm{rad}/\mathrm{s}$
 - id: p4-q1-b
   content: |-
-    $9\ \mathrm{rad/s}$
+    $9\ \mathrm{rad}/\mathrm{s}$
   correct: true
 - id: p4-q1-c
   content: |-
-    $0\ \mathrm{rad/s}$
+    $0\ \mathrm{rad}/\mathrm{s}$
 - id: p4-q1-d
   content: |-
-    $36\ \mathrm{rad/s}$
+    $36\ \mathrm{rad}/\mathrm{s}$
 ```
 
 ---
@@ -89,14 +89,14 @@ options:
 <a id="find-the-angular-displacement"></a>
 ## Find The Angular Displacement
 
-**Example:** A disk starts at $10\ \mathrm{rad/s}$ and stops in $8\ \mathrm{s}$ with constant angular acceleration. How many radians does it turn through while stopping?
+**Example:** A disk starts at $10\ \mathrm{rad}/\mathrm{s}$ and stops in $8\ \mathrm{s}$ with constant angular acceleration. How many radians does it turn through while stopping?
 
 **Explanation**
 
 From the previous section, the average angular velocity is
 
 $$
-\omega_{\mathrm{avg}}=5\ \mathrm{rad/s}.
+\omega_{\mathrm{avg}}=5\ \mathrm{rad}/\mathrm{s}.
 $$
 
 Angular displacement is average angular velocity times time:
@@ -108,7 +108,7 @@ $$
 Substitute the values:
 
 $$
-\Delta\theta=(5\ \mathrm{rad/s})(8\ \mathrm{s})=40\ \mathrm{rad}.
+\Delta\theta=(5\ \mathrm{rad}/\mathrm{s})(8\ \mathrm{s})=40\ \mathrm{rad}.
 $$
 
 Equivalently, for a constant stop from $\omega_0$ to $0$,
@@ -122,7 +122,7 @@ type: radio
 id: p4-q2
 shuffle: true
 content: |-
-  A disk starts at $14\ \mathrm{rad/s}$ and stops in $12\ \mathrm{s}$ with constant angular acceleration. What is its angular displacement while stopping?
+  A disk starts at $14\ \mathrm{rad}/\mathrm{s}$ and stops in $12\ \mathrm{s}$ with constant angular acceleration. What is its angular displacement while stopping?
 options:
 - id: p4-q2-a
   content: |-
@@ -157,7 +157,7 @@ $$
 Use a conversion factor that cancels radians:
 
 $$
-N
+n_{\mathrm{rev}}
 =40\ \mathrm{rad}\cdot \frac{1\ \mathrm{rev}}{2\pi\ \mathrm{rad}}
 \approx 6.4\ \mathrm{rev}.
 $$
@@ -189,7 +189,7 @@ options:
 <a id="avoid-the-constant-speed-trap"></a>
 ## Avoid The Constant-Speed Trap
 
-**Example:** A disk is spinning at $12\ \mathrm{rad/s}$ and comes to a stop in $26\ \mathrm{s}$ with constant angular acceleration. How many revolutions does it make as it stops?
+**Example:** A disk is spinning at $12\ \mathrm{rad}/\mathrm{s}$ and comes to a stop in $26\ \mathrm{s}$ with constant angular acceleration. How many revolutions does it make as it stops?
 
 **Explanation**
 
@@ -202,7 +202,7 @@ $$
 Use the average angular velocity, not the initial angular velocity:
 
 $$
-\omega_{\mathrm{avg}}=\frac{12+0}{2}=6\ \mathrm{rad/s}.
+\omega_{\mathrm{avg}}=\frac{12+0}{2}=6\ \mathrm{rad}/\mathrm{s}.
 $$
 
 Then find the angular displacement:
@@ -211,7 +211,7 @@ $$
 \begin{aligned}
 \Delta\theta
 &=\omega_{\mathrm{avg}}t \\
-&=(6\ \mathrm{rad/s})(26\ \mathrm{s}) \\
+&=(6\ \mathrm{rad}/\mathrm{s})(26\ \mathrm{s}) \\
 &=156\ \mathrm{rad}.
 \end{aligned}
 $$
@@ -220,7 +220,7 @@ Convert radians to revolutions:
 
 $$
 \begin{aligned}
-N
+n_{\mathrm{rev}}
 &=156\ \mathrm{rad}\cdot \frac{1\ \mathrm{rev}}{2\pi\ \mathrm{rad}} \\
 &\approx 24.8\ \mathrm{rev}.
 \end{aligned}
@@ -232,14 +232,14 @@ $$
 25\ \mathrm{rev}.
 $$
 
-The common trap is multiplying $12$ by $26$ as if the disk kept spinning at $12\ \mathrm{rad/s}$ the whole time. That would double the angular displacement because it ignores the slowdown.
+The common trap is multiplying $12$ by $26$ as if the disk kept spinning at $12\ \mathrm{rad}/\mathrm{s}$ the whole time. That would double the angular displacement because it ignores the slowdown.
 
 ```quiz
 type: radio
 id: p4-q4
 shuffle: true
 content: |-
-  A disk is spinning at $16\ \mathrm{rad/s}$ and comes to a stop in $10\ \mathrm{s}$ with constant angular acceleration. How many revolutions does it make as it stops, to two significant figures?
+  A disk is spinning at $16\ \mathrm{rad}/\mathrm{s}$ and comes to a stop in $10\ \mathrm{s}$ with constant angular acceleration. How many revolutions does it make as it stops, to two significant figures?
 options:
 - id: p4-q4-a
   content: |-
@@ -275,7 +275,7 @@ $$
 and convert radians to revolutions with
 
 $$
-N=\frac{\Delta\theta}{2\pi}.
+n_{\mathrm{rev}}=\frac{\Delta\theta}{2\pi}.
 $$
 
 The reusable checklist is:

@@ -113,7 +113,7 @@ options:
 The radial direction is inward. Static friction is the only radial force, so
 
 $$
-\sum F_r=f_s=\frac{mv^2}{r}.
+\sum F_r=m a_r=m\frac{v^2}{r}=f_s.
 $$
 
 At the threshold of slipping, static friction has reached its maximum possible value:
@@ -167,7 +167,7 @@ options:
   content: |-
     $\dfrac{mv}{r}=\mu_s mg$
   feedback: |-
-    The centripetal acceleration is $v^2/r$, not $v/r$.
+    The radial acceleration is $a_r=v^2/r$, not $v/r$.
 ```
 
 ```quiz
@@ -287,7 +287,7 @@ $$
 Equivalently, $T=2\pi/\omega$. Therefore the largest safe angular speed corresponds to the smallest safe period:
 
 $$
-\omega\leq\omega_{\max}
+\omega\leq\omega_{\max,\mathrm{turntable}}
 \quad\Longleftrightarrow\quad
 T\geq T_{\min}.
 $$

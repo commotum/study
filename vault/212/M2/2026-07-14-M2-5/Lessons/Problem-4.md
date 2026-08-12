@@ -45,15 +45,15 @@ The recognition cue is mass being captured by a rotating system at a fixed radiu
 At fixed radius, doubling each rotating mass doubles the total moment of inertia:
 
 $$
-I_f=2I_i.
+I_f=2I_0.
 $$
 
 Conserve angular momentum and make $\omega_f$ the subject:
 
 $$
 \begin{aligned}
-I_i\omega_0&=I_f\omega_f\\
-\omega_f&=\frac{I_i}{I_f}\omega_0\\
+I_0\omega_0&=I_f\omega_f\\
+\omega_f&=\frac{I_0}{I_f}\omega_0\\
 &=\frac12\omega_0.
 \end{aligned}
 $$
@@ -91,7 +91,7 @@ options:
 <a id="compare-initial-and-final-kinetic-energy"></a>
 ## Compare Initial and Final Kinetic Energy
 
-**Example:** If $I_f=2I_i$ and $\omega_f=\omega_0/2$, what fraction of the initial rotational kinetic energy remains?
+**Example:** If $I_f=2I_0$ and $\omega_f=\omega_0/2$, what fraction of the initial rotational kinetic energy remains?
 
 **Explanation**
 
@@ -99,9 +99,9 @@ Use a ratio so the common factors cancel:
 
 $$
 \begin{aligned}
-\frac{K_f}{K_i}
-&=\frac{\frac12I_f\omega_f^2}{\frac12I_i\omega_0^2}\\
-&=\frac{I_f}{I_i}\left(\frac{\omega_f}{\omega_0}\right)^2\\
+\frac{K_f}{K_0}
+&=\frac{\frac12I_f\omega_f^2}{\frac12I_0\omega_0^2}\\
+&=\frac{I_f}{I_0}\left(\frac{\omega_f}{\omega_0}\right)^2\\
 &=2\left(\frac12\right)^2\\
 &=\frac12.
 \end{aligned}
@@ -111,14 +111,14 @@ Half the initial kinetic energy remains, so half is lost from mechanical energy:
 
 $$
 \Delta E_{\mathrm{lost}}
-=K_i-K_f
-=\frac12K_i.
+=K_0-K_f
+=\frac12K_0.
 $$
 
 Equivalently, the percentage loss is
 
 $$
-\frac{K_i-K_f}{K_i}\times100\%
+\frac{K_0-K_f}{K_0}\times100\%
 =\frac12\times100\%
 =50\%.
 $$
@@ -163,13 +163,13 @@ options:
 Each cup is at radius $d/2$, so the two initial cups have moment of inertia
 
 $$
-I_i=2m\left(\frac d2\right)^2=\frac{md^2}{2}.
+I_0=2m\left(\frac d2\right)^2=\frac{md^2}{2}.
 $$
 
 The initial rotational kinetic energy is
 
 $$
-K_i=\frac12I_i\omega_0^2
+K_0=\frac12I_0\omega_0^2
 =\frac{md^2\omega_0^2}{4}.
 $$
 
@@ -177,7 +177,7 @@ The capture loses half of this initial kinetic energy:
 
 $$
 \Delta E_{\mathrm{lost}}
-=\frac12K_i
+=\frac12K_0
 =\frac{md^2\omega_0^2}{8}.
 $$
 
@@ -185,7 +185,7 @@ The units check:
 
 $$
 [m d^2\omega_0^2]
-=\mathrm{kg\,m^2/s^2}
+=\mathrm{kg}\,\mathrm{m}^2/\mathrm{s}^2
 =\mathrm J.
 $$
 
@@ -202,7 +202,7 @@ options:
     $\Delta E_{\mathrm{lost}}=\dfrac{md^2\omega_0^2}{8}$
   correct: true
   feedback: |-
-    First $I_i=md^2/2$, then $K_i=\frac12I_i\omega_0^2=md^2\omega_0^2/4$. Since half remains, the other half is lost: $\Delta E_{\mathrm{lost}}=md^2\omega_0^2/8$.
+    First $I_0=md^2/2$, then $K_0=\frac12I_0\omega_0^2=md^2\omega_0^2/4$. Since half remains, the other half is lost: $\Delta E_{\mathrm{lost}}=md^2\omega_0^2/8$.
 - id: p4-formula-b
   content: |-
     $\Delta E_{\mathrm{lost}}=\dfrac{md^2\omega_0^2}{4}$
@@ -222,18 +222,18 @@ options:
 <a id="apply-the-method-to-problem-4"></a>
 ## Apply the Method to Problem 4
 
-**Example:** For the same rotating cups, how much mechanical energy is lost when each cup of mass $m$ captures a water mass $m$? Use $m=0.46\ \mathrm{kg}$, $d=0.68\ \mathrm{m}$, and $\omega_0=4.2\ \mathrm{rad/s}$.
+**Example:** For the same rotating cups, how much mechanical energy is lost when each cup of mass $m$ captures a water mass $m$? Use $m=0.46\ \mathrm{kg}$, $d=0.68\ \mathrm{m}$, and $\omega_0=4.2\ \mathrm{rad}/\mathrm{s}$.
 
 ![](<../Source/Images/rotating-cups-collecting-rain.png>)
 
 **Explanation**
 
-The initial moment of inertia is $I_i=md^2/2$. After the capture, $I_f=2I_i$ and angular momentum conservation gives $\omega_f=\omega_0/2$. Therefore,
+The initial moment of inertia is $I_0=md^2/2$. After the capture, $I_f=2I_0$ and angular momentum conservation gives $\omega_f=\omega_0/2$. Therefore,
 
 $$
 \Delta E_{\mathrm{lost}}
-=\frac12I_i\omega_0^2-\frac12I_f\omega_f^2
-=\frac14I_i\omega_0^2
+=\frac12I_0\omega_0^2-\frac12I_f\omega_f^2
+=\frac14I_0\omega_0^2
 =\frac{md^2\omega_0^2}{8}.
 $$
 
@@ -260,7 +260,7 @@ id: p4-source-check
 content: |-
   **Question 3**
 
-  For the same rotating cups, how much mechanical energy is lost when each cup of mass $m$ captures a water mass $m$? Use $m=0.46\ \mathrm{kg}$, $d=0.68\ \mathrm{m}$, and $\omega_0=4.2\ \mathrm{rad/s}$.
+  For the same rotating cups, how much mechanical energy is lost when each cup of mass $m$ captures a water mass $m$? Use $m=0.46\ \mathrm{kg}$, $d=0.68\ \mathrm{m}$, and $\omega_0=4.2\ \mathrm{rad}/\mathrm{s}$.
 
   ![](<../Source/Images/rotating-cups-collecting-rain.png>)
 
@@ -271,12 +271,12 @@ options:
     $0.47$
   correct: true
   feedback: |-
-    The initial moment of inertia is $I_i=md^2/2$. After the capture, $I_f=2I_i$ and angular momentum conservation gives $\omega_f=\omega_0/2$. Therefore,
+    The initial moment of inertia is $I_0=md^2/2$. After the capture, $I_f=2I_0$ and angular momentum conservation gives $\omega_f=\omega_0/2$. Therefore,
 
     $$
     \Delta E_{\mathrm{lost}}
-    =\frac12I_i\omega_0^2-\frac12I_f\omega_f^2
-    =\frac14I_i\omega_0^2
+    =\frac12I_0\omega_0^2-\frac12I_f\omega_f^2
+    =\frac14I_0\omega_0^2
     =\frac{md^2\omega_0^2}{8}.
     $$
 
@@ -310,7 +310,7 @@ options:
 - Cue: a rotating system captures mass at fixed radius, and the mechanical energy lost is requested.
 - Conserve angular momentum first to find the final angular speed.
 - Compare energies with $K_f/K_i=(I_f/I_i)(\omega_f/\omega_i)^2$.
-- For equal captured and cup masses, $I_f=2I_i$, $\omega_f=\omega_0/2$, and $50\%$ of $K_i$ is lost.
+- For equal captured and cup masses, $I_f=2I_0$, $\omega_f=\omega_0/2$, and $50\%$ of $K_0$ is lost.
 - Use $\Delta E_{\mathrm{lost}}=md^2\omega_0^2/8$ and round only after substitution.
 
 <!-- lesson-nav:start -->

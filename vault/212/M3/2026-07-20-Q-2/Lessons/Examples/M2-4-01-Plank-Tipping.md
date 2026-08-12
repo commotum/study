@@ -16,7 +16,7 @@ A uniform plank of length $L$ and mass $M$ rests on two supports. Support $A$ is
 
 **E.** Write the torque-balance equation about $B$ and solve symbolically for $x$.
 
-**F.** Evaluate the result for $M=2.4\text{ kg}$, $m=1.6\text{ kg}$, and $L=1.4\text{ m}$.
+**F.** Evaluate the result for $M=2.4\ \mathrm{kg}$, $m=1.6\ \mathrm{kg}$, and $L=1.4\ \mathrm{m}$.
 
 **G.** Check the units and confirm that the box remains on the plank.
 
@@ -33,7 +33,7 @@ A uniform plank of length $L$ and mass $M$ rests on two supports. Support $A$ is
 - Static equilibrium:
 
   $$
-  \sum\vec F=0,\qquad \sum\tau_B=0.
+  \sum\vec{F}=0,\qquad \sum\tau_B=0.
   $$
 
 - Newton’s third law at the box-plank contact:
@@ -97,9 +97,9 @@ A uniform plank of length $L$ and mass $M$ rests on two supports. Support $A$ is
    $$
    x
    =
-   \frac{(2.4\text{ kg})(1.4\text{ m})}
-        {6(1.6\text{ kg})}
-   =0.35\text{ m}.
+   \frac{(2.4\ \mathrm{kg})(1.4\ \mathrm{m})}
+        {6(1.6\ \mathrm{kg})}
+   =0.35\ \mathrm{m}.
    $$
 
-7. The units reduce to meters. The right end lies $L-2L/3=L/3\approx0.467\text{ m}$ beyond support $B$, and $0.35\text{ m}<0.467\text{ m}$, so the box is still on the plank.
+7. The units reduce to meters. The right end lies $L-2L/3=L/3\approx0.467\ \mathrm{m}$ beyond support $B$, and $0.35\ \mathrm{m}<0.467\ \mathrm{m}$, so the box is still on the plank.

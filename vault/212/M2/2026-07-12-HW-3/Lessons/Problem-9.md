@@ -49,7 +49,7 @@ This conclusion needs no area or mass calculation.
 <a id="recognize-the-reflection-symmetry"></a>
 ## Recognize the Reflection Symmetry
 
-**Example:** A uniform rectangular plate extends from $y=-2\text{ cm}$ to $y=2\text{ cm}$. A semicircular notch is removed from its right edge, with the notch centered on the $x$-axis. What can you conclude about $y_{\mathrm{cm}}$?
+**Example:** A uniform rectangular plate extends from $y=-2\ \mathrm{cm}$ to $y=2\ \mathrm{cm}$. A semicircular notch is removed from its right edge, with the notch centered on the $x$-axis. What can you conclude about $y_{\mathrm{cm}}$?
 
 **Explanation**
 

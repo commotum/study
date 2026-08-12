@@ -16,7 +16,7 @@ topic-code: MTH212.M2.54
 
 ## Prerequisites
 
-- Use the rolling-without-slipping relation $v=R\omega$.
+- Use the rolling-without-slipping relation $v=\omega R$.
 - Recognize $K_{\mathrm{trans}}=\dfrac12mv^2$ and $K_{\mathrm{rot}}=\dfrac12I\omega^2$.
 - Compare positive fractions.
 

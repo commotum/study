@@ -18,8 +18,8 @@ topic-code: MTH212.M2.48
 ## Prerequisites
 
 - Compute a center-of-mass coordinate with a mass-weighted average.
-- Write linear momentum as $\vec p=m\vec v$.
-- Use $\vec L=\vec r\times\vec p$ for a particle's angular momentum about an origin.
+- Write linear momentum as $\vec{p}=m\vec{v}$.
+- Use $\vec{L}=\vec{r}\times\vec{p}$ for a particle's angular momentum about an origin.
 - Use the right-hand rule for Cartesian unit vectors.
 
 ---
@@ -32,7 +32,7 @@ When a collision problem asks for angular momentum **about the combined center o
 1. Evaluate the angular momentum at the easiest instant, often just before impact.
 2. Find the combined center of mass and use it as the origin.
 3. Measure each moving object's position from that origin.
-4. Compute $\vec L=\sum \vec r_i\times\vec p_i$ in the stated order.
+4. Compute $\vec{L}=\sum \vec{r}_i\times\vec{p}_i$ in the stated order.
 
 For an isolated collision, total angular momentum about the system's center of mass is conserved. Sticking changes how the system moves, but it does not change the total angular momentum during the collision.
 
@@ -48,13 +48,13 @@ For an isolated collision, total angular momentum about the system's center of m
 Use the instant just before impact. The rod is at rest, so every part of it has zero linear momentum and contributes zero angular momentum. The ball is not spinning, so it contributes only orbital angular momentum:
 
 $$
-\vec L_{\text{before}}=\vec r_{\text{ball}}\times\vec p_{\text{ball}}.
+\vec{L}_{\mathrm{before}}=\vec{r}_{\mathrm{ball}}\times\vec{p}_{\mathrm{ball}}.
 $$
 
 Conservation then gives
 
 $$
-\vec L_{\text{after}}=\vec L_{\text{before}}.
+\vec{L}_{\mathrm{after}}=\vec{L}_{\mathrm{before}}.
 $$
 
 There is no need to find the final angular speed or moment of inertia.
@@ -95,7 +95,7 @@ options:
 Use the mass-weighted average:
 
 $$
-y_{\text{CM}}
+y_{\mathrm{cm}}
 =\frac{m(0)+(m/2)(-L/2)}{m+m/2}
 =-\frac{L}{6}.
 $$
@@ -138,8 +138,8 @@ options:
 Subtract the origin coordinate from the object's coordinate:
 
 $$
-y_{\text{rel}}
-=y_{\text{ball}}-y_{\text{CM}}
+y_{\mathrm{rel}}
+=y_{\mathrm{ball}}-y_{\mathrm{cm}}
 =-\frac{L}{2}-\left(-\frac{L}{6}\right)
 =-\frac{L}{3}.
 $$
@@ -182,24 +182,24 @@ options:
 The relevant vectors are
 
 $$
-\vec r_{\text{ball}}=-\frac{L}{3}\,\hat y,
+\vec{r}_{\mathrm{ball}}=-\frac{L}{3}\,\hat{y},
 \qquad
-\vec p_{\text{ball}}=\frac{m}{2}v\,\hat x.
+\vec{p}_{\mathrm{ball}}=\frac{m}{2}v\,\hat{x}.
 $$
 
-Keep the order $\vec r\times\vec p$. Since $\hat y\times\hat x=-\hat z$,
+Keep the order $\vec{r}\times\vec{p}$. Since $\hat{y}\times\hat{x}=-\hat{z}$,
 
 $$
 \begin{aligned}
-\vec L
-&=\left(-\frac{L}{3}\hat y\right)
-\times\left(\frac{mv}{2}\hat x\right)\\
-&=-\frac{mLv}{6}(\hat y\times\hat x)\\
-&=\frac{1}{6}mLv\,\hat z.
+\vec{L}
+&=\left(-\frac{L}{3}\hat{y}\right)
+\times\left(\frac{mv}{2}\hat{x}\right)\\
+&=-\frac{mLv}{6}(\hat{y}\times\hat{x})\\
+&=\frac{1}{6}mLv\,\hat{z}.
 \end{aligned}
 $$
 
-A point below the origin moving right tends to rotate counterclockwise, which is $+\hat z$ when $+z$ points out of the screen.
+A point below the origin moving right tends to rotate counterclockwise, which is $+\hat{z}$ when $+z$ points out of the screen.
 
 For vectors in the $xy$-plane, the same sign check can be written in component form:
 
@@ -213,24 +213,24 @@ Here $p_y=0$, $y=-L/3$, and $p_x=mv/2$, so $L_z=-(-L/3)(mv/2)>0$. This is a quic
 type: radio
 id: p12-q4
 content: |-
-  A particle is at $\vec r=-d\,\hat y$ and has momentum $\vec p=p\,\hat x$, where $d,p>0$. What is its angular momentum about the origin?
+  A particle is at $\vec{r}=-d\,\hat{y}$ and has momentum $\vec{p}=p\,\hat{x}$, where $d,p>0$. What is its angular momentum about the origin?
 options:
 - id: p12-q4-a
   content: |-
-    $dp\,\hat x$
+    $dp\,\hat{x}$
 - id: p12-q4-b
   content: |-
-    $-dp\,\hat x$
+    $-dp\,\hat{x}$
 - id: p12-q4-c
   content: |-
-    $dp\,\hat z$
+    $dp\,\hat{z}$
   correct: true
 - id: p12-q4-d
   content: |-
-    $-dp\,\hat z$
+    $-dp\,\hat{z}$
 - id: p12-q4-e
   content: |-
-    $\vec 0$
+    $\vec{0}$
 ```
 
 ---
@@ -246,33 +246,33 @@ At contact, take the rod's center as $(0,0)$. The ball's center is then at $(-r,
 
 $$
 \begin{aligned}
-x_{\text{CM}}&=\frac{m(0)+(m/2)(-r)}{m+m/2}=-\frac r3,\\
-y_{\text{CM}}&=-\frac L6.
+x_{\mathrm{cm}}&=\frac{m(0)+(m/2)(-r)}{m+m/2}=-\frac r3,\\
+y_{\mathrm{cm}}&=-\frac L6.
 \end{aligned}
 $$
 
 Therefore, the ball's position relative to the combined center of mass is
 
 $$
-\vec r_{\text{ball}}
-=\left(-r+\frac r3\right)\hat x
-+\left(-\frac L2+\frac L6\right)\hat y
-=-\frac{2r}{3}\hat x-\frac L3\hat y.
+\vec{r}_{\mathrm{ball}}
+=\left(-r+\frac r3\right)\hat{x}
++\left(-\frac L2+\frac L6\right)\hat{y}
+=-\frac{2r}{3}\hat{x}-\frac L3\hat{y}.
 $$
 
-Because its momentum is parallel to $\hat x$,
+Because its momentum is parallel to $\hat{x}$,
 
 $$
 \begin{aligned}
-\vec r_{\text{ball}}\times\vec p_{\text{ball}}
-&=\left(-\frac{2r}{3}\hat x-\frac{L}{3}\hat y\right)
-\times\left(\frac{mv}{2}\hat x\right)\\
-&=-\frac{rmv}{3}(\hat x\times\hat x)
--\frac{mLv}{6}(\hat y\times\hat x).
+\vec{r}_{\mathrm{ball}}\times\vec{p}_{\mathrm{ball}}
+&=\left(-\frac{2r}{3}\hat{x}-\frac{L}{3}\hat{y}\right)
+\times\left(\frac{mv}{2}\hat{x}\right)\\
+&=-\frac{rmv}{3}(\hat{x}\times\hat{x})
+-\frac{mLv}{6}(\hat{y}\times\hat{x}).
 \end{aligned}
 $$
 
-The first term is zero because $\hat x\times\hat x=\vec 0$. Only the perpendicular distance $L/3$ matters, so the ball's radius cancels from the result.
+The first term is zero because $\hat{x}\times\hat{x}=\vec{0}$. Only the perpendicular distance $L/3$ matters, so the ball's radius cancels from the result.
 
 **Final check:**
 
@@ -308,13 +308,13 @@ For a collision about the combined center of mass:
 1. Use conservation to evaluate angular momentum at the easiest instant.
 2. Find the combined center of mass with a weighted average.
 3. Re-measure the moving object's position from that origin.
-4. Compute $\vec r\times\vec p$, not $\vec p\times\vec r$.
+4. Compute $\vec{r}\times\vec{p}$, not $\vec{p}\times\vec{r}$.
 5. Keep only the position component perpendicular to the momentum.
 
 Here the ball is $L/3$ below the combined center of mass and moves to the right, so
 
 $$
-\boxed{\vec L_{\text{after}}=\frac{1}{6}mLv\,\hat z}.
+\boxed{\vec{L}_{\mathrm{after}}=\frac{1}{6}mLv\,\hat{z}}.
 $$
 
 The main traps are using $L/2$ instead of $L/3$, reversing the cross-product order, and including the radius even though its displacement is parallel to the momentum.

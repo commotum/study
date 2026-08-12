@@ -132,13 +132,13 @@ options:
 Break the tension into components. Its vertical component balances the weight when the key stays at a constant height:
 
 $$
-T_y=mg.
+T_{\mathrm{tens},y}=mg.
 $$
 
 Its horizontal component points toward the center of the circle. That horizontal component supplies the net inward force:
 
 $$
-T_r=\frac{mv^2}{r}.
+T_{\mathrm{tens},r}=\sum F_r=m a_r=m\frac{v^2}{r}.
 $$
 
 This check explains why the diagram can have only two force arrows while the motion is still circular. The phrase "centripetal force" means the net inward force, not a new interaction. A separate net-force arrow can be useful in a force-sum sketch, but it does not belong as an extra force in the free-body diagram.

@@ -50,7 +50,7 @@ The practical rule is simple: moving the screen farther away spreads the fringes
 <a id="read-the-screen-distance-dependence"></a>
 ## Read the Screen-Distance Dependence
 
-**Example:** A double-slit pattern has fringe spacing $\Delta y_1$ when the screen is $1.2\ \text{m}$ from the slits. The screen is moved to $1.8\ \text{m}$ while the light and slits remain unchanged. How does the spacing change?
+**Example:** A double-slit pattern has fringe spacing $\Delta y_1$ when the screen is $1.2\ \mathrm{m}$ from the slits. The screen is moved to $1.8\ \mathrm{m}$ while the light and slits remain unchanged. How does the spacing change?
 
 **Explanation**
 
@@ -67,7 +67,7 @@ The new fringe spacing is $1.5$ times the original spacing. Because the screen d
 type: radio
 id: p2-screen-distance-direction
 content: |-
-  A double-slit setup uses the same wavelength and the same slits before and after a change. The screen distance increases from $2.0\ \text{m}$ to $3.0\ \text{m}$. What happens to the fringe spacing on the screen?
+  A double-slit setup uses the same wavelength and the same slits before and after a change. The screen distance increases from $2.0\ \mathrm{m}$ to $3.0\ \mathrm{m}$. What happens to the fringe spacing on the screen?
 options:
 - id: p2-screen-distance-direction-a
   content: |-
@@ -97,7 +97,7 @@ options:
 <a id="scale-the-spacing-without-recalculating"></a>
 ## Scale the Spacing Without Recalculating
 
-**Example:** The fringe spacing is $4.0\ \text{mm}$ at screen distance $L$. The screen is moved to $1.5L$, with $\lambda$ and $d$ unchanged. Find the new spacing.
+**Example:** The fringe spacing is $4.0\ \mathrm{mm}$ at screen distance $L$. The screen is moved to $1.5L$, with $\lambda$ and $d$ unchanged. Find the new spacing.
 
 **Explanation**
 
@@ -105,8 +105,8 @@ The distance is multiplied by $1.5$, so direct proportionality multiplies the sp
 
 $$
 \Delta y_2=1.5\Delta y_1
-=1.5(4.0\ \text{mm})
-=6.0\ \text{mm}.
+=1.5(4.0\ \mathrm{mm})
+=6.0\ \mathrm{mm}.
 $$
 
 This ratio method is enough; the separate values of $\lambda$ and $d$ are not needed.
@@ -125,29 +125,29 @@ Whatever positive factor multiplies $L$ also multiplies $\Delta y$.
 type: radio
 id: p2-scale-known-spacing
 content: |-
-  A double-slit pattern has adjacent bright fringes $3.0\ \text{mm}$ apart at screen distance $L$. If the screen is moved to $2L$ while the wavelength and slit separation stay fixed, what is the new spacing?
+  A double-slit pattern has adjacent bright fringes $3.0\ \mathrm{mm}$ apart at screen distance $L$. If the screen is moved to $2L$ while the wavelength and slit separation stay fixed, what is the new spacing?
 options:
 - id: p2-scale-known-spacing-a
   content: |-
-    $1.5\ \text{mm}$
+    $1.5\ \mathrm{mm}$
   feedback: |-
-    Halving $3.0\ \text{mm}$ treats spacing as inversely proportional to $L$. In fact $\Delta y\propto L$, so doubling $L$ doubles rather than halves the spacing.
+    Halving $3.0\ \mathrm{mm}$ treats spacing as inversely proportional to $L$. In fact $\Delta y\propto L$, so doubling $L$ doubles rather than halves the spacing.
 - id: p2-scale-known-spacing-b
   content: |-
-    $3.0\ \text{mm}$
+    $3.0\ \mathrm{mm}$
   feedback: |-
     Keeping $\Delta y$ unchanged ignores the factor of $L$ in $\Delta y\approx \lambda L/d$. With $\lambda$ and $d$ fixed, doubling $L$ must change the on-screen spacing.
 - id: p2-scale-known-spacing-c
   content: |-
-    $6.0\ \text{mm}$
+    $6.0\ \mathrm{mm}$
   correct: true
   feedback: |-
-    With the wavelength and slit separation fixed, $\Delta y$ scales by the same factor as $L$. The screen distance doubles, so the new spacing is $2(3.0\ \text{mm})=6.0\ \text{mm}$.
+    With the wavelength and slit separation fixed, $\Delta y$ scales by the same factor as $L$. The screen distance doubles, so the new spacing is $2(3.0\ \mathrm{mm})=6.0\ \mathrm{mm}$.
 - id: p2-scale-known-spacing-d
   content: |-
-    $12.0\ \text{mm}$
+    $12.0\ \mathrm{mm}$
   feedback: |-
-    A value of $12.0\ \text{mm}$ applies the doubling factor twice. Because $L$ appears only to the first power, apply the factor once: $2(3.0\ \text{mm})=6.0\ \text{mm}$.
+    A value of $12.0\ \mathrm{mm}$ applies the doubling factor twice. Because $L$ appears only to the first power, apply the factor once: $2(3.0\ \mathrm{mm})=6.0\ \mathrm{mm}$.
 ```
 
 ---

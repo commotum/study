@@ -50,9 +50,9 @@
 
 ### 5. Quiz Timing
 - Each quiz part is open for:
-  $$ 20\text{ minutes} $$
+  $$ 20\ \mathrm{min} $$
 - Students then have:
-  $$ 5\text{ minutes} $$
+  $$ 5\ \mathrm{min} $$
   to upload written work to Gradescope.
 - If written work is not uploaded within the upload window, credit for that written question may be lost.
 
@@ -132,14 +132,14 @@
 - Magnitude:
   $$ a_r=\frac{v^2}{r} $$
 - Since:
-  $$ v=\omega r $$
+  $$ v=r\omega $$
 - Radial acceleration can also be written as:
-  $$ a_r=\omega^2 r $$
+  $$ a_r=r\omega^2 $$
 
 ---
 
 ### 13. Tangential and Radial Components
-- Acceleration can be resolved into:
+- Choose $\hat{r}$ inward and $\hat{t}$ along the motion. Acceleration can then be resolved into:
   $$ \vec{a}=a_r\hat{r}+a_t\hat{t} $$
 - Radial acceleration changes the direction of velocity.
 - Tangential acceleration changes the speed.
@@ -157,9 +157,9 @@
 
 ### 15. Angular Kinematics Review
 - For constant angular acceleration:
-  $$ \omega_f=\omega_0+\alpha t $$
-  $$ \theta_f=\theta_0+\omega_0t+\frac{1}{2}\alpha t^2 $$
-  $$ \omega_f^2=\omega_0^2+2\alpha\Delta\theta $$
+  $$ \omega_f=\omega_0+\alpha\Delta t $$
+  $$ \theta_f=\theta_0+\omega_0\Delta t+\frac{1}{2}\alpha(\Delta t)^2 $$
+  $$ \omega_f^2=\omega_0^2+2\alpha(\theta_f-\theta_0) $$
 
 ---
 
@@ -167,29 +167,29 @@
 
 ### 16. Problem Setup
 - A Ferris wheel has:
-  $$ r=42\text{ m} $$
-  $$ \omega=0.16\text{ rad/s} $$
+  $$ r=42\ \mathrm{m} $$
+  $$ \omega=0.16\ \mathrm{rad}/\mathrm{s} $$
 - Find the speed of a particle on the rim.
 
 ---
 
 ### 17. Use the Tangential Speed Formula
 - Tangential speed:
-  $$ v=\omega r $$
+  $$ v=r\omega $$
 - Substitute:
   $$ v=(0.16)(42) $$
 - Result:
-  $$ v=6.72\text{ m/s} $$
+  $$ v=6.72\ \mathrm{m}/\mathrm{s} $$
 - Rounded appropriately:
-  $$ v\approx 6.7\text{ m/s} $$
+  $$ v\approx 6.7\ \mathrm{m}/\mathrm{s} $$
 
 ---
 
 ### 18. Units Note
 - Angular velocity has units:
-  $$ \text{rad/s} $$
+  $$ \mathrm{rad}/\mathrm{s} $$
 - Radians are treated as dimensionless, so:
-  $$ (\text{rad/s})(\text{m})=\text{m/s} $$
+  $$ (\mathrm{rad}/\mathrm{s})(\mathrm{m})=\mathrm{m}/\mathrm{s} $$
 
 ---
 
@@ -207,7 +207,7 @@
 - At the bottom, the rider feels pushed harder into the seat.
 - At the top, the rider feels lighter.
 - Therefore:
-  $$ N_{\text{bottom}} > N_{\text{top}} $$
+  $$ N_{\mathrm{bottom}}>N_{\mathrm{top}} $$
 
 ---
 
@@ -216,24 +216,24 @@
   - weight downward:
     $$ mg $$
   - normal force upward:
-    $$ N_{\text{top}} $$
+    $$ N_{\mathrm{top}} $$
 - At the top, radial acceleration points downward toward the center.
 - Choose downward as positive.
 - Force equation:
-  $$ \sum F_r=ma_r $$
-  $$ mg-N_{\text{top}}=m\frac{v^2}{r} $$
+  $$ \sum F_r=m a_r $$
+  $$ mg-N_{\mathrm{top}}=m a_r=m\frac{v^2}{r} $$
 
 ---
 
 ### 22. Normal Force at the Top
 - Solve for normal force:
-  $$ N_{\text{top}}=mg-m\frac{v^2}{r} $$
+  $$ N_{\mathrm{top}}=mg-m\frac{v^2}{r} $$
 - Since:
-  $$ v=\omega r $$
+  $$ v=r\omega $$
 - Then:
-  $$ \frac{v^2}{r}=\omega^2 r $$
+  $$ \frac{v^2}{r}=r\omega^2 $$
 - So:
-  $$ N_{\text{top}}=m(g-\omega^2 r) $$
+  $$ N_{\mathrm{top}}=m(g-\omega^2 r) $$
 
 ---
 
@@ -242,60 +242,60 @@
   - weight downward:
     $$ mg $$
   - normal force upward:
-    $$ N_{\text{bottom}} $$
+    $$ N_{\mathrm{bottom}} $$
 - At the bottom, radial acceleration points upward toward the center.
 - Choose upward as positive.
 - Force equation:
-  $$ N_{\text{bottom}}-mg=m\frac{v^2}{r} $$
+  $$ \sum F_r=m a_r=m\frac{v^2}{r}=N_{\mathrm{bottom}}-mg $$
 
 ---
 
 ### 24. Normal Force at the Bottom
 - Solve for normal force:
-  $$ N_{\text{bottom}}=mg+m\frac{v^2}{r} $$
+  $$ N_{\mathrm{bottom}}=mg+m\frac{v^2}{r} $$
 - Using:
-  $$ \frac{v^2}{r}=\omega^2 r $$
+  $$ \frac{v^2}{r}=r\omega^2 $$
 - Then:
-  $$ N_{\text{bottom}}=m(g+\omega^2 r) $$
+  $$ N_{\mathrm{bottom}}=m(g+\omega^2 r) $$
 
 ---
 
 ### 25. Numerical Values for Ferris Wheel Normal Forces
 - Given:
-  $$ m=68\text{ kg} $$
-  $$ r=42\text{ m} $$
-  $$ \omega=0.16\text{ rad/s} $$
-  $$ g=9.81\text{ m/s}^2 $$
+  $$ m=68\ \mathrm{kg} $$
+  $$ r=42\ \mathrm{m} $$
+  $$ \omega=0.16\ \mathrm{rad}/\mathrm{s} $$
+  $$ g=9.81\ \mathrm{m}/\mathrm{s}^2 $$
 
 ---
 
 ### 26. Normal Force at the Bottom
 - Use:
-  $$ N_{\text{bottom}}=m(g+\omega^2 r) $$
+  $$ N_{\mathrm{bottom}}=m(g+\omega^2 r) $$
 - Substitute:
-  $$ N_{\text{bottom}}=68\left(9.81+(0.16)^2(42)\right) $$
+  $$ N_{\mathrm{bottom}}=68\left(9.81+(0.16)^2(42)\right) $$
 - Result:
-  $$ N_{\text{bottom}}\approx 740\text{ N} $$
+  $$ N_{\mathrm{bottom}}\approx740\ \mathrm{N} $$
 
 ---
 
 ### 27. Normal Force at the Top
 - Use:
-  $$ N_{\text{top}}=m(g-\omega^2 r) $$
+  $$ N_{\mathrm{top}}=m(g-\omega^2 r) $$
 - Substitute:
-  $$ N_{\text{top}}=68\left(9.81-(0.16)^2(42)\right) $$
+  $$ N_{\mathrm{top}}=68\left(9.81-(0.16)^2(42)\right) $$
 - Result:
-  $$ N_{\text{top}}\approx 590\text{ N} $$
+  $$ N_{\mathrm{top}}\approx590\ \mathrm{N} $$
 
 ---
 
 ### 28. Comparison
 - The bottom normal force is larger:
-  $$ N_{\text{bottom}}\approx 740\text{ N} $$
+  $$ N_{\mathrm{bottom}}\approx740\ \mathrm{N} $$
 - The top normal force is smaller:
-  $$ N_{\text{top}}\approx 590\text{ N} $$
+  $$ N_{\mathrm{top}}\approx590\ \mathrm{N} $$
 - Therefore:
-  $$ N_{\text{bottom}}>N_{\text{top}} $$
+  $$ N_{\mathrm{bottom}}>N_{\mathrm{top}} $$
 
 ---
 
@@ -334,7 +334,7 @@
 ### 32. Symbolic Solutions First
 - Students are encouraged to solve symbolically before plugging in numbers.
 - Example:
-  $$ N_{\text{bottom}}=m(g+\omega^2 r) $$
+  $$ N_{\mathrm{bottom}}=m(g+\omega^2 r) $$
 - This is preferred over inserting numbers too early.
 - Quiz problems may ask for symbolic answers without numbers.
 
@@ -357,7 +357,7 @@
     $$ r $$
   - coefficient of static friction:
     $$ \mu_s=0.24 $$
-- Find the angular speed $\omega$ at which the coin just starts to slip.
+- Find the maximum angular speed $\omega_{\max,\mathrm{turntable}}$ at which the coin just starts to slip.
 
 ---
 
@@ -387,9 +387,9 @@
 - Radial acceleration:
   $$ a_r=\frac{v^2}{r} $$
 - Newton’s second law in the radial direction:
-  $$ \sum F_r=ma_r $$
+  $$ \sum F_r=m a_r $$
 - The only radial force is friction:
-  $$ f_s=m\frac{v^2}{r} $$
+  $$ \sum F_r=m a_r=m\frac{v^2}{r}=f_s $$
 
 ---
 
@@ -406,45 +406,45 @@
 ---
 
 ### 39. Solve for the Critical Speed
-- Set centripetal force equal to maximum static friction:
-  $$ m\frac{v^2}{r}=\mu_s mg $$
+- Set the required net inward force equal to maximum static friction:
+  $$ \sum F_r=m a_r=m\frac{v_{\max,\mathrm{turntable}}^2}{r}=f_{s,\max}=\mu_s mg $$
 - Cancel mass:
-  $$ \frac{v^2}{r}=\mu_s g $$
+  $$ \frac{v_{\max,\mathrm{turntable}}^2}{r}=\mu_s g $$
 
 ---
 
 ### 40. Solve for Critical Angular Speed
 - Use:
-  $$ v=\omega r $$
+  $$ v_{\max,\mathrm{turntable}}=\omega_{\max,\mathrm{turntable}}r $$
 - Then:
-  $$ \frac{(\omega r)^2}{r}=\mu_s g $$
+  $$ \frac{(\omega_{\max,\mathrm{turntable}}r)^2}{r}=\mu_s g $$
 - Simplify:
-  $$ \omega^2 r=\mu_s g $$
+  $$ \omega_{\max,\mathrm{turntable}}^2 r=\mu_s g $$
 - Solve:
-  $$ \omega=\sqrt{\frac{\mu_s g}{r}} $$
+  $$ \omega_{\max,\mathrm{turntable}}=\sqrt{\frac{\mu_s g}{r}} $$
 
 ---
 
 ### 41. Interpretation of the Turntable Result
 - The mass cancels, so the slipping condition does not depend on the coin’s mass.
 - If $\mu_s$ increases, the coin can rotate faster before slipping:
-  $$ \omega \propto \sqrt{\mu_s} $$
+  $$ \omega_{\max,\mathrm{turntable}}\propto\sqrt{\mu_s} $$
 - If $r$ increases, the coin slips at a lower angular speed:
-  $$ \omega \propto \frac{1}{\sqrt{r}} $$
+  $$ \omega_{\max,\mathrm{turntable}}\propto\frac{1}{\sqrt{r}} $$
 
 ---
 
 ### 42. Main Physics Takeaways
 - Circular motion requires an inward net force:
-  $$ \sum F_r=m\frac{v^2}{r} $$
+  $$ \sum F_r=m a_r=m\frac{v^2}{r} $$
 - Radial acceleration can be written as:
-  $$ a_r=\frac{v^2}{r}=\omega^2 r $$
+  $$ a_r=\frac{v^2}{r}=r\omega^2 $$
 - For Ferris wheel motion:
-  $$ N_{\text{bottom}}=m(g+\omega^2 r) $$
-  $$ N_{\text{top}}=m(g-\omega^2 r) $$
+  $$ N_{\mathrm{bottom}}=m(g+\omega^2 r) $$
+  $$ N_{\mathrm{top}}=m(g-\omega^2 r) $$
 - For a coin on a turntable:
-  $$ \omega_{\max}=\sqrt{\frac{\mu_s g}{r}} $$
-- Always identify which force provides the centripetal acceleration.
+  $$ \omega_{\max,\mathrm{turntable}}=\sqrt{\frac{\mu_s g}{r}} $$
+- Always identify which real force or combination of forces produces the inward net force associated with $a_r$.
 
 ---
 
@@ -452,7 +452,7 @@
 - Start with a free-body diagram.
 - Choose the radial positive direction toward the center.
 - Write:
-  $$ \sum F_r=ma_r $$
+  $$ \sum F_r=m a_r $$
 - Use:
-  $$ a_r=\frac{v^2}{r}=\omega^2 r $$
+  $$ a_r=\frac{v^2}{r}=r\omega^2 $$
 - Solve symbolically before substituting numbers.

@@ -31,16 +31,16 @@ v(t)
 \xrightarrow{\text{integrate over time}}
 s
 \xrightarrow{\text{divide by }r}
-\phi
+\theta
 \xrightarrow{\text{divide by }2\pi}
-N.
+n_{\mathrm{rev}}.
 $$
 
-Here $s$ is the rope length, $\phi$ is the angular displacement in radians, and $N$ is the number of revolutions. Combining the last two steps gives the most useful form:
+Here $s$ is the rope length, $\theta$ is the angular displacement in radians, and $n_{\mathrm{rev}}$ is the number of revolutions. Combining the last two steps gives the most useful form:
 
 $$
-N=\frac{s}{2\pi r}
-=\frac{1}{2\pi r}\int_{t_i}^{t_f}v(t)\,dt.
+n_{\mathrm{rev}}=\frac{s}{2\pi r}
+=\frac{1}{2\pi r}\int_{t_0}^{t_f}v(t)\,dt.
 $$
 
 The recognition cue is the combination of a time-dependent linear velocity, a rope unwinding from a spool, and a requested number of turns. Integrate before converting; the value of $v(t_f)$ is a speed, not a traveled length.
@@ -56,7 +56,7 @@ $$
 v(t)=At+Bt^2,
 $$
 
-where $A=4.0\ \mathrm{m/s^2}$ and $B=3.0\ \mathrm{m/s^3}$. How much cord unwinds from $t=0$ to $t=2.0\ \mathrm{s}$?
+where $A=4.0\ \mathrm{m}/\mathrm{s}^2$ and $B=3.0\ \mathrm{m}/\mathrm{s}^3$. How much cord unwinds from $t=0$ to $t=2.0\ \mathrm{s}$?
 
 **Explanation**
 
@@ -90,7 +90,7 @@ options:
   content: |-
     $33\ \mathrm{m}$
   feedback: |-
-    Substituting $t=3$ directly gives $v(3)=33\ \mathrm{m/s}$, an instantaneous speed rather than a length. Integrating over time changes the units to meters and gives $36\ \mathrm{m}$.
+    Substituting $t=3$ directly gives $v(3)=33\ \mathrm{m}/\mathrm{s}$, an instantaneous speed rather than a length. Integrating over time changes the units to meters and gives $36\ \mathrm{m}$.
 - id: p5-length-from-velocity-c
   content: |-
     $99\ \mathrm{m}$
@@ -120,18 +120,18 @@ options:
 One full revolution releases one circumference of rope:
 
 $$
-C=2\pi r=2\pi(1.5)=3\pi\ \mathrm{m/revolution}.
+C=2\pi r=2\pi(1.5)=3\pi\ \mathrm{m}/\mathrm{rev}.
 $$
 
 Therefore,
 
 $$
-N=\frac{s}{2\pi r}
+n_{\mathrm{rev}}=\frac{s}{2\pi r}
 =\frac{3\pi}{3\pi}
-=1\ \text{revolution}.
+=1\ \mathrm{rev}.
 $$
 
-Equivalently, $\phi=s/r=2\pi$ radians, and $N=\phi/(2\pi)=1$. Stopping after $s/r$ gives radians, not revolutions.
+Equivalently, $\theta=s/r=2\pi$ radians, and $n_{\mathrm{rev}}=\theta/(2\pi)=1$. Stopping after $s/r$ gives radians, not revolutions.
 
 ```quiz
 type: radio
@@ -144,7 +144,7 @@ options:
     $2.5$ revolutions
   correct: true
   feedback: |-
-    Each revolution releases one circumference, $2\pi r=3\pi\ \mathrm{m}$. Thus $N=24/(3\pi)=2.546\ldots$, which rounds to $2.5$ revolutions at two significant figures.
+    Each revolution releases one circumference, $2\pi r=3\pi\ \mathrm{m}$. Thus $n_{\mathrm{rev}}=24/(3\pi)=2.546\ldots$, which rounds to $2.5$ revolutions at two significant figures.
 - id: p5-length-to-turns-b
   content: |-
     $16$ revolutions
@@ -164,7 +164,7 @@ options:
   content: |-
     $0.39$ revolutions
   feedback: |-
-    This reverses the ratio and computes circumference divided by released length. The number of turns is released length divided by length per turn: $N=s/(2\pi r)$.
+    This reverses the ratio and computes circumference divided by released length. The number of turns is released length divided by length per turn: $n_{\mathrm{rev}}=s/(2\pi r)$.
 ```
 
 ---
@@ -194,12 +194,12 @@ Then divide by the rope released per revolution:
 
 $$
 \boxed{
-N(t_f)
+n_{\mathrm{rev}}(t_f)
 =\frac{\frac12At_f^2+\frac13Bt_f^3}{2\pi r}
 }.
 $$
 
-The units audit the chain. Since $[A]=\mathrm{m/s^2}$ and $[B]=\mathrm{m/s^3}$, both numerator terms have units of length. Dividing by the circumference, also a length per revolution, leaves a number of revolutions.
+The units audit the chain. Since $[A]=\mathrm{m}/\mathrm{s}^2$ and $[B]=\mathrm{m}/\mathrm{s}^3$, both numerator terms have units of length. Dividing by the circumference, also a length per revolution, leaves a number of revolutions.
 
 ```quiz
 type: radio
@@ -227,7 +227,7 @@ options:
   content: |-
     $\displaystyle \frac{\frac12At_f^2+\frac13Bt_f^3}{r}$
   feedback: |-
-    Dividing arc length by radius gives angular displacement $\phi$ in radians. The question asks for revolutions, so the radian result still must be divided by $2\pi$.
+    Dividing arc length by radius gives angular displacement $\theta$ in radians. The question asks for revolutions, so the radian result still must be divided by $2\pi$.
 - id: p5-symbolic-chain-e
   content: |-
     $\displaystyle \left(\frac12At_f^2+\frac13Bt_f^3\right)(2\pi r)$
@@ -246,7 +246,7 @@ $$
 v(t)=At+Bt^2,
 $$
 
-where $A=1.2\ \mathrm{m/s^2}$ and $B=2.4\ \mathrm{m/s^3}$. Find the spool's revolutions after $4.5\ \mathrm{s}$.
+where $A=1.2\ \mathrm{m}/\mathrm{s}^2$ and $B=2.4\ \mathrm{m}/\mathrm{s}^3$. Find the spool's revolutions after $4.5\ \mathrm{s}$.
 
 ![](../Source/2026-07-06-Q-1/Images/quiz-1b-q1-greyhound-spool.png)
 
@@ -255,7 +255,7 @@ where $A=1.2\ \mathrm{m/s^2}$ and $B=2.4\ \mathrm{m/s^3}$. Find the spool's revo
 Keep the symbolic model intact until the final line:
 
 $$
-N(t_f)
+n_{\mathrm{rev}}(t_f)
 =\frac{\frac12At_f^2+\frac13Bt_f^3}{2\pi r}.
 $$
 
@@ -273,10 +273,10 @@ Then convert the length to turns:
 
 $$
 \begin{aligned}
-N
+n_{\mathrm{rev}}
 &=\frac{85.05}{2\pi(2.2)} \\
-&=6.1528\ldots\ \text{revolutions} \\
-&=\boxed{6.2\ \text{revolutions}}
+&=6.1528\ldots\ \mathrm{rev} \\
+&=\boxed{6.2\ \mathrm{rev}}
 \end{aligned}
 $$
 
@@ -286,7 +286,7 @@ The final value is reported to two significant figures, matching the least preci
 type: radio
 id: p5-final-audit
 content: |-
-  A $4.0\ \mathrm{kg}$ animal pulls rope from a spool of radius $1.5\ \mathrm{m}$. The rope velocity is $v(t)=At+Bt^2$, with $A=0.80\ \mathrm{m/s^2}$ and $B=1.20\ \mathrm{m/s^3}$. How many revolutions occur by $t=3.0\ \mathrm{s}$? Report two significant figures.
+  A $4.0\ \mathrm{kg}$ animal pulls rope from a spool of radius $1.5\ \mathrm{m}$. The rope velocity is $v(t)=At+Bt^2$, with $A=0.80\ \mathrm{m}/\mathrm{s}^2$ and $B=1.20\ \mathrm{m}/\mathrm{s}^3$. How many revolutions occur by $t=3.0\ \mathrm{s}$? Report two significant figures.
 options:
 - id: p5-final-audit-a
   content: |-
@@ -313,7 +313,7 @@ options:
   content: |-
     $6.1$ revolutions
   feedback: |-
-    This multiplies the turn count by the $4.0\ \mathrm{kg}$ mass. Mass matters in dynamical equations such as force or torque, but it does not enter $N=s/(2\pi r)$; multiplying by it also introduces kilograms into a dimensionless turn count.
+    This multiplies the turn count by the $4.0\ \mathrm{kg}$ mass. Mass matters in dynamical equations such as force or torque, but it does not enter $n_{\mathrm{rev}}=s/(2\pi r)$; multiplying by it also introduces kilograms into a dimensionless turn count.
 ```
 
 ---
@@ -326,19 +326,19 @@ For a rope unwinding without slipping from a fixed-radius spool:
 1. Integrate the linear velocity to get released rope length:
 
    $$
-   s=\int_{t_i}^{t_f}v(t)\,dt.
+   s=\int_{t_0}^{t_f}v(t)\,dt.
    $$
 
 2. Divide by one circumference to get revolutions:
 
    $$
-   N=\frac{s}{2\pi r}.
+   n_{\mathrm{rev}}=\frac{s}{2\pi r}.
    $$
 
 3. For $v(t)=At+Bt^2$ starting at $t=0$:
 
    $$
-   N(t_f)=\frac{\frac12At_f^2+\frac13Bt_f^3}{2\pi r}.
+   n_{\mathrm{rev}}(t_f)=\frac{\frac12At_f^2+\frac13Bt_f^3}{2\pi r}.
    $$
 
 The main traps are substituting the final time into velocity instead of integrating, stopping at radians instead of converting to revolutions, using something other than the full circumference, and rounding before the final step.

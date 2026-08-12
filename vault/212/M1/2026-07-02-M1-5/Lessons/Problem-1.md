@@ -56,12 +56,12 @@ $$
 \text{inward up-left}+\text{tangential up-right}.
 $$
 
-A fast way to test candidate arrows is to project each one onto inward $+\hat r$ and forward $+\hat t$. For a particle that is speeding up, both components must be positive:
+A fast way to test candidate arrows is to project each one onto inward $+\hat{r}$ and forward $+\hat{t}$. For a particle that is speeding up, both components must be positive:
 
 $$
-\sum F_r=m\frac{v^2}{r}>0,
+\sum F_r=m a_r=m\frac{v^2}{r}>0,
 \qquad
-\sum F_t=m\frac{dv}{dt}>0.
+\sum F_t=m a_t=m\frac{dv}{dt}>0.
 $$
 
 Any arrow missing either projection fails. Because mass is a positive scalar, this is exactly the same direction test used for the acceleration vector.

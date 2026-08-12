@@ -17,7 +17,7 @@ topic-code: MTH212.M7.08
 ## Prerequisites
 
 - Recognize a converging lens and a diverging lens.
-- Read the real-object distance $s$ relative to the positive focal-length magnitude $f$.
+- Read the real-object distance $d_o$ relative to the positive focal-length magnitude $f$.
 - Recall that a real image is formed where outgoing rays actually meet, while a virtual image is formed where their backward extensions meet.
 
 ---
@@ -34,28 +34,28 @@ Use this decision map before thinking about image size:
 
 | Lens and real-object position | Ray behavior | Image type | Orientation |
 |---|---|---|---|
-| Converging, $s>f$ | Outgoing rays meet | Real | Inverted |
-| Converging, $0<s<f$ | Only backward extensions meet | Virtual | Upright |
-| Diverging, any $s>0$ | Outgoing rays spread apart | Virtual | Upright |
+| Converging, $d_o>f$ | Outgoing rays meet | Real | Inverted |
+| Converging, $0<d_o<f$ | Only backward extensions meet | Virtual | Upright |
+| Diverging, any $d_o>0$ | Outgoing rays spread apart | Virtual | Upright |
 
-The boundary $s=f$ is special: the rays emerge parallel, so there is no image at a finite distance. The mark $2f$ refines the image's size and location, but it does not change the real/inverted classification on the $s>f$ side.
+The boundary $d_o=f$ is special: the rays emerge parallel, so there is no image at a finite distance. The mark $2f$ refines the image's size and location, but it does not change the real/inverted classification on the $d_o>f$ side.
 
 ---
 
 <a id="run-the-lens-decision"></a>
 ## Run the Lens Decision
 
-**Example:** A real object is placed at $s=3f$ in front of a converging lens. Classify the image as real or virtual and upright or inverted.
+**Example:** A real object is placed at $d_o=3f$ in front of a converging lens. Classify the image as real or virtual and upright or inverted.
 
 **Explanation**
 
-The lens is converging, so compare $s$ with $f$. Since $3f>f$, the object lies outside the focal point. The refracted rays actually meet on the far side of the lens, making the image **real**. A real image made by one converging lens from a real object is **inverted**.
+The lens is converging, so compare $d_o$ with $f$. Since $3f>f$, the object lies outside the focal point. The refracted rays actually meet on the far side of the lens, making the image **real**. A real image made by one converging lens from a real object is **inverted**.
 
 ```quiz
 type: radio
 id: p8-lens-decision
 content: |-
-  A real object is placed at $s=4f$ in front of a converging lens. Which pair correctly classifies the image?
+  A real object is placed at $d_o=4f$ in front of a converging lens. Which pair correctly classifies the image?
 options:
 - id: real-inverted
   content: |-
@@ -67,17 +67,17 @@ options:
   content: |-
     Real and upright
   feedback: |-
-    The rays do meet, so “real” is correct, but the orientation is not. For one converging lens with a real object at $s>f$, the real image is inverted; an upright image occurs when the object is inside $f$ and the image is virtual.
+    The rays do meet, so “real” is correct, but the orientation is not. For one converging lens with a real object at $d_o>f$, the real image is inverted; an upright image occurs when the object is inside $f$ and the image is virtual.
 - id: virtual-upright
   content: |-
     Virtual and upright
   feedback: |-
-    This pair belongs to a converging lens with $0<s<f$. Because $4f>f$, the outgoing rays actually meet, so the image is real and inverted.
+    This pair belongs to a converging lens with $0<d_o<f$. Because $4f>f$, the outgoing rays actually meet, so the image is real and inverted.
 - id: virtual-inverted
   content: |-
     Virtual and inverted
   feedback: |-
-    The image is not virtual because a converging lens actually brings the rays together for $s>f$. In addition, the virtual image produced by a single thin lens from a real object is upright, not inverted.
+    The image is not virtual because a converging lens actually brings the rays together for $d_o>f$. In addition, the virtual image produced by a single thin lens from a real object is upright, not inverted.
 ```
 
 ---
@@ -85,7 +85,7 @@ options:
 <a id="use-the-region-between-f-and-2f"></a>
 ## Use the Region Between \(f\) and \(2f\)
 
-**Example:** A real object is placed at $s=1.5f$ in front of a converging lens. Describe the image.
+**Example:** A real object is placed at $d_o=1.5f$ in front of a converging lens. Describe the image.
 
 **Explanation**
 
@@ -94,18 +94,18 @@ First, $1.5f>f$, so the image is **real and inverted**. Next, the object lies be
 Thus,
 
 $$
-f<s<2f
+f<d_o<2f
 \quad\Longrightarrow\quad
 \text{real, inverted, magnified image beyond }2f.
 $$
 
-**Boundary check:** At $s=2f$, the image is at $2f$ and has the same size as the object. At $s=f$, the image is not at a finite distance. Because “between” means the strict interval $f<s<2f$, neither boundary case applies.
+**Boundary check:** At $d_o=2f$, the image is at $2f$ and has the same size as the object. At $d_o=f$, the image is not at a finite distance. Because “between” means the strict interval $f<d_o<2f$, neither boundary case applies.
 
 ```quiz
 type: radio
 id: p8-between-f-and-2f
 content: |-
-  A real object is placed at $s=1.25f$ in front of a converging lens. Which description is correct?
+  A real object is placed at $d_o=1.25f$ in front of a converging lens. Which description is correct?
 options:
 - id: real-inverted-magnified
   content: |-
@@ -122,17 +122,17 @@ options:
   content: |-
     The image is virtual, upright, magnified, and on the object's side.
   feedback: |-
-    That description applies when the object is inside the focal point, $0<s<f$. Here $1.25f>f$, so the rays actually meet and form a real, inverted image.
+    That description applies when the object is inside the focal point, $0<d_o<f$. Here $1.25f>f$, so the rays actually meet and form a real, inverted image.
 - id: real-inverted-same-size
   content: |-
     The image is real, inverted, the same size, and at $2f$.
   feedback: |-
-    Equal size at $2f$ is the boundary case $s=2f$. Because $1.25f$ is strictly between $f$ and $2f$, the image is magnified and lies beyond $2f$.
+    Equal size at $2f$ is the boundary case $d_o=2f$. Because $1.25f$ is strictly between $f$ and $2f$, the image is magnified and lies beyond $2f$.
 - id: no-finite-image
   content: |-
     There is no image at a finite distance.
   feedback: |-
-    Parallel outgoing rays, and thus no finite image, occur only at $s=f$. Here $s=1.25f>f$, so the rays meet at a finite point beyond $2f$.
+    Parallel outgoing rays, and thus no finite image, occur only at $d_o=f$. Here $d_o=1.25f>f$, so the rays meet at a finite point beyond $2f$.
 ```
 
 ---
@@ -140,26 +140,26 @@ options:
 <a id="cross-inside-the-focal-point"></a>
 ## Cross Inside the Focal Point
 
-**Example:** A real object is moved to $s=0.75f$ in front of the same converging lens. Describe the image.
+**Example:** A real object is moved to $d_o=0.75f$ in front of the same converging lens. Describe the image.
 
 **Explanation**
 
-Now $s<f$. The rays leaving the lens still spread apart, but an observer can trace them backward to a common point on the object's side. Because only the backward extensions meet, the image is **virtual**. It is also **upright and magnified**.
+Now $d_o<f$. The rays leaving the lens still spread apart, but an observer can trace them backward to a common point on the object's side. Because only the backward extensions meet, the image is **virtual**. It is also **upright and magnified**.
 
-This change across $s=f$ is why a converging lens can make both real and virtual images of real objects.
+This change across $d_o=f$ is why a converging lens can make both real and virtual images of real objects.
 
 ```quiz
 type: radio
 id: p8-inside-focus
 content: |-
-  A real object is placed at $s=0.60f$ in front of a converging lens. Which description is correct?
+  A real object is placed at $d_o=0.60f$ in front of a converging lens. Which description is correct?
 options:
 - id: virtual-upright-magnified
   content: |-
     Virtual, upright, and magnified on the object's side
   correct: true
   feedback: |-
-    With a converging lens and $0<s<f$, the outgoing rays do not actually meet; their backward extensions meet on the object's side. The image is therefore virtual, upright, and magnified.
+    With a converging lens and $0<d_o<f$, the outgoing rays do not actually meet; their backward extensions meet on the object's side. The image is therefore virtual, upright, and magnified.
 - id: real-inverted-magnified
   content: |-
     Real, inverted, and magnified on the opposite side
@@ -174,12 +174,12 @@ options:
   content: |-
     Real, upright, and magnified on the opposite side
   feedback: |-
-    “Real” would require the outgoing rays themselves to meet. At $s<f$ they spread apart, so only a virtual image appears on the object's side, and that image is upright.
+    “Real” would require the outgoing rays themselves to meet. At $d_o<f$ they spread apart, so only a virtual image appears on the object's side, and that image is upright.
 - id: no-finite-image
   content: |-
     No image at a finite distance
   feedback: |-
-    No finite image is the exact boundary case $s=f$. Since $0.60f<f$, the backward ray extensions meet at a finite virtual-image location.
+    No finite image is the exact boundary case $d_o=f$. Since $0.60f<f$, the backward ray extensions meet at a finite virtual-image location.
 ```
 
 ---
@@ -236,8 +236,8 @@ options:
 
 **Example:** Decide which claims are true.
 
-1. A converging lens with a real object at $s=2.5f$ makes a real, inverted image.
-2. A converging lens with a real object at $s=0.5f$ makes a real image.
+1. A converging lens with a real object at $d_o=2.5f$ makes a real, inverted image.
+2. A converging lens with a real object at $d_o=0.5f$ makes a real image.
 3. A diverging lens makes an upright image of a real object.
 
 Evaluate each claim through the same short chain:
@@ -269,7 +269,7 @@ content: |-
 
   I. A converging lens can produce both real and virtual images of real objects.
 
-  II. An object placed at position $s$ between $f$ and $2f$ from the lens plane of a converging lens will produce a real, inverted image.
+  II. An object placed at position $d_o$ between $f$ and $2f$ from the lens plane of a converging lens will produce a real, inverted image.
 
   III. A diverging lens can produce both upright and inverted images of real objects.
 options:
@@ -278,17 +278,17 @@ options:
     I and II only
   correct: true
   feedback: |-
-    Statement I is true because a converging lens gives a real image for $s>f$ and a virtual image for $s<f$. Statement II is true because $f<s<2f$ is outside the focal point, so the image is real and inverted. Statement III is false because a diverging lens gives an upright image for every real-object position.
+    Statement I is true because a converging lens gives a real image for $d_o>f$ and a virtual image for $d_o<f$. Statement II is true because $f<d_o<2f$ is outside the focal point, so the image is real and inverted. Statement III is false because a diverging lens gives an upright image for every real-object position.
 - id: i-only
   content: |-
     I only
   feedback: |-
-    Statement I is true, but Statement II is also true. The condition $f<s<2f$ still has $s>f$, so a converging lens forms a real, inverted image; the $2f$ boundary changes size and location, not that classification.
+    Statement I is true, but Statement II is also true. The condition $f<d_o<2f$ still has $d_o>f$, so a converging lens forms a real, inverted image; the $2f$ boundary changes size and location, not that classification.
 - id: ii-only
   content: |-
     II only
   feedback: |-
-    Statement II is true, but Statement I is also true. Moving a real object across the focal point of a converging lens changes the image from real and inverted at $s>f$ to virtual and upright at $s<f$.
+    Statement II is true, but Statement I is also true. Moving a real object across the focal point of a converging lens changes the image from real and inverted at $d_o>f$ to virtual and upright at $d_o<f$.
 - id: iii-only
   content: |-
     III only
@@ -309,9 +309,9 @@ options:
 For a real object, use this checklist:
 
 1. **Classify the lens.** A diverging lens always gives a virtual, upright, reduced image.
-2. **For a converging lens, compare $s$ with $f$.** Outside $f$ means real and inverted; inside $f$ means virtual, upright, and magnified.
-3. **Use $2f$ only to refine size and location.** In particular, $f<s<2f$ gives a magnified real image beyond $2f$.
-4. **Respect the boundary.** At $s=f$, the image is at infinity rather than at a finite location.
+2. **For a converging lens, compare $d_o$ with $f$.** Outside $f$ means real and inverted; inside $f$ means virtual, upright, and magnified.
+3. **Use $2f$ only to refine size and location.** In particular, $f<d_o<2f$ gives a magnified real image beyond $2f$.
+4. **Respect the boundary.** At $d_o=f$, the image is at infinity rather than at a finite location.
 5. **On select-all questions, test every statement independently.** One true statement does not rule out another.
 
 <!-- lesson-nav:start -->

@@ -16,7 +16,7 @@ topic-code: MTH212.M1.54
 
 ## Prerequisites
 
-- Net force and acceleration point in the same direction because $\sum \vec{F}=m\vec{a}$.
+- Net force and acceleration point in the same direction because $\vec{F}_{\mathrm{net}}=m\vec{a}$.
 - Motion around a circle has an inward radial acceleration component.
 - The tangential direction is perpendicular to the radius at the particle's position.
 - If an object is speeding up, its tangential acceleration points in the direction of motion.
@@ -48,7 +48,7 @@ Read the cue in this order:
 Newton's second law is
 
 $$
-\sum \vec{F}=m\vec{a}.
+\vec{F}_{\mathrm{net}}=m\vec{a}.
 $$
 
 The mass $m$ changes the size of the vector, not its direction. So the net force points down-left too.
@@ -80,7 +80,7 @@ options:
   content: |-
     The direction cannot be determined from acceleration
   feedback: |-
-    It can be determined because $\sum \vec{F}=m\vec{a}$ and $m$ is positive.
+    It can be determined because $\vec{F}_{\mathrm{net}}=m\vec{a}$ and $m$ is positive.
 ```
 
 ---
@@ -187,7 +187,7 @@ Use the same three-step diagram routine every time:
 The total acceleration is their vector sum:
 
 $$
-\vec{a}=\vec{a}_r+\vec{a}_t.
+\vec{a}=a_r\hat{r}+a_t\hat{t}.
 $$
 
 That sum points between the inward direction and the forward tangent. Since both components point leftward, the net force should point leftward, tilted toward the center. In the original diagram, that is choice D.
@@ -198,7 +198,7 @@ id: p2-q4-original
 content: |-
   A particle is moving around a circle, with an arrow depicting the magnitude and direction of the net force acting on the particle. Which diagram represents a particle moving in the clockwise direction and speeding up?
 
-  ![](<../Source/Images/clockwise-speeding-up-net-force.png>)
+  ![](<../Source/Images/circular-motion-net-force-options.png>)
 options:
 - id: q4-a
   content: |-

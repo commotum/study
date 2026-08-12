@@ -20,13 +20,13 @@ We previously discussed the energy, power, intensity, and intensity level associ
 Consider a particle in a medium undergoing sinusoidal motion. Its kinetic energy is
 
 $$
-K=\frac{1}{2}mv^2.
+K=\frac{1}{2}mu^2.
 $$
 
 For simple harmonic motion, the maximum particle speed is
 
 $$
-v_{\max}=\omega A,
+u_{\max}=\omega A,
 $$
 
 where $A$ is the amplitude and $\omega$ is the angular frequency.
@@ -40,19 +40,19 @@ $$
 we can also write
 
 $$
-v_{\max}=2\pi fA.
+u_{\max}=2\pi fA.
 $$
 
 The characteristic particle speed is therefore proportional to both the frequency and amplitude:
 
 $$
-v\propto fA.
+u\propto fA.
 $$
 
 Because kinetic energy depends on the square of the speed,
 
 $$
-K\propto v^2,
+K\propto u^2,
 $$
 
 so
@@ -93,7 +93,7 @@ The SI unit of intensity is
 
 $$
 \boxed{
-[I]=\mathrm{W/m^2}
+[I]=\mathrm{W}/\mathrm{m}^2
 }.
 $$
 
@@ -146,7 +146,7 @@ This expression assumes:
 Suppose the sound intensity measured at a distance $r_1$ from a speaker is
 
 $$
-I_1=240\ \mathrm{W/m^2}.
+I_1=240\ \mathrm{W}/\mathrm{m}^2.
 $$
 
 The listener then moves to a distance
@@ -216,7 +216,7 @@ I_2
 =
 \frac{1}{4}
 \left(
-240\ \mathrm{W/m^2}
+240\ \mathrm{W}/\mathrm{m}^2
 \right).
 $$
 
@@ -224,7 +224,7 @@ The resulting intensity is
 
 $$
 \boxed{
-I_2=60\ \mathrm{W/m^2}
+I_2=60\ \mathrm{W}/\mathrm{m}^2
 }.
 $$
 
@@ -258,7 +258,7 @@ The standard reference intensity is
 
 $$
 \boxed{
-I_0=1.0\times10^{-12}\ \mathrm{W/m^2}
+I_0=1.0\times10^{-12}\ \mathrm{W}/\mathrm{m}^2
 }.
 $$
 
@@ -339,7 +339,7 @@ $$
 I
 =
 \left(
-1.0\times10^{-12}\ \mathrm{W/m^2}
+1.0\times10^{-12}\ \mathrm{W}/\mathrm{m}^2
 \right)
 10^{60/10}.
 $$
@@ -356,7 +356,7 @@ $$
 I
 =
 \left(
-1.0\times10^{-12}\ \mathrm{W/m^2}
+1.0\times10^{-12}\ \mathrm{W}/\mathrm{m}^2
 \right)
 10^6.
 $$
@@ -365,7 +365,7 @@ Therefore,
 
 $$
 \boxed{
-I=1.0\times10^{-6}\ \mathrm{W/m^2}
+I=1.0\times10^{-6}\ \mathrm{W}/\mathrm{m}^2
 }.
 $$
 
@@ -379,7 +379,7 @@ this may also be written as
 
 $$
 \boxed{
-I=1.0\times10^{-3}\ \mathrm{mW/m^2}
+I=1.0\times10^{-3}\ \mathrm{mW}/\mathrm{m}^2
 }
 $$
 
@@ -387,7 +387,7 @@ or
 
 $$
 \boxed{
-I=0.0010\ \mathrm{mW/m^2}
+I=0.0010\ \mathrm{mW}/\mathrm{m}^2
 }.
 $$
 
@@ -586,7 +586,7 @@ For sound in air under the conditions used in these examples,
 
 $$
 \boxed{
-v=343\ \mathrm{m/s}
+v=343\ \mathrm{m}/\mathrm{s}
 }.
 $$
 
@@ -708,7 +708,7 @@ $$
 A bat flies toward the singer at
 
 $$
-v_o=35\ \mathrm{m/s}.
+v_o=35\ \mathrm{m}/\mathrm{s}.
 $$
 
 The singer is the stationary source, while the bat is the moving observer. Because the observer moves toward the source, we use
@@ -731,9 +731,9 @@ f_{\mathrm{obs}}
 \left(
 1+
 \frac{
-35\ \mathrm{m/s}
+35\ \mathrm{m}/\mathrm{s}
 }{
-343\ \mathrm{m/s}
+343\ \mathrm{m}/\mathrm{s}
 }
 \right).
 $$
@@ -799,7 +799,7 @@ $$
 \frac{
 25\ \mathrm{kHz}
 }{
-1+\frac{v_s}{343\ \mathrm{m/s}}
+1+\frac{v_s}{343\ \mathrm{m}/\mathrm{s}}
 }.
 $$
 
@@ -809,14 +809,14 @@ $$
 \frac{20}{25}
 =
 \frac{1}{
-1+\frac{v_s}{343\ \mathrm{m/s}}
+1+\frac{v_s}{343\ \mathrm{m}/\mathrm{s}}
 }.
 $$
 
 Taking the reciprocal gives
 
 $$
-1+\frac{v_s}{343\ \mathrm{m/s}}
+1+\frac{v_s}{343\ \mathrm{m}/\mathrm{s}}
 =
 \frac{25}{20}.
 $$
@@ -824,7 +824,7 @@ $$
 Therefore,
 
 $$
-\frac{v_s}{343\ \mathrm{m/s}}
+\frac{v_s}{343\ \mathrm{m}/\mathrm{s}}
 =
 \frac{25}{20}-1.
 $$
@@ -838,7 +838,7 @@ $$
 we obtain
 
 $$
-\frac{v_s}{343\ \mathrm{m/s}}
+\frac{v_s}{343\ \mathrm{m}/\mathrm{s}}
 =
 0.25.
 $$
@@ -848,14 +848,14 @@ Thus,
 $$
 v_s
 =
-(343\ \mathrm{m/s})(0.25).
+(343\ \mathrm{m}/\mathrm{s})(0.25).
 $$
 
 Therefore,
 
 $$
 \boxed{
-v_s\approx86\ \mathrm{m/s}
+v_s\approx86\ \mathrm{m}/\mathrm{s}
 }.
 $$
 
@@ -1016,7 +1016,7 @@ with
 
 $$
 \boxed{
-I_0=1.0\times10^{-12}\ \mathrm{W/m^2}
+I_0=1.0\times10^{-12}\ \mathrm{W}/\mathrm{m}^2
 }.
 $$
 

@@ -86,7 +86,7 @@ $$
 The half-amplitude shortcut for this particular model is
 
 $$
-\boxed{\tau=\frac{t_{\text{half}}}{2\ln 2}}.
+\boxed{\tau=\frac{t_{\mathrm{half}}}{2\ln 2}}.
 $$
 
 ```quiz
@@ -170,7 +170,7 @@ options:
 <a id="build-the-full-pendulum-calculation"></a>
 ## Build the Full Pendulum Calculation
 
-**Example:** A simple pendulum has length $L=19.62\ \mathrm{m}$. Using $g=9.81\ \mathrm{m/s^2}$, its amplitude is halved after $500$ periods. Find $\tau$.
+**Example:** A simple pendulum has length $L=19.62\ \mathrm{m}$. Using $g=9.81\ \mathrm{m}/\mathrm{s}^2$, its amplitude is halved after $500$ periods. Find $\tau$.
 
 **Explanation**
 
@@ -180,7 +180,7 @@ $$
 \begin{aligned}
 T
 &=2\pi\sqrt{\frac{L}{g}}\\
-&=2\pi\sqrt{\frac{19.62\ \mathrm{m}}{9.81\ \mathrm{m/s^2}}}\\
+&=2\pi\sqrt{\frac{19.62\ \mathrm{m}}{9.81\ \mathrm{m}/\mathrm{s}^2}}\\
 &\approx 8.89\ \mathrm{s}.
 \end{aligned}
 $$
@@ -194,7 +194,7 @@ t&=NT=(500)(8.89\ \mathrm{s})\approx 4.44\times10^3\ \mathrm{s},\\
 \end{aligned}
 $$
 
-For the assigned pendulum below, the simple-pendulum model uses $L=27\ \mathrm{m}$ and $g=9.81\ \mathrm{m/s^2}$. The cable mass, bob mass, and bob radius do not enter this ideal model's period formula.
+For the assigned pendulum below, the simple-pendulum model uses $L=27\ \mathrm{m}$ and $g=9.81\ \mathrm{m}/\mathrm{s}^2$. The cable mass, bob mass, and bob radius do not enter this ideal model's period formula.
 
 ```quiz
 type: radio

@@ -16,8 +16,8 @@ topic-code: MTH212.M2.44
 
 ## Prerequisites
 
-- Linear momentum: $\vec P=\sum_i m_i\vec v_i$
-- Angular momentum of a particle about an origin $O$: $\vec L_O=\vec r_{i/O}\times\vec p_i$
+- Linear momentum: $\vec{P}=\sum_i m_i\vec{v}_i$
+- Angular momentum of a particle about an origin $O$: $\vec{L}_O=\vec{r}_{i/O}\times\vec{p}_i$
 - The meaning of a perfectly inelastic collision: the objects stick together
 
 ---
@@ -38,7 +38,7 @@ Sort every proposed conservation statement with three labels:
 For the rod-and-ball problem, the useful system is the combined rod plus ball. During the brief collision, forces between the ball and rod are internal to this system. With no significant external impulse or external angular impulse,
 
 $$
-\vec P_{\text{system},i}=\vec P_{\text{system},f}
+\vec{P}_{\text{system},i}=\vec{P}_{\text{system},f}
 $$
 
 and angular momentum is conserved about a valid origin, especially the combined system's center of mass. Sticking tells us that kinetic energy is **not** conserved.
@@ -61,9 +61,9 @@ During impact, the block exerts an impulse on the puck, so the puck's momentum c
 For the combined puck-block system, the contact impulses are internal and cancel in the total. With negligible external impulse, the combined momentum is conserved:
 
 $$
-\vec p_{\text{puck},i}
+\vec{p}_{\text{puck},i}
 =
-\vec P_{\text{puck+block},f},
+\vec{P}_{\text{puck+block},f},
 $$
 
 because the block initially has zero momentum. The equation does not say that the puck keeps its own momentum.
@@ -105,8 +105,8 @@ Use a separate condition for each quantity:
 
 | Quantity | Conservation test during the collision |
 |---|---|
-| Total linear momentum $\vec P$ | Net external impulse is negligible |
-| Total angular momentum $\vec L_O$ | Net external angular impulse about $O$ is negligible, with $O$ a valid inertial origin or the isolated system's center of mass |
+| Total linear momentum $\vec{P}$ | Net external impulse is negligible |
+| Total angular momentum $\vec{L}_O$ | Net external angular impulse about $O$ is negligible, with $O$ a valid inertial origin or the isolated system's center of mass |
 | Total kinetic energy $K$ | The collision is elastic |
 
 An isolated sticking collision passes the first two tests, but fails the kinetic-energy test. Some initial kinetic energy becomes thermal energy, deformation, or vibration. Total energy is still conserved; kinetic energy is not.
@@ -149,7 +149,7 @@ options:
 The center of mass of the complete isolated system moves with constant velocity because the net external force is zero. It therefore supplies a valid origin for the system's internal rotation. With no external torque,
 
 $$
-\vec L_{\mathrm{CM},i}=\vec L_{\mathrm{CM},f}.
+\vec{L}_{\mathrm{cm},i}=\vec{L}_{\mathrm{cm},f}.
 $$
 
 The bar's center of mass is the center of only one part of the system. It receives an impulse during the collision and changes velocity. Angular momentum measured relative to that accelerating point is not generally conserved. Likewise, the bar alone receives an external torque from the incoming mass, so the bar's angular momentum about its own center changes.
@@ -249,8 +249,8 @@ options:
 For a collision-conservation question:
 
 1. **Name the complete system.** Internal collision impulses do not conserve each object's momentum, but they cancel in the system total.
-2. **Test linear momentum:** negligible external impulse $\Rightarrow$ total $\vec P$ is conserved.
-3. **Name the angular-momentum origin.** Use a fixed inertial origin or the complete isolated system's center of mass; then negligible external angular impulse $\Rightarrow$ total $\vec L$ is conserved.
+2. **Test linear momentum:** negligible external impulse $\Rightarrow$ total $\vec{P}$ is conserved.
+3. **Name the angular-momentum origin.** Use a fixed inertial origin or the complete isolated system's center of mass; then negligible external angular impulse $\Rightarrow$ total $\vec{L}$ is conserved.
 4. **Read the collision type.** If the objects stick, kinetic energy is not conserved.
 
 Main trap: do not transfer a conservation law for the complete isolated system to one object or to an origin attached to only one part of the system.

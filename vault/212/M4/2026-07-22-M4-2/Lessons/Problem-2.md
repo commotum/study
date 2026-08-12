@@ -18,7 +18,7 @@ topic-code: MTH212.M4.11
 
 - Evaluate a square root with a calculator.
 - Use order of operations in a formula.
-- Recognize that \(1\ \mathrm{Hz}=1\ \mathrm{s^{-1}}\).
+- Recognize that \(1\ \mathrm{Hz}=1\ \mathrm{s}^{-1}\).
 
 ---
 
@@ -33,7 +33,7 @@ $$
 
 Here \(L\) is the pendulum length and \(g\) is gravitational acceleration. The bob's mass and the release angle do not appear in this small-angle frequency formula.
 
-The reusable move is to select \(L\), substitute \(g=9.81\ \mathrm{m/s^2}\), evaluate the entire expression, and round only the final result.
+The reusable move is to select \(L\), substitute \(g=9.81\ \mathrm{m}/\mathrm{s}^2\), evaluate the entire expression, and round only the final result.
 
 **Recognition cue:** The requested unit identifies the output. Hertz means ordinary frequency \(f\); seconds means period \(T\); radians per second means angular frequency \(\omega\).
 
@@ -104,14 +104,14 @@ $$
 f
 &=\frac{1}{2\pi}\sqrt{\frac{g}{L}}\\
 &=\frac{1}{2\pi}
-\sqrt{\frac{9.81\ \mathrm{m/s^2}}{0.40\ \mathrm{m}}}\\
-&=\frac{1}{2\pi}\sqrt{24.525\ \mathrm{s^{-2}}}\\
-&=0.7881\ldots\ \mathrm{s^{-1}}\\
+\sqrt{\frac{9.81\ \mathrm{m}/\mathrm{s}^2}{0.40\ \mathrm{m}}}\\
+&=\frac{1}{2\pi}\sqrt{24.525\ \mathrm{s}^{-2}}\\
+&=0.7881\ldots\ \mathrm{s}^{-1}\\
 &\approx 0.79\ \mathrm{Hz}.
 \end{aligned}
 $$
 
-The meter units cancel under the radical. Taking the square root of \(\mathrm{s^{-2}}\) gives \(\mathrm{s^{-1}}\), which is hertz.
+The meter units cancel under the radical. Taking the square root of \(\mathrm{s}^{-2}\) gives \(\mathrm{s}^{-1}\), which is hertz.
 
 Enter the formula with explicit grouping:
 
@@ -125,7 +125,7 @@ Evaluate the ratio under the square root first, then the square root, then divid
 type: radio
 id: problem-2-substitution-q1
 content: |-
-  Using \(g=9.81\ \mathrm{m/s^2}\), what is the frequency of a simple pendulum with \(L=0.80\ \mathrm{m}\), rounded to two significant figures?
+  Using \(g=9.81\ \mathrm{m}/\mathrm{s}^2\), what is the frequency of a simple pendulum with \(L=0.80\ \mathrm{m}\), rounded to two significant figures?
 options:
 - id: a
   content: |-
@@ -171,14 +171,14 @@ $$
 
 | Quantity | Formula | Unit |
 |---|---|---|
-| Angular frequency | \(\omega=\sqrt{g/L}\) | \(\mathrm{rad/s}\) |
+| Angular frequency | \(\omega=\sqrt{g/L}\) | \(\mathrm{rad}/\mathrm{s}\) |
 | Ordinary frequency | \(f=\omega/(2\pi)\) | \(\mathrm{Hz}\) |
 | Period | \(T=1/f\) | \(\mathrm{s}\) |
 
 For this pendulum,
 
 $$
-\omega=4.0435\ldots\ \mathrm{rad/s},
+\omega=4.0435\ldots\ \mathrm{rad}/\mathrm{s},
 $$
 
 so
@@ -196,7 +196,7 @@ If the question asks for frequency in hertz, report \(f\), not \(\omega\) or \(T
 type: radio
 id: problem-2-output-q1
 content: |-
-  A small-angle pendulum with \(L=0.47\ \mathrm{m}\) gives \(\sqrt{g/L}=4.5686\ldots\ \mathrm{s^{-1}}\). What frequency should be reported to two significant figures?
+  A small-angle pendulum with \(L=0.47\ \mathrm{m}\) gives \(\sqrt{g/L}=4.5686\ldots\ \mathrm{s}^{-1}\). What frequency should be reported to two significant figures?
 options:
 - id: a
   content: |-
@@ -235,7 +235,7 @@ options:
 | Given | Role |
 |---|---|
 | \(L=0.35\ \mathrm{m}\) | Substitute into the formula |
-| \(g=9.81\ \mathrm{m/s^2}\) | Substitute into the formula |
+| \(g=9.81\ \mathrm{m}/\mathrm{s}^2\) | Substitute into the formula |
 | \(m=0.026\ \mathrm{kg}\) | Does not affect simple-pendulum frequency |
 | \(\theta=14^\circ\) | The problem directs us to use the small-angle approximation |
 
@@ -244,7 +244,7 @@ Now evaluate and keep extra digits until the end:
 $$
 \begin{aligned}
 f
-&=\frac{1}{2\pi}\sqrt{\frac{9.81\ \mathrm{m/s^2}}{0.35\ \mathrm{m}}}\\
+&=\frac{1}{2\pi}\sqrt{\frac{9.81\ \mathrm{m}/\mathrm{s}^2}{0.35\ \mathrm{m}}}\\
 &=0.8426\ldots\ \mathrm{Hz}\\
 &=0.84\ \mathrm{Hz}
 \quad\text{to two significant figures.}
@@ -278,7 +278,7 @@ options:
     Therefore,
 
     $$
-    f=\frac{1}{2\pi}\sqrt{\frac{9.81\ \mathrm{m/s^2}}{0.35\ \mathrm{m}}}
+    f=\frac{1}{2\pi}\sqrt{\frac{9.81\ \mathrm{m}/\mathrm{s}^2}{0.35\ \mathrm{m}}}
     =0.8426\ldots\ \mathrm{Hz}.
     $$
 
@@ -311,7 +311,7 @@ For a simple pendulum under the small-angle approximation:
 1. Use \(f=(1/2\pi)\sqrt{g/L}\).
 2. Substitute the length \(L\); do not insert the bob mass or angle.
 3. Group and evaluate \(g/L\), take the square root, then divide by \(2\pi\).
-4. Check for \(\mathrm{s^{-1}}=\mathrm{Hz}\), keep guard digits, and round only the final frequency.
+4. Check for \(\mathrm{s}^{-1}=\mathrm{Hz}\), keep guard digits, and round only the final frequency.
 
 **Main trap:** \(2\pi\sqrt{L/g}\) gives the period \(T\), while \(\sqrt{g/L}\) gives angular frequency \(\omega\). The requested frequency is \(f=\omega/(2\pi)=1/T\).
 

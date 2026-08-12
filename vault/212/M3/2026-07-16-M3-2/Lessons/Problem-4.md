@@ -26,7 +26,7 @@ topic-code: MTH212.M3.08
 
 ## Introduction
 
-The recognition cue is a mass pulled by two equal gravitational forces along two sides of an equilateral triangle, so the vectors have equal magnitude and are separated by $60^\circ$. The single vector-addition move is to use the angle bisector as the symmetry axis: the perpendicular components cancel and the parallel components add, giving $F_{\text{net}}=2F_{\text{pair}}\cos30^\circ=\sqrt3F_{\text{pair}}$.
+The recognition cue is a mass pulled by two equal gravitational forces along two sides of an equilateral triangle, so the vectors have equal magnitude and are separated by $60^\circ$. The single vector-addition move is to use the angle bisector as the symmetry axis: the perpendicular components cancel and the parallel components add, giving $F_{\mathrm{net}}=2F_{\mathrm{pair}}\cos30^\circ=\sqrt3F_{\mathrm{pair}}$.
 
 When several masses attract one another, the forces must be added as **vectors**. For one mass at a corner of an equilateral triangle, the other two masses pull with equal force magnitudes in directions separated by $60^\circ$.
 
@@ -48,10 +48,10 @@ $$
 Here, every mass is $m$ and every side has length $L$, so either one of the other masses exerts a force of magnitude
 
 $$
-F_{\text{pair}}=\frac{Gm^2}{L^2}.
+F_{\mathrm{pair}}=\frac{Gm^2}{L^2}.
 $$
 
-Both pairwise forces have this same magnitude, but they point in different directions. Calculating $F_{\text{pair}}$ is therefore only the first step.
+Both pairwise forces have this same magnitude, but they point in different directions. Calculating $F_{\mathrm{pair}}$ is therefore only the first step.
 
 **Practice 1**
 
@@ -66,7 +66,7 @@ options:
     $\dfrac{Gm^2}{L^2}$
   correct: true
   feedback: |-
-    Apply Newton's law to one pair of equal masses separated by one side length: $F_{\text{pair}}=Gm^2/L^2$. The other mass produces a second force of the same magnitude, which must be combined later as a vector.
+    Apply Newton's law to one pair of equal masses separated by one side length: $F_{\mathrm{pair}}=Gm^2/L^2$. The other mass produces a second force of the same magnitude, which must be combined later as a vector.
 - id: b
   content: |-
     $\dfrac{2Gm^2}{L^2}$
@@ -119,24 +119,24 @@ options:
 
 Choose an axis along the $60^\circ$ angle bisector. For each force:
 
-- the component along the bisector is $F_{\text{pair}}\cos 30^\circ$;
+- the component along the bisector is $F_{\mathrm{pair}}\cos 30^\circ$;
 - the component perpendicular to the bisector has the same magnitude as the other perpendicular component but the opposite direction.
 
 The perpendicular components cancel, while the two components along the bisector add:
 
 $$
 \begin{aligned}
-F_{\text{net}}
-&=2F_{\text{pair}}\cos 30^\circ\\
-&=2F_{\text{pair}}\left(\frac{\sqrt3}{2}\right)\\
-&=\sqrt3F_{\text{pair}}.
+F_{\mathrm{net}}
+&=2F_{\mathrm{pair}}\cos 30^\circ\\
+&=2F_{\mathrm{pair}}\left(\frac{\sqrt3}{2}\right)\\
+&=\sqrt3F_{\mathrm{pair}}.
 \end{aligned}
 $$
 
 Combining this with Newton's law gives the reusable result
 
 $$
-\boxed{F_{\text{net}}=\sqrt3\frac{Gm^2}{L^2}}.
+\boxed{F_{\mathrm{net}}=\sqrt3\frac{Gm^2}{L^2}}.
 $$
 
 The net force points along the angle bisector toward the common center of mass.
@@ -144,16 +144,16 @@ The net force points along the angle bisector toward the common center of mass.
 As a check, the vector triangle gives the same magnitude through the Law of Cosines:
 
 $$
-F_{\text{net}}^2
-=F_{\text{pair}}^2+F_{\text{pair}}^2
-+2F_{\text{pair}}^2\cos60^\circ
-=3F_{\text{pair}}^2.
+F_{\mathrm{net}}^2
+=F_{\mathrm{pair}}^2+F_{\mathrm{pair}}^2
++2F_{\mathrm{pair}}^2\cos60^\circ
+=3F_{\mathrm{pair}}^2.
 $$
 
 Also, the two forces are neither parallel nor opposite, so a sensible result must satisfy
 
 $$
-F_{\text{pair}}<F_{\text{net}}<2F_{\text{pair}}.
+F_{\mathrm{pair}}<F_{\mathrm{net}}<2F_{\mathrm{pair}}.
 $$
 
 The factor $\sqrt3\approx1.732$ passes this reasonableness check.
@@ -171,7 +171,7 @@ options:
     $17.3\ \mathrm{N}$
   correct: true
   feedback: |-
-    For equal forces separated by $60^\circ$, $F_{\text{net}}=\sqrt3F=(1.732)(10.0\ \mathrm{N})=17.3\ \mathrm{N}$. Adding the magnitudes to get $20.0\ \mathrm{N}$ would incorrectly treat the forces as parallel.
+    For equal forces separated by $60^\circ$, $F_{\mathrm{net}}=\sqrt3F=(1.732)(10.0\ \mathrm{N})=17.3\ \mathrm{N}$. Adding the magnitudes to get $20.0\ \mathrm{N}$ would incorrectly treat the forces as parallel.
 - id: b
   content: |-
     $20.0\ \mathrm{N}$
@@ -230,17 +230,17 @@ Keep the powers of ten visible so that the arithmetic and unit conversion can be
 
 | Quantity | Calculation | Value kept for the next step |
 |---|---|---|
-| $m^2$ | $(2.5\times10^{30})^2$ | $6.25\times10^{60}\ \mathrm{kg^2}$ |
-| $L^2$ | $(1.8\times10^{12})^2$ | $3.24\times10^{24}\ \mathrm{m^2}$ |
-| $F_{\text{pair}}$ | $Gm^2/L^2$ | $1.2867\times10^{26}\ \mathrm{N}$ |
-| $F_{\text{net}}$ | $\sqrt3F_{\text{pair}}$ | $2.2285\times10^{26}\ \mathrm{N}$ |
-| Converted force | $F_{\text{net}}/10^{24}$ | $222.85\ldots\ \mathrm{YN}$ |
+| $m^2$ | $(2.5\times10^{30})^2$ | $6.25\times10^{60}\ \mathrm{kg}^2$ |
+| $L^2$ | $(1.8\times10^{12})^2$ | $3.24\times10^{24}\ \mathrm{m}^2$ |
+| $F_{\mathrm{pair}}$ | $Gm^2/L^2$ | $1.2867\times10^{26}\ \mathrm{N}$ |
+| $F_{\mathrm{net}}$ | $\sqrt3F_{\mathrm{pair}}$ | $2.2285\times10^{26}\ \mathrm{N}$ |
+| Converted force | $F_{\mathrm{net}}/10^{24}$ | $222.85\ldots\ \mathrm{YN}$ |
 
 In equation form, start with one pairwise force:
 
 $$
 \begin{aligned}
-F_{\text{pair}}
+F_{\mathrm{pair}}
 &=\frac{(6.67\times10^{-11})(2.5\times10^{30})^2}{(1.8\times10^{12})^2}\\
 &\approx1.2867\times10^{26}\ \mathrm{N}.
 \end{aligned}
@@ -250,8 +250,8 @@ Then combine the two equal forces:
 
 $$
 \begin{aligned}
-F_{\text{net}}
-&=\sqrt3F_{\text{pair}}\\
+F_{\mathrm{net}}
+&=\sqrt3F_{\mathrm{pair}}\\
 &\approx2.2285\times10^{26}\ \mathrm{N}\\
 &=222.85\ldots\ \mathrm{YN}.
 \end{aligned}
@@ -307,9 +307,9 @@ options:
 
 ## Summary
 
-- Find one pairwise magnitude with $F_{\text{pair}}=Gm^2/L^2$.
+- Find one pairwise magnitude with $F_{\mathrm{pair}}=Gm^2/L^2$.
 - Read the $60^\circ$ angle between the forces from the equilateral triangle.
-- Use symmetry to add the vectors: $F_{\text{net}}=2F_{\text{pair}}\cos30^\circ=\sqrt3F_{\text{pair}}$.
+- Use symmetry to add the vectors: $F_{\mathrm{net}}=2F_{\mathrm{pair}}\cos30^\circ=\sqrt3F_{\mathrm{pair}}$.
 - Convert from newtons to yottanewtons by dividing by $10^{24}$.
 - Keep guard digits and round only the final result.
 

@@ -17,8 +17,8 @@ topic-code: MTH212.M5.07
 
 ## Prerequisites
 
-- Use the wave-speed model $v=\sqrt{T/\mu}$ for a wave on a string.
-- Recognize that a stationary hanging mass produces tension approximately equal to its weight, $T\approx Mg$.
+- Use the wave-speed model $v_{\mathrm{wave}}=\sqrt{F_T/\mu}$ for a wave on a string.
+- Recognize that a stationary hanging mass produces tension approximately equal to its weight, $F_T\approx Mg$.
 - Compare positive quantities using direct and square-root relationships.
 
 ---
@@ -29,37 +29,37 @@ topic-code: MTH212.M5.07
 For a wave traveling on a string,
 
 $$
-v=\sqrt{\frac{T}{\mu}},
+v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}},
 $$
 
-where $T$ is the string tension and $\mu$ is the string's linear mass density.
+where $F_T$ is the string tension and $\mu$ is the string's linear mass density.
 
 In the pulley setup, the hanging block supplies the tension. If the block is stationary, then
 
 $$
-T\approx Mg.
+F_T\approx Mg.
 $$
 
 Substituting this into the wave-speed equation gives
 
 $$
-v=\sqrt{\frac{Mg}{\mu}}.
+v_{\mathrm{wave}}=\sqrt{\frac{Mg}{\mu}}.
 $$
 
 When the same string and location are used, $g$ and $\mu$ stay constant. The core move is therefore to follow the change through this chain:
 
 $$
-M\longrightarrow T\longrightarrow v.
+M\longrightarrow F_T\longrightarrow v_{\mathrm{wave}}.
 $$
 
-An increase in $M$ increases $T$, and an increase in $T$ increases $v$.
+An increase in $M$ increases $F_T$, and an increase in $F_T$ increases $v_{\mathrm{wave}}$.
 
 Equivalently, under these fixed-condition assumptions,
 
 $$
-T\propto M
+F_T\propto M
 \qquad\text{and}\qquad
-v\propto\sqrt{M}.
+v_{\mathrm{wave}}\propto\sqrt{M}.
 $$
 
 These proportionality statements are conditional: they apply here because $g$ and $\mu$ are held constant.
@@ -78,9 +78,9 @@ Start by assigning each quantity a role.
 | Quantity | Role | What happens when $M$ increases? |
 |---|---|---|
 | Hanging-block mass $M$ | Changed input | Increases |
-| Tension $T\approx Mg$ | Dependent quantity | Increases |
+| Tension $F_T\approx Mg$ | Dependent quantity | Increases |
 | String linear density $\mu$ | Property of the unchanged string | Stays constant |
-| Wave speed $v=\sqrt{T/\mu}$ | Target output | Must be determined |
+| Wave speed $v_{\mathrm{wave}}=\sqrt{F_T/\mu}$ | Target output | Must be determined |
 
 The phrase **everything else remains constant** is the cue to keep $\mu$ fixed. The block's mass changes the tension; it does not change the material per unit length of the string.
 
@@ -88,7 +88,7 @@ The phrase **everything else remains constant** is the cue to keep $\mu$ fixed. 
 type: radio
 id: problem-7-variables-q1
 content: |-
-  The hanging mass is increased while the same string segment is used. Which quantity should be treated as constant in $v=\sqrt{T/\mu}$?
+  The hanging mass is increased while the same string segment is used. Which quantity should be treated as constant in $v_{\mathrm{wave}}=\sqrt{F_T/\mu}$?
 options:
 - id: a
   content: |-
@@ -98,7 +98,7 @@ options:
     The string itself is unchanged, so its mass per unit length remains constant.
 - id: b
   content: |-
-    The tension $T$
+    The tension $F_T$
   feedback: |-
     The hanging block supplies the tension, so increasing its mass changes the tension.
 - id: c
@@ -120,13 +120,13 @@ options:
 First connect the block to the string tension:
 
 $$
-M\uparrow \quad\Longrightarrow\quad T\approx Mg\uparrow.
+M\uparrow \quad\Longrightarrow\quad F_T\approx Mg\uparrow.
 $$
 
 Then connect the tension to wave speed:
 
 $$
-T\uparrow \quad\Longrightarrow\quad v=\sqrt{\frac{T}{\mu}}\uparrow,
+F_T\uparrow \quad\Longrightarrow\quad v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}}\uparrow,
 $$
 
 because $\mu$ is fixed and the square-root function increases when its positive input increases.
@@ -134,16 +134,16 @@ because $\mu$ is fixed and the square-root function increases when its positive 
 Therefore,
 
 $$
-M\uparrow \quad\Longrightarrow\quad T\uparrow \quad\Longrightarrow\quad v\uparrow.
+M\uparrow \quad\Longrightarrow\quad F_T\uparrow \quad\Longrightarrow\quad v_{\mathrm{wave}}\uparrow.
 $$
 
 The dependency map makes every link visible:
 
 | Stage | Relationship | Direction of change |
 |---|---|---|
-| Hanging mass to tension | $T\approx Mg$ | $M\uparrow\Rightarrow T\uparrow$ |
-| Tension to wave speed | $v=\sqrt{T/\mu}$ at fixed $\mu$ | $T\uparrow\Rightarrow v\uparrow$ |
-| Full chain | $v\approx\sqrt{Mg/\mu}$ | $M\uparrow\Rightarrow v\uparrow$ |
+| Hanging mass to tension | $F_T\approx Mg$ | $M\uparrow\Rightarrow F_T\uparrow$ |
+| Tension to wave speed | $v_{\mathrm{wave}}=\sqrt{F_T/\mu}$ at fixed $\mu$ | $F_T\uparrow\Rightarrow v_{\mathrm{wave}}\uparrow$ |
+| Full chain | $v_{\mathrm{wave}}\approx\sqrt{Mg/\mu}$ | $M\uparrow\Rightarrow v_{\mathrm{wave}}\uparrow$ |
 
 ```quiz
 type: radio
@@ -156,7 +156,7 @@ options:
     It decreases because the lighter block produces less tension.
   correct: true
   feedback: |-
-    A smaller $M$ gives a smaller $T\approx Mg$, and $v=\sqrt{T/\mu}$ decreases when $T$ decreases at fixed $\mu$.
+    A smaller $M$ gives a smaller $F_T\approx Mg$, and $v_{\mathrm{wave}}=\sqrt{F_T/\mu}$ decreases when $F_T$ decreases at fixed $\mu$.
 - id: b
   content: |-
     It increases because less hanging mass always means less inertia for the wave.
@@ -184,7 +184,7 @@ For two versions of the same setup,
 
 $$
 \frac{v_2}{v_1}
-=\sqrt{\frac{T_2}{T_1}}
+=\sqrt{\frac{F_T_2}{F_T_1}}
 =\sqrt{\frac{M_2g}{M_1g}}
 =\sqrt{\frac{M_2}{M_1}}.
 $$
@@ -210,7 +210,7 @@ options:
     $3$
   correct: true
   feedback: |-
-    Since $v\propto\sqrt{M}$, multiplying $M$ by $9$ multiplies $v$ by $\sqrt{9}=3$.
+    Since $v_{\mathrm{wave}}\propto\sqrt{M}$, multiplying $M$ by $9$ multiplies $v_{\mathrm{wave}}$ by $\sqrt{9}=3$.
 - id: b
   content: |-
     $9$
@@ -237,7 +237,7 @@ The symbols refer to different objects:
 - $M$ is the mass of the block hanging from the end of the string.
 - $\mu$ is the mass per unit length of the string segment carrying the wave.
 
-Replacing the block does not replace or thicken the string, so it does not change $\mu$. Instead, a heavier block pulls harder and increases $T$.
+Replacing the block does not replace or thicken the string, so it does not change $\mu$. Instead, a heavier block pulls harder and increases $F_T$.
 
 **Watch Out!** Do not use the vague rule “more mass means slower.” Decide whose mass changes and identify where that quantity appears in the model.
 
@@ -279,13 +279,13 @@ options:
 The same string segment is carrying the wave, so $\mu$ remains constant. The hanging block supplies tension approximately equal to its weight:
 
 $$
-T\approx Mg.
+F_T\approx Mg.
 $$
 
 Thus,
 
 $$
-v=\sqrt{\frac{T}{\mu}}
+v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}}
 \approx\sqrt{\frac{Mg}{\mu}}.
 $$
 
@@ -305,7 +305,7 @@ options:
 - id: a
   content: The wave speed increases
   correct: true
-  feedback: The hanging block produces tension approximately equal to $Mg$. Since $v=\sqrt{T/\mu}$ and the string's linear density remains constant, increasing $M$ increases the wave speed.
+  feedback: The hanging block produces tension approximately equal to $Mg$. Since $v_{\mathrm{wave}}=\sqrt{F_T/\mu}$ and the string's linear density remains constant, increasing $M$ increases the wave speed.
 - id: b
   content: The wave speed decreases
 - id: c
@@ -320,9 +320,9 @@ options:
 To predict the wave-speed change in this setup:
 
 1. Hold the string's linear density $\mu$ constant.
-2. Use $T\approx Mg$ to connect the hanging mass to tension.
-3. Use $v=\sqrt{T/\mu}$ to connect tension to wave speed.
-4. Follow the direction of change: $M\uparrow\Rightarrow T\uparrow\Rightarrow v\uparrow$.
+2. Use $F_T\approx Mg$ to connect the hanging mass to tension.
+3. Use $v_{\mathrm{wave}}=\sqrt{F_T/\mu}$ to connect tension to wave speed.
+4. Follow the direction of change: $M\uparrow\Rightarrow F_T\uparrow\Rightarrow v_{\mathrm{wave}}\uparrow$.
 5. For a numerical scale factor, use $v_2/v_1=\sqrt{M_2/M_1}$.
 
 The hanging block changes the tension, not the string's linear density. A heavier hanging block makes the wave travel faster.

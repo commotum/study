@@ -35,19 +35,19 @@ The question is: what SI units does $B$ have?
 The core move is to make the units of each term match the units of the left-hand side. Since $\alpha_z(t)$ is angular acceleration,
 
 $$
-[\alpha_z]=\frac{\mathrm{rad}}{\mathrm{s}^2}.
+[\alpha_z]=\mathrm{rad}/\mathrm{s}^2.
 $$
 
 The term $Bt^2$ must also have units $\mathrm{rad}/\mathrm{s}^2$. Since $t^2$ contributes $\mathrm{s}^2$, the coefficient $B$ must supply the remaining units:
 
 $$
-[B]\mathrm{s}^2=\frac{\mathrm{rad}}{\mathrm{s}^2}.
+[B]\mathrm{s}^2=\mathrm{rad}/\mathrm{s}^2.
 $$
 
 Therefore,
 
 $$
-[B]=\frac{\mathrm{rad}}{\mathrm{s}^4}.
+[B]=\mathrm{rad}/\mathrm{s}^4.
 $$
 
 ---
@@ -68,25 +68,25 @@ where $a(t)$ is linear acceleration. What are the units of $K$?
 The left-hand side is acceleration, so
 
 $$
-[a(t)]=\frac{\mathrm{m}}{\mathrm{s}^2}.
+[a(t)]=\mathrm{m}/\mathrm{s}^2.
 $$
 
 Because $Kt$ and $a_0$ are added to make $a(t)$, each term must have units of acceleration:
 
 $$
-[Kt]=\frac{\mathrm{m}}{\mathrm{s}^2}.
+[Kt]=\mathrm{m}/\mathrm{s}^2.
 $$
 
 Since $[t]=\mathrm{s}$,
 
 $$
-[K]\mathrm{s}=\frac{\mathrm{m}}{\mathrm{s}^2}.
+[K]\mathrm{s}=\mathrm{m}/\mathrm{s}^2.
 $$
 
 Divide by $\mathrm{s}$:
 
 $$
-[K]=\frac{\mathrm{m}}{\mathrm{s}^3}.
+[K]=\mathrm{m}/\mathrm{s}^3.
 $$
 
 ```quiz
@@ -157,25 +157,25 @@ where $\omega(t)$ is angular velocity. What are the units of $D$?
 Angular velocity has units
 
 $$
-[\omega]=\frac{\mathrm{rad}}{\mathrm{s}}.
+[\omega]=\mathrm{rad}/\mathrm{s}.
 $$
 
 Therefore, the term $Dt^3$ must have units $\mathrm{rad}/\mathrm{s}$:
 
 $$
-[Dt^3]=\frac{\mathrm{rad}}{\mathrm{s}}.
+[Dt^3]=\mathrm{rad}/\mathrm{s}.
 $$
 
 Since $[t^3]=\mathrm{s}^3$,
 
 $$
-[D]\mathrm{s}^3=\frac{\mathrm{rad}}{\mathrm{s}}.
+[D]\mathrm{s}^3=\mathrm{rad}/\mathrm{s}.
 $$
 
 Divide by $\mathrm{s}^3$:
 
 $$
-[D]=\frac{\mathrm{rad}}{\mathrm{s}^4}.
+[D]=\mathrm{rad}/\mathrm{s}^4.
 $$
 
 ```quiz
@@ -246,31 +246,31 @@ What are the units of $B$?
 The left-hand side is angular acceleration, so
 
 $$
-[\alpha_z]=\frac{\mathrm{rad}}{\mathrm{s}^2}.
+[\alpha_z]=\mathrm{rad}/\mathrm{s}^2.
 $$
 
 The constant term $C$ is added directly, so
 
 $$
-[C]=\frac{\mathrm{rad}}{\mathrm{s}^2}.
+[C]=\mathrm{rad}/\mathrm{s}^2.
 $$
 
 But $B$ is not added directly. The whole product $Bt^2$ is added, so
 
 $$
-[Bt^2]=\frac{\mathrm{rad}}{\mathrm{s}^2}.
+[Bt^2]=\mathrm{rad}/\mathrm{s}^2.
 $$
 
 Since $[t^2]=\mathrm{s}^2$,
 
 $$
-[B]\mathrm{s}^2=\frac{\mathrm{rad}}{\mathrm{s}^2}.
+[B]\mathrm{s}^2=\mathrm{rad}/\mathrm{s}^2.
 $$
 
 Therefore,
 
 $$
-[B]=\frac{\mathrm{rad}}{\mathrm{s}^4}.
+[B]=\mathrm{rad}/\mathrm{s}^4.
 $$
 
 So the correct SI units for $B$ are
@@ -417,13 +417,13 @@ $$
 the left-hand side has units $\mathrm{rad}/\mathrm{s}^2$. The product $Bt^2$ must have those same units:
 
 $$
-[B]\mathrm{s}^2=\frac{\mathrm{rad}}{\mathrm{s}^2}.
+[B]\mathrm{s}^2=\mathrm{rad}/\mathrm{s}^2.
 $$
 
 Dividing by $\mathrm{s}^2$ gives
 
 $$
-[B]=\frac{\mathrm{rad}}{\mathrm{s}^4}.
+[B]=\mathrm{rad}/\mathrm{s}^4.
 $$
 
 The answer is

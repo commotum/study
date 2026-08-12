@@ -136,18 +136,18 @@ type: radio
 id: p3-q2
 shuffle: true
 content: |-
-  A disk has period $T$ and must rotate through angle $\phi$ before the next hole lines up. Which expression gives that rotation time?
+  A disk has period $T$ and must rotate through angle $\theta$ before the next hole lines up. Which expression gives that rotation time?
 options:
 - id: p3-q2-a
   content: |-
-    $\dfrac{\phi T}{2\pi}$
+    $\dfrac{\theta T}{2\pi}$
   correct: true
 - id: p3-q2-b
   content: |-
-    $\dfrac{2\pi T}{\phi}$
+    $\dfrac{2\pi T}{\theta}$
 - id: p3-q2-c
   content: |-
-    $\dfrac{2\pi}{\phi T}$
+    $\dfrac{2\pi}{\theta T}$
 ```
 
 ---
@@ -185,14 +185,14 @@ type: radio
 id: p3-q3
 shuffle: true
 content: |-
-  A bullet crosses two rotating disks separated by distance $L$. The holes are separated by angle $\alpha$, and the shaft period is $P$. In the formula for the bullet speed, where should $P$ appear?
+  A bullet crosses two rotating disks separated by distance $D$. The holes are separated by angle $\theta$, and the shaft period is $T$. In the formula for the bullet speed, where should $T$ appear?
 options:
 - id: p3-q3-a
   content: |-
-    In the numerator, because $P$ is a time and time should be multiplied by distance.
+    In the numerator, because $T$ is a time and time should be multiplied by distance.
 - id: p3-q3-b
   content: |-
-    In the denominator, because $P$ is part of the travel time being divided into the distance.
+    In the denominator, because $T$ is part of the travel time being divided into the distance.
   correct: true
 - id: p3-q3-c
   content: |-

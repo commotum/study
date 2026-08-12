@@ -17,7 +17,7 @@ topic-code: MTH212.M5.40
 
 ## Prerequisites
 
-- Use the wave relation $v=f\lambda$.
+- Use the wave relation $v_{\mathrm{wave}}=f\lambda$.
 - Find a distance in the coordinate plane with the Pythagorean theorem.
 - Solve a radical equation by isolating the square root, squaring, and checking the result.
 
@@ -53,15 +53,15 @@ Here, let $x$ be the positive coordinate the problem asks us to find, and let $d
 <a id="convert-frequency-to-wavelength"></a>
 ## Convert Frequency to Wavelength
 
-**Example:** A sound wave travels at $343\ \mathrm{m/s}$ and has frequency $686\ \mathrm{Hz}$. Find its wavelength.
+**Example:** A sound wave travels at $343\ \mathrm{m}/\mathrm{s}$ and has frequency $686\ \mathrm{Hz}$. Find its wavelength.
 
 **Explanation**
 
-Use $v=f\lambda$ and solve for $\lambda$:
+Use $v_{\mathrm{wave}}=f\lambda$ and solve for $\lambda$:
 
 $$
-\lambda=\frac{v}{f}
-=\frac{343\ \mathrm{m/s}}{686\ \mathrm{s^{-1}}}
+\lambda=\frac{v_{\mathrm{wave}}}{f}
+=\frac{343\ \mathrm{m}/\mathrm{s}}{686\ \mathrm{s^{-1}}}
 =0.500\ \mathrm{m}.
 $$
 
@@ -71,34 +71,34 @@ The speed is divided by the frequency. The product $vf$ does not have units of l
 type: radio
 id: problem-5-q1
 content: |-
-  A wave travels at $360\ \mathrm{m/s}$ and has frequency $800\ \mathrm{Hz}$. What is its wavelength?
+  A wave travels at $360\ \mathrm{m}/\mathrm{s}$ and has frequency $800\ \mathrm{Hz}$. What is its wavelength?
 options:
 - id: problem-5-q1-a
   content: |-
     $0.45\ \mathrm{m}$
   correct: true
   feedback: |-
-    Wave speed equals frequency times wavelength, so $\lambda=v/f$. Substituting gives $\lambda=360/800=0.45\ \mathrm{m}$.
+    Wave speed equals frequency times wavelength, so $\lambda=v_{\mathrm{wave}}/f$. Substituting gives $\lambda=360/800=0.45\ \mathrm{m}$.
 - id: problem-5-q1-b
   content: |-
     $2.22\ \mathrm{m}$
   feedback: |-
-    This reverses $\lambda=v/f$ and computes $f/v$, whose units are not length. Speed divided by frequency gives $360/800=0.45\ \mathrm{m}$.
+    This reverses $\lambda=v_{\mathrm{wave}}/f$ and computes $f/v_{\mathrm{wave}}$, whose units are not length. Speed divided by frequency gives $360/800=0.45\ \mathrm{m}$.
 - id: problem-5-q1-c
   content: |-
     $1.25\ \mathrm{m}$
   feedback: |-
-    $1.25$ is the period expressed in milliseconds because $1/f=1.25\ \mathrm{ms}$. Period measures time, while wavelength measures distance traveled in one period; multiplying by $v$ gives $\lambda=v/f=0.45\ \mathrm{m}$.
+    $1.25$ is the period expressed in milliseconds because $1/f=1.25\ \mathrm{ms}$. Period measures time, while wavelength measures distance traveled in one period; multiplying by $v_{\mathrm{wave}}$ gives $\lambda=v_{\mathrm{wave}}/f=0.45\ \mathrm{m}$.
 - id: problem-5-q1-d
   content: |-
     $800\ \mathrm{m}$
   feedback: |-
-    $800$ is the frequency in hertz, which counts cycles per second; it is not a distance. The distance per cycle is $v/f=0.45\ \mathrm{m}$.
+    $800$ is the frequency in hertz, which counts cycles per second; it is not a distance. The distance per cycle is $v_{\mathrm{wave}}/f=0.45\ \mathrm{m}$.
 - id: problem-5-q1-e
   content: |-
     $288{,}000\ \mathrm{m}$
   feedback: |-
-    Multiplying speed by frequency gives units of $\mathrm{m/s^2}$, not meters. Solving $v=f\lambda$ requires division, so $\lambda=360/800=0.45\ \mathrm{m}$.
+    Multiplying speed by frequency gives units of $\mathrm{m}/\mathrm{s}^2$, not meters. Solving $v_{\mathrm{wave}}=f\lambda$ requires division, so $\lambda=360/800=0.45\ \mathrm{m}$.
 ```
 
 ---
@@ -284,14 +284,14 @@ options:
 <a id="apply-the-full-procedure"></a>
 ## Apply the Full Procedure
 
-**Example:** Two speakers are in phase and emit a $686\ \mathrm{Hz}$ tone. Speaker A is at the origin, and speaker B is at $(0,-2.2\ \mathrm{m})$. Where is the first point on the positive $x$-axis where you hear maximum sound intensity? Use $343\ \mathrm{m/s}$ for the speed of sound. Enter the $x$-coordinate in meters as a number only.
+**Example:** Two speakers are in phase and emit a $686\ \mathrm{Hz}$ tone. Speaker A is at the origin, and speaker B is at $(0,-2.2\ \mathrm{m})$. Where is the first point on the positive $x$-axis where you hear maximum sound intensity? Use $343\ \mathrm{m}/\mathrm{s}$ for the speed of sound. Enter the $x$-coordinate in meters as a number only.
 
 **Explanation**
 
 First find the wavelength:
 
 $$
-\lambda=\frac{343\ \mathrm{m/s}}{686\ \mathrm{Hz}}=0.500\ \mathrm{m}.
+\lambda=\frac{343\ \mathrm{m}/\mathrm{s}}{686\ \mathrm{Hz}}=0.500\ \mathrm{m}.
 $$
 
 At $(x,0)$, the path difference is
@@ -328,14 +328,14 @@ Thus the requested number-only $x$-coordinate is $\boxed{0.21}$.
 type: radio
 id: problem-5-q5
 content: |-
-  Two in-phase speakers are at $(0,0)$ and $(0,-2.6\ \mathrm{m})$. They emit a $680\ \mathrm{Hz}$ tone in air where the sound speed is $340\ \mathrm{m/s}$. What is the first positive $x$-coordinate where the intensity is maximum?
+  Two in-phase speakers are at $(0,0)$ and $(0,-2.6\ \mathrm{m})$. They emit a $680\ \mathrm{Hz}$ tone in air where the sound speed is $340\ \mathrm{m}/\mathrm{s}$. What is the first positive $x$-coordinate where the intensity is maximum?
 options:
 - id: problem-5-q5-a
   content: |-
     $0.10\ \mathrm{m}$
   correct: true
   feedback: |-
-    The wavelength is $v/f=0.500\ \mathrm{m}$. Since the path difference starts at $2.6\ \mathrm{m}=5.2\lambda$ and decreases, the first maximum has $L=5\lambda=2.50\ \mathrm{m}$; the geometry then gives $x=0.102\ \mathrm{m}\approx0.10\ \mathrm{m}$.
+    The wavelength is $v_{\mathrm{wave}}/f=0.500\ \mathrm{m}$. Since the path difference starts at $2.6\ \mathrm{m}=5.2\lambda$ and decreases, the first maximum has $L=5\lambda=2.50\ \mathrm{m}$; the geometry then gives $x=0.102\ \mathrm{m}\approx0.10\ \mathrm{m}$.
 - id: problem-5-q5-b
   content: |-
     $0.05\ \mathrm{m}$
@@ -345,7 +345,7 @@ options:
   content: |-
     $0.50\ \mathrm{m}$
   feedback: |-
-    $0.50\ \mathrm{m}$ is the wavelength found from $v/f$. It is used to select the $5\lambda=2.50\ \mathrm{m}$ path difference, but the requested coordinate must still be solved from the geometry and is $0.10\ \mathrm{m}$.
+    $0.50\ \mathrm{m}$ is the wavelength found from $v_{\mathrm{wave}}/f$. It is used to select the $5\lambda=2.50\ \mathrm{m}$ path difference, but the requested coordinate must still be solved from the geometry and is $0.10\ \mathrm{m}$.
 - id: problem-5-q5-d
   content: |-
     $2.50\ \mathrm{m}$
@@ -365,7 +365,7 @@ options:
 
 For two in-phase sources and a listener on the positive $x$-axis:
 
-1. Compute $\lambda=v/f$.
+1. Compute $\lambda=v_{\mathrm{wave}}/f$.
 2. Write $\Delta r=\sqrt{x^2+d^2}-x$.
 3. Notice that $\Delta r$ starts at $d$ and decreases as $x$ increases.
 4. Choose the largest integer order with $m\lambda<d$. Equivalently, use $m=\lfloor d/\lambda\rfloor$ unless $d/\lambda$ is an integer, in which case use one order lower.

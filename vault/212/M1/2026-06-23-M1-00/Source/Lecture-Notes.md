@@ -191,9 +191,9 @@
 ### 18. Radians
 - One radian is the angle subtended when the arc length equals the radius.
 - A full revolution is:
-  $$ 2\pi \text{ rad} $$
+  $$ 2\pi\ \mathrm{rad} $$
 - Equivalent angle measures:
-  $$ 1\text{ revolution}=360^\circ=2\pi\text{ rad} $$
+  $$ 1\ \mathrm{rev}=360^\circ=2\pi\ \mathrm{rad} $$
 
 ---
 
@@ -201,9 +201,9 @@
 - Angular velocity is:
   $$ \omega(t)=\frac{d\theta(t)}{dt} $$
 - Units may be:
-  $$ \text{rad/s} $$
+  $$ \mathrm{rad}/\mathrm{s} $$
   or:
-  $$ \text{rev/s}, \quad \text{deg/s}, \quad \text{s}^{-1} $$
+  $$ \mathrm{rev}/\mathrm{s}, \quad \mathrm{deg}/\mathrm{s}, \quad \mathrm{s}^{-1} $$
 
 ---
 
@@ -297,8 +297,8 @@
 - The example gives:
   $$ \omega(t)=a-bt^2 $$
 - With:
-  $$ a=18\ \text{s}^{-1} $$
-  $$ b=0.50\ \text{s}^{-3} $$
+  $$ a=18\ \mathrm{s}^{-1} $$
+  $$ b=0.50\ \mathrm{s}^{-3} $$
 
 ---
 
@@ -318,9 +318,9 @@
 - Substitute:
   $$ t=\sqrt{\frac{18}{0.50}} $$
 - Therefore:
-  $$ t=\sqrt{36}=6.0\text{ s} $$
+  $$ t=\sqrt{36}=6.0\ \mathrm{s} $$
 - The disk reverses direction at:
-  $$ t=6.0\text{ s} $$
+  $$ t=6.0\ \mathrm{s} $$
 
 ---
 
@@ -340,7 +340,7 @@
 - The question asks for angular displacement from:
   $$ t=0 $$
   to the reversal time:
-  $$ t=6.0\text{ s} $$
+  $$ t=6.0\ \mathrm{s} $$
 
 ---
 
@@ -350,7 +350,7 @@
 - Then:
   $$ d\theta=\omega(t)\,dt $$
 - Integrate:
-  $$ \Delta\theta=\int_0^{t_f}\omega(t)\,dt $$
+  $$ \Delta\theta=\int_0^{t_{\mathrm{rev}}}\omega(t)\,dt $$
 
 ---
 
@@ -358,15 +358,15 @@
 - Use:
   $$ \omega(t)=a-bt^2 $$
 - Then:
-  $$ \Delta\theta=\int_0^{t_f}(a-bt^2)\,dt $$
+  $$ \Delta\theta=\int_0^{t_{\mathrm{rev}}}(a-bt^2)\,dt $$
 
 ---
 
 ### 36. Evaluate the Integral
 - Integrate:
-  $$ \Delta\theta=\left[at-\frac{b}{3}t^3\right]_0^{t_f} $$
+  $$ \Delta\theta=\left[at-\frac{b}{3}t^3\right]_0^{t_{\mathrm{rev}}} $$
 - With:
-  $$ t_f=\sqrt{\frac{a}{b}} $$
+  $$ t_{\mathrm{rev}}=\sqrt{\frac{a}{b}} $$
 
 ---
 
@@ -374,21 +374,21 @@
 - Using:
   $$ a=18 $$
   $$ b=0.50 $$
-  $$ t_f=6.0\text{ s} $$
+  $$ t_{\mathrm{rev}}=6.0\ \mathrm{s} $$
 - Compute:
   $$ \Delta\theta=18(6.0)-\frac{0.50}{3}(6.0)^3 $$
 - So:
   $$ \Delta\theta=108-36=72 $$
 - If $\omega$ is interpreted in radians per second, then:
-  $$ \Delta\theta=72\text{ rad} $$
+  $$ \Delta\theta=72\ \mathrm{rad} $$
 
 ---
 
 ### 38. Units Note
 - Angular velocity may be reported in:
-  $$ \text{rad/s},\quad \text{rev/s},\quad \text{deg/s} $$
+  $$ \mathrm{rad}/\mathrm{s},\quad \mathrm{rev}/\mathrm{s},\quad \mathrm{deg}/\mathrm{s} $$
 - The unit choice determines whether the final angle is in:
-  $$ \text{radians},\quad \text{revolutions},\quad \text{degrees} $$
+  $$ \mathrm{rad},\quad \mathrm{rev},\quad \mathrm{deg} $$
 - The lecture notes that unit conversions must be handled carefully.
 
 ---

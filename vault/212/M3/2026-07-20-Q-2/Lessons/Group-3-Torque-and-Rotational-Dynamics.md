@@ -31,7 +31,7 @@ topic-code: MTH212.M3.26
 When a force acts on an extended object, determine its turning effect about a chosen axis and then relate the net torque to angular acceleration:
 
 $$
-\vec\tau=\vec r\times\vec F,
+\vec{\tau}=\vec{r}\times\vec{F},
 \qquad
 |\tau|=rF\sin\phi=Fd_\perp,
 $$
@@ -51,7 +51,7 @@ Two boundary cases are worth recognizing immediately: a force whose line of acti
 <a id="find-the-perpendicular-turning-effect"></a>
 ## Find the Perpendicular Turning Effect
 
-**Example:** A $120\text{ N}$ force acts on the end of a $0.52\text{ m}$ wrench. The angle between $\vec r$ and $\vec F$ is $57^\circ$. Find the torque magnitude.
+**Example:** A $120\ \mathrm{N}$ force acts on the end of a $0.52\ \mathrm{m}$ wrench. The angle between $\vec{r}$ and $\vec{F}$ is $57^\circ$. Find the torque magnitude.
 
 **Explanation**
 
@@ -64,7 +64,7 @@ $$
 Therefore,
 
 $$
-\tau=(0.52)(120)\sin57^\circ\approx52\text{ N}\cdot\text{m}.
+\tau=(0.52)(120)\sin57^\circ\approx52\ \mathrm{N}\cdot\mathrm{m}.
 $$
 
 Equivalently, first find the perpendicular moment arm $d_\perp=r\sin\phi$ and use $\tau=Fd_\perp$.
@@ -74,27 +74,27 @@ type: radio
 id: torque-dynamics-q1
 shuffle: true
 content: |-
-  A $50\text{ N}$ force acts $0.40\text{ m}$ from a pivot. The angle between $\vec r$ and $\vec F$ is $30^\circ$. What is the torque magnitude?
+  A $50\ \mathrm{N}$ force acts $0.40\ \mathrm{m}$ from a pivot. The angle between $\vec{r}$ and $\vec{F}$ is $30^\circ$. What is the torque magnitude?
 options:
 - id: torque-dynamics-q1-a
   content: |-
-    $10\text{ N}\cdot\text{m}$
+    $10\ \mathrm{N}\cdot\mathrm{m}$
   correct: true
   feedback: |-
-    $\tau=(0.40)(50)\sin30^\circ=10\text{ N}\cdot\text{m}$.
+    $\tau=(0.40)(50)\sin30^\circ=10\ \mathrm{N}\cdot\mathrm{m}$.
 - id: torque-dynamics-q1-b
   content: |-
-    $17.3\text{ N}\cdot\text{m}$
+    $17.3\ \mathrm{N}\cdot\mathrm{m}$
   feedback: |-
-    This uses cosine instead of the component perpendicular to $\vec r$.
+    This uses cosine instead of the component perpendicular to $\vec{r}$.
 - id: torque-dynamics-q1-c
   content: |-
-    $20\text{ N}\cdot\text{m}$
+    $20\ \mathrm{N}\cdot\mathrm{m}$
   feedback: |-
     This treats the force as perpendicular even though $\phi=30^\circ$.
 - id: torque-dynamics-q1-d
   content: |-
-    $125\text{ N}\cdot\text{m}$
+    $125\ \mathrm{N}\cdot\mathrm{m}$
 ```
 
 ---
@@ -102,20 +102,20 @@ options:
 <a id="assign-a-torque-direction"></a>
 ## Assign a Torque Direction
 
-**Example:** From a pivot at the origin, $\vec r$ points right and $\vec F$ points upward. Determine the torque direction.
+**Example:** From a pivot at the origin, $\vec{r}$ points right and $\vec{F}$ points upward. Determine the torque direction.
 
 **Explanation**
 
 Apply the right-hand rule to
 
 $$
-\vec\tau=\vec r\times\vec F.
+\vec{\tau}=\vec{r}\times\vec{F}.
 $$
 
-Point your fingers along $\vec r$ and curl them toward $\vec F$. Your thumb points out of the page, so
+Point your fingers along $\vec{r}$ and curl them toward $\vec{F}$. Your thumb points out of the page, so
 
 $$
-\vec\tau=+\tau\hat z.
+\vec{\tau}=+\tau\hat{z}.
 $$
 
 In a planar problem, you may use counterclockwise as positive and clockwise as negative, provided you remain consistent.
@@ -138,10 +138,10 @@ options:
     Right crossed with down points into the page.
 - id: torque-dynamics-q2-c
   content: |-
-    To the right, along $\vec r$
+    To the right, along $\vec{r}$
 - id: torque-dynamics-q2-d
   content: |-
-    Downward, along $\vec F$
+    Downward, along $\vec{F}$
 ```
 
 ---

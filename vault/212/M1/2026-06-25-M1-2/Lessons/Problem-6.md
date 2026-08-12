@@ -43,7 +43,7 @@ The direction of each velocity arrow locates the tangent to the path; it does no
 <a id="calculate-radial-acceleration-from-speed-and-radius"></a>
 ## Calculate Radial Acceleration From Speed and Radius
 
-**Example:** An object moves in uniform circular motion with speed $v=3\ \mathrm{m/s}$ and radius $r=2\ \mathrm{m}$. Find its radial acceleration.
+**Example:** An object moves in uniform circular motion with speed $v=3\ \mathrm{m}/\mathrm{s}$ and radius $r=2\ \mathrm{m}$. Find its radial acceleration.
 
 **Explanation**
 
@@ -56,9 +56,9 @@ $$
 Here, $v=3$ and $r=2$, so
 
 $$
-a_r=\frac{(3\ \mathrm{m/s})^2}{2\ \mathrm{m}}
-=\frac{9}{2}\ \mathrm{m/s^2}
-=4.5\ \mathrm{m/s^2}.
+a_r=\frac{(3\ \mathrm{m}/\mathrm{s})^2}{2\ \mathrm{m}}
+=\frac{9}{2}\ \mathrm{m}/\mathrm{s}^2
+=4.5\ \mathrm{m}/\mathrm{s}^2.
 $$
 
 Square the speed before dividing by the radius.
@@ -68,24 +68,24 @@ type: radio
 id: radial-acceleration-calculate
 shuffle: true
 content: |-
-  An object moves in a circle with speed $v=4\ \mathrm{m/s}$ and radius $r=2\ \mathrm{m}$. What is its radial acceleration magnitude?
+  An object moves in a circle with speed $v=4\ \mathrm{m}/\mathrm{s}$ and radius $r=2\ \mathrm{m}$. What is its radial acceleration magnitude?
 options:
 - id: a
   content: |-
-    $2\ \mathrm{m/s^2}$
+    $2\ \mathrm{m}/\mathrm{s}^2$
 - id: b
   content: |-
-    $4\ \mathrm{m/s^2}$
+    $4\ \mathrm{m}/\mathrm{s}^2$
 - id: c
   content: |-
-    $8\ \mathrm{m/s^2}$
+    $8\ \mathrm{m}/\mathrm{s}^2$
   correct: true
 - id: d
   content: |-
-    $16\ \mathrm{m/s^2}$
+    $16\ \mathrm{m}/\mathrm{s}^2$
 - id: e
   content: |-
-    $6\ \mathrm{m/s^2}$
+    $6\ \mathrm{m}/\mathrm{s}^2$
 ```
 
 ---
@@ -93,7 +93,7 @@ options:
 <a id="use-the-square-on-speed"></a>
 ## Use the Square on Speed
 
-**Example:** Objects P and Q move in circles with the same radius, $r=1\ \mathrm{m}$. Object P has $v=1\ \mathrm{m/s}$, and object Q has $v=2\ \mathrm{m/s}$. Compare their radial accelerations.
+**Example:** Objects P and Q move in circles with the same radius, $r=1\ \mathrm{m}$. Object P has $v=1\ \mathrm{m}/\mathrm{s}$, and object Q has $v=2\ \mathrm{m}/\mathrm{s}$. Compare their radial accelerations.
 
 **Explanation**
 
@@ -112,7 +112,7 @@ type: radio
 id: radial-acceleration-same-radius
 shuffle: true
 content: |-
-  Objects R and S move in circles with the same radius. R has $v=2\ \mathrm{m/s}$, and S has $v=3\ \mathrm{m/s}$. Which comparison of radial accelerations is correct?
+  Objects R and S move in circles with the same radius. R has $v=2\ \mathrm{m}/\mathrm{s}$, and S has $v=3\ \mathrm{m}/\mathrm{s}$. Which comparison of radial accelerations is correct?
 options:
 - id: a
   content: |-
@@ -137,7 +137,7 @@ options:
 <a id="use-the-radius-in-the-denominator"></a>
 ## Use the Radius in the Denominator
 
-**Example:** Objects M and N move with the same speed, $v=2\ \mathrm{m/s}$. Object M has radius $r=1\ \mathrm{m}$, and object N has radius $r=2\ \mathrm{m}$. Compare their radial accelerations.
+**Example:** Objects M and N move with the same speed, $v=2\ \mathrm{m}/\mathrm{s}$. Object M has radius $r=1\ \mathrm{m}$, and object N has radius $r=2\ \mathrm{m}$. Compare their radial accelerations.
 
 **Explanation**
 
@@ -189,10 +189,10 @@ The units match across all four objects, so it is enough to compute the comparis
 
 | Object | Speed | Radius | $v^2/r$ |
 |---|---:|---:|---:|
-| A | $1\ \mathrm{m/s}$ | $1\ \mathrm{m}$ | $1^2/1=1$ |
-| B | $2\ \mathrm{m/s}$ | $1\ \mathrm{m}$ | $2^2/1=4$ |
-| C | $2\ \mathrm{m/s}$ | $2\ \mathrm{m}$ | $2^2/2=2$ |
-| D | $1\ \mathrm{m/s}$ | $2\ \mathrm{m}$ | $1^2/2=0.5$ |
+| A | $1\ \mathrm{m}/\mathrm{s}$ | $1\ \mathrm{m}$ | $1^2/1=1$ |
+| B | $2\ \mathrm{m}/\mathrm{s}$ | $1\ \mathrm{m}$ | $2^2/1=4$ |
+| C | $2\ \mathrm{m}/\mathrm{s}$ | $2\ \mathrm{m}$ | $2^2/2=2$ |
+| D | $1\ \mathrm{m}/\mathrm{s}$ | $2\ \mathrm{m}$ | $1^2/2=0.5$ |
 
 Now rank the values from least to greatest:
 
@@ -223,7 +223,7 @@ type: radio
 id: radial-acceleration-four-object-ranking
 shuffle: true
 content: |-
-  Four objects have these $(v,r)$ pairs, with speed in $\mathrm{m/s}$ and radius in $\mathrm{m}$: A $(1,1)$, B $(3,1)$, C $(2,2)$, and D $(1,4)$. Rank their radial accelerations from least to greatest.
+  Four objects have these $(v,r)$ pairs, with speed in $\mathrm{m}/\mathrm{s}$ and radius in $\mathrm{m}$: A $(1,1)$, B $(3,1)$, C $(2,2)$, and D $(1,4)$. Rank their radial accelerations from least to greatest.
 options:
 - id: a
   content: |-
@@ -248,7 +248,7 @@ options:
 <a id="check-the-common-trap"></a>
 ## Check the Common Trap
 
-**Example:** A student ranks the diagram above as $D<A<B<C$ because B and C both have speed $2\ \mathrm{m/s}$ and C is drawn larger. What went wrong?
+**Example:** A student ranks the diagram above as $D<A<B<C$ because B and C both have speed $2\ \mathrm{m}/\mathrm{s}$ and C is drawn larger. What went wrong?
 
 **Explanation**
 

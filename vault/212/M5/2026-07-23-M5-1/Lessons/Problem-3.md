@@ -87,7 +87,7 @@ For a hanging mass, gravity pulls downward with the constant force $mg$. The spr
 At equilibrium, the forces balance:
 
 $$
-\vec F_{\mathrm{spring,eq}}+\vec F_g=\vec 0,
+\vec{F}_{\mathrm{spring,eq}}+\vec{F}_g=\vec{0},
 $$
 
 or, in magnitudes, $F_{\mathrm{spring,eq}}=mg$. The individual forces are not zero; their vector sum is zero.

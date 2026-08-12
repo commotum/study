@@ -107,10 +107,10 @@ $$
 N\cos\theta=mg.
 $$
 
-The inward component of the normal force supplies the centripetal force:
+The inward component of the normal force supplies the required inward net force:
 
 $$
-N\sin\theta=\frac{mv^2}{r}.
+N\sin\theta=m a_r=m\frac{v^2}{r}.
 $$
 
 Divide the inward equation by the vertical equation:
@@ -137,7 +137,7 @@ $$
 v=\sqrt{rg\tan\theta}.
 $$
 
-The mass cancels because a heavier car has proportionally more weight and proportionally more required centripetal force.
+The mass cancels because a heavier car has proportionally more weight and proportionally more required inward net force.
 
 ```quiz
 type: radio
@@ -151,7 +151,7 @@ options:
     $v=\sqrt{rg\tan\theta}$
   correct: true
   feedback: |-
-    Dividing $N\sin\theta=\dfrac{mv^2}{r}$ by $N\cos\theta=mg$ gives $\tan\theta=\dfrac{v^2}{rg}$.
+    Dividing $N\sin\theta=m a_r=m\frac{v^2}{r}$ by $N\cos\theta=mg$ gives $\tan\theta=\dfrac{v^2}{rg}$.
 - id: b
   content: |-
     $v=\sqrt{\dfrac{rg}{\tan\theta}}$
@@ -322,12 +322,12 @@ options:
 
 ## Summary
 
-For an icy banked curve, no friction acts along the road. The normal force alone must balance weight vertically and supply the inward centripetal force horizontally:
+For an icy banked curve, no friction acts along the road. The normal force alone must balance weight vertically and supply the inward net force horizontally:
 
 $$
 N\cos\theta=mg,
 \qquad
-N\sin\theta=\frac{mv^2}{r}.
+N\sin\theta=m a_r=m\frac{v^2}{r}.
 $$
 
 Dividing the radial equation by the vertical equation gives

@@ -84,21 +84,21 @@ $$
 type: radio
 id: p2-rolling-acceleration
 content: |-
-  A uniform solid cylinder rolls without slipping down a ramp at angle $\phi$. What is its center-of-mass acceleration?
+  A uniform solid cylinder rolls without slipping down a ramp at angle $\theta$. What is its center-of-mass acceleration?
 options:
 - id: a
   content: |-
-    $g\sin\phi$
+    $g\sin\theta$
 - id: b
   content: |-
-    $\dfrac{2}{3}g\sin\phi$
+    $\dfrac{2}{3}g\sin\theta$
   correct: true
 - id: c
   content: |-
-    $\dfrac{1}{2}g\sin\phi$
+    $\dfrac{1}{2}g\sin\theta$
 - id: d
   content: |-
-    $\dfrac{3}{2}g\sin\phi$
+    $\dfrac{3}{2}g\sin\theta$
 ```
 
 ---
@@ -124,21 +124,21 @@ The kinematics equation must use the distance **along the ramp**, not the vertic
 type: radio
 id: p2-ramp-distance
 content: |-
-  A ramp has vertical height $H$ and incline angle $\phi$. What distance does an object travel from the top to the bottom along the ramp?
+  A ramp has vertical height $H$ and incline angle $\theta$. What distance does an object travel from the top to the bottom along the ramp?
 options:
 - id: a
   content: |-
-    $H\sin\phi$
+    $H\sin\theta$
 - id: b
   content: |-
-    $\dfrac{H}{\cos\phi}$
+    $\dfrac{H}{\cos\theta}$
 - id: c
   content: |-
-    $\dfrac{H}{\sin\phi}$
+    $\dfrac{H}{\sin\theta}$
   correct: true
 - id: d
   content: |-
-    $H\cos\phi$
+    $H\cos\theta$
 ```
 
 ---
@@ -186,21 +186,21 @@ $$
 type: radio
 id: p2-descent-time
 content: |-
-  A uniform solid cylinder is released from rest on a ramp of vertical height $H$ and angle $\phi$. It rolls without slipping. How long does it take to reach the bottom?
+  A uniform solid cylinder is released from rest on a ramp of vertical height $H$ and angle $\theta$. It rolls without slipping. How long does it take to reach the bottom?
 options:
 - id: a
   content: |-
-    $\sqrt{\dfrac{3H}{g\sin^2\phi}}$
+    $\sqrt{\dfrac{3H}{g\sin^2\theta}}$
   correct: true
 - id: b
   content: |-
-    $\sqrt{\dfrac{3H}{g\sin\phi}}$
+    $\sqrt{\dfrac{3H}{g\sin\theta}}$
 - id: c
   content: |-
-    $\sqrt{\dfrac{2H}{g\sin^2\phi}}$
+    $\sqrt{\dfrac{2H}{g\sin^2\theta}}$
 - id: d
   content: |-
-    $\sqrt{\dfrac{3H}{g\cos^2\phi}}$
+    $\sqrt{\dfrac{3H}{g\cos^2\theta}}$
 ```
 
 ---

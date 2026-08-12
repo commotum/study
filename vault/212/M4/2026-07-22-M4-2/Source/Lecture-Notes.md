@@ -26,17 +26,17 @@
 
 ### 3. Forces on the Pendulum Bob
 - Forces acting on the point mass:
-  - tension along the string
+  - tension force $F_T$ along the string
   - gravitational force:
-    $$ mg $$
-- Tension points radially and therefore produces no torque about the pivot.
+    $$ F_g=mg $$
+- The tension force $F_T$ points radially and therefore produces no torque about the pivot.
 - The tangential component of gravity provides the restoring torque.
 
 ---
 
 ### 4. Restoring Torque
 - The torque due to gravity is:
-  $$ \tau=-mgL\sin\theta $$
+  $$ \tau_p=-mgL\sin\theta $$
 - The negative sign indicates that the torque acts opposite the angular displacement and pulls the pendulum toward equilibrium.
 
 ---
@@ -45,18 +45,18 @@
 - For sufficiently small angles measured in radians:
   $$ \sin\theta\approx\theta $$
 - Therefore:
-  $$ \tau\approx-mgL\theta $$
+  $$ \tau_p\approx-mgL\theta $$
 - This approximation converts the pendulum equation into the equation of simple harmonic motion.
 
 ---
 
 ### 6. Rotational Equation of Motion
 - Rotational dynamics gives:
-  $$ \sum\tau=I\alpha $$
+  $$ \sum\tau_p=I_p\alpha $$
 - Since:
   $$ \alpha=\frac{d^2\theta}{dt^2} $$
 - The pendulum equation becomes:
-  $$ I\frac{d^2\theta}{dt^2}=-mgL\theta $$
+  $$ I_p\frac{d^2\theta}{dt^2}=-mgL\theta $$
 
 ---
 
@@ -66,9 +66,9 @@
 - The rotational analogue is:
   $$ \alpha(t)=-\omega^2\theta(t) $$
 - Comparing with:
-  $$ \alpha=-\frac{mgL}{I}\theta $$
+  $$ \alpha=-\frac{mgL}{I_p}\theta $$
 - We obtain:
-  $$ \omega^2=\frac{mgL}{I} $$
+  $$ \omega^2=\frac{mgL}{I_p} $$
 
 ---
 
@@ -78,10 +78,10 @@
 - A physical pendulum is an extended rigid object that oscillates about a pivot.
 - Let:
   - $M$ be the total mass
-  - $I$ be the moment of inertia about the pivot
+  - $I_p$ be the moment of inertia about the pivot
   - $\ell$ be the distance from the pivot to the center of mass
 - The restoring torque is:
-  $$ \tau=-Mg\ell\sin\theta $$
+  $$ \tau_p=-Mg\ell\sin\theta $$
 
 ---
 
@@ -89,16 +89,16 @@
 - Using:
   $$ \sin\theta\approx\theta $$
 - The equation of motion is:
-  $$ I\frac{d^2\theta}{dt^2}=-Mg\ell\theta $$
+  $$ I_p\frac{d^2\theta}{dt^2}=-Mg\ell\theta $$
 - Rearranging:
   $$ \frac{d^2\theta}{dt^2}
-     +\frac{Mg\ell}{I}\theta=0 $$
+     +\frac{Mg\ell}{I_p}\theta=0 $$
 
 ---
 
 ### 10. Angular Frequency
 - Comparing with the standard SHM equation gives:
-  $$ \omega=\sqrt{\frac{Mg\ell}{I}} $$
+  $$ \omega=\sqrt{\frac{Mg\ell}{I_p}} $$
 
 ---
 
@@ -106,16 +106,17 @@
 - Since:
   $$ T=\frac{2\pi}{\omega} $$
 - The general physical-pendulum period is:
-  $$ T=2\pi\sqrt{\frac{I}{Mg\ell}} $$
+  $$ T=2\pi\sqrt{\frac{I_p}{Mg\ell}} $$
 - This result is valid under the small-angle approximation.
 
 ---
 
 ### 12. Important Notation
 - In these problems:
-  - $T$ usually represents the oscillation period
+  - $T$ represents the oscillation period
   - $\tau$ represents torque
-  - $T_{\text{tens}}$ may be used for tension
+  - $F_T$ represents tension force
+  - $I_p$ represents moment of inertia about the pivot
   - $L$ may represent an object’s length
   - $\ell$ represents the distance from the pivot to the center of mass
 - The meaning of a symbol must be determined from its context.
@@ -126,7 +127,7 @@
 
 ### 13. Moment of Inertia
 - For a point mass $m$ located a distance $L$ from the pivot:
-  $$ I=mL^2 $$
+  $$ I_p=mL^2 $$
 - The center-of-mass distance is:
   $$ \ell=L $$
 
@@ -146,7 +147,7 @@
 - Therefore:
   $$ f=\frac{1}{2\pi}\sqrt{\frac{g}{L}} $$
 - The lecture’s numerical result is:
-  $$ f\approx0.83\text{ Hz} $$
+  $$ f\approx0.83\ \mathrm{Hz} $$
 
 ---
 
@@ -167,7 +168,7 @@
   - length $L$
   - pivot at one end
 - Moment of inertia about one end:
-  $$ I=\frac{1}{3}ML^2 $$
+  $$ I_p=\frac{1}{3}ML^2 $$
 - Center of mass is at the midpoint:
   $$ \ell=\frac{L}{2} $$
 
@@ -185,7 +186,7 @@
 - Simplify:
   $$ T=2\pi\sqrt{\frac{2L}{3g}} $$
 - The lecture’s numerical result is:
-  $$ T\approx1.6\text{ s} $$
+  $$ T\approx1.6\ \mathrm{s} $$
 
 ---
 
@@ -203,27 +204,27 @@
 
 ### 20. Parallel-Axis Theorem
 - Moment of inertia about the center of mass:
-  $$ I_{\text{cm}}=\frac{1}{12}ML^2 $$
+  $$ I_{\mathrm{cm}}=\frac{1}{12}ML^2 $$
 - Parallel-axis theorem:
-  $$ I=I_{\text{cm}}+M\ell^2 $$
+  $$ I_p=I_{\mathrm{cm}}+M\ell^2 $$
 - Substitute:
-  $$ I=\frac{1}{12}ML^2+M\left(\frac{L}{3}\right)^2 $$
+  $$ I_p=\frac{1}{12}ML^2+M\left(\frac{L}{3}\right)^2 $$
 
 ---
 
 ### 21. Simplify the Moment of Inertia
 - Therefore:
-  $$ I
+  $$ I_p
   =
   \left(\frac{1}{12}+\frac{1}{9}\right)ML^2 $$
 - Using a common denominator:
-  $$ I=\frac{7}{36}ML^2 $$
+  $$ I_p=\frac{7}{36}ML^2 $$
 
 ---
 
 ### 22. Period of the Offset-Pivot Rod
 - Substitute into:
-  $$ T=2\pi\sqrt{\frac{I}{Mg\ell}} $$
+  $$ T=2\pi\sqrt{\frac{I_p}{Mg\ell}} $$
 - Then:
   $$ T
   =
@@ -235,7 +236,7 @@
 - Simplify:
   $$ T=2\pi\sqrt{\frac{7L}{12g}} $$
 - The lecture’s numerical result is:
-  $$ T\approx1.3\text{ s} $$
+  $$ T\approx1.3\ \mathrm{s} $$
 
 ---
 
@@ -243,26 +244,26 @@
 
 ### 23. Composite Pendulum Setup
 - A uniform rod has:
-  - mass $M_r$
+  - mass $m_r$
   - length $L$
-- A point mass $M_p$ is attached to the rod’s lower end.
+- A point mass $m_p$ is attached to the rod’s lower end.
 - The assembly pivots about the rod’s upper end.
 
 ---
 
 ### 24. Total Moment of Inertia
 - Rod contribution:
-  $$ I_r=\frac{1}{3}M_rL^2 $$
+  $$ I_r=\frac{1}{3}m_rL^2 $$
 - Point-mass contribution:
-  $$ I_p=M_pL^2 $$
+  $$ I_p^{(\mathrm{point})}=m_pL^2 $$
 - Total:
-  $$ I=I_r+I_p $$
+  $$ I_{\mathrm{total}}=I_r+I_p^{(\mathrm{point})} $$
 - Therefore:
-  $$ I
+  $$ I_{\mathrm{total}}
   =
-  \frac{1}{3}M_rL^2+M_pL^2
+  \frac{1}{3}m_rL^2+m_pL^2
   =
-  \frac{M_r+3M_p}{3}L^2 $$
+  \frac{m_r+3m_p}{3}L^2 $$
 
 ---
 
@@ -271,28 +272,28 @@
   $$
   \ell
   =
-  \frac{M_r(L/2)+M_pL}{M_r+M_p}
+  \frac{m_r(L/2)+m_pL}{m_r+m_p}
   $$
 - Simplify:
   $$
   \ell
   =
-  \frac{M_r+2M_p}{2(M_r+M_p)}L
+  \frac{m_r+2m_p}{2(m_r+m_p)}L
   $$
 
 ---
 
 ### 26. Period of the Rod–Point-Mass System
 - The total mass is:
-  $$ M=M_r+M_p $$
+  $$ M=m_r+m_p $$
 - Substitute into the physical-pendulum formula:
   $$
   T
   =
   2\pi
   \sqrt{
-  \frac{I}
-       {(M_r+M_p)g\ell}
+  \frac{I_{\mathrm{total}}}
+       {(m_r+m_p)g\ell}
   }
   $$
 - After simplification:
@@ -301,12 +302,12 @@
   =
   2\pi
   \sqrt{
-  \frac{2L(M_r+3M_p)}
-       {3g(M_r+2M_p)}
+  \frac{2L(m_r+3m_p)}
+       {3g(m_r+2m_p)}
   }
   $$
 - The lecture’s numerical result is:
-  $$ T\approx2.0\text{ s} $$
+  $$ T\approx2.0\ \mathrm{s} $$
 
 ---
 
@@ -314,10 +315,10 @@
 
 ### 27. Composite Pendulum Setup
 - A uniform rod has:
-  - mass $M_r$
+  - mass $m_r$
   - length $L$
 - A solid disk has:
-  - mass $M_d$
+  - mass $m_d$
   - radius $R$
 - The disk is attached to the lower end of the rod.
 - The distance from the pivot to the disk’s center is:
@@ -327,30 +328,30 @@
 
 ### 28. Rod Moment of Inertia
 - About the pivot at the rod’s upper end:
-  $$ I_r=\frac{1}{3}M_rL^2 $$
+  $$ I_r=\frac{1}{3}m_rL^2 $$
 
 ---
 
 ### 29. Disk Moment of Inertia
 - About the disk’s center:
-  $$ I_{d,\text{cm}}=\frac{1}{2}M_dR^2 $$
+  $$ I_{d,\mathrm{cm}}=\frac{1}{2}m_dR^2 $$
 - Apply the parallel-axis theorem:
-  $$ I_d=I_{d,\text{cm}}+M_d(L+R)^2 $$
+  $$ I_{d,p}=I_{d,\mathrm{cm}}+m_d(L+R)^2 $$
 - Therefore:
-  $$ I_d=\frac{1}{2}M_dR^2+M_d(L+R)^2 $$
+  $$ I_{d,p}=\frac{1}{2}m_dR^2+m_d(L+R)^2 $$
 
 ---
 
 ### 30. Total Moment of Inertia
 - Add the rod and disk contributions:
   $$
-  I
+  I_{\mathrm{total}}
   =
-  \frac{1}{3}M_rL^2
+  \frac{1}{3}m_rL^2
   +
-  \frac{1}{2}M_dR^2
+  \frac{1}{2}m_dR^2
   +
-  M_d(L+R)^2
+  m_d(L+R)^2
   $$
 
 ---
@@ -363,9 +364,9 @@
   \ell
   =
   \frac{
-  M_r(L/2)+M_d(L+R)
+  m_r(L/2)+m_d(L+R)
   }{
-  M_r+M_d
+  m_r+m_d
   }
   $$
 
@@ -373,12 +374,12 @@
 
 ### 32. Period of the Rod–Disk System
 - Substitute into:
-  $$ T=2\pi\sqrt{\frac{I}{(M_r+M_d)g\ell}} $$
+  $$ T=2\pi\sqrt{\frac{I_{\mathrm{total}}}{(m_r+m_d)g\ell}} $$
 - Since:
   $$
-  (M_r+M_d)\ell
+  (m_r+m_d)\ell
   =
-  M_r\frac{L}{2}+M_d(L+R)
+  m_r\frac{L}{2}+m_d(L+R)
   $$
 - The period can be written as:
   $$
@@ -387,20 +388,20 @@
   2\pi
   \sqrt{
   \frac{
-  \frac{1}{3}M_rL^2
+  \frac{1}{3}m_rL^2
   +
-  \frac{1}{2}M_dR^2
+  \frac{1}{2}m_dR^2
   +
-  M_d(L+R)^2
+  m_d(L+R)^2
   }{
   g\left[
-  M_r(L/2)+M_d(L+R)
+  m_r(L/2)+m_d(L+R)
   \right]
   }
   }
   $$
 - The lecture’s numerical result is:
-  $$ T\approx2.5\text{ s} $$
+  $$ T\approx2.5\ \mathrm{s} $$
 
 ---
 
@@ -408,9 +409,9 @@
 - The disk is an extended object, not a point mass.
 - Its moment of inertia has two contributions:
   - rotation about its own center:
-    $$ \frac{1}{2}M_dR^2 $$
+    $$ \frac{1}{2}m_dR^2 $$
   - motion of its center around the pendulum pivot:
-    $$ M_d(L+R)^2 $$
+    $$ m_d(L+R)^2 $$
 - Both contributions must be included.
 
 ---
@@ -419,7 +420,7 @@
 - A physical pendulum undergoes approximate simple harmonic motion when:
   $$ \sin\theta\approx\theta $$
 - The general period is:
-  $$ T=2\pi\sqrt{\frac{I}{Mg\ell}} $$
+  $$ T=2\pi\sqrt{\frac{I_p}{Mg\ell}} $$
 - The period depends on:
   - moment of inertia about the pivot
   - total mass
@@ -428,11 +429,11 @@
   $$ T=2\pi\sqrt{\frac{L}{g}} $$
   is a special case of the physical-pendulum formula.
 - Moving the pivot changes both:
-  $$ I $$
+  $$ I_p $$
   and:
   $$ \ell $$
 - For composite objects:
-  $$ I_{\text{total}}=\sum_i I_i $$
+  $$ I_{\mathrm{total}}=\sum_i I_i $$
   and the combined center of mass must also be calculated.
 
 ---
@@ -442,10 +443,10 @@
 2. Identify the pivot.
 3. Calculate the total moment of inertia about that pivot.
 4. Use the parallel-axis theorem when necessary:
-   $$ I=I_{\text{cm}}+Md^2 $$
+   $$ I_p=I_{\mathrm{cm}}+Md^2 $$
 5. Find the system’s combined center of mass.
 6. Determine:
    $$ \ell=\text{distance from pivot to center of mass} $$
 7. Substitute into:
-   $$ T=2\pi\sqrt{\frac{I}{Mg\ell}} $$
+   $$ T=2\pi\sqrt{\frac{I_p}{Mg\ell}} $$
 8. Simplify symbolically before substituting numerical values.

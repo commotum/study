@@ -16,7 +16,7 @@ The masses satisfy $m_1=3m_2$.
 
 **B.** Starting from the discrete center-of-mass definition, solve symbolically for $x_{\mathrm{cm}}$ in terms of $L$.
 
-**C.** Evaluate the result for $L=0.88\text{ m}$ and include units.
+**C.** Evaluate the result for $L=0.88\ \mathrm{m}$ and include units.
 
 **D.** Treat $x_{\mathrm{cm}}$ as the location of a support. Write the torque-balance equation about that support and independently recover the symbolic result.
 
@@ -72,10 +72,10 @@ The masses satisfy $m_1=3m_2$.
    x_{\mathrm{cm}}=\frac{L}{4}.
    $$
 
-3. Substitute $L=0.88\text{ m}$:
+3. Substitute $L=0.88\ \mathrm{m}$:
 
    $$
-   x_{\mathrm{cm}}=\frac{0.88\text{ m}}{4}=0.22\text{ m}.
+   x_{\mathrm{cm}}=\frac{0.88\ \mathrm{m}}{4}=0.22\ \mathrm{m}.
    $$
 
 4. Verify by torque balance. If the support is at $x_{\mathrm{cm}}$, the lever arms are $x_{\mathrm{cm}}$ and $L-x_{\mathrm{cm}}$:

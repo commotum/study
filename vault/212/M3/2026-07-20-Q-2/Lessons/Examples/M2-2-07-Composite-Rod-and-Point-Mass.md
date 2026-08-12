@@ -74,4 +74,4 @@ A uniform thin rod has mass $M$ and length $L$. A point mass $3M$ is attached to
    \frac{10}{3}ML^2.
    $$
 
-6. Both component inertias have units $\text{kg}\cdot\text{m}^2$. They are directly additive because the rod and point mass rotate rigidly about the same axis with the same angular speed.
+6. Both component inertias have units $\mathrm{kg}\cdot\mathrm{m}^2$. They are directly additive because the rod and point mass rotate rigidly about the same axis with the same angular speed.

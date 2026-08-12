@@ -27,7 +27,7 @@ topic-code: MTH212.M1.49
 
 In circular motion, the velocity vector is tangent to the circle, so $\vec{v}$ is perpendicular to $\vec{r}$. That fact is easy to remember, but it does not automatically apply to acceleration.
 
-The recognition cue is a statement asking whether $\vec{a}$ is perpendicular to $\vec{r}$. The reusable check is:
+The recognition cue is a statement asking whether $\vec{a}$ is perpendicular to $\vec{r}$. Use $+\hat{r}$ inward and choose $+\hat{t}$ tangent to the path; the signed component $a_t$ records which tangent direction the acceleration follows. The position vector $\vec{r}$ points outward, opposite $\hat{r}$. The reusable check is:
 
 1. Separate the acceleration into a radial part and a tangential part.
 2. Look for any nonzero radial part.
@@ -44,8 +44,10 @@ $$
 For circular motion with angular speed $\omega$, the radial part of acceleration points toward the center:
 
 $$
-\vec{a}_{\text{radial}}=-\omega^2\vec{r}.
+a_r\hat{r}=-\omega^2\vec{r}.
 $$
+
+Since $|\vec{r}|=r$, the inward-positive scalar component is $a_r=r\omega^2$.
 
 That radial part is parallel to $\vec{r}$ in the opposite direction, not perpendicular to it. For a moving object with $\omega\ne 0$, this is the part that makes the statement "$\vec{a}$ is perpendicular to $\vec{r}$" fail.
 
@@ -61,14 +63,16 @@ That radial part is parallel to $\vec{r}$ in the opposite direction, not perpend
 Circular motion can change the velocity vector in two different ways:
 
 $$
-\vec{a}=\vec{a}_{\text{radial}}+\vec{a}_{\text{tangential}}.
+\vec{a}=a_r\hat{r}+a_t\hat{t}.
 $$
 
 The radial part points toward the center because the direction of velocity is changing. It is opposite the outward position vector $\vec{r}$:
 
 $$
-\vec{a}_{\text{radial}}=-\omega^2\vec{r}.
+a_r\hat{r}=-\omega^2\vec{r}.
 $$
+
+Thus $a_r=r\omega^2$, while the minus sign in the position-vector form records that $\vec{r}$ points outward.
 
 The tangential part points along the tangent direction because the speed is changing. That tangential part is perpendicular to $\vec{r}$, just like the velocity is.
 
@@ -104,10 +108,10 @@ options:
 **Example:** Suppose an acceleration vector has the form
 
 $$
-\vec{a}=-\omega^2\vec{r}+\vec{a}_{\text{tangential}},
+\vec{a}=-\omega^2\vec{r}+a_t\hat{t},
 $$
 
-where $\vec{a}_{\text{tangential}}$ is perpendicular to $\vec{r}$. Is $\vec{a}$ perpendicular to $\vec{r}$?
+where $a_t\hat{t}$ is perpendicular to $\vec{r}$. Is $\vec{a}$ perpendicular to $\vec{r}$?
 
 **Explanation**
 
@@ -118,7 +122,7 @@ Start with
 $$
 \vec{a}\cdot\vec{r}
 =
-(-\omega^2\vec{r}+\vec{a}_{\text{tangential}})\cdot\vec{r}.
+(-\omega^2\vec{r}+a_t\hat{t})\cdot\vec{r}.
 $$
 
 Distribute the dot product:
@@ -127,13 +131,13 @@ $$
 \vec{a}\cdot\vec{r}
 =
 -\omega^2(\vec{r}\cdot\vec{r})
-+\vec{a}_{\text{tangential}}\cdot\vec{r}.
++(a_t\hat{t})\cdot\vec{r}.
 $$
 
 The tangential part is perpendicular to $\vec{r}$, so
 
 $$
-\vec{a}_{\text{tangential}}\cdot\vec{r}=0.
+(a_t\hat{t})\cdot\vec{r}=0.
 $$
 
 But $\vec{r}\cdot\vec{r}=|\vec{r}|^2$, so
@@ -151,7 +155,7 @@ type: radio
 id: q-2
 shuffle: true
 content: |-
-  If $\vec{a}=-\omega^2\vec{r}+\vec{a}_{\text{tangential}}$ and $\vec{a}_{\text{tangential}}\perp \vec{r}$, what does $\vec{a}\cdot\vec{r}$ equal?
+  If $\vec{a}=-\omega^2\vec{r}+a_t\hat{t}$ and $a_t\hat{t}\perp \vec{r}$, what does $\vec{a}\cdot\vec{r}$ equal?
 options:
 - id: a
   content: |-
@@ -165,7 +169,7 @@ options:
     $\omega^2|\vec{r}|^2$
 - id: d
   content: |-
-    $\vec{a}_{\text{tangential}}\cdot\vec{r}$
+    $(a_t\hat{t})\cdot\vec{r}$
 ```
 
 ---
@@ -182,19 +186,19 @@ Changing speed does add tangential acceleration. But it does not remove radial a
 The tangential acceleration accounts for the change in speed:
 
 $$
-\vec{a}_{\text{tangential}}\perp\vec{r}.
+a_t\hat{t}\perp\vec{r}.
 $$
 
 The radial acceleration accounts for the change in direction:
 
 $$
-\vec{a}_{\text{radial}}=-\omega^2\vec{r}.
+a_r\hat{r}=-\omega^2\vec{r}.
 $$
 
 The net acceleration is the sum:
 
 $$
-\vec{a}=\vec{a}_{\text{radial}}+\vec{a}_{\text{tangential}}.
+\vec{a}=a_r\hat{r}+a_t\hat{t}.
 $$
 
 A sum with a nonzero radial component is not perpendicular to $\vec{r}$, even if one piece of the sum is perpendicular to $\vec{r}$. In other words, "has a perpendicular component" is weaker than "is perpendicular."
@@ -257,7 +261,7 @@ True or false: $\vec{a}$ is perpendicular to $\vec{r}$.
 The statement is false. The acceleration in non-uniform circular motion has a tangential part, but it also has an inward radial part:
 
 $$
-\vec{a}_{\text{radial}}=-\omega^2\vec{r}.
+a_r\hat{r}=-\omega^2\vec{r}.
 $$
 
 Because that radial part is opposite $\vec{r}$, the net acceleration has a component along $\vec{r}$. A vector with a component along $\vec{r}$ cannot be perpendicular to $\vec{r}$.
@@ -317,7 +321,7 @@ options:
 When a problem asks whether circular-motion acceleration is perpendicular to the radius vector, do not use the tangent direction of velocity as a shortcut. Split acceleration into radial and tangential parts:
 
 $$
-\vec{a}=-\omega^2\vec{r}+\vec{a}_{\text{tangential}}.
+\vec{a}=-\omega^2\vec{r}+a_t\hat{t}.
 $$
 
 The tangential part is perpendicular to $\vec{r}$, but the radial part is opposite $\vec{r}$. Since the net acceleration has a radial component, $\vec{a}$ is not perpendicular to $\vec{r}$. The statement "$\vec{a}$ is perpendicular to $\vec{r}$" is false.

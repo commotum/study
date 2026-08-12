@@ -19,7 +19,7 @@ topic-code: MTH212.M3.35
 
 - Use Newton's gravitational force magnitude $F=Gm_1m_2/d^2$.
 - Use gravitational pair potential energy $U=-Gm_1m_2/d$.
-- Apply the radial equation $F_r=mv^2/r$ for uniform circular motion.
+- Apply the inward-positive radial equation $\sum F_r=m a_r=mv^2/r$ for uniform circular motion.
 - Relate orbital speed and period with $v=2\pi r/T$.
 - Add collinear force contributions and count distinct object pairs.
 
@@ -69,34 +69,34 @@ type: radio
 id: opposite-planets-separation-ledger
 shuffle: true
 content: |-
-  Two planets lie on opposite sides of a star, each at orbital radius $R$. Which separations belong in the gravitational formulas?
+  Two planets lie on opposite sides of a star, each at orbital radius $r$. Which separations belong in the gravitational formulas?
 options:
 - id: star-r-planets-two-r
   content: |-
-    Each star–planet separation is $R$, and the planet–planet separation is $2R$.
+    Each star–planet separation is $r$, and the planet–planet separation is $2r$.
   correct: true
   feedback: |-
-    Each planet is one radius from the central star. The planets occupy opposite ends of a diameter, so their separation is $R+R=2R$.
+    Each planet is one radius from the central star. The planets occupy opposite ends of a diameter, so their separation is $r+r=2r$.
 - id: all-r
   content: |-
-    Every separation is $R$.
+    Every separation is $r$.
   feedback: |-
-    The orbital radius describes one planet's distance to the star, not the distance across the entire orbit. Opposite planets are separated by the diameter $2R$.
+    The orbital radius describes one planet's distance to the star, not the distance across the entire orbit. Opposite planets are separated by the diameter $2r$.
 - id: star-two-r-planets-r
   content: |-
-    Each star–planet separation is $2R$, and the planet–planet separation is $R$.
+    Each star–planet separation is $2r$, and the planet–planet separation is $r$.
   feedback: |-
-    This reverses radius and diameter. The star is at the center, so it is $R$ from either planet, while the two planets are $2R$ apart.
+    This reverses radius and diameter. The star is at the center, so it is $r$ from either planet, while the two planets are $2r$ apart.
 - id: all-two-r
   content: |-
-    Every separation is $2R$.
+    Every separation is $2r$.
   feedback: |-
-    Only the distance from one planet across the center to the other spans the diameter $2R$. A star–planet segment is one radius $R$.
+    Only the distance from one planet across the center to the other spans the diameter $2r$. A star–planet segment is one radius $r$.
 - id: planet-four-r
   content: |-
-    Each star–planet separation is $R$, and the planet–planet separation is $4R$.
+    Each star–planet separation is $r$, and the planet–planet separation is $4r$.
   feedback: |-
-    The factor four appears only after squaring the planet separation in the force denominator: $(2R)^2=4R^2$. The geometric separation itself remains $2R$.
+    The factor four appears only after squaring the planet separation in the force denominator: $(2r)^2=4r^2$. The geometric separation itself remains $2r$.
 ```
 
 ---
@@ -111,20 +111,20 @@ options:
 The star's attraction on one planet has magnitude
 
 $$
-F_{\star}=\frac{GMm}{r^2}.
+F_{g,\star}=\frac{GMm}{r^2}.
 $$
 
 The other planet is $2r$ away, so its attraction has magnitude
 
 $$
-F_{p}=\frac{Gm^2}{(2r)^2}
+F_{g,p}=\frac{Gm^2}{(2r)^2}
 =\frac{Gm^2}{4r^2}.
 $$
 
 Both forces point toward the center for the chosen planet, so their magnitudes add:
 
 $$
-F_{\mathrm{in}}
+F_{\mathrm{net}}
 =\frac{GMm}{r^2}+\frac{Gm^2}{4r^2}
 =\frac{Gm}{r^2}\left(M+\frac{m}{4}\right).
 $$
@@ -175,10 +175,10 @@ options:
 
 **Explanation**
 
-Apply the radial force equation to either planet:
+Take inward as positive and apply the radial equation to either planet:
 
 $$
-m\frac{v^2}{r}
+\sum F_r=m a_r=m\frac{v^2}{r}=F_{\mathrm{net}}
 =\frac{Gm}{r^2}\left(M+\frac{m}{4}\right).
 $$
 
@@ -221,32 +221,32 @@ type: radio
 id: opposite-planets-period-variant
 shuffle: true
 content: |-
-  Two planets of mass $q$ remain opposite each other around a star of mass $S$, each at radius $R$. Which expression gives their period?
+  Two planets of mass $m$ remain opposite each other around a star of mass $M$, each at radius $r$. Which expression gives their period?
 options:
 - id: effective-mass-quarter
   content: |-
-    $2\pi\sqrt{\dfrac{R^3}{G(S+q/4)}}$
+    $2\pi\sqrt{\dfrac{r^3}{G(M+m/4)}}$
   correct: true
   feedback: |-
-    The companion is $2R$ away, so its force contributes as though $q/4$ were added to the central mass term. Circular motion then gives $T=2\pi\sqrt{R^3/[G(S+q/4)]}$.
+    The companion is $2r$ away, so its force contributes as though $m/4$ were added to the central mass term. Circular motion then gives $T=2\pi\sqrt{r^3/[G(M+m/4)]}$.
 - id: effective-mass-full
   content: |-
-    $2\pi\sqrt{\dfrac{R^3}{G(S+q)}}$
+    $2\pi\sqrt{\dfrac{r^3}{G(M+m)}}$
   feedback: |-
-    This treats the companion planet as though it were distance $R$ away. Its actual separation is $2R$, so the inverse-square force contributes $q/4$, not the full $q$.
+    This treats the companion planet as though it were distance $r$ away. Its actual separation is $2r$, so the inverse-square force contributes $m/4$, not the full $m$.
 - id: effective-mass-half
   content: |-
-    $2\pi\sqrt{\dfrac{R^3}{G(S+q/2)}}$
+    $2\pi\sqrt{\dfrac{r^3}{G(M+m/2)}}$
   feedback: |-
-    This applies the factor of two from the separation only once. Force depends on distance squared, so the companion contribution is reduced by $2^2=4$ and appears as $q/4$.
+    This applies the factor of two from the separation only once. Force depends on distance squared, so the companion contribution is reduced by $2^2=4$ and appears as $m/4$.
 - id: subtract-quarter
   content: |-
-    $2\pi\sqrt{\dfrac{R^3}{G(S-q/4)}}$
+    $2\pi\sqrt{\dfrac{r^3}{G(M-m/4)}}$
   feedback: |-
     The companion planet attracts the chosen planet toward the center, adding to the star's inward pull. A subtraction would apply only if its force pointed outward, which it does not in the opposite-side geometry.
 - id: double-star
   content: |-
-    $2\pi\sqrt{\dfrac{R^3}{G(2S+q/4)}}$
+    $2\pi\sqrt{\dfrac{r^3}{G(2M+m/4)}}$
   feedback: |-
     The radial equation is for one planet and contains the force from the one star only once. The second star–planet pair belongs to the other planet's force balance, not this one.
 ```
@@ -277,39 +277,39 @@ $$
 =-\frac{2GMm}{r}-\frac{Gm^2}{2r}}.
 $$
 
-The planet–planet term uses $2r$ to the first power because gravitational potential energy varies as $1/d$. Counting $U_{12}$ twice would duplicate the same interaction, even though each planet feels a force from the other. Each term has units $[Gm_am_b/d]=\mathrm{kg\,m^2/s^2}=\mathrm J$, and every term is negative because every pair is gravitationally bound relative to zero energy at infinite separation.
+The planet–planet term uses $2r$ to the first power because gravitational potential energy varies as $1/d$. Counting $U_{12}$ twice would duplicate the same interaction, even though each planet feels a force from the other. Each term has units $[Gm_am_b/d]=\mathrm{kg}\,\mathrm{m}^2/\mathrm{s}^2=\mathrm{J}$, and every term is negative because every pair is gravitationally bound relative to zero energy at infinite separation.
 
 ```quiz
 type: radio
 id: opposite-planets-total-potential
 shuffle: true
 content: |-
-  A star of mass $S$ has two planets of mass $q$ on opposite sides, each at radius $R$. What is the system's total gravitational potential energy?
+  A star of mass $M$ has two planets of mass $m$ on opposite sides, each at radius $r$. What is the system's total gravitational potential energy?
 options:
 - id: two-star-one-planet-pair
   content: |-
-    $-\dfrac{2GSq}{R}-\dfrac{Gq^2}{2R}$
+    $-\dfrac{2GMm}{r}-\dfrac{Gm^2}{2r}$
   correct: true
   feedback: |-
-    There are two star–planet pairs at separation $R$ and one planet–planet pair at separation $2R$. Summing each once gives $-2GSq/R-Gq^2/(2R)$.
+    There are two star–planet pairs at separation $r$ and one planet–planet pair at separation $2r$. Summing each once gives $-2GMm/r-Gm^2/(2r)$.
 - id: use-r-in-planet-energy
   content: |-
-    $-\dfrac{2GSq}{R}-\dfrac{Gq^2}{R}$
+    $-\dfrac{2GMm}{r}-\dfrac{Gm^2}{r}$
   feedback: |-
-    The two star–planet terms are counted correctly, but the planets are separated by $2R$, not $R$. Potential energy uses the first power of that distance, giving $-Gq^2/(2R)$.
+    The two star–planet terms are counted correctly, but the planets are separated by $2r$, not $r$. Potential energy uses the first power of that distance, giving $-Gm^2/(2r)$.
 - id: one-star-pair
   content: |-
-    $-\dfrac{GSq}{R}-\dfrac{Gq^2}{2R}$
+    $-\dfrac{GMm}{r}-\dfrac{Gm^2}{2r}$
   feedback: |-
-    This omits one of the two distinct star–planet interactions. Each planet forms its own pair with the star, so the star–planet contribution is $-2GSq/R$.
+    This omits one of the two distinct star–planet interactions. Each planet forms its own pair with the star, so the star–planet contribution is $-2GMm/r$.
 - id: double-planet-pair
   content: |-
-    $-\dfrac{2GSq}{R}-\dfrac{2Gq^2}{2R}$
+    $-\dfrac{2GMm}{r}-\dfrac{2Gm^2}{2r}$
   feedback: |-
     The planet–planet interaction is one unordered pair, not one energy term per planet. Counting it twice duplicates the same shared potential energy.
 - id: positive-planet-pair
   content: |-
-    $-\dfrac{2GSq}{R}+\dfrac{Gq^2}{2R}$
+    $-\dfrac{2GMm}{r}+\dfrac{Gm^2}{2r}$
   feedback: |-
     Gravitational potential energy is negative for every attractive pair when zero is chosen at infinite separation. The planet–planet term must therefore also be negative.
 ```
@@ -374,7 +374,7 @@ For two equal planets on opposite sides of a central star:
 1. Record the separations: $r$, $r$, and $2r$.
 2. For one planet, both attractions point inward:
    $$
-   F_{\mathrm{in}}
+   F_{\mathrm{net}}
    =\frac{GMm}{r^2}+\frac{Gm^2}{4r^2}.
    $$
 3. Set this equal to $mv^2/r$ and use $v=2\pi r/T$:

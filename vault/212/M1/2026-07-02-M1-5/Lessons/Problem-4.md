@@ -17,7 +17,7 @@ topic-code: MTH212.M1.56
 ## Prerequisites
 
 - Resolve a force into components along perpendicular axes.
-- Use $\sum F = ma$ along one chosen axis.
+- Use $\sum F_t=m a_t$ along one chosen axis.
 - Use sine and cosine for right-triangle components.
 - Evaluate trig functions in degree mode and round to the requested precision.
 
@@ -116,7 +116,7 @@ options:
     $mg\tan\theta$
 - id: q-p4-2-d
   content: |-
-    $T\sin\theta$
+    $T_{\mathrm{tens}}\sin\theta$
   feedback: |-
     Tension is along the string, so it has no tangential component.
 - id: q-p4-2-e
@@ -136,13 +136,13 @@ options:
 Apply Newton's second law along the tangential axis:
 
 $$
-\sum F_t = ma_t.
+\sum F_t=m a_t.
 $$
 
 The tangential force magnitude is $mg\sin\theta$, so
 
 $$
-ma_t = mg\sin\theta.
+m a_t = mg\sin\theta.
 $$
 
 Cancel $m$:
@@ -189,11 +189,11 @@ options:
 <a id="ignore-radial-data-and-sign-traps"></a>
 ## Ignore Radial Data and Sign Traps
 
-**Example:** A ball has $m=0.56\ \mathrm{kg}$, $L=0.88\ \mathrm{m}$, $T=1.2\ \mathrm{N}$, and $\theta=14^\circ$. What is the magnitude of its tangential acceleration?
+**Example:** A ball has $m=0.56\ \mathrm{kg}$, $L=0.88\ \mathrm{m}$, $T_{\mathrm{tens}}=1.2\ \mathrm{N}$, and $\theta=14^\circ$. What is the magnitude of its tangential acceleration?
 
 **Explanation**
 
-The mass cancels when using $\sum F_t=ma_t$. The length $L$ and tension $T$ affect radial motion, not the tangential component in this setup.
+The mass cancels when using $\sum F_t=m a_t$. The length $L$ and tension $T_{\mathrm{tens}}$ affect radial motion, not the tangential component in this setup.
 
 Use
 
@@ -220,7 +220,7 @@ type: radio
 id: q-p4-4
 shuffle: true
 content: |-
-  A ball in a vertical circle has $m=0.75\ \mathrm{kg}$, $L=1.2\ \mathrm{m}$, $T=3.0\ \mathrm{N}$, and $\theta=10^\circ$. What is the magnitude of the tangential acceleration, rounded to two significant figures?
+  A ball in a vertical circle has $m=0.75\ \mathrm{kg}$, $L=1.2\ \mathrm{m}$, $T_{\mathrm{tens}}=3.0\ \mathrm{N}$, and $\theta=10^\circ$. What is the magnitude of the tangential acceleration, rounded to two significant figures?
 options:
 - id: q-p4-4-a
   content: |-
@@ -230,7 +230,7 @@ options:
   content: |-
     $14\ \mathrm{m}/\mathrm{s}^2$
   feedback: |-
-    This uses radial data: $T/m+g\cos\theta$.
+    This uses radial data: $T_{\mathrm{tens}}/m+g\cos\theta$.
 - id: q-p4-4-c
   content: |-
     $9.7\ \mathrm{m}/\mathrm{s}^2$
@@ -254,7 +254,7 @@ For tangential acceleration in this vertical-circle setup, first separate the fo
 Then apply Newton's second law along the tangent:
 
 $$
-ma_t = mg\sin\theta
+m a_t = mg\sin\theta
 $$
 
 so
@@ -263,7 +263,7 @@ $$
 a_t = g\sin\theta.
 $$
 
-The main trap is using the radial expression $T/m+g\cos\theta$ or including $L$. Those belong to radial acceleration, not tangential acceleration.
+The main trap is using the radial expression $T_{\mathrm{tens}}/m+g\cos\theta$ or including $L$. Those belong to radial acceleration, not tangential acceleration.
 
 <!-- lesson-nav:start -->
 ---

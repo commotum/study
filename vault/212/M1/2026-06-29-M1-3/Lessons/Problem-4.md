@@ -9,7 +9,7 @@ topic-code: MTH212.M1.17
 
 - [Introduction](#introduction)
 - [Choose the Radial Direction](#choose-the-radial-direction)
-- [Compute the Centripetal Force Term](#compute-the-centripetal-force-term)
+- [Compute the Radial Force Term](#compute-the-centripetal-force-term)
 - [Solve for the Normal Force](#solve-for-the-normal-force)
 - [Avoid the Top-Bottom Sign Mix-Up](#avoid-the-top-bottom-sign-mix-up)
 - [Summary](#summary)
@@ -17,9 +17,9 @@ topic-code: MTH212.M1.17
 ## Prerequisites
 
 - Radial acceleration points toward the center of circular motion.
-- For constant angular velocity, $a_r=\omega^2r$.
+- For constant angular velocity, $a_r=r\omega^2$.
 - Weight has magnitude $mg$ and points downward.
-- Newton's second law in the radial direction is $\sum F_r=ma_r$.
+- Newton's second law in the radial direction is $\sum F_r=m a_r=m\frac{v^2}{r}=m\omega^2 r$.
 
 ---
 
@@ -33,16 +33,16 @@ That upward seat force is the normal force and determines the rider's apparent w
 With inward chosen as positive, the force balance is
 
 $$
-N-mg=m\omega^2r,
+N-mg=m a_r=m\omega^2 r,
 $$
 
 so the normal force is
 
 $$
-N=mg+m\omega^2r.
+N=mg+m\omega^2 r.
 $$
 
-The $m\omega^2r$ term is the required net inward force, not a third force acting on the rider.
+The $m\omega^2 r$ term is the required net inward force, not a third force acting on the rider.
 
 ---
 
@@ -57,18 +57,18 @@ At the bottom, the center of the wheel is above the rider, so inward is upward.
 
 - $N$ points upward, so it is positive in the inward direction.
 - $mg$ points downward, so it is negative in the inward direction.
-- The radial acceleration has magnitude $\omega^2r$.
+- The radial acceleration has magnitude $r\omega^2$.
 
 Therefore,
 
 $$
-\sum F_r=ma_r
+\sum F_r=m a_r=m\frac{v^2}{r}=m\omega^2 r
 $$
 
 becomes
 
 $$
-N-mg=m\omega^2r.
+N-mg=m a_r=m\omega^2 r.
 $$
 
 ```quiz
@@ -80,13 +80,13 @@ content: |-
 options:
 - id: p4-q1-a
   content: |-
-    $N-mg=m\omega^2r$
+    $N-mg=m a_r=m\omega^2 r$
   correct: true
   feedback: |-
     At the bottom, inward is upward, so $N$ is positive and $mg$ is negative.
 - id: p4-q1-b
   content: |-
-    $mg-N=m\omega^2r$
+    $mg-N=m a_r=m\omega^2 r$
   feedback: |-
     This is the top-of-the-wheel sign pattern.
 - id: p4-q1-c
@@ -96,12 +96,12 @@ options:
     The net radial force is not zero because the rider is accelerating toward the center.
 - id: p4-q1-d
   content: |-
-    $N=m\omega r$
+    $N=mr\omega$
   feedback: |-
-    The radial acceleration uses $\omega^2r$, not $\omega r$.
+    The radial acceleration uses $r\omega^2$, not $r\omega$.
 - id: p4-q1-e
   content: |-
-    $mg=m\omega^2r$
+    $mg=m\omega^2 r$
   feedback: |-
     This ignores the normal force from the seat.
 ```
@@ -109,17 +109,17 @@ options:
 ---
 
 <a id="compute-the-centripetal-force-term"></a>
-## Compute the Centripetal Force Term
+## Compute the Radial Force Term
 
-**Example:** For a $68\ \mathrm{kg}$ rider on a Ferris wheel with $r=42\ \mathrm{m}$ and $\omega=0.16\ \mathrm{rad}/\mathrm{s}$, compute $m\omega^2r$.
+**Example:** For a $68\ \mathrm{kg}$ rider on a Ferris wheel with $r=42\ \mathrm{m}$ and $\omega=0.16\ \mathrm{rad}/\mathrm{s}$, compute $m\omega^2 r$.
 
 **Explanation**
 
-Use the radial acceleration formula $a_r=\omega^2r$:
+Use the radial acceleration formula $a_r=r\omega^2$:
 
 $$
 \begin{aligned}
-m\omega^2r
+m\omega^2 r
 &=68(0.16)^2(42) \\
 &=68(0.0256)(42) \\
 &=73.1136\ \mathrm{N}.
@@ -139,7 +139,7 @@ type: radio
 id: p4-q2
 shuffle: true
 content: |-
-  A $70\ \mathrm{kg}$ rider is on a Ferris wheel with radius $30\ \mathrm{m}$ and angular speed $0.20\ \mathrm{rad}/\mathrm{s}$. What is $m\omega^2r$?
+  A $70\ \mathrm{kg}$ rider is on a Ferris wheel with radius $30\ \mathrm{m}$ and angular speed $0.20\ \mathrm{rad}/\mathrm{s}$. What is $m\omega^2 r$?
 options:
 - id: p4-q2-a
   content: |-
@@ -156,12 +156,12 @@ options:
   content: |-
     $420\ \mathrm{N}$
   feedback: |-
-    This uses $m\omega r$ instead of $m\omega^2r$.
+    This uses $mr\omega$ instead of $m\omega^2 r$.
 - id: p4-q2-d
   content: |-
     $686\ \mathrm{N}$
   feedback: |-
-    This is approximately the rider's weight, not the centripetal-force term.
+    This is approximately the rider's weight, not the inward net-force term.
 - id: p4-q2-e
   content: |-
     $2100\ \mathrm{N}$
@@ -180,7 +180,7 @@ options:
 
 First list the quantities that matter:
 
-- Bottom of the wheel: use $N-mg=m\omega^2r$.
+- Bottom of the wheel: use $N-mg=m a_r=m\omega^2 r$.
 - Mass: $m=68\ \mathrm{kg}$.
 - Radius: $r=42\ \mathrm{m}$.
 - Angular speed: $\omega=0.16\ \mathrm{rad}/\mathrm{s}$.
@@ -191,13 +191,13 @@ Before calculating, predict the result: at the bottom, the seat must support the
 At the bottom, use
 
 $$
-N-mg=m\omega^2r.
+N-mg=m a_r=m\omega^2 r.
 $$
 
 Solve for $N$:
 
 $$
-N=mg+m\omega^2r.
+N=mg+m\omega^2 r.
 $$
 
 Only after isolating $N$ symbolically should you substitute the values:
@@ -230,12 +230,12 @@ options:
   content: |-
     $348\ \mathrm{N}$
   feedback: |-
-    This subtracts the centripetal term from the weight: $588-240$.
+    This subtracts the inward net-force term from the weight: $588-240$.
 - id: p4-q3-b
   content: |-
     $240\ \mathrm{N}$
   feedback: |-
-    This is only $m\omega^2r$, not the normal force.
+    This is only $m\omega^2 r$, not the normal force.
 - id: p4-q3-c
   content: |-
     $588\ \mathrm{N}$
@@ -246,12 +246,12 @@ options:
     $828\ \mathrm{N}$
   correct: true
   feedback: |-
-    At the bottom, $N=mg+m\omega^2r=588+240=828\ \mathrm{N}$.
+    At the bottom, $N=mg+m\omega^2 r=588+240=828\ \mathrm{N}$.
 - id: p4-q3-e
   content: |-
     $1176\ \mathrm{N}$
   feedback: |-
-    This doubles the weight instead of adding the centripetal-force term.
+    This doubles the weight instead of adding the inward net-force term.
 ```
 
 ---
@@ -266,28 +266,28 @@ options:
 At the bottom, inward is upward, so
 
 $$
-N-mg=m\omega^2r
+N-mg=m a_r=m\omega^2 r
 $$
 
 and
 
 $$
-N=mg+m\omega^2r.
+N=mg+m\omega^2 r.
 $$
 
 At the top, inward is downward. Gravity points inward, but the seat's normal force points upward, away from the center. The equation becomes
 
 $$
-mg-N=m\omega^2r,
+mg-N=m a_r=m\omega^2 r,
 $$
 
 so
 
 $$
-N=mg-m\omega^2r.
+N=mg-m\omega^2 r.
 $$
 
-For the bottom problem, do not subtract the centripetal term. The rider needs more normal force than their weight, not less.
+For the bottom problem, do not subtract the inward net-force term. The rider needs more normal force than their weight, not less.
 
 ```quiz
 type: radio
@@ -298,25 +298,25 @@ content: |-
 options:
 - id: p4-q4-a
   content: |-
-    $N=mg-m\omega^2r$
+    $N=mg-m\omega^2 r$
   feedback: |-
     This is the top-of-the-wheel formula.
 - id: p4-q4-b
   content: |-
-    $N=mg+m\omega^2r$
+    $N=mg+m\omega^2 r$
   correct: true
   feedback: |-
-    At the bottom, the seat must provide weight support plus the inward centripetal-force term.
+    At the bottom, the seat must provide weight support plus the inward net-force term.
 - id: p4-q4-c
   content: |-
-    $N=m\omega^2r-mg$
+    $N=m\omega^2 r-mg$
   feedback: |-
-    This solves $N-mg=m\omega^2r$ with the sign of $mg$ moved the wrong way.
+    This solves $N-mg=m a_r=m\omega^2 r$ with the sign of $mg$ moved the wrong way.
 - id: p4-q4-d
   content: |-
-    $N=m\omega r+mg$
+    $N=mr\omega+mg$
   feedback: |-
-    The centripetal-force term is $m\omega^2r$, not $m\omega r$.
+    The inward net-force term is $m\omega^2 r$, not $mr\omega$.
 - id: p4-q4-e
   content: |-
     $N=mg$
@@ -332,16 +332,16 @@ options:
 At the bottom of a Ferris wheel, the center is above the rider. The normal force points inward and weight points outward, so
 
 $$
-N-mg=m\omega^2r.
+N-mg=m a_r=m\omega^2 r.
 $$
 
 Solving for the normal force gives
 
 $$
-N=mg+m\omega^2r.
+N=mg+m\omega^2 r.
 $$
 
-The normal force is therefore larger than the rider's weight. The subtraction $N=mg-m\omega^2r$ belongs to the top of an upright gondola, where gravity points inward instead.
+The normal force is therefore larger than the rider's weight. The subtraction $N=mg-m\omega^2 r$ belongs to the top of an upright gondola, where gravity points inward instead.
 
 <!-- lesson-nav:start -->
 ---

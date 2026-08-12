@@ -47,13 +47,13 @@ The recognition cue is a point between two sources governed by an inverse-square
 The two smaller distances fill the whole segment, so
 
 $$
-x+r_{\text{right}}=L.
+x+r_{\mathrm{right}}=L.
 $$
 
 Therefore,
 
 $$
-r_{\text{right}}=L-x.
+r_{\mathrm{right}}=L-x.
 $$
 
 Using $L+x$ would place the test mass outside the segment rather than between the sources.

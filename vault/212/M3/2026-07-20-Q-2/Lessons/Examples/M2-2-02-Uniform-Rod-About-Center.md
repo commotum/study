@@ -43,7 +43,7 @@ A uniform thin rod has mass $M$ and length $L$. It rotates about an axis through
 - SI dimensions:
 
   $$
-  [I]=\text{kg}\cdot\text{m}^2.
+  [I]=\mathrm{kg}\cdot\mathrm{m}^2.
   $$
 
 ## 3. The Walkthrough

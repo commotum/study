@@ -45,7 +45,7 @@ Use this three-part procedure:
 <a id="compute-the-period-from-length"></a>
 ## Compute the Period from Length
 
-**Example:** Find the period of an ideal simple pendulum with $L=9.81\ \mathrm{m}$ and $g=9.81\ \mathrm{m/s^2}$.
+**Example:** Find the period of an ideal simple pendulum with $L=9.81\ \mathrm{m}$ and $g=9.81\ \mathrm{m}/\mathrm{s}^2$.
 
 **Explanation**
 
@@ -54,20 +54,20 @@ Substitute the length and gravitational acceleration:
 $$
 \begin{aligned}
 T
-&=2\pi\sqrt{\frac{9.81\ \mathrm{m}}{9.81\ \mathrm{m/s^2}}}\\
-&=2\pi\sqrt{1\ \mathrm{s^2}}\\
+&=2\pi\sqrt{\frac{9.81\ \mathrm{m}}{9.81\ \mathrm{m}/\mathrm{s}^2}}\\
+&=2\pi\sqrt{1\ \mathrm{s}^2}\\
 &=2\pi(1.000\ \mathrm{s})\\
 &\approx 6.28\ \mathrm{s}.
 \end{aligned}
 $$
 
-The ratio $L/g$ has units of $\mathrm{s^2}$, so its square root has units of seconds.
+The ratio $L/g$ has units of $\mathrm{s}^2$, so its square root has units of seconds.
 
 ```quiz
 type: radio
 id: p12-q1
 content: |-
-  An ideal simple pendulum has $L=19.62\ \mathrm{m}$. Using $g=9.81\ \mathrm{m/s^2}$, what is its period?
+  An ideal simple pendulum has $L=19.62\ \mathrm{m}$. Using $g=9.81\ \mathrm{m}/\mathrm{s}^2$, what is its period?
 options:
 - id: p12-q1-a
   content: |-
@@ -144,7 +144,7 @@ options:
 <a id="match-the-period-to-a-time-range"></a>
 ## Match the Period to a Time Range
 
-**Example:** The Oregon Convention Center pendulum has $L=27\ \mathrm{m}$, bob mass $m=100\ \mathrm{kg}$, bob radius $r=1.5\ \mathrm{m}$, and cable mass $M=400\ \mathrm{kg}$. If it is modeled as a simple pendulum, use $g=9.81\ \mathrm{m/s^2}$ to choose its period range.
+**Example:** The Oregon Convention Center pendulum has $L=27\ \mathrm{m}$, bob mass $m=100\ \mathrm{kg}$, bob radius $r=1.5\ \mathrm{m}$, and cable mass $M=400\ \mathrm{kg}$. If it is modeled as a simple pendulum, use $g=9.81\ \mathrm{m}/\mathrm{s}^2$ to choose its period range.
 
 **Explanation**
 
@@ -153,7 +153,7 @@ Keep $L$ and $g$ and discard the mass and radius data:
 $$
 \begin{aligned}
 T
-&=2\pi\sqrt{\frac{27\ \mathrm{m}}{9.81\ \mathrm{m/s^2}}}\\
+&=2\pi\sqrt{\frac{27\ \mathrm{m}}{9.81\ \mathrm{m}/\mathrm{s}^2}}\\
 &\approx 2\pi(1.659\ \mathrm{s})\\
 &\approx 10.42\ \mathrm{s}.
 \end{aligned}
@@ -171,7 +171,7 @@ $$
 type: radio
 id: p12-q3
 content: |-
-  A very long pendulum is modeled as a simple pendulum with $L=32\ \mathrm{m}$. Using $g=9.81\ \mathrm{m/s^2}$, which range contains its period?
+  A very long pendulum is modeled as a simple pendulum with $L=32\ \mathrm{m}$. Using $g=9.81\ \mathrm{m}/\mathrm{s}^2$, which range contains its period?
 options:
 - id: p12-q3-a
   content: |-

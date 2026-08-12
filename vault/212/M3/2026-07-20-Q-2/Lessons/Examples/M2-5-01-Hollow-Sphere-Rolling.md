@@ -95,6 +95,6 @@ A thin hollow sphere of mass $m$ and radius $R$ starts from rest and rolls witho
    v_f=\sqrt{\frac65gd\sin\theta}.
    $$
 
-6. Inside the square root, $gd$ has units $\text{m}^2/\text{s}^2$, so the result has units $\text{m/s}$. Both $m$ and $R$ cancel.
+6. Inside the square root, $gd$ has units $\mathrm{m}^2/\mathrm{s}^2$, so the result has units $\mathrm{m}/\mathrm{s}$. Both $m$ and $R$ cancel.
 
 7. Omitting rotational energy would give $\sqrt{2gd\sin\theta}$, which is too large because it assigns all available energy to translation.

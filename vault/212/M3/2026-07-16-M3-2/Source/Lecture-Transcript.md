@@ -254,10 +254,12 @@ Because $M=2m$, the smaller star must orbit at twice the radius of the larger st
 
 We can find the period by analyzing either star. We will use the larger star.
 
-The gravitational force supplies the centripetal force:
+For the scalar radial equation, take inward as positive.
+
+The gravitational force supplies the inward radial net force:
 
 $$
-F_g=F_c.
+\sum F_r=M a_r=M\frac{v_M^2}{r_M}=F_g.
 $$
 
 The gravitational force between the stars is
@@ -268,10 +270,10 @@ F_g
 G\frac{Mm}{d^2}.
 $$
 
-The centripetal force on the larger star is
+The inward radial net force on the larger star is
 
 $$
-F_c
+\sum F_r
 =
 M\frac{v_M^2}{r_M}.
 $$
@@ -401,7 +403,7 @@ T
 \left(3.0\times10^{12}\ \mathrm{m}\right)^3
 }{
 3
-\left(6.67\times10^{-11}\ \mathrm{N\,m^2/kg^2}\right)
+\left(6.67\times10^{-11}\ \mathrm{N}\,\mathrm{m}^2/\mathrm{kg}^2\right)
 \left(2.5\times10^{30}\ \mathrm{kg}\right)
 }
 }.
@@ -417,7 +419,7 @@ Converting to years,
 
 $$
 \boxed{
-T\approx46\ \mathrm{years}
+T\approx46\ \mathrm{yr}
 }.
 $$
 
@@ -567,12 +569,12 @@ $$
 
 ## Orbital Speed of Each Mass
 
-The net gravitational force supplies the centripetal force:
+For the scalar radial equation, take inward as positive.
+
+The net gravitational force supplies the inward radial acceleration:
 
 $$
-F_{\mathrm{net}}
-=
-\frac{mv^2}{R}.
+\sum F_r=m a_r=m\frac{v^2}{R}=F_{\mathrm{net}}.
 $$
 
 Using the net force found above,
@@ -639,11 +641,11 @@ Using the numerical values supplied in the activity gives
 
 $$
 \boxed{
-v\approx9.7\times10^3\ \mathrm{m/s}
+v\approx9.7\times10^3\ \mathrm{m}/\mathrm{s}
 }.
 $$
 
-Each mass moves at approximately $9.7\ \mathrm{km/s}$ around the common center of mass.
+Each mass moves at approximately $9.7\ \mathrm{km}/\mathrm{s}$ around the common center of mass.
 
 # Total Energy of the Three-Mass System
 
@@ -837,7 +839,7 @@ When solving a gravitational orbital problem involving several moving objects, u
 For discrete masses,
 
 $$
-\vec{R}_{\mathrm{cm}}
+\vec{r}_{\mathrm{cm}}
 =
 \frac{
 \sum_i m_i\vec{r}_i
@@ -865,12 +867,14 @@ Use symmetry to determine which force components cancel and which add.
 For circular motion,
 
 $$
-F_{\mathrm{net},r}
+\sum F_r
+=
+m a_r
 =
 \frac{mv^2}{R}.
 $$
 
-The radial coordinate points toward the center of the circular orbit.
+For this scalar equation, the positive radial direction points toward the center of the circular orbit.
 
 ## 5. Relate Speed and Period
 
@@ -880,7 +884,7 @@ $$
 v=\frac{2\pi R}{T}.
 $$
 
-This allows the orbital period to be found after the speed or centripetal-force equation has been determined.
+This allows the orbital period to be found after the speed or radial-force equation has been determined.
 
 ## 6. Count Energy Terms Carefully
 
@@ -947,7 +951,7 @@ For the binary system studied in this lecture,
 
 $$
 \boxed{
-T\approx46\ \mathrm{years}
+T\approx46\ \mathrm{yr}
 }.
 $$
 

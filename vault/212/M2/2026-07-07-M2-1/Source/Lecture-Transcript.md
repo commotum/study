@@ -154,7 +154,7 @@ $$
 \vec{r}_{\mathrm{cm}}
 =
 \frac{1}{M}
-\int_{\text{object}}
+\int_{\mathrm{object}}
 \vec{r}\,dm
 }
 $$
@@ -166,7 +166,7 @@ $$
 x_{\mathrm{cm}}
 =
 \frac{1}{M}
-\int_{\text{object}}
+\int_{\mathrm{object}}
 x\,dm
 }.
 $$
@@ -874,7 +874,7 @@ $$
 [C]
 =
 \frac{
-\mathrm{kg/m}
+\mathrm{kg}/\mathrm{m}
 }{
 \mathrm{m}
 }.
@@ -884,7 +884,7 @@ Thus,
 
 $$
 \boxed{
-[C]=\mathrm{kg/m^2}
+[C]=\mathrm{kg}/\mathrm{m}^2
 }.
 $$
 
@@ -892,7 +892,7 @@ Using the numerical mass and length supplied in the activity gives approximately
 
 $$
 \boxed{
-C=0.40\ \mathrm{kg/m^2}
+C=0.40\ \mathrm{kg}/\mathrm{m}^2
 }.
 $$
 

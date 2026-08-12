@@ -46,7 +46,7 @@ $$
 For a stationary listener and a moving source,
 
 $$
-f'=f_0\frac{v}{v\mp v_s},
+f_{\mathrm{obs}}=f_0\frac{v}{v\mp v_s},
 $$
 
 where $f_0$ is the emitted frequency and $v$ is the speed of sound. Use the minus sign when the source moves toward the listener and the plus sign when it moves away. This model assumes $v_s<v$ and that the air is at rest.
@@ -83,7 +83,7 @@ v_s
 =2\pi Lf_{\mathrm{rot}}
 =\left(\frac{2\pi(0.80\ \mathrm{m})}{1\ \mathrm{rev}}\right)
 \left(1.5\ \frac{\mathrm{rev}}{\mathrm{s}}\right)
-=7.54\ \mathrm{m/s}.
+=7.54\ \mathrm{m}/\mathrm{s}.
 $$
 
 ```quiz
@@ -94,30 +94,30 @@ content: |-
 options:
 - id: pq3-p5-source-speed-a
   content: |-
-    $1.5\ \mathrm{m/s}$
+    $1.5\ \mathrm{m}/\mathrm{s}$
   feedback: |-
-    This treats the radius $L$ as the distance traveled per revolution. One revolution covers the full circumference $2\pi L$, so omitting $2\pi$ gives too small a speed; the correct value is $9.4\ \mathrm{m/s}$.
+    This treats the radius $L$ as the distance traveled per revolution. One revolution covers the full circumference $2\pi L$, so omitting $2\pi$ gives too small a speed; the correct value is $9.4\ \mathrm{m}/\mathrm{s}$.
 - id: pq3-p5-source-speed-b
   content: |-
-    $3.0\ \mathrm{m/s}$
+    $3.0\ \mathrm{m}/\mathrm{s}$
   feedback: |-
-    This is the rotation rate $180/60=3.0\ \mathrm{rev/s}$, not a tangential speed. Multiplying by the circumference $2\pi(0.50\ \mathrm{m})$ converts revolutions per second to $9.4\ \mathrm{m/s}$.
+    This is the rotation rate $180/60=3.0\ \mathrm{rev}/\mathrm{s}$, not a tangential speed. Multiplying by the circumference $2\pi(0.50\ \mathrm{m})$ converts revolutions per second to $9.4\ \mathrm{m}/\mathrm{s}$.
 - id: pq3-p5-source-speed-c
   content: |-
-    $9.4\ \mathrm{m/s}$
+    $9.4\ \mathrm{m}/\mathrm{s}$
   correct: true
   feedback: |-
-    Tangential speed is circumference traveled per revolution times revolutions per second. Since $180\ \mathrm{rpm}=3.0\ \mathrm{Hz}$, $v_s=2\pi(0.50\ \mathrm{m})(3.0\ \mathrm{s^{-1}})=9.4\ \mathrm{m/s}$.
+    Tangential speed is circumference traveled per revolution times revolutions per second. Since $180\ \mathrm{rpm}=3.0\ \mathrm{Hz}$, $v_s=2\pi(0.50\ \mathrm{m})(3.0\ \mathrm{s^{-1}})=9.4\ \mathrm{m}/\mathrm{s}$.
 - id: pq3-p5-source-speed-d
   content: |-
-    $19\ \mathrm{m/s}$
+    $19\ \mathrm{m}/\mathrm{s}$
   feedback: |-
-    This doubles the radius that was already given. In $v_s=2\pi rf_{\mathrm{rot}}$, $0.50\ \mathrm m$ is already $r$, so use it directly: $v_s=2\pi(0.50)(3.0)=9.4\ \mathrm{m/s}$.
+    This doubles the radius that was already given. In $v_s=2\pi rf_{\mathrm{rot}}$, $0.50\ \mathrm m$ is already $r$, so use it directly: $v_s=2\pi(0.50)(3.0)=9.4\ \mathrm{m}/\mathrm{s}$.
 - id: pq3-p5-source-speed-e
   content: |-
-    $570\ \mathrm{m/s}$
+    $570\ \mathrm{m}/\mathrm{s}$
   feedback: |-
-    This treats $180\ \mathrm{rev/min}$ as $180\ \mathrm{rev/s}$ and makes the speed $60$ times too large. Convert first: $180\ \mathrm{rpm}=3.0\ \mathrm{Hz}$, then obtain $v_s=9.4\ \mathrm{m/s}$.
+    This treats $180\ \mathrm{rev}/\mathrm{min}$ as $180\ \mathrm{rev}/\mathrm{s}$ and makes the speed $60$ times too large. Convert first: $180\ \mathrm{rpm}=3.0\ \mathrm{Hz}$, then obtain $v_s=9.4\ \mathrm{m}/\mathrm{s}$.
 ```
 
 ---
@@ -182,16 +182,16 @@ options:
 <a id="calculate-the-two-extreme-frequencies"></a>
 ## Calculate the Two Extreme Frequencies
 
-**Example:** A source emits $680\ \mathrm{Hz}$ and moves at $20\ \mathrm{m/s}$. Use $340\ \mathrm{m/s}$ for the speed of sound. Find the highest and lowest frequencies heard by a stationary listener.
+**Example:** A source emits $680\ \mathrm{Hz}$ and moves at $20\ \mathrm{m}/\mathrm{s}$. Use $340\ \mathrm{m}/\mathrm{s}$ for the speed of sound. Find the highest and lowest frequencies heard by a stationary listener.
 
 **Explanation**
 
 Evaluate the two denominators first:
 
 $$
-v-v_s=340-20=320\ \mathrm{m/s},
+v-v_s=340-20=320\ \mathrm{m}/\mathrm{s},
 \qquad
-v+v_s=340+20=360\ \mathrm{m/s}.
+v+v_s=340+20=360\ \mathrm{m}/\mathrm{s}.
 $$
 
 Then apply the two source-motion formulas:
@@ -218,7 +218,7 @@ $$
 type: radio
 id: pq3-p5-numerical-extremes
 content: |-
-  A source emits $500\ \mathrm{Hz}$ and moves at $14\ \mathrm{m/s}$. Using $350\ \mathrm{m/s}$ for the speed of sound, which pair gives the highest and lowest frequencies heard by a stationary listener, rounded to the nearest hertz?
+  A source emits $500\ \mathrm{Hz}$ and moves at $14\ \mathrm{m}/\mathrm{s}$. Using $350\ \mathrm{m}/\mathrm{s}$ for the speed of sound, which pair gives the highest and lowest frequencies heard by a stationary listener, rounded to the nearest hertz?
 options:
 - id: pq3-p5-numerical-extremes-a
   content: |-
@@ -245,7 +245,7 @@ options:
   content: |-
     $f_{\mathrm{high}}=514\ \mathrm{Hz}$ and $f_{\mathrm{low}}=486\ \mathrm{Hz}$
   feedback: |-
-    This adds and subtracts $14\ \mathrm{m/s}$ directly from $500\ \mathrm{Hz}$, combining unlike units. Source speed must instead modify the wavefront-spacing denominator, yielding $521\ \mathrm{Hz}$ and $481\ \mathrm{Hz}$.
+    This adds and subtracts $14\ \mathrm{m}/\mathrm{s}$ directly from $500\ \mathrm{Hz}$, combining unlike units. Source speed must instead modify the wavefront-spacing denominator, yielding $521\ \mathrm{Hz}$ and $481\ \mathrm{Hz}$.
 ```
 
 ---
@@ -253,7 +253,7 @@ options:
 <a id="complete-the-rotating-whistle-problem"></a>
 ## Complete the Rotating-Whistle Problem
 
-**Example:** Giorgio swings a whistle on a $1.2\ \mathrm{m}$ string in a horizontal circle at $120\ \mathrm{rpm}$. The whistle emits a $740\ \mathrm{Hz}$ sound when at rest. Using $343\ \mathrm{m/s}$ for the speed of sound, find the highest and lowest Doppler-shifted frequencies heard by a stationary bystander.
+**Example:** Giorgio swings a whistle on a $1.2\ \mathrm{m}$ string in a horizontal circle at $120\ \mathrm{rpm}$. The whistle emits a $740\ \mathrm{Hz}$ sound when at rest. Using $343\ \mathrm{m}/\mathrm{s}$ for the speed of sound, find the highest and lowest Doppler-shifted frequencies heard by a stationary bystander.
 
 ![](<../Source/PQ3/Images/rotating-whistle-path.png>)
 
@@ -264,7 +264,7 @@ Convert the rotation rate and find the source speed:
 $$
 f_{\mathrm{rot}}=\frac{120}{60}=2.0\ \mathrm{Hz},
 \qquad
-v_s=2\pi(1.2)(2.0)=15.08\ldots\ \mathrm{m/s}.
+v_s=2\pi(1.2)(2.0)=15.08\ldots\ \mathrm{m}/\mathrm{s}.
 $$
 
 Then
@@ -285,7 +285,7 @@ $$
 type: radio
 id: pq3-p5-original-check
 content: |-
-  Giorgio swings a whistle on a $1.2\ \mathrm{m}$ string in a horizontal circle at $120\ \mathrm{rpm}$. The whistle emits a $740\ \mathrm{Hz}$ sound when at rest. Using $343\ \mathrm{m/s}$ for the speed of sound, find the highest and lowest Doppler-shifted frequencies heard by a stationary bystander.
+  Giorgio swings a whistle on a $1.2\ \mathrm{m}$ string in a horizontal circle at $120\ \mathrm{rpm}$. The whistle emits a $740\ \mathrm{Hz}$ sound when at rest. Using $343\ \mathrm{m}/\mathrm{s}$ for the speed of sound, find the highest and lowest Doppler-shifted frequencies heard by a stationary bystander.
 
   Which pair gives the highest frequency followed by the lowest frequency, rounded to the nearest hertz?
 options:
@@ -294,7 +294,7 @@ options:
     $774\ \mathrm{Hz},\ 709\ \mathrm{Hz}$
   correct: true
   feedback: |-
-    The rotation rate gives the source speed: $120\ \mathrm{rpm}=2.0\ \mathrm{Hz}$ and $v_s=2\pi(1.2)(2.0)=15.08\ldots\ \mathrm{m/s}$. Compressed wavefronts use $v-v_s$ and stretched wavefronts use $v+v_s$, giving $774\ \mathrm{Hz}$ and $709\ \mathrm{Hz}$.
+    The rotation rate gives the source speed: $120\ \mathrm{rpm}=2.0\ \mathrm{Hz}$ and $v_s=2\pi(1.2)(2.0)=15.08\ldots\ \mathrm{m}/\mathrm{s}$. Compressed wavefronts use $v-v_s$ and stretched wavefronts use $v+v_s$, giving $774\ \mathrm{Hz}$ and $709\ \mathrm{Hz}$.
 - id: pq3-p5-original-check-b
   content: |-
     $709\ \mathrm{Hz},\ 774\ \mathrm{Hz}$
@@ -304,12 +304,12 @@ options:
   content: |-
     $740\ \mathrm{Hz},\ 740\ \mathrm{Hz}$
   feedback: |-
-    This treats the source as radially stationary at both extremes. Its $15.08\ldots\ \mathrm{m/s}$ tangential speed points toward or away at the extreme-pitch points, shifting the frequencies to $774\ \mathrm{Hz}$ and $709\ \mathrm{Hz}$.
+    This treats the source as radially stationary at both extremes. Its $15.08\ldots\ \mathrm{m}/\mathrm{s}$ tangential speed points toward or away at the extreme-pitch points, shifting the frequencies to $774\ \mathrm{Hz}$ and $709\ \mathrm{Hz}$.
 - id: pq3-p5-original-check-d
   content: |-
     $745\ \mathrm{Hz},\ 735\ \mathrm{Hz}$
   feedback: |-
-    This uses $Lf_{\mathrm{rot}}$ as the source speed and omits the distance $2\pi L$ traveled each revolution. Including the circumference gives $v_s=15.08\ldots\ \mathrm{m/s}$ and the wider pair $774\ \mathrm{Hz},\ 709\ \mathrm{Hz}$.
+    This uses $Lf_{\mathrm{rot}}$ as the source speed and omits the distance $2\pi L$ traveled each revolution. Including the circumference gives $v_s=15.08\ldots\ \mathrm{m}/\mathrm{s}$ and the wider pair $774\ \mathrm{Hz},\ 709\ \mathrm{Hz}$.
 - id: pq3-p5-original-check-e
   content: |-
     $773\ \mathrm{Hz},\ 707\ \mathrm{Hz}$

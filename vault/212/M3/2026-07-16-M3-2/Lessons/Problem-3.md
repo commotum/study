@@ -18,7 +18,7 @@ topic-code: MTH212.M3.07
 - Evaluating powers and square roots
 - Scientific notation
 - Converting between units of time
-- Newton's gravitational constant: $G=6.67\times10^{-11}\ \mathrm{N\,m^2/kg^2}$
+- Newton's gravitational constant: $G=6.67\times10^{-11}\ \mathrm{N}\,\mathrm{m}^2/\mathrm{kg}^2$
 
 ---
 
@@ -38,7 +38,7 @@ The recognition cue is a binary system whose two masses and separation are given
 <a id="use-the-total-mass"></a>
 ## Use the Total Mass
 
-**Example:** A binary system has masses $1.0\times10^{30}\ \mathrm{kg}$ and $3.0\times10^{30}\ \mathrm{kg}$ separated by $1.0\times10^{12}\ \mathrm m$. Write the correct numerical setup for its period.
+**Example:** A binary system has masses $1.0\times10^{30}\ \mathrm{kg}$ and $3.0\times10^{30}\ \mathrm{kg}$ separated by $1.0\times10^{12}\ \mathrm{m}$. Write the correct numerical setup for its period.
 
 **Explanation**
 
@@ -54,8 +54,8 @@ The distance $d$ is the full star-to-star separation. The setup is therefore
 
 $$
 T=2\pi\sqrt{
-\frac{(1.0\times10^{12}\ \mathrm m)^3}
-{(6.67\times10^{-11}\ \mathrm{N\,m^2/kg^2})(4.0\times10^{30}\ \mathrm{kg})}
+\frac{(1.0\times10^{12}\ \mathrm{m})^3}
+{(6.67\times10^{-11}\ \mathrm{N}\,\mathrm{m}^2/\mathrm{kg}^2)(4.0\times10^{30}\ \mathrm{kg})}
 }.
 $$
 
@@ -63,14 +63,14 @@ $$
 type: radio
 id: p3-total-mass-setup
 content: |-
-  A circular binary has masses $2.0\times10^{30}\ \mathrm{kg}$ and $6.0\times10^{30}\ \mathrm{kg}$ separated by $2.0\times10^{12}\ \mathrm m$. Which setup correctly gives its orbital period?
+  A circular binary has masses $2.0\times10^{30}\ \mathrm{kg}$ and $6.0\times10^{30}\ \mathrm{kg}$ separated by $2.0\times10^{12}\ \mathrm{m}$. Which setup correctly gives its orbital period?
 options:
 - id: p3-setup-a
   content: |-
     $T=2\pi\sqrt{\dfrac{(2.0\times10^{12})^3}{G(8.0\times10^{30})}}$
   correct: true
   feedback: |-
-    Add both masses to obtain $8.0\times10^{30}\ \mathrm{kg}$, and cube the full separation $d=2.0\times10^{12}\ \mathrm m$.
+    Add both masses to obtain $8.0\times10^{30}\ \mathrm{kg}$, and cube the full separation $d=2.0\times10^{12}\ \mathrm{m}$.
 - id: p3-setup-b
   content: |-
     $T=2\pi\sqrt{\dfrac{(2.0\times10^{12})^3}{G(6.0\times10^{30})}}$
@@ -90,7 +90,7 @@ options:
 <a id="evaluate-the-formula-from-the-inside-out"></a>
 ## Evaluate the Formula From the Inside Out
 
-**Example:** Evaluate the period setup for $m_1=1.0\times10^{30}\ \mathrm{kg}$, $m_2=3.0\times10^{30}\ \mathrm{kg}$, and $d=1.0\times10^{12}\ \mathrm m$.
+**Example:** Evaluate the period setup for $m_1=1.0\times10^{30}\ \mathrm{kg}$, $m_2=3.0\times10^{30}\ \mathrm{kg}$, and $d=1.0\times10^{12}\ \mathrm{m}$.
 
 **Explanation**
 
@@ -104,7 +104,7 @@ Treat the radical as a set of parentheses. Evaluate its numerator and denominato
 6. Multiply by the outside factor $2\pi$.
 
 $$
-d^3=(1.0\times10^{12})^3=1.0\times10^{36}\ \mathrm{m^3},
+d^3=(1.0\times10^{12})^3=1.0\times10^{36}\ \mathrm{m}^3,
 $$
 
 and
@@ -112,16 +112,16 @@ and
 $$
 G(m_1+m_2)
 =(6.67\times10^{-11})(4.0\times10^{30})
-=2.668\times10^{20}\ \mathrm{m^3/s^2}.
+=2.668\times10^{20}\ \mathrm{m}^3/\mathrm{s}^2.
 $$
 
 The units verify that the radicand is a time squared:
 
 $$
 \left[\frac{d^3}{G(m_1+m_2)}\right]
-=\frac{\mathrm{m^3}}{(\mathrm{N\,m^2/kg^2})(\mathrm{kg})}
-=\frac{\mathrm{m^3}}{\mathrm{m^3/s^2}}
-=\mathrm{s^2}.
+=\frac{\mathrm{m}^3}{(\mathrm{N}\,\mathrm{m}^2/\mathrm{kg}^2)(\mathrm{kg})}
+=\frac{\mathrm{m}^3}{\mathrm{m}^3/\mathrm{s}^2}
+=\mathrm{s}^2.
 $$
 
 Therefore its square root has units of seconds. The factor $2\pi$ is unitless.
@@ -132,8 +132,8 @@ $$
 \begin{aligned}
 T
 &=2\pi\sqrt{\frac{1.0\times10^{36}}{2.668\times10^{20}}}\\
-&=2\pi\sqrt{3.7481\times10^{15}\ \mathrm{s^2}}\\
-&=3.8467\times10^8\ \mathrm s.
+&=2\pi\sqrt{3.7481\times10^{15}\ \mathrm{s}^2}\\
+&=3.8467\times10^8\ \mathrm{s}.
 \end{aligned}
 $$
 
@@ -141,26 +141,26 @@ $$
 type: radio
 id: p3-evaluate-period
 content: |-
-  Use $G=6.67\times10^{-11}\ \mathrm{N\,m^2/kg^2}$. What period in seconds results for $m_1=2.0\times10^{30}\ \mathrm{kg}$, $m_2=6.0\times10^{30}\ \mathrm{kg}$, and $d=2.0\times10^{12}\ \mathrm m$?
+  Use $G=6.67\times10^{-11}\ \mathrm{N}\,\mathrm{m}^2/\mathrm{kg}^2$. What period in seconds results for $m_1=2.0\times10^{30}\ \mathrm{kg}$, $m_2=6.0\times10^{30}\ \mathrm{kg}$, and $d=2.0\times10^{12}\ \mathrm{m}$?
 options:
 - id: p3-evaluate-a
   content: |-
-    $7.69\times10^8\ \mathrm s$
+    $7.69\times10^8\ \mathrm{s}$
   correct: true
   feedback: |-
-    The complete evaluation is $T=2\pi\sqrt{(2.0\times10^{12})^3/[G(8.0\times10^{30})]}=7.69\times10^8\ \mathrm s$. The outside factor $2\pi$ is applied after the square root.
+    The complete evaluation is $T=2\pi\sqrt{(2.0\times10^{12})^3/[G(8.0\times10^{30})]}=7.69\times10^8\ \mathrm{s}$. The outside factor $2\pi$ is applied after the square root.
 - id: p3-evaluate-b
   content: |-
-    $1.22\times10^8\ \mathrm s$
+    $1.22\times10^8\ \mathrm{s}$
 - id: p3-evaluate-c
   content: |-
-    $9.42\times10^7\ \mathrm s$
+    $9.42\times10^7\ \mathrm{s}$
 - id: p3-evaluate-d
   content: |-
-    $1.54\times10^9\ \mathrm s$
+    $1.54\times10^9\ \mathrm{s}$
 - id: p3-evaluate-e
   content: |-
-    $2.44\times10^1\ \mathrm s$
+    $2.44\times10^1\ \mathrm{s}$
 ```
 
 ---
@@ -168,17 +168,17 @@ options:
 <a id="convert-seconds-to-earth-years"></a>
 ## Convert Seconds to Earth Years
 
-**Example:** Convert $3.8467\times10^8\ \mathrm s$ to Earth years.
+**Example:** Convert $3.8467\times10^8\ \mathrm{s}$ to Earth years.
 
 **Explanation**
 
-Using $1\ \mathrm{yr}=365.25\times24\times60\times60\ \mathrm s=3.15576\times10^7\ \mathrm s$, choose the conversion factor so seconds cancel:
+Using $1\ \mathrm{yr}=365.25\times24\times60\times60\ \mathrm{s}=3.15576\times10^7\ \mathrm{s}$, choose the conversion factor so seconds cancel:
 
 $$
 \begin{aligned}
 T
-&=(3.8467\times10^8\ \mathrm s)
-\left(\frac{1\ \mathrm{yr}}{3.15576\times10^7\ \mathrm s}\right)\\
+&=(3.8467\times10^8\ \mathrm{s})
+\left(\frac{1\ \mathrm{yr}}{3.15576\times10^7\ \mathrm{s}}\right)\\
 &=12.19\ \mathrm{yr}.
 \end{aligned}
 $$
@@ -189,14 +189,14 @@ Dividing by seconds per year converts the smaller unit, seconds, to the larger u
 type: radio
 id: p3-convert-years
 content: |-
-  A binary-star calculation gives $T=7.6934\times10^8\ \mathrm s$. Using $1\ \mathrm{yr}=3.15576\times10^7\ \mathrm s$, what is the period in Earth years?
+  A binary-star calculation gives $T=7.6934\times10^8\ \mathrm{s}$. Using $1\ \mathrm{yr}=3.15576\times10^7\ \mathrm{s}$, what is the period in Earth years?
 options:
 - id: p3-convert-a
   content: |-
     $24.38\ \mathrm{yr}$
   correct: true
   feedback: |-
-    Multiply by $1\ \mathrm{yr}/(3.15576\times10^7\ \mathrm s)$ so seconds cancel: $(7.6934\times10^8)/(3.15576\times10^7)=24.38\ \mathrm{yr}$.
+    Multiply by $1\ \mathrm{yr}/(3.15576\times10^7\ \mathrm{s})$ so seconds cancel: $(7.6934\times10^8)/(3.15576\times10^7)=24.38\ \mathrm{yr}$.
 - id: p3-convert-b
   content: |-
     $2.43\times10^{16}\ \mathrm{yr}$
@@ -232,7 +232,7 @@ $$
 T=2\pi\sqrt{\frac{d^3}{G(m_1+m_2)}}.
 $$
 
-Using $G=6.67\times10^{-11}\ \mathrm{N\,m^2/kg^2}$ gives
+Using $G=6.67\times10^{-11}\ \mathrm{N}\,\mathrm{m}^2/\mathrm{kg}^2$ gives
 
 $$
 T=1.4597\times10^9\ \mathrm{s}
@@ -269,7 +269,7 @@ options:
     T=2\pi\sqrt{\frac{d^3}{G(m_1+m_2)}}.
     $$
 
-    Using $G=6.67\times10^{-11}\ \mathrm{N\,m^2/kg^2}$ gives
+    Using $G=6.67\times10^{-11}\ \mathrm{N}\,\mathrm{m}^2/\mathrm{kg}^2$ gives
 
     $$
     T=1.4597\times10^9\ \mathrm{s}
@@ -298,7 +298,7 @@ options:
 - Cue: a circular binary's two masses and full separation are given, and its period is requested.
 - Add the masses and use $T=2\pi\sqrt{d^3/[G(m_1+m_2)]}$.
 - Evaluate in the order: mass sum, cube, products and quotient under the radical, square root, then $2\pi$.
-- Use units to check that the radicand is in $\mathrm{s^2}$ and the period is in seconds.
+- Use units to check that the radicand is in $\mathrm{s}^2$ and the period is in seconds.
 - Convert seconds to Earth years with a factor whose seconds cancel, and round only at the end.
 - Main traps: using only one mass, failing to cube $d$, omitting $2\pi$, or reporting the answer in seconds.
 

@@ -256,7 +256,7 @@ m=2.5\times10^{30}\ \mathrm{kg},
 L=1.8\times10^{12}\ \mathrm{m},
 $$
 
-using $G=6.67\times10^{-11}\ \mathrm{N\,m^2/kg^2}$.
+using $G=6.67\times10^{-11}\ \mathrm{N}\,\mathrm{m}^2/\mathrm{kg}^2$.
 
 **Explanation**
 

@@ -26,10 +26,10 @@ A door of width $R$ rotates about a vertical hinge. Four forces have the same ma
 - Torque vector:
 
   $$
-  \vec\tau=\vec r\times\vec F.
+  \vec{\tau}=\vec{r}\times\vec{F}.
   $$
 
-  Its direction is perpendicular to the plane containing $\vec r$ and $\vec F$.
+  Its direction is perpendicular to the plane containing $\vec{r}$ and $\vec{F}$.
 
 - Torque magnitude:
 

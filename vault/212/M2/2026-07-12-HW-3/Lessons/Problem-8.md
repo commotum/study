@@ -27,15 +27,15 @@ topic-code: MTH212.M2.24
 When a smaller circular piece is removed from a **uniform** disk, the recognition cue is the word *uniform*. Equal area carries equal mass, so the fraction of the total mass removed equals the fraction of the total area removed:
 
 $$
-\frac{m_{\text{removed}}}{M}
+\frac{m_{\mathrm{removed}}}{M}
 =
-\frac{A_{\text{hole}}}{A_{\text{disk}}}.
+\frac{A_{\mathrm{hole}}}{A_{\mathrm{disk}}}.
 $$
 
 For a disk of radius $R$ and a circular hole of radius $r$,
 
 $$
-\frac{m_{\text{removed}}}{M}
+\frac{m_{\mathrm{removed}}}{M}
 =
 \frac{\pi r^2}{\pi R^2}
 =
@@ -45,7 +45,7 @@ $$
 The reusable rule is therefore
 
 $$
-\boxed{m_{\text{removed}}=M\left(\frac{r}{R}\right)^2}.
+\boxed{m_{\mathrm{removed}}=M\left(\frac{r}{R}\right)^2}.
 $$
 
 In compact form, the reasoning chain is
@@ -72,7 +72,7 @@ $$
 Mass follows area, and area follows the square of the radius. Thus,
 
 $$
-m_{\text{removed}}
+m_{\mathrm{removed}}
 =M\left(\frac13\right)^2
 =\frac{M}{9}.
 $$
@@ -114,7 +114,7 @@ options:
 The offset tells us where the missing mass was located, but not how much mass was removed. For the mass alone, use the hole's radius:
 
 $$
-m_{\text{removed}}
+m_{\mathrm{removed}}
 =M\left(\frac{R/2}{R}\right)^2
 =M\left(\frac12\right)^2
 =\frac{M}{4}.
@@ -156,7 +156,7 @@ options:
 The radius fraction is $0.60$, but the mass fraction is the **square** of that number:
 
 $$
-\frac{m_{\text{removed}}}{M}=(0.60)^2=0.36.
+\frac{m_{\mathrm{removed}}}{M}=(0.60)^2=0.36.
 $$
 
 So the hole removes $36\%$ of the mass, not $60\%$. The most common mistake is to use the linear radius fraction as though it were already an area fraction.
@@ -198,7 +198,7 @@ For a circular hole cut from a uniform disk:
 3. Multiply by the original mass:
 
 $$
-m_{\text{removed}}=M\left(\frac{r}{R}\right)^2.
+m_{\mathrm{removed}}=M\left(\frac{r}{R}\right)^2.
 $$
 
 The hole's position does not affect its mass. The main trap is forgetting to square the radius fraction. For $r=R/2$, the removed mass is $M/4$ (written as $m/4$ in the source choices).

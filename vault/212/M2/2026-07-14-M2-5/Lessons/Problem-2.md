@@ -276,17 +276,17 @@ $$
 v=\sqrt{\frac65gd\sin\theta}.
 $$
 
-Substitute $g=9.81\ \mathrm{m/s^2}$, $d=0.86\ \mathrm{m}$, and $\theta=38^\circ$:
+Substitute $g=9.81\ \mathrm{m}/\mathrm{s}^2$, $d=0.86\ \mathrm{m}$, and $\theta=38^\circ$:
 
 $$
 \begin{aligned}
 v
 &=\sqrt{\frac65(9.81)(0.86)\sin38^\circ}\\
-&=2.4966\ldots\ \mathrm{m/s}.
+&=2.4966\ldots\ \mathrm{m}/\mathrm{s}.
 \end{aligned}
 $$
 
-To two significant figures, $v=2.5\ \mathrm{m/s}$. The supplied mass and radius are not needed because they cancel symbolically.
+To two significant figures, $v=2.5\ \mathrm{m}/\mathrm{s}$. The supplied mass and radius are not needed because they cancel symbolically.
 
 ```quiz
 type: radio
@@ -319,10 +319,10 @@ options:
 
     $$
     v=\sqrt{\frac65gd\sin\theta}
-    =2.503\ldots\ \mathrm{m/s}.
+    =2.503\ldots\ \mathrm{m}/\mathrm{s}.
     $$
 
-    The measured givens have two significant figures, so $v=2.5\ \mathrm{m/s}$. The mass and radius cancel.
+    The measured givens have two significant figures, so $v=2.5\ \mathrm{m}/\mathrm{s}$. The mass and radius cancel.
 - id: b
   content: |-
     $3.2$

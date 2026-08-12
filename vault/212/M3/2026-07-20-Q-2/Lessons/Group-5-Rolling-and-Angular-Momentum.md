@@ -105,19 +105,19 @@ Use the object's **rolling radius**: the distance from its rotation axis to the 
 
 ### Worked Example
 
-A wheel of radius $0.30\,\mathrm{m}$ rolls without slipping at $v_{\mathrm{cm}}=2.4\,\mathrm{m/s}$. Its angular speed is
+A wheel of radius $0.30\,\mathrm{m}$ rolls without slipping at $v_{\mathrm{cm}}=2.4\,\mathrm{m}/\mathrm{s}$. Its angular speed is
 
 $$
 \omega=\frac{v_{\mathrm{cm}}}{R}
 =\frac{2.4}{0.30}
-=8.0\,\mathrm{rad/s}.
+=8.0\,\mathrm{rad}/\mathrm{s}.
 $$
 
-If its center accelerates at $1.5\,\mathrm{m/s^2}$, then
+If its center accelerates at $1.5\,\mathrm{m}/\mathrm{s}^2$, then
 
 $$
 \alpha=\frac{a_{\mathrm{cm}}}{R}
-=5.0\,\mathrm{rad/s^2}.
+=5.0\,\mathrm{rad}/\mathrm{s}^2.
 $$
 
 ```quiz
@@ -296,7 +296,7 @@ Angular momentum always refers to an origin or axis.
 For a particle,
 
 $$
-\vec L=\vec r\times\vec p=\vec r\times m\vec v,
+\vec{L}=\vec{r}\times\vec{p}=\vec{r}\times m\vec{v},
 \qquad
 L=rmv\sin\phi.
 $$
@@ -319,7 +319,7 @@ $$
 L_i=mvb.
 $$
 
-The distance $b$, not the particle's straight-line distance to the pivot, is the moment arm. The sign follows from $\vec r\times m\vec v$.
+The distance $b$, not the particle's straight-line distance to the pivot, is the moment arm. The sign follows from $\vec{r}\times m\vec{v}$.
 
 ```quiz
 type: radio
@@ -332,7 +332,7 @@ options:
   content: |-
     $mv/b$
   feedback: |-
-    Use $L=rmv\sin\phi=mv r_\perp$, and check for units of $\mathrm{kg\,m^2/s}$.
+    Use $L=rmv\sin\phi=mv r_\perp$, and check for units of $\mathrm{kg}\,\mathrm{m}^2/\mathrm{s}$.
 - id: rolling-angular-q5-b
   content: |-
     $mvb$
@@ -343,12 +343,12 @@ options:
   content: |-
     $mv^2b$
   feedback: |-
-    Use $L=rmv\sin\phi=mv r_\perp$, and check for units of $\mathrm{kg\,m^2/s}$.
+    Use $L=rmv\sin\phi=mv r_\perp$, and check for units of $\mathrm{kg}\,\mathrm{m}^2/\mathrm{s}$.
 - id: rolling-angular-q5-d
   content: |-
     $mb^2v$
   feedback: |-
-    Use $L=rmv\sin\phi=mv r_\perp$, and check for units of $\mathrm{kg\,m^2/s}$.
+    Use $L=rmv\sin\phi=mv r_\perp$, and check for units of $\mathrm{kg}\,\mathrm{m}^2/\mathrm{s}$.
 ```
 
 ## Test Whether Angular Momentum Is Conserved
@@ -356,15 +356,15 @@ options:
 The angular-momentum equation is
 
 $$
-\sum\vec\tau_{\mathrm{ext}}=\frac{d\vec L}{dt}.
+\sum\vec{\tau}_{\mathrm{ext}}=\frac{d\vec{L}}{dt}.
 $$
 
 Therefore,
 
 $$
-\sum\vec\tau_{\mathrm{ext}}=0
+\sum\vec{\tau}_{\mathrm{ext}}=0
 \quad\Longrightarrow\quad
-\vec L_i=\vec L_f.
+\vec{L}_i=\vec{L}_f.
 $$
 
 The test must be made:
@@ -428,7 +428,7 @@ $$
 If a particle sticks to the rim of an initially stationary rotating body,
 
 $$
-(\vec r\times m\vec v)_i
+(\vec{r}\times m\vec{v})_i
 =
 \left(I_{\mathrm{body}}+mR^2\right)\omega_f.
 $$
@@ -544,7 +544,7 @@ Use this decision process:
 2. If the object rolls without slipping, impose $v_{\mathrm{cm}}=\omega R$ and $a_{\mathrm{cm}}=\alpha R$.
 3. For a rolling height change, include both $\frac12Mv^2$ and $\frac12I\omega^2$ in energy.
 4. Use $I/(MR^2)$ to compare the rolling speeds and accelerations of different shapes.
-5. Write particle angular momentum as $\vec r\times m\vec v$ and rigid-body angular momentum as $I\omega$.
+5. Write particle angular momentum as $\vec{r}\times m\vec{v}$ and rigid-body angular momentum as $I\omega$.
 6. Conserve angular momentum only after verifying that the net external torque about the chosen axis is zero.
 7. In a sticking collision, include the attached mass in the final moment of inertia and do not conserve mechanical energy.
 

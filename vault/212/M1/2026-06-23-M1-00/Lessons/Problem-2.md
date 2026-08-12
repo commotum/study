@@ -27,7 +27,7 @@ topic-code: MTH212.M1.32
 When angular velocity is given as a function of time, the angle turned over a time interval is the signed area under the angular velocity graph:
 
 $$
-\Delta \theta=\int_{t_0}^{t_1}\omega(t)\,dt.
+\Delta\theta=\int_{t_0}^{t_1}\omega(t)\,dt.
 $$
 
 The cue in this problem is the phrase "between $t_0=0.0\ \mathrm{s}$ and the time at which it reverses its direction." The upper endpoint is not given directly. First find the time when $\omega(t)=0$, then integrate $\omega(t)$ from $0$ to that positive time.
@@ -44,11 +44,11 @@ $$
 A-Bt^2=0.
 $$
 
-Once the reversal time $t_r$ is known, use
+Once the reversal time $t_{\mathrm{rev}}$ is known, use
 
 $$
-\Delta\theta=\int_0^{t_r}(A-Bt^2)\,dt
-=\left[At-\frac{Bt^3}{3}\right]_0^{t_r}.
+\Delta\theta=\int_0^{t_{\mathrm{rev}}}(A-Bt^2)\,dt
+=\left[At-\frac{Bt^3}{3}\right]_0^{t_{\mathrm{rev}}}.
 $$
 
 ---
@@ -121,7 +121,7 @@ $$
 Angular displacement comes from integrating angular velocity. Since the interval is from $0$ to $2$, the angle turned is
 
 $$
-\Delta \theta=\int_0^2 (16-4t^2)\,dt.
+\Delta\theta=\int_0^2 (16-4t^2)\,dt.
 $$
 
 This setup uses the whole velocity function. Do not use the initial angular velocity times the time, and do not use the final angular velocity times the time.
@@ -233,7 +233,7 @@ Then integrate angular velocity from $0$ to $6$:
 
 $$
 \begin{aligned}
-\Delta \theta
+\Delta\theta
 &=\int_0^6 (18-0.50t^2)\,dt \\
 &=\left[18t-\frac{0.50t^3}{3}\right]_0^6 \\
 &=18(6)-\frac{0.50(6^3)}{3} \\

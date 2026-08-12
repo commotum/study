@@ -30,10 +30,10 @@ A restoring force must change direction with the displacement so that it points 
 
 For a transverse wave on a taut string, each small string element is pulled by the neighboring string on both sides. These pulls are tension forces directed along the local tangents to the string.
 
-If the left and right tension vectors are $\vec T_L$ and $\vec T_R$, their resultant is
+If the left and right tension vectors are $\vec{F_T}_L$ and $\vec{F_T}_R$, their resultant is
 
 $$
-\vec F_{\mathrm{net}}=\vec T_L+\vec T_R.
+\vec{F}_{\mathrm{net}}=\vec{F_T}_L+\vec{F_T}_R.
 $$
 
 - On a straight equilibrium segment, the two tension forces oppose and cancel.
@@ -53,16 +53,16 @@ The recognition cue is a curved, taut string carrying a transverse disturbance. 
 
 The two forces have equal and opposite horizontal components, so those components cancel. Both forces have downward vertical components, so those components add.
 
-For a symmetric crest with tension magnitude $T$ and local angle $\theta$,
+For a symmetric crest with tension magnitude $F_T$ and local angle $\theta$,
 
 $$
-F_x=-T\cos\theta+T\cos\theta=0,
+F_x=-F_T\cos\theta+F_T\cos\theta=0,
 $$
 
 while
 
 $$
-F_y=-T\sin\theta-T\sin\theta=-2T\sin\theta<0.
+F_y=-F_T\sin\theta-F_T\sin\theta=-2F_T\sin\theta<0.
 $$
 
 The net force is downward, toward the equilibrium line.

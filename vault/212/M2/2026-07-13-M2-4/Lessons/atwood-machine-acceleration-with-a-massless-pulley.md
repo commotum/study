@@ -204,34 +204,34 @@ type: radio
 id: atwood-numerical-acceleration
 shuffle: true
 content: |-
-  An ideal Atwood machine has $m_1=2.0\ \mathrm{kg}$ and $m_2=5.0\ \mathrm{kg}$. Using $g=9.8\ \mathrm{m/s^2}$, what is the acceleration magnitude?
+  An ideal Atwood machine has $m_1=2.0\ \mathrm{kg}$ and $m_2=5.0\ \mathrm{kg}$. Using $g=9.8\ \mathrm{m}/\mathrm{s}^2$, what is the acceleration magnitude?
 options:
 - id: four-point-two
   content: |-
-    $4.2\ \mathrm{m/s^2}$
+    $4.2\ \mathrm{m}/\mathrm{s}^2$
   correct: true
   feedback: |-
-    Adding the two force equations removes the common tension, so $a=(m_2-m_1)g/(m_1+m_2)$. Substitution gives $a=(3.0/7.0)(9.8)=4.2\ \mathrm{m/s^2}$.
+    Adding the two force equations removes the common tension, so $a=(m_2-m_1)g/(m_1+m_2)$. Substitution gives $a=(3.0/7.0)(9.8)=4.2\ \mathrm{m}/\mathrm{s}^2$.
 - id: five-point-nine
   content: |-
-    $5.9\ \mathrm{m/s^2}$
+    $5.9\ \mathrm{m}/\mathrm{s}^2$
   feedback: |-
     This divides the driving force by $m_2$ alone. Both masses accelerate, so the inertia in the denominator is $m_1+m_2=7.0\ \mathrm{kg}$, not just $5.0\ \mathrm{kg}$.
 - id: fourteen-point-seven
   content: |-
-    $14.7\ \mathrm{m/s^2}$
+    $14.7\ \mathrm{m}/\mathrm{s}^2$
   feedback: |-
     This divides by $m_1$ alone and even produces an acceleration greater than free fall. The connected system must accelerate both masses, so the denominator is their sum and the result is below $g$.
 - id: nine-point-eight
   content: |-
-    $9.8\ \mathrm{m/s^2}$
+    $9.8\ \mathrm{m}/\mathrm{s}^2$
   feedback: |-
     The heavier mass is not in free fall because the cord tension pulls upward and also accelerates the lighter mass. Only in the limiting case $m_1\to0$ does the acceleration approach $g$.
 - id: twenty-nine-point-four
   content: |-
-    $29.4\ \mathrm{m/s^2}$
+    $29.4\ \mathrm{m}/\mathrm{s}^2$
   feedback: |-
-    The value $(m_2-m_1)g=29.4\ \mathrm{N}$ is the net driving force, not the acceleration. Dividing that force by the total mass $7.0\ \mathrm{kg}$ gives $4.2\ \mathrm{m/s^2}$.
+    The value $(m_2-m_1)g=29.4\ \mathrm{N}$ is the net driving force, not the acceleration. Dividing that force by the total mass $7.0\ \mathrm{kg}$ gives $4.2\ \mathrm{m}/\mathrm{s}^2$.
 ```
 
 ---

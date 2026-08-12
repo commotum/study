@@ -27,8 +27,8 @@ topic-code: MTH212.M2.46
 When several objects are joined, their combined center of mass is the mass-weighted average of their individual center positions:
 
 $$
-\vec r_{\mathrm{cm}}=
-\frac{m_1\vec r_1+m_2\vec r_2}{m_1+m_2}.
+\vec{r}_{\mathrm{cm}}=
+\frac{m_1\vec{r}_1+m_2\vec{r}_2}{m_1+m_2}.
 $$
 
 The recognition cue is a question asking where the center of mass lies after objects combine. In a two-dimensional picture, apply the formula separately to the $x$- and $y$-coordinates. If the question asks **how far** the center of mass is from the origin, find the magnitude only after finding those two components.
@@ -36,7 +36,7 @@ The recognition cue is a question asking where the center of mass lies after obj
 It is often helpful to rewrite the mass fractions as normalized weights:
 
 $$
-\vec r_{\mathrm{cm}}=w_1\vec r_1+w_2\vec r_2,
+\vec{r}_{\mathrm{cm}}=w_1\vec{r}_1+w_2\vec{r}_2,
 \qquad
 w_1=\frac{m_1}{m_1+m_2},
 \quad
@@ -57,7 +57,7 @@ Because $w_1+w_2=1$, the combined center must lie between the two individual cen
 The lower end of the rod is $L/2$ below its center, so its vertical coordinate is $-L/2$. The center of the ball is one radius to the left of the contact point, so its horizontal coordinate is $-r$. Therefore,
 
 $$
-\vec r_{\mathrm{ball}}=\left\langle-r,-\frac L2\right\rangle.
+\vec{r}_{\mathrm{ball}}=\left\langle-r,-\frac L2\right\rangle.
 $$
 
 Use the center of each object in the center-of-mass formula, not the point where their surfaces touch.
@@ -109,7 +109,7 @@ $$
 &
 \frac{m/2}{3m/2}&=\frac13,
 \\[4pt]
-\vec r_{\mathrm{cm}}
+\vec{r}_{\mathrm{cm}}
 &=\frac23\langle0,0\rangle
 +\frac13\left\langle-r,-\frac L2\right\rangle\\
 &=\left\langle-\frac r3,-\frac L6\right\rangle.
@@ -199,7 +199,7 @@ options:
 For the rod-and-ball geometry below, the rod's center is the origin and the ball's center is $\langle-r,-L/2\rangle$. The needed calculation is therefore
 
 $$
-\vec r_{\mathrm{cm}}
+\vec{r}_{\mathrm{cm}}
 =\frac{m\langle0,0\rangle+\frac m2\left\langle-r,-\frac L2\right\rangle}{m+\frac m2}
 =\left\langle-\frac r3,-\frac L6\right\rangle.
 $$

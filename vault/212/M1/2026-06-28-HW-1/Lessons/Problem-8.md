@@ -26,14 +26,14 @@ topic-code: MTH212.M1.01
 <a id="introduction"></a>
 ## Introduction
 
-Imagine a marked point on the rim of a wheel. As the wheel turns, the point travels along the circumference. Its angular speed $\omega$ tells how quickly the wheel sweeps through an angle, while the magnitude of its velocity, $|\vec v|$, tells how many meters of arc it travels each second.
+Imagine a marked point on the rim of a wheel. As the wheel turns, the point travels along the circumference. Its angular speed $\omega$ tells how quickly the wheel sweeps through an angle, while the magnitude of its velocity, $|\vec{v}|$, tells how many meters of arc it travels each second.
 
-The cheat sheet writes this scalar speed as $v$. In this lesson, $v=|\vec v|$; the absolute-value notation simply makes the distinction between the velocity vector and its magnitude explicit.
+The cheat sheet writes this scalar speed as $v$. In this lesson, $v=|\vec{v}|$; the absolute-value notation simply makes the distinction between the velocity vector and its magnitude explicit.
 
 The radius connects those two descriptions of the same motion. For a wheel of radius $r$, the relationship to determine is
 
 $$
-|\vec v| \stackrel{?}{=} r\omega.
+|\vec{v}| \stackrel{?}{=} r\omega.
 $$
 
 Multiplying an angular rate by the radius converts it into an arc-length rate.
@@ -43,7 +43,7 @@ The variables are:
 - $r$: radius of the circle
 - $\theta$: angle swept out in radians
 - $\omega$: angular speed, or angle per time
-- $|\vec v|$: speed, or distance per time
+- $|\vec{v}|$: speed, or distance per time
 
 The governing relationship comes from arc length:
 
@@ -57,10 +57,10 @@ $$
 \frac{s}{t}=r\frac{\theta}{t}.
 $$
 
-Since $\dfrac{s}{t}=|\vec v|$ and $\dfrac{\theta}{t}=\omega$, this becomes
+Since $\dfrac{s}{t}=|\vec{v}|$ and $\dfrac{\theta}{t}=\omega$, this becomes
 
 $$
-|\vec v|=r\omega.
+|\vec{v}|=r\omega.
 $$
 
 Thus a point moving in a circle with radius $r$ and angular speed $\omega$ has speed $r\omega$.
@@ -122,16 +122,16 @@ options:
 Angular speed tells us the angle swept per second:
 
 $$
-\omega=2\ \mathrm{rad/s}.
+\omega=2\ \mathrm{rad}/\mathrm{s}.
 $$
 
 Each radian corresponds to $r$ meters of arc length, so multiply by the radius:
 
 $$
-|\vec v|=r\omega=6(2)=12.
+|\vec{v}|=r\omega=6(2)=12.
 $$
 
-The speed is $12\ \mathrm{m/s}$.
+The speed is $12\ \mathrm{m}/\mathrm{s}$.
 
 ```quiz
 type: radio
@@ -142,17 +142,17 @@ content: |-
 options:
 - id: a
   content: |-
-    $7\ \mathrm{m/s}$
+    $7\ \mathrm{m}/\mathrm{s}$
 - id: b
   content: |-
-    $12\ \mathrm{m/s}$
+    $12\ \mathrm{m}/\mathrm{s}$
   correct: true
 - id: c
   content: |-
-    $\dfrac{3}{4}\ \mathrm{m/s}$
+    $\dfrac{3}{4}\ \mathrm{m}/\mathrm{s}$
 - id: d
   content: |-
-    $\dfrac{4}{3}\ \mathrm{m/s}$
+    $\dfrac{4}{3}\ \mathrm{m}/\mathrm{s}$
 ```
 
 ---
@@ -167,16 +167,16 @@ options:
 Substitute the units into the product:
 
 $$
-[r\omega]=\mathrm{m}\cdot\frac{\mathrm{rad}}{\mathrm{s}}.
+[r\omega]=\mathrm{m}\cdot\mathrm{rad}/\mathrm{s}.
 $$
 
 A radian is the ratio of arc length to radius, so it does not add a new length unit. The product has units
 
 $$
-\frac{\mathrm{m}}{\mathrm{s}}.
+\mathrm{m}/\mathrm{s}.
 $$
 
-Those are speed units, which matches the meaning of $|\vec v|$.
+Those are speed units, which matches the meaning of $|\vec{v}|$.
 
 ```quiz
 type: radio
@@ -187,17 +187,17 @@ content: |-
 options:
 - id: a
   content: |-
-    $\mathrm{m/s}$
+    $\mathrm{m}/\mathrm{s}$
   correct: true
 - id: b
   content: |-
-    $\mathrm{rad/m}$
+    $\mathrm{rad}/\mathrm{m}$
 - id: c
   content: |-
-    $\mathrm{m^2/s}$
+    $\mathrm{m}^2/\mathrm{s}$
 - id: d
   content: |-
-    $\mathrm{s/m}$
+    $\mathrm{s}/\mathrm{m}$
 ```
 
 ```quiz
@@ -227,14 +227,14 @@ options:
 <a id="reading-magnitude-statements"></a>
 ## Reading Magnitude Statements
 
-**Example:** In circular motion, is the vector equation $\vec v=r\omega$ correct?
+**Example:** In circular motion, is the vector equation $\vec{v}=r\omega$ correct?
 
 **Explanation**
 
-No. The velocity $\vec v$ is a vector, but $r\omega$ is a scalar speed. The correct statement is about magnitude:
+No. The velocity $\vec{v}$ is a vector, but $r\omega$ is a scalar speed. The correct statement is about magnitude:
 
 $$
-|\vec v|=r\omega.
+|\vec{v}|=r\omega.
 $$
 
 This distinction matters in true-or-false questions. The velocity vector points tangent to the circle, while $r\omega$ only gives how large that velocity is.
@@ -242,10 +242,10 @@ This distinction matters in true-or-false questions. The velocity vector points 
 The corresponding full vector statement is
 
 $$
-\vec v=\vec{\omega}\times\vec r.
+\vec{v}=\vec{\omega}\times\vec{r}.
 $$
 
-In planar circular motion, $\vec{\omega}$ is perpendicular to $\vec r$, so the magnitude of the cross product is $v=|\vec v|=\omega r$. Thus the cheat-sheet equation $v=r\omega$ supplies the magnitude, while the cross product supplies the tangential direction.
+In planar circular motion, $\vec{\omega}$ is perpendicular to $\vec{r}$, so the magnitude of the cross product is $v=|\vec{v}|=r\omega$. Thus the cheat-sheet equation $v=r\omega$ supplies the magnitude, while the cross product supplies the tangential direction.
 
 ```quiz
 type: radio
@@ -256,17 +256,17 @@ content: |-
 options:
 - id: a
   content: |-
-    $\vec v=r\omega$
+    $\vec{v}=r\omega$
 - id: b
   content: |-
-    $|\vec v|=r\omega$
+    $|\vec{v}|=r\omega$
   correct: true
 - id: c
   content: |-
-    $\vec r=\omega v$
+    $\vec{r}=\omega v$
 - id: d
   content: |-
-    $|\vec v|=\dfrac{\omega}{r}$
+    $|\vec{v}|=\dfrac{\omega}{r}$
 ```
 
 ---
@@ -274,11 +274,11 @@ options:
 <a id="deciding-the-magnitude-claim"></a>
 ## Deciding the Magnitude Claim
 
-**Example:** Consider an object undergoing uniform circular motion. Let $\vec r$ be the position of the object relative to the circle's center, $\vec v$ the velocity, and $\omega$ the angular speed. True or false: $\vec v$ has magnitude $r\omega$.
+**Example:** Consider an object undergoing uniform circular motion. Let $\vec{r}$ be the position of the object relative to the circle's center, $\vec{v}$ the velocity, and $\omega$ the angular speed. True or false: $\vec{v}$ has magnitude $r\omega$.
 
 **Explanation**
 
-The statement asks about the magnitude of $\vec v$, not its direction. In circular motion:
+The statement asks about the magnitude of $\vec{v}$, not its direction. In circular motion:
 
 $$
 s=r\theta.
@@ -290,10 +290,10 @@ $$
 \frac{s}{t}=r\frac{\theta}{t}.
 $$
 
-The left side is speed, $|\vec v|$. The factor $\theta/t$ is angular speed, $\omega$. Therefore,
+The left side is speed, $|\vec{v}|$. The factor $\theta/t$ is angular speed, $\omega$. Therefore,
 
 $$
-|\vec v|=r\omega.
+|\vec{v}|=r\omega.
 $$
 
 So the statement is true.
@@ -303,9 +303,9 @@ type: radio
 id: q-6
 shuffle: true
 content: |-
-  Consider an object undergoing uniform circular motion. Let $\vec r$ be the position of the object relative to the circle's center, $\vec v$ the velocity, and $\omega$ the angular speed.
+  Consider an object undergoing uniform circular motion. Let $\vec{r}$ be the position of the object relative to the circle's center, $\vec{v}$ the velocity, and $\omega$ the angular speed.
 
-  True or false: $\vec v$ has magnitude $r\omega$.
+  True or false: $\vec{v}$ has magnitude $r\omega$.
 options:
 - id: a
   content: |-
@@ -351,18 +351,18 @@ $$
 Turning distance into distance per time gives
 
 $$
-|\vec v|=r\omega.
+|\vec{v}|=r\omega.
 $$
 
 The unit check also points to the same answer:
 
 $$
-\mathrm{m}\cdot\frac{\mathrm{rad}}{\mathrm{s}}
+\mathrm{m}\cdot\mathrm{rad}/\mathrm{s}
 =
-\frac{\mathrm{m}}{\mathrm{s}}.
+\mathrm{m}/\mathrm{s}.
 $$
 
-The main trap is mixing a vector with a scalar. The velocity $\vec v$ is tangent to the circle, while $r\omega$ is only its magnitude. A statement saying "$\vec v$ has magnitude $r\omega$" is true.
+The main trap is mixing a vector with a scalar. The velocity $\vec{v}$ is tangent to the circle, while $r\omega$ is only its magnitude. A statement saying "$\vec{v}$ has magnitude $r\omega$" is true.
 
 <!-- lesson-nav:start -->
 ---

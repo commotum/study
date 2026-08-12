@@ -57,11 +57,11 @@ The recognition cue is one unchanged speaker with an intensity measured at two l
 <a id="use-the-inverse-square-invariant"></a>
 ## Use the Inverse-Square Invariant
 
-**Example:** At $r_1=3.0\ \mathrm{m}$ from a speaker, the intensity is $I_1=200\ \mathrm{W/m^2}$. At a second location, the intensity is $I_2=50\ \mathrm{W/m^2}$. Before calculating, should $r_2$ be greater than or less than $3.0\ \mathrm{m}$?
+**Example:** At $r_1=3.0\ \mathrm{m}$ from a speaker, the intensity is $I_1=200\ \mathrm{W}/\mathrm{m}^2$. At a second location, the intensity is $I_2=50\ \mathrm{W}/\mathrm{m}^2$. Before calculating, should $r_2$ be greater than or less than $3.0\ \mathrm{m}$?
 
 **Explanation**
 
-The measured intensity decreases from $200\ \mathrm{W/m^2}$ to $50\ \mathrm{W/m^2}$. Under an inverse-square law, lower intensity means greater distance. Therefore, $r_2$ must be greater than $3.0\ \mathrm{m}$.
+The measured intensity decreases from $200\ \mathrm{W}/\mathrm{m}^2$ to $50\ \mathrm{W}/\mathrm{m}^2$. Under an inverse-square law, lower intensity means greater distance. Therefore, $r_2$ must be greater than $3.0\ \mathrm{m}$.
 
 This direction check is useful for rejecting an inverted intensity ratio later.
 
@@ -94,7 +94,7 @@ options:
 <a id="solve-for-the-new-distance"></a>
 ## Solve for the New Distance
 
-**Example:** At $r_1=3.0\ \mathrm{m}$ from a speaker, $I_1=200\ \mathrm{W/m^2}$. Find the new distance when $I_2=50\ \mathrm{W/m^2}$.
+**Example:** At $r_1=3.0\ \mathrm{m}$ from a speaker, $I_1=200\ \mathrm{W}/\mathrm{m}^2$. Find the new distance when $I_2=50\ \mathrm{W}/\mathrm{m}^2$.
 
 **Explanation**
 
@@ -130,13 +130,13 @@ The intensity fell by a factor of $4$, so the distance increased by a factor of 
 type: radio
 id: problem-1-distance-q1
 content: |-
-  At $r_1=4.0\ \mathrm{m}$ from a speaker, $I_1=180\ \mathrm{W/m^2}$. What is $r_2$ when $I_2=80\ \mathrm{W/m^2}$?
+  At $r_1=4.0\ \mathrm{m}$ from a speaker, $I_1=180\ \mathrm{W}/\mathrm{m}^2$. What is $r_2$ when $I_2=80\ \mathrm{W}/\mathrm{m}^2$?
 options:
 - id: a
   content: |-
     $2.7\ \mathrm{m}$
   feedback: |-
-    This comes from reversing the ratio in $r_2=r_1\sqrt{I_1/I_2}$. Because the intensity fell from $180$ to $80\ \mathrm{W/m^2}$, the listener must be farther than $4.0\ \mathrm{m}$; the correct distance is $6.0\ \mathrm{m}$.
+    This comes from reversing the ratio in $r_2=r_1\sqrt{I_1/I_2}$. Because the intensity fell from $180$ to $80\ \mathrm{W}/\mathrm{m}^2$, the listener must be farther than $4.0\ \mathrm{m}$; the correct distance is $6.0\ \mathrm{m}$.
 - id: b
   content: |-
     $6.0\ \mathrm{m}$
@@ -159,7 +159,7 @@ options:
 type: radio
 id: problem-1-distance-q2
 content: |-
-  At $r_1=5.0\ \mathrm{m}$ from a speaker, $I_1=72\ \mathrm{W/m^2}$. What is $r_2$ when the measured intensity increases to $I_2=200\ \mathrm{W/m^2}$?
+  At $r_1=5.0\ \mathrm{m}$ from a speaker, $I_1=72\ \mathrm{W}/\mathrm{m}^2$. What is $r_2$ when the measured intensity increases to $I_2=200\ \mathrm{W}/\mathrm{m}^2$?
 options:
 - id: a
   content: |-
@@ -181,7 +181,7 @@ options:
   content: |-
     $5.0\ \mathrm{m}$
   feedback: |-
-    This keeps the distance fixed, which would keep the intensity fixed for the unchanged source. Because the intensity rose from $72$ to $200\ \mathrm{W/m^2}$, the listener must be closer: $r_2=3.0\ \mathrm{m}$.
+    This keeps the distance fixed, which would keep the intensity fixed for the unchanged source. Because the intensity rose from $72$ to $200\ \mathrm{W}/\mathrm{m}^2$, the listener must be closer: $r_2=3.0\ \mathrm{m}$.
 ```
 
 ---
@@ -189,7 +189,7 @@ options:
 <a id="keep-the-intensity-ratio-in-the-right-order"></a>
 ## Keep the Intensity Ratio in the Right Order
 
-**Example:** A sound intensity decreases from $I_1=360\ \mathrm{W/m^2}$ at $r_1=2.0\ \mathrm{m}$ to $I_2=90\ \mathrm{W/m^2}$. Which ratio belongs under the square root when solving for $r_2$?
+**Example:** A sound intensity decreases from $I_1=360\ \mathrm{W}/\mathrm{m}^2$ at $r_1=2.0\ \mathrm{m}$ to $I_2=90\ \mathrm{W}/\mathrm{m}^2$. Which ratio belongs under the square root when solving for $r_2$?
 
 **Explanation**
 
@@ -301,7 +301,7 @@ options:
 <a id="apply-the-method-to-the-speaker"></a>
 ## Apply the Method to the Speaker
 
-**Example:** You are $2.5\ \mathrm{m}$ from a speaker and measure a sound intensity of $280\ \mathrm{W/m^2}$. At a new location, you measure an intensity of $160\ \mathrm{W/m^2}$. How far are you from the speaker at the new location?
+**Example:** You are $2.5\ \mathrm{m}$ from a speaker and measure a sound intensity of $280\ \mathrm{W}/\mathrm{m}^2$. At a new location, you measure an intensity of $160\ \mathrm{W}/\mathrm{m}^2$. How far are you from the speaker at the new location?
 
 **Explanation**
 
@@ -309,8 +309,8 @@ The intensity decreased, so the new distance should be greater than $2.5\ \mathr
 
 | Location | Intensity | Distance |
 |---|---:|---:|
-| 1 | $I_1=280\ \mathrm{W/m^2}$ | $r_1=2.5\ \mathrm{m}$ |
-| 2 | $I_2=160\ \mathrm{W/m^2}$ | $r_2=?$ |
+| 1 | $I_1=280\ \mathrm{W}/\mathrm{m}^2$ | $r_1=2.5\ \mathrm{m}$ |
+| 2 | $I_2=160\ \mathrm{W}/\mathrm{m}^2$ | $r_2=?$ |
 
 $$
 I_1r_1^2=I_2r_2^2.
@@ -335,7 +335,7 @@ id: m5-3pre-q1
 content: |-
   **Question 1**
 
-  You are $2.5\ \mathrm{m}$ from a speaker and measure a sound intensity of $280\ \mathrm{W/m^2}$. At a new location, you measure an intensity of $160\ \mathrm{W/m^2}$. How far are you from the speaker at the new location?
+  You are $2.5\ \mathrm{m}$ from a speaker and measure a sound intensity of $280\ \mathrm{W}/\mathrm{m}^2$. At a new location, you measure an intensity of $160\ \mathrm{W}/\mathrm{m}^2$. How far are you from the speaker at the new location?
 
   The answer field requires the distance in meters as a number only. What should be entered?
 options:

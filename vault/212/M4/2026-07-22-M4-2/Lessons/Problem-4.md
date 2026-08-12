@@ -20,7 +20,7 @@ topic-code: MTH212.M4.13
 - Locate the center of mass of a uniform rod at its midpoint.
 - Subtract fractions using a common denominator.
 - Use the parallel-axis theorem $I_p=I_{\mathrm{cm}}+md^2$.
-- Use the small-angle physical-pendulum formula $T=2\pi\sqrt{I_p/(mgd)}$.
+- Use the small-angle physical-pendulum formula $T=2\pi\sqrt{I_p/(mg\ell)}$.
 
 ---
 
@@ -30,7 +30,7 @@ topic-code: MTH212.M4.13
 A uniform rod pivoted away from its center is a **physical pendulum**. For small oscillations, its period is
 
 $$
-T=2\pi\sqrt{\frac{I_p}{mgd}},
+T=2\pi\sqrt{\frac{I_p}{mg\ell}},
 $$
 
 where
@@ -38,14 +38,14 @@ where
 - $I_p$ is the rod's moment of inertia about the pivot,
 - $m$ is the rod's mass,
 - $g$ is gravitational acceleration, and
-- $d$ is the distance from the pivot to the rod's center of mass.
+- $\ell$ is the distance from the pivot to the rod's center of mass.
 
-When the diagram gives the pivot position rather than $d$ directly, use this procedure:
+When the diagram gives the pivot position rather than $\ell$ directly, use this procedure:
 
 1. Locate the rod's center of mass.
-2. Find the distance $d$ from the pivot to that center of mass.
+2. Find the distance $\ell$ from the pivot to that center of mass.
 3. Shift $I_{\mathrm{cm}}$ to the pivot with the parallel-axis theorem.
-4. Substitute $I_p$ and $d$ into the period formula.
+4. Substitute $I_p$ and $\ell$ into the period formula.
 5. Simplify symbolically before inserting numbers.
 
 ---
@@ -53,7 +53,7 @@ When the diagram gives the pivot position rather than $d$ directly, use this pro
 <a id="find-the-pivot-to-center-of-mass-distance"></a>
 ## Find the Pivot-to-Center-of-Mass Distance
 
-**Example:** A uniform rod of length $L$ has a pivot $L/6$ below its upper end. Find the distance $d$ from the pivot to the center of mass.
+**Example:** A uniform rod of length $L$ has a pivot $L/6$ below its upper end. Find the distance $\ell$ from the pivot to the center of mass.
 
 **Explanation**
 
@@ -63,21 +63,21 @@ The center of mass of a uniform rod is $L/2$ below the upper end. Both locations
 |---|---:|
 | Pivot | $L/6$ |
 | Center of mass | $L/2$ |
-| Separation | $d=L/2-L/6$ |
+| Separation | $\ell=L/2-L/6$ |
 
 $$
-d=\frac{L}{2}-\frac{L}{6}.
+\ell=\frac{L}{2}-\frac{L}{6}.
 $$
 
 Using a common denominator,
 
 $$
-d=\frac{3L}{6}-\frac{L}{6}
+\ell=\frac{3L}{6}-\frac{L}{6}
 =\frac{2L}{6}
 =\frac{L}{3}.
 $$
 
-**Watch Out!** The labeled distance $L/6$ runs from the upper end to the pivot. It is not the distance $d$ from the pivot to the center of mass.
+**Watch Out!** The labeled distance $L/6$ runs from the upper end to the pivot. It is not the distance $\ell$ from the pivot to the center of mass.
 
 ```quiz
 type: radio
@@ -90,7 +90,7 @@ options:
     $\dfrac{L}{4}$
   correct: true
   feedback: |-
-    The center of mass is at $L/2$, so $d=L/2-L/4=L/4$.
+    The center of mass is at $L/2$, so $\ell=L/2-L/4=L/4$.
 - id: b
   content: |-
     $\dfrac{L}{2}$
@@ -108,7 +108,7 @@ options:
 <a id="shift-the-moment-of-inertia-to-the-pivot"></a>
 ## Shift the Moment of Inertia to the Pivot
 
-**Example:** Find the moment of inertia about the pivot for a uniform rod when $d=L/3$.
+**Example:** Find the moment of inertia about the pivot for a uniform rod when $\ell=L/3$.
 
 **Explanation**
 
@@ -121,10 +121,10 @@ $$
 The period formula needs the inertia about the actual pivot, so apply the parallel-axis theorem:
 
 $$
-I_p=I_{\mathrm{cm}}+md^2.
+I_p=I_{\mathrm{cm}}+m\ell^2.
 $$
 
-Substitute $d=L/3$:
+Substitute $\ell=L/3$:
 
 $$
 \begin{aligned}
@@ -142,7 +142,7 @@ The shift term is added because moving the axis away from the center increases t
 type: radio
 id: problem-4-inertia-q1
 content: |-
-  A uniform rod has $I_{\mathrm{cm}}=\frac{1}{12}mL^2$, and its pivot is a distance $d=L/4$ from the center of mass. What is $I_p$?
+  A uniform rod has $I_{\mathrm{cm}}=\frac{1}{12}mL^2$, and its pivot is a distance $\ell=L/4$ from the center of mass. What is $I_p$?
 options:
 - id: a
   content: |-
@@ -167,14 +167,14 @@ options:
 <a id="build-and-simplify-the-period-formula"></a>
 ## Build and Simplify the Period Formula
 
-**Example:** Simplify the physical-pendulum period when $I_p=\frac{7}{36}mL^2$ and $d=L/3$.
+**Example:** Simplify the physical-pendulum period when $I_p=\frac{7}{36}mL^2$ and $\ell=L/3$.
 
 **Explanation**
 
 Substitute both expressions into
 
 $$
-T=2\pi\sqrt{\frac{I_p}{mgd}}:
+T=2\pi\sqrt{\frac{I_p}{mg\ell}}:
 $$
 
 $$
@@ -202,7 +202,7 @@ The cancellation is easiest to verify after the numerator and denominator are wr
 type: radio
 id: problem-4-formula-q1
 content: |-
-  Which expression results when $I_p=\frac{7}{36}mL^2$ and $d=L/3$ are substituted into $T=2\pi\sqrt{I_p/(mgd)}$ and simplified?
+  Which expression results when $I_p=\frac{7}{36}mL^2$ and $\ell=L/3$ are substituted into $T=2\pi\sqrt{I_p/(mg\ell)}$ and simplified?
 options:
 - id: a
   content: |-
@@ -227,7 +227,7 @@ options:
 <a id="evaluate-the-period-and-check-the-units"></a>
 ## Evaluate the Period and Check the Units
 
-**Example:** Evaluate $T=2\pi\sqrt{7L/(12g)}$ for $L=0.60\ \mathrm{m}$ and $g=9.81\ \mathrm{m/s^2}$.
+**Example:** Evaluate $T=2\pi\sqrt{7L/(12g)}$ for $L=0.60\ \mathrm{m}$ and $g=9.81\ \mathrm{m}/\mathrm{s}^2$.
 
 **Explanation**
 
@@ -236,7 +236,7 @@ Substitute the values only after the symbolic simplification:
 $$
 \begin{aligned}
 T
-&=2\pi\sqrt{\frac{7(0.60\ \mathrm{m})}{12(9.81\ \mathrm{m/s^2})}} \\
+&=2\pi\sqrt{\frac{7(0.60\ \mathrm{m})}{12(9.81\ \mathrm{m}/\mathrm{s}^2)}} \\
 &=1.1868\ldots\ \mathrm{s} \\
 &=1.2\ \mathrm{s}.
 \end{aligned}
@@ -249,8 +249,8 @@ Keep the unrounded calculator value through the square root and the multiplicati
 The units also verify the answer type:
 
 $$
-\sqrt{\frac{\mathrm{m}}{\mathrm{m/s^2}}}
-=\sqrt{\mathrm{s^2}}
+\sqrt{\frac{\mathrm{m}}{\mathrm{m}/\mathrm{s}^2}}
+=\sqrt{\mathrm{s}^2}
 =\mathrm{s}.
 $$
 
@@ -258,7 +258,7 @@ $$
 type: radio
 id: problem-4-numeric-q1
 content: |-
-  For the same pivot geometry, use $T=2\pi\sqrt{7L/(12g)}$ with $L=0.48\ \mathrm{m}$ and $g=9.81\ \mathrm{m/s^2}$. What is the period to two significant figures?
+  For the same pivot geometry, use $T=2\pi\sqrt{7L/(12g)}$ with $L=0.48\ \mathrm{m}$ and $g=9.81\ \mathrm{m}/\mathrm{s}^2$. What is the period to two significant figures?
 options:
 - id: a
   content: |-
@@ -292,7 +292,7 @@ options:
 The center of mass is $L/2$ below the upper end, so
 
 $$
-d=\frac{L}{2}-\frac{L}{6}=\frac{L}{3}.
+\ell=\frac{L}{2}-\frac{L}{6}=\frac{L}{3}.
 $$
 
 The parallel-axis theorem gives
@@ -305,11 +305,11 @@ $$
 Therefore,
 
 $$
-T=2\pi\sqrt{\frac{I_p}{mgd}}
+T=2\pi\sqrt{\frac{I_p}{mg\ell}}
 =2\pi\sqrt{\frac{7L}{12g}}.
 $$
 
-For $L=0.75\ \mathrm{m}$ and $g=9.81\ \mathrm{m/s^2}$,
+For $L=0.75\ \mathrm{m}$ and $g=9.81\ \mathrm{m}/\mathrm{s}^2$,
 
 $$
 T=1.3269\ldots\ \mathrm{s}=1.3\ \mathrm{s}
@@ -336,7 +336,7 @@ options:
     The pivot lies a distance
 
     $$
-    d=\frac{L}{2}-\frac{L}{6}=\frac{L}{3}
+    \ell=\frac{L}{2}-\frac{L}{6}=\frac{L}{3}
     $$
 
     from the rod's center of mass. By the parallel-axis theorem,
@@ -349,7 +349,7 @@ options:
     Therefore,
 
     $$
-    T=2\pi\sqrt{\frac{I_p}{mgd}}
+    T=2\pi\sqrt{\frac{I_p}{mg\ell}}
     =2\pi\sqrt{\frac{7L}{12g}}
     =1.3269\ldots\ \mathrm{s}.
     $$
@@ -370,13 +370,13 @@ options:
 
 For a uniform rod pivoted away from its center:
 
-1. Measure $d$ from the pivot to the rod's center of mass, not from the end to the pivot.
+1. Measure $\ell$ from the pivot to the rod's center of mass, not from the end to the pivot.
 2. Use $I_{\mathrm{cm}}=\frac{1}{12}mL^2$.
-3. Shift the inertia with $I_p=I_{\mathrm{cm}}+md^2$.
-4. Substitute into $T=2\pi\sqrt{I_p/(mgd)}$.
+3. Shift the inertia with $I_p=I_{\mathrm{cm}}+m\ell^2$.
+4. Substitute into $T=2\pi\sqrt{I_p/(mg\ell)}$.
 5. Simplify before inserting numbers, check for seconds, and round to the precision of the givens.
 
-For a pivot $L/6$ below the upper end, $d=L/3$, $I_p=\frac{7}{36}mL^2$, and
+For a pivot $L/6$ below the upper end, $\ell=L/3$, $I_p=\frac{7}{36}mL^2$, and
 
 $$
 T=2\pi\sqrt{\frac{7L}{12g}}.

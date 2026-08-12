@@ -28,24 +28,24 @@ topic-code: MTH212.M5.15
 When a heavy block hangs from a uniform light string, the block and the string play different roles in the wave speed:
 
 $$
-v=\sqrt{\frac{T}{\mu}}.
+v_{\mathrm{wave}}=\sqrt{\frac{F_T}{\mu}}.
 $$
 
-The hanging block supplies the tension $T$, while the string's mass and length supply the linear mass density $\mu$.
+The hanging block supplies the tension $F_T$, while the string's mass and length supply the linear mass density $\mu$.
 
 | Given information | Quantity it determines |
 | --- | --- |
-| Hanging-block mass $M$ | $T\approx Mg$ |
+| Hanging-block mass $M$ | $F_T\approx Mg$ |
 | String mass $m$ and length $l$ | $\mu=m/l$ |
 
-The words **heavy block** and **light string** tell us to neglect the string's weight when finding the tension. Thus, the tension is approximately constant and set by the block. Within this approximation, use $T=Mg$. The reusable procedure is:
+The words **heavy block** and **light string** tell us to neglect the string's weight when finding the tension. Thus, the tension is approximately constant and set by the block. Within this approximation, use $F_T=Mg$. The reusable procedure is:
 
 $$
-M\longrightarrow T,
+M\longrightarrow F_T,
 \qquad
 (m,l)\longrightarrow\mu,
 \qquad
-(T,\mu)\longrightarrow v.
+(F_T,\mu)\longrightarrow v_{\mathrm{wave}}.
 $$
 
 ---
@@ -60,9 +60,9 @@ $$
 Linear mass density is the string's mass per unit length:
 
 $$
-\mu=\frac{m_{\text{string}}}{L}
+\mu=\frac{m_{\mathrm{string}}}{L}
 =\frac{0.30\,\mathrm{kg}}{1.5\,\mathrm{m}}
-=0.20\,\mathrm{kg/m}.
+=0.20\,\mathrm{kg}/\mathrm{m}.
 $$
 
 The total mass is not itself $\mu$. Dividing by the length converts the total mass into the inertia per unit length that appears in the wave-speed formula.
@@ -96,22 +96,22 @@ options:
 <a id="use-the-hanging-block-to-find-the-tension"></a>
 ## Use the Hanging Block to Find the Tension
 
-**Example:** A stationary block of mass $6\,\mathrm{kg}$ hangs from a light string. Take $g=9.8\,\mathrm{m/s^2}$. What tension should be used to model waves on the string?
+**Example:** A stationary block of mass $6\,\mathrm{kg}$ hangs from a light string. Take $g=9.8\,\mathrm{m}/\mathrm{s}^2$. What tension should be used to model waves on the string?
 
 **Explanation**
 
 The stationary block has zero acceleration, so the upward tension balances its downward weight:
 
 $$
-T-Mg=0
+F_T-Mg=0
 \qquad\Longrightarrow\qquad
-T=Mg.
+F_T=Mg.
 $$
 
 Numerically,
 
 $$
-T=(6\,\mathrm{kg})(9.8\,\mathrm{m/s^2})
+F_T=(6\,\mathrm{kg})(9.8\,\mathrm{m}/\mathrm{s}^2)
 =58.8\,\mathrm{N}.
 $$
 
@@ -121,24 +121,24 @@ Because the string is light compared with the block, its own weight does not app
 type: radio
 id: p2-tension-q1
 content: |-
-  A stationary heavy block of mass $H$ hangs from a light string of mass $s$. Which tension should be used in $v=\sqrt{T/\mu}$ under the light-string approximation?
+  A stationary heavy block of mass $H$ hangs from a light string of mass $s$. Which tension should be used in $v_{\mathrm{wave}}=\sqrt{F_T/\mu}$ under the light-string approximation?
 options:
 - id: p2-tension-q1-a
   content: |-
-    $T=Hg$
+    $F_T=Hg$
   correct: true
 - id: p2-tension-q1-b
   content: |-
-    $T=sg$
+    $F_T=sg$
 - id: p2-tension-q1-c
   content: |-
-    $T=(H+s)g$
+    $F_T=(H+s)g$
 - id: p2-tension-q1-d
   content: |-
-    $T=\dfrac{Hg}{s}$
+    $F_T=\dfrac{Hg}{s}$
 - id: p2-tension-q1-e
   content: |-
-    $T=0$
+    $F_T=0$
 ```
 
 ---
@@ -146,39 +146,39 @@ options:
 <a id="substitute-both-string-properties"></a>
 ## Substitute Both String Properties
 
-**Example:** A $4.0\,\mathrm{kg}$ block hangs from a uniform light string with mass $0.20\,\mathrm{kg}$ and length $2.0\,\mathrm{m}$. Find the wave speed using $g=9.8\,\mathrm{m/s^2}$.
+**Example:** A $4.0\,\mathrm{kg}$ block hangs from a uniform light string with mass $0.20\,\mathrm{kg}$ and length $2.0\,\mathrm{m}$. Find the wave speed using $g=9.8\,\mathrm{m}/\mathrm{s}^2$.
 
 **Explanation**
 
 First find the two inputs to the speed formula:
 
 $$
-T=Mg=(4.0)(9.8)=39.2\,\mathrm{N},
+F_T=Mg=(4.0)(9.8)=39.2\,\mathrm{N},
 $$
 
 $$
 \mu=\frac{m}{l}
 =\frac{0.20}{2.0}
-=0.10\,\mathrm{kg/m}.
+=0.10\,\mathrm{kg}/\mathrm{m}.
 $$
 
 Then substitute:
 
 $$
 \begin{aligned}
-v
-&=\sqrt{\frac{T}{\mu}} \\
+v_{\mathrm{wave}}
+&=\sqrt{\frac{F_T}{\mu}} \\
 &=\sqrt{\frac{39.2}{0.10}} \\
 &=\sqrt{392} \\
-&\approx 19.8\,\mathrm{m/s}.
+&\approx 19.8\,\mathrm{m}/\mathrm{s}.
 \end{aligned}
 $$
 
 A units check confirms that the square root produces a speed:
 
 $$
-\frac{\mathrm{N}}{\mathrm{kg/m}}
-=\frac{\mathrm{kg\,m/s^2}}{\mathrm{kg/m}}
+\frac{\mathrm{N}}{\mathrm{kg}/\mathrm{m}}
+=\frac{\mathrm{kg}\,\mathrm{m}/\mathrm{s}^2}{\mathrm{kg}/\mathrm{m}}
 =\frac{\mathrm{m^2}}{\mathrm{s^2}}.
 $$
 
@@ -190,20 +190,20 @@ content: |-
 options:
 - id: p2-substitute-q1-a
   content: |-
-    $\displaystyle v=\sqrt{\frac{Hg}{s/L}}$
+    $\displaystyle v_{\mathrm{wave}}=\sqrt{\frac{Hg}{s/L}}$
   correct: true
 - id: p2-substitute-q1-b
   content: |-
-    $\displaystyle v=\sqrt{\frac{sg}{H/L}}$
+    $\displaystyle v_{\mathrm{wave}}=\sqrt{\frac{sg}{H/L}}$
 - id: p2-substitute-q1-c
   content: |-
-    $\displaystyle v=\sqrt{\frac{Hg}{sL}}$
+    $\displaystyle v_{\mathrm{wave}}=\sqrt{\frac{Hg}{sL}}$
 - id: p2-substitute-q1-d
   content: |-
-    $\displaystyle v=\sqrt{\frac{s/L}{Hg}}$
+    $\displaystyle v_{\mathrm{wave}}=\sqrt{\frac{s/L}{Hg}}$
 - id: p2-substitute-q1-e
   content: |-
-    $\displaystyle v=\sqrt{\frac{(H+s)g}{s/L}}$
+    $\displaystyle v_{\mathrm{wave}}=\sqrt{\frac{(H+s)g}{s/L}}$
 ```
 
 ---
@@ -218,17 +218,17 @@ options:
 Keep the two masses attached to their physical roles:
 
 $$
-\underbrace{T=Mg}_{\text{block sets tension}},
+\underbrace{F_T=Mg}_{\mathrm{block sets tension}},
 \qquad
-\underbrace{\mu=\frac{m}{l}}_{\text{string sets linear density}}.
+\underbrace{\mu=\frac{m}{l}}_{\mathrm{string sets linear density}}.
 $$
 
 Therefore,
 
 $$
 \begin{aligned}
-v
-&=\sqrt{\frac{T}{\mu}} \\
+v_{\mathrm{wave}}
+&=\sqrt{\frac{F_T}{\mu}} \\
 &=\sqrt{\frac{Mg}{m/l}} \\
 &=\sqrt{\frac{Mgl}{m}}.
 \end{aligned}
@@ -238,11 +238,11 @@ Dividing by $m/l$ multiplies by its reciprocal $l/m$. Do not interchange $M$ and
 
 The variable dependence gives a quick answer check:
 
-| Change while the other quantities stay fixed | Effect on $v$ |
+| Change while the other quantities stay fixed | Effect on $v_{\mathrm{wave}}$ |
 | --- | --- |
-| Increase the block mass $M$ | $v$ increases because the tension increases |
-| Increase the string mass $m$ | $v$ decreases because the linear density increases |
-| Increase the string length $l$ | $v$ increases because the same string mass is spread over more length |
+| Increase the block mass $M$ | $v_{\mathrm{wave}}$ increases because the tension increases |
+| Increase the string mass $m$ | $v_{\mathrm{wave}}$ decreases because the linear density increases |
+| Increase the string length $l$ | $v_{\mathrm{wave}}$ increases because the same string mass is spread over more length |
 
 Only $\sqrt{Mgl/m}$ has all three of these dependencies.
 
@@ -278,15 +278,15 @@ options:
 
 **Procedure:**
 
-1. Under the light-string approximation, use the block mass for the tension: $T=Mg$.
+1. Under the light-string approximation, use the block mass for the tension: $F_T=Mg$.
 2. Use the string mass and length for the linear density: $\mu=m/l$.
-3. Substitute into $v=\sqrt{T/\mu}$.
+3. Substitute into $v_{\mathrm{wave}}=\sqrt{F_T/\mu}$.
 4. Simplify division by $m/l$ by multiplying by $l/m$.
 
 Thus,
 
 $$
-\boxed{v=\sqrt{\frac{Mgl}{m}}}.
+\boxed{v_{\mathrm{wave}}=\sqrt{\frac{Mgl}{m}}}.
 $$
 
 **Main trap:** $M$ and $m$ are not interchangeable. The hanging mass $M$ determines the tension, while the string mass $m$ determines the linear mass density.

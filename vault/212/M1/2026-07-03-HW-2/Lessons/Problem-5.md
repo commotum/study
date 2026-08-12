@@ -31,31 +31,31 @@ A bob of mass $m$ is attached to a light string of length $L$ and travels in a h
 
 The tilted string does two jobs at once. Its upward tension component supports the bob against gravity, while its horizontal component pulls the bob toward the center of the circle. The same angle also determines the circle's radius: the horizontal projection of the string is $L\cos\theta$.
 
-Because $\theta$ is measured from the horizontal, the vertical tension component is $T_{\text{tens}}\sin\theta$, not $T_{\text{tens}}\cos\theta$. Keeping that reference line fixed connects the force diagram to the string geometry.
+Because $\theta$ is measured from the horizontal, the vertical tension component is $T_{\mathrm{tens}}\sin\theta$, not $T_{\mathrm{tens}}\cos\theta$. Keeping that reference line fixed connects the force diagram to the string geometry.
 
-The cheat sheet's conical-pendulum pair $T\cos\phi=mg$ and $T\sin\phi=mv^2/r$ uses an angle $\phi$ measured from the vertical. Here $\phi=90^\circ-\theta$, so the equations are equivalent by the complementary-angle identities. Because $T$ already denotes the period in this lesson, the tension magnitude is written $T_{\text{tens}}$.
+The Cheat Sheet's conical-pendulum pair $T_{\mathrm{tens}}\cos\theta_{\mathrm{v}}=mg$ and $T_{\mathrm{tens}}\sin\theta_{\mathrm{v}}=m v^2/r$ uses an angle $\theta_{\mathrm{v}}$ measured from the vertical. Here $\theta_{\mathrm{v}}=90^\circ-\theta$, so the equations are equivalent by the complementary-angle identities. Because $T$ denotes the period in this lesson, the tension magnitude is written $T_{\mathrm{tens}}$.
 
-A frictionless banked curve gives a useful structural check: one angled real force does two jobs. Its vertical component balances $mg$, and its horizontal component supplies $ma_r$. Dividing or substituting between those component equations eliminates the unknown angled-force magnitude.
+A frictionless banked curve gives a useful structural check: one angled real force does two jobs. Its vertical component balances $mg$, and its horizontal component supplies $m a_r$. Dividing or substituting between those component equations eliminates the unknown angled-force magnitude.
 
 ---
 
 <a id="use-the-given-angle-to-choose-components"></a>
 ## Use the Given Angle to Choose Components
 
-**Example:** A bob is attached to a string of length $L$. The string makes an angle $\theta$ with the horizontal while the bob moves in a horizontal circle. Write the radial component of the tension $T_{\text{tens}}$, the vertical component of the tension, and the circle radius $r$.
+**Example:** A bob is attached to a string of length $L$. The string makes an angle $\theta$ with the horizontal while the bob moves in a horizontal circle. Write the radial component of the tension $T_{\mathrm{tens}}$, the vertical component of the tension, and the circle radius $r$.
 
 **Explanation**
 
 Because the string angle is measured from the horizontal, the component next to the angle is horizontal:
 
 $$
-T_{\text{tens},r}=T_{\text{tens}}\cos\theta
+T_{\mathrm{tens},r}=T_{\mathrm{tens}}\cos\theta
 $$
 
 The component opposite the angle is vertical:
 
 $$
-T_{\text{tens},y}=T_{\text{tens}}\sin\theta
+T_{\mathrm{tens},y}=T_{\mathrm{tens}}\sin\theta
 $$
 
 The circle radius is the horizontal part of the string length:
@@ -67,7 +67,7 @@ $$
 So the useful geometry is
 
 $$
-T_{\text{tens},r}=T_{\text{tens}}\cos\theta,\qquad T_{\text{tens},y}=T_{\text{tens}}\sin\theta,\qquad r=L\cos\theta
+T_{\mathrm{tens},r}=T_{\mathrm{tens}}\cos\theta,\qquad T_{\mathrm{tens},y}=T_{\mathrm{tens}}\sin\theta,\qquad r=L\cos\theta
 $$
 
 ```quiz
@@ -79,20 +79,20 @@ content: |-
 options:
 - id: a
   content: |-
-    $T_{\text{tens}}\cos\theta$ and $L\sin\theta$
+    $T_{\mathrm{tens}}\cos\theta$ and $L\sin\theta$
 - id: b
   content: |-
-    $T_{\text{tens}}\sin\theta$ and $L\cos\theta$
+    $T_{\mathrm{tens}}\sin\theta$ and $L\cos\theta$
   correct: true
 - id: c
   content: |-
-    $T_{\text{tens}}\cos\theta$ and $L\cos\theta$
+    $T_{\mathrm{tens}}\cos\theta$ and $L\cos\theta$
 - id: d
   content: |-
-    $T_{\text{tens}}\sin\theta$ and $L\sin\theta$
+    $T_{\mathrm{tens}}\sin\theta$ and $L\sin\theta$
 - id: e
   content: |-
-    $T_{\text{tens}}$ and $L$
+    $T_{\mathrm{tens}}$ and $L$
 ```
 
 ---
@@ -107,13 +107,13 @@ options:
 The radial direction points horizontally toward the center of the circular path. The only radial force component is the horizontal component of tension, so
 
 $$
-\sum F_r=ma_r
+\sum F_r=m a_r=m\frac{v^2}{r}
 $$
 
 becomes
 
 $$
-T_{\text{tens}}\cos\theta=ma_r
+T_{\mathrm{tens}}\cos\theta=m a_r
 $$
 
 The bob has no vertical acceleration, so the vertical forces balance. The upward component of tension balances weight:
@@ -123,23 +123,23 @@ $$
 $$
 
 $$
-T_{\text{tens}}\sin\theta-mg=0
+T_{\mathrm{tens}}\sin\theta-mg=0
 $$
 
 or
 
 $$
-T_{\text{tens}}\sin\theta=mg
+T_{\mathrm{tens}}\sin\theta=mg
 $$
 
 Label these two equations so the later substitution is easier to see:
 
 $$
-T_{\text{tens}}\cos\theta=ma_r \tag{1}
+T_{\mathrm{tens}}\cos\theta=m a_r \tag{1}
 $$
 
 $$
-T_{\text{tens}}\sin\theta=mg \tag{2}
+T_{\mathrm{tens}}\sin\theta=mg \tag{2}
 $$
 
 ```quiz
@@ -151,20 +151,20 @@ content: |-
 options:
 - id: a
   content: |-
-    $T_{\text{tens}}\sin\theta=ma_r$ and $T_{\text{tens}}\cos\theta=mg$
+    $T_{\mathrm{tens}}\sin\theta=m a_r$ and $T_{\mathrm{tens}}\cos\theta=mg$
 - id: b
   content: |-
-    $T_{\text{tens}}\cos\theta=ma_r$ and $T_{\text{tens}}\sin\theta=mg$
+    $T_{\mathrm{tens}}\cos\theta=m a_r$ and $T_{\mathrm{tens}}\sin\theta=mg$
   correct: true
 - id: c
   content: |-
-    $T_{\text{tens}}=ma_r$ and $mg=0$
+    $T_{\mathrm{tens}}=m a_r$ and $mg=0$
 - id: d
   content: |-
-    $T_{\text{tens}}\cos\theta=mg$ and $T_{\text{tens}}\sin\theta=ma_r$
+    $T_{\mathrm{tens}}\cos\theta=mg$ and $T_{\mathrm{tens}}\sin\theta=m a_r$
 - id: e
   content: |-
-    $mg=ma_r$ and $T_{\text{tens}}\sin\theta=0$
+    $mg=m a_r$ and $T_{\mathrm{tens}}\sin\theta=0$
 ```
 
 ---
@@ -172,7 +172,7 @@ options:
 <a id="replace-the-circular-acceleration"></a>
 ## Replace the Circular Acceleration
 
-**Example:** Substitute the period form of centripetal acceleration into the radial equation for a bob whose circular radius is $r=L\cos\theta$.
+**Example:** Substitute the period form of radial acceleration into the radial equation for a bob whose circular radius is $r=L\cos\theta$.
 
 **Explanation**
 
@@ -197,13 +197,13 @@ $$
 Substitute this into the radial force equation:
 
 $$
-T_{\text{tens}}\cos\theta=m\left(\dfrac{4\pi^2L\cos\theta}{T^2}\right)
+T_{\mathrm{tens}}\cos\theta=m\left(\dfrac{4\pi^2L\cos\theta}{T^2}\right)
 $$
 
 For a nonzero circular radius, $\cos\theta\neq 0$, so this simplifies to
 
 $$
-T_{\text{tens}}=\dfrac{4\pi^2mL}{T^2}
+T_{\mathrm{tens}}=\dfrac{4\pi^2mL}{T^2}
 $$
 
 This removes both $a_r$ and $r$ from equation $(1)$, leaving tension in terms of the given quantities.
@@ -245,16 +245,16 @@ options:
 From the radial equation after substituting the period acceleration,
 
 $$
-T_{\text{tens}}=\dfrac{4\pi^2mL}{T^2}
+T_{\mathrm{tens}}=\dfrac{4\pi^2mL}{T^2}
 $$
 
 From vertical force balance,
 
 $$
-T_{\text{tens}}\sin\theta=mg
+T_{\mathrm{tens}}\sin\theta=mg
 $$
 
-Substitute the expression for $T_{\text{tens}}$ into equation $(2)$:
+Substitute the expression for $T_{\mathrm{tens}}$ into equation $(2)$:
 
 $$
 \left(\dfrac{4\pi^2mL}{T^2}\right)\sin\theta=mg
@@ -314,19 +314,19 @@ options:
 When a conical pendulum angle is measured from the horizontal, use
 
 $$
-T_{\text{tens},r}=T_{\text{tens}}\cos\theta,\qquad T_{\text{tens},y}=T_{\text{tens}}\sin\theta,\qquad r=L\cos\theta
+T_{\mathrm{tens},r}=T_{\mathrm{tens}}\cos\theta,\qquad T_{\mathrm{tens},y}=T_{\mathrm{tens}}\sin\theta,\qquad r=L\cos\theta
 $$
 
 Then write
 
 $$
-T_{\text{tens}}\cos\theta=ma_r,\qquad T_{\text{tens}}\sin\theta=mg,\qquad a_r=\dfrac{4\pi^2r}{T^2}
+T_{\mathrm{tens}}\cos\theta=m a_r,\qquad T_{\mathrm{tens}}\sin\theta=mg,\qquad a_r=\dfrac{4\pi^2r}{T^2}
 $$
 
 Substituting $r=L\cos\theta$ lets the $\cos\theta$ factors cancel from the radial equation, giving
 
 $$
-T_{\text{tens}}=\dfrac{4\pi^2mL}{T^2}
+T_{\mathrm{tens}}=\dfrac{4\pi^2mL}{T^2}
 $$
 
 Use the vertical equation to get

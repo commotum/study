@@ -17,7 +17,7 @@ topic-code: MTH212.M2.53
 ## Prerequisites
 
 - Use $L=I\omega$ for rotation about a fixed axis.
-- Recognize $I_{\text{cyl}}=\tfrac12Mr^2$ for a uniform solid cylinder and $I_{\text{ring}}=mr^2$ for a thin ring.
+- Recognize $I_{\mathrm{cyl}}=\tfrac12Mr^2$ for a uniform solid cylinder and $I_{\mathrm{ring}}=mr^2$ for a thin ring.
 - Factor and simplify symbolic expressions containing fractions.
 
 ---
@@ -195,16 +195,16 @@ options:
 Use the moment of inertia for each shape about the common symmetry axis:
 
 $$
-I_{\text{cyl}}=\frac12(4m)r^2=2mr^2,
+I_{\mathrm{cyl}}=\frac12(4m)r^2=2mr^2,
 \qquad
-I_{\text{ring}}=mr^2.
+I_{\mathrm{ring}}=mr^2.
 $$
 
 Only the cylinder carries initial angular momentum, so
 
 $$
 \omega_f
-=\frac{I_{\text{cyl}}}{I_{\text{cyl}}+I_{\text{ring}}}\omega_0
+=\frac{I_{\mathrm{cyl}}}{I_{\mathrm{cyl}}+I_{\mathrm{ring}}}\omega_0
 =\frac{2mr^2}{2mr^2+mr^2}\omega_0
 =\frac23\omega_0.
 $$
@@ -266,9 +266,9 @@ options:
 The initial rotating inertia and the added inertia are
 
 $$
-I_{\text{cyl}}=\frac12AR^2,
+I_{\mathrm{cyl}}=\frac12AR^2,
 \qquad
-I_{\text{ring}}=BR^2.
+I_{\mathrm{ring}}=BR^2.
 $$
 
 Conservation of angular momentum gives
