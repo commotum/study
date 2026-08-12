@@ -1,6 +1,6 @@
 ---
 name: lesson-pipeline
-description: Generate all or an explicit subset of missing core-move lessons for a single Markdown assignment file by detecting problem sections, skipping existing associated lessons, and launching same-model sub-agents to run core-move-lesson followed by core-move-refiner. Use when the user wants every problem covered or when an assignment workflow such as `setup-lessons` supplies exact unmatched problem numbers that need generated fallback lessons without replacing genuine Math Academy matches.
+description: Generate all or an explicit subset of missing core-move lessons for a single Markdown assignment file by detecting problem sections, skipping existing associated lessons, and launching same-model sub-agents to run core-move-lesson, core-move-refiner, and llm-deodorizer in sequence before final validation. Use when the user wants every problem covered or when an assignment workflow such as `setup-lessons` supplies exact unmatched problem numbers that need generated fallback lessons without replacing genuine Math Academy matches.
 ---
 
 # Lesson Pipeline
@@ -14,6 +14,7 @@ Required local skills:
 ```text
 /Users/jake/Developer/study/util/skills/core-move-lesson
 /Users/jake/Developer/study/util/skills/core-move-refiner
+/Users/jake/Developer/SU26/util/skills/llm-deodorizer
 /Users/jake/Developer/study/util/skills/quiz-block-factory
 ```
 
@@ -62,27 +63,28 @@ find /path/to/assignment-parent/Lessons -maxdepth 1 -type f -name 'Problem-*.md'
    - Omit the `model` field. Spawned agents inherit the parent model by default; this is the required same-model behavior.
    - Do not set `model` to a smaller or cheaper model such as mini or spark.
    - Use `fork_context: false` unless the current thread contains essential context that is not in the prompt.
-   - Pass all three local skills as skill items when the tool supports structured items.
+   - Pass all four local skills as skill items when the tool supports structured items.
    - Give each worker ownership of exactly one expected lesson file, such as `Lessons/Problem-7.md`.
    - Tell each worker that other agents may be editing different lesson files and that it must not revert unrelated files.
 
 Example worker prompt:
 
 ```text
-Use $core-move-lesson at /Users/jake/Developer/study/util/skills/core-move-lesson, $core-move-refiner at /Users/jake/Developer/study/util/skills/core-move-refiner, and $quiz-block-factory at /Users/jake/Developer/study/util/skills/quiz-block-factory.
+Use $core-move-lesson at /Users/jake/Developer/study/util/skills/core-move-lesson, $core-move-refiner at /Users/jake/Developer/study/util/skills/core-move-refiner, $llm-deodorizer at /Users/jake/Developer/SU26/util/skills/llm-deodorizer, and $quiz-block-factory at /Users/jake/Developer/study/util/skills/quiz-block-factory.
 
 Assignment file: /absolute/path/to/assignment.md
 Problem number: N
 Target lesson file: /absolute/path/to/Lessons/Problem-N.md
 
-Create the missing lesson for only Problem N. First run the core-move-lesson workflow for Problem N, then run the core-move-refiner workflow on the lesson you created. Use quiz-block-factory as the authoritative schema and feedback standard throughout. Do not edit any other lesson file. Do not overwrite existing non-empty files. Validate the final quiz blocks with the quiz-block-factory validator, including strict ids, required feedback, and feedback lint, then run git diff --check for your target file. In your final response, list the target file, whether validation passed, and any issue that prevented completion.
+Create the missing lesson for only Problem N. First run the core-move-lesson workflow for Problem N. Next, run the core-move-refiner workflow on the lesson you created. Then run the llm-deodorizer workflow on that refined lesson: read its failure-point reference, scan before revising, perform the full semantic audit, make only warranted in-place prose edits, scan again, and review the diff. Preserve the problem's facts, numerical values, math, correct answers, quiz-block schema and IDs, links, citation targets, frontmatter, progress metadata, headings, explicit anchors, table of contents, and lesson-navigation blocks. Use quiz-block-factory as the authoritative schema and feedback standard throughout. Do not edit any other lesson file. Do not overwrite existing non-empty files. After deodorizing, validate the final quiz blocks with the quiz-block-factory validator, including strict ids, required feedback, and feedback lint, then run git diff --check for your target file. In your final response, list the target file, the main prose fixes, the before-and-after scan status, whether quiz validation passed, and any issue that prevented completion.
 ```
 
-When using structured `items`, include the three skill paths explicitly:
+When using structured `items`, include the four skill paths explicitly:
 
 ```text
 type=skill name=core-move-lesson path=/Users/jake/Developer/study/util/skills/core-move-lesson
 type=skill name=core-move-refiner path=/Users/jake/Developer/study/util/skills/core-move-refiner
+type=skill name=llm-deodorizer path=/Users/jake/Developer/SU26/util/skills/llm-deodorizer
 type=skill name=quiz-block-factory path=/Users/jake/Developer/study/util/skills/quiz-block-factory
 ```
 
@@ -96,6 +98,14 @@ type=skill name=quiz-block-factory path=/Users/jake/Developer/study/util/skills/
    - Wait for all worker agents to finish.
    - Close completed agents after collecting their final statuses.
    - For each worker, inspect whether its expected lesson file now exists and is non-empty.
+   - Confirm each worker ran llm-deodorizer after core-move-refiner, reviewed the scanner's findings semantically, and reported its before-and-after scan status. A clean scanner result does not replace the semantic audit.
+   - Run the llm-deodorizer scanner on each newly created lesson and review any remaining findings in context:
+
+```bash
+python3 /Users/jake/Developer/SU26/util/skills/llm-deodorizer/scripts/scan_prose.py \
+  /path/to/Lessons/Problem-N.md
+```
+
    - Run the core-move lesson quiz validator on each newly created lesson:
 
 ```bash
@@ -108,7 +118,7 @@ python3 /Users/jake/Developer/study/util/skills/quiz-block-factory/scripts/valid
 ```
 
    - Run `git diff --check -- /path/to/Lessons/Problem-N.md` for each new lesson, or for all new files together.
-   - If a worker failed or a lesson is still missing, relaunch a worker for that problem or complete that single problem locally with the same `core-move-lesson` then `core-move-refiner` sequence.
+   - If a worker failed or a lesson is still missing, relaunch a worker for that problem or complete that single problem locally with the same `core-move-lesson`, `core-move-refiner`, then `llm-deodorizer` sequence. After any relaunch or local fallback, repeat the post-deodorizer scanner review, strict quiz validation, and diff check before evaluating completion.
 
 6. Completion condition.
    - Recompute the problem-to-lesson map from the assignment file.
@@ -126,6 +136,7 @@ Report:
 - Existing lesson files skipped.
 - New lesson files created.
 - Any problems that could not be completed.
-- Validation status for new lessons.
+- Deodorizer scan and semantic-audit status for new lessons.
+- Quiz validation status for new lessons.
 
 Keep the response focused on the pipeline outcome. Do not paste full lesson contents.

@@ -12,9 +12,9 @@
 
 ## Progress
 
-- Course: 12% (34/290 unique lessons)
+- Course: 11% (34/296 unique lessons)
 
-- M1: 27% (20/74)
+- M1: 25% (20/80)
 - M2: 0% (0/56)
 - M3: 0% (0/36)
 - M4: 19% (6/32)
@@ -28,6 +28,8 @@
 
 - [Quiz 1 Study Guide](M1/2026-07-06-Q-1/Study-Guide.md): 57% (20/35)
   - Next: [Recognizing Contact Loss on a Curved Surface](M1/2026-07-03-HW-2/Lessons/Problem-12.md)
+- [MCT Rotational Motion Study Guide](M1/2026-07-06-Q-1/MCT-Study-Guide.md): 0% (0/6)
+  - Next: [Angular Position, Displacement, and Average Angular Velocity](M1/2026-07-06-Q-1/Lessons/MCT-Problem-1.md)
 - [Quiz 2 Study Guide](M3/2026-07-20-Q-2/Study-Guide.md): 0% (0/20)
   - Next: [Finding the Center of Mass of Two Point Masses](M2/2026-07-07-M2-1/Lessons/Problem-1.md)
 - [Quiz 3 Study Guide](M5/2026-08-03-Q-3/Study-Guide.md): 50% (14/28)
@@ -76,8 +78,8 @@
 
 ## Summary
 
-- Completed unique lessons: 34 / 290
-- Assignment placements: 290
+- Completed unique lessons: 34 / 296
+- Assignment placements: 296
 - Queue size: 5 / 5
 
 <!--

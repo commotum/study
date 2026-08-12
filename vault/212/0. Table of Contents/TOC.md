@@ -90,6 +90,12 @@
         - [ ] [[M1/2026-07-06-Q-1/Lessons/Problem-3|M1.69. Choosing a Free-Body Diagram for a Rotating Bead]]
         - [ ] [[M1/2026-07-06-Q-1/Lessons/Problem-4|M1.70. Resolving Vertical-Circle Motion with r-t Axes]]
         - [ ] [[M1/2026-07-06-Q-1/Lessons/Problem-5|M1.71. From Linear Velocity to Spool Revolutions]]
+        - [ ] [[M1/2026-07-06-Q-1/Lessons/MCT-Problem-1|M1.75. Angular Position, Displacement, and Average Angular Velocity]]
+        - [ ] [[M1/2026-07-06-Q-1/Lessons/MCT-Problem-2|M1.76. Connecting Angular and Linear Motion at a Radius]]
+        - [ ] [[M1/2026-07-06-Q-1/Lessons/MCT-Problem-3|M1.77. Period, Frequency, and Angular Speed]]
+        - [ ] [[M1/2026-07-06-Q-1/Lessons/MCT-Problem-4|M1.78. Radial, Tangential, and Net Acceleration]]
+        - [ ] [[M1/2026-07-06-Q-1/Lessons/MCT-Problem-5A|M1.79. Constant Angular Acceleration When Time Is Known]]
+        - [ ] [[M1/2026-07-06-Q-1/Lessons/MCT-Problem-5B|M1.80. Constant Angular Acceleration When Time Is Missing]]
 - **M2**
     - **2026-07-07-M2-1**
         - [ ] [[M2/2026-07-07-M2-1/Lessons/Problem-1|M2.01. Finding the Center of Mass of Two Point Masses]]
