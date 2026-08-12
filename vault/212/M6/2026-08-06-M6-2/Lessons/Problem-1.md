@@ -317,7 +317,6 @@ options:
 - Main trap: the full central-maximum width is $2\Delta y$, but the spacing between the first and second minima on one side is already $\Delta y$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -329,8 +328,7 @@ options:
 [Quiz 4 Study Guide](../../../M7/2026-08-13-Q-4/Study-Guide.md)
 Next: [Finding Slit Width from the Central Diffraction Maximum](../../2026-08-09-HW-9/Lessons/Problem-2.md)
 
-Study guide index: 10/11
+Study guide index: 07/8
 
 ---
-
 <!-- lesson-nav:end -->

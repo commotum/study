@@ -354,7 +354,6 @@ $$
 The main trap is reversing an inverse relationship: frequency is inverse to wavelength, and slit separation is inverse to fringe spacing.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -366,8 +365,7 @@ The main trap is reversing an inverse relationship: frequency is inverse to wave
 [Quiz 4 Study Guide](../../../M7/2026-08-13-Q-4/Study-Guide.md)
 Next: [Finding Wavelength From a Double-Slit Intensity Graph](../../2026-08-05-M6-1/Lessons/Problem-4.md)
 
-Study guide index: 05/11
+Study guide index: 02/8
 
 ---
-
 <!-- lesson-nav:end -->

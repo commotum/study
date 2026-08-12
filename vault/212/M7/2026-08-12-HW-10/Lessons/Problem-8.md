@@ -315,7 +315,6 @@ For a real object, use this checklist:
 5. **On select-all questions, test every statement independently.** One true statement does not rule out another.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -325,5 +324,4 @@ For a real object, use this checklist:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

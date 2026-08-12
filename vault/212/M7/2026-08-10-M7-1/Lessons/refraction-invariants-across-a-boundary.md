@@ -319,3 +319,15 @@ options:
   $$
 - For air into glass, speed decreases and wavelength decreases, while frequency remains unchanged.
 - Do not confuse the invariant frequency with the ray angle, wavelength, or effective speed, all of which can change at refraction.
+
+<!-- lesson-nav:start -->
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+<!-- lesson-nav:end -->

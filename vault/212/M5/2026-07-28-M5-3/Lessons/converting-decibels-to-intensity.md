@@ -271,3 +271,15 @@ options:
 - Multiply by the reference: $I=I_0 10^{\beta/10}$.
 - Check: $0\ \mathrm{dB}$ gives $I=I_0$, and a $10\ \mathrm{dB}$ increase multiplies intensity by $10$.
 - Main trap: $\beta/10$ is the exponent, not the intensity ratio itself.
+
+<!-- lesson-nav:start -->
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+<!-- lesson-nav:end -->

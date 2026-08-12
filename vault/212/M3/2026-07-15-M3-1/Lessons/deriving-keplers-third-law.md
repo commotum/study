@@ -330,3 +330,15 @@ T^2=\frac{4\pi^2}{GM}r^3.
 $$
 
 The coefficient $4\pi^2/(GM)$ is fixed for one central mass, so $T^2\propto r^3$, and $r^3/(GM)$ has units of time squared. The main traps are treating centripetal force as an extra force, forgetting to square every factor in $2\pi r/T$, losing one power of $r$, or keeping the satellite mass after it cancels.
+
+<!-- lesson-nav:start -->
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+<!-- lesson-nav:end -->

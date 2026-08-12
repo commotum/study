@@ -25,13 +25,13 @@ topic-code: MTH212.M1.11
 <a id="introduction"></a>
 ## Introduction
 
-When an object moves in a circle at constant speed, its net force points toward the center of the circular path. The recognition cue is a circular trajectory with constant speed or constant period: even though the speed stays constant, the velocity direction changes, so the acceleration and net force point inward.
-
-For the conical pendulum in Problem 4, the filled bob is shown on the right side of the circle in the side view. The center of the circle is horizontally to the left of that bob, so the net force points directly to the left.
+A bob suspended from a string moves at constant speed around a horizontal circle. The diagram shows that circle from above and shows the filled bob on the right in the side view.
 
 ![](<../Source/Images/conical-pendulum-diagram.png>)
 
-The quick diagram check is: put the tail of an imaginary arrow on the bob and put the head of the arrow at the center of the circular path. That imaginary arrow is the direction of the net force.
+Although the bob's speed is constant, its velocity keeps turning, so its acceleration and net force point toward the center of the circular path. In the side view, the center is horizontally to the left of the filled bob. The net force therefore points directly left.
+
+This is the direction of the combined force on the bob, not the direction of the string tension by itself. The upward part of the tension balances the bob's weight, leaving a horizontal inward net force.
 
 ---
 
@@ -45,7 +45,7 @@ The quick diagram check is: put the tail of an imaginary arrow on the bob and pu
 The net force must point in the same direction as the centripetal acceleration:
 
 $$
-\sum \vec F = m\vec a_c
+\sum \vec F = m\vec a_r
 $$
 
 The centripetal direction is always from the object toward the center of the circle. The object is the tail of the direction arrow, and the center is the head of the direction arrow. From the rightmost point, the center is to the left, so the net force points left.
@@ -127,10 +127,12 @@ $$
 $$
 
 $$
-\sum F_\text{inward}=ma_c
+\sum F_r=ma_r
 $$
 
 So the net force points inward toward the center, not along the string.
+
+The free-body diagram should therefore contain only tension and weight. Do not add a third force labeled “centripetal force”: $mv^2/r$ is the required inward net result of the actual forces. This is the same reusable component pattern as a frictionless banked curve—one component of an angled physical force balances weight, while another supplies $\sum F_r$.
 
 ```quiz
 type: radio
@@ -191,7 +193,7 @@ options:
 
 ## Summary
 
-For uniform circular motion, use the circular path as the cue: the net force points toward the center of the circle. In a conical pendulum, the bob stays at one height, so vertical forces balance and the remaining net force is horizontal and inward. If the bob is on the right side of the side view, inward is left; if the bob is on the left side, inward is right. Do not choose the string direction unless the question asks for the tension force itself.
+In uniform circular motion, the net force points toward the center of the circle. In a conical pendulum, the bob stays at one height, so the vertical forces balance and the remaining net force is horizontal and inward. If the bob is on the right side of the side view, inward is left; if the bob is on the left side, inward is right. The tension points along the string, but the net force is the sum of tension and weight.
 
 <!-- lesson-nav:start -->
 ---
@@ -203,9 +205,9 @@ For uniform circular motion, use the circular path as the cue: the net force poi
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
-Next: [Free-Body Diagrams for Level Circular Motion](../../2026-06-30-M1-4/Lessons/Problem-2.md)
+Next: [Choosing the Acceleration Direction When Circular Motion Speeds Up](../../2026-06-28-HW-1/Lessons/Problem-13.md)
 
-Study guide index: 11/30
+Study guide index: 08/35
 
 ---
 <!-- lesson-nav:end -->

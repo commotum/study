@@ -360,3 +360,15 @@ options:
 - Use inverse sine, not sine, and use degree mode when the requested answer is in degrees.
 - Measure $\theta_c$ from the normal, not from the surface.
 - Round only after evaluating the inverse sine with guard digits.
+
+<!-- lesson-nav:start -->
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+<!-- lesson-nav:end -->

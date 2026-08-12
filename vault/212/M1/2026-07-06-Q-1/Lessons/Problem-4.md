@@ -394,7 +394,6 @@ $$
 The main traps are inventing a separate centripetal force, swapping the sine and cosine projections, losing the component signs, or inserting total acceleration into the radial circular-motion relation.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -404,5 +403,4 @@ The main traps are inventing a separate centripetal force, swapping the sine and
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

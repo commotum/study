@@ -13,7 +13,6 @@ topic-code: MTH212.M1.19
 - [Compare the Opposing Forces](#compare-the-opposing-forces)
 - [Reverse the Comparison When the Center Changes](#reverse-the-comparison-when-the-center-changes)
 - [Avoid the Equal-Force Trap](#avoid-the-equal-force-trap)
-- [Apply the Hill Question](#apply-the-hill-question)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -29,15 +28,11 @@ topic-code: MTH212.M1.19
 <a id="introduction"></a>
 ## Introduction
 
-When an object moves over the top of a circular hill, the center of the circular path is below the object. That means the radial acceleration points downward at the top.
+An out-of-gas car is rolling over the top of a circular hill. At that instant, is the road's upward normal force on the car greater than, less than, or equal to the car's downward weight?
 
-Use this rule:
+Being out of gas removes the engine's forward driving force, but it does not make the car's acceleration zero. As the car follows the rounded road, its velocity turns with the path, so it accelerates toward the center of the circular arc. At the top of the hill, that center is below the car.
 
-1. Find the direction toward the center.
-2. Make the radial net force point toward the center.
-3. The force pointing toward the center must be larger than the opposing force by $m\dfrac{v^2}{r}$.
-
-At the top of a hill, gravity points toward the center and the normal force points away from the center, so gravity must be larger than the normal force.
+Gravity and the road's normal force point in opposite directions. Their relative sizes must produce the downward net force required by the curved path.
 
 ---
 
@@ -138,6 +133,14 @@ $$
 
 The gravitational force is larger than the normal force.
 
+Solving the radial equation for the normal force makes the speed dependence visible:
+
+$$
+N=mg-m\frac{v^2}{r}.
+$$
+
+At fixed radius, a faster crest means a smaller normal force while contact remains. The same force pattern explains the familiar "light" feeling over a hill: the seat's normal force is apparent weight. Nothing is pulling the rider upward; the body tends to continue along the instantaneous tangent while the road curves downward beneath it.
+
 ```quiz
 type: radio
 id: p3-force-comparison
@@ -230,8 +233,6 @@ $$
 
 The car being out of gas does not remove the need for downward radial acceleration at the top of the hill. It only tells you there is no forward driving force from the engine.
 
-The useful check is: if $N=mg$, then the radial net force would be $0$, so the car would not have the required inward radial acceleration at that instant.
-
 ```quiz
 type: radio
 id: p3-equal-force-trap
@@ -251,29 +252,7 @@ options:
     Equal forces are impossible whenever an object is out of gas.
 ```
 
----
-
-<a id="apply-the-hill-question"></a>
-## Apply the Hill Question
-
-**Example:** An out-of-gas car is rolling over the top of a circular hill. At this instant, compare the normal force on the car with the gravitational force on the car.
-
-**Explanation**
-
-At the top of the hill:
-
-- the center of the circular path is downward,
-- the radial net force must point downward,
-- gravity acts downward,
-- the normal force acts upward.
-
-So gravity must be larger than the normal force:
-
-$$
-mg>N
-$$
-
-Equivalently, the normal force is less than the gravitational force.
+Now compare the two forces for the out-of-gas car:
 
 ```quiz
 type: radio
@@ -299,13 +278,13 @@ options:
 <a id="summary"></a>
 ## Summary
 
-At the top of a circular hill, the center of the path is below the car. The radial acceleration and radial net force must point downward. Since gravity points downward and the normal force points upward,
+At the top of a circular hill, the center of the path is below the car, so the radial net force must point downward. Gravity points downward and the normal force points upward, giving
 
 $$
 mg-N=m\frac{v^2}{r}>0
 $$
 
-so $mg>N$. The normal force is less than the gravitational force. The common trap is choosing $N=mg$ as if the car had zero vertical acceleration; circular motion requires a downward radial net force at the top.
+Therefore, $mg>N$. Being out of gas removes the engine's forward driving force; it does not remove the downward radial acceleration required for the car to follow the hill.
 
 <!-- lesson-nav:start -->
 ---
@@ -319,7 +298,7 @@ so $mg>N$. The normal force is less than the gravitational force. The common tra
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: [Recognizing Contact Loss on a Curved Surface](../../2026-07-03-HW-2/Lessons/Problem-12.md)
 
-Study guide index: 19/30
+Study guide index: 20/35
 
 ---
 <!-- lesson-nav:end -->

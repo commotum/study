@@ -264,7 +264,6 @@ When a ray crosses from a known medium into an unknown one:
 The main traps are swapping the sine ratio, using angles from the surface, and comparing raw angles instead of first calculating the refractive index.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -273,11 +272,5 @@ The main traps are swapping the sine ratio, using angles from the surface, and c
 [[212/Home|Home]]
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
-[Quiz 4 Study Guide](../../2026-08-13-Q-4/Study-Guide.md)
-Next: [Reading Path Difference from a Double-Slit Pattern](../../../M6/2026-08-05-M6-1/Lessons/Problem-3.md)
-
-Study guide index: 03/11
-
 ---
-
 <!-- lesson-nav:end -->

@@ -11,7 +11,7 @@ topic-code: MTH212.M1.21
 - [Start With Real Forces](#start-with-real-forces)
 - [Point Weight and Normal](#point-weight-and-normal)
 - [Reject Extra Motion Arrows](#reject-extra-motion-arrows)
-- [Match the Diagram](#match-the-diagram)
+- [Choose from the Diagrams](#choose-from-the-diagrams)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -26,14 +26,13 @@ topic-code: MTH212.M1.21
 <a id="introduction"></a>
 ## Introduction
 
-When a car moves around an icy banked curve, the cue is the phrase **icy** or **no friction**. That cue removes friction from the free-body diagram. The diagram should include only the real forces acting on the car: weight downward and the normal force perpendicular to the road surface.
+A car of mass $m$ rounds an icy banked curve with no friction. Which side-view free-body diagram could represent the car?
 
-The curve still requires inward acceleration, but that does not create a new "centripetal force" arrow. The inward part of the normal force is what helps provide the inward net force.
+![](<../Source/Images/icy-banked-curve-free-body-diagrams.png>)
 
-Use a two-pass filter:
+Although the car follows a curved path, the free-body diagram contains only forces produced by real interactions. Earth pulls the car downward, and the banked road pushes perpendicular to its surface. The ice matters because it removes the tire-road friction force that would otherwise act along the road.
 
-1. Count the real forces. On an icy banked curve, there should be exactly two.
-2. Check the directions. Weight is vertical; the normal force is perpendicular to the road.
+The car still accelerates toward the center of the curve. The tilted normal force has an inward component that supplies this acceleration; circular motion does not add a separate “centripetal force” to the diagram. The correct choice therefore has only $mg$ straight down and $N$ perpendicular to the bank, pointing up and inward.
 
 ---
 
@@ -134,6 +133,8 @@ No. "Centripetal" describes the direction of the net force needed for circular m
 
 The same test rejects a friction arrow. Since the road is icy, friction is absent.
 
+Coordinate axes may be drawn after the force list, but they are not force arrows. For this geometry, choose $+y$ vertically upward and $+r$ horizontally inward. These axes put the known accelerations directly on the axes: $a_y=0$ and $a_r=v^2/r$. Axes rotated with the bank are possible, but they would split the circular acceleration into components.
+
 ```quiz
 type: radio
 id: q-p1-extra-arrow
@@ -163,15 +164,15 @@ options:
 
 ---
 
-<a id="match-the-diagram"></a>
-## Match the Diagram
+<a id="choose-from-the-diagrams"></a>
+## Choose from the Diagrams
 
-**Example:** Suppose the answer choices show several side-view diagrams. The correct diagram must pass both tests:
+**Example:** Compare choices A–E in the drawing from the introduction. A correct diagram must satisfy both physical requirements:
 
 - It has exactly two arrows: $mg$ and $N$.
 - $mg$ points straight down, while $N$ points perpendicular to the banked surface, up and inward.
 
-For example, a diagram with a downward arrow, an up-left perpendicular arrow, and an extra leftward arrow should be rejected. The first two arrows are correct, but the extra leftward arrow treats centripetal acceleration as if it were a separate force.
+A diagram with a downward arrow, an up-left perpendicular arrow, and an extra leftward arrow fails because that extra arrow treats the inward net-force requirement as a third force.
 
 ```quiz
 type: radio
@@ -215,15 +216,7 @@ Only B has exactly the two real forces with the correct directions.
 <a id="summary"></a>
 ## Summary
 
-For an icy banked curve, use this checklist:
-
-1. Include only real forces on the car.
-2. Icy means no friction.
-3. Weight points straight down.
-4. The normal force points perpendicular to the road, away from the surface.
-5. Do not add a separate centripetal-force arrow; circular motion describes the net force direction, not a new force.
-
-The correct side-view diagram has exactly two arrows: $mg$ downward and $N$ perpendicular to the bank, tilted inward.
+On an icy banked curve, the car interacts only with Earth and the road. Its free-body diagram therefore has $mg$ straight down and $N$ perpendicular to the bank. The inward component of $N$ turns the car; it does not require an additional centripetal-force arrow.
 
 <!-- lesson-nav:start -->
 ---
@@ -237,7 +230,7 @@ The correct side-view diagram has exactly two arrows: $mg$ downward and $N$ perp
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: [Finding the Speed for a Frictionless Banked Curve](Problem-4.md)
 
-Study guide index: 21/30
+Study guide index: 22/35
 
 ---
 <!-- lesson-nav:end -->

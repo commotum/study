@@ -25,17 +25,13 @@ topic-code: MTH212.M1.16
 <a id="introduction"></a>
 ## Introduction
 
-In a Ferris-wheel comparison, the cue is that the rider is at the **top** or **bottom** of vertical circular motion. The task is to compare $N_{\text{top}}$ and $N_{\text{bottom}}$ by writing Newton's second law in the inward radial direction.
+Riders often feel lighter at the top of a Ferris wheel and heavier at the bottom, even though their mass and the force of gravity have not changed. What changes is how strongly the seat pushes on them. This supporting force—the normal force—is the rider's apparent weight.
+
+A person rides in an upright Ferris-wheel gondola while the wheel rotates at constant angular speed. How does the seat's normal force at the top compare with its normal force at the bottom?
 
 ![](<../Source/Images/ferris-wheel-top-bottom-normal-force.png>)
 
-The center of the circle is below the rider at the top and above the rider at the bottom. That one direction change decides whether gravity helps or opposes the seat's normal force.
-
-Use the same three steps each time:
-
-1. Point the positive radial direction inward.
-2. Give each force a plus or minus sign based on whether it points inward.
-3. Solve for the normal force and compare it with $mg$.
+At the top, the center of the wheel is below the rider. Gravity points toward the center and supplies part of the required downward net force, so the seat pushes upward less strongly than it would at rest. At the bottom, the center is above the rider. The seat must push upward strongly enough both to oppose gravity and to produce an upward net force. The radial equations below make this difference precise.
 
 ---
 
@@ -226,6 +222,14 @@ $$
 N_{\text{top}}<N_{\text{bottom}}.
 $$
 
+The normal force is also the rider's apparent weight. Gravity already supplies part of the inward force at the top, so the seat pushes less strongly; at the bottom, the seat must overcome gravity and still leave an inward net force. This gives the stronger check
+
+$$
+N_{\text{bottom}}>mg>N_{\text{top}}.
+$$
+
+There is no extra upward force lifting the rider at the top. The rider tends to continue along the instantaneous tangent while the wheel curves beneath them. If an algebraic result violates the ordering above for an upright gondola, recheck the inward direction and the force signs.
+
 If angular speed is given instead of speed, use $v=\omega r$, so $\frac{v^2}{r}=\omega^2r$. The comparison stays the same:
 
 $$
@@ -262,7 +266,7 @@ options:
 <a id="summary"></a>
 ## Summary
 
-For vertical circular motion, first point the radial equation inward. At the top, inward is downward, so
+At the top of an upright Ferris-wheel gondola, gravity points inward while the seat's normal force points outward, so
 
 $$
 mg-N_{\text{top}}=m\frac{v^2}{r}
@@ -274,7 +278,7 @@ $$
 N_{\text{top}}=mg-m\frac{v^2}{r}.
 $$
 
-At the bottom, inward is upward, so
+At the bottom, the directions reverse:
 
 $$
 N_{\text{bottom}}-mg=m\frac{v^2}{r}
@@ -286,7 +290,7 @@ $$
 N_{\text{bottom}}=mg+m\frac{v^2}{r}.
 $$
 
-The main trap is thinking constant speed means equal normal forces. Constant speed keeps the size of $\frac{v^2}{r}$ the same, but the force signs change because inward points in opposite directions at the top and bottom.
+Constant speed gives the same value of $\frac{v^2}{r}$ at both positions, but it does not make the normal forces equal. Gravity helps supply the inward net force at the top; at the bottom, the seat must overcome gravity before producing that same inward net force. Thus $N_{\text{top}}<N_{\text{bottom}}$.
 
 <!-- lesson-nav:start -->
 ---
@@ -300,7 +304,7 @@ The main trap is thinking constant speed means equal normal forces. Constant spe
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: [Finding the Normal Force at the Bottom of a Ferris Wheel](Problem-4.md)
 
-Study guide index: 16/30
+Study guide index: 17/35
 
 ---
 <!-- lesson-nav:end -->

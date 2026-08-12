@@ -197,7 +197,6 @@ When an object moves at constant speed on a circular path, ask **curve, speed, c
 The main trap is choosing a direction along the velocity. Along would speed the object up, and opposite would slow it down; neither fits constant-speed motion.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -207,5 +206,4 @@ The main trap is choosing a direction along the velocity. Along would speed the 
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

@@ -286,7 +286,6 @@ options:
 **Main trap:** Fixed bright-fringe angles do not mean fixed screen positions. The central fringe remains at $y_0=0$, while every noncentral position $y_m=L\tan\theta_m$ moves toward the center as $L$ decreases.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -296,5 +295,4 @@ options:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

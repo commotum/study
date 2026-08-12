@@ -288,7 +288,6 @@ When a double-slit intensity graph and the distances $d$ and $L$ are given:
 5. Convert meters to nanometers with $1\ \mathrm{m}=10^9\ \mathrm{nm}$, then round to the precision supported by the data.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -300,8 +299,7 @@ When a double-slit intensity graph and the distances $d$ and $L$ are given:
 [Quiz 4 Study Guide](../../../M7/2026-08-13-Q-4/Study-Guide.md)
 Next: [Finding Wavelength from a Diffraction-Grating Pattern](Problem-5.md)
 
-Study guide index: 06/11
+Study guide index: 03/8
 
 ---
-
 <!-- lesson-nav:end -->

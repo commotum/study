@@ -271,7 +271,6 @@ When a system contains several gravitating bodies:
 The main trap is counting only the star–planet interactions. Planets also interact with one another, and each missing pair means a missing negative term.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -281,5 +280,4 @@ The main trap is counting only the star–planet interactions. Planets also inte
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

@@ -265,7 +265,6 @@ When a fixed-width screen must fit more bright fringes:
 5. When several changes are proposed, test every one independently before choosing the complete set.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -275,5 +274,4 @@ When a fixed-width screen must fit more bright fringes:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

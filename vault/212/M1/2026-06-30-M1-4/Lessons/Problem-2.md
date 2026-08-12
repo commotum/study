@@ -12,7 +12,7 @@ topic-code: MTH212.M1.12
 - [Point the Sideways Force Toward the Center](#point-the-sideways-force-toward-the-center)
 - [Use the View to Choose Left or Right](#use-the-view-to-choose-left-or-right)
 - [Reject Extra or Outward Forces](#reject-extra-or-outward-forces)
-- [Match the Original Diagram](#match-the-original-diagram)
+- [Choose Among the Diagrams](#choose-among-the-diagrams)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -27,15 +27,13 @@ topic-code: MTH212.M1.12
 <a id="introduction"></a>
 ## Introduction
 
-When a car travels around a level circle at constant speed, its speed is constant but its direction is changing. That means the car has centripetal acceleration toward the center of the circle.
+A car travels at constant speed around a level circular track. The drawing shows the track from above and the car from the side; the question is which side-view free-body diagram correctly represents the forces on the car.
 
-To choose the correct free-body diagram, first handle the vertical forces, then decide which real horizontal force points toward the center. On a level road, the horizontal inward force is static friction.
+![](<../Source/Images/level-curve-free-body-diagrams.png>)
 
-Use this three-check test:
+The word *constant* describes the car's speed, not its velocity. As the car turns, the velocity changes direction, so the car accelerates toward the center of the circle. In the side view, that center is to the right of the car.
 
-1. Include the contact and gravity forces: $N$ up and $mg$ down.
-2. Balance the vertical forces because the road is level and there is no vertical acceleration.
-3. Add exactly one real horizontal force, static friction, pointing toward the center of the circle.
+The road pushes upward on the car while gravity pulls downward. Those two forces balance because the car has no vertical acceleration. Static friction from the road points horizontally toward the center and turns the car. A correct diagram therefore has $N$ upward, $mg$ downward, and $f_s$ to the right—without a separate centripetal-force arrow.
 
 ---
 
@@ -95,12 +93,12 @@ options:
 
 **Explanation**
 
-For circular motion, the net horizontal force must point toward the center of the circle. On a level road, the road can provide this sideways force through static friction.
+For circular motion, the net horizontal force must point toward the center of the circle. On a level road, the road can provide this sideways force through static friction. A useful counterfactual fixes the direction: without tire-road friction, the car would continue approximately along the instantaneous tangent rather than follow the curve. Friction must therefore point inward to bend the path.
 
 The label "centripetal force" describes the net inward force requirement:
 
 $$
-\sum F_{\text{inward}} = \frac{mv^2}{r}
+\sum F_r = \frac{mv^2}{r}
 $$
 
 It is not an additional force arrow. For a car on a level road, the real inward force is static friction $f_s$.
@@ -187,7 +185,7 @@ options:
 
 **Explanation**
 
-The car does not need an outward force to move in a circle. The inward net force is what changes the direction of the velocity.
+The car does not need an outward force to move in a circle. The inward net force is what changes the direction of the velocity. Audit a proposed free-body diagram in this order: list the real interactions, check that $N=mg$ vertically, and then require the remaining horizontal force to point toward the marked center.
 
 An outward arrow is a common mistake because the rider may feel pushed outward. That feeling comes from inertia in the turning car's frame, not from a real outward force acting on the car in the road frame.
 
@@ -223,18 +221,14 @@ options:
 
 ---
 
-<a id="match-the-original-diagram"></a>
-## Match the Original Diagram
+<a id="choose-among-the-diagrams"></a>
+## Choose Among the Diagrams
 
-**Example:** A car travels around a level circle at constant speed. The center of the circle is to the right of the car in the side view. Choose the correct free-body diagram from choices A-D.
-
-![](<../Source/Images/level-curve-free-body-diagrams.png>)
+**Example:** Compare choices A–D for the car shown in the introduction.
 
 **Explanation**
 
-The car has no vertical acceleration, so $N$ and $mg$ should be equal and opposite. The center of the circle is to the right, so static friction points right.
-
-Choice A shows those three forces: $N$ up, $mg$ down, and a single rightward horizontal force.
+Reject any choice that omits a contact force, points friction away from the center, or adds a second horizontal force. Choice A shows the three real forces with the required directions: $N$ up, $mg$ down, and $f_s$ to the right.
 
 ```quiz
 type: radio
@@ -274,15 +268,7 @@ options:
 <a id="summary"></a>
 ## Summary
 
-For a car moving at constant speed around a level circle, use this three-check test:
-
-1. Put $mg$ downward.
-2. Put $N$ upward.
-3. Since there is no vertical acceleration, make $N$ and $mg$ balance.
-4. Point static friction toward the center of the circle.
-5. Do not add a separate centripetal-force arrow or an outward force arrow.
-
-The main trap is thinking that constant speed means no acceleration. In circular motion, the speed can stay constant while the direction changes, so the net force points inward.
+For a car on a level circular track, $N$ and $mg$ balance vertically. Static friction is the real horizontal force that points toward the center and changes the direction of the car's velocity. “Centripetal” describes this inward net force; it is not another arrow to add to the free-body diagram.
 
 <!-- lesson-nav:start -->
 ---
@@ -296,7 +282,7 @@ The main trap is thinking that constant speed means no acceleration. In circular
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: [Finding Static Friction on a Flat Curve](Problem-3.md)
 
-Study guide index: 12/30
+Study guide index: 12/35
 
 ---
 <!-- lesson-nav:end -->

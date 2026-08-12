@@ -4,17 +4,17 @@
 
 ## Next Topics
 
-1. [Recognizing Uniform Circular Motion](M1/2026-07-03-HW-2/Lessons/Problem-1.md)
-2. [Normal Force at the Top of a Ferris Wheel](M1/2026-06-29-M1-3/Lessons/Problem-5.md)
-3. [Comparing Normal Force and Weight at the Top of a Hill](M1/2026-07-05-PQ-1/Lessons/Problem-3.md)
-4. [Recognizing Contact Loss on a Curved Surface](M1/2026-07-03-HW-2/Lessons/Problem-12.md)
-5. [Choosing a Free-Body Diagram for an Icy Banked Curve](M1/2026-06-30-M1-4/Lessons/Problem-1.md)
+1. [Recognizing Contact Loss on a Curved Surface](M1/2026-07-03-HW-2/Lessons/Problem-12.md)
+2. [Choosing a Free-Body Diagram for an Icy Banked Curve](M1/2026-06-30-M1-4/Lessons/Problem-1.md)
+3. [Finding the Speed for a Frictionless Banked Curve](M1/2026-06-30-M1-4/Lessons/Problem-4.md)
+4. [Choosing Friction Direction on a Banked Curve](M1/2026-06-30-M1-4/Lessons/Problem-5.md)
+5. [Maximum Speed on a Frictional Banked Curve](M1/2026-06-30-M1-4/Lessons/Problem-6.md)
 
 ## Progress
 
-- Course: 10% (30/290 unique lessons)
+- Course: 12% (34/290 unique lessons)
 
-- M1: 22% (16/74)
+- M1: 27% (20/74)
 - M2: 0% (0/56)
 - M3: 0% (0/36)
 - M4: 19% (6/32)
@@ -26,19 +26,23 @@
 
 ## Study Guides
 
-- [Quiz 1 Study Guide](M1/2026-07-06-Q-1/Study-Guide.md): 53% (16/30)
-  - Next: [Recognizing Uniform Circular Motion](M1/2026-07-03-HW-2/Lessons/Problem-1.md)
+- [Quiz 1 Study Guide](M1/2026-07-06-Q-1/Study-Guide.md): 57% (20/35)
+  - Next: [Recognizing Contact Loss on a Curved Surface](M1/2026-07-03-HW-2/Lessons/Problem-12.md)
 - [Quiz 2 Study Guide](M3/2026-07-20-Q-2/Study-Guide.md): 0% (0/20)
   - Next: [Finding the Center of Mass of Two Point Masses](M2/2026-07-07-M2-1/Lessons/Problem-1.md)
 - [Quiz 3 Study Guide](M5/2026-08-03-Q-3/Study-Guide.md): 50% (14/28)
   - Next: [Deriving Wave Speed on a Load-Bearing Wire](M5/2026-08-02-PQ-3/Lessons/Problem-4.md)
-- [Quiz 4 Study Guide](M7/2026-08-13-Q-4/Study-Guide.md): 0% (0/16)
-  - Next: [Auditing Qualitative Optics Claims](M7/2026-08-12-HW-10/Lessons/Problem-1.md)
+- [Quiz 4 Study Guide](M7/2026-08-13-Q-4/Study-Guide.md): 0% (0/8)
+  - Next: [Reading Path Difference from a Double-Slit Pattern](M6/2026-08-05-M6-1/Lessons/Problem-3.md)
 
 <!-- update-progress:home-collections:end -->
 
 ## History
 
+- [Comparing Normal Force and Weight at the Top of a Hill](M1/2026-07-05-PQ-1/Lessons/Problem-3.md) - 2026-08-11 20:37
+- [Putting Period in the Denominator for Rotating-Disk Speed](M1/2026-06-25-M1-2/Lessons/Problem-3.md) - 2026-08-11 20:16
+- [Normal Force at the Top of a Ferris Wheel](M1/2026-06-29-M1-3/Lessons/Problem-5.md) - 2026-08-10 18:18
+- [Recognizing Uniform Circular Motion](M1/2026-07-03-HW-2/Lessons/Problem-1.md) - 2026-08-10 15:55
 - [Classifying Two-Source Interference from Path and Starting Phase](M5/2026-08-02-PQ-3/Lessons/Problem-3.md) - 2026-08-03 15:16
 - [Finding Complete Constructive Interference in a Crest Diagram](M5/2026-07-30-M5-5/Lessons/Problem-2.md) - 2026-08-03 15:06
 - [Finding the Period of a Rod–Disk Physical Pendulum](M4/2026-07-22-M4-2/Lessons/Problem-6.md) - 2026-08-03 14:35
@@ -72,7 +76,7 @@
 
 ## Summary
 
-- Completed unique lessons: 30 / 290
+- Completed unique lessons: 34 / 290
 - Assignment placements: 290
 - Queue size: 5 / 5
 

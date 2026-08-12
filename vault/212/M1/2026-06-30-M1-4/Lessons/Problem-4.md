@@ -11,11 +11,11 @@ topic-code: MTH212.M1.22
 - [Resolve the Normal Force](#resolve-the-normal-force)
 - [Derive the No-Friction Speed Formula](#derive-the-no-friction-speed-formula)
 - [Compute the Speed from Radius and Bank Angle](#compute-the-speed-from-radius-and-bank-angle)
-- [Check the Original Problem](#check-the-original-problem)
+- [Solve for the Icy Curve](#solve-for-the-icy-curve)
 
 ## Prerequisites
 
-- Know that uniform circular motion requires inward acceleration $a_c=\dfrac{v^2}{r}$.
+- Know that uniform circular motion requires inward acceleration $a_r=\dfrac{v^2}{r}$.
 - Resolve a tilted force into horizontal and vertical components.
 - Use $\tan\theta=\dfrac{\sin\theta}{\cos\theta}$.
 - Solve $v^2=A$ as $v=\sqrt{A}$ when speed is positive.
@@ -25,13 +25,15 @@ topic-code: MTH212.M1.22
 <a id="introduction"></a>
 ## Introduction
 
-The cue is an icy banked curve with no friction. Since the road is frictionless, the only forces on the car are gravity $mg$ downward and the normal force $N$ perpendicular to the road.
-
-Find the no-friction speed by resolving the normal force into vertical and inward components, dividing the two force equations to eliminate $N$ and $m$, and then making $v$ the subject of the equation.
-
-For a bank angle $\theta$ and radius $r$, the final speed should depend on $r$, $g$, and $\theta$, but not on the car's mass. Since speed is a magnitude, use the positive square root.
+A $1800\ \mathrm{kg}$ car must navigate an icy banked curve of radius $48\ \mathrm{m}$ and bank angle $6.2^\circ$ without sliding. How fast must it travel?
 
 ![](<../Source/Images/banked-curve-car-diagram.png>)
+
+On a flat road, friction turns a car. This road is icy, so the bank itself must redirect part of the road's normal force toward the center of the curve. Only one speed lets that inward component produce the required circular motion while the vertical component balances the car's weight. A faster or slower car would need friction to keep from sliding along the bank.
+
+This frictionless value is called the curve's **design speed**, often written $v_0$.
+
+Resolving the normal force gives the vertical and inward equations. Dividing them eliminates both $N$ and the car's mass, so the speed depends on the curve's radius and angle rather than on the $1800\ \mathrm{kg}$ value.
 
 ---
 
@@ -41,6 +43,8 @@ For a bank angle $\theta$ and radius $r$, the final speed should depend on $r$, 
 **Example:** A car is on a frictionless road banked at angle $\theta$ from the horizontal. The normal force has magnitude $N$. Write the vertical and inward components of $N$.
 
 **Explanation**
+
+Choose $+y$ vertically upward and $+r$ horizontally inward before resolving the force. Axes along the bank are possible, but then the known circular acceleration would have components along both axes. The $y$-$r$ choice lets us write $a_y=0$ and $a_r=v^2/r$ directly.
 
 The normal force is perpendicular to the road. When the road is banked by $\theta$, the normal force tilts inward by $\theta$ from vertical.
 
@@ -53,7 +57,7 @@ $$
 The inward horizontal component is opposite $\theta$:
 
 $$
-N_{\text{in}}=N\sin\theta.
+N_r=N\sin\theta.
 $$
 
 Gravity has no inward component; it points straight down.
@@ -242,14 +246,14 @@ options:
 
 ---
 
-<a id="check-the-original-problem"></a>
-## Check the Original Problem
+<a id="solve-for-the-icy-curve"></a>
+## Solve for the Icy Curve
 
 **Example:** How fast does a $1800\ \mathrm{kg}$ car need to go to navigate an icy, no-friction banked curve of radius $48\ \mathrm{m}$ and banking angle $6.2^\circ$ without sliding?
 
 **Explanation**
 
-The mass is included in the problem statement, but it cancels during the derivation. Use
+Although the car's mass is given, it cancels during the derivation. Use
 
 $$
 v=\sqrt{rg\tan\theta}.
@@ -273,7 +277,7 @@ $$
 v\approx \sqrt{51.0}\approx 7.15\ \mathrm{m}/\mathrm{s}.
 $$
 
-Rounded to match the assignment answer, this is about
+To two significant figures, this is
 
 $$
 7.2\ \mathrm{m}/\mathrm{s}.
@@ -348,7 +352,7 @@ The main traps are swapping sine and cosine, leaving the mass in the final formu
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: [Choosing Friction Direction on a Banked Curve](Problem-5.md)
 
-Study guide index: 22/30
+Study guide index: 23/35
 
 ---
 <!-- lesson-nav:end -->

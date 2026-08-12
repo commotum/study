@@ -350,3 +350,15 @@ For coaxial objects that couple and rotate together with negligible external tor
 5. Factor the entire final-inertia sum before canceling common quantities.
 
 Do not conserve rotational kinetic energy during frictional sticking. Cancel only factors shared by the complete numerator and denominator, never separate terms inside a sum. When an initially stationary object joins the rotation, the shared final speed should lie below the original spinning object's speed.
+
+<!-- lesson-nav:start -->
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+<!-- lesson-nav:end -->

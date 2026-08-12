@@ -316,7 +316,6 @@ This ratio shortcut assumes the wavelength is unchanged and the shared angle is 
 The main trap is dark-fringe indexing: the first dark fringe is at $\lambda/2$, so the third dark fringe is at $5\lambda/2$, not $3\lambda$ or $7\lambda/2$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -326,5 +325,4 @@ The main trap is dark-fringe indexing: the first dark fringe is at $\lambda/2$, 
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

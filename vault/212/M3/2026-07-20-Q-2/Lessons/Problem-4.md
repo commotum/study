@@ -336,7 +336,6 @@ $$
 The main trap is to confuse a coordinate measured from the left end with a rotation radius measured from the center-of-mass axis.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -346,5 +345,4 @@ The main trap is to confuse a coordinate measured from the left end with a rotat
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

@@ -1,3 +1,4 @@
+
 $$
 \omega  =\frac{d \theta}{d t} \qquad \alpha =\frac{d \omega}{d t}\qquad  \theta  =\int \omega d t \qquad  \omega  =\int \alpha d t
 $$

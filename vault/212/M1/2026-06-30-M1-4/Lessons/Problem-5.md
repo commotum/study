@@ -11,7 +11,7 @@ topic-code: MTH212.M1.23
 - [Match the No-Friction Speed](#match-the-no-friction-speed)
 - [Handle a Speed That Is Too High](#handle-a-speed-that-is-too-high)
 - [Handle a Speed That Is Too Low](#handle-a-speed-that-is-too-low)
-- [Apply the Answer Choices](#apply-the-answer-choices)
+- [Return to the Faster Car](#return-to-the-faster-car)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -26,11 +26,11 @@ topic-code: MTH212.M1.23
 <a id="introduction"></a>
 ## Introduction
 
-When a banked curve question gives a speed that is safe on ice, that speed is the no-friction speed. At that speed, friction is not needed.
+A car safely rounds an icy banked curve at speed $v$. After the ice melts, the tires can exert static friction on the road. If the car now travels faster than $v$, which way does the friction force point?
 
-To decide the direction of static friction at a different speed, compare the required inward force with the inward force supplied by the normal force at the no-friction speed. Then ask which way the car would tend to slip along the bank. Static friction points opposite that slipping tendency.
+![](<../Source/Images/banked-curve-car-diagram.png>)
 
-On a usual banked curve, up the bank is toward the outside of the curve, and down the bank is toward the inside of the curve.
+Friction does not automatically point backward along the car's motion. Static friction opposes the tires' tendency to slip across the road surface. At speed $v$, the bank angle is matched to the circular motion: the normal force supplies exactly the required inward force, and no friction is needed. A faster car requires more inward force and would otherwise slide up the bank toward the outside of the curve. Static friction therefore points down the slope, adding an inward component.
 
 ---
 
@@ -41,10 +41,10 @@ On a usual banked curve, up the bank is toward the outside of the curve, and dow
 
 **Explanation**
 
-If the road is icy, there is no useful static friction. The phrase "safely navigates at speed $v$" means the bank angle and speed are matched so that the normal force alone supplies the required inward force:
+If the road is icy, there is no static friction. The phrase "safely navigates at speed $v$" means the bank angle and speed are matched so that the normal force alone supplies the required inward force:
 
 $$
-F_{\text{inward}}=\frac{mv^2}{r}
+F_r=\frac{mv^2}{r}
 $$
 
 So at exactly speed $v$, static friction would not be needed. If friction is available but there is no tendency to slide along the bank, the static friction force is zero.
@@ -90,6 +90,8 @@ $$
 $$
 
 When $u>v$, the car needs more inward force than it needed at the no-friction speed. Without friction, the car would tend to slide up the bank, toward the outside of the curve.
+
+That uphill tendency can sound as though the car is driving itself against gravity. Look at the motion from above: inertia carries the car toward a straight tangent and therefore toward the outside of the turn. Because the road rises outward, that outward drift is motion up the bank relative to the road. Static friction then points down the bank to oppose that relative slip.
 
 Static friction opposes that possible slipping. Therefore, friction points down the slope of the bank, toward the inside of the curve. A down-bank friction force also has an inward horizontal component, which is the extra inward force the faster car needs.
 
@@ -164,16 +166,14 @@ options:
 
 ---
 
-<a id="apply-the-answer-choices"></a>
-## Apply the Answer Choices
+<a id="return-to-the-faster-car"></a>
+## Return to the Faster Car
 
 **Example:** A car safely navigates an icy banked curve at speed $v$. Now the ice has melted, and there is static friction between the tires and road. What is the direction of the friction force if the car is going faster than $v$?
 
-![](<../Source/Images/banked-curve-car-diagram.png>)
-
 **Explanation**
 
-The cue is "faster than $v$." Since $v$ was the no-friction speed, a faster car would tend to slide up the bank. Static friction opposes that possible motion, so it points down the slope of the bank.
+Since $v$ was the no-friction speed, a faster car would tend to slide up the bank. Static friction opposes that possible motion, so it points down the slope of the bank.
 
 The direction is not forward or backward along the path. In this question, static friction is preventing slipping along the banked surface.
 
@@ -210,13 +210,13 @@ options:
 
 ## Summary
 
-Use the no-friction speed as the comparison point:
+The no-friction speed is the point at which the bank's normal force supplies exactly the needed inward force:
 
 - At exactly the no-friction speed, friction is not needed.
 - Faster than the no-friction speed means the car tends to slide up the bank, so friction points down the bank.
 - Slower than the no-friction speed means the car tends to slide down the bank, so friction points up the bank.
 
-The main trap is choosing a forward or backward direction. For this kind of banked-curve question, static friction is opposing slipping along the slope, not pushing along the direction of travel.
+Static friction is set by the tendency to slip along the bank, not by the car's forward motion around the curve.
 
 <!-- lesson-nav:start -->
 ---
@@ -228,9 +228,9 @@ The main trap is choosing a forward or backward direction. For this kind of bank
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
-Next: [Maximum Speed on a Frictional Banked Curve](Problem-6.md)
+Next: [Writing the Vertical Force Equation on a Banked Track](../../2026-07-03-HW-2/Lessons/Problem-6.md)
 
-Study guide index: 23/30
+Study guide index: 24/35
 
 ---
 <!-- lesson-nav:end -->

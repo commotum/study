@@ -12,7 +12,7 @@ topic-code: MTH212.M1.01
 - [Turning Arc Length per Time Into Speed](#turning-arc-length-per-time-into-speed)
 - [Checking the Units](#checking-the-units)
 - [Reading Magnitude Statements](#reading-magnitude-statements)
-- [Checking the True-or-False Claim](#checking-the-true-or-false-claim)
+- [Deciding the Magnitude Claim](#deciding-the-magnitude-claim)
 
 ## Prerequisites
 
@@ -26,15 +26,17 @@ topic-code: MTH212.M1.01
 <a id="introduction"></a>
 ## Introduction
 
-In uniform circular motion, the object moves around a circle with constant radius $r$ and constant angular speed $\omega$.
+Imagine a marked point on the rim of a wheel. As the wheel turns, the point travels along the circumference. Its angular speed $\omega$ tells how quickly the wheel sweeps through an angle, while the magnitude of its velocity, $|\vec v|$, tells how many meters of arc it travels each second.
 
-The recognition cue is a statement about the **magnitude** of the velocity vector $\vec v$:
+The cheat sheet writes this scalar speed as $v$. In this lesson, $v=|\vec v|$; the absolute-value notation simply makes the distinction between the velocity vector and its magnitude explicit.
+
+The radius connects those two descriptions of the same motion. For a wheel of radius $r$, the relationship to determine is
 
 $$
 |\vec v| \stackrel{?}{=} r\omega.
 $$
 
-The move is to convert angular speed into ordinary speed. Angular speed tells how much angle is swept out per unit time. Multiplying by the radius converts that angular rate into arc-length rate.
+Multiplying an angular rate by the radius converts it into an arc-length rate.
 
 The variables are:
 
@@ -61,7 +63,7 @@ $$
 |\vec v|=r\omega.
 $$
 
-So the homework statement "$\vec v$ has magnitude $r\omega$" is true.
+Thus a point moving in a circle with radius $r$ and angular speed $\omega$ has speed $r\omega$.
 
 ---
 
@@ -237,6 +239,14 @@ $$
 
 This distinction matters in true-or-false questions. The velocity vector points tangent to the circle, while $r\omega$ only gives how large that velocity is.
 
+The corresponding full vector statement is
+
+$$
+\vec v=\vec{\omega}\times\vec r.
+$$
+
+In planar circular motion, $\vec{\omega}$ is perpendicular to $\vec r$, so the magnitude of the cross product is $v=|\vec v|=\omega r$. Thus the cheat-sheet equation $v=r\omega$ supplies the magnitude, while the cross product supplies the tangential direction.
+
 ```quiz
 type: radio
 id: q-5
@@ -261,8 +271,8 @@ options:
 
 ---
 
-<a id="checking-the-true-or-false-claim"></a>
-## Checking the True-or-False Claim
+<a id="deciding-the-magnitude-claim"></a>
+## Deciding the Magnitude Claim
 
 **Example:** Consider an object undergoing uniform circular motion. Let $\vec r$ be the position of the object relative to the circle's center, $\vec v$ the velocity, and $\omega$ the angular speed. True or false: $\vec v$ has magnitude $r\omega$.
 
@@ -366,7 +376,7 @@ The main trap is mixing a vector with a scalar. The velocity $\vec v$ is tangent
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: [Tangential Speed From Angular Velocity](../../2026-06-29-M1-3/Lessons/Problem-2.md)
 
-Study guide index: 01/30
+Study guide index: 01/35
 
 ---
 <!-- lesson-nav:end -->

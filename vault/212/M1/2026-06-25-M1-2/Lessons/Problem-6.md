@@ -26,19 +26,17 @@ topic-code: MTH212.M1.03
 <a id="introduction"></a>
 ## Introduction
 
-When a problem shows objects moving in circles and gives each object's speed and radius, rank radial acceleration by using
+The four objects below move around circles with different speeds and radii. The arrows show their instantaneous velocities. How should their radial accelerations be ranked from least to greatest?
+
+![](<../Source/Images/radial-acceleration-ranking.png>)
+
+Radial acceleration measures how quickly the velocity turns toward the center. Its magnitude is
 
 $$
 a_r=\frac{v^2}{r}.
 $$
 
-The direction of the velocity arrow tells you the object is moving around the circle, but the size of radial acceleration depends on the speed squared and the radius. Faster motion raises $a_r$ a lot because $v$ is squared. A larger radius lowers $a_r$ because $r$ is in the denominator.
-
-Use this procedure:
-
-1. Record each object's $v$ and $r$.
-2. Compute the comparison value $v^2/r$.
-3. Rank those values from least to greatest.
+The direction of each velocity arrow locates the tangent to the path; it does not determine the acceleration magnitude. That magnitude depends on the speed squared and the radius. Faster motion raises $a_r$ because $v$ is squared, while a larger radius lowers $a_r$ because $r$ is in the denominator. The four values $v^2/r$ can therefore be compared directly.
 
 ---
 
@@ -185,8 +183,6 @@ options:
 
 **Example:** Rank the radial accelerations in the diagram from least to greatest.
 
-![](<../Source/Images/radial-acceleration-ranking.png>)
-
 **Explanation**
 
 The units match across all four objects, so it is enough to compute the comparison value $v^2/r$ for each object:
@@ -203,6 +199,24 @@ Now rank the values from least to greatest:
 $$
 D<A<C<B.
 $$
+
+Before or after computing, make a scaling check from the formula. If the speed doubles while the radius stays fixed, then
+
+$$
+v\to 2v
+\quad\Longrightarrow\quad
+a_r\to 4a_r.
+$$
+
+If the radius doubles while the speed stays fixed, then
+
+$$
+r\to 2r
+\quad\Longrightarrow\quad
+a_r\to \frac{a_r}{2}.
+$$
+
+These predictions quickly expose a ranking that accidentally treats speed and radius as equally influential.
 
 ```quiz
 type: radio
@@ -234,7 +248,7 @@ options:
 <a id="check-the-common-trap"></a>
 ## Check the Common Trap
 
-**Example:** A student ranks the original diagram as $D<A<B<C$ because B and C both have speed $2\ \mathrm{m/s}$ and C is drawn larger. What went wrong?
+**Example:** A student ranks the diagram above as $D<A<B<C$ because B and C both have speed $2\ \mathrm{m/s}$ and C is drawn larger. What went wrong?
 
 **Explanation**
 
@@ -302,9 +316,9 @@ The main trap is comparing only speed or only circle size. Speed is squared, and
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
-Next: [Checking the Magnitude of Centripetal Acceleration](../../2026-06-28-HW-1/Lessons/Problem-9.md)
+Next: [Recognizing Uniform Circular Motion](../../2026-07-03-HW-2/Lessons/Problem-1.md)
 
-Study guide index: 03/30
+Study guide index: 03/35
 
 ---
 <!-- lesson-nav:end -->

@@ -12,12 +12,12 @@ topic-code: MTH212.M1.25
 - [Find the Speed That Needs No Friction](#find-the-speed-that-needs-no-friction)
 - [Use Speed to Choose the Friction Direction](#use-speed-to-choose-the-friction-direction)
 - [Connect Friction Magnitude to Speed Limits](#connect-friction-magnitude-to-speed-limits)
-- [Check the Problem Statements](#check-the-problem-statements)
+- [Evaluate the Six Statements](#evaluate-the-six-statements)
 - [Summary](#summary)
 
 ## Prerequisites
 
-- Use $a_c=\dfrac{v^2}{r}$ for circular motion.
+- Use $a_r=\dfrac{v^2}{r}$ for circular motion.
 - Resolve forces on a banked track into vertical and inward components.
 - Know that static friction can point either way along a surface.
 - Know that static friction has a maximum possible magnitude.
@@ -27,25 +27,19 @@ topic-code: MTH212.M1.25
 <a id="introduction"></a>
 ## Introduction
 
-The cue in this problem is a banked circular track with static friction, followed by several true/false statements. The useful move is to evaluate each statement by separating the acceleration direction from the force components, then comparing the car's speed with the speed that would need no static friction.
+A car travels at constant speed $v$ around a circular track of radius $r$ banked at angle $\theta$. Static friction acts between the tires and the road. How does changing the speed affect friction, which way does the car accelerate, and is there a speed at which friction is unnecessary?
 
-For a car moving around a horizontal circle at constant speed, the acceleration points horizontally inward, toward the center of the circle:
+The car follows a horizontal circle, so its acceleration points horizontally inward rather than down the sloped road:
 
 $$
-a_c=\dfrac{v^2}{r}.
+a_r=\dfrac{v^2}{r}.
 $$
 
-The bank angle helps the normal force provide some inward force. Static friction supplies whatever extra along-track force is needed, up to its maximum possible size.
+The bank angle lets the normal force provide some of the inward force. Static friction adjusts to prevent the tires from sliding: depending on the speed, it may point up the bank, vanish, or point down the bank. Its magnitude cannot exceed the tire-road limit.
 
 ![](<../Source/Images/banked-track-car-diagram.png>)
 
-Use three checks:
-
-1. Acceleration points inward.
-2. $v_0=\sqrt{rg\tan\theta}$ is the speed that needs no friction.
-3. Compare $v$ with $v_0$ to decide friction direction and size.
-
-The main trap is treating static friction as if its direction is fixed. Static friction points whichever way prevents slipping, so its direction and magnitude can change when $v$ changes.
+At one particular speed, the normal force alone supplies the required inward force. Comparing $v$ with that no-friction speed shows which way the tires would otherwise slip and therefore which way static friction points.
 
 ---
 
@@ -59,7 +53,7 @@ The main trap is treating static friction as if its direction is fixed. Static f
 The car is moving in a circle, so its acceleration is centripetal:
 
 $$
-\vec a=\vec a_c.
+\vec a=\vec a_r.
 $$
 
 Centripetal acceleration always points toward the center of the circular path. In this side view, the center is horizontally to the left, so the acceleration points directly left.
@@ -97,34 +91,34 @@ options:
 
 **Explanation**
 
-With no friction, the only contact force is the normal force $n$. Since the track is banked by angle $\theta$ from the horizontal, the normal force has components
+With no friction, the only contact force is the normal force $N$. Since the track is banked by angle $\theta$ from the horizontal, the normal force has components
 
 $$
-n\cos\theta \quad \text{vertical}
+N\cos\theta \quad \text{vertical}
 $$
 
 and
 
 $$
-n\sin\theta \quad \text{inward}.
+N\sin\theta \quad \text{inward}.
 $$
 
 The vertical acceleration is zero, so the vertical forces balance:
 
 $$
-n\cos\theta=mg.
+N\cos\theta=mg.
 $$
 
 The inward component supplies the centripetal force:
 
 $$
-n\sin\theta=\dfrac{mv_0^2}{r}.
+N\sin\theta=\dfrac{mv_0^2}{r}.
 $$
 
 Divide the inward equation by the vertical equation:
 
 $$
-\dfrac{n\sin\theta}{n\cos\theta}
+\dfrac{N\sin\theta}{N\cos\theta}
 =
 \dfrac{mv_0^2/r}{mg}.
 $$
@@ -190,6 +184,8 @@ When $v$ is greater than $v_0$, the required inward force is larger than the inw
 
 On the banked track, friction down the ramp has an inward component. So for $v>v_0$, static friction points down the ramp.
 
+A second way to choose the direction is to temporarily remove friction and ask how the tires would slip relative to the road. Below the design speed, gravity tends to carry the car down the bank, so friction points up the bank. Above the design speed, the car's straight-line tendency carries it outward and therefore up the bank, so friction points down the bank.
+
 For comparison:
 
 | Speed comparison | What static friction does |
@@ -253,6 +249,14 @@ This signed value changes with $v$:
 
 The physical magnitude is $|f_s|$, so the magnitude also depends on $v$.
 
+The component equations give the static friction that is required, not automatically the maximum friction. The circular path can be maintained only while
+
+$$
+|f_s|\leq \mu_sN.
+$$
+
+Use $|f_s|=\mu_sN$ only at the threshold of sliding.
+
 Static friction is limited by a maximum possible value. If the car is too fast, the required down-ramp friction becomes too large, and the car cannot maintain the circular path of radius $r$. That gives a maximum allowable speed.
 
 ```quiz
@@ -279,14 +283,14 @@ options:
 
 ---
 
-<a id="check-the-problem-statements"></a>
-## Check the Problem Statements
+<a id="evaluate-the-six-statements"></a>
+## Evaluate the Six Statements
 
-**Example:** The original problem asks which statements are true for a car of mass $m$ moving at constant speed $v$ around a banked circular track of radius $r$ and bank angle $\theta$.
+**Example:** For a car of mass $m$ moving at constant speed $v$ around a track of radius $r$ and bank angle $\theta$, evaluate the six statements about its acceleration and static friction.
 
 **Explanation**
 
-Use the same checks one statement at a time.
+Each statement follows from the acceleration direction, the no-friction speed, or the limit on static friction.
 
 Statement A is true: the static friction direction depends on whether $v$ is below, equal to, or above $\sqrt{rg\tan\theta}$.
 
@@ -342,13 +346,13 @@ options:
 
 ## Summary
 
-For a banked turn with static friction, start with the acceleration: it points horizontally inward, not along the ramp. Then find the no-friction speed from the normal-force equations:
+On a banked turn, the car's acceleration points horizontally inward, not along the ramp. The normal-force equations give the speed that requires no friction:
 
 $$
 v_0=\sqrt{rg\tan\theta}.
 $$
 
-Compare $v$ with $v_0$. Below $v_0$, friction points up the ramp; at $v_0$, friction is zero; above $v_0$, friction points down the ramp. Since the required centripetal force is $\dfrac{mv^2}{r}$, both the direction and magnitude of static friction can depend on speed. The main trap is choosing a ramp direction for acceleration instead of the inward direction toward the circle's center.
+Below $v_0$, friction points up the ramp; at $v_0$, friction is zero; above $v_0$, friction points down the ramp. Since the required inward force is $\dfrac{mv^2}{r}$, both the direction and magnitude of static friction can depend on speed. The ramp sets the contact-force directions, but the circular path sets the acceleration direction.
 
 <!-- lesson-nav:start -->
 ---
@@ -362,7 +366,7 @@ Compare $v$ with $v_0$. Below $v_0$, friction points up the ramp; at $v_0$, fric
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: [Choosing a Free-Body Diagram for a Conical Pendulum](../../2026-06-30-M1-4/Lessons/Problem-7.md)
 
-Study guide index: 25/30
+Study guide index: 28/35
 
 ---
 <!-- lesson-nav:end -->

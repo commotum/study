@@ -11,7 +11,7 @@ topic-code: MTH212.M1.26
 - [List Only Real Forces](#list-only-real-forces)
 - [Point Each Force in Its Physical Direction](#point-each-force-in-its-physical-direction)
 - [Use Centripetal Acceleration as a Net-Force Check](#use-centripetal-acceleration-as-a-net-force-check)
-- [Apply the Answer Choices](#apply-the-answer-choices)
+- [Choose the Free-Body Diagram](#choose-the-free-body-diagram)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -26,20 +26,16 @@ topic-code: MTH212.M1.26
 <a id="introduction"></a>
 ## Introduction
 
-When an object moves in a horizontal circle while hanging from a string, the cue is that the free-body diagram must show the real forces on the object, not the acceleration or the path.
+A key tied to a string traces a horizontal circle while the hand holding the string stays above and inward from the key. With air resistance ignored, which free-body diagram correctly shows the forces on the key?
 
-For a key on a string with no air resistance, the task is to choose the diagram that has exactly these two forces:
+![](<../Source/Images/conical-pendulum-key-free-body-diagrams.png>)
+
+Only Earth and the string interact with the key, so its free-body diagram has exactly two forces:
 
 - weight straight down
 - tension along the string toward the hand
 
-The inward acceleration is real, but it comes from the horizontal component of tension. It is not a separate force arrow.
-
-Use this checklist:
-
-1. Name the real interactions with the key.
-2. Draw each force from the key in the direction that interaction pulls.
-3. Use the inward acceleration only to check the net force direction.
+The key nevertheless accelerates toward the center of its circular path. That inward acceleration comes from the horizontal component of the slanted tension force; it does not require a third, separate force arrow.
 
 ---
 
@@ -142,10 +138,12 @@ $$
 Its horizontal component points toward the center of the circle. That horizontal component supplies the net inward force:
 
 $$
-T_x=\frac{mv^2}{r}.
+T_r=\frac{mv^2}{r}.
 $$
 
 This check explains why the diagram can have only two force arrows while the motion is still circular. The phrase "centripetal force" means the net inward force, not a new interaction. A separate net-force arrow can be useful in a force-sum sketch, but it does not belong as an extra force in the free-body diagram.
+
+A frictionless banked curve provides a useful structural check. The two systems look different, but each has gravity downward and one angled real force whose vertical component balances weight and whose horizontal component supplies the inward force. The normal force plays that role on the banked curve; tension plays it here. Comparing the roles of forces, rather than the appearance of the apparatus, reveals the same mathematical structure.
 
 ```quiz
 type: radio
@@ -173,12 +171,10 @@ options:
 
 ---
 
-<a id="apply-the-answer-choices"></a>
-## Apply the Answer Choices
+<a id="choose-the-free-body-diagram"></a>
+## Choose the Free-Body Diagram
 
 **Example:** A key on a string traces out a horizontal circle as shown. Assume there is no air resistance. Which free-body diagram could accurately depict the key?
-
-![](<../Source/Images/conical-pendulum-key-free-body-diagrams.png>)
 
 **Explanation**
 
@@ -188,7 +184,7 @@ Use the force list before looking at the labels:
 - The diagram must include tension along the slanted string toward the hand.
 - The diagram must not include a separate inward or horizontal "centripetal force" arrow.
 
-Then eliminate each diagram by that checklist:
+Compare each diagram with the two physical interactions:
 
 | Choice | Keep or reject? | Reason |
 | --- | --- | --- |
@@ -244,7 +240,7 @@ Then use circular motion as a check: the horizontal component of tension supplie
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: [Finding the Radius from an Angled String](../../2026-07-03-HW-2/Lessons/Problem-2.md)
 
-Study guide index: 26/30
+Study guide index: 29/35
 
 ---
 <!-- lesson-nav:end -->

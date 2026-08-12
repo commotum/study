@@ -347,7 +347,6 @@ When a thin-lens question asks for image distance:
 6. Check the physics: $d_o>f>0$ gives a positive real-image distance, $d_o=f$ gives no finite image, and $d_o\gg f$ gives $d_i\approx f$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -357,5 +356,4 @@ When a thin-lens question asks for image distance:
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

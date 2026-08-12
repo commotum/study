@@ -255,7 +255,6 @@ When only the screen distance changes in a double-slit experiment:
 The main trap is confusing angle with screen position. The fringe angles stay fixed when $\lambda$ and $d$ stay fixed, but a farther screen turns those same angles into larger distances, so the fringes spread farther apart.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -265,5 +264,4 @@ The main trap is confusing angle with screen position. The fringe angles stay fi
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

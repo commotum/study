@@ -10,14 +10,14 @@ topic-code: MTH212.M1.18
 - [Introduction](#introduction)
 - [Find the Inward Direction at the Top](#find-the-inward-direction-at-the-top)
 - [Write the Top-Position Force Balance](#write-the-top-position-force-balance)
-- [Substitute Angular Speed into the Force Balance](#substitute-angular-speed-into-the-force-balance)
-- [Avoid the Bottom-Position Sign Error](#avoid-the-bottom-position-sign-error)
+- [Calculate the Seat Force](#calculate-the-seat-force)
+- [Compare with the Bottom of the Wheel](#compare-with-the-bottom-of-the-wheel)
 - [Summary](#summary)
 
 ## Prerequisites
 
 - Centripetal acceleration points toward the center of circular motion.
-- For constant angular speed, centripetal acceleration has magnitude $a_c=\omega^2r$.
+- For constant angular speed, centripetal acceleration has magnitude $a_r=\omega^2r$.
 - Newton's second law in one direction is $\sum F=ma$.
 - Near Earth's surface, weight has magnitude $mg$.
 
@@ -26,17 +26,13 @@ topic-code: MTH212.M1.18
 <a id="introduction"></a>
 ## Introduction
 
-When a rider is at the top of a Ferris wheel, the center of the circle is below the rider. That means the required centripetal force points downward. The useful move is to choose inward as positive, put every vertical force into that direction, and solve the force balance for the normal force.
+Riders often feel lighter at the top of a Ferris wheel and heavier at the bottom, even though their mass and the force of gravity have not changed. What changes is how strongly the seat pushes on them.
+
+Moving in a circle requires an acceleration toward the center. At the top of the wheel, that acceleration is downward. Gravity still pulls downward with the same force, but the seat does not push upward as strongly as it would if the rider were at rest. The weaker upward force from the seat makes the rider feel lighter. This supporting force—the normal force—is what determines the rider’s apparent weight.
 
 ![](<../Source/Images/ferris-wheel-top-bottom-normal-force.png>)
 
-For the assignment problem, the given values are
-
-$$
-r=42\ \mathrm{m},\qquad \omega=0.16\ \mathrm{rad}/\mathrm{s},\qquad m=68\ \mathrm{kg}.
-$$
-
-The target is the magnitude of the normal force from the seat at the top.
+Now consider a $68\ \mathrm{kg}$ rider seated at the top of a Ferris wheel with radius $42\ \mathrm{m}$ rotating at a constant angular speed of $0.16\ \mathrm{rad}/\mathrm{s}$. How strongly does the seat push upward on the rider?
 
 ---
 
@@ -49,10 +45,10 @@ The target is the magnitude of the normal force from the seat at the top.
 
 Inward always means "toward the center of the circle." At the top of the wheel, the center is below the rider, so inward is downward.
 
-That direction matters because the net inward force must equal $m\omega^2r$:
+Along the inward axis, Newton's second law is
 
 $$
-\sum F_{\text{inward}}=m\omega^2r.
+\sum F_r=m\omega^2r.
 $$
 
 ```quiz
@@ -91,6 +87,8 @@ At the top:
 - Weight $mg$ points downward, so it points inward.
 - The normal force $N$ from the seat points upward, so it points outward.
 
+Before doing any algebra, predict the comparison: gravity already supplies part of the required inward force, so the seat should push less strongly than it would at rest. The result must satisfy $N<mg$.
+
 Using inward as positive gives
 
 $$
@@ -127,27 +125,20 @@ options:
 
 ---
 
-<a id="substitute-angular-speed-into-the-force-balance"></a>
-## Substitute Angular Speed into the Force Balance
+<a id="calculate-the-seat-force"></a>
+## Calculate the Seat Force
 
 **Example:** A Ferris wheel has radius $42\ \mathrm{m}$ and angular speed $0.16\ \mathrm{rad}/\mathrm{s}$. Find the normal force on a $68\ \mathrm{kg}$ rider at the top.
 
 **Explanation**
 
-Start with the top-position formula:
+At the top,
 
 $$
 N=mg-m\omega^2r.
 $$
 
-Summarize the known values before substituting:
-
-- $m=68\ \mathrm{kg}$
-- $g=9.8\ \mathrm{m}/\mathrm{s}^2$
-- $\omega=0.16\ \mathrm{rad}/\mathrm{s}$
-- $r=42\ \mathrm{m}$
-
-Now substitute:
+The symbolic form $N=m(g-\omega^2r)$ keeps the expected subtraction visible. Using $g=9.8\ \mathrm{m}/\mathrm{s}^2$, now substitute the rider's mass and the wheel's radius and angular speed:
 
 $$
 \begin{aligned}
@@ -157,10 +148,10 @@ N&=(68)(9.8)-(68)(0.16)^2(42)\\
 \end{aligned}
 $$
 
-Rounded to the requested whole-newton answer, this is about
+To two significant figures, this is
 
 $$
-N\approx 590\ \mathrm{N}.
+N\approx 5.9\times10^2\ \mathrm{N}=590\ \mathrm{N}.
 $$
 
 ```quiz
@@ -187,14 +178,16 @@ options:
 
 ---
 
-<a id="avoid-the-bottom-position-sign-error"></a>
-## Avoid the Bottom-Position Sign Error
+<a id="compare-with-the-bottom-of-the-wheel"></a>
+## Compare with the Bottom of the Wheel
 
 **Example:** Why is the top-position normal force smaller than the rider's weight?
 
 **Explanation**
 
 At the top, gravity already points inward. Gravity supplies part of the required inward force, so the seat does not need to push as hard as it would if the wheel were not rotating.
+
+Because the normal force is the rider's apparent weight, the smaller value corresponds to feeling lighter. It does not imply a separate upward force: the rider tends to continue along the instantaneous tangent while the wheel curves downward beneath them.
 
 That is why the formula is
 
@@ -208,7 +201,7 @@ $$
 N-mg=m\omega^2r.
 $$
 
-The common mistake is to use the bottom equation at the top. That adds the centripetal term instead of subtracting it.
+At the bottom, the seat must support the rider's weight and still produce an upward net force. Its normal force is therefore larger than $mg$, while the normal force at the top is smaller than $mg$.
 
 ```quiz
 type: radio
@@ -237,19 +230,19 @@ options:
 <a id="summary"></a>
 ## Summary
 
-At the top of a Ferris wheel, inward is downward. Write the inward force balance as
+At the top of an upright Ferris-wheel gondola, the center is below the rider. Weight points inward while the seat's normal force points outward, so
 
 $$
 mg-N=m\omega^2r.
 $$
 
-Then solve:
+Solving for the seat force gives
 
 $$
 N=mg-m\omega^2r.
 $$
 
-Use this subtraction only because the rider is at the top. The main trap is using the bottom-position equation $N-mg=m\omega^2r$, which would make the normal force too large.
+Because $m\omega^2r$ is positive, $N<mg$: the seat pushes less strongly than it would at rest, and the rider feels lighter. At the bottom, inward is upward and the directions reverse, giving $N-mg=m\omega^2r$ instead.
 
 <!-- lesson-nav:start -->
 ---
@@ -263,7 +256,7 @@ Use this subtraction only because the rider is at the top. The main trap is usin
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: [Comparing Normal Force and Weight at the Top of a Hill](../../2026-07-05-PQ-1/Lessons/Problem-3.md)
 
-Study guide index: 18/30
+Study guide index: 19/35
 
 ---
 <!-- lesson-nav:end -->

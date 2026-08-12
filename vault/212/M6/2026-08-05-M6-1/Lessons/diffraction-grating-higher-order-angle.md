@@ -275,3 +275,15 @@ options:
 - Check existence: sine is a unit-circle coordinate, so the calculated value must lie between $-1$ and $1$.
 - Find the positive-side angle: apply inverse sine in degree mode, verify it lies from $0^\circ$ to $90^\circ$, and round only at the end.
 - Main trap: order multiplies $\sin\theta$, not $\theta$ itself.
+
+<!-- lesson-nav:start -->
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+<!-- lesson-nav:end -->

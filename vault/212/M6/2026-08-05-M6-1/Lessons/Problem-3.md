@@ -286,7 +286,6 @@ When a double-slit pattern marks a point, use this procedure:
 The main trap is mixing the two counting systems: bright fringes use whole wavelengths, while dark fringes lie halfway between them.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -298,8 +297,7 @@ The main trap is mixing the two counting systems: bright fringes use whole wavel
 [Quiz 4 Study Guide](../../../M7/2026-08-13-Q-4/Study-Guide.md)
 Next: [Predicting Changes in Double-Slit Fringe Spacing](../../2026-08-09-HW-9/Lessons/Problem-4.md)
 
-Study guide index: 04/11
+Study guide index: 01/8
 
 ---
-
 <!-- lesson-nav:end -->

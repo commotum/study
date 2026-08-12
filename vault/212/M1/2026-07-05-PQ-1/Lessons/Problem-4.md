@@ -26,27 +26,17 @@ topic-code: MTH212.M1.15
 <a id="introduction"></a>
 ## Introduction
 
-A coin sits on a horizontal turntable at radius $r$ while the table spins at constant angular speed.
+A coin of mass $m$ sits a distance $r$ from the axis of a horizontal turntable. The coefficient of static friction between the coin and the turntable is $\mu_s$. Draw the coin's free-body diagram, then find the smallest rotation period that keeps the coin from slipping.
 
 ![](<../Source/Images/problem-4-turntable.png>)
 
-The cue is that the coin is moving in a circle but is not sliding across the turntable. The only horizontal contact force available is static friction, so static friction must point inward and supply the centripetal force.
+The coin has no string or wall holding it in a circle. It follows the turntable only because static friction pulls it inward toward the axis. The normal force and weight balance vertically; neither one supplies the horizontal acceleration.
 
-To find the smallest period that avoids slipping, use the threshold case:
+Shortening the period makes the turntable spin faster, which increases the inward force the coin needs. The smallest safe period occurs at the boundary where static friction has reached its maximum value:
 
 $$
 f_s=f_{s,\max}.
 $$
-
-Then connect that maximum friction force to circular motion and solve for $T$.
-
-Use this order:
-
-1. Draw $N$, $mg$, and inward $f_s$.
-2. Use vertical balance to get $N=mg$.
-3. Set the required radial force equal to the maximum static friction at the threshold.
-4. Substitute $v=2\pi r/T$.
-5. Interpret the result as the smallest allowed period.
 
 ---
 
@@ -294,6 +284,14 @@ $$
 v=\frac{2\pi r}{T}.
 $$
 
+Equivalently, $T=2\pi/\omega$. Therefore the largest safe angular speed corresponds to the smallest safe period:
+
+$$
+\omega\leq\omega_{\max}
+\quad\Longleftrightarrow\quad
+T\geq T_{\min}.
+$$
+
 Faster rotation requires more inward force:
 
 $$
@@ -336,6 +334,8 @@ $$
 T_{\min}=2\pi\sqrt{\frac{r}{\mu_s g}}.
 $$
 
+The symbolic form supplies a useful behavior check. Moving the coin outward raises $T_{\min}$, while increasing $\mu_s$ or $g$ lowers it. A result with any of those trends reversed has inverted the threshold relation.
+
 ```quiz
 type: radio
 id: p4-minimum-period
@@ -371,7 +371,7 @@ options:
 <a id="summary"></a>
 ## Summary
 
-For a coin on a horizontal turntable, use the circular path as the cue: static friction points inward and supplies the centripetal force. The vertical forces balance, so
+For a coin on a horizontal turntable, static friction points inward and keeps the coin on its circular path. The vertical forces balance, so
 
 $$
 N=mg.
@@ -389,7 +389,7 @@ $$
 T_{\min}=2\pi\sqrt{\frac{r}{\mu_s g}}.
 $$
 
-The main trap is the word "smallest." Smaller period means larger speed, so the no-slip condition is $T\ge T_{\min}$, not $T\le T_{\min}$.
+Smaller period means larger speed and a greater required friction force. The periods that avoid slipping therefore satisfy $T\ge T_{\min}$.
 
 <!-- lesson-nav:start -->
 ---
@@ -403,7 +403,7 @@ The main trap is the word "smallest." Smaller period means larger speed, so the 
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: [Comparing Ferris Wheel Normal Forces](../../2026-06-29-M1-3/Lessons/Problem-1.md)
 
-Study guide index: 15/30
+Study guide index: 16/35
 
 ---
 <!-- lesson-nav:end -->

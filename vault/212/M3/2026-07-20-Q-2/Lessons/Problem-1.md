@@ -342,7 +342,6 @@ For a two-block system with $m_2$ descending and $m_1$ rising:
 The main trap is carrying over $T_1=T_2$ from an ideal massless pulley. A frictionless axle removes resisting axle torque; it does not remove the rotational inertia of a massive pulley.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -352,5 +351,4 @@ The main trap is carrying over $T_1=T_2$ from an ideal massless pulley. A fricti
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

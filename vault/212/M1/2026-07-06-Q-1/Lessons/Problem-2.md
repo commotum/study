@@ -246,7 +246,6 @@ The main trap is following the velocity arrow. Velocity is tangent to the path; 
 "Centripetal force" names the inward net-force requirement; it is not an extra force to add to the real forces in a free-body diagram.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -256,5 +255,4 @@ The main trap is following the velocity arrow. Velocity is tangent to the path; 
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

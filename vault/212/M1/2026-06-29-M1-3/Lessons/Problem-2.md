@@ -24,15 +24,15 @@ topic-code: MTH212.M1.02
 <a id="introduction"></a>
 ## Introduction
 
-When a point moves around a circle at constant angular velocity, the point's linear speed along the rim is its **tangential speed**.
+A Ferris wheel of radius $42\ \mathrm{m}$ rotates at $0.16\ \mathrm{rad}/\mathrm{s}$. The angular velocity describes how quickly the wheel turns, but a rider on the rim travels an ordinary distance along the circular path. The rider's distance per second is the **tangential speed**.
 
-The cue for this calculation is that the problem gives a radius $r$ and an angular velocity $\omega$, then asks for a speed in distance per time. Use
+A point farther from the center travels more arc length through the same angle. In radians, $s=r\theta$, so dividing by time gives
 
 $$
 v=r\omega
 $$
 
-where $v$ is tangential speed. A radius of $r$ meters means each radian of rotation moves a rim point $r$ meters along the arc. Since a radian is a ratio of arc length to radius, it does not add a separate physical unit in the final speed.
+where $v$ is tangential speed. Each radian of rotation moves a rim point through $r$ meters of arc. Since a radian is a ratio of arc length to radius, it does not add a separate physical unit in the final speed.
 
 ---
 
@@ -43,7 +43,7 @@ where $v$ is tangential speed. A radius of $r$ meters means each radian of rotat
 
 **Explanation**
 
-The problem gives radius and angular velocity, so use $v=r\omega$.
+Radius and angular velocity determine the tangential speed through $v=r\omega$.
 
 $$
 \begin{aligned}
@@ -54,6 +54,14 @@ v&=r\omega \\
 $$
 
 So the particle's speed is $6.72\ \mathrm{m}/\mathrm{s}$, which is $6.7\ \mathrm{m}/\mathrm{s}$ to the nearest tenth.
+
+An independent check comes from $\omega=2\pi/T$. Substituting this into $v=r\omega$ gives
+
+$$
+v=\frac{2\pi r}{T},
+$$
+
+so the angular-speed method and the one-revolution distance-over-time method must agree. Also, $6.7\ \mathrm{m}/\mathrm{s}$ is the rider's constant speed, not a constant velocity: the direction still changes, so the rider still has inward radial acceleration.
 
 ```quiz
 type: radio
@@ -231,7 +239,7 @@ options:
 <a id="summary"></a>
 ## Summary
 
-When a circular-motion problem gives radius and angular velocity, and asks for speed along the rim, use
+For a point at radius $r$ on a wheel rotating with angular velocity $\omega$, the speed along the rim is
 
 $$
 v=r\omega.
@@ -251,7 +259,7 @@ Multiply the radius by the angular velocity, keep the final unit as distance per
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: [Ranking Radial Accelerations](../../2026-06-25-M1-2/Lessons/Problem-6.md)
 
-Study guide index: 02/30
+Study guide index: 02/35
 
 ---
 <!-- lesson-nav:end -->

@@ -11,7 +11,7 @@ topic-code: MTH212.M1.27
 - [Turn the Side View Into a Right Triangle](#turn-the-side-view-into-a-right-triangle)
 - [Choose Cosine When the Angle Starts at the Horizontal](#choose-cosine-when-the-angle-starts-at-the-horizontal)
 - [Do Not Swap the Reference Line](#do-not-swap-the-reference-line)
-- [Apply the Rule to the Conical Pendulum](#apply-the-rule-to-the-conical-pendulum)
+- [Read the Radius From the Diagram](#read-the-radius-from-the-diagram)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -25,9 +25,11 @@ topic-code: MTH212.M1.27
 <a id="introduction"></a>
 ## Introduction
 
-When a bob moves in a horizontal circle on a string, the radius of the circular path is not the whole string length. In the side view, the string is the hypotenuse of a right triangle, and the radius is the horizontal leg.
+A bob of mass $m$ hangs from a light string of length $L$ and travels in a horizontal circle. The string makes angle $\theta$ with the horizontal. Viewed from above, what is the radius of the bob's circular path?
 
-For this problem, the cue is that the string makes an angle $\theta$ with the horizontal. That makes the circular radius adjacent to $\theta$, so the radius comes from cosine.
+![](<../Source/Images/conical-pendulum-diagram.png>)
+
+The side view turns the geometry into a right triangle. The string is the hypotenuse, while the radius is the horizontal distance from the rotation axis to the bob. Because $\theta$ is measured from the horizontal, that horizontal leg is adjacent to $\theta$.
 
 ---
 
@@ -89,7 +91,7 @@ $$
 r=12\cos 35^\circ.
 $$
 
-The key is the phrase "with the horizontal." If the angle is measured from the horizontal, the horizontal leg is adjacent, not opposite.
+Because the angle is measured from the horizontal, the horizontal leg is adjacent rather than opposite.
 
 ```quiz
 type: radio
@@ -138,6 +140,20 @@ $$
 
 This does not contradict the previous rule. It shows why the wording "with the horizontal" matters.
 
+The vertical-angle and horizontal-angle conventions are complementary. If $\phi$ is measured from the vertical while $\theta$ is measured from the horizontal, then
+
+$$
+\phi=90^\circ-\theta
+$$
+
+and
+
+$$
+L\sin\phi=L\sin(90^\circ-\theta)=L\cos\theta.
+$$
+
+The two radius formulas are equivalent; only the reference line changed.
+
 ```quiz
 type: radio
 id: p2-q3
@@ -162,12 +178,10 @@ options:
 
 ---
 
-<a id="apply-the-rule-to-the-conical-pendulum"></a>
-## Apply the Rule to the Conical Pendulum
+<a id="read-the-radius-from-the-diagram"></a>
+## Read the Radius From the Diagram
 
 **Example:** A conical pendulum has string length $L$. The string makes an angle $\theta$ with the horizontal, and the bob travels in a horizontal circle. What is the radius of the circular trajectory?
-
-![](<../Source/Images/conical-pendulum-diagram.png>)
 
 **Explanation**
 
@@ -232,7 +246,7 @@ $$
 r=L\cos\theta.
 $$
 
-Use cosine because the radius is adjacent to the angle. The main trap is choosing $L\sin\theta$, which would be the vertical projection when the angle is measured from the horizontal.
+Cosine gives the radius because the radius is adjacent to the angle. The expression $L\sin\theta$ would instead give the vertical projection when the angle is measured from the horizontal.
 
 <!-- lesson-nav:start -->
 ---
@@ -246,7 +260,7 @@ Use cosine because the radius is adjacent to the angle. The main trap is choosin
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: [Deriving the Angle in a Conical Pendulum](Problem-5.md)
 
-Study guide index: 27/30
+Study guide index: 30/35
 
 ---
 <!-- lesson-nav:end -->

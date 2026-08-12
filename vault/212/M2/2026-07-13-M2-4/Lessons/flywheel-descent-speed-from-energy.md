@@ -380,3 +380,15 @@ v=\sqrt{\frac{4mgh}{2m+M}}.
 $$
 
 Check that the result has speed units and approaches $\sqrt{2gh}$ as $M\to0$. The radius cancels because $I\propto r^2$ while $\omega^2\propto 1/r^2$. The main trap is omitting either kinetic-energy term.
+
+<!-- lesson-nav:start -->
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+<!-- lesson-nav:end -->

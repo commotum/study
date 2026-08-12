@@ -17,7 +17,7 @@ topic-code: MTH212.M1.63
 
 ## Prerequisites
 
-- Use $a_c=\dfrac{v^2}{R}$ for circular motion of radius $R$.
+- Use $a_r=\dfrac{v^2}{R}$ for circular motion of radius $R$.
 - Read a radial force equation in the inward direction.
 - Use conservation of mechanical energy when friction is neglected.
 - Uniform circular motion means circular motion at constant speed.
@@ -27,13 +27,13 @@ topic-code: MTH212.M1.63
 <a id="introduction"></a>
 ## Introduction
 
-For a vertical loop-the-loop, the cue is that the rider moves in a circle while gravity changes the rider's speed as the height changes. Decide which statements are true one statement at a time by separating three ideas:
+Skateboarder Hony Tawk enters a vertical loop and completes the circle without leaving the track. Rolling friction is neglected. Does completing the loop require a minimum entry speed? What happens to the normal force at that threshold? Is the motion uniform, is the required inward force constant, and is mechanical energy conserved?
 
-1. Contact at the top requires enough speed for circular motion.
-2. With rolling friction neglected, mechanical energy is approximately conserved.
-3. A circular path is not automatically uniform circular motion.
+![](<../Source/Images/loop-the-loop-diagram.png>)
 
-For Hony Tawk's loop, the true statements are the ones about a minimum entry speed, the normal force becoming zero at the top at that minimum, and approximate conservation of mechanical energy.
+These questions separate three ideas that can look similar in a circular-motion diagram. Contact depends on whether the track can provide the required normal force. Energy conservation determines how speed changes with height. Uniform circular motion, by contrast, would require that speed to remain constant.
+
+Use Newton's second law locally at the top to test contact, then use energy between the bottom and top to connect the two speeds. The force equation describes one position; the energy equation is the bridge between positions.
 
 ---
 
@@ -68,7 +68,7 @@ $$
 v_{\text{top}}=\sqrt{gR}.
 $$
 
-That is why the top of the loop is the key place to test whether a minimum speed exists.
+At the threshold, this top-of-the-loop condition determines the smallest speed that still permits contact.
 
 ```quiz
 type: radio
@@ -131,7 +131,7 @@ $$
 v_0=\sqrt{5gR}.
 $$
 
-The exact formula depends on the loop radius, but the important statement is that there is a minimum entry speed.
+Thus the loop has a minimum entry speed, $\sqrt{5gR}$, which grows with the square root of its radius.
 
 The normal force does not appear in the energy equation because it points perpendicular to the rider's motion along the track. With rolling friction neglected, gravity trades kinetic energy and potential energy while their sum stays approximately constant.
 
@@ -192,6 +192,8 @@ Uniform circular motion requires constant speed.
 
 In a vertical loop, the rider trades kinetic energy and gravitational potential energy. As the rider goes upward, height increases, so speed decreases. As the rider comes back down, height decreases, so speed increases.
 
+The force view gives the same conclusion. Except at the top and bottom, gravity has a tangential component, and that component changes the rider's speed. The radial component still curves the path toward the center. Thus "circular" describes the path, whereas "uniform" additionally requires constant speed.
+
 The path is circular, but the speed is not constant. Therefore the motion is not uniform circular motion.
 
 This does not contradict energy conservation. Conservation of mechanical energy allows kinetic energy and potential energy to trade back and forth while their sum stays constant.
@@ -230,14 +232,14 @@ options:
 For circular motion of radius $R$, the required inward net force has magnitude
 
 $$
-F_c=m\dfrac{v^2}{R}.
+\sum F_r=m\dfrac{v^2}{R}.
 $$
 
 This is not a new extra force. It is the inward part of the net force required to keep the rider moving on the circular path.
 
 The radius and mass stay the same, but the speed does not. The rider moves faster near the bottom and slower near the top.
 
-Since $F_c$ depends on $v^2$, the required inward force is not constant in magnitude.
+Since $\sum F_r$ depends on $v^2$, the required inward force is not constant in magnitude.
 
 The direction of the inward force also changes as the rider moves around the loop, because inward always points toward the center.
 
@@ -272,8 +274,6 @@ options:
 
 Which statements are true?
 
-![](<../Source/Images/loop-the-loop-diagram.png>)
-
 A. There exists a minimum speed which Hony needs to be going when entering the loop-the-loop in order to complete it.
 
 B. At the minimum speed, the normal force on Hony goes to zero at the top of the loop.
@@ -293,7 +293,7 @@ Check each statement against the matching test:
 | A | Top contact plus energy requires enough entry speed. | True |
 | B | At the threshold, $N=0$ at the top. | True |
 | C | Uniform circular motion requires constant speed. | False |
-| D | $F_c=m\dfrac{v^2}{R}$ changes when $v$ changes. | False |
+| D | $\sum F_r=m\dfrac{v^2}{R}$ changes when $v$ changes. | False |
 | E | With rolling friction neglected, mechanical energy is approximately conserved. | True |
 
 So the true statements are A, B, and E.
@@ -343,6 +343,11 @@ At the minimum speed, $N=0$ at the top. Energy conservation connects the entry s
 
 [[212/Home|Home]]
 [[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
+Next: [Finding the Minimum Entry Speed for a Loop-the-Loop](Problem-11.md)
+
+Study guide index: 33/35
 
 ---
 <!-- lesson-nav:end -->

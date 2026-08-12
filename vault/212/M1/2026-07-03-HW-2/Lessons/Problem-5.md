@@ -25,33 +25,37 @@ topic-code: MTH212.M1.28
 <a id="introduction"></a>
 ## Introduction
 
-The cue in this problem is a bob moving in a horizontal circle while the string stays tilted. That means the force diagram has two important directions: vertical for balancing gravity, and radial for causing centripetal acceleration.
+A bob of mass $m$ is attached to a light string of length $L$ and travels in a horizontal circle with period $T$. The string remains at angle $\theta$ above the horizontal. What is $\theta$ in terms of $L$, $T$, and $g$?
 
-Determine the angle of a conical pendulum by writing the vertical and radial force equations, using the circle radius from the string geometry, and eliminating the string tension.
+![](<../Source/Images/conical-pendulum-diagram.png>)
 
-Treat $m$, $L$, $T$, and $g$ as given quantities. The goal is to make $\theta$ the subject of the equation.
+The tilted string does two jobs at once. Its upward tension component supports the bob against gravity, while its horizontal component pulls the bob toward the center of the circle. The same angle also determines the circle's radius: the horizontal projection of the string is $L\cos\theta$.
 
-The main trap is that $\theta$ is measured from the horizontal, not from the vertical. That makes the vertical component of tension use $\sin\theta$, and the radius of the circle is $L\cos\theta$.
+Because $\theta$ is measured from the horizontal, the vertical tension component is $T_{\text{tens}}\sin\theta$, not $T_{\text{tens}}\cos\theta$. Keeping that reference line fixed connects the force diagram to the string geometry.
+
+The cheat sheet's conical-pendulum pair $T\cos\phi=mg$ and $T\sin\phi=mv^2/r$ uses an angle $\phi$ measured from the vertical. Here $\phi=90^\circ-\theta$, so the equations are equivalent by the complementary-angle identities. Because $T$ already denotes the period in this lesson, the tension magnitude is written $T_{\text{tens}}$.
+
+A frictionless banked curve gives a useful structural check: one angled real force does two jobs. Its vertical component balances $mg$, and its horizontal component supplies $ma_r$. Dividing or substituting between those component equations eliminates the unknown angled-force magnitude.
 
 ---
 
 <a id="use-the-given-angle-to-choose-components"></a>
 ## Use the Given Angle to Choose Components
 
-**Example:** A bob is attached to a string of length $L$. The string makes an angle $\theta$ with the horizontal while the bob moves in a horizontal circle. Write the radial component of the tension $F_T$, the vertical component of the tension, and the circle radius $r$.
+**Example:** A bob is attached to a string of length $L$. The string makes an angle $\theta$ with the horizontal while the bob moves in a horizontal circle. Write the radial component of the tension $T_{\text{tens}}$, the vertical component of the tension, and the circle radius $r$.
 
 **Explanation**
 
 Because the string angle is measured from the horizontal, the component next to the angle is horizontal:
 
 $$
-F_{T,r}=F_T\cos\theta
+T_{\text{tens},r}=T_{\text{tens}}\cos\theta
 $$
 
 The component opposite the angle is vertical:
 
 $$
-F_{T,y}=F_T\sin\theta
+T_{\text{tens},y}=T_{\text{tens}}\sin\theta
 $$
 
 The circle radius is the horizontal part of the string length:
@@ -63,7 +67,7 @@ $$
 So the useful geometry is
 
 $$
-F_{T,r}=F_T\cos\theta,\qquad F_{T,y}=F_T\sin\theta,\qquad r=L\cos\theta
+T_{\text{tens},r}=T_{\text{tens}}\cos\theta,\qquad T_{\text{tens},y}=T_{\text{tens}}\sin\theta,\qquad r=L\cos\theta
 $$
 
 ```quiz
@@ -75,20 +79,20 @@ content: |-
 options:
 - id: a
   content: |-
-    $F_T\cos\theta$ and $L\sin\theta$
+    $T_{\text{tens}}\cos\theta$ and $L\sin\theta$
 - id: b
   content: |-
-    $F_T\sin\theta$ and $L\cos\theta$
+    $T_{\text{tens}}\sin\theta$ and $L\cos\theta$
   correct: true
 - id: c
   content: |-
-    $F_T\cos\theta$ and $L\cos\theta$
+    $T_{\text{tens}}\cos\theta$ and $L\cos\theta$
 - id: d
   content: |-
-    $F_T\sin\theta$ and $L\sin\theta$
+    $T_{\text{tens}}\sin\theta$ and $L\sin\theta$
 - id: e
   content: |-
-    $F_T$ and $L$
+    $T_{\text{tens}}$ and $L$
 ```
 
 ---
@@ -109,7 +113,7 @@ $$
 becomes
 
 $$
-F_T\cos\theta=ma_r
+T_{\text{tens}}\cos\theta=ma_r
 $$
 
 The bob has no vertical acceleration, so the vertical forces balance. The upward component of tension balances weight:
@@ -119,23 +123,23 @@ $$
 $$
 
 $$
-F_T\sin\theta-mg=0
+T_{\text{tens}}\sin\theta-mg=0
 $$
 
 or
 
 $$
-F_T\sin\theta=mg
+T_{\text{tens}}\sin\theta=mg
 $$
 
 Label these two equations so the later substitution is easier to see:
 
 $$
-F_T\cos\theta=ma_r \tag{1}
+T_{\text{tens}}\cos\theta=ma_r \tag{1}
 $$
 
 $$
-F_T\sin\theta=mg \tag{2}
+T_{\text{tens}}\sin\theta=mg \tag{2}
 $$
 
 ```quiz
@@ -147,20 +151,20 @@ content: |-
 options:
 - id: a
   content: |-
-    $F_T\sin\theta=ma_r$ and $F_T\cos\theta=mg$
+    $T_{\text{tens}}\sin\theta=ma_r$ and $T_{\text{tens}}\cos\theta=mg$
 - id: b
   content: |-
-    $F_T\cos\theta=ma_r$ and $F_T\sin\theta=mg$
+    $T_{\text{tens}}\cos\theta=ma_r$ and $T_{\text{tens}}\sin\theta=mg$
   correct: true
 - id: c
   content: |-
-    $F_T=ma_r$ and $mg=0$
+    $T_{\text{tens}}=ma_r$ and $mg=0$
 - id: d
   content: |-
-    $F_T\cos\theta=mg$ and $F_T\sin\theta=ma_r$
+    $T_{\text{tens}}\cos\theta=mg$ and $T_{\text{tens}}\sin\theta=ma_r$
 - id: e
   content: |-
-    $mg=ma_r$ and $F_T\sin\theta=0$
+    $mg=ma_r$ and $T_{\text{tens}}\sin\theta=0$
 ```
 
 ---
@@ -193,13 +197,13 @@ $$
 Substitute this into the radial force equation:
 
 $$
-F_T\cos\theta=m\left(\dfrac{4\pi^2L\cos\theta}{T^2}\right)
+T_{\text{tens}}\cos\theta=m\left(\dfrac{4\pi^2L\cos\theta}{T^2}\right)
 $$
 
 For a nonzero circular radius, $\cos\theta\neq 0$, so this simplifies to
 
 $$
-F_T=\dfrac{4\pi^2mL}{T^2}
+T_{\text{tens}}=\dfrac{4\pi^2mL}{T^2}
 $$
 
 This removes both $a_r$ and $r$ from equation $(1)$, leaving tension in terms of the given quantities.
@@ -241,16 +245,16 @@ options:
 From the radial equation after substituting the period acceleration,
 
 $$
-F_T=\dfrac{4\pi^2mL}{T^2}
+T_{\text{tens}}=\dfrac{4\pi^2mL}{T^2}
 $$
 
 From vertical force balance,
 
 $$
-F_T\sin\theta=mg
+T_{\text{tens}}\sin\theta=mg
 $$
 
-Substitute the expression for $F_T$ into equation $(2)$:
+Substitute the expression for $T_{\text{tens}}$ into equation $(2)$:
 
 $$
 \left(\dfrac{4\pi^2mL}{T^2}\right)\sin\theta=mg
@@ -310,19 +314,19 @@ options:
 When a conical pendulum angle is measured from the horizontal, use
 
 $$
-F_{T,r}=F_T\cos\theta,\qquad F_{T,y}=F_T\sin\theta,\qquad r=L\cos\theta
+T_{\text{tens},r}=T_{\text{tens}}\cos\theta,\qquad T_{\text{tens},y}=T_{\text{tens}}\sin\theta,\qquad r=L\cos\theta
 $$
 
 Then write
 
 $$
-F_T\cos\theta=ma_r,\qquad F_T\sin\theta=mg,\qquad a_r=\dfrac{4\pi^2r}{T^2}
+T_{\text{tens}}\cos\theta=ma_r,\qquad T_{\text{tens}}\sin\theta=mg,\qquad a_r=\dfrac{4\pi^2r}{T^2}
 $$
 
 Substituting $r=L\cos\theta$ lets the $\cos\theta$ factors cancel from the radial equation, giving
 
 $$
-F_T=\dfrac{4\pi^2mL}{T^2}
+T_{\text{tens}}=\dfrac{4\pi^2mL}{T^2}
 $$
 
 Use the vertical equation to get
@@ -337,7 +341,9 @@ $$
 \theta=\arcsin\left(\dfrac{gT^2}{4\pi^2L}\right)
 $$
 
-The main trap is using the formula for an angle measured from the vertical. Here the angle is measured from the horizontal, so the answer uses $\arcsin$, not $\arccos$ or $\arctan$.
+The disappearance of $m$ is physically meaningful. A heavier bob needs proportionally more tension both to support its weight and to produce its inward acceleration, so the angle for fixed $L$ and period $T$ does not depend on mass.
+
+The angle here is measured from the horizontal. Using the component formulas for an angle measured from the vertical would incorrectly replace the final inverse sine with inverse cosine.
 
 <!-- lesson-nav:start -->
 ---
@@ -349,9 +355,9 @@ The main trap is using the formula for an angle measured from the vertical. Here
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
-Next: [Finding the Minimum Entry Speed for a Loop-the-Loop](Problem-11.md)
+Next: [Finding Radial Acceleration From Inward Forces](../../2026-07-02-M1-5/Lessons/Problem-3.md)
 
-Study guide index: 28/30
+Study guide index: 31/35
 
 ---
 <!-- lesson-nav:end -->

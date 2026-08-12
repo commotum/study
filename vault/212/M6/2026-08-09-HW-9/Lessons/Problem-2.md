@@ -302,7 +302,6 @@ options:
 - Main trap: $L\lambda/a$ is only the center-to-first-minimum distance; omitting the factor of $2$ halves the slit-width answer.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -314,8 +313,7 @@ options:
 [Quiz 4 Study Guide](../../../M7/2026-08-13-Q-4/Study-Guide.md)
 Next: End of Quiz 4 Study Guide.
 
-Study guide index: 11/11
+Study guide index: 08/8
 
 ---
-
 <!-- lesson-nav:end -->

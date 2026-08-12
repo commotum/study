@@ -310,7 +310,6 @@ When the measurement runs from the $-m$ fringe to the $+m$ fringe, use this chec
 The main trap is using the full symmetric separation as $y$. A second common trap is reporting the slit spacing $d$ when the question asks for its reciprocal, the line density $N$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -322,8 +321,7 @@ The main trap is using the full symmetric separation as $y$. A second common tra
 [Quiz 4 Study Guide](../../../M7/2026-08-13-Q-4/Study-Guide.md)
 Next: [Counting Visible Diffraction-Grating Maxima on a Finite Screen](Problem-3.md)
 
-Study guide index: 08/11
+Study guide index: 05/8
 
 ---
-
 <!-- lesson-nav:end -->

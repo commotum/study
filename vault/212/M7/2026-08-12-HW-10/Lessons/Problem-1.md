@@ -294,7 +294,6 @@ options:
 - **Main trap:** Do not treat a familiar phrase as sufficient; a changed angle reference or an omitted physical condition can change whether a statement is true.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -303,11 +302,5 @@ options:
 [[212/Home|Home]]
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
-[Quiz 4 Study Guide](../../2026-08-13-Q-4/Study-Guide.md)
-Next: [Choosing a Refracted Ray at a Boundary](Problem-3.md)
-
-Study guide index: 01/11
-
 ---
-
 <!-- lesson-nav:end -->

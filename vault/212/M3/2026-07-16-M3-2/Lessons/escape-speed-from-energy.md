@@ -316,3 +316,15 @@ v_{\mathrm{esc}}=\sqrt{\frac{2GM}{r}}.
 $$
 
 Check that $GM/r$ has units of speed squared before taking the root. The main traps are using a positive potential-energy sign, confusing the $1/r$ potential with the $1/r^2$ force, omitting the square root, or reporting both signed roots when the question asks for speed.
+
+<!-- lesson-nav:start -->
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+<!-- lesson-nav:end -->

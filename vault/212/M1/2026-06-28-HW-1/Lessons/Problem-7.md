@@ -12,7 +12,7 @@ topic-code: MTH212.M1.07
 - [Finding the Acceleration Direction](#finding-the-acceleration-direction)
 - [Comparing the Two Directions](#comparing-the-two-directions)
 - [Separating Velocity from Acceleration](#separating-velocity-from-acceleration)
-- [Answering the True-or-False Claim](#answering-the-true-or-false-claim)
+- [Decide Whether the Vectors Are Perpendicular](#decide-whether-the-vectors-are-perpendicular)
 
 ## Prerequisites
 
@@ -26,17 +26,25 @@ topic-code: MTH212.M1.07
 <a id="introduction"></a>
 ## Introduction
 
-In uniform circular motion, the object moves around a circle at constant speed. The speed is constant, but the velocity direction keeps changing, so the object still has acceleration.
+Picture an object at the right edge of a circular path. Its position vector $\vec r$ points from the center toward the object, so it points right. Its centripetal acceleration points back toward the center, so it points left. The two vectors lie on the same line but face opposite directions.
 
-The recognition cue is a question comparing $\vec a$ with the radius vector $\vec r$. For uniform circular motion,
+For uniform circular motion, that relationship is written
 
 $$
 \vec a=-\omega^2\vec r.
 $$
 
-The factor $\omega^2$ is positive, so $-\omega^2$ is a negative scalar. A negative scalar reverses a vector's direction; it does not turn the vector by $90^\circ$.
+In the cheat sheet's scalar component notation, the same uniform-circular-motion result is $a_r=|\vec a|=\omega^2r$. The vector equation above adds the inward direction through its minus sign.
 
-So $\vec a$ points opposite $\vec r$. Since opposite directions form a $180^\circ$ angle, not a $90^\circ$ angle, $\vec a$ is not perpendicular to $\vec r$.
+The positive factor $\omega^2$ sets the acceleration's magnitude, while the minus sign reverses the direction of $\vec r$. It does not turn the vector by $90^\circ$. The angle between $\vec a$ and $\vec r$ is $180^\circ$, so they are opposite rather than perpendicular.
+
+The sign depends on the chosen radial axis. If $\hat r$ points outward, then
+
+$$
+\vec a_r=-\frac{v^2}{r}\hat r.
+$$
+
+If the positive radial direction is instead chosen inward, the scalar component is $a_r=+v^2/r$. The coordinate sign changes, but the physical acceleration remains directed toward the center.
 
 ---
 
@@ -226,8 +234,8 @@ options:
 
 ---
 
-<a id="answering-the-true-or-false-claim"></a>
-## Answering the True-or-False Claim
+<a id="decide-whether-the-vectors-are-perpendicular"></a>
+## Decide Whether the Vectors Are Perpendicular
 
 **Example:** In uniform circular motion, true or false: $\vec a$ is perpendicular to $\vec r$.
 
@@ -265,7 +273,7 @@ options:
 
 ## Summary
 
-When a uniform circular motion problem asks how $\vec a$ compares with $\vec r$, use
+In uniform circular motion,
 
 $$
 \vec a=-\omega^2\vec r.
@@ -273,7 +281,7 @@ $$
 
 The radius vector $\vec r$ points from the center to the object. The acceleration $\vec a$ points from the object back toward the center. Therefore $\vec a$ is opposite $\vec r$, not perpendicular to it.
 
-The sign in $\vec a=-\omega^2\vec r$ is the deciding cue: a negative scalar reverses direction instead of making a right angle.
+In $\vec a=-\omega^2\vec r$, the negative scalar reverses the direction of $\vec r$ instead of turning it through a right angle.
 
 The main trap is mixing up acceleration with velocity: $\vec v$ is tangent and perpendicular to $\vec r$, but $\vec a$ is inward and opposite $\vec r$.
 
@@ -287,9 +295,9 @@ The main trap is mixing up acceleration with velocity: $\vec v$ is tangent and p
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
-Next: [Choosing the Acceleration Direction When Circular Motion Speeds Up](Problem-13.md)
+Next: [Checking the Magnitude of Centripetal Acceleration](Problem-9.md)
 
-Study guide index: 07/30
+Study guide index: 06/35
 
 ---
 <!-- lesson-nav:end -->

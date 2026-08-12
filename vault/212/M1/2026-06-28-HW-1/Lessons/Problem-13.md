@@ -11,7 +11,7 @@ topic-code: MTH212.M1.08
 - [Separate the Two Direction Cues](#separate-the-two-direction-cues)
 - [Use Speeding Up to Set the Tangential Direction](#use-speeding-up-to-set-the-tangential-direction)
 - [Add the Inward and Tangential Directions](#add-the-inward-and-tangential-directions)
-- [Check the Original Arrow Choice](#check-the-original-arrow-choice)
+- [Resolve the Arrow Choice](#resolve-the-arrow-choice)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -26,13 +26,15 @@ topic-code: MTH212.M1.08
 <a id="introduction"></a>
 ## Introduction
 
-When an object moves in a circle and its speed is changing, its acceleration has two direction parts:
+The diagram below shows an object at the upper-left part of a circular path, moving counterclockwise and speeding up. Which arrow shows its acceleration?
+
+![](<../Source/Images/problem-13-acceleration-arrows.png>)
+
+The object's velocity is changing in two ways at once: its direction is turning around the circle, and its magnitude is increasing. Its acceleration therefore has two parts:
 
 $$
-\vec{a}=\vec{a}_{\text{centripetal}}+\vec{a}_{\text{tangential}}.
+\vec{a}=\vec{a}_r+\vec{a}_t.
 $$
-
-The recognition cue is a circular path together with a phrase like "speeding up" or "slowing down." Treat the acceleration arrow as a resultant: combine the inward direction with the correct tangential direction, then choose the arrow that points between those two components.
 
 For an object that is speeding up:
 
@@ -40,9 +42,15 @@ For an object that is speeding up:
 - the tangential part points along the direction of motion;
 - the total acceleration points between those two directions.
 
-If the speed were constant, there would be no tangential part. If the object were slowing down, the tangential part would point opposite the motion.
+If the speed were constant, there would be no tangential part. If the object were slowing down, the tangential part would point opposite the motion. Here the correct arrow must include both the inward turn and the forward change in speed.
 
-The main trap is choosing only one component. A purely inward arrow would fit constant-speed circular motion, and a purely tangent arrow would fit the direction of velocity, not the full acceleration.
+A useful functional test is that $a_r$ changes the direction of $\vec v$, while
+
+$$
+a_t=\frac{dv}{dt}
+$$
+
+changes its magnitude. Because the radial-tangential axes rotate with the particle, redraw “inward” and “forward tangent” at the particle's current location before adding the two components.
 
 ---
 
@@ -60,7 +68,7 @@ Second, the speed is increasing, so there is also a tangential acceleration comp
 So the full acceleration is not just inward and not just tangent. It is the vector sum:
 
 $$
-\vec{a}=\vec{a}_{\text{inward}}+\vec{a}_{\text{tangent with motion}}.
+\vec{a}=\vec{a}_r+\vec{a}_t.
 $$
 
 ```quiz
@@ -163,12 +171,10 @@ options:
 
 ---
 
-<a id="check-the-original-arrow-choice"></a>
-## Check the Original Arrow Choice
+<a id="resolve-the-arrow-choice"></a>
+## Resolve the Arrow Choice
 
-**Example:** In the original problem, the object is at the upper-left part of the circle, moving counterclockwise and speeding up. Which arrow represents its acceleration?
-
-![](<../Source/Images/problem-13-acceleration-arrows.png>)
+**Example:** In the diagram above, the object is at the upper-left part of the circle, moving counterclockwise and speeding up. Which arrow represents its acceleration?
 
 **Explanation**
 
@@ -180,7 +186,7 @@ Since the object is speeding up, the tangential part points with the motion, dow
 
 Among the choices, arrow C is the arrow that has both the inward component and the forward tangential component.
 
-The other common-looking choices each lose one cue:
+The other common-looking choices each omit one component:
 
 - A is tangent-only.
 - E is too close to inward-only.
@@ -218,7 +224,7 @@ options:
 
 For circular motion with changing speed, do not choose the acceleration direction from the tangent alone.
 
-Use this checklist:
+Build the total acceleration from its components:
 
 1. Draw the inward component toward the center.
 2. Find the tangent direction from the direction of motion.
@@ -227,7 +233,7 @@ Use this checklist:
 5. If the object is slowing down, point the tangential component opposite the motion.
 6. Choose the resultant arrow between the inward component and the tangential component.
 
-For the original problem, counterclockwise motion at the upper-left point gives a down-left tangential component, while the center is down-right. Speeding up means the acceleration is the sum of those two directions, so the correct arrow is C.
+In the diagram above, counterclockwise motion at the upper-left point gives a down-left tangential component, while the center is down-right. Speeding up means the acceleration is the sum of those two directions, so the correct arrow is C.
 
 <!-- lesson-nav:start -->
 ---
@@ -241,7 +247,7 @@ For the original problem, counterclockwise motion at the upper-left point gives 
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: [Choosing the Net Force Direction for Speeding-Up Circular Motion](../../2026-07-02-M1-5/Lessons/Problem-1.md)
 
-Study guide index: 08/30
+Study guide index: 09/35
 
 ---
 <!-- lesson-nav:end -->

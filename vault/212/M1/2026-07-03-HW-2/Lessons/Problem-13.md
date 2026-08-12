@@ -12,7 +12,7 @@ topic-code: MTH212.M1.30
 - [Set the Normal Force to Zero at Lift-Off](#set-the-normal-force-to-zero-at-lift-off)
 - [Use Energy to Find the Speed at an Angle](#use-energy-to-find-the-speed-at-an-angle)
 - [Combine the Two Equations](#combine-the-two-equations)
-- [Match the Critical Angle to the Choices](#match-the-critical-angle-to-the-choices)
+- [Evaluate the Critical Angle](#evaluate-the-critical-angle)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -27,16 +27,15 @@ topic-code: MTH212.M1.30
 <a id="introduction"></a>
 ## Introduction
 
-The cue in this problem is an object sliding without friction on the outside of a sphere, then losing contact with the surface. The useful move is to solve for the angle by combining two equations that describe the same instant:
-
-1. A radial force equation, because losing contact is a force condition.
-2. An energy equation, because the speed changes as the object drops in height.
-
-For the igloo problem, the angle $\theta$ is measured from the vertical through the top of the sphere.
+A penguin starts from rest at the top of a spherical igloo of radius $r$ and slides down its right side. With friction neglected, the penguin eventually leaves the surface. At what angle $\theta_c$, measured from the vertical through the top of the igloo, does contact end?
 
 ![](<../Source/Images/igloo-slide-diagram.png>)
 
-At the critical angle, the surface is just about to stop pushing on the penguin. That means $N=0$, not that the radial acceleration is zero. The target variable is $\theta_c$, and the algebra will eventually reduce to solving for $\cos\theta_c$.
+While the penguin remains on the igloo, the surface pushes outward with a normal force. As the penguin descends, the inward component of gravity decreases while the speed—and therefore the required inward acceleration—increases. The normal force falls until the surface no longer needs to push at all. That instant has $N=0$, but the penguin still has radial acceleration.
+
+No outward force throws the penguin off the igloo. This transfers the same inertia reasoning used for a rider cresting a hill: the penguin tends to continue along its instantaneous tangent while the surface curves away beneath it. Lift-off is the disappearance of the surface's contact push, not the disappearance of acceleration.
+
+The contact condition relates the speed to $\theta_c$. Conservation of energy supplies a second relation for that same speed after the penguin has dropped from the top.
 
 ---
 
@@ -68,6 +67,8 @@ mg\cos\theta-N=m\dfrac{v^2}{r}.
 $$
 
 The main sign check is that the normal force subtracts because the igloo pushes outward, away from the center.
+
+This equation controls only the radial component. Before lift-off, gravity also has a tangential component that changes the penguin's speed, so the motion is nonuniform. At lift-off the acceleration is neither zero nor purely tangential: with $N=0$, gravity still has both radial and tangential components at that angle.
 
 ```quiz
 type: radio
@@ -282,8 +283,8 @@ options:
 
 ---
 
-<a id="match-the-critical-angle-to-the-choices"></a>
-## Match the Critical Angle to the Choices
+<a id="evaluate-the-critical-angle"></a>
+## Evaluate the Critical Angle
 
 **Example:** A penguin lying on its belly slides down the right side of a spherical igloo, starting from rest. Neglecting friction, it loses contact at angle $\theta_c$ from the vertical. To two significant figures, what is $\theta_c$?
 
@@ -301,13 +302,13 @@ $$
 \theta_c=\cos^{-1}\left(\dfrac{2}{3}\right)\approx 48.2^\circ.
 $$
 
-Since the answer choices are given as whole degrees, round the calculator value to two significant figures:
+To two significant figures, the calculator value becomes
 
 $$
 \theta_c\approx 48^\circ.
 $$
 
-Among the given choices, the matching answer is $48^\circ$.
+Thus the critical angle is $48^\circ$.
 
 ```quiz
 type: radio
@@ -338,7 +339,7 @@ options:
 
 ## Summary
 
-For an object sliding without friction on the outside of a sphere, the cue is "loses contact." Use the radial force equation and set $N=0$ at the critical angle:
+At the instant the penguin loses contact with the frictionless igloo, the normal force is zero. The radial equation is therefore
 
 $$
 mg\cos\theta=m\dfrac{v^2}{r}.
@@ -350,7 +351,7 @@ $$
 v^2=2gr(1-\cos\theta).
 $$
 
-Combine the two equations only after they describe the same instant. The main trap is setting the centripetal term to zero; at lift-off, the normal force is zero, but the object still has inward radial acceleration.
+The two equations can be combined because they describe the same instant. At lift-off, the normal force is zero, but the penguin still has inward radial acceleration; setting the centripetal term to zero would describe neither its motion nor the contact condition.
 
 <!-- lesson-nav:start -->
 ---
@@ -364,7 +365,7 @@ Combine the two equations only after they describe the same instant. The main tr
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: End of Quiz 1 Study Guide.
 
-Study guide index: 30/30
+Study guide index: 35/35
 
 ---
 <!-- lesson-nav:end -->

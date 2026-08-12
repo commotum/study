@@ -339,3 +339,15 @@ For unchanged point masses that all move by the same radial factor $k$:
 4. Combine the ratios: $\omega_f=\omega_i/k^2$.
 
 The main trap is using $k$ instead of $k^2$. A quick direction check is that moving mass outward slows the rotation, while moving it inward speeds the rotation, provided the net external torque is negligible. Use the ratio shortcut only when all unchanged masses share the same radial factor; otherwise compare the full initial and final inertia sums.
+
+<!-- lesson-nav:start -->
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+<!-- lesson-nav:end -->

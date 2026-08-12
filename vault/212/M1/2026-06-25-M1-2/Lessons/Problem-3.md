@@ -26,16 +26,27 @@ topic-code: MTH212.M1.39
 <a id="introduction"></a>
 ## Introduction
 
-In the rotating-disk setup, the cue is that the disks turn through a fixed angular separation $\theta$ while the bullet travels the distance $D$ between the disks.
+Two disks are fixed to the same rotating shaft, separated by a distance $D$. A bullet passes through a hole in the first disk and must reach the second disk just as its hole rotates into the bullet's path. The holes have a fixed angular separation $\theta$, and the shaft completes one revolution in period $T$.
 
 ![](<../Source/Images/bullet-through-rotating-disks.png>)
 
-There are two related times:
+Should $T$ appear in the numerator or denominator of the formula for the required bullet speed?
 
-- $T$ is the time for one full revolution.
-- $\Delta t$ is the bullet's travel time between the disks.
+The bullet and the shaft share the same interval $\Delta t$: while the bullet crosses the distance $D$, the shaft rotates through $\theta$. Keep this travel time distinct from the rotation period $T$. A longer period means the shaft rotates more slowly, so the second hole takes longer to reach the bullet's path. The bullet can then cover the same distance more slowly. Therefore, increasing $T$ must decrease the required bullet speed.
 
-To decide whether $T$ belongs in the numerator or denominator of the bullet-speed formula, first find how $T$ affects $\Delta t$, then put that travel time into
+Before deriving anything, vary one quantity at a time. A larger disk spacing requires a faster bullet, while a larger period or a larger angular separation gives the bullet more time and requires a slower bullet:
+
+$$
+D\uparrow\Rightarrow v\uparrow,
+\qquad
+T\uparrow\Rightarrow v\downarrow,
+\qquad
+\theta\uparrow\Rightarrow v\downarrow.
+$$
+
+The final formula should therefore have the form $v\propto D/(T\theta)$, apart from a dimensionless factor.
+
+The equations below turn that physical relationship into the speed formula, beginning with
 
 $$
 v=\dfrac{D}{\Delta t}.
@@ -56,7 +67,7 @@ $$
 \omega=\dfrac{2\pi}{T}.
 $$
 
-This is the first placement cue: $T$ is in the denominator of angular speed because a longer period means fewer radians per second.
+The period is in the denominator because a longer period means fewer radians per second.
 
 ```quiz
 type: radio
@@ -82,30 +93,43 @@ options:
 <a id="find-the-time-for-a-fixed-angle"></a>
 ## Find the Time for a Fixed Angle
 
-**Example:** If the shaft turns with angular speed $\omega$ and must rotate through angle $\theta$, how long does that take?
+**Example:** A shaft completes one revolution in period $T$. If it must rotate through angle $\theta$, how long does that take?
 
 **Explanation**
 
-Start from
+Think of the period $T$ as the time for one complete revolution. One complete revolution is $2\pi$ radians. For constant angular speed, the fraction of a full rotation equals the fraction of a full period:
 
 $$
-\omega=\dfrac{\theta}{\Delta t}.
+\dfrac{\text{angle rotated}}{\text{full rotation}}
+=
+\dfrac{\text{time needed}}{\text{time for a full rotation}}.
 $$
 
-Solving for time gives
+Substitute the angle $\theta$, the full-rotation angle $2\pi$, the rotation time $\Delta t$, and the period $T$:
 
 $$
-\Delta t=\dfrac{\theta}{\omega}.
+\dfrac{\theta}{2\pi}=\dfrac{\Delta t}{T}.
 $$
 
-Since $\omega=\dfrac{2\pi}{T}$, substitute and divide by the fraction:
+Multiplying both sides by $T$ gives
 
 $$
-\Delta t=\dfrac{\theta}{2\pi/T}
-       =\dfrac{\theta T}{2\pi}.
+\boxed{\Delta t=\dfrac{\theta}{2\pi}T}.
 $$
 
-The bullet's travel time is proportional to $T$. A slower rotation gives the bullet more time to cross from one disk to the other.
+The factor $\theta/(2\pi)$ is the fraction of a full turn the shaft must complete. For example, if the shaft rotates halfway around, then $\theta=\pi$ and
+
+$$
+\Delta t=\dfrac{\pi}{2\pi}T=\dfrac{T}{2}.
+$$
+
+That makes sense: half a rotation takes half a period. The main idea is
+
+$$
+\boxed{\text{rotation time}=(\text{fraction of a full turn})(T)}.
+$$
+
+This is equivalent to using $\Delta t=\theta/\omega$ with $\omega=2\pi/T$, but the proportion shows the physical relationship directly. The bullet's travel time is proportional to $T$: a slower rotation gives the bullet more time to cross from one disk to the other.
 
 ```quiz
 type: radio
@@ -215,7 +239,7 @@ options:
 
 ## Summary
 
-When a rotating-disk problem asks where the period $T$ belongs in a bullet-speed formula, use this chain:
+The bullet crosses the gap during the same time that the shaft rotates through the holes' angular separation:
 
 $$
 \omega=\dfrac{2\pi}{T}, \qquad
@@ -233,6 +257,11 @@ The period belongs in the denominator of $v$ because increasing the period makes
 
 [[212/Home|Home]]
 [[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
+Next: [Finding the Minimum Period Before a Coin Slips](../../2026-07-05-PQ-1/Lessons/Problem-4.md)
+
+Study guide index: 15/35
 
 ---
 <!-- lesson-nav:end -->

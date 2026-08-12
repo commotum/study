@@ -12,7 +12,7 @@ topic-code: MTH212.M1.09
 - [Find the Forward Tangent](#find-the-forward-tangent)
 - [Combine Inward and Forward](#combine-inward-and-forward)
 - [Avoid the Tangent-Only Trap](#avoid-the-tangent-only-trap)
-- [Original-Style Check](#original-style-check)
+- [Choose From the Diagram Set](#choose-from-the-diagram-set)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -26,16 +26,16 @@ topic-code: MTH212.M1.09
 <a id="introduction"></a>
 ## Introduction
 
-When a particle moves around a circle and changes speed, the net force is not just tangent to the circle and not just toward the center. The cue is the phrase **speeding up in the counterclockwise direction**. Use it to combine two directions:
+The diagrams below show the same particle at the lower-right side of a circle with different possible net-force arrows. Which arrow could make the particle move counterclockwise while speeding up?
+
+![](<../Source/Images/circular-motion-net-force-options.png>)
+
+The net force must change both the direction and the magnitude of the particle's velocity. It therefore combines two components:
 
 - an inward component toward the center of the circle
 - a tangential component forward along the counterclockwise motion
 
-For each diagram choice, ask three questions:
-
-1. Does the arrow include an inward part?
-2. Does the tangential part point forward for speeding up?
-3. Does the final arrow point between those two directions?
+At the lower-right point, inward is up-left and the counterclockwise tangent is up-right. Because the particle is speeding up, its tangential force component points forward along that up-right tangent. The net-force arrow must lie between the two component directions.
 
 ---
 
@@ -55,6 +55,16 @@ So the net force must combine:
 $$
 \text{inward up-left}+\text{tangential up-right}.
 $$
+
+A fast way to test candidate arrows is to project each one onto inward $+\hat r$ and forward $+\hat t$. For a particle that is speeding up, both components must be positive:
+
+$$
+\sum F_r=m\frac{v^2}{r}>0,
+\qquad
+\sum F_t=m\frac{dv}{dt}>0.
+$$
+
+Any arrow missing either projection fails. Because mass is a positive scalar, this is exactly the same direction test used for the acceleration vector.
 
 ```quiz
 type: radio
@@ -224,12 +234,10 @@ options:
 
 ---
 
-<a id="original-style-check"></a>
-## Original-Style Check
+<a id="choose-from-the-diagram-set"></a>
+## Choose From the Diagram Set
 
 **Example:** A particle is moving around a circle, with an arrow depicting the magnitude and direction of the net force acting on the particle. Which diagram represents a particle speeding up in the counterclockwise direction?
-
-![](<../Source/Images/counterclockwise-speeding-up-net-force.png>)
 
 **Explanation**
 
@@ -247,7 +255,7 @@ id: p1-q5
 content: |-
   Which diagram represents a particle speeding up in the counterclockwise direction?
 
-  ![](<../Source/Images/counterclockwise-speeding-up-net-force.png>)
+  ![](<../Source/Images/circular-motion-net-force-options.png>)
 options:
 - id: a
   content: |-
@@ -316,7 +324,7 @@ For circular motion with changing speed:
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: [Reading Net Force Arrows for Circular Motion](../../2026-07-05-PQ-1/Lessons/Problem-2.md)
 
-Study guide index: 09/30
+Study guide index: 10/35
 
 ---
 <!-- lesson-nav:end -->

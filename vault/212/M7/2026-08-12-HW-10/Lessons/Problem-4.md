@@ -185,7 +185,6 @@ For a plane mirror, use the checklist **V-U-S-E**:
 For a compound answer choice, test type, orientation, and location separately. Select a description only if every part passes; otherwise, “none of the above” may be the correct choice.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -195,5 +194,4 @@ For a compound answer choice, test type, orientation, and location separately. S
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

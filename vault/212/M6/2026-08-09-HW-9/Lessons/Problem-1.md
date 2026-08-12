@@ -262,7 +262,6 @@ options:
 For the given choices, $a=10\lambda$ is the only width with a clear, non-boundary diffraction pattern.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -272,5 +271,4 @@ For the given choices, $a=10\lambda$ is the only width with a clear, non-boundar
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

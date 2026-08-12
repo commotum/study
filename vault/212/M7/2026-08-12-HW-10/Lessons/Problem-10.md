@@ -188,7 +188,6 @@ To classify a thin lens from a ray diagram:
 Do not classify the lens from the ray's slope, the presence of focal-point labels, or the distance labels alone. Follow what the lens actually does to the ray.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -198,5 +197,4 @@ Do not classify the lens from the ray's slope, the presence of focal-point label
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

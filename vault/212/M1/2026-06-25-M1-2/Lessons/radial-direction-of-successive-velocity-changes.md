@@ -288,3 +288,15 @@ When successive equal-speed velocity arrows are tangent to a circular path:
 5. Read the resultant's direction and repeat for each adjacent pair.
 
 The repeated result is radial and inward. Do not confuse the tangent direction of $\vec v$ with the inward direction of $\Delta\vec v$, and do not reverse the subtraction order. The inward-only rule requires constant speed; if the arrow lengths change, check for a tangential component too.
+
+<!-- lesson-nav:start -->
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+<!-- lesson-nav:end -->

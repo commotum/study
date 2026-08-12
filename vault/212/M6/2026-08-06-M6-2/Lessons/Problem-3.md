@@ -453,7 +453,6 @@ For a finite screen centered on the grating axis:
 The main traps are using the full screen width instead of its half-width, counting every physically possible order without checking the screen, rounding an order bound upward, and forgetting the central maximum.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -465,8 +464,7 @@ The main traps are using the full screen width instead of its half-width, counti
 [Quiz 4 Study Guide](../../../M7/2026-08-13-Q-4/Study-Guide.md)
 Next: [Finding Slit Width from Adjacent Single-Slit Minima](Problem-1.md)
 
-Study guide index: 09/11
+Study guide index: 06/8
 
 ---
-
 <!-- lesson-nav:end -->

@@ -309,7 +309,6 @@ For an order-$m$ diffraction maximum on a flat screen:
 The main trap is using $L\sin\theta$. That is a small-angle approximation, not the exact flat-screen geometry.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -319,5 +318,4 @@ The main trap is using $L\sin\theta$. That is a small-angle approximation, not t
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

@@ -11,7 +11,7 @@ topic-code: MTH212.M1.04
 - [Recognizing the Direction of Circular Acceleration](#recognizing-the-direction-of-circular-acceleration)
 - [Using the Speed Formula for the Magnitude](#using-the-speed-formula-for-the-magnitude)
 - [Rewriting the Magnitude With Angular Speed](#rewriting-the-magnitude-with-angular-speed)
-- [Checking a True-or-False Statement](#checking-a-true-or-false-statement)
+- [Read a Magnitude Statement](#read-a-magnitude-statement)
 
 ## Prerequisites
 
@@ -26,15 +26,15 @@ topic-code: MTH212.M1.04
 <a id="introduction"></a>
 ## Introduction
 
-In uniform circular motion, the speed stays constant, but the velocity vector keeps changing direction. That change in direction gives the object an acceleration toward the center of the circle.
-
-The recognition cue is a statement about the magnitude of $\vec{a}$ for an object moving in a circle. The reusable check is:
+Imagine a car rounding a circular track while its speedometer stays fixed. The car is still accelerating because its velocity turns continuously with the road. That acceleration points toward the center of the track. A faster car or a tighter turn changes the velocity direction more rapidly, which is captured by
 
 $$
 |\vec{a}|=\frac{v^2}{r}.
 $$
 
-If the problem also gives angular speed $\omega$, use
+Because uniform circular motion has $a_t=0$, this magnitude is the radial acceleration used on the cheat sheet: $a_r=|\vec a|$.
+
+If the motion is described by angular speed $\omega$, use
 
 $$
 v=\omega r.
@@ -56,15 +56,27 @@ $$
 |\vec{a}|=\frac{v^2}{r}=\omega^2r.
 $$
 
-The main trap is mixing up the vector direction with the magnitude. The acceleration vector points inward, but its magnitude is the positive scalar $\dfrac{v^2}{r}$.
-
-That means the statement
+The acceleration vector points inward, but its magnitude is the positive scalar $\dfrac{v^2}{r}$. Thus the statement
 
 $$
 |\vec{a}|=\frac{v^2}{r}
 $$
 
-is different from a statement about the whole vector $\vec{a}$.
+describes how large the acceleration is, not which way it points.
+
+The geometry also explains why the speed is squared. At two nearby instants, the triangle formed by the velocity vectors is similar to the triangle formed by the radius vectors, so
+
+$$
+\frac{\Delta v}{v}=\frac{\Delta s}{r},
+$$
+
+where $\Delta v$ is the magnitude of the change in velocity. Divide by $\Delta t$ and take the short-time limit:
+
+$$
+a_r
+=\frac{v}{r}\lim_{\Delta t\to 0}\frac{\Delta s}{\Delta t}
+=\frac{v^2}{r}.
+$$
 
 ---
 
@@ -221,8 +233,8 @@ options:
 
 ---
 
-<a id="checking-a-true-or-false-statement"></a>
-## Checking a True-or-False Statement
+<a id="read-a-magnitude-statement"></a>
+## Read a Magnitude Statement
 
 **Example:** True or false: for an object in uniform circular motion, $\vec{a}$ has magnitude $\dfrac{v^2}{r}$.
 
@@ -306,7 +318,7 @@ $$
 |\vec{a}|=\frac{v^2}{r}.
 $$
 
-If the problem uses angular speed, substitute $v=\omega r$:
+When the motion is described by angular speed, substitute $v=\omega r$:
 
 $$
 \frac{v^2}{r}
@@ -328,9 +340,9 @@ The statement "$\vec{a}$ has magnitude $\dfrac{v^2}{r}=\omega^2r$" is true. It d
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
-Next: [Recognizing Uniform Circular Motion](../../2026-07-03-HW-2/Lessons/Problem-1.md)
+Next: [Finding the Net-Force Direction in Circular Motion](../../2026-07-03-HW-2/Lessons/Problem-4.md)
 
-Study guide index: 04/30
+Study guide index: 07/35
 
 ---
 <!-- lesson-nav:end -->

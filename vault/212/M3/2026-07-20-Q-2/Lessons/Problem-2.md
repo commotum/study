@@ -292,7 +292,6 @@ Use this checklist:
 The main trap is comparing radii directly. Radius changes both $I$ and $\omega$ in opposite ways, so it cancels from the center-of-mass speed for geometrically similar rolling objects.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -302,5 +301,4 @@ The main trap is comparing radii directly. Radius changes both $I$ and $\omega$ 
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

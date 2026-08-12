@@ -357,7 +357,6 @@ When a grating problem locates a bright fringe on a screen:
 Check that $\lambda\leq d/m$. The main trap is replacing $\sin\theta$ with $y/L$: that is only a small-angle approximation, so for a visibly displaced fringe, use the exact triangle.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -369,8 +368,7 @@ Check that $\lambda\leq d/m$. The main trap is replacing $\sin\theta$ with $y/L$
 [Quiz 4 Study Guide](../../../M7/2026-08-13-Q-4/Study-Guide.md)
 Next: [Finding Diffraction-Grating Line Density from Symmetric Fringes](../../2026-08-06-M6-2/Lessons/Problem-2.md)
 
-Study guide index: 07/11
+Study guide index: 04/8
 
 ---
-
 <!-- lesson-nav:end -->

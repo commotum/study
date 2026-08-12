@@ -25,15 +25,11 @@ topic-code: MTH212.M1.24
 <a id="introduction"></a>
 ## Introduction
 
-When a car moves around a banked curve with friction, the maximum-speed case has a specific cue: the car is just about to slide up the bank. Static friction opposes that impending motion, so it points down the slope of the bank.
+A $1400\ \mathrm{kg}$ car travels around a curve of radius $55\ \mathrm{m}$. The road is banked at $12^\circ$, and the coefficient of static friction between the tires and the road is $0.65$. What is the fastest the car can travel without sliding?
 
-The task is to compute the maximum speed by combining the radial force equation with the vertical force equation:
+![](<../Source/Images/banked-curve-car-diagram.png>)
 
-$$
-v_{\max}=\sqrt{rg\left(\frac{\sin\theta+\mu_s\cos\theta}{\cos\theta-\mu_s\sin\theta}\right)}.
-$$
-
-The important work is knowing why the signs in that fraction look that way.
+At that limiting speed, the tires are on the verge of slipping up the bank. Static friction opposes the impending slip, so it points down the bank. Its horizontal component helps turn the car inward, while its vertical component points downward. The normal force must both support the car against gravity and contribute to the inward force needed for the turn.
 
 ---
 
@@ -142,6 +138,8 @@ options:
 **Example:** Starting from the maximum-speed equations, solve for $v_{\max}$.
 
 **Explanation**
+
+First count unknowns. At the maximum-speed threshold, $f_s=\mu_sN$, so friction is not a third independent unknown. With the givens fixed, the two unknowns are $N$ and $v$, matched by the vertical and radial equations. Rearranging each equation as $N$ times a trigonometric factor and then dividing is a deliberate elimination step: both $N$ and $m$ cancel at once.
 
 Start with the two equations:
 
@@ -271,7 +269,7 @@ options:
 <a id="summary"></a>
 ## Summary
 
-For the maximum speed on a frictional banked curve, use the cue "about to slide up the bank." That means static friction points down the bank.
+At the maximum speed on a frictional banked curve, the car is about to slide up the bank, so static friction points down the bank.
 
 The force equations are
 
@@ -291,9 +289,23 @@ $$
 v_{\max}=\sqrt{rg\left(\frac{\sin\theta+\mu_s\cos\theta}{\cos\theta-\mu_s\sin\theta}\right)}.
 $$
 
-The main trap is using the minimum-speed signs. For maximum speed, friction points down the bank, so it adds inward force and points partly downward.
+Two limiting-case checks expose sign errors quickly. Setting $\mu_s=0$ must recover the frictionless design speed,
 
-The mass may be given, but it cancels out. Use the mass only if you are later asked for $N$ or $f_s$, not when the target is $v_{\max}$.
+$$
+v=\sqrt{rg\tan\theta}.
+$$
+
+Setting $\theta=0$ must recover the flat-curve result,
+
+$$
+v_{\max}=\sqrt{\mu_srg}.
+$$
+
+The formula passes both checks.
+
+Using the signs for the minimum-speed case reverses friction. At maximum speed, friction adds inward force and points partly downward.
+
+The mass cancels from the speed calculation. It would still be needed to find $N$ or $f_s$.
 
 <!-- lesson-nav:start -->
 ---
@@ -307,7 +319,7 @@ The mass may be given, but it cancels out. Use the mass only if you are later as
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: [Deciding True Statements About Static Friction on a Banked Turn](../../2026-07-03-HW-2/Lessons/Problem-9.md)
 
-Study guide index: 24/30
+Study guide index: 27/35
 
 ---
 <!-- lesson-nav:end -->

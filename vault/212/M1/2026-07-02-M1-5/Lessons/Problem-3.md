@@ -11,7 +11,7 @@ topic-code: MTH212.M1.55
 - [Set the Inward Radial Equation](#set-the-inward-radial-equation)
 - [Resolve Weight Onto the Radial Axis](#resolve-weight-onto-the-radial-axis)
 - [Solve for the Radial Acceleration](#solve-for-the-radial-acceleration)
-- [Use the Given Numbers and Round](#use-the-given-numbers-and-round)
+- [Evaluate the Ball's Radial Acceleration](#evaluate-the-balls-radial-acceleration)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -26,31 +26,35 @@ topic-code: MTH212.M1.55
 <a id="introduction"></a>
 ## Introduction
 
-In this problem, the ball is moving in a vertical circle and the $r$-axis is defined to point inward along the string. When the question asks for radial acceleration, use Newton's second law only along that inward radial axis:
-
-$$
-\sum F_r = ma_r.
-$$
-
-The recognition cue is the inward $r$-axis. Any force component that points toward the center is positive in the radial equation. Use this order: choose the positive radial direction, keep only radial force components, then isolate $a_r$.
+A $0.56\ \mathrm{kg}$ ball is tied to a $0.88\ \mathrm{m}$ string and swung clockwise in a vertical circle. At the position shown, the string tension is $1.2\ \mathrm{N}$ and the marked angle is $14^\circ$. What is the magnitude of the ball's radial acceleration at that instant?
 
 ![](../Source/Images/vertical-circle-ball-string-diagram.png)
+
+The inward $r$-axis lies along the string toward the center. Tension points entirely along that axis, and gravity has a component along it as well. Both contributions point inward at the shown position, so Newton's second law in the radial direction is
+
+$$
+T_{\text{tens}}+mg\cos\theta=ma_r.
+$$
+
+The string length would connect $a_r$ to the ball's speed through $a_r=v^2/L$, but no speed is given. The two force components already determine the acceleration directly.
 
 ---
 
 <a id="set-the-inward-radial-equation"></a>
 ## Set the Inward Radial Equation
 
-**Example:** A ball is at the upper-left part of a vertical circle. The $r$-axis points inward along the string, and the string tension is $T$. Write the radial force equation before substituting numbers.
+**Example:** A ball is at the upper-left part of a vertical circle. The $r$-axis points inward along the string, and the string tension is $T_{\text{tens}}$. Write the radial force equation before substituting numbers.
 
 **Explanation**
 
-Tension points along the string toward the center, so $T$ is positive in the inward radial direction. Gravity points downward, and at this position part of gravity also points inward.
+Tension points along the string toward the center, so $T_{\text{tens}}$ is positive in the inward radial direction. Gravity points downward, and at this position part of gravity also points inward.
+
+The force directions must be correct, but the relative arrow lengths do not need to be guessed before solving. The force equations determine the needed magnitudes.
 
 Call the inward component of gravity $F_{g,r}$. Then
 
 $$
-T + F_{g,r} = ma_r.
+T_{\text{tens}} + F_{g,r} = ma_r.
 $$
 
 The equation should include only radial components. Tangential components do not determine $a_r$, and the full weight $mg$ should not be placed into the radial equation unless the entire weight points along the radial axis.
@@ -60,24 +64,24 @@ type: radio
 id: p3-q1-radial-equation
 shuffle: true
 content: |-
-  A ball is in a vertical circle, the $r$-axis points inward along the string, and the tension is $T$. If the inward component of gravity is $F_{g,r}$, which equation correctly sets up the radial direction?
+  A ball is in a vertical circle, the $r$-axis points inward along the string, and the tension is $T_{\text{tens}}$. If the inward component of gravity is $F_{g,r}$, which equation correctly sets up the radial direction?
 options:
 - id: a
   content: |-
-    $T + F_{g,r} = ma_r$
+    $T_{\text{tens}} + F_{g,r} = ma_r$
   correct: true
 - id: b
   content: |-
-    $T - F_{g,r} = ma_r$
+    $T_{\text{tens}} - F_{g,r} = ma_r$
 - id: c
   content: |-
     $mg = ma_r$
 - id: d
   content: |-
-    $T = ma_t$
+    $T_{\text{tens}} = ma_t$
 - id: e
   content: |-
-    $T + mg = ma_r$
+    $T_{\text{tens}} + mg = ma_r$
 ```
 
 ---
@@ -89,13 +93,15 @@ options:
 
 **Explanation**
 
-At the shown position, the inward direction from the ball to the center is tilted by the same angle $\theta$ from the downward vertical. Weight points downward, so the inward radial component is the adjacent component of $mg$:
+Draw the component triangle only after the $r$- and $t$-axes are fixed, and make its sides parallel to those axes. Use the angle between $mg$ and the radial axis, not merely whichever angle happens to be labeled in the original picture.
+
+At the shown position, the inward direction from the ball to the center is tilted by angle $\theta$ from the downward direction of $mg$. The radial side of the component triangle is adjacent to $\theta$, so
 
 $$
 F_{g,r} = mg\cos\theta.
 $$
 
-This component is positive because it points partly inward. The common check is: adjacent to the marked angle gives cosine; opposite to the marked angle would give sine.
+This component is positive because it points partly inward. The common check is: adjacent to the angle between the force and the chosen axis gives cosine; opposite gives sine.
 
 ```quiz
 type: radio
@@ -127,20 +133,20 @@ options:
 <a id="solve-for-the-radial-acceleration"></a>
 ## Solve for the Radial Acceleration
 
-**Example:** A ball has $T=2.4\ \mathrm{N}$, $m=0.60\ \mathrm{kg}$, and $\theta=60^\circ$. Find $a_r$.
+**Example:** A ball has $T_{\text{tens}}=2.4\ \mathrm{N}$, $m=0.60\ \mathrm{kg}$, and $\theta=60^\circ$. Find $a_r$.
 
 **Explanation**
 
 Start with the inward radial equation:
 
 $$
-T + mg\cos\theta = ma_r.
+T_{\text{tens}} + mg\cos\theta = ma_r.
 $$
 
-The target variable is $a_r$. Treat $T$, $m$, $g$, and $\theta$ as known quantities, then divide every force term by $m$:
+Divide every force term by $m$ to isolate the radial acceleration:
 
 $$
-a_r = \frac{T}{m} + g\cos\theta.
+a_r = \frac{T_{\text{tens}}}{m} + g\cos\theta.
 $$
 
 Now substitute. Since the angle is given in degrees, evaluate the cosine in degree mode:
@@ -156,7 +162,7 @@ type: radio
 id: p3-q3-solve-acceleration
 shuffle: true
 content: |-
-  A ball in the same setup has $T=3.0\ \mathrm{N}$, $m=0.50\ \mathrm{kg}$, and $\theta=60^\circ$. Using $a_r=\frac{T}{m}+g\cos\theta$, what is $a_r$?
+  A ball in the same setup has $T_{\text{tens}}=3.0\ \mathrm{N}$, $m=0.50\ \mathrm{kg}$, and $\theta=60^\circ$. Using $a_r=\frac{T_{\text{tens}}}{m}+g\cos\theta$, what is $a_r$?
 options:
 - id: a
   content: |-
@@ -178,17 +184,17 @@ options:
 
 ---
 
-<a id="use-the-given-numbers-and-round"></a>
-## Use the Given Numbers and Round
+<a id="evaluate-the-balls-radial-acceleration"></a>
+## Evaluate the Ball's Radial Acceleration
 
-**Example:** In the assigned problem, $L=0.88\ \mathrm{m}$, $T=1.2\ \mathrm{N}$, $m=0.56\ \mathrm{kg}$, and $\theta=14^\circ$. Find the magnitude of the radial acceleration.
+**Example:** For the ball shown at the start, $L=0.88\ \mathrm{m}$, $T_{\text{tens}}=1.2\ \mathrm{N}$, $m=0.56\ \mathrm{kg}$, and $\theta=14^\circ$. Find the magnitude of the radial acceleration.
 
 **Explanation**
 
 The length $L$ is given, but it is not needed for this force-balance version because the speed is not given. The radial force equation already determines $a_r$:
 
 $$
-a_r = \frac{T}{m} + g\cos\theta.
+a_r = \frac{T_{\text{tens}}}{m} + g\cos\theta.
 $$
 
 Substitute the values:
@@ -210,7 +216,7 @@ type: radio
 id: p3-q4-original-style
 shuffle: true
 content: |-
-  A ball is in the same vertical-circle position with $L=1.1\ \mathrm{m}$, $T=1.8\ \mathrm{N}$, $m=0.45\ \mathrm{kg}$, and $\theta=20^\circ$. What is the radial acceleration magnitude to two significant figures?
+  A ball is in the same vertical-circle position with $L=1.1\ \mathrm{m}$, $T_{\text{tens}}=1.8\ \mathrm{N}$, $m=0.45\ \mathrm{kg}$, and $\theta=20^\circ$. What is the radial acceleration magnitude to two significant figures?
 options:
 - id: a
   content: |-
@@ -238,16 +244,16 @@ options:
 When the $r$-axis points inward along the string, write Newton's second law in the inward radial direction:
 
 $$
-T + mg\cos\theta = ma_r.
+T_{\text{tens}} + mg\cos\theta = ma_r.
 $$
 
 Then solve:
 
 $$
-a_r = \frac{T}{m} + g\cos\theta.
+a_r = \frac{T_{\text{tens}}}{m} + g\cos\theta.
 $$
 
-The main trap is using the length $L$, using the full weight $mg$, or using $mg\sin\theta$. In this diagram, $\theta$ is the angle that makes the inward part of weight the adjacent component, so the radial weight component is $mg\cos\theta$. For numerical work, keep the calculator in degree mode when $\theta$ is given in degrees.
+The length $L$ is unnecessary when the inward forces are already known. The full weight also does not belong in the radial equation: in this diagram, the inward part of weight is the adjacent component $mg\cos\theta$. For numerical work, use degree mode when $\theta$ is given in degrees.
 
 <!-- lesson-nav:start -->
 ---
@@ -257,6 +263,11 @@ The main trap is using the length $L$, using the full weight $mg$, or using $mg\
 
 [[212/Home|Home]]
 [[212/0. Table of Contents/TOC|Table of Contents]]
+
+[Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
+Next: [Testing Loop-the-Loop Statements](../../2026-07-03-HW-2/Lessons/Problem-10.md)
+
+Study guide index: 32/35
 
 ---
 <!-- lesson-nav:end -->

@@ -234,3 +234,15 @@ options:
 - Unit check: $(\mathrm{m/s})/(\mathrm{s}^{-1})=\mathrm m$; the reversed quotient does not produce length.
 - Trend check: at fixed speed, $f\lambda$ is constant, so frequency and wavelength vary inversely.
 - Main trap: do not multiply the givens or reverse their order; speed must be divided by frequency.
+
+<!-- lesson-nav:start -->
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+<!-- lesson-nav:end -->

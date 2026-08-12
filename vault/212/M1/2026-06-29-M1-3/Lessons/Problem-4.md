@@ -26,28 +26,23 @@ topic-code: MTH212.M1.17
 <a id="introduction"></a>
 ## Introduction
 
-When a rider is at the bottom of a Ferris wheel, the center of the circle is above the rider. That means the required radial acceleration points upward.
+A $68\ \mathrm{kg}$ rider sits in an upright gondola at the bottom of a Ferris wheel. The wheel has radius $42\ \mathrm{m}$ and rotates at $0.16\ \mathrm{rad}/\mathrm{s}$. How strongly does the seat push upward on the rider?
 
-The seat's normal force points upward, while gravity points downward. Since the inward direction is upward at the bottom, the radial force balance is
+That upward seat force is the normal force and determines the rider's apparent weight. At the bottom, riders feel heavier than they do at rest: the center of the wheel is above them, so their acceleration is upward even though gravity pulls downward. The seat must push upward strongly enough to support their weight and still leave an upward net force.
+
+With inward chosen as positive, the force balance is
 
 $$
-N-mg=m\omega^2r.
+N-mg=m\omega^2r,
 $$
 
-So the normal force is
+so the normal force is
 
 $$
 N=mg+m\omega^2r.
 $$
 
-The key cue is the word **bottom**: the seat must support the rider's weight and also provide the extra inward force needed for circular motion.
-
-Use this order:
-
-1. Decide which way is inward.
-2. Write the radial force equation.
-3. Compute $m\omega^2r$.
-4. Add that centripetal-force term to $mg$.
+The $m\omega^2r$ term is the required net inward force, not a third force acting on the rider.
 
 ---
 
@@ -191,6 +186,8 @@ First list the quantities that matter:
 - Angular speed: $\omega=0.16\ \mathrm{rad}/\mathrm{s}$.
 - Gravitational field strength: $g=9.8\ \mathrm{m}/\mathrm{s}^2$.
 
+Before calculating, predict the result: at the bottom, the seat must support the rider against gravity and still leave an upward inward net force. Therefore $N$ must be greater than $mg$. This prediction will catch a top-of-the-wheel sign pattern used by mistake.
+
 At the bottom, use
 
 $$
@@ -203,7 +200,7 @@ $$
 N=mg+m\omega^2r.
 $$
 
-Now substitute the values:
+Only after isolating $N$ symbolically should you substitute the values:
 
 $$
 \begin{aligned}
@@ -219,6 +216,8 @@ Rounded to two significant figures, the normal force is
 $$
 740\ \mathrm{N}.
 $$
+
+As predicted, this is larger than the rider's weight, $mg=666.4\ \mathrm{N}$.
 
 ```quiz
 type: radio
@@ -330,23 +329,19 @@ options:
 <a id="summary"></a>
 ## Summary
 
-For a rider at the bottom of a Ferris wheel:
-
-1. The center is above the rider, so inward is upward.
-2. The normal force points inward, and weight points opposite inward.
-3. The radial force equation is
+At the bottom of a Ferris wheel, the center is above the rider. The normal force points inward and weight points outward, so
 
 $$
 N-mg=m\omega^2r.
 $$
 
-4. Solve for the normal force:
+Solving for the normal force gives
 
 $$
 N=mg+m\omega^2r.
 $$
 
-The main trap is using the top-of-the-wheel equation $N=mg-m\omega^2r$. At the bottom, the normal force must be larger than the rider's weight.
+The normal force is therefore larger than the rider's weight. The subtraction $N=mg-m\omega^2r$ belongs to the top of an upright gondola, where gravity points inward instead.
 
 <!-- lesson-nav:start -->
 ---
@@ -360,7 +355,7 @@ The main trap is using the top-of-the-wheel equation $N=mg-m\omega^2r$. At the b
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: [Normal Force at the Top of a Ferris Wheel](Problem-5.md)
 
-Study guide index: 17/30
+Study guide index: 18/35
 
 ---
 <!-- lesson-nav:end -->

@@ -25,16 +25,26 @@ topic-code: MTH212.M1.05
 <a id="introduction"></a>
 ## Introduction
 
-Uniform circular motion has two required features:
+A bob hangs from a string and travels around a horizontal circle while the string stays tilted. Viewed from above, the bob follows a circular path at constant speed; viewed from the side, it remains at the same height.
+
+![](<../Source/Images/conical-pendulum-diagram.png>)
+
+This motion is **uniform circular motion** because it has the two features named by that term:
 
 1. The object moves on a circular path.
 2. The object's speed stays constant.
 
-The recognition cue is a question asking whether a moving object is undergoing uniform circular motion. Check the path shape and the speed first. If both are present, the motion is uniform circular motion even though the velocity direction is changing.
+The bob's velocity is not constant because its direction changes around the circle, but its **speed** is constant. The string tension and inward acceleration explain how the bob follows the circle; they do not change how the motion is classified.
 
-For the conical-pendulum question, the prompt says the bob "traverses a circular trajectory at constant speed." That phrase already matches the definition, so the answer should be yes with that exact reason.
+In radial-tangential notation, this classification means
 
-The main trap is using extra information about forces, tension, or acceleration to avoid the definition. Those details matter later, but they are not needed to decide whether the motion is uniform circular motion.
+$$
+a_t=\frac{dv}{dt}=0,
+\qquad
+a_r=\frac{v^2}{r}\ne 0.
+$$
+
+Uniform circular motion removes the speed-changing component of acceleration, not the inward component that changes the velocity's direction.
 
 ---
 
@@ -162,11 +172,9 @@ options:
 
 **Example:** A bob of mass $m$ is attached to a light string of length $L$. The bob traverses a circular trajectory at constant speed when viewed from above or below. The string makes an angle $\theta$ with the horizontal, and the period of the circular motion is constant. Is the bob undergoing uniform circular motion?
 
-![](<../Source/Images/conical-pendulum-diagram.png>)
-
 **Explanation**
 
-The prompt gives the two required features:
+The bob's motion has the two required features:
 
 - circular trajectory
 - constant speed
@@ -228,7 +236,7 @@ If both answers are yes, the object is undergoing uniform circular motion. A con
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: [Recognizing Tangential Velocity in Circular Motion](../../2026-06-28-HW-1/Lessons/Problem-6.md)
 
-Study guide index: 05/30
+Study guide index: 04/35
 
 ---
 <!-- lesson-nav:end -->

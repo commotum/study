@@ -397,7 +397,6 @@ For two masses $M$ and $m$ in a circular orbit with separation $d$:
 The main trap is treating one star's center-of-mass radius as though it were the separation between the stars.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -407,5 +406,4 @@ The main trap is treating one star's center-of-mass radius as though it were the
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

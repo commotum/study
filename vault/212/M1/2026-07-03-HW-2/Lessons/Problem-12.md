@@ -12,7 +12,7 @@ topic-code: MTH212.M1.20
 - [Keep Radial Acceleration Separate from the Normal Force](#keep-radial-acceleration-separate-from-the-normal-force)
 - [Separate Radial and Tangential Acceleration](#separate-radial-and-tangential-acceleration)
 - [Reject Uniform Circular Motion When Speed Changes](#reject-uniform-circular-motion-when-speed-changes)
-- [Choose the True Igloo Statement](#choose-the-true-igloo-statement)
+- [Test the Four Claims](#test-the-four-claims)
 - [Summary](#summary)
 
 ## Prerequisites
@@ -27,23 +27,25 @@ topic-code: MTH212.M1.20
 <a id="introduction"></a>
 ## Introduction
 
-When an object slides on the outside of a curved surface, the cue "loses contact" means the surface has stopped pushing on the object. The useful move is to identify the contact-loss condition by setting the normal force to zero, while still keeping the inward acceleration needed for circular motion.
+A penguin starts from rest and slides on its belly down the right side of a spherical igloo of radius $r$. There is no friction. At some angle $\theta_c$ from the vertical, the penguin leaves the surface. What is true in the instant just before contact is lost?
 
-The short test is:
+![](<../Source/Images/igloo-slide-diagram.png>)
+
+Losing contact does not mean that the penguin stops moving or stops curving at that instant. It means the igloo can no longer push on the penguin. The normal force therefore falls to zero while gravity still supplies an inward component of force and a tangential component that changes the penguin's speed.
+
+Contact with an ordinary surface is possible only while
 
 $$
-\text{contact is possible only while } N\ge 0,
+N\ge 0.
 $$
 
-so the leaving point is the boundary case
+The leaving point is the boundary case
 
 $$
 N=0.
 $$
 
-Watch out: $N=0$ does not mean $\dfrac{v^2}{r}=0$. The normal force is one possible contributor to the radial force balance, not the radial acceleration itself.
-
-For the penguin sliding down a frictionless spherical igloo, the true statement just before losing contact is that the normal force from the igloo is negligible or zero.
+The condition $N=0$ does not imply $v^2/r=0$. The normal force is one term in the radial force balance, not another name for the radial acceleration.
 
 ---
 
@@ -161,6 +163,8 @@ At the contact-loss instant, $N=0$, but the penguin still has speed and is still
 
 The tangential part changes the speed. The radial part changes the direction of the velocity.
 
+The $r$-$t$ axes rotate with the penguin: $+\hat r$ keeps pointing toward the current center, and $\hat t$ stays tangent to the surface. The word *instant* is also important. Losing the contact constraint changes the force set, but it does not make position or velocity jump; the penguin retains its tangent velocity as $N$ reaches zero. Thus, $N=0$ cannot be used as evidence that either the speed or radial acceleration was already zero just before release.
+
 ```quiz
 type: radio
 id: p12-q3-acceleration-components
@@ -225,24 +229,10 @@ options:
 
 ---
 
-<a id="choose-the-true-igloo-statement"></a>
-## Choose the True Igloo Statement
+<a id="test-the-four-claims"></a>
+## Test the Four Claims
 
-**Example:** Starting from rest, a penguin lying on its belly slides down the right side of a spherical igloo of radius $r$.
-
-Neglecting friction, the penguin will slide off and, at some angle $\theta_c$ from the vertical, eventually lose contact with the igloo.
-
-Which statement is true about the penguin the instant before losing contact with the igloo?
-
-![](<../Source/Images/igloo-slide-diagram.png>)
-
-A. The normal force on the penguin from the igloo is negligible/zero.
-
-B. The centripetal force on the penguin is negligible/zero.
-
-C. The penguin's acceleration was directed tangentially to the igloo's surface.
-
-D. Prior to this instant, the penguin had been undergoing uniform circular motion.
+**Example:** Compare the four claims in the penguin question.
 
 **Explanation**
 
@@ -255,7 +245,7 @@ Check each statement against the contact-loss test.
 | C | The acceleration still has a radial part just before contact is lost. | False |
 | D | The penguin speeds up while sliding down from rest. | False |
 
-So the true statement is A.
+Only statement A survives all four checks: the igloo's normal force has fallen to zero.
 
 ```quiz
 type: radio
@@ -283,13 +273,13 @@ options:
 
 ## Summary
 
-For an object sliding on the outside of a curved surface, the phrase "loses contact" is a normal-force test:
+For an object leaving the outside of a curved surface, contact ends when the surface's normal force falls to zero:
 
 $$
 N=0.
 $$
 
-That does not make the radial acceleration zero. Just before the object leaves, it can still have speed, so the inward net force is still $m\dfrac{v^2}{r}$. The main traps are confusing the normal force with the whole inward net force, calling the acceleration purely tangential, or assuming that any circular path is uniform circular motion.
+Just before the object leaves, it can still have nonzero speed, so its radial acceleration remains $v^2/r$. At the instant the normal force vanishes, the inward component of gravity supplies the required inward force. Because gravity also changes the object's speed as it descends, the motion is neither purely tangentially accelerated nor uniform circular motion.
 
 <!-- lesson-nav:start -->
 ---
@@ -303,7 +293,7 @@ That does not make the radial acceleration zero. Just before the object leaves, 
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: [Choosing a Free-Body Diagram for an Icy Banked Curve](../../2026-06-30-M1-4/Lessons/Problem-1.md)
 
-Study guide index: 20/30
+Study guide index: 21/35
 
 ---
 <!-- lesson-nav:end -->

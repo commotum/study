@@ -11,7 +11,7 @@ topic-code: MTH212.M1.06
 - [Using the Radius and Tangent Directions](#using-the-radius-and-tangent-directions)
 - [Checking the Relationship Without Knowing Clockwise or Counterclockwise](#checking-the-relationship-without-knowing-clockwise-or-counterclockwise)
 - [Distinguishing Velocity From Acceleration](#distinguishing-velocity-from-acceleration)
-- [Matching the True-or-False Statement](#matching-the-true-or-false-statement)
+- [Write the Vector Relationship](#write-the-vector-relationship)
 
 ## Prerequisites
 
@@ -25,23 +25,15 @@ topic-code: MTH212.M1.06
 <a id="introduction"></a>
 ## Introduction
 
-In uniform circular motion, the object moves around a circle with constant speed. Its position vector $\vec r$ points from the center to the object.
+Picture a marked point moving around the rim of a wheel. Its position vector $\vec r$ starts at the center and points to the mark. Its velocity vector $\vec v$ points in the direction the mark is moving at that instant.
 
-The cue is that the question asks about the direction of velocity $\vec v$ compared with the radius vector $\vec r$.
-
-At each instant, the velocity points tangent to the circular path. The radius points outward from the center to that same point. A tangent to a circle is perpendicular to the radius at the point of contact, so
+That motion is along the tangent to the circular path, while the radius points outward to the same point. A tangent to a circle is perpendicular to the radius at the point of contact, so
 
 $$
 \vec v \perp \vec r.
 $$
 
-Use this checklist:
-
-- identify $\vec r$ as the center-to-object direction
-- identify $\vec v$ as the tangent direction
-- decide the relationship: tangent $\perp$ radius
-
-The speed being uniform means the size of $\vec v$ stays constant. It does not make $\vec v$ point along $\vec r$.
+Uniform speed means the size of $\vec v$ stays constant. The direction of $\vec v$ still changes from one tangent to the next as the point moves around the wheel.
 
 ---
 
@@ -138,6 +130,8 @@ options:
 
 The velocity vector points tangent to the circle. The acceleration vector points inward toward the center because the velocity direction is changing.
 
+A useful direction check is to imagine the inward constraint disappearing at that instant. The object would continue along a straight line tangent to the circle, so that tangent identifies $\vec v$; the center-pointing arrow identifies $\vec a_r$.
+
 That means the two common direction facts are different:
 
 $$
@@ -172,14 +166,14 @@ options:
 
 ---
 
-<a id="matching-the-true-or-false-statement"></a>
-## Matching the True-or-False Statement
+<a id="write-the-vector-relationship"></a>
+## Write the Vector Relationship
 
 **Example:** An object undergoes uniform circular motion. True or false: $\vec v$ is perpendicular to $\vec r$.
 
 **Explanation**
 
-Use the direction cue:
+Compare the two directions:
 
 - $\vec r$ points from the center to the object
 - $\vec v$ points tangent to the path
@@ -212,8 +206,6 @@ options:
 
 ## Summary
 
-When a circular-motion problem asks how $\vec v$ relates to $\vec r$, use the tangent-radius rule.
-
 The radius vector $\vec r$ points from the center to the object. The velocity vector $\vec v$ points tangent to the circular path. A tangent is perpendicular to the radius at the point of contact, so $\vec v \perp \vec r$.
 
 The main trap is mixing up velocity with acceleration. In uniform circular motion, $\vec v$ is tangent, while $\vec a$ points inward toward the center.
@@ -230,7 +222,7 @@ The main trap is mixing up velocity with acceleration. In uniform circular motio
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: [Comparing Centripetal Acceleration with the Radius Vector](Problem-7.md)
 
-Study guide index: 06/30
+Study guide index: 05/35
 
 ---
 <!-- lesson-nav:end -->

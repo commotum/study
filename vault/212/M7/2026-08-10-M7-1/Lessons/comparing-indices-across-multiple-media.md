@@ -241,3 +241,15 @@ options:
 - Isolate the comparison: $n_3/n_1=\sin\theta_1/\sin\theta_3$; the middle product cancels.
 - Compare acute endpoint angles without decimals: the smaller angle pairs with the larger index.
 - Main trap: do not assign the larger index to the larger angle, and do not keep an intermediate index that cancels.
+
+<!-- lesson-nav:start -->
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+<!-- lesson-nav:end -->

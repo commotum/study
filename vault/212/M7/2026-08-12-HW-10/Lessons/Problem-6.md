@@ -307,7 +307,6 @@ When a single thin lens makes a larger image of a real object:
 The main trap is treating **magnified** as a synonym for **real**. Size comes from $|m|$; real versus virtual comes from the sign of $m$ or $d_i$.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -317,5 +316,4 @@ The main trap is treating **magnified** as a synonym for **real**. Size comes fr
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

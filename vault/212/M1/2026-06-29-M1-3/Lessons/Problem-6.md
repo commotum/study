@@ -11,13 +11,14 @@ topic-code: MTH212.M1.14
 - [Set Up the Threshold Equation](#set-up-the-threshold-equation)
 - [Cancel Mass and Solve for Angular Speed](#cancel-mass-and-solve-for-angular-speed)
 - [Compute the Threshold Speed](#compute-the-threshold-speed)
-- [Avoid the Extra-Given Trap](#avoid-the-extra-given-trap)
+- [Why the Coin's Mass Cancels](#why-the-coins-mass-cancels)
+- [Summary](#summary)
 
 ## Prerequisites
 
 - Static friction can adjust up to a maximum value $f_{s,\max}=\mu_s N$.
 - On a horizontal surface, the normal force is $N=mg$.
-- Circular motion at angular speed $\omega$ requires centripetal force $F_c=m\omega^2 r$.
+- Circular motion at angular speed $\omega$ requires centripetal force $\sum F_r=m\omega^2 r$.
 - To solve $x^2=A$ for a positive physical quantity, use $x=\sqrt{A}$.
 
 ---
@@ -25,17 +26,17 @@ topic-code: MTH212.M1.14
 <a id="introduction"></a>
 ## Introduction
 
-When an object rides on a horizontal turntable and is about to slip, the recognition cue is the phrase "just starts to slip." At that instant, static friction is at its maximum value and supplies the needed centripetal force.
+A $1.3\ \mathrm{g}$ coin sits $0.35\ \mathrm{m}$ from the center of a horizontal turntable. The coefficient of static friction between the coin and the turntable is $0.18$. At what angular speed does the coin start to slip?
 
-This setup assumes the surface is horizontal and static friction is the inward horizontal force. The normal force balances weight, so the maximum static friction is $\mu_smg$.
+While the coin rotates with the turntable, it continually accelerates toward the center. Static friction supplies that inward force. At a low angular speed, friction adjusts to whatever value the circular motion requires. Spinning the table faster increases the required force until static friction reaches its limit; any faster, and the coin can no longer follow the same circular path.
 
-The reusable move is:
+On the horizontal surface, $N=mg$, so the greatest available static friction is $\mu_smg$. At the instant the coin is about to slip,
 
 $$
 \mu_s mg=m\omega^2 r
 $$
 
-Then cancel the mass and solve for the threshold angular speed:
+The coin's mass appears on both sides and cancels, leaving the threshold angular speed
 
 $$
 \omega=\sqrt{\frac{\mu_s g}{r}}
@@ -59,7 +60,7 @@ $$
 That friction force points inward and supplies the centripetal force:
 
 $$
-F_c=m\omega^2r
+\sum F_r=m\omega^2r
 $$
 
 So the threshold equation is
@@ -127,6 +128,8 @@ Angular speed is positive here, so take the positive square root:
 $$
 \omega=\sqrt{\frac{\mu_sg}{r}}
 $$
+
+The symbolic form should also pass a physical-behavior check. Increasing $\mu_s$ increases the available inward force, so the threshold speed rises. Moving the coin farther outward increases the required $a_r=\omega^2r$, so the threshold speed falls. Increasing $g$ raises $N$ and therefore the maximum available static friction, so the threshold speed rises.
 
 For this object,
 
@@ -229,8 +232,8 @@ options:
 
 ---
 
-<a id="avoid-the-extra-given-trap"></a>
-## Avoid the Extra-Given Trap
+<a id="why-the-coins-mass-cancels"></a>
+## Why the Coin's Mass Cancels
 
 **Example:** A $2.0\ \mathrm{g}$ bead sits at radius $0.45\ \mathrm{m}$ on a horizontal turntable. The coefficient of static friction is $\mu_s=0.15$. Find the threshold angular speed.
 
@@ -291,12 +294,17 @@ options:
 
 ## Summary
 
-Use this checklist when a turntable object is "just about to slip":
+At the slipping threshold, the required inward force has grown to the largest force static friction can supply:
 
-1. Maximum static friction supplies the centripetal force: $\mu_smg=m\omega^2r$.
-2. Cancel $m$; the mass does not affect the threshold angular speed on a horizontal surface.
-3. Solve for angular speed: $\omega=\sqrt{\mu_sg/r}$.
-4. Divide by $r$ before taking the square root; do not multiply by $r$ or forget the square root.
+$$
+\mu_smg=m\omega^2r.
+$$
+
+The mass cancels because a heavier coin needs proportionally more inward force but also has proportionally more maximum friction. Solving for the positive angular speed gives
+
+$$
+\omega=\sqrt{\frac{\mu_sg}{r}}.
+$$
 
 <!-- lesson-nav:start -->
 ---
@@ -308,9 +316,9 @@ Use this checklist when a turntable object is "just about to slip":
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
-Next: [Finding the Minimum Period Before a Coin Slips](../../2026-07-05-PQ-1/Lessons/Problem-4.md)
+Next: [Putting Period in the Denominator for Rotating-Disk Speed](../../2026-06-25-M1-2/Lessons/Problem-3.md)
 
-Study guide index: 14/30
+Study guide index: 14/35
 
 ---
 <!-- lesson-nav:end -->

@@ -18,7 +18,7 @@ topic-code: MTH212.M1.13
 ## Prerequisites
 
 - Identify forces on a car on a level road: weight $mg$, normal force $N$, and static friction $f_s$.
-- Use centripetal force as the required net inward force: $F_{\text{net,in}}=mv^2/r$.
+- Use the radial force balance for the required net inward force: $\sum F_r=mv^2/r$.
 - Use maximum static friction as $f_{s,\max}=\mu_s N$.
 - Recognize that on a level road with no vertical acceleration, $N=mg$.
 
@@ -27,23 +27,19 @@ topic-code: MTH212.M1.13
 <a id="introduction"></a>
 ## Introduction
 
-When a car goes around a level circular curve, there is no bank angle to tilt the normal force inward. The cue is that the road is level and the car is going as fast as it can without sliding.
+A $1800\ \mathrm{kg}$ car rounds a level circular curve of radius $49\ \mathrm{m}$ at $16\ \mathrm{m}/\mathrm{s}$. It is traveling as fast as it can without sliding. What coefficient of static friction is needed between the tires and the road?
 
 ![](<../Source/Images/level-curve-car-diagram.png>)
 
-At that limiting speed, static friction is at its maximum value and supplies the entire inward force:
+The normal force points upward on a level road, so it cannot turn the car. The horizontal force that bends the car's path is static friction from the road. As the speed increases, the required inward force increases; at the fastest speed that avoids sliding, static friction has reached its maximum value. This is why “as fast as it can go without sliding” matters.
+
+At that limit,
 
 $$
 f_{s,\max}=\frac{mv^2}{r}
 $$
 
-So the setup always follows this chain:
-
-$$
-\text{maximum static friction}=\text{required inward force}.
-$$
-
-Then replace each side with a formula, cancel the mass, and compute
+Because the car has no vertical acceleration, $N=mg$ and $f_{s,\max}=\mu_smg$. Equating the available friction to the required inward force gives
 
 $$
 \mu_s=\frac{v^2}{rg}.
@@ -93,7 +89,7 @@ options:
 
 **Explanation**
 
-"Just about to slide" means static friction is at its maximum:
+"Just about to slide" means static friction is at its maximum. Below that boundary, the actual friction is only the value needed, $f_s=mv^2/r$, and need not equal $\mu_sN$. At the boundary,
 
 $$
 f_{s,\max}=\mu_s N.
@@ -105,7 +101,7 @@ $$
 f_{s,\max}=\mu_s mg.
 $$
 
-That maximum friction must equal the required inward force. A clean setup is:
+The tires are still rolling without sideways slipping at this instant, so the force is static rather than kinetic. That maximum friction must equal the required inward force. A clean setup is:
 
 $$
 \begin{aligned}
@@ -166,8 +162,6 @@ $$
 $$
 
 The mass cancels. For a level curve, the required coefficient depends on speed, radius, and gravity, not on the car's mass.
-
-This assumes $m$, $r$, and $g$ are not zero, which is true for this physical situation.
 
 ```quiz
 type: radio
@@ -275,7 +269,7 @@ $$
 =1.
 $$
 
-So a coefficient of static friction should be a plain number, not a number with $\mathrm{N}$, $\mathrm{kg}$, or $\mathrm{m}/\mathrm{s}$ attached.
+So a coefficient of static friction should be a plain number, not a number with $\mathrm{N}$, $\mathrm{kg}$, or $\mathrm{m}/\mathrm{s}$ attached. The symbolic result also supplies a behavior check: $\mu_s=v^2/(rg)$ must rise with $v^2$, fall when the curve radius grows, and remain independent of mass.
 
 ```quiz
 type: radio
@@ -307,7 +301,7 @@ options:
 <a id="summary"></a>
 ## Summary
 
-For a level circular curve at the maximum speed before sliding, static friction is the inward force and is at its maximum value:
+At the maximum speed before a car slides on a level curve, static friction has reached its limit and supplies the inward net force:
 
 $$
 \mu_s mg=\frac{mv^2}{r}.
@@ -319,7 +313,7 @@ $$
 \mu_s=\frac{v^2}{rg}.
 $$
 
-The main traps are using $v$ instead of $v^2$, keeping the mass after it cancels, or using the normal force as the inward force on a level road.
+The normal force cannot turn the car because it is vertical. The required coefficient is dimensionless and independent of the car's mass; using $v$ instead of $v^2$ breaks both the circular-motion equation and the unit check.
 
 <!-- lesson-nav:start -->
 ---
@@ -333,7 +327,7 @@ The main traps are using $v$ instead of $v^2$, keeping the mass after it cancels
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: [Threshold Angular Speed Before Slipping](../../2026-06-29-M1-3/Lessons/Problem-6.md)
 
-Study guide index: 13/30
+Study guide index: 13/35
 
 ---
 <!-- lesson-nav:end -->

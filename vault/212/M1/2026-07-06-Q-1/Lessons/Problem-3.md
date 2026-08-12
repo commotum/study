@@ -225,7 +225,6 @@ For an object held at fixed height while circling a vertical axis, use **interac
 The main trap is drawing the required inward net force as an extra arrow. Instead, let the components of the real contact force produce that inward resultant.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -235,5 +234,4 @@ The main trap is drawing the required inward net force as an extra arrow. Instea
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

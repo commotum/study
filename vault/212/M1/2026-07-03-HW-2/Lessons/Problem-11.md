@@ -11,12 +11,12 @@ topic-code: MTH212.M1.29
 - [Set the Top Contact Condition](#set-the-top-contact-condition)
 - [Use Energy from Bottom to Top](#use-energy-from-bottom-to-top)
 - [Combine the Two Conditions](#combine-the-two-conditions)
-- [Match the Answer Choices](#match-the-answer-choices)
+- [Find Hony's Entry Speed](#find-honys-entry-speed)
 - [Summary](#summary)
 
 ## Prerequisites
 
-- Use $a_c=\dfrac{v^2}{r}$ for circular motion of radius $r$.
+- Use $a_r=\dfrac{v^2}{r}$ for circular motion of radius $r$.
 - Write a radial force equation with inward as the positive direction.
 - Use conservation of mechanical energy when rolling friction is ignored.
 - Recognize that the top of a loop is $2r$ higher than the bottom.
@@ -26,15 +26,11 @@ topic-code: MTH212.M1.29
 <a id="introduction"></a>
 ## Introduction
 
-When a loop-the-loop problem asks for the minimum entry speed needed to never lose contact, the key cue is "minimum" together with "never leaves contact." Compute the minimum entry speed by setting the normal force to zero at the top of the loop, then using energy conservation from the bottom to the top.
+Hony Tawk enters the bottom of a circular loop of radius $r$. Rolling friction is ignored, and he must complete the loop without losing contact with the track. What is the minimum speed he can have when he enters?
 
-Use the same three checks each time:
+![](<../Source/Images/loop-the-loop-diagram.png>)
 
-1. At the top, set $N=0$ for the just-barely-contact case.
-2. From bottom to top, use a height change of $2r$.
-3. Substitute the top-speed condition into the energy equation and take the positive square root.
-
-For Hony Tawk's loop of radius $r$, the minimum entry speed is the answer choice that makes the top speed just large enough for circular motion.
+The slowest successful trip still requires motion at the top. There, at the threshold, gravity alone supplies the inward force and the track has just stopped needing to push, so the normal force is zero. The entry speed must provide both the gravitational potential energy gained over the $2r$ climb and the kinetic energy that remains at the top.
 
 ---
 
@@ -159,6 +155,8 @@ $$
 
 The unknown is the entry speed $v_0$. Treat $g$ and $R$ as given quantities, and replace $v_{\text{top}}^2$ using the contact condition.
 
+Keep the position labels attached to every speed. The radial equation gives a condition on $v_{\text{top}}$ at one instant; it does not directly give the bottom entry speed $v_0$. Conservation of energy connects those differently located quantities.
+
 At the minimum speed, the top contact condition gives
 
 $$
@@ -219,8 +217,8 @@ options:
 
 ---
 
-<a id="match-the-answer-choices"></a>
-## Match the Answer Choices
+<a id="find-honys-entry-speed"></a>
+## Find Hony's Entry Speed
 
 **Example:** Hony Tawk completes a circular loop-the-loop of radius $r$ and never leaves contact. What is the minimum speed required to enter the loop if rolling friction is ignored?
 
@@ -250,7 +248,7 @@ $$
 v_0=\sqrt{5gr}.
 $$
 
-The common trap is choosing only the top-speed condition, $\sqrt{gr}$, or forgetting that the rider rises by $2r$. In the given choices, $2\sqrt{gr}=\sqrt{4gr}$ is close, but it is still missing the extra $gr$ needed for the minimum top speed.
+The value $\sqrt{gr}$ is only the required speed at the top, not the entry speed. Using $2\sqrt{gr}=\sqrt{4gr}$ accounts for the climb but leaves no kinetic energy at the top; the extra $gr$ in $v_0^2=5gr$ supplies the motion needed to maintain contact there.
 
 ```quiz
 type: radio
@@ -297,7 +295,9 @@ $$
 v_0=\sqrt{5gr}.
 $$
 
-The main trap is stopping at the top-speed condition or using a height change of only $r$ instead of $2r$.
+Check the symbolic result before accepting it. Its units are speed, mass has canceled, and it predicts that a larger loop or stronger gravity requires a larger entry speed. These checks also expose the common mistake of reporting $\sqrt{gr}$, which is the speed at the top rather than at the entrance.
+
+Stopping at the top-speed condition gives the speed at the wrong location. The energy step must also use the full bottom-to-top height change of $2r$.
 
 <!-- lesson-nav:start -->
 ---
@@ -311,7 +311,7 @@ The main trap is stopping at the top-speed condition or using a height change of
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
 Next: [Finding the Critical Angle Where a Slider Leaves a Sphere](Problem-13.md)
 
-Study guide index: 29/30
+Study guide index: 34/35
 
 ---
 <!-- lesson-nav:end -->

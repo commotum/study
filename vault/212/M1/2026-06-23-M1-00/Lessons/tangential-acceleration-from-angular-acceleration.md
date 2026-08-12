@@ -318,7 +318,6 @@ For a point held at a fixed radius:
 The main trap is swapping the components. Angular acceleration $\alpha$ controls $a_t$ and changes speed; angular velocity $\omega$ controls the inward radial acceleration $a_r=r\omega^2$ and changes direction.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -328,5 +327,4 @@ The main trap is swapping the components. Angular acceleration $\alpha$ controls
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

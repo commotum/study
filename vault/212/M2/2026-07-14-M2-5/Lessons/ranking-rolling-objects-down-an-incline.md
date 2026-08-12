@@ -314,3 +314,15 @@ $$
 $$
 
 so the arrival order is solid sphere, solid cylinder, hoop. The main trap is ranking raw $I$ values or declaring a tie from equal masses, radii, and starting heights. The dimensionless shape factor controls the ideal rolling race.
+
+<!-- lesson-nav:start -->
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+<!-- lesson-nav:end -->

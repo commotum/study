@@ -344,7 +344,6 @@ For a rope unwinding without slipping from a fixed-radius spool:
 The main traps are substituting the final time into velocity instead of integrating, stopping at radians instead of converting to revolutions, using something other than the full circumference, and rounding before the final step.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -354,5 +353,4 @@ The main traps are substituting the final time into velocity instead of integrat
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

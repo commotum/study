@@ -280,3 +280,15 @@ options:
 - For otherwise identical glasses, more water increases effective inertia and lowers the natural frequency and pitch.
 - Different water levels tune different glasses to different notes, which a performer can play in sequence as music.
 - A complete explanation must identify both how the vibration is sustained and how the water changes the pitch.
+
+<!-- lesson-nav:start -->
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+<!-- lesson-nav:end -->

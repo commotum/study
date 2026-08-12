@@ -278,3 +278,15 @@ When the question asks for the direction of $\vec v_2-\vec v_1$:
 5. Name the compass direction requested by the problem.
 
 The arrow method and the component-sign check should agree. The main trap is tracing a head-to-tail diagram as though the question asked for $\vec v_1+\vec v_2$. The written minus sign controls the operation.
+
+<!-- lesson-nav:start -->
+---
+
+```update-progress
+```
+
+[[212/Home|Home]]
+[[212/0. Table of Contents/TOC|Table of Contents]]
+
+---
+<!-- lesson-nav:end -->

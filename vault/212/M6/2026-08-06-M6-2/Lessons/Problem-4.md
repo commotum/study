@@ -351,7 +351,6 @@ When a single-slit intensity graph is used to find the screen distance, use **re
 The main trap is confusing a coordinate or the full central width with $y_1$. The formula uses the distance from the central peak to **one** neighboring minimum.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -361,5 +360,4 @@ The main trap is confusing a coordinate or the full central width with $y_1$. Th
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

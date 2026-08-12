@@ -19,7 +19,7 @@
         - [x] [[M1/2026-06-25-M1-2/Lessons/Problem-6|M1.03. Ranking Radial Accelerations]]
         - [ ] [[M1/2026-06-25-M1-2/Lessons/Problem-1|M1.37. Find Angular Speed From Angular Position]]
         - [ ] [[M1/2026-06-25-M1-2/Lessons/Problem-2|M1.38. Deciding Where Distance Belongs in a Speed Formula]]
-        - [ ] [[M1/2026-06-25-M1-2/Lessons/Problem-3|M1.39. Putting Period in the Denominator for Rotating-Disk Speed]]
+        - [x] [[M1/2026-06-25-M1-2/Lessons/Problem-3|M1.39. Putting Period in the Denominator for Rotating-Disk Speed]]
         - [ ] [[M1/2026-06-25-M1-2/Lessons/Problem-4|M1.40. Placing Angular Separation in a Speed Formula]]
         - [ ] [[M1/2026-06-25-M1-2/Lessons/Problem-5|M1.41. Bullet Speed from Rotating Disk Alignment]]
         - [ ] [[M1/2026-06-25-M1-2/Lessons/Problem-7|M1.42. Angle Turned Before Reversal]]
@@ -46,7 +46,7 @@
         - [x] [[M1/2026-06-29-M1-3/Lessons/Problem-6|M1.14. Threshold Angular Speed Before Slipping]]
         - [x] [[M1/2026-06-29-M1-3/Lessons/Problem-1|M1.16. Comparing Ferris Wheel Normal Forces]]
         - [x] [[M1/2026-06-29-M1-3/Lessons/Problem-4|M1.17. Finding the Normal Force at the Bottom of a Ferris Wheel]]
-        - [ ] [[M1/2026-06-29-M1-3/Lessons/Problem-5|M1.18. Normal Force at the Top of a Ferris Wheel]]
+        - [x] [[M1/2026-06-29-M1-3/Lessons/Problem-5|M1.18. Normal Force at the Top of a Ferris Wheel]]
         - [ ] [[M1/2026-06-29-M1-3/Lessons/Problem-3|M1.53. Comparing Ferris-Wheel Normal Forces at the Top and Bottom]]
     - **2026-06-30-M1-4**
         - [x] [[M1/2026-06-30-M1-4/Lessons/Problem-2|M1.12. Free-Body Diagrams for Level Circular Motion]]
@@ -65,7 +65,7 @@
         - [ ] [[M1/2026-07-02-M1-5/Lessons/Problem-6|M1.58. Release Height from a Vertical Circle]]
         - [ ] [[M1/2026-07-02-M1-5/Lessons/minimum-speed-and-tension-in-a-vertical-circle|M1.74. Minimum Speed and Tension in a Vertical Circle]]
     - **2026-07-03-HW-2**
-        - [ ] [[M1/2026-07-03-HW-2/Lessons/Problem-1|M1.05. Recognizing Uniform Circular Motion]]
+        - [x] [[M1/2026-07-03-HW-2/Lessons/Problem-1|M1.05. Recognizing Uniform Circular Motion]]
         - [x] [[M1/2026-07-03-HW-2/Lessons/Problem-4|M1.11. Finding the Net-Force Direction in Circular Motion]]
         - [ ] [[M1/2026-07-03-HW-2/Lessons/Problem-12|M1.20. Recognizing Contact Loss on a Curved Surface]]
         - [ ] [[M1/2026-07-03-HW-2/Lessons/Problem-9|M1.25. Deciding True Statements About Static Friction on a Banked Turn]]
@@ -81,7 +81,7 @@
     - **2026-07-05-PQ-1**
         - [x] [[M1/2026-07-05-PQ-1/Lessons/Problem-2|M1.10. Reading Net Force Arrows for Circular Motion]]
         - [x] [[M1/2026-07-05-PQ-1/Lessons/Problem-4|M1.15. Finding the Minimum Period Before a Coin Slips]]
-        - [ ] [[M1/2026-07-05-PQ-1/Lessons/Problem-3|M1.19. Comparing Normal Force and Weight at the Top of a Hill]]
+        - [x] [[M1/2026-07-05-PQ-1/Lessons/Problem-3|M1.19. Comparing Normal Force and Weight at the Top of a Hill]]
         - [ ] [[M1/2026-07-05-PQ-1/Lessons/Problem-1|M1.64. Comparing Centripetal Acceleration At Fixed Speed]]
         - [ ] [[M1/2026-07-05-PQ-1/Lessons/Problem-5|M1.65. Bead on a Frictionless Cone]]
     - **2026-07-06-Q-1**

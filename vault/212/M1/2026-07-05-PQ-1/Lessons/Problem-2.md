@@ -25,16 +25,11 @@ topic-code: MTH212.M1.10
 <a id="introduction"></a>
 ## Introduction
 
-When a particle moves around a circle and changes speed, the net force must do two jobs at the same time. One component points inward, toward the center, to bend the path. The other component points along the tangent, either with the motion or against the motion.
+Each diagram below shows a particle at the upper-left part of a circular path and a possible direction for its net force. Which arrow could make the particle move clockwise while slowing down?
 
-Use the stated direction of motion and whether the particle is speeding up or slowing down to decide which way the tangential component points. Then combine it with the inward component to choose the net-force arrow.
+![](<../Source/Images/problem-2-net-force-diagrams.png>)
 
-The repeatable check is:
-
-1. Point inward toward the center.
-2. Point tangent in the direction of motion.
-3. Flip the tangent part if the particle is slowing down.
-4. Choose the single arrow that combines the inward part and the correct tangent part.
+The force must do two things at once. An inward component bends the path toward the circle's center, while a tangential component changes the particle's speed. Because the particle is slowing down, that tangential component points opposite its clockwise velocity. The correct arrow must combine both effects.
 
 ---
 
@@ -45,9 +40,9 @@ The repeatable check is:
 
 **Explanation**
 
-At the left side of the circle, the center is to the right of the particle. So the radial part of the net force points right.
+At the left side of the circle, the center is to the right of the particle. So the radial part of the net force points right. The radial and tangential directions form a moving coordinate system attached to the particle: radial points toward the center, while tangential follows the instantaneous tangent to the path.
 
-This inward part is needed even if the particle's speed is constant. It changes the direction of the velocity so the path curves.
+This inward part is needed even if the particle's speed is constant. It changes the direction of the velocity so the path curves. The tangential part has a different job: it changes the magnitude of the velocity.
 
 If the speed is changing, the full net force is not usually straight inward. It must still include this inward part, but it also needs a tangential part.
 
@@ -172,16 +167,16 @@ options:
 <a id="choose-the-matching-diagram"></a>
 ## Choose the Matching Diagram
 
-**Example:** A particle is at the left side of a circle, moving clockwise, and slowing down. Which net-force arrow direction should the correct diagram show?
+**Example:** The particle in the diagram above is at the upper-left part of the circle, moving clockwise, and slowing down. Which net-force arrow should represent its motion?
 
 **Explanation**
 
 Work in two parts:
 
-1. The inward radial component points right, toward the center.
-2. Clockwise velocity at the left side points up, so slowing down requires a tangential component down.
+1. The inward radial component points down and right, toward the center.
+2. Clockwise velocity at the upper-left point is tangent up and right, so slowing down requires a tangential component down and left.
 
-Combining those gives a net-force arrow that points down and right. In the assignment's diagram set, that is choice C.
+Combining those components gives a net force that points generally downward, between down-right and down-left. Because mass is positive, $\vec F_{\text{net}}=m\vec a$ guarantees that the net-force arrow and the resultant-acceleration arrow point the same way. Among the arrows shown, that is choice C.
 
 Before choosing, reject arrows that miss either requirement. A purely tangential arrow does not bend the path, and a purely inward arrow does not match a changing speed. An arrow with an outward part cannot be the net force for circular motion at that instant.
 
@@ -237,9 +232,9 @@ For a net-force diagram in circular motion, first find the inward direction towa
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 [Quiz 1 Study Guide](../../2026-07-06-Q-1/Study-Guide.md)
-Next: [Finding the Net-Force Direction in Circular Motion](../../2026-07-03-HW-2/Lessons/Problem-4.md)
+Next: [Free-Body Diagrams for Level Circular Motion](../../2026-06-30-M1-4/Lessons/Problem-2.md)
 
-Study guide index: 10/30
+Study guide index: 11/35
 
 ---
 <!-- lesson-nav:end -->

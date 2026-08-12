@@ -279,7 +279,6 @@ When a ray reaches a converging lens parallel to the optical axis, use **paralle
 The main trap is reversing the paired principal-ray rules. **Parallel in** gives **far focus out**; **near focus in** gives **parallel out**.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -289,5 +288,4 @@ The main trap is reversing the paired principal-ray rules. **Parallel in** gives
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

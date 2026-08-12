@@ -261,7 +261,6 @@ Use **sign, size, lens condition**:
 The main trap is using only one clue. Positive magnification identifies a virtual, upright image, while the object-position condition distinguishes the lens type.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -271,5 +270,4 @@ The main trap is using only one clue. Positive magnification identifies a virtua
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->
