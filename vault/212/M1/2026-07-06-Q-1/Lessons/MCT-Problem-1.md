@@ -26,25 +26,27 @@ topic-code: M1.75
 <a id="introduction"></a>
 ## Introduction
 
-Choose a positive direction before assigning signs to angular positions or a swept angle. In this lesson, counterclockwise is positive and clockwise is negative.
+Motion along a straight line can be described by a starting position, an ending position, and the time between them. Rotational motion uses the same idea, but it tracks orientation instead of location. Imagine marking one spoke on a wheel and measuring its angle from a fixed reference line. That angle is the spoke's **angular position** $\theta$. Comparing its initial and final angular positions gives its **angular displacement** $\Delta\theta$; dividing that change by the elapsed time gives its **average angular velocity** $\omega_{\mathrm{avg}}$.
 
-Angular position $\theta$ tells where an object is oriented relative to a reference direction. Angular displacement $\Delta\theta$ tells how that position changes:
+To distinguish the two possible rotation directions, choose a sign convention before calculating. In this lesson, counterclockwise is positive and clockwise is negative. If $\theta_i$ is the initial angular position and $\theta_f$ is the final angular position, the signed angular displacement is
 
 $$
 \Delta\theta=\theta_f-\theta_i.
 $$
 
-If the problem asks for average angular velocity, divide the signed angular displacement by the positive elapsed time:
+If a prompt gives the angle swept instead of two angular positions, assign that angle a sign from its direction and use it as $\Delta\theta$.
+
+To find average angular velocity, divide the signed angular displacement by the positive elapsed time:
 
 $$
 \omega_{\mathrm{avg}}=\frac{\Delta\theta}{\Delta t}.
 $$
 
-The sign of $\omega_{\mathrm{avg}}$ gives the direction of the net rotation. For motion that does not reverse direction during the interval, its magnitude is also the average angular speed. If the object reverses, average speed instead uses total angle traveled divided by time.
+Because elapsed time is positive, the sign of $\omega_{\mathrm{avg}}$ gives the direction of the net rotation. Angles in this lesson are measured in radians ($\mathrm{rad}$), so angular velocity is measured in $\mathrm{rad/s}$: signed angular change per second.
 
-Angles in this lesson are measured in radians ($\mathrm{rad}$). An angular velocity in $\mathrm{rad/s}$ gives the signed angular change per second.
+For motion that does not reverse direction during the interval, the magnitude of $\omega_{\mathrm{avg}}$ is also the average angular speed. If the object reverses, average speed instead uses the total angle traveled divided by time.
 
-If the target is $\Delta\theta$, subtract the endpoint angles. If the target is $\omega_{\mathrm{avg}}$, subtract the endpoint angles and then divide by $\Delta t$.
+Start by identifying the target. For $\Delta\theta$, subtract the endpoint angles or sign the stated swept angle. For $\omega_{\mathrm{avg}}$, find that signed angular displacement and then divide by $\Delta t$.
 
 ---
 
@@ -341,7 +343,6 @@ Use this procedure whenever a prompt supplies two angular positions or a signed 
 Do not substitute the final angular position for the displacement, reverse final-minus-initial, discard the direction sign, or divide before making the units consistent.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -351,5 +352,4 @@ Do not substitute the final angular position for the displacement, reverse final
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

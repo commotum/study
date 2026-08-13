@@ -32,6 +32,7 @@ class QuizBlockFieldTests(unittest.TestCase):
         markdown: str,
         *,
         strict_ids: bool = False,
+        require_radio_shuffle: bool = False,
         require_feedback: bool = False,
         lint_feedback: bool = False,
     ) -> list[Issue]:
@@ -39,6 +40,7 @@ class QuizBlockFieldTests(unittest.TestCase):
             allow_no_quiz=False,
             allow_raw_mcq=False,
             require_radio_practice=False,
+            require_radio_shuffle=require_radio_shuffle,
             strict_ids=strict_ids,
             require_feedback=require_feedback,
             lint_feedback=lint_feedback,
@@ -97,6 +99,39 @@ options:
 - content: B
 ```
 """
+        )
+        self.assertEqual([], issues)
+
+    def test_require_radio_shuffle_rejects_missing_or_false(self) -> None:
+        for shuffle_line in ("", "shuffle: false\n"):
+            with self.subTest(shuffle_line=shuffle_line):
+                issues = self.validate_issues(
+                    f"""```quiz
+type: radio
+content: Question?
+{shuffle_line}options:
+- content: A
+  correct: true
+- content: B
+```
+""",
+                    require_radio_shuffle=True,
+                )
+                self.assertIn("radio quiz must set shuffle: true", [issue.message for issue in issues])
+
+    def test_require_radio_shuffle_accepts_true(self) -> None:
+        issues = self.validate_issues(
+            """```quiz
+type: radio
+content: Question?
+shuffle: true
+options:
+- content: A
+  correct: true
+- content: B
+```
+""",
+            require_radio_shuffle=True,
         )
         self.assertEqual([], issues)
 
@@ -760,6 +795,8 @@ options:
             )
         self.assertEqual(1, definitions["radio"]["properties"]["options"]["minContains"])
         self.assertEqual(1, definitions["radio"]["properties"]["options"]["maxContains"])
+        self.assertIn("shuffle", definitions["radio"]["required"])
+        self.assertEqual({"const": True}, definitions["radio"]["properties"]["shuffle"])
         self.assertEqual(1, definitions["checkbox"]["properties"]["options"]["minContains"])
 
     def test_core_move_compatibility_wrapper_delegates_to_factory_cli(self) -> None:

@@ -26,7 +26,9 @@ topic-code: M1.80
 <a id="introduction"></a>
 ## Introduction
 
-When angular acceleration is constant, a request for angular displacement with **no time given** is the cue to use
+Part A handled constant-angular-acceleration problems in which the elapsed time was known. Sometimes a wheel is described instead by its initial and final angular velocities and its angular acceleration, but not by how long the change takes. When \(\alpha\) is constant, the same kinematics family can eliminate time.
+
+The recognition cue is a request for angular displacement with **no time given**, together with \(\omega_i\), \(\omega_f\), and \(\alpha\) or enough information to find them. Under those conditions, use the rotational counterpart of the familiar linear no-time equation \(v_f^2=v_i^2+2a\Delta x\):
 
 $$
 \omega_f^2=\omega_i^2+2\alpha\Delta\theta.
@@ -42,24 +44,22 @@ $$
 \end{aligned}
 $$
 
-The division step assumes $\alpha\ne0$. If $\alpha=0$, constant angular velocity cannot change from one stated value to a different one.
+The division step assumes $\alpha\ne0$. If $\alpha=0$, angular velocity is constant, so different endpoint angular velocities are impossible. Equal nonzero endpoint angular velocities still require the elapsed time to determine $\Delta\theta$; if both endpoint angular velocities are zero, then $\Delta\theta=0$.
 
 Work in this order:
 
 1. Confirm that $\alpha$ is constant and time is absent.
-2. List $\omega_i$, $\omega_f$, and $\alpha$. If only $a_t$ and $r$ are given, first use $\alpha=a_t/r$.
+2. List $\omega_i$, $\omega_f$, and $\alpha$, and identify any quantity that must be recovered first.
 3. Choose a positive rotation direction and attach signs to both angular velocities and $\alpha$.
 4. Substitute into the isolated expression, keeping each angular velocity inside its square.
 5. Check the sign, units, and scale of $\Delta\theta$; convert radians to revolutions only if requested.
-
-The formula $a_t=r\alpha$ uses tangential acceleration. Radial acceleration or total acceleration cannot be substituted for $a_t$ without first resolving the tangential component.
-
-When an angular velocity is negative, put the entire signed value in parentheses before squaring: $(-5)^2=25$. Also keep the structure $\omega_f^2-\omega_i^2$; it is not the same as $(\omega_f-\omega_i)^2$.
 
 ---
 
 <a id="select-the-no-time-equation"></a>
 ## Select the No-Time Equation
+
+Keep the structure $\omega_f^2-\omega_i^2$: it is the difference of two squared endpoint velocities, not $(\omega_f-\omega_i)^2$.
 
 **Example:** A rotor speeds up with constant angular acceleration from $4.0\,\mathrm{rad/s}$ to $10.0\,\mathrm{rad/s}$. If $\alpha=3.0\,\mathrm{rad/s^2}$ and no time is given, find the angular displacement.
 
@@ -119,6 +119,8 @@ options:
 <a id="recover-angular-acceleration-from-rim-data"></a>
 ## Recover Angular Acceleration From Rim Data
 
+If a problem gives acceleration at the rim instead of $\alpha$, use $a_t=r\alpha$ only when the supplied acceleration is the tangential component. Radial acceleration or total acceleration cannot be substituted for $a_t$ without first resolving its tangential component.
+
 **Source-video example:** A wheel has diameter $80\,\mathrm{cm}$ and speeds up from $30\,\mathrm{rad/s}$ to $80\,\mathrm{rad/s}$. The tangential acceleration at its rim is $15\,\mathrm{m/s^2}$. How many revolutions does the wheel turn through? Assume constant angular acceleration.
 
 **Explanation**
@@ -133,7 +135,7 @@ r=\frac{80\,\mathrm{cm}}{2}
 =0.400\,\mathrm{m}.
 $$
 
-The given rim acceleration must be the tangential component for $a_t=r\alpha$ to apply. Recover angular acceleration:
+Because the given rim acceleration is tangential, recover angular acceleration:
 
 $$
 \alpha=\frac{a_t}{r}
@@ -270,11 +272,13 @@ options:
 <a id="track-a-negative-rotation-direction"></a>
 ## Track a Negative Rotation Direction
 
+When an angular velocity is negative, put the entire signed value in parentheses before squaring: $(-5)^2=25$. Squaring removes the velocity signs, but the sign of $\alpha$ remains.
+
 **Example:** With counterclockwise chosen positive, a rotor spins clockwise and speeds up from $\omega_i=-5.0\,\mathrm{rad/s}$ to $\omega_f=-13\,\mathrm{rad/s}$. Its constant angular acceleration is $\alpha=-4.0\,\mathrm{rad/s^2}$. Find $\Delta\theta$.
 
 **Explanation**
 
-Squaring removes the velocity signs in the numerator, but the sign of $\alpha$ remains:
+Substitute both signed angular velocities with parentheses and keep the sign of $\alpha$:
 
 $$
 \begin{aligned}
@@ -337,7 +341,6 @@ When $\alpha$ is constant, angular displacement is requested, and time is missin
 Check that both angular velocities were squared, the denominator includes $2\alpha$, and the units reduce to angle. Estimate the numerator divided by the denominator to catch a misplaced factor or exponent.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -347,5 +350,4 @@ Check that both angular velocities were squared, the denominator includes $2\alp
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

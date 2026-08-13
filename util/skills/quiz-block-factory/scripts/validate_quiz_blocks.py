@@ -102,6 +102,11 @@ def parse_args() -> argparse.Namespace:
         help="Require every quiz block to use type: radio.",
     )
     parser.add_argument(
+        "--require-radio-shuffle",
+        action="store_true",
+        help="Require every radio quiz to set shuffle: true.",
+    )
+    parser.add_argument(
         "--strict-ids",
         action="store_true",
         help="Require quiz block ids and option ids where applicable.",
@@ -838,6 +843,7 @@ def validate_block(
     block: QuizBlock,
     *,
     require_radio_practice: bool,
+    require_radio_shuffle: bool,
     strict_ids: bool,
     require_feedback: bool,
     lint_feedback: bool,
@@ -851,6 +857,12 @@ def validate_block(
     issues.extend(validate_top_level_fields(path, block, quiz_type))
     if require_radio_practice and quiz_type != "radio":
         issues.append(Issue(path, block.start_line, f"expected type: radio for core-move practice, found {quiz_type}"))
+    if (
+        require_radio_shuffle
+        and quiz_type == "radio"
+        and yaml_boolean_value(root_inline_value(block.lines, "shuffle")) is not True
+    ):
+        issues.append(Issue(path, block.start_line, "radio quiz must set shuffle: true"))
     block_id = root_field_text(block.lines, "id")
     raw_block_id = root_inline_value(block.lines, "id")
     if strict_ids and not block_id:
@@ -949,6 +961,7 @@ def validate_file(path: Path, args: argparse.Namespace) -> tuple[list[Issue], in
                 path,
                 block,
                 require_radio_practice=args.require_radio_practice,
+                require_radio_shuffle=getattr(args, "require_radio_shuffle", False),
                 strict_ids=args.strict_ids,
                 require_feedback=getattr(args, "require_feedback", False),
                 lint_feedback=getattr(args, "lint_feedback", False),

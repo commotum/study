@@ -26,7 +26,9 @@ topic-code: M1.79
 <a id="introduction"></a>
 ## Introduction
 
-Use the equations in this lesson only over an interval where angular acceleration \(\alpha\) is constant. The recognition cue is a constant \(\alpha\) together with a known or requested time \(t\).
+In the previous lesson, angular acceleration measured the signed change in angular velocity per unit time. Constant angular acceleration adds a stronger condition: a wheel's angular velocity changes by the same amount during each equal time interval. This is the rotational counterpart of straight-line motion with constant acceleration, so the familiar linear kinematics equations keep their structure when displacement, velocity, and acceleration are replaced by angular displacement, angular velocity, and angular acceleration.
+
+Computing \(\alpha_{\mathrm{avg}}=(\omega_f-\omega_i)/\Delta t\) from two endpoint velocities does not by itself show that \(\alpha\) stayed constant between them. Use the equations in this lesson only when the problem states or otherwise justifies constant angular acceleration. The recognition cue is constant \(\alpha\) together with a known elapsed time \(t\).
 
 Start every problem with a known/target list chosen from
 
@@ -49,14 +51,12 @@ Use a target-first routine:
 3. Choose an equation containing the target and the supplied values.
 4. Isolate the target before substituting if it is not already alone.
 
-“Starts from rest” means \(\omega_i=0\). Keep signs during the calculation: with counterclockwise chosen positive, clockwise angular velocity is negative, and an angular acceleration opposing a positive angular velocity is negative. Solve in radians first and convert to revolutions only if the requested answer requires it.
-
 ---
 
 <a id="translate-the-linear-equations"></a>
 ## Translate the Linear Equations
 
-The constant-acceleration equations keep their structure when linear variables are replaced by angular variables:
+Write the linear-to-angular replacements explicitly:
 
 $$
 x\leftrightarrow\theta,\qquad
@@ -192,6 +192,8 @@ When \(\omega_i\), \(\alpha\), and \(t\) are known and angular displacement is r
 $$
 \Delta\theta=\omega_i t+\frac12\alpha t^2.
 $$
+
+With SI angular units, this equation gives \(\Delta\theta\) in radians. If the prompt asks for revolutions, convert only after solving for \(\Delta\theta\).
 
 **Source-video example, continued:** For the disk that starts from rest with \(\alpha=2.5\,\mathrm{rad/s^2}\), how many revolutions does it complete during the \(18\,\mathrm{s}\) interval?
 
@@ -382,6 +384,19 @@ options:
 
 Choose a positive direction before assigning signs. If \(\omega_i>0\) and the object slows without reversing, then \(\alpha<0\), but \(\Delta\theta\) can remain positive.
 
+Two later source-video calculations make that sign check explicit:
+
+- From rest to \(30\,\mathrm{rad/s}\) in \(5\,\mathrm s\),
+  $$
+  \alpha_{\mathrm{avg}}=\frac{30-0}{5}=6\,\mathrm{rad/s^2}.
+  $$
+- With counterclockwise positive, a change from \(+85\) to \(+25\,\mathrm{rad/s}\) in \(4\,\mathrm s\) gives
+  $$
+  \alpha_{\mathrm{avg}}=\frac{25-85}{4}=-15\,\mathrm{rad/s^2}.
+  $$
+
+These average-angular-acceleration calculations make the sign calculation explicit.
+
 **Example:** A rotor has \(\omega_i=18\,\mathrm{rad/s}\) and constant \(\alpha=-2.0\,\mathrm{rad/s^2}\) for \(6.0\,\mathrm{s}\). Find its angular displacement.
 
 **Explanation**
@@ -454,7 +469,6 @@ options:
 The main traps are using a constant-\(\alpha\) equation when acceleration is not constant, borrowing the factor \(\frac12\) from the wrong equation, dropping the square on \(t\), averaging endpoint velocities without dividing by two, and treating a negative acceleration as automatically meaning negative displacement.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -464,5 +478,4 @@ The main traps are using a constant-\(\alpha\) equation when acceleration is not
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

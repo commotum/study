@@ -38,6 +38,7 @@ The references distinguish plugin runtime compatibility from the stricter canoni
    - Give every block and every selectable option an explicit stable text `id`; quote an ID that looks like a number, boolean, or null value.
    - Give every grouped question an explicit stable text `id`.
    - Put `feedback` at the level where the plugin displays it: individual radio/checkbox options, individual select-style/noodle questions, or the root of `free` and `blank`.
+   - Set `shuffle: true` on every `radio` block so the correct multiple-choice answer does not stay in a predictable position. Do not rely on authored option order for meaning.
    - Do not add undocumented fields. Root schemas are strict.
 
 4. Encode correctness.
@@ -67,6 +68,7 @@ The references distinguish plugin runtime compatibility from the stricter canoni
 ```bash
 python3 /Users/jake/Developer/study/util/skills/quiz-block-factory/scripts/validate_quiz_blocks.py \
   /path/to/file.md \
+  --require-radio-shuffle \
   --strict-ids \
   --require-feedback \
   --lint-feedback
@@ -78,6 +80,7 @@ For ordinary core-move lessons, also require radio practice:
 python3 /Users/jake/Developer/study/util/skills/quiz-block-factory/scripts/validate_quiz_blocks.py \
   /path/to/Lessons/Problem-N.md \
   --require-radio-practice \
+  --require-radio-shuffle \
   --strict-ids \
   --require-feedback \
   --lint-feedback

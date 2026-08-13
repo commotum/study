@@ -9,6 +9,7 @@ topic-code: M1.77
 
 - [Introduction](#introduction)
 - [Build Period and Frequency From Counts](#build-period-and-frequency-from-counts)
+- [Apply Cycle Rates to Circular Motion](#apply-cycle-rates-to-circular-motion)
 - [Use One Revolution to Find Angular Speed](#use-one-revolution-to-find-angular-speed)
 - [Convert Between RPM and SI Rates](#convert-rpm-before-using-si-units)
 - [Work Backward From Angular Speed](#work-backward-from-angular-speed)
@@ -127,6 +128,81 @@ options:
   feedback: |-
     Multiplying cycle count by elapsed time produces units of $\mathrm{rev}\cdot\mathrm{s}$, not a frequency. A frequency requires $N/t$, giving $3.75\,\mathrm{Hz}$, and its reciprocal gives the period.
 ```
+
+---
+
+<a id="apply-cycle-rates-to-circular-motion"></a>
+## Apply Cycle Rates to Circular Motion
+
+Later source videos use the same cycle-rate conversions inside longer circular-motion problems. Complete the period/frequency conversion first, then hand the result to the next equation.
+
+**Source-video example:** A ball travels around a horizontal circle of radius $1.5\,\mathrm m$ at $3\,\mathrm{rev/s}$. Find its frequency, period, and tangential speed.
+
+The stated rotation rate is already cycles per second:
+
+$$
+f=3\,\mathrm{Hz},
+\qquad
+T=\frac1f=\frac13\,\mathrm s.
+$$
+
+One circumference is $2\pi r$, so
+
+$$
+v=\frac{2\pi r}{T}
+=\frac{2\pi(1.5\,\mathrm m)}{1/3\,\mathrm s}
+=9\pi\,\mathrm{m/s}
+\approx28.27\,\mathrm{m/s}.
+$$
+
+The video's next step calculates radial acceleration; that part is worked in [Radial, Tangential, and Net Acceleration](<MCT-Problem-4.md>).
+
+**Source-video example:** A rotor of radius $8\,\mathrm m$ spins at $25\,\mathrm{rpm}$. Convert the rate and find the rim speed used later in the rotor-friction problem.
+
+One route converts RPM to frequency and period:
+
+$$
+f=25\,\frac{\mathrm{rev}}{\mathrm{min}}
+\left(\frac{1\,\mathrm{min}}{60\,\mathrm s}\right)
+=0.4167\,\mathrm{Hz},
+\qquad
+T=\frac1f=2.4\,\mathrm s,
+$$
+
+$$
+v=\frac{2\pi r}{T}
+=\frac{2\pi(8\,\mathrm m)}{2.4\,\mathrm s}
+=20.94\,\mathrm{m/s}.
+$$
+
+As a check, convert directly to angular speed and use $v=r\omega$:
+
+$$
+\omega=25\,\frac{\mathrm{rev}}{\mathrm{min}}
+\left(\frac{2\pi\,\mathrm{rad}}{1\,\mathrm{rev}}\right)
+\left(\frac{1\,\mathrm{min}}{60\,\mathrm s}\right)
+=2.618\,\mathrm{rad/s},
+$$
+
+$$
+v=r\omega=(8\,\mathrm m)(2.618\,\mathrm{rad/s})=20.94\,\mathrm{m/s}.
+$$
+
+Both routes must agree. The friction decision that uses this speed belongs in [Solving Static-Friction Thresholds in Circular Motion](<MCT-Problem-9.md>).
+
+**Source-video example:** A tetherball moves around a horizontal circle of radius $1.5\,\mathrm m$ at $3.5\,\mathrm{m/s}$. Find its period and frequency.
+
+Divide one circumference by the tangential speed:
+
+$$
+T=\frac{2\pi r}{v}
+=\frac{2\pi(1.5\,\mathrm m)}{3.5\,\mathrm{m/s}}
+=2.69\,\mathrm s,
+\qquad
+f=\frac1T=0.371\,\mathrm{Hz}.
+$$
+
+The tilted-tension calculation for this same tetherball is kept in [Resolving a Tilted Support Force in Horizontal Circular Motion](<MCT-Problem-10.md>).
 
 ---
 
@@ -404,7 +480,6 @@ Use the words and units to identify the quantity before choosing an equation:
 Check that $fT=1$ and that the final units match the requested quantity. The main traps are swapping period with frequency, treating revolutions as radians, and moving the factors $60$ or $2\pi$ in the wrong direction. Let unit cancellation decide the direction.
 
 <!-- lesson-nav:start -->
-
 ---
 
 ```update-progress
@@ -414,5 +489,4 @@ Check that $fT=1$ and that the final units match the requested quantity. The mai
 [[212/0. Table of Contents/TOC|Table of Contents]]
 
 ---
-
 <!-- lesson-nav:end -->

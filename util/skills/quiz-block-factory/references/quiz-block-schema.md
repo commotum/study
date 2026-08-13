@@ -41,11 +41,11 @@ Every type accepts these root fields:
 | `id` | Required for authored blocks | Stable document-wide text ID; quote values that resemble numbers, booleans, or null |
 | `content` | Required and nonempty | Prompt or shared directions; the runtime converts scalar numbers and booleans to display text |
 | `gated` | Optional boolean | Plugin gating behavior; default `false` |
-| `shuffle` | Optional boolean | Shuffle choices; default `false` |
+| `shuffle` | Optional boolean at runtime; required as `true` by factory policy for `radio` | Shuffle choices; runtime default `false` |
 
 Root objects are strict. Do not place `feedback`, `correct`, `options`, `questions`, `input_mode`, or `require_exact` on a type that does not list them.
 
-Use `shuffle: true` only when order carries no meaning. It is structurally accepted as a common field, but it is useful only for types with choices.
+Set `shuffle: true` on every canonical `radio` block so the correct answer does not remain in a predictable position. For other choice types, use it only when order carries no meaning.
 
 ## Shared option object
 
@@ -81,11 +81,13 @@ Additional root field: `options`.
 
 - At least two options.
 - Exactly one `correct: true`.
+- Set root `shuffle: true`; canonical multiple-choice answers must not remain in authored order.
 - Put feedback inside every option, never at the root.
 
 ```quiz
 type: radio
 id: q-1
+shuffle: true
 content: |-
   Which statement is correct?
 options:
