@@ -1,3 +1,4 @@
+
 ## Prerequisites
 
 - [Intersections of Intervals - 347](<Prerequisites/Intersections of Intervals - 347.md>)
@@ -94,6 +95,12 @@ Let $P_6(x)$ be the sixth-degree Taylor polynomial for $y=\cos(x)$ about $0$.
 
 1. Find $P_6(x)$ exactly.
 2. Choose the graph that correctly compares curve 1, $y=\cos(x)$, with curve 2, $y=P_6(x)$.
+
+   - ![Graph option 1](<Source/OHW-10/Images/cosine-taylor-option-1.jpg>)
+   - ![Graph option 2](<Source/OHW-10/Images/cosine-taylor-option-2.jpg>)
+   - ![Graph option 3](<Source/OHW-10/Images/cosine-taylor-option-3.jpg>)
+   - ![Graph option 4](<Source/OHW-10/Images/cosine-taylor-option-4.jpg>)
+
 3. Use $P_6(x)$ to approximate $\cos\left(\frac{\pi}{15}\right)$ to three decimal places.
 4. Give an upper bound for the absolute error $|E|$.
 5. Determine the interval of $x$-values for which the approximation error is at most $0.0001$. Give interval endpoints to three decimal places.
@@ -105,6 +112,12 @@ Let $P_3(x)$ be the third-degree Taylor polynomial for $y=e^x$ about $0$.
 
 1. Find $P_3(x)$ exactly.
 2. Choose the graph that correctly compares curve 1, $y=e^x$, with curve 2, $y=P_3(x)$.
+
+   - ![Graph option 1](<Source/OHW-10/Images/exponential-taylor-option-1.jpg>)
+   - ![Graph option 2](<Source/OHW-10/Images/exponential-taylor-option-2.jpg>)
+   - ![Graph option 3](<Source/OHW-10/Images/exponential-taylor-option-3.jpg>)
+   - ![Graph option 4](<Source/OHW-10/Images/exponential-taylor-option-4.jpg>)
+
 3. Use $P_3(x)$ to approximate $e^{2/5}$ to four decimal places.
 4. Find the approximation error to four decimal places.
 5. Determine the interval of $x$-values for which the approximation error is at most $0.0001$. Give interval endpoints to four decimal places.
@@ -129,6 +142,12 @@ $$
 2. Find the interval of convergence.
 3. Find the third-degree Taylor polynomial $P_3(x)$ about $0$.
 4. Choose the graph that correctly compares $y$ with $P_3(x)$.
+
+   - ![Graph option 1](<Source/OHW-10/Images/inverse-square-root-taylor-option-1.jpg>)
+   - ![Graph option 2](<Source/OHW-10/Images/inverse-square-root-taylor-option-2.jpg>)
+   - ![Graph option 3](<Source/OHW-10/Images/inverse-square-root-taylor-option-3.jpg>)
+   - ![Graph option 4](<Source/OHW-10/Images/inverse-square-root-taylor-option-4.jpg>)
+
 5. Use $P_3(x)$ to approximate $\frac{1}{\sqrt{4.4}}$ to five decimal places, then give the approximation error in scientific notation to four significant figures.
 
 ---
@@ -151,6 +170,12 @@ $$
 2. Find the interval of convergence.
 3. Find the third-degree Taylor polynomial $P_3(x)$ about $0$.
 4. Choose the graph that correctly compares $y$ with $P_3(x)$.
+
+   - ![Graph option 1](<Source/OHW-10/Images/reciprocal-taylor-option-1.jpg>)
+   - ![Graph option 2](<Source/OHW-10/Images/reciprocal-taylor-option-2.jpg>)
+   - ![Graph option 3](<Source/OHW-10/Images/reciprocal-taylor-option-3.jpg>)
+   - ![Graph option 4](<Source/OHW-10/Images/reciprocal-taylor-option-4.jpg>)
+
 
 ---
 ## Problem 10

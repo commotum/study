@@ -1,3 +1,4 @@
+
 ## Prerequisites
 
 - [Solving One-Step Multiplication and Division Equations - 40](<Prerequisites/Solving One-Step Multiplication and Division Equations - 40.md>)
@@ -184,6 +185,8 @@ $$
 
 ---
 ## Problem 14
+
+![Koch snowflake construction](<Source/OHW-3/Images/koch-snowflake.jpg>)
 
 For a Koch snowflake area model, the center triangle has area $9$ square units. Every smaller triangle, except the center triangle, has area $\frac{1}{9}$ of the next largest triangle in the fractal. The figure shows the usual iterative snowflake construction from equilateral triangles.
 
