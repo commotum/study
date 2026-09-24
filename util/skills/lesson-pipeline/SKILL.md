@@ -14,7 +14,7 @@ Required local skills:
 ```text
 /Users/jake/Developer/study/util/skills/core-move-lesson
 /Users/jake/Developer/study/util/skills/core-move-refiner
-/Users/jake/Developer/SU26/util/skills/llm-deodorizer
+/Users/jake/Developer/study/util/skills/llm-deodorizer
 /Users/jake/Developer/study/util/skills/quiz-block-factory
 ```
 
@@ -70,7 +70,7 @@ find /path/to/assignment-parent/Lessons -maxdepth 1 -type f -name 'Problem-*.md'
 Example worker prompt:
 
 ```text
-Use $core-move-lesson at /Users/jake/Developer/study/util/skills/core-move-lesson, $core-move-refiner at /Users/jake/Developer/study/util/skills/core-move-refiner, $llm-deodorizer at /Users/jake/Developer/SU26/util/skills/llm-deodorizer, and $quiz-block-factory at /Users/jake/Developer/study/util/skills/quiz-block-factory.
+Use $core-move-lesson at /Users/jake/Developer/study/util/skills/core-move-lesson, $core-move-refiner at /Users/jake/Developer/study/util/skills/core-move-refiner, $llm-deodorizer at /Users/jake/Developer/study/util/skills/llm-deodorizer, and $quiz-block-factory at /Users/jake/Developer/study/util/skills/quiz-block-factory.
 
 Assignment file: /absolute/path/to/assignment.md
 Problem number: N
@@ -84,7 +84,7 @@ When using structured `items`, include the four skill paths explicitly:
 ```text
 type=skill name=core-move-lesson path=/Users/jake/Developer/study/util/skills/core-move-lesson
 type=skill name=core-move-refiner path=/Users/jake/Developer/study/util/skills/core-move-refiner
-type=skill name=llm-deodorizer path=/Users/jake/Developer/SU26/util/skills/llm-deodorizer
+type=skill name=llm-deodorizer path=/Users/jake/Developer/study/util/skills/llm-deodorizer
 type=skill name=quiz-block-factory path=/Users/jake/Developer/study/util/skills/quiz-block-factory
 ```
 
@@ -102,7 +102,7 @@ type=skill name=quiz-block-factory path=/Users/jake/Developer/study/util/skills/
    - Run the llm-deodorizer scanner on each newly created lesson and review any remaining findings in context:
 
 ```bash
-python3 /Users/jake/Developer/SU26/util/skills/llm-deodorizer/scripts/scan_prose.py \
+python3 /Users/jake/Developer/study/util/skills/llm-deodorizer/scripts/scan_prose.py \
   /path/to/Lessons/Problem-N.md
 ```
 
